@@ -1,0 +1,1924 @@
+type CGU {
+  date_created: Date
+  date_created_func: datetime_functions
+  date_updated: Date
+  date_updated_func: datetime_functions
+  id: ID!
+  status: String
+  translations(filter: CGU_translations_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [CGU_translations]
+  translations_func: count_functions
+  user_updated: String
+}
+
+input CGU_filter {
+  _and: [CGU_filter]
+  _or: [CGU_filter]
+  date_created: date_filter_operators
+  date_created_func: datetime_function_filter_operators
+  date_updated: date_filter_operators
+  date_updated_func: datetime_function_filter_operators
+  id: number_filter_operators
+  status: string_filter_operators
+  translations: CGU_translations_filter
+  translations_func: count_function_filter_operators
+  user_updated: string_filter_operators
+}
+
+type CGU_translations {
+  CGU_id(filter: CGU_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): CGU
+  content: String
+  id: ID!
+  languages_code(filter: languages_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): languages
+  title: String
+}
+
+type CGU_translations_aggregated {
+  avg: CGU_translations_aggregated_fields
+  avgDistinct: CGU_translations_aggregated_fields
+  count: CGU_translations_aggregated_count
+  countAll: Int
+  countDistinct: CGU_translations_aggregated_count
+  group: JSON
+  max: CGU_translations_aggregated_fields
+  min: CGU_translations_aggregated_fields
+  sum: CGU_translations_aggregated_fields
+  sumDistinct: CGU_translations_aggregated_fields
+}
+
+type CGU_translations_aggregated_count {
+  CGU_id: Int
+  content: Int
+  id: Int
+  languages_code: Int
+  title: Int
+}
+
+type CGU_translations_aggregated_fields {
+  CGU_id: Float
+  id: Float
+}
+
+input CGU_translations_filter {
+  CGU_id: CGU_filter
+  _and: [CGU_translations_filter]
+  _or: [CGU_translations_filter]
+  content: string_filter_operators
+  id: number_filter_operators
+  languages_code: languages_filter
+  title: string_filter_operators
+}
+
+type CII {
+  date_created: Date
+  date_created_func: datetime_functions
+  date_updated: Date
+  date_updated_func: datetime_functions
+  id: ID!
+  image(filter: directus_files_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): directus_files
+  status: String
+  translations(filter: CII_translations_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [CII_translations]
+  translations_func: count_functions
+  user_created: String
+  user_updated: String
+}
+
+input CII_filter {
+  _and: [CII_filter]
+  _or: [CII_filter]
+  date_created: date_filter_operators
+  date_created_func: datetime_function_filter_operators
+  date_updated: date_filter_operators
+  date_updated_func: datetime_function_filter_operators
+  id: number_filter_operators
+  image: directus_files_filter
+  status: string_filter_operators
+  translations: CII_translations_filter
+  translations_func: count_function_filter_operators
+  user_created: string_filter_operators
+  user_updated: string_filter_operators
+}
+
+type CII_translations {
+  CII_id(filter: CII_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): CII
+  description: String
+  id: ID!
+  languages_code(filter: languages_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): languages
+}
+
+type CII_translations_aggregated {
+  avg: CII_translations_aggregated_fields
+  avgDistinct: CII_translations_aggregated_fields
+  count: CII_translations_aggregated_count
+  countAll: Int
+  countDistinct: CII_translations_aggregated_count
+  group: JSON
+  max: CII_translations_aggregated_fields
+  min: CII_translations_aggregated_fields
+  sum: CII_translations_aggregated_fields
+  sumDistinct: CII_translations_aggregated_fields
+}
+
+type CII_translations_aggregated_count {
+  CII_id: Int
+  description: Int
+  id: Int
+  languages_code: Int
+}
+
+type CII_translations_aggregated_fields {
+  CII_id: Float
+  id: Float
+}
+
+input CII_translations_filter {
+  CII_id: CII_filter
+  _and: [CII_translations_filter]
+  _or: [CII_translations_filter]
+  description: string_filter_operators
+  id: number_filter_operators
+  languages_code: languages_filter
+}
+
+type DNA_cards {
+  date_created: Date
+  date_created_func: datetime_functions
+  date_updated: Date
+  date_updated_func: datetime_functions
+  icon(filter: directus_files_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): directus_files
+  id: ID!
+  name(filter: DNA_content_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): DNA_content
+  order: Int
+  status: String
+  title: String
+  translations(filter: DNA_cards_translations_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [DNA_cards_translations]
+  translations_func: count_functions
+  user_updated: String
+}
+
+type DNA_cards_aggregated {
+  avg: DNA_cards_aggregated_fields
+  avgDistinct: DNA_cards_aggregated_fields
+  count: DNA_cards_aggregated_count
+  countAll: Int
+  countDistinct: DNA_cards_aggregated_count
+  group: JSON
+  max: DNA_cards_aggregated_fields
+  min: DNA_cards_aggregated_fields
+  sum: DNA_cards_aggregated_fields
+  sumDistinct: DNA_cards_aggregated_fields
+}
+
+type DNA_cards_aggregated_count {
+  date_created: Int
+  date_updated: Int
+  icon: Int
+  id: Int
+  name: Int
+  order: Int
+  status: Int
+  title: Int
+  translations: Int
+  user_updated: Int
+}
+
+type DNA_cards_aggregated_fields {
+  id: Float
+  name: Float
+  order: Float
+}
+
+input DNA_cards_filter {
+  _and: [DNA_cards_filter]
+  _or: [DNA_cards_filter]
+  date_created: date_filter_operators
+  date_created_func: datetime_function_filter_operators
+  date_updated: date_filter_operators
+  date_updated_func: datetime_function_filter_operators
+  icon: directus_files_filter
+  id: number_filter_operators
+  name: DNA_content_filter
+  order: number_filter_operators
+  status: string_filter_operators
+  title: string_filter_operators
+  translations: DNA_cards_translations_filter
+  translations_func: count_function_filter_operators
+  user_updated: string_filter_operators
+}
+
+type DNA_cards_translations {
+  DNA_cards_id(filter: DNA_cards_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): DNA_cards
+  card(filter: DNA_content_translations_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): DNA_content_translations
+  description: String
+  id: ID!
+  languages_code(filter: languages_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): languages
+  title: String
+}
+
+type DNA_cards_translations_aggregated {
+  avg: DNA_cards_translations_aggregated_fields
+  avgDistinct: DNA_cards_translations_aggregated_fields
+  count: DNA_cards_translations_aggregated_count
+  countAll: Int
+  countDistinct: DNA_cards_translations_aggregated_count
+  group: JSON
+  max: DNA_cards_translations_aggregated_fields
+  min: DNA_cards_translations_aggregated_fields
+  sum: DNA_cards_translations_aggregated_fields
+  sumDistinct: DNA_cards_translations_aggregated_fields
+}
+
+type DNA_cards_translations_aggregated_count {
+  DNA_cards_id: Int
+  card: Int
+  description: Int
+  id: Int
+  languages_code: Int
+  title: Int
+}
+
+type DNA_cards_translations_aggregated_fields {
+  DNA_cards_id: Float
+  card: Float
+  id: Float
+}
+
+input DNA_cards_translations_filter {
+  DNA_cards_id: DNA_cards_filter
+  _and: [DNA_cards_translations_filter]
+  _or: [DNA_cards_translations_filter]
+  card: DNA_content_translations_filter
+  description: string_filter_operators
+  id: number_filter_operators
+  languages_code: languages_filter
+  title: string_filter_operators
+}
+
+type DNA_content {
+  RGPD_img(filter: directus_files_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): directus_files
+  card_list(filter: DNA_cards_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [DNA_cards]
+  card_list_func: count_functions
+  date_created: Date
+  date_created_func: datetime_functions
+  date_updated: Date
+  date_updated_func: datetime_functions
+  id: ID!
+  status: String
+  translations(filter: DNA_content_translations_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [DNA_content_translations]
+  translations_func: count_functions
+  user_updated: String
+}
+
+input DNA_content_filter {
+  RGPD_img: directus_files_filter
+  _and: [DNA_content_filter]
+  _or: [DNA_content_filter]
+  card_list: DNA_cards_filter
+  card_list_func: count_function_filter_operators
+  date_created: date_filter_operators
+  date_created_func: datetime_function_filter_operators
+  date_updated: date_filter_operators
+  date_updated_func: datetime_function_filter_operators
+  id: number_filter_operators
+  status: string_filter_operators
+  translations: DNA_content_translations_filter
+  translations_func: count_function_filter_operators
+  user_updated: string_filter_operators
+}
+
+type DNA_content_translations {
+  DNA_content_id(filter: DNA_content_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): DNA_content
+  description: String
+  id: ID!
+  languages_code(filter: languages_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): languages
+  title: String
+}
+
+type DNA_content_translations_aggregated {
+  avg: DNA_content_translations_aggregated_fields
+  avgDistinct: DNA_content_translations_aggregated_fields
+  count: DNA_content_translations_aggregated_count
+  countAll: Int
+  countDistinct: DNA_content_translations_aggregated_count
+  group: JSON
+  max: DNA_content_translations_aggregated_fields
+  min: DNA_content_translations_aggregated_fields
+  sum: DNA_content_translations_aggregated_fields
+  sumDistinct: DNA_content_translations_aggregated_fields
+}
+
+type DNA_content_translations_aggregated_count {
+  DNA_content_id: Int
+  description: Int
+  id: Int
+  languages_code: Int
+  title: Int
+}
+
+type DNA_content_translations_aggregated_fields {
+  DNA_content_id: Float
+  id: Float
+}
+
+input DNA_content_translations_filter {
+  DNA_content_id: DNA_content_filter
+  _and: [DNA_content_translations_filter]
+  _or: [DNA_content_translations_filter]
+  description: string_filter_operators
+  id: number_filter_operators
+  languages_code: languages_filter
+  title: string_filter_operators
+}
+
+"""ISO8601 Date values"""
+scalar Date
+
+"""BigInt value"""
+scalar GraphQLBigInt
+
+"""A Float or a String"""
+scalar GraphQLStringOrFloat
+
+"""
+The `JSON` scalar type represents JSON values as specified by [ECMA-404](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf).
+"""
+scalar JSON
+
+type Query {
+  CGU: CGU
+  CGU_translations(filter: CGU_translations_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [CGU_translations!]!
+  CGU_translations_aggregated(filter: CGU_translations_filter, groupBy: [String], limit: Int, offset: Int, page: Int, search: String, sort: [String]): [CGU_translations_aggregated!]!
+  CGU_translations_by_id(id: ID!): CGU_translations
+  CII: CII
+  CII_translations(filter: CII_translations_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [CII_translations!]!
+  CII_translations_aggregated(filter: CII_translations_filter, groupBy: [String], limit: Int, offset: Int, page: Int, search: String, sort: [String]): [CII_translations_aggregated!]!
+  CII_translations_by_id(id: ID!): CII_translations
+  DNA_cards(filter: DNA_cards_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [DNA_cards!]!
+  DNA_cards_aggregated(filter: DNA_cards_filter, groupBy: [String], limit: Int, offset: Int, page: Int, search: String, sort: [String]): [DNA_cards_aggregated!]!
+  DNA_cards_by_id(id: ID!): DNA_cards
+  DNA_cards_translations(filter: DNA_cards_translations_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [DNA_cards_translations!]!
+  DNA_cards_translations_aggregated(filter: DNA_cards_translations_filter, groupBy: [String], limit: Int, offset: Int, page: Int, search: String, sort: [String]): [DNA_cards_translations_aggregated!]!
+  DNA_cards_translations_by_id(id: ID!): DNA_cards_translations
+  DNA_content: DNA_content
+  DNA_content_translations(filter: DNA_content_translations_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [DNA_content_translations!]!
+  DNA_content_translations_aggregated(filter: DNA_content_translations_filter, groupBy: [String], limit: Int, offset: Int, page: Int, search: String, sort: [String]): [DNA_content_translations_aggregated!]!
+  DNA_content_translations_by_id(id: ID!): DNA_content_translations
+  approach_card(filter: approach_card_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [approach_card!]!
+  approach_card_aggregated(filter: approach_card_filter, groupBy: [String], limit: Int, offset: Int, page: Int, search: String, sort: [String]): [approach_card_aggregated!]!
+  approach_card_by_id(id: ID!): approach_card
+  approach_card_translations(filter: approach_card_translations_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [approach_card_translations!]!
+  approach_card_translations_aggregated(filter: approach_card_translations_filter, groupBy: [String], limit: Int, offset: Int, page: Int, search: String, sort: [String]): [approach_card_translations_aggregated!]!
+  approach_card_translations_by_id(id: ID!): approach_card_translations
+  approach_category(filter: approach_category_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [approach_category!]!
+  approach_category_aggregated(filter: approach_category_filter, groupBy: [String], limit: Int, offset: Int, page: Int, search: String, sort: [String]): [approach_category_aggregated!]!
+  approach_category_by_id(id: ID!): approach_category
+  approach_category_translations(filter: approach_category_translations_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [approach_category_translations!]!
+  approach_category_translations_aggregated(filter: approach_category_translations_filter, groupBy: [String], limit: Int, offset: Int, page: Int, search: String, sort: [String]): [approach_category_translations_aggregated!]!
+  approach_category_translations_by_id(id: ID!): approach_category_translations
+  approach_intro: approach_intro
+  approach_intro_translations(filter: approach_intro_translations_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [approach_intro_translations!]!
+  approach_intro_translations_aggregated(filter: approach_intro_translations_filter, groupBy: [String], limit: Int, offset: Int, page: Int, search: String, sort: [String]): [approach_intro_translations_aggregated!]!
+  approach_intro_translations_by_id(id: ID!): approach_intro_translations
+  case_study(filter: case_study_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [case_study!]!
+  case_study_aggregated(filter: case_study_filter, groupBy: [String], limit: Int, offset: Int, page: Int, search: String, sort: [String]): [case_study_aggregated!]!
+  case_study_by_id(id: ID!): case_study
+  case_study_section: case_study_section
+  case_study_section_translations(filter: case_study_section_translations_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [case_study_section_translations!]!
+  case_study_section_translations_aggregated(filter: case_study_section_translations_filter, groupBy: [String], limit: Int, offset: Int, page: Int, search: String, sort: [String]): [case_study_section_translations_aggregated!]!
+  case_study_section_translations_by_id(id: ID!): case_study_section_translations
+  case_study_translations(filter: case_study_translations_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [case_study_translations!]!
+  case_study_translations_aggregated(filter: case_study_translations_filter, groupBy: [String], limit: Int, offset: Int, page: Int, search: String, sort: [String]): [case_study_translations_aggregated!]!
+  case_study_translations_by_id(id: ID!): case_study_translations
+  contact_section: contact_section
+  contact_section_translations(filter: contact_section_translations_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [contact_section_translations!]!
+  contact_section_translations_aggregated(filter: contact_section_translations_filter, groupBy: [String], limit: Int, offset: Int, page: Int, search: String, sort: [String]): [contact_section_translations_aggregated!]!
+  contact_section_translations_by_id(id: ID!): contact_section_translations
+  fdti_section: fdti_section
+  fdti_section_translations(filter: fdti_section_translations_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [fdti_section_translations!]!
+  fdti_section_translations_aggregated(filter: fdti_section_translations_filter, groupBy: [String], limit: Int, offset: Int, page: Int, search: String, sort: [String]): [fdti_section_translations_aggregated!]!
+  fdti_section_translations_by_id(id: ID!): fdti_section_translations
+  hero_section: hero_section
+  hero_section_translations(filter: hero_section_translations_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [hero_section_translations!]!
+  hero_section_translations_aggregated(filter: hero_section_translations_filter, groupBy: [String], limit: Int, offset: Int, page: Int, search: String, sort: [String]): [hero_section_translations_aggregated!]!
+  hero_section_translations_by_id(id: ID!): hero_section_translations
+  languages(filter: languages_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [languages!]!
+  languages_aggregated(filter: languages_filter, groupBy: [String], limit: Int, offset: Int, page: Int, search: String, sort: [String]): [languages_aggregated!]!
+  languages_by_id(id: ID!): languages
+  meta_tags: meta_tags
+  meta_tags_page(filter: meta_tags_page_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [meta_tags_page!]!
+  meta_tags_page_aggregated(filter: meta_tags_page_filter, groupBy: [String], limit: Int, offset: Int, page: Int, search: String, sort: [String]): [meta_tags_page_aggregated!]!
+  meta_tags_page_by_id(id: ID!): meta_tags_page
+  meta_tags_page_translations(filter: meta_tags_page_translations_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [meta_tags_page_translations!]!
+  meta_tags_page_translations_aggregated(filter: meta_tags_page_translations_filter, groupBy: [String], limit: Int, offset: Int, page: Int, search: String, sort: [String]): [meta_tags_page_translations_aggregated!]!
+  meta_tags_page_translations_by_id(id: ID!): meta_tags_page_translations
+  privacy: privacy
+  privacy_translations(filter: privacy_translations_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [privacy_translations!]!
+  privacy_translations_aggregated(filter: privacy_translations_filter, groupBy: [String], limit: Int, offset: Int, page: Int, search: String, sort: [String]): [privacy_translations_aggregated!]!
+  privacy_translations_by_id(id: ID!): privacy_translations
+  technology_category(filter: technology_category_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [technology_category!]!
+  technology_category_aggregated(filter: technology_category_filter, groupBy: [String], limit: Int, offset: Int, page: Int, search: String, sort: [String]): [technology_category_aggregated!]!
+  technology_category_by_id(id: ID!): technology_category
+  technology_category_translations(filter: technology_category_translations_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [technology_category_translations!]!
+  technology_category_translations_aggregated(filter: technology_category_translations_filter, groupBy: [String], limit: Int, offset: Int, page: Int, search: String, sort: [String]): [technology_category_translations_aggregated!]!
+  technology_category_translations_by_id(id: ID!): technology_category_translations
+  technology_content: technology_content
+  technology_content_translations(filter: technology_content_translations_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [technology_content_translations!]!
+  technology_content_translations_aggregated(filter: technology_content_translations_filter, groupBy: [String], limit: Int, offset: Int, page: Int, search: String, sort: [String]): [technology_content_translations_aggregated!]!
+  technology_content_translations_by_id(id: ID!): technology_content_translations
+  technology_item(filter: technology_item_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [technology_item!]!
+  technology_item_aggregated(filter: technology_item_filter, groupBy: [String], limit: Int, offset: Int, page: Int, search: String, sort: [String]): [technology_item_aggregated!]!
+  technology_item_by_id(id: ID!): technology_item
+  trust_company(filter: trust_company_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [trust_company!]!
+  trust_company_aggregated(filter: trust_company_filter, groupBy: [String], limit: Int, offset: Int, page: Int, search: String, sort: [String]): [trust_company_aggregated!]!
+  trust_company_by_id(id: ID!): trust_company
+  trust_content: trust_content
+  trust_content_translations(filter: trust_content_translations_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [trust_content_translations!]!
+  trust_content_translations_aggregated(filter: trust_content_translations_filter, groupBy: [String], limit: Int, offset: Int, page: Int, search: String, sort: [String]): [trust_content_translations_aggregated!]!
+  trust_content_translations_by_id(id: ID!): trust_content_translations
+}
+
+type approach_card {
+  card_list(filter: approach_category_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): approach_category
+  date_created: Date
+  date_created_func: datetime_functions
+  date_updated: Date
+  date_updated_func: datetime_functions
+  icon(filter: directus_files_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): directus_files
+  id: ID!
+  name: String
+  order: Int
+  status: String
+  translations(filter: approach_card_translations_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [approach_card_translations]
+  translations_func: count_functions
+  user_updated: String
+}
+
+type approach_card_aggregated {
+  avg: approach_card_aggregated_fields
+  avgDistinct: approach_card_aggregated_fields
+  count: approach_card_aggregated_count
+  countAll: Int
+  countDistinct: approach_card_aggregated_count
+  group: JSON
+  max: approach_card_aggregated_fields
+  min: approach_card_aggregated_fields
+  sum: approach_card_aggregated_fields
+  sumDistinct: approach_card_aggregated_fields
+}
+
+type approach_card_aggregated_count {
+  card_list: Int
+  date_created: Int
+  date_updated: Int
+  icon: Int
+  id: Int
+  name: Int
+  order: Int
+  status: Int
+  translations: Int
+  user_updated: Int
+}
+
+type approach_card_aggregated_fields {
+  card_list: Float
+  id: Float
+  order: Float
+}
+
+input approach_card_filter {
+  _and: [approach_card_filter]
+  _or: [approach_card_filter]
+  card_list: approach_category_filter
+  date_created: date_filter_operators
+  date_created_func: datetime_function_filter_operators
+  date_updated: date_filter_operators
+  date_updated_func: datetime_function_filter_operators
+  icon: directus_files_filter
+  id: number_filter_operators
+  name: string_filter_operators
+  order: number_filter_operators
+  status: string_filter_operators
+  translations: approach_card_translations_filter
+  translations_func: count_function_filter_operators
+  user_updated: string_filter_operators
+}
+
+type approach_card_translations {
+  approach_card_id(filter: approach_card_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): approach_card
+  description: String
+  id: ID!
+  languages_code(filter: languages_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): languages
+  title: String
+}
+
+type approach_card_translations_aggregated {
+  avg: approach_card_translations_aggregated_fields
+  avgDistinct: approach_card_translations_aggregated_fields
+  count: approach_card_translations_aggregated_count
+  countAll: Int
+  countDistinct: approach_card_translations_aggregated_count
+  group: JSON
+  max: approach_card_translations_aggregated_fields
+  min: approach_card_translations_aggregated_fields
+  sum: approach_card_translations_aggregated_fields
+  sumDistinct: approach_card_translations_aggregated_fields
+}
+
+type approach_card_translations_aggregated_count {
+  approach_card_id: Int
+  description: Int
+  id: Int
+  languages_code: Int
+  title: Int
+}
+
+type approach_card_translations_aggregated_fields {
+  approach_card_id: Float
+  id: Float
+}
+
+input approach_card_translations_filter {
+  _and: [approach_card_translations_filter]
+  _or: [approach_card_translations_filter]
+  approach_card_id: approach_card_filter
+  description: string_filter_operators
+  id: number_filter_operators
+  languages_code: languages_filter
+  title: string_filter_operators
+}
+
+type approach_category {
+  Name: String
+  card_list(filter: approach_card_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [approach_card]
+  card_list_func: count_functions
+  charge: String
+  date_created: Date
+  date_created_func: datetime_functions
+  date_updated: Date
+  date_updated_func: datetime_functions
+  icon(filter: directus_files_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): directus_files
+  id: ID!
+  order_value: String
+  status: String
+  translations(filter: approach_category_translations_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [approach_category_translations]
+  translations_func: count_functions
+  user_updated: String
+  value: String
+}
+
+type approach_category_aggregated {
+  avg: approach_category_aggregated_fields
+  avgDistinct: approach_category_aggregated_fields
+  count: approach_category_aggregated_count
+  countAll: Int
+  countDistinct: approach_category_aggregated_count
+  group: JSON
+  max: approach_category_aggregated_fields
+  min: approach_category_aggregated_fields
+  sum: approach_category_aggregated_fields
+  sumDistinct: approach_category_aggregated_fields
+}
+
+type approach_category_aggregated_count {
+  Name: Int
+  card_list: Int
+  charge: Int
+  date_created: Int
+  date_updated: Int
+  icon: Int
+  id: Int
+  order_value: Int
+  status: Int
+  translations: Int
+  user_updated: Int
+  value: Int
+}
+
+type approach_category_aggregated_fields {
+  id: Float
+}
+
+input approach_category_filter {
+  Name: string_filter_operators
+  _and: [approach_category_filter]
+  _or: [approach_category_filter]
+  card_list: approach_card_filter
+  card_list_func: count_function_filter_operators
+  charge: string_filter_operators
+  date_created: date_filter_operators
+  date_created_func: datetime_function_filter_operators
+  date_updated: date_filter_operators
+  date_updated_func: datetime_function_filter_operators
+  icon: directus_files_filter
+  id: number_filter_operators
+  order_value: string_filter_operators
+  status: string_filter_operators
+  translations: approach_category_translations_filter
+  translations_func: count_function_filter_operators
+  user_updated: string_filter_operators
+  value: string_filter_operators
+}
+
+type approach_category_translations {
+  approach_category_id(filter: approach_category_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): approach_category
+  id: ID!
+  languages_code(filter: languages_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): languages
+  title: String
+}
+
+type approach_category_translations_aggregated {
+  avg: approach_category_translations_aggregated_fields
+  avgDistinct: approach_category_translations_aggregated_fields
+  count: approach_category_translations_aggregated_count
+  countAll: Int
+  countDistinct: approach_category_translations_aggregated_count
+  group: JSON
+  max: approach_category_translations_aggregated_fields
+  min: approach_category_translations_aggregated_fields
+  sum: approach_category_translations_aggregated_fields
+  sumDistinct: approach_category_translations_aggregated_fields
+}
+
+type approach_category_translations_aggregated_count {
+  approach_category_id: Int
+  id: Int
+  languages_code: Int
+  title: Int
+}
+
+type approach_category_translations_aggregated_fields {
+  approach_category_id: Float
+  id: Float
+}
+
+input approach_category_translations_filter {
+  _and: [approach_category_translations_filter]
+  _or: [approach_category_translations_filter]
+  approach_category_id: approach_category_filter
+  id: number_filter_operators
+  languages_code: languages_filter
+  title: string_filter_operators
+}
+
+type approach_intro {
+  date_created: Date
+  date_created_func: datetime_functions
+  date_updated: Date
+  date_updated_func: datetime_functions
+  id: ID!
+  status: String
+  translations(filter: approach_intro_translations_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [approach_intro_translations]
+  translations_func: count_functions
+  user_updated: String
+}
+
+input approach_intro_filter {
+  _and: [approach_intro_filter]
+  _or: [approach_intro_filter]
+  date_created: date_filter_operators
+  date_created_func: datetime_function_filter_operators
+  date_updated: date_filter_operators
+  date_updated_func: datetime_function_filter_operators
+  id: number_filter_operators
+  status: string_filter_operators
+  translations: approach_intro_translations_filter
+  translations_func: count_function_filter_operators
+  user_updated: string_filter_operators
+}
+
+type approach_intro_translations {
+  approach_intro_id(filter: approach_intro_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): approach_intro
+  description: String
+  description_2: String
+  id: ID!
+  languages_code(filter: languages_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): languages
+  title: String
+}
+
+type approach_intro_translations_aggregated {
+  avg: approach_intro_translations_aggregated_fields
+  avgDistinct: approach_intro_translations_aggregated_fields
+  count: approach_intro_translations_aggregated_count
+  countAll: Int
+  countDistinct: approach_intro_translations_aggregated_count
+  group: JSON
+  max: approach_intro_translations_aggregated_fields
+  min: approach_intro_translations_aggregated_fields
+  sum: approach_intro_translations_aggregated_fields
+  sumDistinct: approach_intro_translations_aggregated_fields
+}
+
+type approach_intro_translations_aggregated_count {
+  approach_intro_id: Int
+  description: Int
+  description_2: Int
+  id: Int
+  languages_code: Int
+  title: Int
+}
+
+type approach_intro_translations_aggregated_fields {
+  approach_intro_id: Float
+  id: Float
+}
+
+input approach_intro_translations_filter {
+  _and: [approach_intro_translations_filter]
+  _or: [approach_intro_translations_filter]
+  approach_intro_id: approach_intro_filter
+  description: string_filter_operators
+  description_2: string_filter_operators
+  id: number_filter_operators
+  languages_code: languages_filter
+  title: string_filter_operators
+}
+
+type case_study {
+  date_created: Date
+  date_created_func: datetime_functions
+  date_updated: Date
+  date_updated_func: datetime_functions
+  id: ID!
+  img(filter: directus_files_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): directus_files
+  list(filter: case_study_section_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): case_study_section
+  slug: String
+  status: String
+  tags: JSON
+  tags_func: count_functions
+  title(filter: case_study_section_translations_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): case_study_section_translations
+  translations(filter: case_study_translations_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [case_study_translations]
+  translations_func: count_functions
+  user_created: String
+  user_updated: String
+}
+
+type case_study_aggregated {
+  avg: case_study_aggregated_fields
+  avgDistinct: case_study_aggregated_fields
+  count: case_study_aggregated_count
+  countAll: Int
+  countDistinct: case_study_aggregated_count
+  group: JSON
+  max: case_study_aggregated_fields
+  min: case_study_aggregated_fields
+  sum: case_study_aggregated_fields
+  sumDistinct: case_study_aggregated_fields
+}
+
+type case_study_aggregated_count {
+  date_created: Int
+  date_updated: Int
+  id: Int
+  img: Int
+  list: Int
+  slug: Int
+  status: Int
+  tags: Int
+  title: Int
+  translations: Int
+  user_created: Int
+  user_updated: Int
+}
+
+type case_study_aggregated_fields {
+  id: Float
+  list: Float
+  title: Float
+}
+
+input case_study_filter {
+  _and: [case_study_filter]
+  _or: [case_study_filter]
+  date_created: date_filter_operators
+  date_created_func: datetime_function_filter_operators
+  date_updated: date_filter_operators
+  date_updated_func: datetime_function_filter_operators
+  id: number_filter_operators
+  img: directus_files_filter
+  list: case_study_section_filter
+  slug: string_filter_operators
+  status: string_filter_operators
+  tags: string_filter_operators
+  tags_func: count_function_filter_operators
+  title: case_study_section_translations_filter
+  translations: case_study_translations_filter
+  translations_func: count_function_filter_operators
+  user_created: string_filter_operators
+  user_updated: string_filter_operators
+}
+
+type case_study_section {
+  case_study_list(filter: case_study_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [case_study]
+  case_study_list_func: count_functions
+  date_updated: Date
+  date_updated_func: datetime_functions
+  id: ID!
+  status: String
+  translations(filter: case_study_section_translations_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [case_study_section_translations]
+  translations_func: count_functions
+  user_updated: String
+}
+
+input case_study_section_filter {
+  _and: [case_study_section_filter]
+  _or: [case_study_section_filter]
+  case_study_list: case_study_filter
+  case_study_list_func: count_function_filter_operators
+  date_updated: date_filter_operators
+  date_updated_func: datetime_function_filter_operators
+  id: number_filter_operators
+  status: string_filter_operators
+  translations: case_study_section_translations_filter
+  translations_func: count_function_filter_operators
+  user_updated: string_filter_operators
+}
+
+type case_study_section_translations {
+  case_study_list(filter: case_study_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [case_study]
+  case_study_section_id(filter: case_study_section_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): case_study_section
+  description: String
+  id: ID!
+  languages_code(filter: languages_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): languages
+  title: String
+}
+
+type case_study_section_translations_aggregated {
+  avg: case_study_section_translations_aggregated_fields
+  avgDistinct: case_study_section_translations_aggregated_fields
+  count: case_study_section_translations_aggregated_count
+  countAll: Int
+  countDistinct: case_study_section_translations_aggregated_count
+  group: JSON
+  max: case_study_section_translations_aggregated_fields
+  min: case_study_section_translations_aggregated_fields
+  sum: case_study_section_translations_aggregated_fields
+  sumDistinct: case_study_section_translations_aggregated_fields
+}
+
+type case_study_section_translations_aggregated_count {
+  case_study_section_id: Int
+  description: Int
+  id: Int
+  languages_code: Int
+  title: Int
+}
+
+type case_study_section_translations_aggregated_fields {
+  case_study_section_id: Float
+  id: Float
+}
+
+input case_study_section_translations_filter {
+  _and: [case_study_section_translations_filter]
+  _or: [case_study_section_translations_filter]
+  case_study_list: case_study_filter
+  case_study_section_id: case_study_section_filter
+  description: string_filter_operators
+  id: number_filter_operators
+  languages_code: languages_filter
+  title: string_filter_operators
+}
+
+type case_study_translations {
+  case_study_id(filter: case_study_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): case_study
+  content: String
+  description: String
+  id: ID!
+  languages_code(filter: languages_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): languages
+  title: String
+}
+
+type case_study_translations_aggregated {
+  avg: case_study_translations_aggregated_fields
+  avgDistinct: case_study_translations_aggregated_fields
+  count: case_study_translations_aggregated_count
+  countAll: Int
+  countDistinct: case_study_translations_aggregated_count
+  group: JSON
+  max: case_study_translations_aggregated_fields
+  min: case_study_translations_aggregated_fields
+  sum: case_study_translations_aggregated_fields
+  sumDistinct: case_study_translations_aggregated_fields
+}
+
+type case_study_translations_aggregated_count {
+  case_study_id: Int
+  content: Int
+  description: Int
+  id: Int
+  languages_code: Int
+  title: Int
+}
+
+type case_study_translations_aggregated_fields {
+  case_study_id: Float
+  id: Float
+}
+
+input case_study_translations_filter {
+  _and: [case_study_translations_filter]
+  _or: [case_study_translations_filter]
+  case_study_id: case_study_filter
+  content: string_filter_operators
+  description: string_filter_operators
+  id: number_filter_operators
+  languages_code: languages_filter
+  title: string_filter_operators
+}
+
+type contact_section {
+  address: String
+  company: String
+  date_created: Date
+  date_created_func: datetime_functions
+  date_updated: Date
+  date_updated_func: datetime_functions
+  id: ID!
+  mail: String
+  status: String
+  title: String
+  translations(filter: contact_section_translations_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [contact_section_translations]
+  translations_func: count_functions
+  user_updated: String
+}
+
+input contact_section_filter {
+  _and: [contact_section_filter]
+  _or: [contact_section_filter]
+  address: string_filter_operators
+  company: string_filter_operators
+  date_created: date_filter_operators
+  date_created_func: datetime_function_filter_operators
+  date_updated: date_filter_operators
+  date_updated_func: datetime_function_filter_operators
+  id: number_filter_operators
+  mail: string_filter_operators
+  status: string_filter_operators
+  title: string_filter_operators
+  translations: contact_section_translations_filter
+  translations_func: count_function_filter_operators
+  user_updated: string_filter_operators
+}
+
+type contact_section_translations {
+  btn_contact: String
+  contact_section_id(filter: contact_section_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): contact_section
+  id: ID!
+  languages_code(filter: languages_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): languages
+  subtitle: String
+}
+
+type contact_section_translations_aggregated {
+  avg: contact_section_translations_aggregated_fields
+  avgDistinct: contact_section_translations_aggregated_fields
+  count: contact_section_translations_aggregated_count
+  countAll: Int
+  countDistinct: contact_section_translations_aggregated_count
+  group: JSON
+  max: contact_section_translations_aggregated_fields
+  min: contact_section_translations_aggregated_fields
+  sum: contact_section_translations_aggregated_fields
+  sumDistinct: contact_section_translations_aggregated_fields
+}
+
+type contact_section_translations_aggregated_count {
+  btn_contact: Int
+  contact_section_id: Int
+  id: Int
+  languages_code: Int
+  subtitle: Int
+}
+
+type contact_section_translations_aggregated_fields {
+  contact_section_id: Float
+  id: Float
+}
+
+input contact_section_translations_filter {
+  _and: [contact_section_translations_filter]
+  _or: [contact_section_translations_filter]
+  btn_contact: string_filter_operators
+  contact_section_id: contact_section_filter
+  id: number_filter_operators
+  languages_code: languages_filter
+  subtitle: string_filter_operators
+}
+
+input count_function_filter_operators {
+  count: number_filter_operators
+}
+
+type count_functions {
+  count: Int
+}
+
+input date_filter_operators {
+  _between: [GraphQLStringOrFloat]
+  _eq: String
+  _gt: String
+  _gte: String
+  _in: [String]
+  _lt: String
+  _lte: String
+  _nbetween: [GraphQLStringOrFloat]
+  _neq: String
+  _nin: [String]
+  _nnull: Boolean
+  _null: Boolean
+}
+
+input datetime_function_filter_operators {
+  day: number_filter_operators
+  hour: number_filter_operators
+  minute: number_filter_operators
+  month: number_filter_operators
+  second: number_filter_operators
+  week: number_filter_operators
+  weekday: number_filter_operators
+  year: number_filter_operators
+}
+
+type datetime_functions {
+  day: Int
+  hour: Int
+  minute: Int
+  month: Int
+  second: Int
+  week: Int
+  weekday: Int
+  year: Int
+}
+
+type directus_files {
+  charset: String
+  description: String
+  duration: Int
+  embed: String
+  filename_disk: String
+  filename_download: String!
+  filesize: GraphQLBigInt
+  folder: String
+  height: Int
+  id: ID!
+  location: String
+  metadata: JSON
+  metadata_func: count_functions
+  modified_by: String
+  modified_on: Date
+  modified_on_func: datetime_functions
+  storage: String!
+  tags: JSON
+  tags_func: count_functions
+  title: String
+  type: String
+  uploaded_by: String
+  uploaded_on: Date
+  uploaded_on_func: datetime_functions
+  width: Int
+}
+
+input directus_files_filter {
+  _and: [directus_files_filter]
+  _or: [directus_files_filter]
+  charset: string_filter_operators
+  description: string_filter_operators
+  duration: number_filter_operators
+  embed: string_filter_operators
+  filename_disk: string_filter_operators
+  filename_download: string_filter_operators
+  filesize: number_filter_operators
+  folder: string_filter_operators
+  height: number_filter_operators
+  id: string_filter_operators
+  location: string_filter_operators
+  metadata: string_filter_operators
+  metadata_func: count_function_filter_operators
+  modified_by: string_filter_operators
+  modified_on: date_filter_operators
+  modified_on_func: datetime_function_filter_operators
+  storage: string_filter_operators
+  tags: string_filter_operators
+  tags_func: count_function_filter_operators
+  title: string_filter_operators
+  type: string_filter_operators
+  uploaded_by: string_filter_operators
+  uploaded_on: date_filter_operators
+  uploaded_on_func: datetime_function_filter_operators
+  width: number_filter_operators
+}
+
+type fdti_section {
+  date_updated: Date
+  date_updated_func: datetime_functions
+  id: ID!
+  status: String
+  title: String
+  translations(filter: fdti_section_translations_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [fdti_section_translations]
+  translations_func: count_functions
+  user_updated: String
+}
+
+input fdti_section_filter {
+  _and: [fdti_section_filter]
+  _or: [fdti_section_filter]
+  date_updated: date_filter_operators
+  date_updated_func: datetime_function_filter_operators
+  id: number_filter_operators
+  status: string_filter_operators
+  title: string_filter_operators
+  translations: fdti_section_translations_filter
+  translations_func: count_function_filter_operators
+  user_updated: string_filter_operators
+}
+
+type fdti_section_translations {
+  btn_label: String
+  btn_name: String
+  content_1: String
+  content_2: String
+  fdti_section_id(filter: fdti_section_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): fdti_section
+  icon_1(filter: directus_files_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): directus_files
+  icon_2(filter: directus_files_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): directus_files
+  id: ID!
+  languages_code(filter: languages_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): languages
+  subtitle: String
+}
+
+type fdti_section_translations_aggregated {
+  avg: fdti_section_translations_aggregated_fields
+  avgDistinct: fdti_section_translations_aggregated_fields
+  count: fdti_section_translations_aggregated_count
+  countAll: Int
+  countDistinct: fdti_section_translations_aggregated_count
+  group: JSON
+  max: fdti_section_translations_aggregated_fields
+  min: fdti_section_translations_aggregated_fields
+  sum: fdti_section_translations_aggregated_fields
+  sumDistinct: fdti_section_translations_aggregated_fields
+}
+
+type fdti_section_translations_aggregated_count {
+  btn_label: Int
+  btn_name: Int
+  content_1: Int
+  content_2: Int
+  fdti_section_id: Int
+  icon_1: Int
+  icon_2: Int
+  id: Int
+  languages_code: Int
+  subtitle: Int
+}
+
+type fdti_section_translations_aggregated_fields {
+  fdti_section_id: Float
+  id: Float
+}
+
+input fdti_section_translations_filter {
+  _and: [fdti_section_translations_filter]
+  _or: [fdti_section_translations_filter]
+  btn_label: string_filter_operators
+  btn_name: string_filter_operators
+  content_1: string_filter_operators
+  content_2: string_filter_operators
+  fdti_section_id: fdti_section_filter
+  icon_1: directus_files_filter
+  icon_2: directus_files_filter
+  id: number_filter_operators
+  languages_code: languages_filter
+  subtitle: string_filter_operators
+}
+
+type hero_section {
+  date_created: Date
+  date_created_func: datetime_functions
+  date_updated: Date
+  date_updated_func: datetime_functions
+  id: ID!
+  status: String
+  title: String
+  translations(filter: hero_section_translations_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [hero_section_translations]
+  translations_func: count_functions
+  user_updated: String
+}
+
+input hero_section_filter {
+  _and: [hero_section_filter]
+  _or: [hero_section_filter]
+  date_created: date_filter_operators
+  date_created_func: datetime_function_filter_operators
+  date_updated: date_filter_operators
+  date_updated_func: datetime_function_filter_operators
+  id: number_filter_operators
+  status: string_filter_operators
+  title: string_filter_operators
+  translations: hero_section_translations_filter
+  translations_func: count_function_filter_operators
+  user_updated: string_filter_operators
+}
+
+type hero_section_translations {
+  brochure_link: String
+  btn_brochure: String
+  btn_contact: String
+  description: String
+  hero_section_id(filter: hero_section_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): hero_section
+  id: ID!
+  languages_code(filter: languages_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): languages
+  subtitle: String
+}
+
+type hero_section_translations_aggregated {
+  avg: hero_section_translations_aggregated_fields
+  avgDistinct: hero_section_translations_aggregated_fields
+  count: hero_section_translations_aggregated_count
+  countAll: Int
+  countDistinct: hero_section_translations_aggregated_count
+  group: JSON
+  max: hero_section_translations_aggregated_fields
+  min: hero_section_translations_aggregated_fields
+  sum: hero_section_translations_aggregated_fields
+  sumDistinct: hero_section_translations_aggregated_fields
+}
+
+type hero_section_translations_aggregated_count {
+  brochure_link: Int
+  btn_brochure: Int
+  btn_contact: Int
+  description: Int
+  hero_section_id: Int
+  id: Int
+  languages_code: Int
+  subtitle: Int
+}
+
+type hero_section_translations_aggregated_fields {
+  hero_section_id: Float
+  id: Float
+}
+
+input hero_section_translations_filter {
+  _and: [hero_section_translations_filter]
+  _or: [hero_section_translations_filter]
+  brochure_link: string_filter_operators
+  btn_brochure: string_filter_operators
+  btn_contact: string_filter_operators
+  description: string_filter_operators
+  hero_section_id: hero_section_filter
+  id: number_filter_operators
+  languages_code: languages_filter
+  subtitle: string_filter_operators
+}
+
+type languages {
+  code: ID!
+  direction: String
+  name: String
+}
+
+type languages_aggregated {
+  count: languages_aggregated_count
+  countAll: Int
+  countDistinct: languages_aggregated_count
+  group: JSON
+}
+
+type languages_aggregated_count {
+  code: Int
+  direction: Int
+  name: Int
+}
+
+input languages_filter {
+  _and: [languages_filter]
+  _or: [languages_filter]
+  code: string_filter_operators
+  direction: string_filter_operators
+  name: string_filter_operators
+}
+
+type meta_tags {
+  date_created: Date
+  date_created_func: datetime_functions
+  date_updated: Date
+  date_updated_func: datetime_functions
+  id: ID!
+  page_tags(filter: meta_tags_page_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [meta_tags_page]
+  page_tags_func: count_functions
+  status: String
+  user_created: String
+  user_updated: String
+}
+
+input meta_tags_filter {
+  _and: [meta_tags_filter]
+  _or: [meta_tags_filter]
+  date_created: date_filter_operators
+  date_created_func: datetime_function_filter_operators
+  date_updated: date_filter_operators
+  date_updated_func: datetime_function_filter_operators
+  id: number_filter_operators
+  page_tags: meta_tags_page_filter
+  page_tags_func: count_function_filter_operators
+  status: string_filter_operators
+  user_created: string_filter_operators
+  user_updated: string_filter_operators
+}
+
+type meta_tags_page {
+  date_created: Date
+  date_created_func: datetime_functions
+  date_updated: Date
+  date_updated_func: datetime_functions
+  id: ID!
+  img(filter: directus_files_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): directus_files
+  page_tags(filter: meta_tags_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): meta_tags
+  status: String
+  translations(filter: meta_tags_page_translations_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [meta_tags_page_translations]
+  translations_func: count_functions
+  url: String
+  user_created: String
+  user_updated: String
+}
+
+type meta_tags_page_aggregated {
+  avg: meta_tags_page_aggregated_fields
+  avgDistinct: meta_tags_page_aggregated_fields
+  count: meta_tags_page_aggregated_count
+  countAll: Int
+  countDistinct: meta_tags_page_aggregated_count
+  group: JSON
+  max: meta_tags_page_aggregated_fields
+  min: meta_tags_page_aggregated_fields
+  sum: meta_tags_page_aggregated_fields
+  sumDistinct: meta_tags_page_aggregated_fields
+}
+
+type meta_tags_page_aggregated_count {
+  date_created: Int
+  date_updated: Int
+  id: Int
+  img: Int
+  page_tags: Int
+  status: Int
+  translations: Int
+  url: Int
+  user_created: Int
+  user_updated: Int
+}
+
+type meta_tags_page_aggregated_fields {
+  id: Float
+  page_tags: Float
+}
+
+input meta_tags_page_filter {
+  _and: [meta_tags_page_filter]
+  _or: [meta_tags_page_filter]
+  date_created: date_filter_operators
+  date_created_func: datetime_function_filter_operators
+  date_updated: date_filter_operators
+  date_updated_func: datetime_function_filter_operators
+  id: number_filter_operators
+  img: directus_files_filter
+  page_tags: meta_tags_filter
+  status: string_filter_operators
+  translations: meta_tags_page_translations_filter
+  translations_func: count_function_filter_operators
+  url: string_filter_operators
+  user_created: string_filter_operators
+  user_updated: string_filter_operators
+}
+
+type meta_tags_page_translations {
+  description: String
+  id: ID!
+  languages_code(filter: languages_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): languages
+  meta_tags_page_id(filter: meta_tags_page_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): meta_tags_page
+  title: String
+}
+
+type meta_tags_page_translations_aggregated {
+  avg: meta_tags_page_translations_aggregated_fields
+  avgDistinct: meta_tags_page_translations_aggregated_fields
+  count: meta_tags_page_translations_aggregated_count
+  countAll: Int
+  countDistinct: meta_tags_page_translations_aggregated_count
+  group: JSON
+  max: meta_tags_page_translations_aggregated_fields
+  min: meta_tags_page_translations_aggregated_fields
+  sum: meta_tags_page_translations_aggregated_fields
+  sumDistinct: meta_tags_page_translations_aggregated_fields
+}
+
+type meta_tags_page_translations_aggregated_count {
+  description: Int
+  id: Int
+  languages_code: Int
+  meta_tags_page_id: Int
+  title: Int
+}
+
+type meta_tags_page_translations_aggregated_fields {
+  id: Float
+  meta_tags_page_id: Float
+}
+
+input meta_tags_page_translations_filter {
+  _and: [meta_tags_page_translations_filter]
+  _or: [meta_tags_page_translations_filter]
+  description: string_filter_operators
+  id: number_filter_operators
+  languages_code: languages_filter
+  meta_tags_page_id: meta_tags_page_filter
+  title: string_filter_operators
+}
+
+input number_filter_operators {
+  _between: [GraphQLStringOrFloat]
+  _eq: GraphQLStringOrFloat
+  _gt: GraphQLStringOrFloat
+  _gte: GraphQLStringOrFloat
+  _in: [GraphQLStringOrFloat]
+  _lt: GraphQLStringOrFloat
+  _lte: GraphQLStringOrFloat
+  _nbetween: [GraphQLStringOrFloat]
+  _neq: GraphQLStringOrFloat
+  _nin: [GraphQLStringOrFloat]
+  _nnull: Boolean
+  _null: Boolean
+}
+
+type privacy {
+  date_created: Date
+  date_created_func: datetime_functions
+  date_updated: Date
+  date_updated_func: datetime_functions
+  id: ID!
+  status: String
+  translations(filter: privacy_translations_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [privacy_translations]
+  translations_func: count_functions
+  user_updated: String
+}
+
+input privacy_filter {
+  _and: [privacy_filter]
+  _or: [privacy_filter]
+  date_created: date_filter_operators
+  date_created_func: datetime_function_filter_operators
+  date_updated: date_filter_operators
+  date_updated_func: datetime_function_filter_operators
+  id: number_filter_operators
+  status: string_filter_operators
+  translations: privacy_translations_filter
+  translations_func: count_function_filter_operators
+  user_updated: string_filter_operators
+}
+
+type privacy_translations {
+  content: String
+  id: ID!
+  languages_code(filter: languages_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): languages
+  privacy_id(filter: privacy_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): privacy
+  title: String
+}
+
+type privacy_translations_aggregated {
+  avg: privacy_translations_aggregated_fields
+  avgDistinct: privacy_translations_aggregated_fields
+  count: privacy_translations_aggregated_count
+  countAll: Int
+  countDistinct: privacy_translations_aggregated_count
+  group: JSON
+  max: privacy_translations_aggregated_fields
+  min: privacy_translations_aggregated_fields
+  sum: privacy_translations_aggregated_fields
+  sumDistinct: privacy_translations_aggregated_fields
+}
+
+type privacy_translations_aggregated_count {
+  content: Int
+  id: Int
+  languages_code: Int
+  privacy_id: Int
+  title: Int
+}
+
+type privacy_translations_aggregated_fields {
+  id: Float
+  privacy_id: Float
+}
+
+input privacy_translations_filter {
+  _and: [privacy_translations_filter]
+  _or: [privacy_translations_filter]
+  content: string_filter_operators
+  id: number_filter_operators
+  languages_code: languages_filter
+  privacy_id: privacy_filter
+  title: string_filter_operators
+}
+
+input string_filter_operators {
+  _contains: String
+  _empty: Boolean
+  _ends_with: String
+  _eq: String
+  _icontains: String
+  _in: [String]
+  _ncontains: String
+  _nempty: Boolean
+  _nends_with: String
+  _neq: String
+  _nin: [String]
+  _nnull: Boolean
+  _nstarts_with: String
+  _null: Boolean
+  _starts_with: String
+}
+
+type technology_category {
+  category(filter: technology_content_translations_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): technology_content_translations
+  category_icon(filter: directus_files_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): directus_files
+  date_created: Date
+  date_created_func: datetime_functions
+  date_updated: Date
+  date_updated_func: datetime_functions
+  id: ID!
+  name(filter: technology_content_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): technology_content
+  order: String
+  status: String
+  technology_list(filter: technology_item_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [technology_item]
+  technology_list_func: count_functions
+  title: String
+  translations(filter: technology_category_translations_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [technology_category_translations]
+  translations_func: count_functions
+  user_updated: String
+}
+
+type technology_category_aggregated {
+  avg: technology_category_aggregated_fields
+  avgDistinct: technology_category_aggregated_fields
+  count: technology_category_aggregated_count
+  countAll: Int
+  countDistinct: technology_category_aggregated_count
+  group: JSON
+  max: technology_category_aggregated_fields
+  min: technology_category_aggregated_fields
+  sum: technology_category_aggregated_fields
+  sumDistinct: technology_category_aggregated_fields
+}
+
+type technology_category_aggregated_count {
+  category: Int
+  category_icon: Int
+  date_created: Int
+  date_updated: Int
+  id: Int
+  name: Int
+  order: Int
+  status: Int
+  technology_list: Int
+  title: Int
+  translations: Int
+  user_updated: Int
+}
+
+type technology_category_aggregated_fields {
+  category: Float
+  id: Float
+  name: Float
+}
+
+input technology_category_filter {
+  _and: [technology_category_filter]
+  _or: [technology_category_filter]
+  category: technology_content_translations_filter
+  category_icon: directus_files_filter
+  date_created: date_filter_operators
+  date_created_func: datetime_function_filter_operators
+  date_updated: date_filter_operators
+  date_updated_func: datetime_function_filter_operators
+  id: number_filter_operators
+  name: technology_content_filter
+  order: string_filter_operators
+  status: string_filter_operators
+  technology_list: technology_item_filter
+  technology_list_func: count_function_filter_operators
+  title: string_filter_operators
+  translations: technology_category_translations_filter
+  translations_func: count_function_filter_operators
+  user_updated: string_filter_operators
+}
+
+type technology_category_translations {
+  category(filter: technology_content_translations_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): technology_content_translations
+  description: String
+  id: ID!
+  languages_code(filter: languages_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): languages
+  technology_category_id(filter: technology_category_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): technology_category
+}
+
+type technology_category_translations_aggregated {
+  avg: technology_category_translations_aggregated_fields
+  avgDistinct: technology_category_translations_aggregated_fields
+  count: technology_category_translations_aggregated_count
+  countAll: Int
+  countDistinct: technology_category_translations_aggregated_count
+  group: JSON
+  max: technology_category_translations_aggregated_fields
+  min: technology_category_translations_aggregated_fields
+  sum: technology_category_translations_aggregated_fields
+  sumDistinct: technology_category_translations_aggregated_fields
+}
+
+type technology_category_translations_aggregated_count {
+  category: Int
+  description: Int
+  id: Int
+  languages_code: Int
+  technology_category_id: Int
+}
+
+type technology_category_translations_aggregated_fields {
+  category: Float
+  id: Float
+  technology_category_id: Float
+}
+
+input technology_category_translations_filter {
+  _and: [technology_category_translations_filter]
+  _or: [technology_category_translations_filter]
+  category: technology_content_translations_filter
+  description: string_filter_operators
+  id: number_filter_operators
+  languages_code: languages_filter
+  technology_category_id: technology_category_filter
+}
+
+type technology_content {
+  date_created: Date
+  date_created_func: datetime_functions
+  date_updated: Date
+  date_updated_func: datetime_functions
+  id: ID!
+  status: String
+  technology_category_list(filter: technology_category_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [technology_category]
+  technology_category_list_func: count_functions
+  translations(filter: technology_content_translations_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [technology_content_translations]
+  translations_func: count_functions
+  user_updated: String
+}
+
+input technology_content_filter {
+  _and: [technology_content_filter]
+  _or: [technology_content_filter]
+  date_created: date_filter_operators
+  date_created_func: datetime_function_filter_operators
+  date_updated: date_filter_operators
+  date_updated_func: datetime_function_filter_operators
+  id: number_filter_operators
+  status: string_filter_operators
+  technology_category_list: technology_category_filter
+  technology_category_list_func: count_function_filter_operators
+  translations: technology_content_translations_filter
+  translations_func: count_function_filter_operators
+  user_updated: string_filter_operators
+}
+
+type technology_content_translations {
+  categories(filter: technology_category_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [technology_category]
+  id: ID!
+  languages_code(filter: languages_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): languages
+  subtitle: String
+  technology_content_id(filter: technology_content_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): technology_content
+  title: String
+}
+
+type technology_content_translations_aggregated {
+  avg: technology_content_translations_aggregated_fields
+  avgDistinct: technology_content_translations_aggregated_fields
+  count: technology_content_translations_aggregated_count
+  countAll: Int
+  countDistinct: technology_content_translations_aggregated_count
+  group: JSON
+  max: technology_content_translations_aggregated_fields
+  min: technology_content_translations_aggregated_fields
+  sum: technology_content_translations_aggregated_fields
+  sumDistinct: technology_content_translations_aggregated_fields
+}
+
+type technology_content_translations_aggregated_count {
+  id: Int
+  languages_code: Int
+  subtitle: Int
+  technology_content_id: Int
+  title: Int
+}
+
+type technology_content_translations_aggregated_fields {
+  id: Float
+  technology_content_id: Float
+}
+
+input technology_content_translations_filter {
+  _and: [technology_content_translations_filter]
+  _or: [technology_content_translations_filter]
+  categories: technology_category_filter
+  id: number_filter_operators
+  languages_code: languages_filter
+  subtitle: string_filter_operators
+  technology_content_id: technology_content_filter
+  title: string_filter_operators
+}
+
+type technology_item {
+  date_created: Date
+  date_created_func: datetime_functions
+  date_updated: Date
+  date_updated_func: datetime_functions
+  id: ID!
+  img(filter: directus_files_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): directus_files
+  name: String
+  status: String
+  technology_list(filter: technology_category_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): technology_category
+  url: String
+  user_updated: String
+}
+
+type technology_item_aggregated {
+  avg: technology_item_aggregated_fields
+  avgDistinct: technology_item_aggregated_fields
+  count: technology_item_aggregated_count
+  countAll: Int
+  countDistinct: technology_item_aggregated_count
+  group: JSON
+  max: technology_item_aggregated_fields
+  min: technology_item_aggregated_fields
+  sum: technology_item_aggregated_fields
+  sumDistinct: technology_item_aggregated_fields
+}
+
+type technology_item_aggregated_count {
+  date_created: Int
+  date_updated: Int
+  id: Int
+  img: Int
+  name: Int
+  status: Int
+  technology_list: Int
+  url: Int
+  user_updated: Int
+}
+
+type technology_item_aggregated_fields {
+  id: Float
+  technology_list: Float
+}
+
+input technology_item_filter {
+  _and: [technology_item_filter]
+  _or: [technology_item_filter]
+  date_created: date_filter_operators
+  date_created_func: datetime_function_filter_operators
+  date_updated: date_filter_operators
+  date_updated_func: datetime_function_filter_operators
+  id: number_filter_operators
+  img: directus_files_filter
+  name: string_filter_operators
+  status: string_filter_operators
+  technology_list: technology_category_filter
+  url: string_filter_operators
+  user_updated: string_filter_operators
+}
+
+type trust_company {
+  companies(filter: trust_content_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): trust_content
+  date_created: Date
+  date_created_func: datetime_functions
+  date_updated: Date
+  date_updated_func: datetime_functions
+  id: ID!
+  img(filter: directus_files_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): directus_files
+  name: String
+  status: String
+  user_updated: String
+}
+
+type trust_company_aggregated {
+  avg: trust_company_aggregated_fields
+  avgDistinct: trust_company_aggregated_fields
+  count: trust_company_aggregated_count
+  countAll: Int
+  countDistinct: trust_company_aggregated_count
+  group: JSON
+  max: trust_company_aggregated_fields
+  min: trust_company_aggregated_fields
+  sum: trust_company_aggregated_fields
+  sumDistinct: trust_company_aggregated_fields
+}
+
+type trust_company_aggregated_count {
+  companies: Int
+  date_created: Int
+  date_updated: Int
+  id: Int
+  img: Int
+  name: Int
+  status: Int
+  user_updated: Int
+}
+
+type trust_company_aggregated_fields {
+  companies: Float
+  id: Float
+}
+
+input trust_company_filter {
+  _and: [trust_company_filter]
+  _or: [trust_company_filter]
+  companies: trust_content_filter
+  date_created: date_filter_operators
+  date_created_func: datetime_function_filter_operators
+  date_updated: date_filter_operators
+  date_updated_func: datetime_function_filter_operators
+  id: number_filter_operators
+  img: directus_files_filter
+  name: string_filter_operators
+  status: string_filter_operators
+  user_updated: string_filter_operators
+}
+
+type trust_content {
+  company_list(filter: trust_company_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [trust_company]
+  company_list_func: count_functions
+  date_created: Date
+  date_created_func: datetime_functions
+  date_updated: Date
+  date_updated_func: datetime_functions
+  id: ID!
+  status: String
+  translations(filter: trust_content_translations_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [trust_content_translations]
+  translations_func: count_functions
+  user_updated: String
+}
+
+input trust_content_filter {
+  _and: [trust_content_filter]
+  _or: [trust_content_filter]
+  company_list: trust_company_filter
+  company_list_func: count_function_filter_operators
+  date_created: date_filter_operators
+  date_created_func: datetime_function_filter_operators
+  date_updated: date_filter_operators
+  date_updated_func: datetime_function_filter_operators
+  id: number_filter_operators
+  status: string_filter_operators
+  translations: trust_content_translations_filter
+  translations_func: count_function_filter_operators
+  user_updated: string_filter_operators
+}
+
+type trust_content_translations {
+  CII_description: String
+  id: ID!
+  languages_code(filter: languages_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): languages
+  title: String
+  trust_content_id(filter: trust_content_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): trust_content
+}
+
+type trust_content_translations_aggregated {
+  avg: trust_content_translations_aggregated_fields
+  avgDistinct: trust_content_translations_aggregated_fields
+  count: trust_content_translations_aggregated_count
+  countAll: Int
+  countDistinct: trust_content_translations_aggregated_count
+  group: JSON
+  max: trust_content_translations_aggregated_fields
+  min: trust_content_translations_aggregated_fields
+  sum: trust_content_translations_aggregated_fields
+  sumDistinct: trust_content_translations_aggregated_fields
+}
+
+type trust_content_translations_aggregated_count {
+  CII_description: Int
+  id: Int
+  languages_code: Int
+  title: Int
+  trust_content_id: Int
+}
+
+type trust_content_translations_aggregated_fields {
+  id: Float
+  trust_content_id: Float
+}
+
+input trust_content_translations_filter {
+  CII_description: string_filter_operators
+  _and: [trust_content_translations_filter]
+  _or: [trust_content_translations_filter]
+  id: number_filter_operators
+  languages_code: languages_filter
+  title: string_filter_operators
+  trust_content_id: trust_content_filter
+}

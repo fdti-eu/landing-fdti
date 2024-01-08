@@ -1,0 +1,126 @@
+query getHomePageContent($name: String!, $url: String!) {
+	hero_section {
+		title
+		status
+		translations(filter: { languages_code: { name: { _eq: $name } } }) {
+			subtitle
+			description
+			btn_brochure
+			btn_contact
+			brochure_link
+		}
+	}
+	fdti_section {
+		title
+		status
+		translations(filter: { languages_code: { name: { _eq: $name } } }) {
+			subtitle
+			icon_1 {
+				filename_disk
+			}
+			content_1
+			icon_2 {
+				filename_disk
+			}
+			content_2
+			btn_label
+			btn_name
+		}
+	}
+
+	technology_content {
+		status
+		technology_category_list(filter: { status: { _eq: "published" } }, sort: ["order"]) {
+			status
+			title
+			order
+			translations(filter: { languages_code: { name: { _eq: $name } } }) {
+				description
+			}
+			category_icon {
+				id
+			}
+			technology_list(filter: { status: { _eq: "published" } }) {
+				status
+				id
+				name
+				img {
+					id
+				}
+				url
+			}
+		}
+
+		translations(filter: { languages_code: { name: { _eq: $name } } }) {
+			title
+			subtitle
+		}
+	}
+	trust_content {
+		status
+		company_list(filter: { status: { _eq: "published" } }) {
+			name
+			img {
+				id
+			}
+		}
+
+		translations(filter: { languages_code: { name: { _eq: $name } } }) {
+			title
+		}
+	}
+	contact_section {
+		status
+		address
+		company
+		mail
+		title
+		translations(filter: { languages_code: { name: { _eq: $name } } }) {
+			btn_contact
+			subtitle
+		}
+	}
+	case_study_section {
+		status
+		id
+		case_study_list {
+			tags
+			slug
+			img {
+				id
+			}
+			translations(filter: { languages_code: { name: { _eq: $name } } }) {
+				title
+				languages_code {
+					name
+				}
+				content
+			}
+		}
+		translations(filter: { languages_code: { name: { _eq: $name } } }) {
+			title
+			description
+		}
+	}
+	CII {
+		translations(filter: { languages_code: { name: { _eq: $name } } }) {
+			description
+		}
+		status
+		image {
+			id
+		}
+	}
+	meta_tags {
+		page_tags(filter: { url: { _eq: $url } }) {
+			url
+			img {
+				id
+			}
+			translations(filter: { languages_code: { name: { _eq: $name } } }) {
+				title
+				description
+			}
+		}
+	}
+}

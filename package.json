@@ -1,0 +1,52 @@
+{
+	"name": "landing-page-fdti",
+	"version": "1.0.0",
+	"scripts": {
+		"dev": "vite dev",
+		"build": "vite build",
+		"preview": "vite preview",
+		"test": "playwright test",
+		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+		"lint": "prettier --plugin-search-dir . --check . && eslint .",
+		"format": "prettier --plugin-search-dir . --write ."
+	},
+	"devDependencies": {
+        "@fdti/designsystem": "0.0.7",
+		"@playwright/test": "^1.28.1",
+		"@popperjs/core": "2.10.2",
+		"@sveltejs/adapter-vercel": "1.0.0-next.86",
+		"@sveltejs/kit": "^1.0.0",
+		"@tailwindcss/forms": "0.5.0",
+		"@tailwindcss/line-clamp": "0.3.1",
+		"@tailwindcss/typography": "0.5.2",
+		"@typescript-eslint/eslint-plugin": "^5.45.0",
+		"@typescript-eslint/parser": "^5.45.0",
+		"eslint": "^8.28.0",
+		"eslint-config-prettier": "^8.5.0",
+		"eslint-plugin-svelte3": "^4.0.0",
+		"graphql-ws": "^5.11.2",
+		"houdini": "^0.19.1",
+		"houdini-svelte": "^0.19.1",
+		"postcss": "8.4.18",
+		"prettier": "^2.8.0",
+		"prettier-plugin-svelte": "^2.8.1",
+		"svelte": "^3.54.0",
+		"svelte-check": "^2.9.2",
+		"svelte-meta-tags": "^2.6.4",
+		"tailwindcss": "^3.2.2",
+		"tslib": "^2.4.1",
+		"typescript": "^4.9.3",
+		"vite": "^4.0.0"
+	},
+	"type": "module",
+	"dependencies": {
+		"autoprefixer": "10.4.5",
+		"svelte-i18n": "3.4.0",
+		"svelte-multiselect": "5.0.1",
+		"svelte-scrollto": "0.2.0",
+		"svelte-select": "4.4.7",
+		"swiper": "^8.4.5",
+		"typeface-quattrocento-sans": "1.1.13"
+	}
+}

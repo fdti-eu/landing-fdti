@@ -1,0 +1,8 @@
+query getPrivacyContent($name: String!) {
+	privacy {
+		translations(filter: { languages_code: { name: { _eq: $name } } }) {
+			title
+			content
+		}
+	}
+}
