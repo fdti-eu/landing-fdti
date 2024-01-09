@@ -1,52 +1,48 @@
 <script lang="ts">
-	import { locale } from 'svelte-i18n';
 	import CtaSection from './CTASection.svelte';
 	import FdtiSection from './FdtiSection.svelte';
 	import TechnologiesSection from './TechnologiesSection.svelte';
 	import ConfianceSection from './ConfianceSection.svelte';
 	import ContactSection from './ContactSection.svelte';
-	import CaseStudy from './CaseStudy.svelte';
-	import { getHomePageContentStore } from '$houdini';
-
 	import type { PageData } from './$houdini';
 	import { browser } from '$app/environment';
-	import { page } from '$app/stores';
 	import { MetaTags } from 'svelte-meta-tags';
+
 	export let data: PageData;
 
-	$: ({ getHomePageContent } = data);
-	$: pageContent = $getHomePageContent.data;
-	$: if (browser && $locale) refreshContent();
+	$: ({ GetHomePageContent } = data);
+	$: pageContent = $GetHomePageContent?.data;
 
-	async function refreshContent() {
-		let store = new getHomePageContentStore();
-		let result = await store.fetch({
-			variables: { name: $locale === 'fr' ? 'French' : 'English', url: $page.url.pathname }
-		});
-		pageContent = result.data;
-	}
-
-	let metatags;
-	let translatedMetatags;
-	$: if (pageContent?.meta_tags?.page_tags?.length) metatags = pageContent?.meta_tags?.page_tags[0];
-	$: if (metatags?.translations?.length) translatedMetatags = metatags.translations[0];
+	$: item = pageContent?.meta_tags?.page_tags || [];
+	$: metatags = {
+		url: item[0]?.url || '/',
+		img: item[0]?.img?.id ? `https://cms.fdti.eu/assets/${item[0]?.img.id}` : '/logo.png',
+		description:
+			item[0]?.translations && item[0]?.translations[0]?.description
+				? item[0]?.translations[0]?.description
+				: '',
+		title:
+			item[0]?.translations && item[0]?.translations[0]?.title
+				? item[0]?.translations[0]?.title
+				: 'FDTI'
+	};
 </script>
 
-{#if translatedMetatags && metatags}
+{#if metatags}
 	<MetaTags
-		title={translatedMetatags.title}
-		description={translatedMetatags.description}
+		title={metatags.title}
+		description={metatags.description}
 		canonical="https://www.fdti.eu{metatags.url}"
 		openGraph={{
 			type: 'website',
 			url: `${metatags.url}`,
-			title: `${translatedMetatags.title}`,
-			description: `${translatedMetatags.description}`,
+			title: `${metatags.title}`,
+			description: `${metatags.description}`,
 			images: [
 				{
-					url: `https://cms.fdti.eu/assets/${metatags?.img?.id}`,
+					url: `https://cms.fdti.eu/assets/${metatags.img}`,
 
-					alt: `${translatedMetatags.description}`
+					alt: `${metatags.description}`
 				}
 			],
 			site_name: 'FDTI'
@@ -55,14 +51,16 @@
 			handle: '@handle',
 			site: '@site',
 			cardType: 'summary_large_image',
-			title: `${translatedMetatags.title}`,
-			description: `${translatedMetatags.description}`,
+			title: `${metatags.title}`,
+			description: `${metatags.description}`,
 			image: `https://www.fdti.eu/images/fdti_vector_54px.svg`,
-			imageAlt: `${translatedMetatags.description}`
+			imageAlt: `${metatags.description}`
 		}}
 	/>
 {/if}
+
 <div class=" h-2 -mt-10 " id="cta" />
+
 {#if browser && pageContent}
 	<CtaSection content={pageContent.hero_section} />
 	<div class="max-w-6xl mx-auto px-2 md:px-12">

@@ -24,6 +24,12 @@ input CGU_filter {
   user_updated: string_filter_operators
 }
 
+type CGU_mutated {
+  data: CGU
+  event: EventEnum
+  key: ID!
+}
+
 type CGU_translations {
   CGU_id(filter: CGU_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): CGU
   content: String
@@ -68,6 +74,12 @@ input CGU_translations_filter {
   title: string_filter_operators
 }
 
+type CGU_translations_mutated {
+  data: CGU_translations
+  event: EventEnum
+  key: ID!
+}
+
 type CII {
   date_created: Date
   date_created_func: datetime_functions
@@ -96,6 +108,12 @@ input CII_filter {
   translations_func: count_function_filter_operators
   user_created: string_filter_operators
   user_updated: string_filter_operators
+}
+
+type CII_mutated {
+  data: CII
+  event: EventEnum
+  key: ID!
 }
 
 type CII_translations {
@@ -137,6 +155,12 @@ input CII_translations_filter {
   description: string_filter_operators
   id: number_filter_operators
   languages_code: languages_filter
+}
+
+type CII_translations_mutated {
+  data: CII_translations
+  event: EventEnum
+  key: ID!
 }
 
 type DNA_cards {
@@ -205,6 +229,12 @@ input DNA_cards_filter {
   user_updated: string_filter_operators
 }
 
+type DNA_cards_mutated {
+  data: DNA_cards
+  event: EventEnum
+  key: ID!
+}
+
 type DNA_cards_translations {
   DNA_cards_id(filter: DNA_cards_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): DNA_cards
   card(filter: DNA_content_translations_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): DNA_content_translations
@@ -253,6 +283,12 @@ input DNA_cards_translations_filter {
   title: string_filter_operators
 }
 
+type DNA_cards_translations_mutated {
+  data: DNA_cards_translations
+  event: EventEnum
+  key: ID!
+}
+
 type DNA_content {
   RGPD_img(filter: directus_files_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): directus_files
   card_list(filter: DNA_cards_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [DNA_cards]
@@ -283,6 +319,12 @@ input DNA_content_filter {
   translations: DNA_content_translations_filter
   translations_func: count_function_filter_operators
   user_updated: string_filter_operators
+}
+
+type DNA_content_mutated {
+  data: DNA_content
+  event: EventEnum
+  key: ID!
 }
 
 type DNA_content_translations {
@@ -329,8 +371,20 @@ input DNA_content_translations_filter {
   title: string_filter_operators
 }
 
+type DNA_content_translations_mutated {
+  data: DNA_content_translations
+  event: EventEnum
+  key: ID!
+}
+
 """ISO8601 Date values"""
 scalar Date
+
+enum EventEnum {
+  create
+  delete
+  update
+}
 
 """BigInt value"""
 scalar GraphQLBigInt
@@ -345,95 +399,175 @@ scalar JSON
 
 type Query {
   CGU: CGU
+  CGU_by_version(version: String!): version_CGU
   CGU_translations(filter: CGU_translations_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [CGU_translations!]!
   CGU_translations_aggregated(filter: CGU_translations_filter, groupBy: [String], limit: Int, offset: Int, page: Int, search: String, sort: [String]): [CGU_translations_aggregated!]!
   CGU_translations_by_id(id: ID!): CGU_translations
+  CGU_translations_by_version(id: ID!, version: String!): version_CGU_translations
   CII: CII
+  CII_by_version(version: String!): version_CII
   CII_translations(filter: CII_translations_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [CII_translations!]!
   CII_translations_aggregated(filter: CII_translations_filter, groupBy: [String], limit: Int, offset: Int, page: Int, search: String, sort: [String]): [CII_translations_aggregated!]!
   CII_translations_by_id(id: ID!): CII_translations
+  CII_translations_by_version(id: ID!, version: String!): version_CII_translations
   DNA_cards(filter: DNA_cards_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [DNA_cards!]!
   DNA_cards_aggregated(filter: DNA_cards_filter, groupBy: [String], limit: Int, offset: Int, page: Int, search: String, sort: [String]): [DNA_cards_aggregated!]!
   DNA_cards_by_id(id: ID!): DNA_cards
+  DNA_cards_by_version(id: ID!, version: String!): version_DNA_cards
   DNA_cards_translations(filter: DNA_cards_translations_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [DNA_cards_translations!]!
   DNA_cards_translations_aggregated(filter: DNA_cards_translations_filter, groupBy: [String], limit: Int, offset: Int, page: Int, search: String, sort: [String]): [DNA_cards_translations_aggregated!]!
   DNA_cards_translations_by_id(id: ID!): DNA_cards_translations
+  DNA_cards_translations_by_version(id: ID!, version: String!): version_DNA_cards_translations
   DNA_content: DNA_content
+  DNA_content_by_version(version: String!): version_DNA_content
   DNA_content_translations(filter: DNA_content_translations_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [DNA_content_translations!]!
   DNA_content_translations_aggregated(filter: DNA_content_translations_filter, groupBy: [String], limit: Int, offset: Int, page: Int, search: String, sort: [String]): [DNA_content_translations_aggregated!]!
   DNA_content_translations_by_id(id: ID!): DNA_content_translations
+  DNA_content_translations_by_version(id: ID!, version: String!): version_DNA_content_translations
   approach_card(filter: approach_card_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [approach_card!]!
   approach_card_aggregated(filter: approach_card_filter, groupBy: [String], limit: Int, offset: Int, page: Int, search: String, sort: [String]): [approach_card_aggregated!]!
   approach_card_by_id(id: ID!): approach_card
+  approach_card_by_version(id: ID!, version: String!): version_approach_card
   approach_card_translations(filter: approach_card_translations_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [approach_card_translations!]!
   approach_card_translations_aggregated(filter: approach_card_translations_filter, groupBy: [String], limit: Int, offset: Int, page: Int, search: String, sort: [String]): [approach_card_translations_aggregated!]!
   approach_card_translations_by_id(id: ID!): approach_card_translations
+  approach_card_translations_by_version(id: ID!, version: String!): version_approach_card_translations
   approach_category(filter: approach_category_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [approach_category!]!
   approach_category_aggregated(filter: approach_category_filter, groupBy: [String], limit: Int, offset: Int, page: Int, search: String, sort: [String]): [approach_category_aggregated!]!
   approach_category_by_id(id: ID!): approach_category
+  approach_category_by_version(id: ID!, version: String!): version_approach_category
   approach_category_translations(filter: approach_category_translations_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [approach_category_translations!]!
   approach_category_translations_aggregated(filter: approach_category_translations_filter, groupBy: [String], limit: Int, offset: Int, page: Int, search: String, sort: [String]): [approach_category_translations_aggregated!]!
   approach_category_translations_by_id(id: ID!): approach_category_translations
+  approach_category_translations_by_version(id: ID!, version: String!): version_approach_category_translations
   approach_intro: approach_intro
+  approach_intro_by_version(version: String!): version_approach_intro
   approach_intro_translations(filter: approach_intro_translations_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [approach_intro_translations!]!
   approach_intro_translations_aggregated(filter: approach_intro_translations_filter, groupBy: [String], limit: Int, offset: Int, page: Int, search: String, sort: [String]): [approach_intro_translations_aggregated!]!
   approach_intro_translations_by_id(id: ID!): approach_intro_translations
+  approach_intro_translations_by_version(id: ID!, version: String!): version_approach_intro_translations
   case_study(filter: case_study_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [case_study!]!
   case_study_aggregated(filter: case_study_filter, groupBy: [String], limit: Int, offset: Int, page: Int, search: String, sort: [String]): [case_study_aggregated!]!
   case_study_by_id(id: ID!): case_study
+  case_study_by_version(id: ID!, version: String!): version_case_study
   case_study_section: case_study_section
+  case_study_section_by_version(version: String!): version_case_study_section
   case_study_section_translations(filter: case_study_section_translations_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [case_study_section_translations!]!
   case_study_section_translations_aggregated(filter: case_study_section_translations_filter, groupBy: [String], limit: Int, offset: Int, page: Int, search: String, sort: [String]): [case_study_section_translations_aggregated!]!
   case_study_section_translations_by_id(id: ID!): case_study_section_translations
+  case_study_section_translations_by_version(id: ID!, version: String!): version_case_study_section_translations
   case_study_translations(filter: case_study_translations_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [case_study_translations!]!
   case_study_translations_aggregated(filter: case_study_translations_filter, groupBy: [String], limit: Int, offset: Int, page: Int, search: String, sort: [String]): [case_study_translations_aggregated!]!
   case_study_translations_by_id(id: ID!): case_study_translations
+  case_study_translations_by_version(id: ID!, version: String!): version_case_study_translations
   contact_section: contact_section
+  contact_section_by_version(version: String!): version_contact_section
   contact_section_translations(filter: contact_section_translations_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [contact_section_translations!]!
   contact_section_translations_aggregated(filter: contact_section_translations_filter, groupBy: [String], limit: Int, offset: Int, page: Int, search: String, sort: [String]): [contact_section_translations_aggregated!]!
   contact_section_translations_by_id(id: ID!): contact_section_translations
+  contact_section_translations_by_version(id: ID!, version: String!): version_contact_section_translations
   fdti_section: fdti_section
+  fdti_section_by_version(version: String!): version_fdti_section
   fdti_section_translations(filter: fdti_section_translations_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [fdti_section_translations!]!
   fdti_section_translations_aggregated(filter: fdti_section_translations_filter, groupBy: [String], limit: Int, offset: Int, page: Int, search: String, sort: [String]): [fdti_section_translations_aggregated!]!
   fdti_section_translations_by_id(id: ID!): fdti_section_translations
+  fdti_section_translations_by_version(id: ID!, version: String!): version_fdti_section_translations
   hero_section: hero_section
+  hero_section_by_version(version: String!): version_hero_section
   hero_section_translations(filter: hero_section_translations_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [hero_section_translations!]!
   hero_section_translations_aggregated(filter: hero_section_translations_filter, groupBy: [String], limit: Int, offset: Int, page: Int, search: String, sort: [String]): [hero_section_translations_aggregated!]!
   hero_section_translations_by_id(id: ID!): hero_section_translations
+  hero_section_translations_by_version(id: ID!, version: String!): version_hero_section_translations
   languages(filter: languages_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [languages!]!
   languages_aggregated(filter: languages_filter, groupBy: [String], limit: Int, offset: Int, page: Int, search: String, sort: [String]): [languages_aggregated!]!
   languages_by_id(id: ID!): languages
+  languages_by_version(id: ID!, version: String!): version_languages
   meta_tags: meta_tags
+  meta_tags_by_version(version: String!): version_meta_tags
   meta_tags_page(filter: meta_tags_page_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [meta_tags_page!]!
   meta_tags_page_aggregated(filter: meta_tags_page_filter, groupBy: [String], limit: Int, offset: Int, page: Int, search: String, sort: [String]): [meta_tags_page_aggregated!]!
   meta_tags_page_by_id(id: ID!): meta_tags_page
+  meta_tags_page_by_version(id: ID!, version: String!): version_meta_tags_page
   meta_tags_page_translations(filter: meta_tags_page_translations_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [meta_tags_page_translations!]!
   meta_tags_page_translations_aggregated(filter: meta_tags_page_translations_filter, groupBy: [String], limit: Int, offset: Int, page: Int, search: String, sort: [String]): [meta_tags_page_translations_aggregated!]!
   meta_tags_page_translations_by_id(id: ID!): meta_tags_page_translations
+  meta_tags_page_translations_by_version(id: ID!, version: String!): version_meta_tags_page_translations
   privacy: privacy
+  privacy_by_version(version: String!): version_privacy
   privacy_translations(filter: privacy_translations_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [privacy_translations!]!
   privacy_translations_aggregated(filter: privacy_translations_filter, groupBy: [String], limit: Int, offset: Int, page: Int, search: String, sort: [String]): [privacy_translations_aggregated!]!
   privacy_translations_by_id(id: ID!): privacy_translations
+  privacy_translations_by_version(id: ID!, version: String!): version_privacy_translations
   technology_category(filter: technology_category_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [technology_category!]!
   technology_category_aggregated(filter: technology_category_filter, groupBy: [String], limit: Int, offset: Int, page: Int, search: String, sort: [String]): [technology_category_aggregated!]!
   technology_category_by_id(id: ID!): technology_category
+  technology_category_by_version(id: ID!, version: String!): version_technology_category
   technology_category_translations(filter: technology_category_translations_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [technology_category_translations!]!
   technology_category_translations_aggregated(filter: technology_category_translations_filter, groupBy: [String], limit: Int, offset: Int, page: Int, search: String, sort: [String]): [technology_category_translations_aggregated!]!
   technology_category_translations_by_id(id: ID!): technology_category_translations
+  technology_category_translations_by_version(id: ID!, version: String!): version_technology_category_translations
   technology_content: technology_content
+  technology_content_by_version(version: String!): version_technology_content
   technology_content_translations(filter: technology_content_translations_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [technology_content_translations!]!
   technology_content_translations_aggregated(filter: technology_content_translations_filter, groupBy: [String], limit: Int, offset: Int, page: Int, search: String, sort: [String]): [technology_content_translations_aggregated!]!
   technology_content_translations_by_id(id: ID!): technology_content_translations
+  technology_content_translations_by_version(id: ID!, version: String!): version_technology_content_translations
   technology_item(filter: technology_item_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [technology_item!]!
   technology_item_aggregated(filter: technology_item_filter, groupBy: [String], limit: Int, offset: Int, page: Int, search: String, sort: [String]): [technology_item_aggregated!]!
   technology_item_by_id(id: ID!): technology_item
+  technology_item_by_version(id: ID!, version: String!): version_technology_item
   trust_company(filter: trust_company_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [trust_company!]!
   trust_company_aggregated(filter: trust_company_filter, groupBy: [String], limit: Int, offset: Int, page: Int, search: String, sort: [String]): [trust_company_aggregated!]!
   trust_company_by_id(id: ID!): trust_company
+  trust_company_by_version(id: ID!, version: String!): version_trust_company
   trust_content: trust_content
+  trust_content_by_version(version: String!): version_trust_content
   trust_content_translations(filter: trust_content_translations_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [trust_content_translations!]!
   trust_content_translations_aggregated(filter: trust_content_translations_filter, groupBy: [String], limit: Int, offset: Int, page: Int, search: String, sort: [String]): [trust_content_translations_aggregated!]!
   trust_content_translations_by_id(id: ID!): trust_content_translations
+  trust_content_translations_by_version(id: ID!, version: String!): version_trust_content_translations
+}
+
+type Subscription {
+  CGU_mutated(event: EventEnum): CGU_mutated
+  CGU_translations_mutated(event: EventEnum): CGU_translations_mutated
+  CII_mutated(event: EventEnum): CII_mutated
+  CII_translations_mutated(event: EventEnum): CII_translations_mutated
+  DNA_cards_mutated(event: EventEnum): DNA_cards_mutated
+  DNA_cards_translations_mutated(event: EventEnum): DNA_cards_translations_mutated
+  DNA_content_mutated(event: EventEnum): DNA_content_mutated
+  DNA_content_translations_mutated(event: EventEnum): DNA_content_translations_mutated
+  approach_card_mutated(event: EventEnum): approach_card_mutated
+  approach_card_translations_mutated(event: EventEnum): approach_card_translations_mutated
+  approach_category_mutated(event: EventEnum): approach_category_mutated
+  approach_category_translations_mutated(event: EventEnum): approach_category_translations_mutated
+  approach_intro_mutated(event: EventEnum): approach_intro_mutated
+  approach_intro_translations_mutated(event: EventEnum): approach_intro_translations_mutated
+  case_study_mutated(event: EventEnum): case_study_mutated
+  case_study_section_mutated(event: EventEnum): case_study_section_mutated
+  case_study_section_translations_mutated(event: EventEnum): case_study_section_translations_mutated
+  case_study_translations_mutated(event: EventEnum): case_study_translations_mutated
+  contact_section_mutated(event: EventEnum): contact_section_mutated
+  contact_section_translations_mutated(event: EventEnum): contact_section_translations_mutated
+  directus_files_mutated(event: EventEnum): directus_files_mutated
+  fdti_section_mutated(event: EventEnum): fdti_section_mutated
+  fdti_section_translations_mutated(event: EventEnum): fdti_section_translations_mutated
+  hero_section_mutated(event: EventEnum): hero_section_mutated
+  hero_section_translations_mutated(event: EventEnum): hero_section_translations_mutated
+  languages_mutated(event: EventEnum): languages_mutated
+  meta_tags_mutated(event: EventEnum): meta_tags_mutated
+  meta_tags_page_mutated(event: EventEnum): meta_tags_page_mutated
+  meta_tags_page_translations_mutated(event: EventEnum): meta_tags_page_translations_mutated
+  privacy_mutated(event: EventEnum): privacy_mutated
+  privacy_translations_mutated(event: EventEnum): privacy_translations_mutated
+  technology_category_mutated(event: EventEnum): technology_category_mutated
+  technology_category_translations_mutated(event: EventEnum): technology_category_translations_mutated
+  technology_content_mutated(event: EventEnum): technology_content_mutated
+  technology_content_translations_mutated(event: EventEnum): technology_content_translations_mutated
+  technology_item_mutated(event: EventEnum): technology_item_mutated
+  trust_company_mutated(event: EventEnum): trust_company_mutated
+  trust_content_mutated(event: EventEnum): trust_content_mutated
+  trust_content_translations_mutated(event: EventEnum): trust_content_translations_mutated
 }
 
 type approach_card {
@@ -502,6 +636,12 @@ input approach_card_filter {
   user_updated: string_filter_operators
 }
 
+type approach_card_mutated {
+  data: approach_card
+  event: EventEnum
+  key: ID!
+}
+
 type approach_card_translations {
   approach_card_id(filter: approach_card_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): approach_card
   description: String
@@ -544,6 +684,12 @@ input approach_card_translations_filter {
   id: number_filter_operators
   languages_code: languages_filter
   title: string_filter_operators
+}
+
+type approach_card_translations_mutated {
+  data: approach_card_translations
+  event: EventEnum
+  key: ID!
 }
 
 type approach_category {
@@ -618,6 +764,12 @@ input approach_category_filter {
   value: string_filter_operators
 }
 
+type approach_category_mutated {
+  data: approach_category
+  event: EventEnum
+  key: ID!
+}
+
 type approach_category_translations {
   approach_category_id(filter: approach_category_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): approach_category
   id: ID!
@@ -659,6 +811,12 @@ input approach_category_translations_filter {
   title: string_filter_operators
 }
 
+type approach_category_translations_mutated {
+  data: approach_category_translations
+  event: EventEnum
+  key: ID!
+}
+
 type approach_intro {
   date_created: Date
   date_created_func: datetime_functions
@@ -683,6 +841,12 @@ input approach_intro_filter {
   translations: approach_intro_translations_filter
   translations_func: count_function_filter_operators
   user_updated: string_filter_operators
+}
+
+type approach_intro_mutated {
+  data: approach_intro
+  event: EventEnum
+  key: ID!
 }
 
 type approach_intro_translations {
@@ -730,6 +894,12 @@ input approach_intro_translations_filter {
   id: number_filter_operators
   languages_code: languages_filter
   title: string_filter_operators
+}
+
+type approach_intro_translations_mutated {
+  data: approach_intro_translations
+  event: EventEnum
+  key: ID!
 }
 
 type case_study {
@@ -806,6 +976,12 @@ input case_study_filter {
   user_updated: string_filter_operators
 }
 
+type case_study_mutated {
+  data: case_study
+  event: EventEnum
+  key: ID!
+}
+
 type case_study_section {
   case_study_list(filter: case_study_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [case_study]
   case_study_list_func: count_functions
@@ -830,6 +1006,12 @@ input case_study_section_filter {
   translations: case_study_section_translations_filter
   translations_func: count_function_filter_operators
   user_updated: string_filter_operators
+}
+
+type case_study_section_mutated {
+  data: case_study_section
+  event: EventEnum
+  key: ID!
 }
 
 type case_study_section_translations {
@@ -876,6 +1058,12 @@ input case_study_section_translations_filter {
   id: number_filter_operators
   languages_code: languages_filter
   title: string_filter_operators
+}
+
+type case_study_section_translations_mutated {
+  data: case_study_section_translations
+  event: EventEnum
+  key: ID!
 }
 
 type case_study_translations {
@@ -925,6 +1113,12 @@ input case_study_translations_filter {
   title: string_filter_operators
 }
 
+type case_study_translations_mutated {
+  data: case_study_translations
+  event: EventEnum
+  key: ID!
+}
+
 type contact_section {
   address: String
   company: String
@@ -957,6 +1151,12 @@ input contact_section_filter {
   translations: contact_section_translations_filter
   translations_func: count_function_filter_operators
   user_updated: string_filter_operators
+}
+
+type contact_section_mutated {
+  data: contact_section
+  event: EventEnum
+  key: ID!
 }
 
 type contact_section_translations {
@@ -1001,6 +1201,12 @@ input contact_section_translations_filter {
   id: number_filter_operators
   languages_code: languages_filter
   subtitle: string_filter_operators
+}
+
+type contact_section_translations_mutated {
+  data: contact_section_translations
+  event: EventEnum
+  key: ID!
 }
 
 input count_function_filter_operators {
@@ -1106,6 +1312,12 @@ input directus_files_filter {
   width: number_filter_operators
 }
 
+type directus_files_mutated {
+  data: directus_files
+  event: EventEnum
+  key: ID!
+}
+
 type fdti_section {
   date_updated: Date
   date_updated_func: datetime_functions
@@ -1128,6 +1340,12 @@ input fdti_section_filter {
   translations: fdti_section_translations_filter
   translations_func: count_function_filter_operators
   user_updated: string_filter_operators
+}
+
+type fdti_section_mutated {
+  data: fdti_section
+  event: EventEnum
+  key: ID!
 }
 
 type fdti_section_translations {
@@ -1189,6 +1407,12 @@ input fdti_section_translations_filter {
   subtitle: string_filter_operators
 }
 
+type fdti_section_translations_mutated {
+  data: fdti_section_translations
+  event: EventEnum
+  key: ID!
+}
+
 type hero_section {
   date_created: Date
   date_created_func: datetime_functions
@@ -1215,6 +1439,12 @@ input hero_section_filter {
   translations: hero_section_translations_filter
   translations_func: count_function_filter_operators
   user_updated: string_filter_operators
+}
+
+type hero_section_mutated {
+  data: hero_section
+  event: EventEnum
+  key: ID!
 }
 
 type hero_section_translations {
@@ -1270,6 +1500,12 @@ input hero_section_translations_filter {
   subtitle: string_filter_operators
 }
 
+type hero_section_translations_mutated {
+  data: hero_section_translations
+  event: EventEnum
+  key: ID!
+}
+
 type languages {
   code: ID!
   direction: String
@@ -1295,6 +1531,12 @@ input languages_filter {
   code: string_filter_operators
   direction: string_filter_operators
   name: string_filter_operators
+}
+
+type languages_mutated {
+  data: languages
+  event: EventEnum
+  key: ID!
 }
 
 type meta_tags {
@@ -1323,6 +1565,12 @@ input meta_tags_filter {
   status: string_filter_operators
   user_created: string_filter_operators
   user_updated: string_filter_operators
+}
+
+type meta_tags_mutated {
+  data: meta_tags
+  event: EventEnum
+  key: ID!
 }
 
 type meta_tags_page {
@@ -1390,6 +1638,12 @@ input meta_tags_page_filter {
   user_updated: string_filter_operators
 }
 
+type meta_tags_page_mutated {
+  data: meta_tags_page
+  event: EventEnum
+  key: ID!
+}
+
 type meta_tags_page_translations {
   description: String
   id: ID!
@@ -1434,6 +1688,12 @@ input meta_tags_page_translations_filter {
   title: string_filter_operators
 }
 
+type meta_tags_page_translations_mutated {
+  data: meta_tags_page_translations
+  event: EventEnum
+  key: ID!
+}
+
 input number_filter_operators {
   _between: [GraphQLStringOrFloat]
   _eq: GraphQLStringOrFloat
@@ -1473,6 +1733,12 @@ input privacy_filter {
   translations: privacy_translations_filter
   translations_func: count_function_filter_operators
   user_updated: string_filter_operators
+}
+
+type privacy_mutated {
+  data: privacy
+  event: EventEnum
+  key: ID!
 }
 
 type privacy_translations {
@@ -1519,18 +1785,28 @@ input privacy_translations_filter {
   title: string_filter_operators
 }
 
+type privacy_translations_mutated {
+  data: privacy_translations
+  event: EventEnum
+  key: ID!
+}
+
 input string_filter_operators {
   _contains: String
   _empty: Boolean
   _ends_with: String
   _eq: String
   _icontains: String
+  _iends_with: String
   _in: [String]
+  _istarts_with: String
   _ncontains: String
   _nempty: Boolean
   _nends_with: String
   _neq: String
+  _niends_with: String
   _nin: [String]
+  _nistarts_with: String
   _nnull: Boolean
   _nstarts_with: String
   _null: Boolean
@@ -1611,6 +1887,12 @@ input technology_category_filter {
   user_updated: string_filter_operators
 }
 
+type technology_category_mutated {
+  data: technology_category
+  event: EventEnum
+  key: ID!
+}
+
 type technology_category_translations {
   category(filter: technology_content_translations_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): technology_content_translations
   description: String
@@ -1656,6 +1938,12 @@ input technology_category_translations_filter {
   technology_category_id: technology_category_filter
 }
 
+type technology_category_translations_mutated {
+  data: technology_category_translations
+  event: EventEnum
+  key: ID!
+}
+
 type technology_content {
   date_created: Date
   date_created_func: datetime_functions
@@ -1684,6 +1972,12 @@ input technology_content_filter {
   translations: technology_content_translations_filter
   translations_func: count_function_filter_operators
   user_updated: string_filter_operators
+}
+
+type technology_content_mutated {
+  data: technology_content
+  event: EventEnum
+  key: ID!
 }
 
 type technology_content_translations {
@@ -1730,6 +2024,12 @@ input technology_content_translations_filter {
   subtitle: string_filter_operators
   technology_content_id: technology_content_filter
   title: string_filter_operators
+}
+
+type technology_content_translations_mutated {
+  data: technology_content_translations
+  event: EventEnum
+  key: ID!
 }
 
 type technology_item {
@@ -1792,6 +2092,12 @@ input technology_item_filter {
   user_updated: string_filter_operators
 }
 
+type technology_item_mutated {
+  data: technology_item
+  event: EventEnum
+  key: ID!
+}
+
 type trust_company {
   companies(filter: trust_content_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): trust_content
   date_created: Date
@@ -1849,6 +2155,12 @@ input trust_company_filter {
   user_updated: string_filter_operators
 }
 
+type trust_company_mutated {
+  data: trust_company
+  event: EventEnum
+  key: ID!
+}
+
 type trust_content {
   company_list(filter: trust_company_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [trust_company]
   company_list_func: count_functions
@@ -1877,6 +2189,12 @@ input trust_content_filter {
   translations: trust_content_translations_filter
   translations_func: count_function_filter_operators
   user_updated: string_filter_operators
+}
+
+type trust_content_mutated {
+  data: trust_content
+  event: EventEnum
+  key: ID!
 }
 
 type trust_content_translations {
@@ -1921,4 +2239,491 @@ input trust_content_translations_filter {
   languages_code: languages_filter
   title: string_filter_operators
   trust_content_id: trust_content_filter
+}
+
+type trust_content_translations_mutated {
+  data: trust_content_translations
+  event: EventEnum
+  key: ID!
+}
+
+""""""
+type version_CGU {
+  date_created: Date
+  date_created_func: datetime_functions
+  date_updated: Date
+  date_updated_func: datetime_functions
+  id: ID!
+  status: String
+  translations: JSON
+  translations_func: count_functions
+  user_updated: String
+}
+
+""""""
+type version_CGU_translations {
+  CGU_id: Int
+  content: String
+  id: ID!
+  languages_code: String
+  title: String
+}
+
+""""""
+type version_CII {
+  date_created: Date
+  date_created_func: datetime_functions
+  date_updated: Date
+  date_updated_func: datetime_functions
+  id: ID!
+  image: String
+  status: String
+  translations: JSON
+  translations_func: count_functions
+  user_created: String
+  user_updated: String
+}
+
+""""""
+type version_CII_translations {
+  CII_id: Int
+  description: String
+  id: ID!
+  languages_code: String
+}
+
+""""""
+type version_DNA_cards {
+  date_created: Date
+  date_created_func: datetime_functions
+  date_updated: Date
+  date_updated_func: datetime_functions
+  icon: String
+  id: ID!
+  name: Int
+  order: Int
+  status: String
+  title: String
+  translations: JSON
+  translations_func: count_functions
+  user_updated: String
+}
+
+""""""
+type version_DNA_cards_translations {
+  DNA_cards_id: Int
+  card: Int
+  description: String
+  id: ID!
+  languages_code: String
+  title: String
+}
+
+""""""
+type version_DNA_content {
+  RGPD_img: String
+  card_list: JSON
+  card_list_func: count_functions
+  date_created: Date
+  date_created_func: datetime_functions
+  date_updated: Date
+  date_updated_func: datetime_functions
+  id: ID!
+  status: String
+  translations: JSON
+  translations_func: count_functions
+  user_updated: String
+}
+
+""""""
+type version_DNA_content_translations {
+  DNA_content_id: Int
+  description: String
+  id: ID!
+  languages_code: String
+  title: String
+}
+
+""""""
+type version_approach_card {
+  card_list: Int
+  date_created: Date
+  date_created_func: datetime_functions
+  date_updated: Date
+  date_updated_func: datetime_functions
+  icon: String
+  id: ID!
+  name: String
+  order: Int
+  status: String
+  translations: JSON
+  translations_func: count_functions
+  user_updated: String
+}
+
+""""""
+type version_approach_card_translations {
+  approach_card_id: Int
+  description: String
+  id: ID!
+  languages_code: String
+  title: String
+}
+
+""""""
+type version_approach_category {
+  Name: String
+  card_list: JSON
+  card_list_func: count_functions
+  charge: String
+  date_created: Date
+  date_created_func: datetime_functions
+  date_updated: Date
+  date_updated_func: datetime_functions
+  icon: String
+  id: ID!
+  order_value: String
+  status: String
+  translations: JSON
+  translations_func: count_functions
+  user_updated: String
+  value: String
+}
+
+""""""
+type version_approach_category_translations {
+  approach_category_id: Int
+  id: ID!
+  languages_code: String
+  title: String
+}
+
+""""""
+type version_approach_intro {
+  date_created: Date
+  date_created_func: datetime_functions
+  date_updated: Date
+  date_updated_func: datetime_functions
+  id: ID!
+  status: String
+  translations: JSON
+  translations_func: count_functions
+  user_updated: String
+}
+
+""""""
+type version_approach_intro_translations {
+  approach_intro_id: Int
+  description: String
+  description_2: String
+  id: ID!
+  languages_code: String
+  title: String
+}
+
+""""""
+type version_case_study {
+  date_created: Date
+  date_created_func: datetime_functions
+  date_updated: Date
+  date_updated_func: datetime_functions
+  id: ID!
+  img: String
+  list: Int
+  slug: String
+  status: String
+  tags: JSON
+  tags_func: count_functions
+  title: Int
+  translations: JSON
+  translations_func: count_functions
+  user_created: String
+  user_updated: String
+}
+
+""""""
+type version_case_study_section {
+  case_study_list: JSON
+  case_study_list_func: count_functions
+  date_updated: Date
+  date_updated_func: datetime_functions
+  id: ID!
+  status: String
+  translations: JSON
+  translations_func: count_functions
+  user_updated: String
+}
+
+""""""
+type version_case_study_section_translations {
+  case_study_list: JSON
+  case_study_section_id: Int
+  description: String
+  id: ID!
+  languages_code: String
+  title: String
+}
+
+""""""
+type version_case_study_translations {
+  case_study_id: Int
+  content: String
+  description: String
+  id: ID!
+  languages_code: String
+  title: String
+}
+
+""""""
+type version_contact_section {
+  address: String
+  company: String
+  date_created: Date
+  date_created_func: datetime_functions
+  date_updated: Date
+  date_updated_func: datetime_functions
+  id: ID!
+  mail: String
+  status: String
+  title: String
+  translations: JSON
+  translations_func: count_functions
+  user_updated: String
+}
+
+""""""
+type version_contact_section_translations {
+  btn_contact: String
+  contact_section_id: Int
+  id: ID!
+  languages_code: String
+  subtitle: String
+}
+
+""""""
+type version_fdti_section {
+  date_updated: Date
+  date_updated_func: datetime_functions
+  id: ID!
+  status: String
+  title: String
+  translations: JSON
+  translations_func: count_functions
+  user_updated: String
+}
+
+""""""
+type version_fdti_section_translations {
+  btn_label: String
+  btn_name: String
+  content_1: String
+  content_2: String
+  fdti_section_id: Int
+  icon_1: String
+  icon_2: String
+  id: ID!
+  languages_code: String
+  subtitle: String
+}
+
+""""""
+type version_hero_section {
+  date_created: Date
+  date_created_func: datetime_functions
+  date_updated: Date
+  date_updated_func: datetime_functions
+  id: ID!
+  status: String
+  title: String
+  translations: JSON
+  translations_func: count_functions
+  user_updated: String
+}
+
+""""""
+type version_hero_section_translations {
+  brochure_link: String
+  btn_brochure: String
+  btn_contact: String
+  description: String
+  hero_section_id: Int
+  id: ID!
+  languages_code: String
+  subtitle: String
+}
+
+""""""
+type version_languages {
+  code: ID!
+  direction: String
+  name: String
+}
+
+""""""
+type version_meta_tags {
+  date_created: Date
+  date_created_func: datetime_functions
+  date_updated: Date
+  date_updated_func: datetime_functions
+  id: ID!
+  page_tags: JSON
+  page_tags_func: count_functions
+  status: String
+  user_created: String
+  user_updated: String
+}
+
+""""""
+type version_meta_tags_page {
+  date_created: Date
+  date_created_func: datetime_functions
+  date_updated: Date
+  date_updated_func: datetime_functions
+  id: ID!
+  img: String
+  page_tags: Int
+  status: String
+  translations: JSON
+  translations_func: count_functions
+  url: String
+  user_created: String
+  user_updated: String
+}
+
+""""""
+type version_meta_tags_page_translations {
+  description: String
+  id: ID!
+  languages_code: String
+  meta_tags_page_id: Int
+  title: String
+}
+
+""""""
+type version_privacy {
+  date_created: Date
+  date_created_func: datetime_functions
+  date_updated: Date
+  date_updated_func: datetime_functions
+  id: ID!
+  status: String
+  translations: JSON
+  translations_func: count_functions
+  user_updated: String
+}
+
+""""""
+type version_privacy_translations {
+  content: String
+  id: ID!
+  languages_code: String
+  privacy_id: Int
+  title: String
+}
+
+""""""
+type version_technology_category {
+  category: Int
+  category_icon: String
+  date_created: Date
+  date_created_func: datetime_functions
+  date_updated: Date
+  date_updated_func: datetime_functions
+  id: ID!
+  name: Int
+  order: String
+  status: String
+  technology_list: JSON
+  technology_list_func: count_functions
+  title: String
+  translations: JSON
+  translations_func: count_functions
+  user_updated: String
+}
+
+""""""
+type version_technology_category_translations {
+  category: Int
+  description: String
+  id: ID!
+  languages_code: String
+  technology_category_id: Int
+}
+
+""""""
+type version_technology_content {
+  date_created: Date
+  date_created_func: datetime_functions
+  date_updated: Date
+  date_updated_func: datetime_functions
+  id: ID!
+  status: String
+  technology_category_list: JSON
+  technology_category_list_func: count_functions
+  translations: JSON
+  translations_func: count_functions
+  user_updated: String
+}
+
+""""""
+type version_technology_content_translations {
+  categories: JSON
+  id: ID!
+  languages_code: String
+  subtitle: String
+  technology_content_id: Int
+  title: String
+}
+
+""""""
+type version_technology_item {
+  date_created: Date
+  date_created_func: datetime_functions
+  date_updated: Date
+  date_updated_func: datetime_functions
+  id: ID!
+  img: String
+  name: String
+  status: String
+  technology_list: Int
+  url: String
+  user_updated: String
+}
+
+""""""
+type version_trust_company {
+  companies: Int
+  date_created: Date
+  date_created_func: datetime_functions
+  date_updated: Date
+  date_updated_func: datetime_functions
+  id: ID!
+  img: String
+  name: String
+  status: String
+  user_updated: String
+}
+
+""""""
+type version_trust_content {
+  company_list: JSON
+  company_list_func: count_functions
+  date_created: Date
+  date_created_func: datetime_functions
+  date_updated: Date
+  date_updated_func: datetime_functions
+  id: ID!
+  status: String
+  translations: JSON
+  translations_func: count_functions
+  user_updated: String
+}
+
+""""""
+type version_trust_content_translations {
+  CII_description: String
+  id: ID!
+  languages_code: String
+  title: String
+  trust_content_id: Int
 }

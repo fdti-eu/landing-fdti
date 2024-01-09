@@ -5,7 +5,7 @@
 	import { browser } from '$app/environment';
 	import { page } from '$app/stores';
 	import { MetaTags } from 'svelte-meta-tags';
-	import CaseStudyItem from '../(home)/CaseStudyItem.svelte';
+	import CaseStudyItem from '../[[local]]/(home)/CaseStudyItem.svelte';
 
 	export let data: PageData;
 	let metatags;

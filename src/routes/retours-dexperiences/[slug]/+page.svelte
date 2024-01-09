@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { locale } from 'svelte-i18n';
 	import { MetaTags } from 'svelte-meta-tags';
-	import CaseStudyTag from '../../(home)/CaseStudyTag.svelte';
+	import CaseStudyTag from '../../[[local]]/(home)/CaseStudyTag.svelte';
 	import type { PageData } from './$houdini';
 
 	export let data: PageData;
