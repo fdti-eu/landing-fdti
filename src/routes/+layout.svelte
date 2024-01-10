@@ -11,7 +11,7 @@
 {#if !$isLoading}
 	<div class="min-h-screen flex flex-col font-quattrocento ">
 		<NavigationBar />
-		<main class="flex-1 pt-14 md:pt-20">
+		<main class="flex-1">
 			<slot />
 		</main>
 		<Footer />

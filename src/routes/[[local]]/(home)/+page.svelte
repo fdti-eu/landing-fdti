@@ -1,5 +1,5 @@
 <script lang="ts">
-	import CtaSection from './CTASection.svelte';
+	import Hero from './Hero.svelte';
 	import FdtiSection from './FdtiSection.svelte';
 	import TechnologiesSection from './TechnologiesSection.svelte';
 	import ConfianceSection from './ConfianceSection.svelte';
@@ -59,13 +59,10 @@
 	/>
 {/if}
 
-<div class=" h-2 -mt-10 " id="cta" />
-
 {#if browser && pageContent}
-	<CtaSection content={pageContent.hero_section} />
+	<Hero content={pageContent.hero_section} />
 	<div class="max-w-6xl mx-auto px-2 md:px-12">
 		<FdtiSection content={pageContent.fdti_section} />
-		<!-- <CaseStudy content={pageContent.case_study_section} /> -->
 		<TechnologiesSection content={pageContent.technology_content} />
 		<ConfianceSection content={pageContent.trust_content} cii={pageContent.CII} />
 	</div>
