@@ -4,13 +4,15 @@
 	import Footer from './Footer.svelte';
 	import { page } from '$app/stores';
 	import NavigationBar from '../lib/components/NavigationBar.svelte';
+	import Navbar from '$lib/components/navbar/Navbar.svelte';
 
 	$: url = $page.url.pathname || '';
 </script>
 
 {#if !$isLoading}
 	<div class="min-h-screen flex flex-col font-quattrocento ">
-		<NavigationBar />
+		<!-- <NavigationBar /> -->
+		<Navbar />
 		<main class="flex-1">
 			<slot />
 		</main>

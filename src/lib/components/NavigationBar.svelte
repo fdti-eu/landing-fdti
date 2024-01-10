@@ -1,7 +1,7 @@
 <script>
 	import { page } from '$app/stores';
 	import { locale } from 'svelte-i18n';
-	import Hamburger from './Hamburger.svelte';
+	import Hamburger from './navbar/Hamburger.svelte';
 	import { goto } from '$app/navigation';
 	let language = false;
 	function handleOpenLanguage() {
@@ -117,7 +117,7 @@
 		</button>
 		{#if navbarOpen}
 			<nav
-				class="absolute top-full z-50 left-0 w-full sm:hidden  bg-darkGrey flex justify-center items-center"
+				class="absolute top-full z-50 left-0 w-full bg-darkGrey sm:hidden  flex justify-center items-center"
 			>
 				<ul class="flex gap-6 text-white flex-col sm:flex-row pb-6">
 					<li><a href="/" class={$page.url.pathname === '/' ? 'text-yellow' : ''}>Home</a></li>
