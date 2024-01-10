@@ -2,6 +2,7 @@
 	import { page } from '$app/stores';
 	import { locale } from 'svelte-i18n';
 	import Hamburger from './Hamburger.svelte';
+	import { goto } from '$app/navigation';
 	let language = false;
 	function handleOpenLanguage() {
 		language = !language;
@@ -16,8 +17,10 @@
 
 	async function handleChangeLocale() {
 		$locale === 'fr' ? ($locale = 'en') : ($locale = 'fr');
+		const link = $page.url.pathname.replace(/^\/[^\/]*/, '/' + $locale);
+		goto(link);
 	}
-	$: if ($page.url.pathname) handleCloseNav();
+	$: if ($page.url) handleCloseNav();
 </script>
 
 {#if $locale}
@@ -27,16 +30,18 @@
 		<a href="/" class="flex items-center gap-3" aria-label="Go back to home page">
 			<span
 				class="flex overflow-hidden w-12 h-12 justify-center items-center rounded-full bg-grey-2 border border-yellow "
-				><img
+			>
+				<img
 					class="w-8"
 					src="/images/fdti_vector_54px.svg"
 					alt="Logo fdti"
 					title="logo fdti"
 					height="48px"
 					width="48px"
-				/></span
+				/>
+			</span>
+			<span class="text-yellow font-bold text-lg hidden lg:inline">FDTI - From Data To Insight</span
 			>
-			<span class="text-yellow font-bold text-lg hidden lg:inline">FDTI - From Data To Insight</span>
 		</a>
 		<nav class=" fixed  left-1/2  -translate-x-1/2 hidden sm:block">
 			<ul class="flex gap-2 sm:gap-5 text-white">

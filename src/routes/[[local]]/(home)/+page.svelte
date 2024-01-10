@@ -5,7 +5,6 @@
 	import ConfianceSection from './ConfianceSection.svelte';
 	import ContactSection from './ContactSection.svelte';
 	import type { PageData } from './$houdini';
-	import { browser } from '$app/environment';
 	import { MetaTags } from 'svelte-meta-tags';
 
 	export let data: PageData;
@@ -59,7 +58,7 @@
 	/>
 {/if}
 
-{#if browser && pageContent}
+{#if pageContent}
 	<Hero content={pageContent.hero_section} />
 	<div class="max-w-6xl mx-auto px-2 md:px-12">
 		<FdtiSection content={pageContent.fdti_section} />
