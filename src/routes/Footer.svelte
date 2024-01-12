@@ -8,14 +8,14 @@
 	<div class="max-w-screen-wrap mx-auto px-3 wrap:px-5">
 		<div class="flex flex-col gap-8 md:flex-row justify-between items-center">
 			<p class="text-white text-center">&copy; FDTI</p>
-			<div class="flex  items-center  gap-3 flex-wrap justify-center">
+			<div class="flex items-center gap-4 flex-wrap justify-center">
 				<a
-					href="/confidentialite"
+					href="/{$locale}/confidentialite"
 					class="font-medium leading-none text-white hover:text-yellow transition-all ease-in-out duration-300"
 					>{$locale === 'fr' ? 'Politique de confidentialité' : 'Privacy'}</a
 				>
 				<a
-					href="/condition-utilisation"
+					href="/{$locale}/condition-utilisation"
 					class="font-medium leading-none text-white hover:text-yellow transition-all ease-in-out duration-300 sm:pl-2"
 					>{$locale === 'fr' ? 'Conditions d’utilisation' : 'Terms of use'}</a
 				>
