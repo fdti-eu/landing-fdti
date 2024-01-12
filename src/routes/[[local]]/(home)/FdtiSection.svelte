@@ -22,7 +22,7 @@
 			{translatedContent.subtitle}
 		</h3>
 		<article
-			class="w-full flex flex-col items-center mx-auto gap-8 md:flex-row md:items-start md:gap-16"
+			class="w-full flex flex-col items-center mx-auto gap-8 md:pt-14 md:flex-row md:items-start md:gap-16"
 		>
 			<img
 				src="https://cms.fdti.eu/assets/{translatedContent.icon_1?.filename_disk}"
