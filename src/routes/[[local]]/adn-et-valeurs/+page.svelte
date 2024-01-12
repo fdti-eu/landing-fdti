@@ -1,50 +1,46 @@
 <script lang="ts">
-	import { locale } from 'svelte-i18n';
-	import { getDNAPageContentStore } from '$houdini';
 	import AdNcard from './ADNcard.svelte';
 	import type { PageData } from './$houdini';
-	import { browser } from '$app/environment';
-	import { page } from '$app/stores';
 	import { MetaTags } from 'svelte-meta-tags';
 
 	export let data: PageData;
-	let translatedContent;
-	let metatags;
-	let translatedMetatags;
-	$: ({ getDNAPageContent } = data);
-	$: pageContent = $getDNAPageContent?.data;
-	$: if (browser && $locale) refreshContent();
+	$: ({ GetDNAPageContent } = data);
 
-	async function refreshContent() {
-		let store = new getDNAPageContentStore();
-		let result = await store.fetch({
-			variables: { name: $locale === 'fr' ? 'French' : 'English', url: $page.url.pathname }
-		});
-		pageContent = result.data;
-	}
-
-	$: if (pageContent?.DNA_content?.translations?.length)
-		translatedContent = pageContent?.DNA_content?.translations[0];
+	$: translatedContent = pageContent?.DNA_content?.translations?.length
+		? pageContent?.DNA_content?.translations[0]
+		: null;
+	$: items = pageContent?.meta_tags?.page_tags || [];
+	$: metatags = {
+		url: items[0]?.url || '/',
+		img: items[0]?.img?.id ? `https://cms.fdti.eu/assets/${items[0]?.img.id}` : '/logo.png',
+		description:
+			items[0]?.translations && items[0]?.translations[0]?.description
+				? items[0]?.translations[0]?.description
+				: '',
+		title:
+			items[0]?.translations && items[0]?.translations[0]?.title
+				? items[0]?.translations[0]?.title
+				: 'FDTI'
+	};
+	$: pageContent = $GetDNAPageContent?.data;
 	$: cardList = pageContent?.DNA_content?.card_list;
-	$: if (pageContent?.meta_tags?.page_tags?.length) metatags = pageContent?.meta_tags?.page_tags[0];
-	$: if (metatags?.translations?.length) translatedMetatags = metatags.translations[0];
 </script>
 
-{#if translatedMetatags && metatags}
+{#if metatags}
 	<MetaTags
-		title={translatedMetatags.title}
-		description={translatedMetatags.description}
+		title={metatags.title}
+		description={metatags.description}
 		canonical="https://www.fdti.eu{metatags.url}"
 		openGraph={{
 			type: 'website',
 			url: `${metatags.url}`,
-			title: `${translatedMetatags.title}`,
-			description: `${translatedMetatags.description}`,
+			title: `${metatags.title}`,
+			description: `${metatags.description}`,
 			images: [
 				{
-					url: `https://cms.fdti.eu/assets/${metatags?.img?.id}`,
+					url: `https://cms.fdti.eu/assets/${metatags?.img}`,
 
-					alt: `${translatedMetatags.description}`
+					alt: `${metatags.description}`
 				}
 			],
 			site_name: 'FDTI'
@@ -53,50 +49,40 @@
 			handle: '@handle',
 			site: '@site',
 			cardType: 'summary_large_image',
-			title: `${translatedMetatags.title}`,
-			description: `${translatedMetatags.description}`,
+			title: `${metatags.title}`,
+			description: `${metatags.description}`,
 			image: `https://www.fdti.eu/images/fdti_vector_54px.svg`,
-			imageAlt: `${translatedMetatags.description}`
+			imageAlt: `${metatags.description}`
 		}}
 	/>
 {/if}
-{#if pageContent && translatedContent && cardList && pageContent.DNA_content?.status === 'published'}
-	<section class="relative pb-10 container mx-auto">
-		<div>
-			<div class="max-w-screen-wrap mx-auto px-3 wrap:px-5 py-20">
-				<!-- ADN -->
-				<div class="">
-					<div class="max-w-screen-mv mx-auto">
-						<h2 class="text-3xl md:text-4xl font-bold text-center ">
-							{translatedContent.title}
-						</h2>
-						<div class="flex justify-center my-2 relative h-4">
-							<span class="bg-yellow h-2 w-20  absolute top-1/2 -translate-y-1/2 z-10" />
-							<span
-								class="bg-black w-80 h-px absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2"
-							/>
-						</div>
-					</div>
 
-					<div class="grid md:grid-cols-3 lg:grid-cols-3 sm:grid-cols-2 gap-6 md:p-8 wrap:px-0 ">
-						{#each cardList as card}
-							<AdNcard content={card} />
-						{/each}
-					</div>
-					<div class="pt-5">
-						<p class="text-center px-4 sm:px-24">{@html translatedContent.description}</p>
-						<div class="pt-8 flex justify-center">
-							<img
-								src={'https://cms.fdti.eu/assets/' + pageContent?.DNA_content?.RGPD_img.id}
-								alt="RGPD"
-								title="RGPD"
-								width="100px"
-								height="100px"
-							/>
-						</div>
-					</div>
-				</div>
+{#if pageContent && translatedContent && cardList && pageContent.DNA_content?.status === 'published'}
+	<section class="relative max-w-screen-xl space-y-8 mx-auto py-16 mt-20 lg:px-12 md:py-24">
+		<div>
+			<h1 class="text-3xl font-bold text-center md:text-4xl">{translatedContent.title || ''}</h1>
+			<div class="relative h-4 flex justify-center my-2">
+				<div class="absolute top-1/2 -translate-y-1/2 h-2 w-20 bg-yellow z-10" />
+				<div
+					class="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 w-80 h-px bg-black"
+				/>
 			</div>
 		</div>
+		<div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-2 px-2 lg:gap-8">
+			{#each cardList as card}
+				<AdNcard content={card} />
+			{/each}
+		</div>
+
+		<p class="text-center px-4 pt-8">{@html translatedContent.description}</p>
+		<figure class="flex justify-center">
+			<img
+				src={'https://cms.fdti.eu/assets/' + pageContent?.DNA_content?.RGPD_img?.id}
+				alt="RGPD"
+				title="RGPD"
+				width="100px"
+				height="100px"
+			/>
+		</figure>
 	</section>
 {/if}

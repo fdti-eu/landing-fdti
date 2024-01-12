@@ -7,7 +7,6 @@
 
 {#if !$isLoading}
 	<div class="min-h-screen flex flex-col font-quattrocento ">
-		<!-- <NavigationBar /> -->
 		<Navbar />
 		<main class="flex-1">
 			<slot />
