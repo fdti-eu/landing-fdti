@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import LinkedinIcon from '$lib/components/LinkedinIcon.svelte';
 	import { locale } from 'svelte-i18n';
 </script>

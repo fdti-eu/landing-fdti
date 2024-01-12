@@ -1,25 +1,19 @@
-<script>
+<script lang="ts">
 	import { locale } from 'svelte-i18n';
 	import ApproachCard from './ApproachCard.svelte';
+	import type { GetApproachPageContent$result } from '$houdini';
 
-	export let content;
-	let chargeArray;
-	let valueArray;
-	$: translatedContent = content?.translations[0];
+	export let content: GetApproachPageContent$result['approach_category'][0];
 
-	function createArray(value) {
-		let array = [];
-		for (let i = 0; i < value; i++) {
-			array.push('full');
-		}
-		while (array.length < 4) {
-			array.push('empty');
-		}
-		return array;
+	$: chargeArray = content.charge ? createArray(parseInt(content.charge)) : [];
+	$: valueArray = content.value ? createArray(parseInt(content.value)) : [];
+	$: translatedContent = content?.translations?.length ? content?.translations[0] : null;
+
+	function createArray(value: number) {
+		const fullStars = Array(value).fill('full');
+		const emptyStars = Array(Math.max(4 - value, 0)).fill('empty');
+		return fullStars.concat(emptyStars);
 	}
-
-	$: if (content) chargeArray = createArray(content.charge);
-	$: if (content) valueArray = createArray(content.value);
 </script>
 
 {#if content && translatedContent}
@@ -86,11 +80,13 @@
 		</div>
 		<div class="pl-14 lg:pl-40 pt-10 pb-4 relative max-w-6xl">
 			<hr class="absolute left-6 border-l border-darkGrey h-full -top-4" />
-			<div class="grid sm:grid-cols-2 md:grid-cols-3 gap-10">
-				{#each content.card_list as card}
-					<ApproachCard content={card} />
-				{/each}
-			</div>
+			{#if content?.card_list?.length}
+				<div class="grid gap-10 sm:grid-cols-2 md:grid-cols-3">
+					{#each content.card_list as card}
+						<ApproachCard content={card} />
+					{/each}
+				</div>
+			{/if}
 		</div>
 	</div>
 {/if}

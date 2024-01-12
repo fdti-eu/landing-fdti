@@ -21,6 +21,7 @@
 
 <div class="relative w-fit {$$props.class}">
 	<button
+		aria-label="toggle language"
 		class="flex justify-center items-center gap-2 uppercase font-medium text-center rounded-full"
 		on:click={toggleLanguageDropdown}
 	>

@@ -12,17 +12,17 @@
 	$: ({ GetHomePageContent } = data);
 	$: pageContent = $GetHomePageContent?.data;
 
-	$: item = pageContent?.meta_tags?.page_tags || [];
+	$: items = pageContent?.meta_tags?.page_tags || [];
 	$: metatags = {
-		url: item[0]?.url || '/',
-		img: item[0]?.img?.id ? `https://cms.fdti.eu/assets/${item[0]?.img.id}` : '/logo.png',
+		url: items[0]?.url || '/',
+		img: items[0]?.img?.id ? `https://cms.fdti.eu/assets/${items[0]?.img.id}` : '/logo.png',
 		description:
-			item[0]?.translations && item[0]?.translations[0]?.description
-				? item[0]?.translations[0]?.description
+			items[0]?.translations && items[0]?.translations[0]?.description
+				? items[0]?.translations[0]?.description
 				: '',
 		title:
-			item[0]?.translations && item[0]?.translations[0]?.title
-				? item[0]?.translations[0]?.title
+			items[0]?.translations && items[0]?.translations[0]?.title
+				? items[0]?.translations[0]?.title
 				: 'FDTI'
 	};
 </script>

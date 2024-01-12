@@ -2,11 +2,7 @@
 	import '$lib/i18n';
 	import { isLoading, _ } from 'svelte-i18n';
 	import Footer from './Footer.svelte';
-	import { page } from '$app/stores';
-	import NavigationBar from '../lib/components/NavigationBar.svelte';
 	import Navbar from '$lib/components/navbar/Navbar.svelte';
-
-	$: url = $page.url.pathname || '';
 </script>
 
 {#if !$isLoading}
