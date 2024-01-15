@@ -1,6 +1,7 @@
 <script lang="ts">
 	import type { GetHomePageContent$result } from '$houdini';
 	import Button from '$lib/components/Button.svelte';
+	import { fade } from 'svelte/transition';
 
 	export let content: GetHomePageContent$result['hero_section'];
 
@@ -8,10 +9,17 @@
 </script>
 
 {#if content && translatedContent && content.status === 'published'}
-	<section class="relative h-screen flex items-center bg-gradient-1 px-2 py-16 md:px-4 md:py-24">
-		<div class="max-w-6xl mx-auto md:grid md:grid-cols-2 md:gap-4 lg:gap-10">
+	<section
+		class="relative h-screen flex items-center bg-gradient-2 px-2 py-16 md:px-4 md:py-24"
+	>
+		<div
+			class="max-w-6xl mx-auto md:grid md:grid-cols-2 md:gap-4 lg:gap-10"
+			in:fade={{ duration: 500 }}
+		>
 			<div class="space-y-6 md:max-w-lg">
-				<div class="max-w-lg flex flex-col gap-4 pb-4 text-white text-center md:text-left md:text-xl lg:pr-20">
+				<div
+					class="max-w-lg flex flex-col gap-4 pb-4 text-white text-center md:text-left md:text-xl lg:pr-20"
+				>
 					<h1 class="text-3xl font-bold text-white text-center sm:text-5xl md:text-left">
 						{content.title}
 					</h1>
@@ -24,7 +32,7 @@
 				</div>
 
 				<div class="w-fit flex flex-col items-stretch gap-4 mx-auto md:mx-0 md:flex-row">
-					<Button linkUrl={translatedContent.brochure_link || ""} color="yellow" isExternalLink>
+					<Button linkUrl={translatedContent.brochure_link || ''} color="yellow" isExternalLink>
 						{translatedContent.btn_brochure}
 					</Button>
 					<Button linkUrl="https://calendly.com/fdti/30min" color="white" isExternalLink>

@@ -14,7 +14,7 @@
 	async function handleChangeLocale(code: 'fr' | 'en') {
 		$locale = code;
 		const link = $page.url.pathname.replace(/^\/[^\/]*/, '/' + code);
-        isDropdownOpen = false;
+		isDropdownOpen = false;
 		goto(link);
 	}
 </script>
@@ -30,9 +30,7 @@
 	{#if isDropdownOpen}
 		<ul class="absolute top-full -left-6 w-fit mt-1 p-1 gap-1 bg-white rounded shadow-md">
 			{#each FLAGS as { code }}
-				<li
-					class="border-b border-darkGrey/20 last:border-none"
-				>
+				<li class="border-b border-darkGrey/20 last:border-none">
 					<button
 						value={code}
 						class="flex items-center gap-2 px-2 py-1 rounded w-fit"

@@ -1,5 +1,6 @@
 <script lang="ts">
 	import type { GetHomePageContent$result } from '$houdini';
+	import Underline from '$lib/components/Underline.svelte';
 
 	export let content: GetHomePageContent$result['trust_content'];
 	export let cii: GetHomePageContent$result['CII'];
@@ -8,17 +9,12 @@
 </script>
 
 {#if content && translatedContent && content.status === 'published'}
-	<section class="relative max-w-screen-lg space-y-8 mx-auto md:px-12 py-16 md:py-24" id="trust">
+	<section class="group/section relative max-w-screen-lg space-y-8 mx-auto md:px-12 py-16 md:py-24" id="trust">
 		<div>
 			<h2 class="text-3xl font-bold text-center md:text-4xl">
 				{translatedContent.title || 'Technologies'}
 			</h2>
-			<div class="relative h-4 flex justify-center my-2">
-				<div class="absolute top-1/2 -translate-y-1/2 h-2 w-20 bg-yellow z-10" />
-				<div
-					class="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 w-80 h-px bg-black"
-				/>
-			</div>
+			<Underline />
 		</div>
 		{#if content.company_list?.length}
 			<div class="flex flex-col items-center justify-center gap-10 md:flex-row">

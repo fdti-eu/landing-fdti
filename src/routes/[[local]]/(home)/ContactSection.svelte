@@ -1,5 +1,6 @@
 <script lang="ts">
 	import type { GetHomePageContent$result } from '$houdini';
+	import Underline from '$lib/components/Underline.svelte';
 
 	export let content: GetHomePageContent$result['contact_section'];
 
@@ -7,18 +8,13 @@
 </script>
 
 {#if content && translatedContent && content.status === 'published'}
-	<section class="bg-lightGrey py-12 md:py-24" id="contact">
+	<section class="group/section bg-lightGrey py-12 md:py-24" id="contact">
 		<div class="max-w-6xl mx-auto px-2 space-y-8 md:px-12 wrap:px-5">
 			<div>
 				<h2 class="text-3xl font-bold text-center md:text-4xl">
 					{content.title || 'Contact'}
 				</h2>
-				<div class="relative h-4 flex justify-center my-2">
-					<div class="absolute top-1/2 -translate-y-1/2 h-2 w-20 bg-yellow z-10" />
-					<div
-						class="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 w-80 h-px bg-black"
-					/>
-				</div>
+				<Underline />
 			</div>
 
 			<div class="flex flex-col items-center gap-12 lg:flex-row lg:items-start">

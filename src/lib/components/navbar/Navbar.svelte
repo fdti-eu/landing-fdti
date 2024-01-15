@@ -19,10 +19,10 @@
 <nav
 	class="{$page.url.pathname === '/' ||
 	($page.url.pathname === `/${$locale}` && windowY < windowHeight)
-		? 'absolute transition-all duration-300'
+		? 'absolute bg-transparent transition-all duration-300'
 		: ($page.url.pathname === '/' || ($page.url.pathname === `/${$locale}` && windowY > windowHeight))
-		? 'fixed bg-darkGrey transition-all duration-300'
-		: 'fixed bg-darkGrey'} top-0 left-0 w-full p-4 z-50 xl:p-8 "
+		? 'fixed transition-all duration-300'
+		: 'fixed'} bg-darkGrey top-0 left-0 w-full p-4 z-50 xl:p-8"
 >
 	<div
 		class="w-full max-w-screen-xl flex justify-between items-center gap-4 mx-auto md:grid md:grid-cols-5 xl:grid-cols-3 md:justify-items-center"
@@ -45,15 +45,15 @@
 		</a>
 		<ul
 			class="{isNavbarOpen
-				? 'absolute top-20 z-50 left-0 flex flex-col bg-darkGrey pl-16 md:static md:bg-transparent md:flex-row md:p-0'
-				: 'static hidden md:flex md:p-0'} whitespace-nowrap w-full gap-4 p-8 text-white md:col-span-3 lg:col-span-2 lg:gap-8 xl:col-span-1"
+				? 'absolute top-20 z-50 left-0 flex flex-col bg-black pl-16 md:static md:bg-transparent md:flex-row md:p-0'
+				: 'static hidden md:flex md:p-0'} whitespace-nowrap w-full gap-4 p-8 text-white transition-all md:col-span-3 lg:col-span-2 lg:gap-8 xl:col-span-1"
 		>
 			<li>
 				<a
 					href="/{$locale}"
-					class={$page.url.pathname === '/' || $page.url.pathname === `/${$locale}`
+					class="{$page.url.pathname === '/' || $page.url.pathname === `/${$locale}`
 						? 'text-yellow'
-						: ''}
+						: ''} w-20 hover:text-yellow transition-all duration-300"
 					on:click={handleToggleNav}
 				>
 					{$locale === 'fr' ? "Page d'accueil" : 'Home'}
@@ -62,7 +62,7 @@
 			<li>
 				<a
 					href="/{$locale}/approche-fdti"
-					class={$page.url.pathname.includes('/approche-fdti') ? 'text-yellow' : ''}
+					class="{$page.url.pathname.includes('/approche-fdti') ? 'text-yellow' : ''} w-20 hover:text-yellow transition-all duration-300"
 					on:click={handleToggleNav}
 				>
 					{$locale === 'fr' ? "L'approche FDTI" : 'The FDTI approach'}
@@ -71,7 +71,7 @@
 			<li>
 				<a
 					href="/{$locale}/adn-et-valeurs"
-					class={$page.url.pathname.includes('/adn-et-valeurs') ? 'text-yellow' : ''}
+					class="{$page.url.pathname.includes('/adn-et-valeurs') ? 'text-yellow' : ''} w-20 hover:text-yellow transition-all duration-300"
 					on:click={handleToggleNav}
 				>
 					{$locale === 'fr' ? 'ADN et valeurs' : 'DNA and values'}

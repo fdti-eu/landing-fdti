@@ -2,6 +2,8 @@
 	import AdNcard from './ADNcard.svelte';
 	import type { PageData } from './$houdini';
 	import { MetaTags } from 'svelte-meta-tags';
+	import Underline from '$lib/components/Underline.svelte';
+	import { fade } from 'svelte/transition';
 
 	export let data: PageData;
 	$: ({ GetDNAPageContent } = data);
@@ -58,15 +60,10 @@
 {/if}
 
 {#if pageContent && translatedContent && cardList && pageContent.DNA_content?.status === 'published'}
-	<section class="relative max-w-screen-xl space-y-8 mx-auto py-16 mt-20 lg:px-12 md:py-24">
+	<section class="group/section relative max-w-screen-xl space-y-8 mx-auto py-16 mt-20 lg:px-12 md:py-24" in:fade>
 		<div>
 			<h1 class="text-3xl font-bold text-center md:text-4xl">{translatedContent.title || ''}</h1>
-			<div class="relative h-4 flex justify-center my-2">
-				<div class="absolute top-1/2 -translate-y-1/2 h-2 w-20 bg-yellow z-10" />
-				<div
-					class="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 w-80 h-px bg-black"
-				/>
-			</div>
+			<Underline />
 		</div>
 		<div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-2 px-2 lg:gap-8">
 			{#each cardList as card}
