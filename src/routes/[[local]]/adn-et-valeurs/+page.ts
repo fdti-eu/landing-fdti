@@ -47,5 +47,5 @@ export function _GetDNAPageContentVariables({
 }): GetDNAPageContent$input {
 	const local = (params?.local as ILocal) || 'fr';
 	const code = getLocalCode(local);
-	return { code, url: '/adn-et-valeur' };
+	return { code, url: '/adn-et-valeurs' };
 }

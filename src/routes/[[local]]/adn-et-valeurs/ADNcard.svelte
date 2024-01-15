@@ -26,9 +26,11 @@
 					src="https://cms.fdti.eu/assets/{content.icon?.filename_disk}"
 					alt={content.title}
 					title={content.title}
+					height="64"
+					width="64"
 				/>
 			</div>
-			<h3 class="text-2xl text-center">{translatedContent.title}</h3>
+			<p class="text-2xl text-center">{translatedContent.title}</p>
 			<p class="text-center">{@html translatedContent.description}</p>
 		</div>
 	</div>
