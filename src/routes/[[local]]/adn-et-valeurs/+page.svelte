@@ -12,7 +12,7 @@
 	$: items = pageContent?.meta_tags?.page_tags || [];
 	$: metatags = {
 		url: items[0]?.url || '/',
-		img: items[0]?.img?.id ? `https://cms.fdti.eu/assets/${items[0]?.img.id}` : '/logo.png',
+		img: items[0]?.img?.id ? `https://cms.fdti.eu/assets/${items[0]?.img.id}` : '/logo.webp',
 		description:
 			items[0]?.translations && items[0]?.translations[0]?.description
 				? items[0]?.translations[0]?.description

@@ -28,6 +28,8 @@
 							src="https://cms.fdti.eu/assets/{company?.img?.id}"
 							alt={company?.name || 'Company logo'}
 							title={company?.name || 'Company logo'}
+							width="240"
+							height="240"
 						/>
 					</div>
 				{/each}

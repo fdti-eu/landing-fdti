@@ -9,7 +9,7 @@
 		class="w-16 aspect-square bg-yellow rounded-full border-4 border-darkGrey-2 flex justify-center justify-self-center items-center col-span-1 p-2 sm:w-14"
 	>
 		{#if iconLink}
-			<img src={'https://cms.fdti.eu/assets/' + iconLink} class="w-full" alt={title} {title} />
+			<img src={'https://cms.fdti.eu/assets/' + iconLink} width="64" height="64" class="w-full" alt={title} {title} />
 		{/if}
 	</div>
 	<div class="col-span-7 pl-2 md:pl-0">
