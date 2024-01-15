@@ -24,6 +24,8 @@
 				src="https://cms.fdti.eu/assets/{translatedContent.icon_1?.filename_disk}"
 				alt="Objectives"
 				title="Objectives"
+				height="50"
+				width="50"
 			/>
 			<div class="sm:text-xl md:w-5/6">
 				{@html translatedContent.content_1}
@@ -36,6 +38,8 @@
 				src="https://cms.fdti.eu/assets/{translatedContent.icon_2?.filename_disk}"
 				alt="Objectives"
 				title="Objectives"
+				height="50"
+				width="50"
 			/>
 			<div class="sm:text-xl md:w-5/6">
 				{@html translatedContent.content_2}

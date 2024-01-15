@@ -4,6 +4,8 @@
 	import { MetaTags } from 'svelte-meta-tags';
 	import Underline from '$lib/components/Underline.svelte';
 	import { fade } from 'svelte/transition';
+	import LdTag from '$lib/components/json-ld/LDTag.svelte';
+	import { schema } from '$lib/components/json-ld/json-ld';
 
 	export let data: PageData;
 	$: ({ GetDNAPageContent } = data);
@@ -58,6 +60,12 @@
 		}}
 	/>
 {/if}
+
+<svelte:head>
+	<LdTag
+		schema={schema('WebPage', metatags.title, metatags.img, metatags.description, metatags.url)}
+	/>
+</svelte:head>
 
 {#if pageContent && translatedContent && cardList && pageContent.DNA_content?.status === 'published'}
 	<section class="group/section relative max-w-screen-xl space-y-8 mx-auto py-16 mt-20 lg:px-12 md:py-24" in:fade>

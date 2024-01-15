@@ -6,6 +6,8 @@
 	import ContactSection from './ContactSection.svelte';
 	import type { PageData } from './$houdini';
 	import { MetaTags } from 'svelte-meta-tags';
+	import LdTag from '$lib/components/json-ld/LDTag.svelte';
+	import { schema } from '$lib/components/json-ld/json-ld';
 
 	export let data: PageData;
 
@@ -57,6 +59,12 @@
 		}}
 	/>
 {/if}
+
+<svelte:head>
+	<LdTag
+		schema={schema('WebSite', metatags.title, metatags.img, metatags.description, metatags.url)}
+	/>
+</svelte:head>
 
 {#if pageContent}
 	<Hero content={pageContent.hero_section} />

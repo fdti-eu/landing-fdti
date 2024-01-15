@@ -4,6 +4,8 @@
 	import type { PageData } from './$houdini';
 	import ApproachCategory from './ApproachCategory.svelte';
 	import { MetaTags } from 'svelte-meta-tags';
+	import LdTag from '$lib/components/json-ld/LDTag.svelte';
+	import { schema } from '$lib/components/json-ld/json-ld';
 
 	export let data: PageData;
 
@@ -59,6 +61,12 @@
 		}}
 	/>
 {/if}
+
+<svelte:head>
+	<LdTag
+		schema={schema('AboutPage', metatags.title, metatags.img, metatags.description, metatags.url)}
+	/>
+</svelte:head>
 
 <!-- FDTI Consulting -->
 {#if pageContent && intro}
