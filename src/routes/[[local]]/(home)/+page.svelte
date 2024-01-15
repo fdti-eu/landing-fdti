@@ -66,8 +66,9 @@
 	/>
 </svelte:head>
 
+<Hero content={pageContent?.hero_section} />
+
 {#if pageContent}
-	<Hero content={pageContent.hero_section} />
 	<div class="max-w-6xl mx-auto px-2 md:px-12">
 		<FdtiSection content={pageContent.fdti_section} />
 		<TechnologiesSection content={pageContent.technology_content} />
