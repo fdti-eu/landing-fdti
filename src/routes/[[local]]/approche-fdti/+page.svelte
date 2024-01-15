@@ -71,17 +71,17 @@
 <!-- FDTI Consulting -->
 {#if pageContent && intro}
 	<section
-		class="group/section relative max-w-screen-xl space-y-8 mx-auto py-16 mt-20 md:px-12 md:py-24"
+		class="group/section relative max-w-screen-xl space-y-8 mx-auto px-2 py-16 mt-20 md:px-12 md:py-24"
 		in:fade
 	>
 		{#if pageContent.approach_intro?.status === 'published'}
-			<div>
-				<h1 class="text-3xl font-bold text-center md:text-4xl">{intro.title || ''}</h1>
+			<div class="text-center">
+				<h1 class="text-3xl font-bold md:text-4xl">{intro.title || ''}</h1>
 				<Underline />
-				<p class="text-xl text-center font-bold py-8 sm:text-2xl md:text-3xl lg:text-4xl">
+				<p class="text-xl font-bold py-8 sm:text-2xl md:text-3xl lg:text-4xl">
 					{@html intro.description || ''}
 				</p>
-				<p class="text-xl text-center py-8 sm:text-2xl">
+				<p class="text-xl py-8 sm:text-2xl">
 					{@html intro.description_2 || ''}
 				</p>
 			</div>
