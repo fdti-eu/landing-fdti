@@ -3,15 +3,13 @@
 	import Button from '$lib/components/Button.svelte';
 	import { fade } from 'svelte/transition';
 
-	export let content: GetHomePageContent$result['hero_section'];
+	export let content: GetHomePageContent$result['hero_section'] | null = null;
 
 	$: translatedContent = content?.translations?.length ? content?.translations[0] : null;
 </script>
 
-{#if content && translatedContent && content.status === 'published'}
-	<section
-		class="relative h-screen flex items-center bg-gradient-2 px-2 py-16 md:px-4 md:py-24"
-	>
+<section class="relative h-screen flex items-center bg-gradient-2 px-2 py-16 md:px-4 md:py-24">
+	{#if content && translatedContent && content.status === 'published'}
 		<div
 			class="max-w-6xl mx-auto md:grid md:grid-cols-2 md:gap-4 lg:gap-10"
 			in:fade={{ duration: 500 }}
@@ -52,5 +50,5 @@
 				/>
 			</figure>
 		</div>
-	</section>
-{/if}
+	{/if}
+</section>
