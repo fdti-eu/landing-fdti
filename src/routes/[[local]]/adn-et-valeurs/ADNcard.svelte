@@ -1,7 +1,19 @@
-<script>
-	export let content;
-	let translatedContent;
-	$: if (content.translations.length) translatedContent = content.translations[0];
+<script lang="ts">
+	export let content: {
+		readonly title: string | null;
+		readonly order: number | null;
+		readonly icon: {
+			readonly filename_disk: string | null;
+		} | null;
+		readonly translations:
+			| ({
+					readonly title: string | null;
+					readonly description: string | null;
+			  } | null)[]
+			| null;
+	} | null;
+
+	$: translatedContent = content?.translations?.length ? content.translations[0] : null;
 </script>
 
 {#if content && translatedContent}
