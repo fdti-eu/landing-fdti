@@ -11,14 +11,14 @@
 	<section class="relative h-screen flex items-center bg-gradient-1 px-2 py-16 md:px-4 md:py-24">
 		<div class="max-w-6xl mx-auto md:grid md:grid-cols-2 md:gap-4 lg:gap-10">
 			<div class="space-y-6 md:max-w-lg">
-				<div class="max-w-lg flex flex-col gap-4 pb-4 lg:pr-20">
+				<div class="max-w-lg flex flex-col gap-4 pb-4 text-white text-center md:text-left md:text-xl lg:pr-20">
 					<h1 class="text-3xl font-bold text-white text-center sm:text-5xl md:text-left">
 						{content.title}
 					</h1>
-					<p class="text-xl font-bold text-white py-6 text-center md:text-3xl md:text-left">
+					<p class="text-xl font-bold py-6 text-center md:text-3xl md:text-left">
 						{translatedContent.subtitle}
 					</p>
-					<p class="text-white text-center md:text-xl md:text-left lg:pr-5">
+					<p class="lg:pr-5">
 						{@html translatedContent.description}
 					</p>
 				</div>

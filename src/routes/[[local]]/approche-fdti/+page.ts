@@ -56,5 +56,5 @@ export function _GetApproachPageContentVariables({
 }): GetApproachPageContent$input {
 	const local = (params?.local as ILocal) || 'fr';
 	const code = getLocalCode(local);
-	return { code, url: '/' };
+	return { code, url: '/approche-fdti' };
 }

@@ -2040,6 +2040,7 @@ type technology_item {
   id: ID!
   img(filter: directus_files_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): directus_files
   name: String
+  sort: Int
   status: String
   technology_list(filter: technology_category_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): technology_category
   url: String
@@ -2065,6 +2066,7 @@ type technology_item_aggregated_count {
   id: Int
   img: Int
   name: Int
+  sort: Int
   status: Int
   technology_list: Int
   url: Int
@@ -2073,6 +2075,7 @@ type technology_item_aggregated_count {
 
 type technology_item_aggregated_fields {
   id: Float
+  sort: Float
   technology_list: Float
 }
 
@@ -2086,6 +2089,7 @@ input technology_item_filter {
   id: number_filter_operators
   img: directus_files_filter
   name: string_filter_operators
+  sort: number_filter_operators
   status: string_filter_operators
   technology_list: technology_category_filter
   url: string_filter_operators
@@ -2684,6 +2688,7 @@ type version_technology_item {
   id: ID!
   img: String
   name: String
+  sort: Int
   status: String
   technology_list: Int
   url: String

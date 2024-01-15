@@ -19,8 +19,10 @@
 <nav
 	class="{$page.url.pathname === '/' ||
 	($page.url.pathname === `/${$locale}` && windowY < windowHeight)
-		? 'absolute'
-		: 'fixed bg-darkGrey'} top-0 left-0 w-full p-4 z-50 xl:p-8"
+		? 'absolute transition-all duration-300'
+		: ($page.url.pathname === '/' || ($page.url.pathname === `/${$locale}` && windowY > windowHeight))
+		? 'fixed bg-darkGrey transition-all duration-300'
+		: 'fixed bg-darkGrey'} top-0 left-0 w-full p-4 z-50 xl:p-8 "
 >
 	<div
 		class="w-full max-w-screen-xl flex justify-between items-center gap-4 mx-auto md:grid md:grid-cols-5 xl:grid-cols-3 md:justify-items-center"
