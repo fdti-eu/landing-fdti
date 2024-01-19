@@ -12,18 +12,20 @@
 	function handleToggleNav() {
 		isNavbarOpen = !isNavbarOpen;
 	}
+
+	$: console.log("page", $page.url.pathname)
 </script>
 
 <svelte:window bind:scrollY={windowY} bind:innerHeight={windowHeight} />
 
 <nav
-	class="{$page.url.pathname === '/' ||
+	class="{($page.url.pathname === '/' && windowY < windowHeight - 120) ||
 	($page.url.pathname === `/${$locale}` && windowY < windowHeight - 120)
 		? 'md:absolute transition-all duration-300'
 		: ''} fixed bg-darkGrey top-0 left-0 w-full p-4 z-50 xl:p-8"
 >
 	<div
-		class="{$page.url.pathname === '/' ||
+		class="{($page.url.pathname === '/' && windowY < windowHeight - 120 && windowY > 120) ||
 		($page.url.pathname === `/${$locale}` && windowY < windowHeight - 120 && windowY > 120)
 			? 'md:opacity-0'
 			: 'opacity-100'} transition-all duration-500 w-full max-w-screen-xl flex justify-between items-center gap-4 mx-auto md:grid md:grid-cols-5 xl:grid-cols-3 md:justify-items-center"
