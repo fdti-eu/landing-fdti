@@ -1,6 +1,6 @@
 export async function GET() {
-    return new Response(
-        `
+	return new Response(
+		`
     <?xml version="1.0" encoding="UTF-8" ?>
     <urlset
       xmlns="https://www.sitemaps.org/schemas/sitemap/0.9"
@@ -11,16 +11,40 @@ export async function GET() {
       xmlns:video="https://www.google.com/schemas/sitemap-video/1.1"
     >
     <url>
-        <loc>https://www.fdti.eu/</loc>
+        <loc>https://www.fdti.eu/fr</loc>
         <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
-     </url>
-      <!-- <url> elements go here -->
+        <priority>1.00</priority>
+    </url>
+    <url>
+        <loc>https://www.fdti.eu/fr/approche-fdti</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.90</priority>
+    </url>
+    <url>
+        <loc>https://www.fdti.eu/fr/adn-et-valeurs</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.90</priority>
+    </url>
+    <url>
+        <loc>https://www.fdti.eu/en</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.90</priority>
+    </url>
+    <url>
+        <loc>https://www.fdti.eu/en/approche-fdti</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.90</priority>
+    </url>
+    <url>
+        <loc>https://www.fdti.eu/en/adn-et-valeurs</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.90</priority>
+    </url>
     </urlset>`.trim(),
-        {
-            headers: {
-                'Content-Type': 'application/xml'
-            }
-        }
-    );
+		{
+			headers: {
+				'Content-Type': 'application/xml'
+			}
+		}
+	);
 }

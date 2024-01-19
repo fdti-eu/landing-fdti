@@ -45,7 +45,8 @@ const config = {
 			},
 
 			backgroundImage: {
-				'gradient-1': 'linear-gradient(104.83deg, #000000 0.66%, #555555 100%)'
+				'gradient-1': 'linear-gradient(104.83deg, #000000 0.66%, #555555 100%)',
+				'gradient-2': 'linear-gradient(150deg, #1d2024 60%, #555555)'
 			}
 		}
 	},

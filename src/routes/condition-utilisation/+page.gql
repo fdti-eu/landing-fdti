@@ -1,8 +1,0 @@
-query getCGUContent($name: String!) {
-	CGU {
-		translations(filter: { languages_code: { name: { _eq: $name } } }) {
-			title
-			content
-		}
-	}
-}
