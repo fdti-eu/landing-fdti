@@ -12,8 +12,6 @@
 	function handleToggleNav() {
 		isNavbarOpen = !isNavbarOpen;
 	}
-
-	$: console.log("page", $page.url.pathname)
 </script>
 
 <svelte:window bind:scrollY={windowY} bind:innerHeight={windowHeight} />

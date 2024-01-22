@@ -12,7 +12,7 @@
 </script>
 
 {#if technologyList && translatedContent && content?.status === 'published'}
-	<section class="group/section relative max-w-screen-lg space-y-8 mx-auto md:px-12 py-16 md:py-24" id="technologies">
+	<section class="group/section max-w-screen-lg space-y-8 mx-auto md:px-12 py-16 md:py-24" id="technologies">
 		<div>
 			<h2 class="text-3xl font-bold text-center md:text-4xl">
 				{translatedContent.title || 'Technologies'}
