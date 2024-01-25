@@ -6,10 +6,20 @@
 	export let content: GetHomePageContent$result['fdti_section'];
 
 	$: translatedContent = content?.translations?.length ? content?.translations[0] : null;
+
+	$: paragraphs =
+		content?.paragraphs?.reduce((acc, cur) => {
+			const icon = cur?.icon?.id || null;
+			const content = cur?.translations?.length ? cur?.translations[0]?.content : null;
+			return icon && content ? [...acc, { icon, content }] : acc;
+		}, [] as { icon: string; content: string }[]) || [];
 </script>
 
 {#if content && translatedContent && content.status === 'published'}
-	<section class="group/section max-w-screen-lg space-y-8 mx-auto mt-16 md:mt-20 lg:mt-24 md:px-12 py-16 md:py-24" id="fdti">
+	<section
+		class="group/section max-w-screen-lg space-y-8 mx-auto mt-16 md:mt-20 lg:mt-24 md:px-12 py-16 md:py-24"
+		id="fdti"
+	>
 		<div>
 			<h2 class="text-3xl font-bold text-center md:text-4xl">{content.title}</h2>
 			<Underline />
@@ -17,34 +27,22 @@
 		<h3 class="text-xl font-bold text-center sm:text-2xl md:text-3xl lg:text-4xl">
 			{translatedContent.subtitle}
 		</h3>
-		<article
-			class="w-full flex flex-col items-center mx-auto gap-8 md:pt-14 md:flex-row md:items-start md:gap-16"
-		>
-			<img
-				src="https://cms.fdti.eu/assets/{translatedContent.icon_1?.filename_disk}"
-				alt="Objectives"
-				title="Objectives"
-				height="50"
-				width="50"
-			/>
-			<div class="sm:text-xl md:w-5/6">
-				{@html translatedContent.content_1}
-			</div>
-		</article>
-		<article
-			class="w-full flex flex-col items-center mx-auto gap-8 md:flex-row md:items-start md:gap-16"
-		>
-			<img
-				src="https://cms.fdti.eu/assets/{translatedContent.icon_2?.filename_disk}"
-				alt="Objectives"
-				title="Objectives"
-				height="50"
-				width="50"
-			/>
-			<div class="sm:text-xl md:w-5/6">
-				{@html translatedContent.content_2}
-			</div>
-		</article>
+		{#each paragraphs as { icon, content }, i}
+			<article
+				class="w-full flex flex-col items-center mx-auto gap-8 md:flex-row md:items-start md:gap-16"
+			>
+				<img
+					src="https://cms.fdti.eu/assets/{icon}"
+					alt="Objectives"
+					title="Objectives"
+					height="50"
+					width="50"
+				/>
+				<div class="sm:text-xl md:w-5/6">
+					{@html content}
+				</div>
+			</article>
+		{/each}
 		<div class="w-fit mx-auto space-y-4">
 			<p class="text-center text-lg font-bold">
 				{translatedContent.btn_label}

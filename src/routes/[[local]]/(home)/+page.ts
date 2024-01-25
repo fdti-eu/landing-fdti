@@ -18,16 +18,16 @@ export const _houdini_load: GetHomePageContentStore = graphql`
 		fdti_section {
 			title
 			status
+			paragraphs {
+				icon {
+					id
+				}
+				translations(filter: { languages_code: { code: { _eq: $code } } }) {
+					content
+				}
+			}
 			translations(filter: { languages_code: { code: { _eq: $code } } }) {
 				subtitle
-				icon_1 {
-					filename_disk
-				}
-				content_1
-				icon_2 {
-					filename_disk
-				}
-				content_2
 				btn_label
 				btn_name
 			}
@@ -136,7 +136,7 @@ export function _GetHomePageContentVariables({
 }: {
 	params: { local?: string };
 }): GetHomePageContent$input {
-	const local = params?.local as ILocal || 'fr';
+	const local = (params?.local as ILocal) || 'fr';
 	const code = getLocalCode(local);
 	return { code, url: '/' };
 }

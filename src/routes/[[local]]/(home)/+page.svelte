@@ -69,10 +69,11 @@
 <Hero content={pageContent?.hero_section} />
 
 {#if pageContent}
+	{@const { fdti_section, technology_content, trust_content, CII, contact_section } = pageContent}
 	<div class="max-w-6xl mx-auto px-2 md:px-12">
-		<FdtiSection content={pageContent.fdti_section} />
-		<TechnologiesSection content={pageContent.technology_content} />
-		<ConfianceSection content={pageContent.trust_content} cii={pageContent.CII} />
+		<FdtiSection content={fdti_section} />
+		<TechnologiesSection content={technology_content} />
+		<ConfianceSection content={trust_content} cii={CII} />
 	</div>
-	<ContactSection content={pageContent.contact_section} />
+	<ContactSection content={contact_section} />
 {/if}
