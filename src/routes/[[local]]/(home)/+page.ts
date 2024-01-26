@@ -45,7 +45,7 @@ export const _houdini_load: GetHomePageContentStore = graphql`
 				category_icon {
 					id
 				}
-				technology_list(filter: { status: { _eq: "published" } }) {
+				technology_list(filter: { status: { _eq: "published" } }, sort: ["sort"]) {
 					status
 					id
 					name

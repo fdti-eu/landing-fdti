@@ -1948,6 +1948,7 @@ type technology_category {
   id: ID!
   name(filter: technology_content_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): technology_content
   order: String
+  sort: Int
   status: String
   technology_list(filter: technology_item_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [technology_item]
   technology_list_func: count_functions
@@ -1978,6 +1979,7 @@ type technology_category_aggregated_count {
   id: Int
   name: Int
   order: Int
+  sort: Int
   status: Int
   technology_list: Int
   title: Int
@@ -1989,6 +1991,7 @@ type technology_category_aggregated_fields {
   category: Float
   id: Float
   name: Float
+  sort: Float
 }
 
 input technology_category_filter {
@@ -2003,6 +2006,7 @@ input technology_category_filter {
   id: number_filter_operators
   name: technology_content_filter
   order: string_filter_operators
+  sort: number_filter_operators
   status: string_filter_operators
   technology_list: technology_item_filter
   technology_list_func: count_function_filter_operators
@@ -2786,6 +2790,7 @@ type version_technology_category {
   id: ID!
   name: Int
   order: String
+  sort: Int
   status: String
   technology_list: JSON
   technology_list_func: count_functions

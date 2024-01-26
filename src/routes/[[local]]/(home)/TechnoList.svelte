@@ -18,7 +18,7 @@
 		</h3>
 		<p>{description}</p>
 		<div class=" relative  mt-8">
-			<div class="flex gap-12 flex-wrap justify-center md:justify-start">
+			<div class="flex gap-8 flex-wrap justify-center md:justify-start">
 				<slot />
 			</div>
 		</div>

@@ -17,9 +17,9 @@
 			<Underline />
 		</div>
 		{#if content.company_list?.length}
-			<div class="flex flex-col items-center justify-center gap-10 md:flex-row">
+			<div class="flex flex-wrap items-center justify-center gap-8">
 				{#each content.company_list as company}
-					<div class="w-60 flex justify-center">
+					<div class="flex justify-center w-20 md:w-24">
 						<img
 							src="https://cms.fdti.eu/assets/{company?.img?.id}"
 							alt={company?.name || 'Company logo'}
