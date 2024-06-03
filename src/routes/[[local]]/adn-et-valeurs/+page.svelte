@@ -72,7 +72,7 @@
 {#if pageContent && translatedContent && cardList && pageContent.DNA_content?.status === 'published'}
 	<section
 		class="group/section relative max-w-screen-xl space-y-8 mx-auto px-2 py-16 mt-20 md:px-12 md:py-24 transition-slide"
-		in:slideTransition={{ delay: 200, duration: 600 }}
+		in:slideTransition={{ delay: 10, duration: 600 }}
 	>
 		<div>
 			<h1 class="text-3xl font-bold text-center md:text-4xl">{translatedContent.title || ''}</h1>

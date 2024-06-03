@@ -71,7 +71,7 @@
 {#if pageContent && intro}
 	<section
 		class="group/section relative max-w-screen-xl space-y-8 mx-auto px-2 py-16 mt-20 md:px-12 md:py-24 transition-slide"
-		in:slideTransition={{ delay: 200, duration: 600 }}
+		in:slideTransition={{ delay: 10, duration: 600 }}
 	>
 		{#if pageContent.approach_intro?.status === 'published'}
 			<div class="text-center">
