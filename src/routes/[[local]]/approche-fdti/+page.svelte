@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { cubicOut } from 'svelte/easing';
+	import slideTransition from '$lib/functions/animation';
 	import Underline from '$lib/components/Underline.svelte';
 	import type { PageData } from './$houdini';
 	import ApproachCategory from './ApproachCategory.svelte';
@@ -29,19 +29,6 @@
 				: 'FDTI'
 	};
 	$: categories = pageContent?.approach_category || [];
-
-	function slideTransition(node: HTMLElement, { delay = 0, duration = 400, easing = cubicOut }) {
-		return {
-			delay,
-			duration,
-			easing,
-			css: function (transition: any) {
-				return `
-					--slide-transition: ${transition};
-				`;
-			}
-		};
-	}
 </script>
 
 {#if metatags}

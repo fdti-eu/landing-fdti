@@ -1,4 +1,5 @@
 <script lang="ts">
+	import slideTransition from '$lib/functions/animation';
 	import AdNcard from './ADNcard.svelte';
 	import type { PageData } from './$houdini';
 	import { MetaTags } from 'svelte-meta-tags';
@@ -29,18 +30,6 @@
 	};
 	$: pageContent = $GetDNAPageContent?.data;
 	$: cardList = pageContent?.DNA_content?.card_list;
-	function slideTransition(node: HTMLElement, { delay = 0, duration = 400, easing = cubicOut }) {
-		return {
-			delay,
-			duration,
-			easing,
-			css: function (transition: any) {
-				return `
-					--slide-transition: ${transition};
-				`;
-			}
-		};
-	}
 </script>
 
 {#if metatags}
@@ -82,7 +71,7 @@
 
 {#if pageContent && translatedContent && cardList && pageContent.DNA_content?.status === 'published'}
 	<section
-		class="group/section relative max-w-screen-xl space-y-8 mx-auto py-16 mt-20 lg:px-12 md:py-24 transition-slide"
+		class="group/section relative max-w-screen-xl space-y-8 mx-auto px-2 py-16 mt-20 md:px-12 md:py-24 transition-slide"
 		in:slideTransition={{ delay: 200, duration: 600 }}
 	>
 		<div>
