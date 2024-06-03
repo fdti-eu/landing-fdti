@@ -468,6 +468,14 @@ type Query {
   contact_section_translations_by_version(id: ID!, version: String!): version_contact_section_translations
   fdti_section: fdti_section
   fdti_section_by_version(version: String!): version_fdti_section
+  fdti_section_paragraph(filter: fdti_section_paragraph_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [fdti_section_paragraph!]!
+  fdti_section_paragraph_aggregated(filter: fdti_section_paragraph_filter, groupBy: [String], limit: Int, offset: Int, page: Int, search: String, sort: [String]): [fdti_section_paragraph_aggregated!]!
+  fdti_section_paragraph_by_id(id: ID!): fdti_section_paragraph
+  fdti_section_paragraph_by_version(id: ID!, version: String!): version_fdti_section_paragraph
+  fdti_section_paragraph_translations(filter: fdti_section_paragraph_translations_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [fdti_section_paragraph_translations!]!
+  fdti_section_paragraph_translations_aggregated(filter: fdti_section_paragraph_translations_filter, groupBy: [String], limit: Int, offset: Int, page: Int, search: String, sort: [String]): [fdti_section_paragraph_translations_aggregated!]!
+  fdti_section_paragraph_translations_by_id(id: ID!): fdti_section_paragraph_translations
+  fdti_section_paragraph_translations_by_version(id: ID!, version: String!): version_fdti_section_paragraph_translations
   fdti_section_translations(filter: fdti_section_translations_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [fdti_section_translations!]!
   fdti_section_translations_aggregated(filter: fdti_section_translations_filter, groupBy: [String], limit: Int, offset: Int, page: Int, search: String, sort: [String]): [fdti_section_translations_aggregated!]!
   fdti_section_translations_by_id(id: ID!): fdti_section_translations
@@ -551,6 +559,8 @@ type Subscription {
   contact_section_translations_mutated(event: EventEnum): contact_section_translations_mutated
   directus_files_mutated(event: EventEnum): directus_files_mutated
   fdti_section_mutated(event: EventEnum): fdti_section_mutated
+  fdti_section_paragraph_mutated(event: EventEnum): fdti_section_paragraph_mutated
+  fdti_section_paragraph_translations_mutated(event: EventEnum): fdti_section_paragraph_translations_mutated
   fdti_section_translations_mutated(event: EventEnum): fdti_section_translations_mutated
   hero_section_mutated(event: EventEnum): hero_section_mutated
   hero_section_translations_mutated(event: EventEnum): hero_section_translations_mutated
@@ -1322,6 +1332,8 @@ type fdti_section {
   date_updated: Date
   date_updated_func: datetime_functions
   id: ID!
+  paragraphs(filter: fdti_section_paragraph_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [fdti_section_paragraph]
+  paragraphs_func: count_functions
   status: String
   title: String
   translations(filter: fdti_section_translations_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [fdti_section_translations]
@@ -1335,6 +1347,8 @@ input fdti_section_filter {
   date_updated: date_filter_operators
   date_updated_func: datetime_function_filter_operators
   id: number_filter_operators
+  paragraphs: fdti_section_paragraph_filter
+  paragraphs_func: count_function_filter_operators
   status: string_filter_operators
   title: string_filter_operators
   translations: fdti_section_translations_filter
@@ -1344,6 +1358,117 @@ input fdti_section_filter {
 
 type fdti_section_mutated {
   data: fdti_section
+  event: EventEnum
+  key: ID!
+}
+
+type fdti_section_paragraph {
+  date_created: Date
+  date_created_func: datetime_functions
+  date_updated: Date
+  date_updated_func: datetime_functions
+  fdti_section_id(filter: fdti_section_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): fdti_section
+  icon(filter: directus_files_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): directus_files
+  id: ID!
+  sort: Int
+  status: String
+  translations(filter: fdti_section_paragraph_translations_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [fdti_section_paragraph_translations]
+  translations_func: count_functions
+}
+
+type fdti_section_paragraph_aggregated {
+  avg: fdti_section_paragraph_aggregated_fields
+  avgDistinct: fdti_section_paragraph_aggregated_fields
+  count: fdti_section_paragraph_aggregated_count
+  countAll: Int
+  countDistinct: fdti_section_paragraph_aggregated_count
+  group: JSON
+  max: fdti_section_paragraph_aggregated_fields
+  min: fdti_section_paragraph_aggregated_fields
+  sum: fdti_section_paragraph_aggregated_fields
+  sumDistinct: fdti_section_paragraph_aggregated_fields
+}
+
+type fdti_section_paragraph_aggregated_count {
+  date_created: Int
+  date_updated: Int
+  fdti_section_id: Int
+  icon: Int
+  id: Int
+  sort: Int
+  status: Int
+  translations: Int
+}
+
+type fdti_section_paragraph_aggregated_fields {
+  fdti_section_id: Float
+  sort: Float
+}
+
+input fdti_section_paragraph_filter {
+  _and: [fdti_section_paragraph_filter]
+  _or: [fdti_section_paragraph_filter]
+  date_created: date_filter_operators
+  date_created_func: datetime_function_filter_operators
+  date_updated: date_filter_operators
+  date_updated_func: datetime_function_filter_operators
+  fdti_section_id: fdti_section_filter
+  icon: directus_files_filter
+  id: string_filter_operators
+  sort: number_filter_operators
+  status: string_filter_operators
+  translations: fdti_section_paragraph_translations_filter
+  translations_func: count_function_filter_operators
+}
+
+type fdti_section_paragraph_mutated {
+  data: fdti_section_paragraph
+  event: EventEnum
+  key: ID!
+}
+
+type fdti_section_paragraph_translations {
+  content: String
+  fdti_section_paragraph_id(filter: fdti_section_paragraph_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): fdti_section_paragraph
+  id: ID!
+  languages_code(filter: languages_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): languages
+}
+
+type fdti_section_paragraph_translations_aggregated {
+  avg: fdti_section_paragraph_translations_aggregated_fields
+  avgDistinct: fdti_section_paragraph_translations_aggregated_fields
+  count: fdti_section_paragraph_translations_aggregated_count
+  countAll: Int
+  countDistinct: fdti_section_paragraph_translations_aggregated_count
+  group: JSON
+  max: fdti_section_paragraph_translations_aggregated_fields
+  min: fdti_section_paragraph_translations_aggregated_fields
+  sum: fdti_section_paragraph_translations_aggregated_fields
+  sumDistinct: fdti_section_paragraph_translations_aggregated_fields
+}
+
+type fdti_section_paragraph_translations_aggregated_count {
+  content: Int
+  fdti_section_paragraph_id: Int
+  id: Int
+  languages_code: Int
+}
+
+type fdti_section_paragraph_translations_aggregated_fields {
+  id: Float
+}
+
+input fdti_section_paragraph_translations_filter {
+  _and: [fdti_section_paragraph_translations_filter]
+  _or: [fdti_section_paragraph_translations_filter]
+  content: string_filter_operators
+  fdti_section_paragraph_id: fdti_section_paragraph_filter
+  id: number_filter_operators
+  languages_code: languages_filter
+}
+
+type fdti_section_paragraph_translations_mutated {
+  data: fdti_section_paragraph_translations
   event: EventEnum
   key: ID!
 }
@@ -1823,6 +1948,7 @@ type technology_category {
   id: ID!
   name(filter: technology_content_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): technology_content
   order: String
+  sort: Int
   status: String
   technology_list(filter: technology_item_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [technology_item]
   technology_list_func: count_functions
@@ -1853,6 +1979,7 @@ type technology_category_aggregated_count {
   id: Int
   name: Int
   order: Int
+  sort: Int
   status: Int
   technology_list: Int
   title: Int
@@ -1864,6 +1991,7 @@ type technology_category_aggregated_fields {
   category: Float
   id: Float
   name: Float
+  sort: Float
 }
 
 input technology_category_filter {
@@ -1878,6 +2006,7 @@ input technology_category_filter {
   id: number_filter_operators
   name: technology_content_filter
   order: string_filter_operators
+  sort: number_filter_operators
   status: string_filter_operators
   technology_list: technology_item_filter
   technology_list_func: count_function_filter_operators
@@ -2509,11 +2638,36 @@ type version_fdti_section {
   date_updated: Date
   date_updated_func: datetime_functions
   id: ID!
+  paragraphs: JSON
+  paragraphs_func: count_functions
   status: String
   title: String
   translations: JSON
   translations_func: count_functions
   user_updated: String
+}
+
+""""""
+type version_fdti_section_paragraph {
+  date_created: Date
+  date_created_func: datetime_functions
+  date_updated: Date
+  date_updated_func: datetime_functions
+  fdti_section_id: Int
+  icon: String
+  id: ID!
+  sort: Int
+  status: String
+  translations: JSON
+  translations_func: count_functions
+}
+
+""""""
+type version_fdti_section_paragraph_translations {
+  content: String
+  fdti_section_paragraph_id: String
+  id: ID!
+  languages_code: String
 }
 
 """"""
@@ -2636,6 +2790,7 @@ type version_technology_category {
   id: ID!
   name: Int
   order: String
+  sort: Int
   status: String
   technology_list: JSON
   technology_list_func: count_functions

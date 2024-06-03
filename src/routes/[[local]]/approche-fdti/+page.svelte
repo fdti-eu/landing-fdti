@@ -1,6 +1,6 @@
 <script lang="ts">
+	import { cubicOut } from 'svelte/easing';
 	import Underline from '$lib/components/Underline.svelte';
-	import { fade } from 'svelte/transition';
 	import type { PageData } from './$houdini';
 	import ApproachCategory from './ApproachCategory.svelte';
 	import { MetaTags } from 'svelte-meta-tags';
@@ -29,6 +29,19 @@
 				: 'FDTI'
 	};
 	$: categories = pageContent?.approach_category || [];
+
+	function slideTransition(node: HTMLElement, { delay = 0, duration = 400, easing = cubicOut }) {
+		return {
+			delay,
+			duration,
+			easing,
+			css: function (transition: any) {
+				return `
+					--slide-transition: ${transition};
+				`;
+			}
+		};
+	}
 </script>
 
 {#if metatags}
@@ -44,7 +57,6 @@
 			images: [
 				{
 					url: `https://cms.fdti.eu/assets/${metatags?.img}`,
-
 					alt: `${metatags.description}`
 				}
 			],
@@ -71,8 +83,8 @@
 <!-- FDTI Consulting -->
 {#if pageContent && intro}
 	<section
-		class="group/section relative max-w-screen-xl space-y-8 mx-auto px-2 py-16 mt-20 md:px-12 md:py-24"
-		in:fade
+		class="group/section relative max-w-screen-xl space-y-8 mx-auto px-2 py-16 mt-20 md:px-12 md:py-24 transition-slide"
+		in:slideTransition={{ delay: 200, duration: 600 }}
 	>
 		{#if pageContent.approach_intro?.status === 'published'}
 			<div class="text-center">
@@ -93,3 +105,10 @@
 		</div>
 	</section>
 {/if}
+
+<style>
+	.transition-slide {
+		opacity: var(--slide-transition);
+		transform: translateX(calc((1 - var(--slide-transition)) * -30px));
+	}
+</style>

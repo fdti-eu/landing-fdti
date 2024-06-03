@@ -6,6 +6,7 @@
 	import { fade } from 'svelte/transition';
 	import LdTag from '$lib/components/json-ld/LDTag.svelte';
 	import { schema } from '$lib/components/json-ld/json-ld';
+	import { cubicOut } from 'svelte/easing';
 
 	export let data: PageData;
 	$: ({ GetDNAPageContent } = data);
@@ -28,6 +29,18 @@
 	};
 	$: pageContent = $GetDNAPageContent?.data;
 	$: cardList = pageContent?.DNA_content?.card_list;
+	function slideTransition(node: HTMLElement, { delay = 0, duration = 400, easing = cubicOut }) {
+		return {
+			delay,
+			duration,
+			easing,
+			css: function (transition: any) {
+				return `
+					--slide-transition: ${transition};
+				`;
+			}
+		};
+	}
 </script>
 
 {#if metatags}
@@ -68,7 +81,10 @@
 </svelte:head>
 
 {#if pageContent && translatedContent && cardList && pageContent.DNA_content?.status === 'published'}
-	<section class="group/section relative max-w-screen-xl space-y-8 mx-auto py-16 mt-20 lg:px-12 md:py-24" in:fade>
+	<section
+		class="group/section relative max-w-screen-xl space-y-8 mx-auto py-16 mt-20 lg:px-12 md:py-24 transition-slide"
+		in:slideTransition={{ delay: 200, duration: 600 }}
+	>
 		<div>
 			<h1 class="text-3xl font-bold text-center md:text-4xl">{translatedContent.title || ''}</h1>
 			<Underline />
@@ -91,3 +107,10 @@
 		</figure>
 	</section>
 {/if}
+
+<style>
+	.transition-slide {
+		opacity: var(--slide-transition);
+		transform: translateX(calc((1 - var(--slide-transition)) * -30px));
+	}
+</style>
