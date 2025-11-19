@@ -1,16 +1,23 @@
 <script lang="ts">
-	import type { GetHomePageContent$result } from '$houdini';
 	import Underline from '$lib/components/Underline.svelte';
 
-	export let content: GetHomePageContent$result['contact_section'];
-
-	$: translatedContent = content?.translations?.length ? content?.translations[0] : null;
+	export let content:
+		| {
+				status?: string | null;
+				title?: string | null;
+				address?: string | null;
+				mail?: string | null;
+				translations?: never;
+				subtitle?: string | null;
+				btn_contact?: string | null;
+		  }
+		| null;
 </script>
 
-{#if content && translatedContent && content.status === 'published'}
-	<section class="group/section bg-lightGrey py-12 md:py-24" id="contact">
+{#if content && content.status === 'published'}
+	<section class="bg-lightGrey py-12 md:py-24" id="contact">
 		<div class="max-w-6xl mx-auto px-2 space-y-8 md:px-12 wrap:px-5">
-			<div>
+			<div class="group">
 				<h2 class="text-3xl font-bold text-center md:text-4xl">
 					{content.title || 'Contact'}
 				</h2>
@@ -79,7 +86,7 @@
 					</ul>
 				</div>
 				<div class="w-full flex-1 flex flex-col justify-center items-center gap-8 pt-5">
-					<h3 class="text-4xl text-center">{translatedContent.subtitle}</h3>
+					<h3 class="text-4xl text-center">{content.subtitle}</h3>
 					<div class="flex flex-col gap-8 items-center">
 						<a
 							href="https://calendly.com/fdti/30min"
@@ -87,7 +94,7 @@
 							rel="noreferrer"
 							class="bg-black text-white py-2 px-8 rounded-lg text-xl font-semibold hover:text-black hover:bg-transparent border border-black transition-all ease-in duration-300"
 						>
-							{translatedContent.btn_contact}
+							{content.btn_contact}
 						</a>
 					</div>
 				</div>

@@ -4,28 +4,20 @@
 	import TechnologiesSection from './TechnologiesSection.svelte';
 	import ConfianceSection from './ConfianceSection.svelte';
 	import ContactSection from './ContactSection.svelte';
-	import type { PageData } from './$houdini';
 	import { MetaTags } from 'svelte-meta-tags';
 	import LdTag from '$lib/components/json-ld/LDTag.svelte';
 	import { schema } from '$lib/components/json-ld/json-ld';
 
-	export let data: PageData;
+	export let data;
 
-	$: ({ GetHomePageContent } = data);
-	$: pageContent = $GetHomePageContent?.data;
+	$: pageContent = data;
 
 	$: items = pageContent?.meta_tags?.page_tags || [];
 	$: metatags = {
 		url: items[0]?.url || '/',
-		img: items[0]?.img?.id ? `https://cms.fdti.eu/assets/${items[0]?.img.id}` : '/logo.webp',
-		description:
-			items[0]?.translations && items[0]?.translations[0]?.description
-				? items[0]?.translations[0]?.description
-				: '',
-		title:
-			items[0]?.translations && items[0]?.translations[0]?.title
-				? items[0]?.translations[0]?.title
-				: 'FDTI'
+		img: items[0]?.img?.url || '/logo.webp',
+		description: items[0]?.description || '',
+		title: items[0]?.title || 'FDTI'
 	};
 </script>
 
@@ -33,23 +25,22 @@
 	<MetaTags
 		title={metatags.title}
 		description={metatags.description}
-		canonical="https://www.fdti.eu{metatags.url}"
+		canonical={`https://www.fdti.eu${metatags.url}`}
 		openGraph={{
 			type: 'website',
-			url: `${metatags.url}`,
+			url: `https://www.fdti.eu${metatags.url}`,
 			title: `${metatags.title}`,
 			description: `${metatags.description}`,
 			images: [
 				{
-					url: `https://cms.fdti.eu/assets/${metatags.img}`,
-
+					url: metatags.img.startsWith('/') ? `https://www.fdti.eu${metatags.img}` : metatags.img,
 					alt: `${metatags.description}`
 				}
 			],
-			site_name: 'FDTI'
+			siteName: 'FDTI'
 		}}
 		twitter={{
-			handle: '@handle',
+			creator: '@handle',
 			site: '@site',
 			cardType: 'summary_large_image',
 			title: `${metatags.title}`,

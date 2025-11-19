@@ -1,24 +1,11 @@
-import { graphql, type GetPrivacyContent$input, GetPrivacyContentStore } from '$houdini';
-import { getLocalCode } from '$lib/functions/getLocalCode';
-import type { ILocal } from '$lib/interface';
+import { getPrivacyContent, type Lang } from '$lib/data';
+import type { PageLoad } from './$types';
 
-export const _houdini_load: GetPrivacyContentStore = graphql`
-	query GetPrivacyContent($code: String!) {
-		privacy {
-			translations(filter: { languages_code: { code: { _eq: $code } } }) {
-				title
-				content
-			}
-		}
-	}
-`;
+export const load: PageLoad = async ({ params }) => {
+	const locale = (params.local as Lang) || 'fr';
 
-export function _GetPrivacyContentVariables({
-	params
-}: {
-	params: { local?: string };
-}): GetPrivacyContent$input {
-	const local = (params?.local as ILocal) || 'fr';
-	const code = getLocalCode(local);
-	return { code };
-}
+	return {
+		initialLocale: locale,
+		initialContent: getPrivacyContent(locale)
+	};
+};

@@ -1,17 +1,8 @@
 import { sveltekit } from '@sveltejs/kit/vite';
-import houdini from 'houdini/vite';
-import { defineConfig, loadEnv, type UserConfigExport } from "vite";
+import { defineConfig } from "vite";
 
-
-const config: UserConfigExport = defineConfig(({ mode }) => {
-
-	const env = loadEnv(mode, process.cwd())
-	return {
-		plugins: [houdini({
-			apiUrl: `https://${env.VITE_CLIENT_URL}`
-		}),
-		sveltekit()]
-	}
-})
+const config = defineConfig({
+	plugins: [sveltekit()]
+});
 
 export default config;

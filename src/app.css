@@ -1,0 +1,63 @@
+@import 'tailwindcss';
+
+@theme {
+	--font-quattrocento: 'Quattrocento Sans', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+	--color-dark-grey: #1d2024;
+	--color-dark-grey-1: #555555;
+	--color-dark-grey-2: #bbbcbd;
+	--color-darkGrey: #1d2024;
+	--color-darkGrey-1: #555555;
+	--color-darkGrey-2: #bbbcbd;
+	--color-yellow: #f9d089;
+	--color-grey: #525659;
+	--color-grey-2: #242930;
+	--color-grey1: #525659;
+	--color-light-grey: #e6e6e9;
+	--color-lightGrey: #e6e6e9;
+	--shadow-4: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+@plugin '@tailwindcss/typography';
+
+@layer utilities {
+	.bg-gradient-1 {
+		background-image: linear-gradient(104.83deg, #000000 0.66%, #555555 100%);
+	}
+
+	.bg-gradient-2 {
+		background-image: linear-gradient(150deg, #1d2024 60%, #555555);
+	}
+
+	/* Animation de la barre noire sous les titres */
+	.underline-bar {
+		width: 15rem; /* 60 (w-60) = 240px */
+		transition: width 500ms;
+	}
+
+	@media (min-width: 640px) {
+		.underline-bar {
+			width: 5rem; /* 20 (w-20) = 80px */
+		}
+
+		.group:hover .underline-bar {
+			width: 20rem; /* 80 (w-80) = 320px */
+		}
+	}
+}
+
+@font-face {
+	font-family: 'Quattrocento Sans';
+	src: local('Quattrocento Sans'), local('Quattrocento-Sans'), local('quattrocento sans'), local('quattrocento-sans'),
+		url('/fonts/quattrocento_sans/QuattrocentoSans-Regular.ttf');
+	font-weight: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Quattrocento Sans';
+	src: local('Quattrocento Sans'), local('Quattrocento-Sans'), local('quattrocento sans'), local('quattrocento-sans'),
+		url('/fonts/quattrocento_sans/QuattrocentoSans-Bold.ttf');
+	font-weight: bold;
+	font-display: swap;
+}
+

@@ -49,7 +49,7 @@
 		<ul
 			class="{isNavbarOpen
 				? 'absolute top-20 z-50 left-0 flex flex-col bg-black pl-16 md:static md:bg-transparent md:flex-row md:p-0'
-				: 'static hidden md:flex md:p-0'} whitespace-nowrap w-full gap-4 p-8 text-white transition-all md:col-span-3 lg:col-span-2 lg:gap-8 xl:col-span-1"
+				: 'static hidden md:flex md:p-0'} whitespace-nowrap w-full gap-4 p-8 text-white text-base md:text-lg transition-all md:col-span-3 lg:col-span-2 lg:gap-8 xl:col-span-1"
 		>
 			<li>
 				<a

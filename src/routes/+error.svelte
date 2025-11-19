@@ -18,8 +18,8 @@
 				<img src="/images/sad-smile.svg" alt="sad smile" title="sad smile" class="w-16" />
 			</div>
 			<div class="flex justify-center my-2 relative h-4">
-				<span class="bg-yellow h-2 w-18  absolute top-1/2 -translate-y-1/2 z-10" />
-				<span class="bg-black h-px absolute inset-x-0 top-1/2 -translate-y-1/2" />
+				<span class="bg-yellow h-2 w-18  absolute top-1/2 -translate-y-1/2 z-10"></span>
+				<span class="bg-black h-px absolute inset-x-0 top-1/2 -translate-y-1/2"></span>
 			</div>
 		</div>
 		<p class="text-2xl xl:text-3xl text-center pt-7 max-w-sm mx-auto">

@@ -1,0 +1,885 @@
+{
+  "GetHomePageContent": {
+    "hero_section": {
+      "subtitle": "Entrez dans le futur du management orienté données",
+      "description": "<p>Une bonne utilisation des donn&eacute;es repr&eacute;sente une r&eacute;elle opportunit&eacute; pour les organisations qui savent s'adapter, mais un risque pour celles qui ne le font pas. Notre engagement est de faire prosp&eacute;rer nos clients dans ce nouveau paradigme</p>",
+      "btn_brochure": "Téléchargez notre plaquette",
+      "btn_contact": "Contactez-nous",
+      "brochure_link": "https://docs.google.com/presentation/d/e/2PACX-1vTxf7KCRA90Jm1rClbzRMZqB7wprtcUv30NwlpyT7RsxcGCKEQxW9HneEJBxo0Ml50srOHn18p5ECpD/pub?start=false&loop=false&delayms=3000",
+      "title": "Data, cloud, IA",
+      "status": "published"
+    },
+    "fdti_section": {
+      "subtitle": "Nous sommes spécialistes de l'analyse de données",
+      "icon_1": {
+        "filename_disk": "from-data-to-insight.svg",
+        "url": "/images/cms/branding/from-data-to-insight.svg",
+        "id": "from-data-to-insight.svg"
+      },
+      "content_1": "<p><strong>Notre objectif&nbsp;</strong>est d&rsquo;apporter aux dirigeants et &eacute;quipes m&eacute;tier <strong>une vision plus pr&eacute;cise de leurs activit&eacute;s&nbsp;</strong>et des dynamiques qui les caract&eacute;risent, ainsi que&nbsp;<strong>des recommandations sur les meilleures fa&ccedil;ons d&rsquo;optimiser leur business</strong></p>",
+      "icon_2": {
+        "filename_disk": "from-data-to-insight-1.svg",
+        "url": "/images/cms/branding/from-data-to-insight-1.svg",
+        "id": "from-data-to-insight-1.svg"
+      },
+      "content_2": "<p><strong>Nous vous aidons &agrave; collecter et structurer vos donn&eacute;es&nbsp;</strong>, puis nous utilisons la <strong>science des donn&eacute;es</strong> et <strong>l'intelligence artificielle</strong> pour <strong>cr&eacute;er des mod&egrave;les pr&eacute;dictifs de processus strat&eacute;giques sur-mesure&nbsp;</strong>. Enfin&nbsp;<strong>nous cr&eacute;ons des outils de visualisation et de collaboration autour de cette donn&eacute;e&nbsp;</strong>afin d'impliquer tous vos collaborateurs dans un processus de transformation co-construit.</p>",
+      "btn_label": "Découvrez notre approche en 5 étapes",
+      "btn_name": "L’approche FDTI",
+      "title": "From Data To Insight",
+      "status": "published"
+    },
+    "technology_content": {
+      "title": "Technologies",
+      "subtitle": "Nous utilisons des outils modernes adaptés à chaque situation rencontrée lors du traitement de vos données",
+      "status": "published",
+      "technology_category_list": [
+        {
+          "description": "Grâce à notre expertise en data science, nous vous offrons des solutions personnalisées pour analyser et exploiter vos données. Nos scripts sur mesure permettent de révéler les tendances cachées et les opportunités de croissance, vous aidant à prendre des décisions éclairées et stratégiques pour votre entreprise.",
+          "status": "published",
+          "title": " Data Science",
+          "order": "1",
+          "category_icon": {
+            "filename_disk": "data-science.svg",
+            "url": "/images/cms/technologies/data-science.svg",
+            "id": "data-science.svg"
+          },
+          "technology_list": [
+            {
+              "status": "published",
+              "id": "26",
+              "name": "Python",
+              "img": {
+                "filename_disk": "python.webp",
+                "url": "/images/cms/technologies/python.webp",
+                "id": "python.webp"
+              },
+              "url": "https://www.python.org/"
+            },
+            {
+              "status": "published",
+              "id": "25",
+              "name": "R",
+              "img": {
+                "filename_disk": "r.webp",
+                "url": "/images/cms/technologies/r.webp",
+                "id": "r.webp"
+              },
+              "url": "https://www.r-project.org/"
+            },
+            {
+              "status": "published",
+              "id": "28",
+              "name": "Bash",
+              "img": {
+                "filename_disk": "bash.webp",
+                "url": "/images/cms/technologies/bash.webp",
+                "id": "bash.webp"
+              },
+              "url": "https://www.gnu.org/software/bash/"
+            },
+            {
+              "status": "published",
+              "id": "30",
+              "name": "DuckDB",
+              "img": {
+                "filename_disk": "duckdb.webp",
+                "url": "/images/cms/technologies/duckdb.webp",
+                "id": "duckdb.webp"
+              },
+              "url": "https://duckdb.org/"
+            }
+          ]
+        },
+        {
+          "description": "Notre maîtrise des principales plateformes cloud vous assure une intégration fluide et sécurisée de vos données dans l'environnement de votre choix. Nous vous accompagnons dans la migration, la gestion et l'optimisation de vos ressources cloud, garantissant une infrastructure solide et évolutive pour soutenir votre croissance.",
+          "status": "published",
+          "title": "Cloud",
+          "order": "2",
+          "category_icon": {
+            "filename_disk": "cloud.svg",
+            "url": "/images/cms/technologies/cloud.svg",
+            "id": "cloud.svg"
+          },
+          "technology_list": [
+            {
+              "status": "published",
+              "id": "15",
+              "name": "terraform",
+              "img": {
+                "filename_disk": "terraform.webp",
+                "url": "/images/cms/technologies/terraform.webp",
+                "id": "terraform.webp"
+              },
+              "url": "https://www.terraform.io/"
+            },
+            {
+              "status": "published",
+              "id": "13",
+              "name": "Azure",
+              "img": {
+                "filename_disk": "azure.webp",
+                "url": "/images/cms/technologies/azure.webp",
+                "id": "azure.webp"
+              },
+              "url": "https://azure.microsoft.com/fr-fr/"
+            },
+            {
+              "status": "published",
+              "id": "12",
+              "name": "AWS",
+              "img": {
+                "filename_disk": "aws.webp",
+                "url": "/images/cms/technologies/aws.webp",
+                "id": "aws.webp"
+              },
+              "url": "https://aws.amazon.com/fr/"
+            },
+            {
+              "status": "published",
+              "id": "14",
+              "name": "google cloud",
+              "img": {
+                "filename_disk": "google-cloud.webp",
+                "url": "/images/cms/technologies/google-cloud.webp",
+                "id": "google-cloud.webp"
+              },
+              "url": "https://cloud.google.com/"
+            },
+            {
+              "status": "published",
+              "id": "16",
+              "name": "docker",
+              "img": {
+                "filename_disk": "docker.webp",
+                "url": "/images/cms/technologies/docker.webp",
+                "id": "docker.webp"
+              },
+              "url": "https://www.docker.com/"
+            }
+          ]
+        },
+        {
+          "description": "Nous mettons en place des solutions de data warehouse adaptées à vos besoins, permettant une centralisation efficace de vos données et une mise à l'échelle sans limite. Avec un accès rapide et sécurisé à vos informations, votre entreprise bénéficie d'une base solide pour soutenir l'analyse de données, la prise de décision et la croissance continue.",
+          "status": "published",
+          "title": "Data warehouse",
+          "order": "3",
+          "category_icon": {
+            "filename_disk": "data-warehouse.svg",
+            "url": "/images/cms/technologies/data-warehouse.svg",
+            "id": "data-warehouse.svg"
+          },
+          "technology_list": [
+            {
+              "status": "published",
+              "id": "18",
+              "name": "Redshift",
+              "img": {
+                "filename_disk": "redshift.webp",
+                "url": "/images/cms/technologies/redshift.webp",
+                "id": "redshift.webp"
+              },
+              "url": "https://aws.amazon.com/fr/redshift/"
+            },
+            {
+              "status": "published",
+              "id": "19",
+              "name": "Snowflake",
+              "img": {
+                "filename_disk": "snowflake.webp",
+                "url": "/images/cms/technologies/snowflake.webp",
+                "id": "snowflake.webp"
+              },
+              "url": "ttps://www.snowflake.com/?lang=fr"
+            },
+            {
+              "status": "published",
+              "id": "17",
+              "name": "Bigquery",
+              "img": {
+                "filename_disk": "bigquery.webp",
+                "url": "/images/cms/technologies/bigquery.webp",
+                "id": "bigquery.webp"
+              },
+              "url": "https://cloud.google.com/bigquery/"
+            }
+          ]
+        },
+        {
+          "description": "En utilisant les meilleures pratiques en matière d'intelligence artificielle et de machine learning, nous concevons et déployons des modèles prédictifs innovants pour optimiser vos processus stratégiques. En automatisant les tâches répétitives et en améliorant la précision des prédictions, nous vous aidons à augmenter l'efficacité de votre entreprise et à vous démarquer de la concurrence.",
+          "status": "published",
+          "title": "IA & Machine learning",
+          "order": "4",
+          "category_icon": {
+            "filename_disk": "ia-machine-learning.svg",
+            "url": "/images/cms/technologies/ia-machine-learning.svg",
+            "id": "ia-machine-learning.svg"
+          },
+          "technology_list": [
+            {
+              "status": "published",
+              "id": "5",
+              "name": "scikit-learn",
+              "img": {
+                "filename_disk": "scikit-learn.webp",
+                "url": "/images/cms/technologies/scikit-learn.webp",
+                "id": "scikit-learn.webp"
+              },
+              "url": "https://scikit-learn.org/stable/"
+            },
+            {
+              "status": "published",
+              "id": "11",
+              "name": "hugging face",
+              "img": {
+                "filename_disk": "hugging-face.webp",
+                "url": "/images/cms/technologies/hugging-face.webp",
+                "id": "hugging-face.webp"
+              },
+              "url": "https://huggingface.co/"
+            },
+            {
+              "status": "published",
+              "id": "6",
+              "name": "pytorch",
+              "img": {
+                "filename_disk": "pytorch.webp",
+                "url": "/images/cms/technologies/pytorch.webp",
+                "id": "pytorch.webp"
+              },
+              "url": "https://pytorch.org/"
+            },
+            {
+              "status": "published",
+              "id": "29",
+              "name": "Open AI",
+              "img": {
+                "filename_disk": "open-ai.webp",
+                "url": "/images/cms/technologies/open-ai.webp",
+                "id": "open-ai.webp"
+              },
+              "url": "https://openai.com/"
+            }
+          ]
+        },
+        {
+          "description": "Nos vous aidons à collecter, structurer et diffuser vos données dans l'entreprise de manière optimale. Nous concevons des architectures robustes, des pipelines de données efficaces et assurons la qualité et la cohérence des données tout au long de leur cycle de vie",
+          "status": "published",
+          "title": "Data Engineering",
+          "order": null,
+          "category_icon": {
+            "filename_disk": "data-engineering.png",
+            "url": "/images/cms/technologies/data-engineering.png",
+            "id": "data-engineering.png"
+          },
+          "technology_list": [
+            {
+              "status": "published",
+              "id": "33",
+              "name": "Spark",
+              "img": {
+                "filename_disk": "spark.webp",
+                "url": "/images/cms/technologies/spark.webp",
+                "id": "spark.webp"
+              },
+              "url": "https://spark.apache.org/"
+            },
+            {
+              "status": "published",
+              "id": "34",
+              "name": "postgreSQL",
+              "img": {
+                "filename_disk": "postgresql.webp",
+                "url": "/images/cms/technologies/postgresql.webp",
+                "id": "postgresql.webp"
+              },
+              "url": "https://www.postgresql.org/"
+            },
+            {
+              "status": "published",
+              "id": "31",
+              "name": "Airflow",
+              "img": {
+                "filename_disk": "airflow.webp",
+                "url": "/images/cms/technologies/airflow.webp",
+                "id": "airflow.webp"
+              },
+              "url": "https://airflow.apache.org/"
+            },
+            {
+              "status": "published",
+              "id": "32",
+              "name": "DBT",
+              "img": {
+                "filename_disk": "dbt.webp",
+                "url": "/images/cms/technologies/dbt.webp",
+                "id": "dbt.webp"
+              },
+              "url": "https://www.getdbt.com/"
+            }
+          ]
+        }
+      ]
+    },
+    "trust_content": {
+      "title": "Ils nous font confiance",
+      "status": "published",
+      "company_list": [
+        {
+          "name": "Samsung",
+          "img": {
+            "filename_disk": "samsung.webp",
+            "url": "/images/cms/companies/samsung.webp",
+            "id": "samsung.webp"
+          }
+        },
+        {
+          "name": "Cognac",
+          "img": {
+            "filename_disk": "cognac.webp",
+            "url": "/images/cms/companies/cognac.webp",
+            "id": "cognac.webp"
+          }
+        },
+        {
+          "name": "Mastercard",
+          "img": {
+            "filename_disk": "mastercard.webp",
+            "url": "/images/cms/companies/mastercard.webp",
+            "id": "mastercard.webp"
+          }
+        },
+        {
+          "name": "Euro-CRM",
+          "img": {
+            "filename_disk": "euro-crm.webp",
+            "url": "/images/cms/companies/euro-crm.webp",
+            "id": "euro-crm.webp"
+          }
+        },
+        {
+          "name": "Stellantis",
+          "img": {
+            "filename_disk": "stellantis.webp",
+            "url": "/images/cms/companies/stellantis.webp",
+            "id": "stellantis.webp"
+          }
+        },
+        {
+          "name": "Galloo",
+          "img": {
+            "filename_disk": "galloo.webp",
+            "url": "/images/cms/companies/galloo.webp",
+            "id": "galloo.webp"
+          }
+        },
+        {
+          "name": "Agence Française de Développement",
+          "img": {
+            "filename_disk": "agence-francaise-de-developpement.webp",
+            "url": "/images/cms/companies/agence-francaise-de-developpement.webp",
+            "id": "agence-francaise-de-developpement.webp"
+          }
+        }
+      ]
+    },
+    "contact_section": {
+      "btn_contact": "Contactez-nous",
+      "subtitle": "Discutons ensemble de votre projet!",
+      "status": "published",
+      "address": "8 place Roger Salengro, 31000 Toulouse, France",
+      "company": "FDTI Consulting",
+      "mail": "info@fdti.eu",
+      "title": "Contact"
+    },
+    "case_study_section": {
+      "title": "Études de cas",
+      "description": "testetst",
+      "status": "published",
+      "id": "1",
+      "case_study_list": [
+        {
+          "title": "Migration du Data Warehouse et amélioration de l'analytique pour Gifi",
+          "content": "<p class=\"code-line\" dir=\"auto\" data-line=\"1\">L'entreprise Gifi, acteur majeur dans la distribution de produits non-alimentaires &agrave; petits prix, souhaitait migrer sa base de donn&eacute;es vers une infrastructure plus moderne et adapt&eacute;e &agrave; la gestion des donn&eacute;es en temps r&eacute;el. Le d&eacute;fi &eacute;tait d'impl&eacute;menter un data warehouse Snowflake pour am&eacute;liorer leurs analyses et faciliter l'exploitation de leurs donn&eacute;es, notamment gr&acirc;ce &agrave; la plateforme de visualisation Qlik.</p>\n<h2 id=\"contexte--probl%C3%A8me\" class=\"code-line\" dir=\"auto\" data-line=\"3\">Contexte / Probl&egrave;me</h2>\n<h3 id=\"pr%C3%A9sentation-du-client\" class=\"code-line\" dir=\"auto\" data-line=\"4\">Pr&eacute;sentation du client</h3>\n<p class=\"code-line\" dir=\"auto\" data-line=\"5\">Gifi est un groupe sp&eacute;cialis&eacute; dans la distribution de produits de la maison et de la famille. Ils sont confront&eacute;s &agrave; des d&eacute;fis pour moderniser leurs syst&egrave;mes de gestion et d'analyse des donn&eacute;es afin d'optimiser la prise de d&eacute;cisions.</p>\n<h3 id=\"d%C3%A9fis--probl%C3%A8me-%C3%A0-r%C3%A9soudre\" class=\"code-line\" dir=\"auto\" data-line=\"7\">D&eacute;fis / Probl&egrave;me &agrave; r&eacute;soudre</h3>\n<p class=\"code-line\" dir=\"auto\" data-line=\"8\">Gifi accumule une grande quantit&eacute; de donn&eacute;es en format JSON sur Azure et souhaite les structurer pour les utiliser dans un datawarehouse Snowflake. Les donn&eacute;es concernent divers objets m&eacute;tiers tels que les produits, les caisses enregistreuses, les stocks, la logistique, entre autres. Le d&eacute;fi est de construire un flux de donn&eacute;es performant entre Azure Data Lake Service Gen2 et Snowflake.</p>\n<h3 id=\"objectifs-de-la-mission\" class=\"code-line\" dir=\"auto\" data-line=\"10\">Objectifs de la mission</h3>\n<ul class=\"code-line\" dir=\"auto\" data-line=\"11\">\n<li class=\"code-line\" dir=\"auto\" data-line=\"11\">Mettre en place le data warehouse Snowflake</li>\n<li class=\"code-line\" dir=\"auto\" data-line=\"12\">Int&eacute;grer l'ensemble des objets m&eacute;tiers dans un mod&egrave;le de donn&eacute;es structur&eacute;</li>\n<li class=\"code-line\" dir=\"auto\" data-line=\"13\">Construire un flux de donn&eacute;es performant entre ADLS Gen2 et Snowflake</li>\n<li class=\"code-line\" dir=\"auto\" data-line=\"14\">Faciliter l'utilisation des donn&eacute;es pour les &eacute;quipes d'analystes via des visualisations Qlik</li>\n</ul>\n<h2 id=\"solution-propos%C3%A9e\" class=\"code-line\" dir=\"auto\" data-line=\"16\">Solution propos&eacute;e</h2>\n<h3 id=\"plan-daction\" class=\"code-line\" dir=\"auto\" data-line=\"17\">Plan d'action</h3>\n<p><a href=\"https://www.fdti.eu/\" target=\"_blank\" rel=\"noopener\">FDTI</a> a accompagn&eacute; Gifi tout au long du processus de migration vers un entrep&ocirc;t de donn&eacute;es Snowflake et la cr&eacute;ation de flux de donn&eacute;es adapt&eacute;s. Nous avons &eacute;labor&eacute; une strat&eacute;gie pour d&eacute;finir, collecter et stocker des objets m&eacute;tier, automatiser la g&eacute;n&eacute;ration et l'ex&eacute;cution de requ&ecirc;tes SQL, cr&eacute;er des flux de donn&eacute;es et des t&acirc;ches Snowflake, et guider l'&eacute;quipe interne dans l'utilisation des donn&eacute;es pour la visualisation sur Qlik.</p>\n<ul class=\"code-line\" dir=\"auto\" data-line=\"18\">\n<li class=\"code-line\" dir=\"auto\" data-line=\"18\">D&eacute;finition du mod&egrave;le de donn&eacute;es et des vues m&eacute;tier pour int&eacute;grer les 98 objets m&eacute;tiers dans le datawarehouse</li>\n<li class=\"code-line\" dir=\"auto\" data-line=\"19\">Mise en place d'un flux de donn&eacute;es entre ADLS Gen2 et Snowflake en utilisant Kafka avec Event Grid et Azure Data Factory</li>\n<li class=\"code-line\" dir=\"auto\" data-line=\"20\">Automatisation de la g&eacute;n&eacute;ration et de l'ex&eacute;cution de requ&ecirc;tes SQL &agrave; partir des m&eacute;tadonn&eacute;es des objets m&eacute;tiers au moyen d'un script Python</li>\n<li class=\"code-line\" dir=\"auto\" data-line=\"21\">Conception de mises &agrave; jour delta en temps quasi-r&eacute;el et de t&acirc;ches Snowflake pour alimenter le data warehouse</li>\n<li class=\"code-line\" dir=\"auto\" data-line=\"22\">Impl&eacute;mentation d'une fonction Scala personnalis&eacute;e pour faciliter le d&eacute;nesting des donn&eacute;es JSON</li>\n</ul>\n<h3 id=\"description-des-technologies-utilis%C3%A9es\" class=\"code-line\" dir=\"auto\" data-line=\"24\">Description des technologies utilis&eacute;es</h3>\n<p>Nous avons utilis&eacute; un ensemble de technologies pour r&eacute;soudre les probl&egrave;mes de Gifi :</p>\n<ul>\n<li>Snowflake pour l'entrep&ocirc;t de donn&eacute;es</li>\n<li>Langages de programmation tels que Python, SQL, et Scala</li>\n<li>Services Azure tels qu'Azure Data Lake Storage et Azure Event Grid</li>\n<li>Outils d'int&eacute;gration tels que Kafka et Github</li>\n<li>Qlik pour la visualisation des donn&eacute;es</li>\n</ul>\n<h3 id=\"gestion-du-changement\" class=\"code-line\" dir=\"auto\" data-line=\"27\">Gestion du changement</h3>\n<p class=\"code-line\" dir=\"auto\" data-line=\"28\">Nous avons travaill&eacute; en &eacute;troite collaboration avec les &eacute;quipes internes de Gifi pour partager nos connaissances, les aider &agrave; int&eacute;grer la solution et tirer pleinement parti des avantages offerts par les nouvelles technologies.</p>\n<h2 id=\"r%C3%A9sultats\" class=\"code-line\" dir=\"auto\" data-line=\"30\">R&eacute;sultats</h2>\n<h3 id=\"r%C3%A9alisation-des-objectifs\" class=\"code-line\" dir=\"auto\" data-line=\"31\">R&eacute;alisation des objectifs</h3>\n<p class=\"code-line\" dir=\"auto\" data-line=\"32\">Gr&acirc;ce &agrave; la mise en place du data warehouse Snowflake et &agrave; l'am&eacute;lioration du flux de donn&eacute;es, Gifi a pu atteindre ses objectifs en mati&egrave;re de structuration de donn&eacute;es et d'analyse. Le traitement en temps quasi-r&eacute;el de millions de fichiers par jour a &eacute;t&eacute; r&eacute;alis&eacute; avec succ&egrave;s.</p>\n<h3 id=\"b%C3%A9n%C3%A9fices-pour-le-client\" class=\"code-line\" dir=\"auto\" data-line=\"34\">B&eacute;n&eacute;fices pour le client</h3>\n<p class=\"code-line\" dir=\"auto\" data-line=\"35\">Gifi a b&eacute;n&eacute;fici&eacute; d'un syst&egrave;me de gestion de donn&eacute;es plus efficace et d'analyses plus pertinentes gr&acirc;ce &agrave; l'impl&eacute;mentation r&eacute;ussie de Snowflake et Qlik. Les &eacute;quipes d'analystes ont pu explorer les donn&eacute;es plus facilement et prendre des d&eacute;cisions bas&eacute;es sur des informations d&eacute;taill&eacute;es et actualis&eacute;es.</p>\n<ul>\n<li class=\"code-line\" dir=\"auto\" data-line=\"35\">Migration r&eacute;ussie des donn&eacute;es vers Snowflake</li>\n<li class=\"code-line\" dir=\"auto\" data-line=\"35\">Automatisation des processus pour la g&eacute;n&eacute;ration et l'ex&eacute;cution de requ&ecirc;tes SQL</li>\n<li class=\"code-line\" dir=\"auto\" data-line=\"35\">Mise en place de flux de donn&eacute;es en temps quasi-r&eacute;el</li>\n<li class=\"code-line\" dir=\"auto\" data-line=\"35\">Meilleure compr&eacute;hension et utilisation des donn&eacute;es pour la visualisation</li>\n</ul>\n<h2 id=\"conclusion--r%C3%A9flexions-finales\" class=\"code-line\" dir=\"auto\" data-line=\"37\">Conclusion / R&eacute;flexions finales</h2>\n<p class=\"code-line\" dir=\"auto\" data-line=\"38\">Ce partenariat a permis de moderniser l'infrastructure de donn&eacute;es de Gifi et de d&eacute;ployer de nouvelles technologies pour am&eacute;liorer la qualit&eacute; des analyses. La migration vers Snowflake et l'optimisation des flux de donn&eacute;es ont apport&eacute; une valeur ajout&eacute;e significative pour Gifi.</p>",
+          "tags": [
+            "Snowflake",
+            "Python",
+            "SQL",
+            "Azure",
+            "Kafka",
+            "Scala",
+            "Qlik"
+          ],
+          "slug": "migration-data-warehouse-gifi",
+          "img": null
+        }
+      ]
+    },
+    "CII": {
+      "description": "<p>Nous sommes agr&eacute;&eacute;s Cr&eacute;dit d&rsquo;Imp&ocirc;t Innovation (CII) depuis 2020 et jusqu'en 2024 par la Direction G&eacute;n&eacute;rale des entreprises. Cela implique que vous pouvez obtenir un cr&eacute;dit d'imp&ocirc;t sur 20% des d&eacute;penses engag&eacute;es avec nous.</p>",
+      "status": "published",
+      "image": {
+        "filename_disk": "image.png",
+        "url": "/images/cms/branding/image.png",
+        "id": "image.png"
+      }
+    },
+    "meta_tags": {
+      "page_tags": [
+        {
+          "title": "FDTI - From Data To Insight : expert en gestion de données",
+          "description": "Prestataire data science, IA, ML, Cloud, Infra, data warehouse, ETL, APIs, FDTI - From Data To Insight vous accompagne",
+          "url": "/",
+          "img": {
+            "filename_disk": "fdti-from-data-to-insights.svg",
+            "url": "/images/cms/branding/fdti-from-data-to-insights.svg",
+            "id": "fdti-from-data-to-insights.svg"
+          }
+        },
+        {
+          "title": "Notre approche | FDTI - From Data To Insight",
+          "description": "Notre approche data science, IA, ML, Cloud, Infra, data warehouse, ETL, APIs, FDTI - From Data To Insight vous accompagne.",
+          "url": "/approche-fdti",
+          "img": {
+            "filename_disk": "fdti-from-data-to-insights.svg",
+            "url": "/images/cms/branding/fdti-from-data-to-insights.svg",
+            "id": "fdti-from-data-to-insights.svg"
+          }
+        },
+        {
+          "title": "Adn et valeurs | FDTI - From Data To Insight",
+          "description": "ADN et valeurs en data science, IA, ML, Cloud, Infra, data warehouse, ETL, APIs, FDTI - From Data To Insight vous accompagne.",
+          "url": "/adn-et-valeurs",
+          "img": {
+            "filename_disk": "fdti-from-data-to-insights.svg",
+            "url": "/images/cms/branding/fdti-from-data-to-insights.svg",
+            "id": "fdti-from-data-to-insights.svg"
+          }
+        },
+        {
+          "title": "Index des retours d'expériences",
+          "description": "Retours d'expériences",
+          "url": "/retours-dexperiences",
+          "img": {
+            "filename_disk": "fdti-from-data-to-insights.svg",
+            "url": "/images/cms/branding/fdti-from-data-to-insights.svg",
+            "id": "fdti-from-data-to-insights.svg"
+          }
+        }
+      ]
+    }
+  },
+  "GetCGUContent": {
+    "CGU": {
+      "title": "Conditions générales d'utilisation du site internet fdti.eu",
+      "content": "<div class=\"text-2xl lg:mx-72 mx-16 mt-14 text-grey1 font-semibold s-_nwK2CU3lMz9\">Objet</div>\n<div class=\"text-sm lg:mx-72 mx-16 text-grey1 s-_nwK2CU3lMz9\">\n<p class=\"s-_nwK2CU3lMz9\">Le site accessible par l&rsquo;url suivant : <a class=\"s-_nwK2CU3lMz9\" title=\"Fdti Consulting\" href=\"https://fdti.eu\" target=\"_self\"><u class=\"text-blue-700 s-_nwK2CU3lMz9\">https://fdti.eu</u></a> (ci-apr&egrave;s : le &laquo; Site &raquo;) est exploit&eacute; dans le respect de la l&eacute;gislation fran&ccedil;aise. L&rsquo;utilisation de ce site et des services propos&eacute;s sur le site (ci-apr&egrave;s : les &laquo; Services &raquo;) est r&eacute;gie par les pr&eacute;sentes conditions g&eacute;n&eacute;rales. En utilisant le site, vous reconnaissez avoir pris connaissance de ces conditions et les avoir accept&eacute;es. Celles-ci pourront &ecirc;tres modifi&eacute;es &agrave; tout moment et sans pr&eacute;avis par la soci&eacute;t&eacute; FDTI Consulting.</p>\n<br class=\"s-_nwK2CU3lMz9\" />\n<p class=\"s-_nwK2CU3lMz9\">Elles peuvent &ecirc;tre compl&eacute;t&eacute;es, le cas &eacute;ch&eacute;ant, par des conditions d&rsquo;utilisation particuli&egrave;res &agrave; certains Services. En cas de contradiction, les conditions particuli&egrave;res pr&eacute;valent sur ces conditions g&eacute;n&eacute;rales.</p>\n</div>\n<div class=\"text-2xl lg:mx-72 mx-16 mt-5 text-grey1 font-semibold s-_nwK2CU3lMz9\">Exploitation</div>\n<div class=\"text-sm lg:mx-72 mx-16 text-grey1 s-_nwK2CU3lMz9\">\n<p class=\"s-_nwK2CU3lMz9\">Les Services sont exploit&eacute;s par la soci&eacute;t&eacute; FDTI Consulting, SAS au capital social de 2 000 &euro; euros, immatricul&eacute;e au RCS de Toulouse sous le n&deg; 850 172 164, dont le si&egrave;ge social est situ&eacute; 22 rue Denfert Rochereau, 31000 Toulouse (ci-apr&egrave;s : &laquo; FDTI &raquo;).</p>\n<br class=\"s-_nwK2CU3lMz9\" />\n<p class=\"s-_nwK2CU3lMz9\">Les Services sont h&eacute;berg&eacute;s par la soci&eacute;t&eacute; OVH, OVH S.A.S situ&eacute; au 2 rue Kellermann &ndash; 59100 Roubaix &ndash; France, sur des serveurs bas&eacute;s &agrave; Strasbourg, France</p>\n<br class=\"s-_nwK2CU3lMz9\" />\n<p class=\"s-_nwK2CU3lMz9\">FDTI peut &ecirc;tre contact&eacute;e aux coordonn&eacute;es suivantes&nbsp;:</p>\n<br class=\"s-_nwK2CU3lMz9\" />\n<p class=\"s-_nwK2CU3lMz9\">Adresse postale : FDTI Consulting, 22 rue Denfert Rochereau, 31000, Toulouse France Adresse &eacute;lectronique&nbsp;:&nbsp;<a class=\"s-_nwK2CU3lMz9\" href=\"mailto:info@fdti-consulting.com\"><u class=\"text-blue-700 s-_nwK2CU3lMz9\">info@fdti-consulting.com</u></a></p>\n<br class=\"s-_nwK2CU3lMz9\" />\n<p class=\"s-_nwK2CU3lMz9\">Contactez nous &agrave; cette adresse si&nbsp;:</p>\n<p class=\"s-_nwK2CU3lMz9\">Vous avez une question d&rsquo;ordre g&eacute;n&eacute;ral sur la mani&egrave;re dont FDTI Consulting prot&egrave;ge vos donn&eacute;es personnelles</p>\n<p class=\"s-_nwK2CU3lMz9\">Vous souhaitez exercer vos droits concernant vos donn&eacute;es personnelles</p>\n<p class=\"s-_nwK2CU3lMz9\">Vous souhaitez d&eacute;poser une r&eacute;clamation concernant l&rsquo;utilisation de vos donn&eacute;es par FDTI Consulting</p>\n</div>\n<div class=\"text-2xl lg:mx-72 mx-16 mt-5 text-grey1 font-semibold s-_nwK2CU3lMz9\">Donn&eacute;es</div>\n<div class=\"text-sm lg:mx-72 mx-16 text-grey1 s-_nwK2CU3lMz9\">\n<p class=\"s-_nwK2CU3lMz9\">L&rsquo;Utilisateur reconna&icirc;t et accepte express&eacute;ment&nbsp;:</p>\n<br class=\"s-_nwK2CU3lMz9\" />\n<ul class=\"ml-5 s-_nwK2CU3lMz9\">\n<ul class=\"ml-5 s-_nwK2CU3lMz9\">\n<li class=\"s-_nwK2CU3lMz9\">que les donn&eacute;es recueillies sur le site et sur les &eacute;quipements informatiques de FDTI Consulting font foi de la r&eacute;alit&eacute; des op&eacute;rations intervenues dans le cadre des pr&eacute;sentes&nbsp;;</li>\n</ul>\n</ul>\n<br class=\"s-_nwK2CU3lMz9\" />\n<ul class=\"ml-5 s-_nwK2CU3lMz9\">\n<li class=\"s-_nwK2CU3lMz9\">que ces donn&eacute;es constituent le seul mode de preuve admis entre les parties</li>\n</ul>\n</div>\n<div class=\"text-2xl lg:mx-72 mx-16 mt-5 text-grey1 font-semibold s-_nwK2CU3lMz9\">Propri&eacute;t&eacute; intellectuelle</div>\n<div class=\"text-sm lg:mx-72 mx-16 text-grey1 s-_nwK2CU3lMz9\">\n<p class=\"s-_nwK2CU3lMz9\">Les syst&egrave;mes, logiciels, structures, infrastructures, bases de donn&eacute;es et contenus de toute nature (textes, images, visuels, musiques, logos, marques, base de donn&eacute;es, etc &hellip;) exploit&eacute;s par FDTI Consulting au sein du site sont prot&eacute;g&eacute;s par tous droits de propri&eacute;t&eacute; intellectuelle ou droits des producteurs de bases de donn&eacute;es en vigueur. Tous d&eacute;sassemblages, d&eacute;compilations, d&eacute;cryptages, extractions, r&eacute;utilisations, copies et plus g&eacute;n&eacute;ralement, tous actes de reproduction, repr&eacute;sentation, diffusion et utilisation de l&rsquo;un quelconque de ces &eacute;l&eacute;ments, en tout ou partie, sans l&rsquo;autorisation de FDTI Consulting sont strictement interdits et pourront faire l&rsquo;objet de poursuites judiciaires.</p>\n</div>\n<div class=\"text-2xl lg:mx-72 mx-16 mt-5 text-grey1 font-semibold s-_nwK2CU3lMz9\">Liens vers le Site</div>\n<div class=\"text-sm lg:mx-72 mx-16 text-grey1 s-_nwK2CU3lMz9\">\n<p class=\"s-_nwK2CU3lMz9\">FDTI Consulting autorise et encourage les liens vers le contenu du Site. Cependant, FDTI est une organisation attach&eacute;e &agrave; respecter les normes professionnelles les plus strictes. Par cons&eacute;quent, FDTI ne d&eacute;livre aucun consentement ni aucune autre autorisation permettant la publication de liens ou toute autre utilisation du Site ou de son Contenu si ledit lien ou ladite utilisation : (a) sugg&egrave;re que FDTI Consulting fait la promotion de causes, id&eacute;es, campagnes politiques, sites Internet, produits ou services de tiers, ou les soutient ; (b) copie, affiche, diffuse ou utilise de toute autre mani&egrave;re le Contenu sans le consentement &eacute;crit formel de FDTI; ou (c) utilise le Contenu &agrave; des fins commerciales. En outre, FDTI Consulting n&rsquo;accorde pas son consentement pour la publication de liens vers le Site si la partie concern&eacute;e est impliqu&eacute;e dans l&rsquo;une des conduites interdites (telles que d&eacute;crites dans les pr&eacute;sentes Conditions d&rsquo;utilisation). Nous nous r&eacute;servons le droit de revenir &agrave; tout moment sur notre autorisation de publication d&rsquo;un lien.</p>\n<br class=\"s-_nwK2CU3lMz9\" />\n<p class=\"s-_nwK2CU3lMz9\">Sous r&eacute;serve de votre respect des pr&eacute;sentes conditions, FDTI Consulting vous autorise &agrave; visualiser le Contenu, &agrave; en effectuer une copie unique et &agrave; l&rsquo;imprimer, uniquement &agrave; des fins non commerciales, personnelles et l&eacute;gales, &agrave; condition que vous conserviez l&rsquo;ensemble des mentions de copyright et de marques d&eacute;pos&eacute;es, ainsi que toute autre mention de propri&eacute;t&eacute; intellectuelle contenue dans ledit Contenu et &agrave; condition que le Contenu, ou toute partie de celui-ci, ne soient pas modifi&eacute;s.</p>\n</div>\n<div class=\"text-2xl lg:mx-72 mx-16 mt-5 text-grey1 font-semibold s-_nwK2CU3lMz9\">Sites tiers</div>\n<div class=\"text-sm lg:mx-72 mx-16 text-grey1 s-_nwK2CU3lMz9\">\n<p class=\"s-_nwK2CU3lMz9\">FDTI Consulting ne pourra en aucun cas &ecirc;tre tenue pour responsable de la disponibilit&eacute; technique de sites internet ou d&rsquo;applications exploit&eacute;es par des tiers (y compris ses &eacute;ventuels partenaires) auxquels l&rsquo;Utilisateur acc&eacute;derait par l&rsquo;interm&eacute;diaire du site.</p>\n<br class=\"s-_nwK2CU3lMz9\" />\n<p class=\"s-_nwK2CU3lMz9\">FDTI Consulting n&rsquo;endosse aucune responsabilit&eacute; au titre des contenus, publicit&eacute;s, produits et/ou services disponibles sur de tels sites et applications tierces dont il est rappel&eacute; qu&rsquo;ils sont r&eacute;gis par leurs propres conditions d&rsquo;utilisation.</p>\n<br class=\"s-_nwK2CU3lMz9\" />\n<p class=\"s-_nwK2CU3lMz9\">FDTI Consulting n&rsquo;est pas non plus responsable des transactions intervenues entre l&rsquo;Utilisateur et un quelconque annonceur, professionnel ou commer&ccedil;ant (y compris ses &eacute;ventuels partenaires) vers lequel l&rsquo;Utilisateur serait orient&eacute; par l&rsquo;interm&eacute;diaire du site et ne saurait en aucun cas &ecirc;tre partie &agrave; quelques litiges &eacute;ventuels que ce soit avec ces tiers concernant notamment la livraison de produits et/ou services, les garanties, d&eacute;clarations et autres obligations quelconques auxquelles ces tiers sont tenus.</p>\n</div>\n<div class=\"text-2xl lg:mx-72 mx-16 mt-5 text-grey1 font-semibold s-_nwK2CU3lMz9\">Conduites interdites</div>\n<div class=\"text-sm lg:mx-72 mx-16 text-grey1 s-_nwK2CU3lMz9\">\n<p class=\"s-_nwK2CU3lMz9\">Il est strictement interdit d&rsquo;utiliser les Services aux fins suivantes&nbsp;:</p>\n<br class=\"s-_nwK2CU3lMz9\" />\n<ul class=\"ml-5 s-_nwK2CU3lMz9\">\n<ul class=\"ml-5 s-_nwK2CU3lMz9\">\n<li class=\"s-_nwK2CU3lMz9\">L&rsquo;exercice d&rsquo;activit&eacute;s ill&eacute;gales, frauduleuses ou portant atteinte aux droits ou &agrave; la s&eacute;curit&eacute; des tiers</li>\n<li class=\"s-_nwK2CU3lMz9\">L&rsquo;atteinte &agrave; l&rsquo;ordre public ou la violation des lois et r&egrave;glements en vigueur</li>\n<li class=\"s-_nwK2CU3lMz9\">L&rsquo;intrusion dans le syst&egrave;me informatique d&rsquo;un tiers ou toute activit&eacute; de nature &agrave; nuire, contr&ocirc;ler, interf&eacute;rer, ou intercepter tout ou partie du syst&egrave;me</li>\n<li class=\"s-_nwK2CU3lMz9\">Informatique d&rsquo;un tiers, en violer l&rsquo;int&eacute;grit&eacute; ou la s&eacute;curit&eacute;</li>\n<li class=\"s-_nwK2CU3lMz9\">L&rsquo;envoi d&rsquo;emails non sollicit&eacute;s et/ou de prospection ou sollicitation commerciale</li>\n<li class=\"s-_nwK2CU3lMz9\">Les manipulations destin&eacute;es &agrave; am&eacute;liorer le r&eacute;f&eacute;rencement d&rsquo;un site tiers</li>\n<li class=\"s-_nwK2CU3lMz9\">L&rsquo;aide ou l&rsquo;incitation, sous quelque forme et de quelque mani&egrave;re que ce soit, &agrave; un ou plusieurs des actes et activit&eacute;s d&eacute;crits ci-dessus, et plus g&eacute;n&eacute;ralement toute pratique d&eacute;tournant les Services &agrave; des fins autres que celles pour lesquelles ils ont &eacute;t&eacute; con&ccedil;us.</li>\n</ul>\n</ul>\n<br class=\"s-_nwK2CU3lMz9\" />\n<ul class=\"ml-5 s-_nwK2CU3lMz9\">\n<ul class=\"ml-5 s-_nwK2CU3lMz9\">\n<li class=\"s-_nwK2CU3lMz9\">Il est strictement interdit aux Utilisateurs de copier et/ou de d&eacute;tourner &agrave; leurs fins ou &agrave; celles de tiers le concept, les technologies ou tout autre &eacute;l&eacute;ment du site de</li>\n</ul>\n</ul>\n<br class=\"s-_nwK2CU3lMz9\" />\n<ul class=\"ml-5 s-_nwK2CU3lMz9\">\n<ul class=\"ml-5 s-_nwK2CU3lMz9\">\n<li class=\"s-_nwK2CU3lMz9\">Sont &eacute;galement strictement interdits : (i) tous comportements de nature &agrave; interrompre, suspendre, ralentir ou emp&ecirc;cher la continuit&eacute; des Services, (ii) toutes intrusions ou tentatives d&rsquo;intrusions dans les syst&egrave;mes de FDTI, (iii) tous d&eacute;tournements des ressources syst&egrave;me du site, (iv) toutes actions de nature &agrave; imposer une charge disproportionn&eacute;e sur les infrastructures de ce dernier, (v) toutes atteintes aux mesures de s&eacute;curit&eacute; et d&rsquo;authentification, (vi) tous actes de nature &agrave; porter atteinte aux droits et int&eacute;r&ecirc;ts financiers, commerciaux ou moraux de FDTI ou des usagers de son site, et enfin plus g&eacute;n&eacute;ralement (vii) tout manquement aux pr&eacute;sentes conditions g&eacute;n&eacute;rales.</li>\n</ul>\n</ul>\n<br class=\"s-_nwK2CU3lMz9\" />\n<ul class=\"ml-5 s-_nwK2CU3lMz9\">\n<li class=\"s-_nwK2CU3lMz9\">Il est strictement interdit de monnayer, vendre ou conc&eacute;der tout ou partie de l&rsquo;acc&egrave;s aux Services ou au site, ainsi qu&rsquo;aux informations qui y sont h&eacute;berg&eacute;es et/ou partag&eacute;es.</li>\n</ul>\n<br class=\"s-_nwK2CU3lMz9\" />\n<p class=\"s-_nwK2CU3lMz9\">En cas de manquement &agrave; l&rsquo;une quelconque des dispositions des pr&eacute;sentes conditions g&eacute;n&eacute;rales ou plus g&eacute;n&eacute;ralement, d&rsquo;infraction aux lois et r&egrave;glements en vigueur par un Utilisateur, FDTI se r&eacute;serve le droit de prendre toute mesure appropri&eacute;e et notamment d&rsquo;avertir toute autorit&eacute; concern&eacute;e et d&rsquo;engager toute action judiciaire</p>\n</div>\n<div class=\"text-2xl lg:mx-72 mx-16 mt-5 text-grey1 font-semibold s-_nwK2CU3lMz9\">Langue</div>\n<div class=\"text-sm lg:mx-72 mx-16 text-grey1 s-_nwK2CU3lMz9\">\n<p class=\"s-_nwK2CU3lMz9\">Dans l&rsquo;hypoth&egrave;se d&rsquo;une traduction des pr&eacute;sentes conditions g&eacute;n&eacute;rales dans une ou plusieurs langues, la langue d&rsquo;interpr&eacute;tation sera la langue fran&ccedil;aise en cas de contradiction ou de contestation sur la signification d&rsquo;un terme ou d&rsquo;une disposition.</p>\n</div>\n<div class=\"text-2xl lg:mx-72 mx-16 mt-5 text-grey1 font-semibold s-_nwK2CU3lMz9\">Loi applicable et juridiction</div>\n<div class=\"text-sm lg:mx-72 mx-16 text-grey1 s-_nwK2CU3lMz9\">\n<p class=\"s-_nwK2CU3lMz9\">Les pr&eacute;sentes conditions g&eacute;n&eacute;rales sont r&eacute;gies par la loi fran&ccedil;aise.</p>\n<br class=\"s-_nwK2CU3lMz9\" />\n<p class=\"s-_nwK2CU3lMz9\">En cas de contestation sur la validit&eacute;, l&rsquo;interpr&eacute;tation et/ou l&rsquo;ex&eacute;cution des pr&eacute;sentes conditions g&eacute;n&eacute;rales, les parties conviennent que les tribunaux de Paris seront exclusivement comp&eacute;tents pour en juger, sauf r&egrave;gles de proc&eacute;dure imp&eacute;ratives contraires.</p>\n</div>\n<div class=\"text-2xl lg:mx-72 mx-16 mt-5 text-grey1 font-semibold s-_nwK2CU3lMz9\">Entr&eacute;e en vigueur</div>\n<div class=\"text-sm lg:mx-72 mx-16 text-grey1 mb-28 s-_nwK2CU3lMz9\">\n<p class=\"s-_nwK2CU3lMz9\">Les pr&eacute;sentes conditions g&eacute;n&eacute;rales sont entr&eacute;es en vigueur le 16/04/2019</p>\n</div>"
+    }
+  },
+  "GetDNAPageContent": {
+    "DNA_content": {
+      "title": "Adn et Valeurs",
+      "description": "<p>La s&eacute;curit&eacute; et la confidentialit&eacute; des donn&eacute;es sont un enjeu primordial pour nous, aussi nous mettons en place des r&egrave;gles strictes dans nos traitements, telles que l'anonymisation des donn&eacute;es personnelles et l'encryptage syst&eacute;matique des connexions. Nos serveurs sont h&eacute;berg&eacute;s en France, les donn&eacute;es qu'ils contiennent ne quittent jamais l'UE et ne sont soumises &agrave; aucune juridiction &eacute;trang&egrave;re &agrave; l'Union europ&eacute;enne. Nous traitons toutes nos donn&eacute;es conform&eacute;ment au RGPD.</p>",
+      "status": "published",
+      "card_list": [
+        {
+          "title": "Flexibilité",
+          "description": "<p><strong>S&rsquo;int&eacute;grer &agrave; vos &eacute;quipes</strong> ou travailler en autonomie sur des projets nouveaux ou existants.</p>",
+          "order": 1,
+          "icon": {
+            "filename_disk": "flexibilite.svg",
+            "url": "/images/cms/values/flexibilite.svg",
+            "id": "flexibilite.svg"
+          }
+        },
+        {
+          "title": "Experience",
+          "description": "<p><strong>Vision end-to-end</strong>&nbsp;des processus data, capacit&eacute; d&rsquo;intervention &agrave; tous les niveaux.</p>",
+          "order": 2,
+          "icon": {
+            "filename_disk": "experience.svg",
+            "url": "/images/cms/values/experience.svg",
+            "id": "experience.svg"
+          }
+        },
+        {
+          "title": "Relevance",
+          "description": "<p>Apporter des&nbsp;<strong>solutions pragmatiques</strong>&nbsp;gr&acirc;ce &agrave; notre expertise en gestion de la donn&eacute;e.</p>",
+          "order": 3,
+          "icon": {
+            "filename_disk": "relevance.png",
+            "url": "/images/cms/values/relevance.png",
+            "id": "relevance.png"
+          }
+        },
+        {
+          "title": "Commitment",
+          "description": "<p>Prendre des&nbsp;<strong>responsabilit&eacute;s</strong>&nbsp;et proposer des solutions de mani&egrave;re proactive.</p>",
+          "order": 4,
+          "icon": {
+            "filename_disk": "commitment.png",
+            "url": "/images/cms/values/commitment.png",
+            "id": "commitment.png"
+          }
+        },
+        {
+          "title": "Execution",
+          "description": "<p><strong>G&eacute;rer des projets</strong>&nbsp;et des &eacute;quipes en respectant les contraintes et les d&eacute;lais.</p>",
+          "order": 5,
+          "icon": {
+            "filename_disk": "execution.png",
+            "url": "/images/cms/values/execution.png",
+            "id": "execution.png"
+          }
+        },
+        {
+          "title": "Cooperation",
+          "description": "<p><strong>Collaborer et communiquer</strong> clairement les solutions et les r&eacute;sultats.</p>",
+          "order": 6,
+          "icon": {
+            "filename_disk": "cooperation.png",
+            "url": "/images/cms/values/cooperation.png",
+            "id": "cooperation.png"
+          }
+        }
+      ],
+      "RGPD_img": {
+        "filename_disk": "dna-and-values.webp",
+        "url": "/images/cms/values/dna-and-values.webp",
+        "id": "dna-and-values.webp"
+      }
+    },
+    "meta_tags": {
+      "page_tags": [
+        {
+          "title": "FDTI - From Data To Insight : expert en gestion de données",
+          "description": "Prestataire data science, IA, ML, Cloud, Infra, data warehouse, ETL, APIs, FDTI - From Data To Insight vous accompagne",
+          "url": "/",
+          "img": {
+            "filename_disk": "fdti-from-data-to-insights.svg",
+            "url": "/images/cms/branding/fdti-from-data-to-insights.svg",
+            "id": "fdti-from-data-to-insights.svg"
+          }
+        },
+        {
+          "title": "Notre approche | FDTI - From Data To Insight",
+          "description": "Notre approche data science, IA, ML, Cloud, Infra, data warehouse, ETL, APIs, FDTI - From Data To Insight vous accompagne.",
+          "url": "/approche-fdti",
+          "img": {
+            "filename_disk": "fdti-from-data-to-insights.svg",
+            "url": "/images/cms/branding/fdti-from-data-to-insights.svg",
+            "id": "fdti-from-data-to-insights.svg"
+          }
+        },
+        {
+          "title": "Adn et valeurs | FDTI - From Data To Insight",
+          "description": "ADN et valeurs en data science, IA, ML, Cloud, Infra, data warehouse, ETL, APIs, FDTI - From Data To Insight vous accompagne.",
+          "url": "/adn-et-valeurs",
+          "img": {
+            "filename_disk": "fdti-from-data-to-insights.svg",
+            "url": "/images/cms/branding/fdti-from-data-to-insights.svg",
+            "id": "fdti-from-data-to-insights.svg"
+          }
+        },
+        {
+          "title": "Index des retours d'expériences",
+          "description": "Retours d'expériences",
+          "url": "/retours-dexperiences",
+          "img": {
+            "filename_disk": "fdti-from-data-to-insights.svg",
+            "url": "/images/cms/branding/fdti-from-data-to-insights.svg",
+            "id": "fdti-from-data-to-insights.svg"
+          }
+        }
+      ]
+    }
+  },
+  "GetApproachPageContent": {
+    "approach_intro": {
+      "title": "L’approche FDTI",
+      "description": "<h2>Nous abordons la science des donn&eacute;es de mani&egrave;re pragmatique et transparente, au service de votre strat&eacute;gie d&rsquo;entreprise</h2>",
+      "description_2": "<p>Nous abordons vos probl&eacute;matiques en <strong>5 &eacute;tapes</strong>, de l'acquisition de la <strong>donn&eacute;e au format brut</strong> &agrave; la <strong>co-cr&eacute;ation de solutions</strong> impactant tous les niveaux de votre organisation.</p>\n<p>Ce processus est it&eacute;ratif afin de traiter en profondeur les sujets les plus complexes</p>",
+      "status": "published"
+    },
+    "approach_category": [
+      {
+        "title": "Identification des données",
+        "charge": "1",
+        "value": "3",
+        "order_value": "1",
+        "icon": {
+          "filename_disk": "data-acquisition.svg",
+          "url": "/images/cms/approach/data-acquisition.svg",
+          "id": "data-acquisition.svg"
+        },
+        "card_list": [
+          {
+            "title": "Sélection des données",
+            "description": "<p>Entretiens aupr&egrave;s des acteurs cl&eacute;s suivant notre m&eacute;thode d&rsquo;audit data</p>\n<p>Identification des donn&eacute;es &agrave; forte valeur ajout&eacute;e</p>",
+            "name": "Data selection",
+            "order": 1,
+            "icon": {
+              "filename_disk": "data-selection.svg",
+              "url": "/images/cms/approach/data-selection.svg",
+              "id": "data-selection.svg"
+            }
+          },
+          {
+            "title": "Enrichissement via des données externes",
+            "description": "<p>Donn&eacute;es internes FDTI sur des secteurs vari&eacute;s</p>\n<p>Statistique publiques, open data, fournisseurs de donn&eacute;es tiers, web scraping</p>",
+            "name": "Collection of the data",
+            "order": 2,
+            "icon": {
+              "filename_disk": "collection-of-the-data.svg",
+              "url": "/images/cms/approach/collection-of-the-data.svg",
+              "id": "collection-of-the-data.svg"
+            }
+          },
+          {
+            "title": "Collection des données",
+            "description": "<p>Aupr&egrave;s de votre DSI / vos experts m&eacute;tier</p>\n<p>Dans le respect du RGPD1) et de vos pratiques de gouvernance2)</p>",
+            "name": "Enhancements via external data",
+            "order": 3,
+            "icon": {
+              "filename_disk": "enhancements-via-external-data.svg",
+              "url": "/images/cms/approach/enhancements-via-external-data.svg",
+              "id": "enhancements-via-external-data.svg"
+            }
+          }
+        ]
+      },
+      {
+        "title": "Structuration des données",
+        "charge": "4",
+        "value": "4",
+        "order_value": "2",
+        "icon": {
+          "filename_disk": "data-structuration.svg",
+          "url": "/images/cms/approach/data-structuration.svg",
+          "id": "data-structuration.svg"
+        },
+        "card_list": [
+          {
+            "title": "Nettoyage et structuration de données",
+            "description": "<p>Nettoyage des donn&eacute;es et transformation vers des formats optimaux</p>",
+            "name": "Cleaning and structuring of sources",
+            "order": 1,
+            "icon": {
+              "filename_disk": "cleaning-and-structuring-of-sources.svg",
+              "url": "/images/cms/approach/cleaning-and-structuring-of-sources.svg",
+              "id": "cleaning-and-structuring-of-sources.svg"
+            }
+          },
+          {
+            "title": "Croisement des sources de données",
+            "description": "<p>Croisement des informations pour les rendre pertinentes et coh&eacute;rentes pour vos enjeux strat&eacute;giques</p>",
+            "name": "Cross-referencing of data sources",
+            "order": 2,
+            "icon": {
+              "filename_disk": "cross-referencing-of-data-sources.svg",
+              "url": "/images/cms/approach/cross-referencing-of-data-sources.svg",
+              "id": "cross-referencing-of-data-sources.svg"
+            }
+          },
+          {
+            "title": "Consolidation dans un \"data warehouse\"",
+            "description": "<p>Mise &agrave; disposition des donn&eacute;es fiables et disponibles via une architecture globale</p>",
+            "name": "Consolidation in a \"data warehouse\"",
+            "order": 3,
+            "icon": {
+              "filename_disk": "consolidation-in-a-data-warehouse.svg",
+              "url": "/images/cms/approach/consolidation-in-a-data-warehouse.svg",
+              "id": "consolidation-in-a-data-warehouse.svg"
+            }
+          }
+        ]
+      },
+      {
+        "title": "Modélisation des données",
+        "charge": "2",
+        "value": "1",
+        "order_value": "3",
+        "icon": {
+          "filename_disk": "process-modelling.svg",
+          "url": "/images/cms/approach/process-modelling.svg",
+          "id": "process-modelling.svg"
+        },
+        "card_list": [
+          {
+            "title": "Nous créons des modèles sur-mesure",
+            "description": "<p>Mise en &eacute;quation de vos processus strat&eacute;giques</p>\n<p>Compr&eacute;hension des variables d&rsquo;importance, corr&eacute;lations, r&eacute;gularit&eacute;s</p>\n<p>Analyse Pr&eacute;dictive Comprendre pour pr&eacute;voir</p>",
+            "name": "We create tailor-made models",
+            "order": 1,
+            "icon": {
+              "filename_disk": "we-create-tailor-made-models.svg",
+              "url": "/images/cms/approach/we-create-tailor-made-models.svg",
+              "id": "we-create-tailor-made-models.svg"
+            }
+          },
+          {
+            "title": "Une expertise à la pointe de l’IA",
+            "description": "<p>Nous collaborons avec des laboratoires de recherche en maths/info1</p>\n<p>+30% de notre temps est consacr&eacute; &agrave; la R&amp;D pour rester &agrave; la pointe</p>",
+            "name": "Expertise at the forefront of AI",
+            "order": 2,
+            "icon": {
+              "filename_disk": "expertise-at-the-forefront-of-ai.svg",
+              "url": "/images/cms/approach/expertise-at-the-forefront-of-ai.svg",
+              "id": "expertise-at-the-forefront-of-ai.svg"
+            }
+          },
+          {
+            "title": "Des algorithmes appropriés",
+            "description": "<p>Mod&egrave;les Robustes Statistiquement pertinents</p>\n<p>S&eacute;ries temporelles Segmentation Analyses Multivari&eacute;es Deep / Machine Learning</p>",
+            "name": "Appropriate algorithms",
+            "order": 3,
+            "icon": {
+              "filename_disk": "appropriate-algorithms.svg",
+              "url": "/images/cms/approach/appropriate-algorithms.svg",
+              "id": "appropriate-algorithms.svg"
+            }
+          }
+        ]
+      },
+      {
+        "title": "Interprétation des prévisions",
+        "charge": "2",
+        "value": "3",
+        "order_value": "4",
+        "icon": {
+          "filename_disk": "interpretation-of-prediction.svg",
+          "url": "/images/cms/approach/interpretation-of-prediction.svg",
+          "id": "interpretation-of-prediction.svg"
+        },
+        "card_list": [
+          {
+            "title": "Exploitation des modèles",
+            "description": "<p>Anticipation des dynamiques de votre activit&eacute;</p>\n<p>Identification de potentiels d&rsquo;optimisation</p>",
+            "name": "Exploitation of models",
+            "order": 1,
+            "icon": {
+              "filename_disk": "relevance.png",
+              "url": "/images/cms/values/relevance.png",
+              "id": "relevance.png"
+            }
+          },
+          {
+            "title": "Mise en valeur des résultats pertinents",
+            "description": "<p>Mise en &eacute;vidence des r&eacute;sultats importants</p>\n<p>Visualisations efficaces, dashboards, rapports, apps web (avec <a href=\"https://www.onicorn.dev\" target=\"_blank\" rel=\"noopener\">Onicorn</a>).</p>",
+            "name": "Intuitive representation",
+            "order": 2,
+            "icon": {
+              "filename_disk": "intuitive-representation.svg",
+              "url": "/images/cms/approach/intuitive-representation.svg",
+              "id": "intuitive-representation.svg"
+            }
+          },
+          {
+            "title": "Vision pragmatique",
+            "description": "<p>Transparence sur l&rsquo;origine des r&eacute;sultats et les limites d&rsquo;interpr&eacute;tation. Pas de jargon technique superflu.</p>",
+            "name": "Pragmatic vision",
+            "order": 3,
+            "icon": {
+              "filename_disk": "pragmatic-vision.svg",
+              "url": "/images/cms/approach/pragmatic-vision.svg",
+              "id": "pragmatic-vision.svg"
+            }
+          }
+        ]
+      },
+      {
+        "title": "Co-construction de solutions",
+        "charge": "3",
+        "value": "4",
+        "order_value": "5",
+        "icon": {
+          "filename_disk": "strategic-recommendations.svg",
+          "url": "/images/cms/approach/strategic-recommendations.svg",
+          "id": "strategic-recommendations.svg"
+        },
+        "card_list": [
+          {
+            "title": "Un objectif commun",
+            "description": "<p>Nous travaillons ensemble &agrave; atteindre vos objectifs</p>\n<p>Les &eacute;changes entre vos experts et les n&ocirc;tres font &eacute;merger les solutions optimales</p>\n<p>Processus de changement impuls&eacute; par vos collaborateurs</p>",
+            "name": "A common objective",
+            "order": 1,
+            "icon": {
+              "filename_disk": "a-common-objective.svg",
+              "url": "/images/cms/approach/a-common-objective.svg",
+              "id": "a-common-objective.svg"
+            }
+          },
+          {
+            "title": "Un impact à tous les niveaux",
+            "description": "<p>Outils d&rsquo;aide &agrave; la d&eacute;cision pour un pilotage optimale de votre business</p>\n<p>Recommandations sur la gestion de vos donn&eacute;es</p>\n<p>Optimisation de vos pratiques</p>\n<p>Formation de vos employ&eacute;s, transformation de la culture d&rsquo;entreprise</p>",
+            "name": "An impact at all levels",
+            "order": 2,
+            "icon": {
+              "filename_disk": "an-impact-at-all-levels.svg",
+              "url": "/images/cms/approach/an-impact-at-all-levels.svg",
+              "id": "an-impact-at-all-levels.svg"
+            }
+          },
+          {
+            "title": "Un accompagnement dans la prise de décision",
+            "description": "<p>Sc&eacute;narisation de votre strat&eacute;gie</p>\n<p>Pr&eacute;visions de r&eacute;sultats financiers et op&eacute;rationnels</p>\n<p>Relation de confiance durable</p>",
+            "name": "A support in the decision-making process",
+            "order": 3,
+            "icon": {
+              "filename_disk": "a-support-in-the-decision-making-process.svg",
+              "url": "/images/cms/approach/a-support-in-the-decision-making-process.svg",
+              "id": "a-support-in-the-decision-making-process.svg"
+            }
+          }
+        ]
+      }
+    ],
+    "meta_tags": {
+      "page_tags": [
+        {
+          "title": "FDTI - From Data To Insight : expert en gestion de données",
+          "description": "Prestataire data science, IA, ML, Cloud, Infra, data warehouse, ETL, APIs, FDTI - From Data To Insight vous accompagne",
+          "url": "/",
+          "img": {
+            "filename_disk": "fdti-from-data-to-insights.svg",
+            "url": "/images/cms/branding/fdti-from-data-to-insights.svg",
+            "id": "fdti-from-data-to-insights.svg"
+          }
+        },
+        {
+          "title": "Notre approche | FDTI - From Data To Insight",
+          "description": "Notre approche data science, IA, ML, Cloud, Infra, data warehouse, ETL, APIs, FDTI - From Data To Insight vous accompagne.",
+          "url": "/approche-fdti",
+          "img": {
+            "filename_disk": "fdti-from-data-to-insights.svg",
+            "url": "/images/cms/branding/fdti-from-data-to-insights.svg",
+            "id": "fdti-from-data-to-insights.svg"
+          }
+        },
+        {
+          "title": "Adn et valeurs | FDTI - From Data To Insight",
+          "description": "ADN et valeurs en data science, IA, ML, Cloud, Infra, data warehouse, ETL, APIs, FDTI - From Data To Insight vous accompagne.",
+          "url": "/adn-et-valeurs",
+          "img": {
+            "filename_disk": "fdti-from-data-to-insights.svg",
+            "url": "/images/cms/branding/fdti-from-data-to-insights.svg",
+            "id": "fdti-from-data-to-insights.svg"
+          }
+        },
+        {
+          "title": "Index des retours d'expériences",
+          "description": "Retours d'expériences",
+          "url": "/retours-dexperiences",
+          "img": {
+            "filename_disk": "fdti-from-data-to-insights.svg",
+            "url": "/images/cms/branding/fdti-from-data-to-insights.svg",
+            "id": "fdti-from-data-to-insights.svg"
+          }
+        }
+      ]
+    }
+  },
+  "GetPrivacyContent": {
+    "privacy": {
+      "title": "Politique de confidentialité",
+      "content": "<main class=\"flex-1  s-7IPF32Wcq3s8\">\n<div>\n<div class=\"text-2xl lg:mx-72 mx-16 mt-14 text-grey1 font-semibold\">Cadre juridique &ndash; conformit&eacute; au RGPD et &agrave; la loi fran&ccedil;aise</div>\n<div class=\"text-sm lg:mx-72 mx-16 text-grey1\">\n<p>FDTI Consulting d&eacute;clare que l&rsquo;entreprise effectue des traitements de donn&eacute;es personnelles conform&eacute;ment au r&egrave;glement (UE) 2016/679 du Parlement europ&eacute;en et du Conseil du 27 avril 2016, relatif &agrave; la protection des personnes physiques &agrave; l&rsquo;&eacute;gard du traitement des donn&eacute;es &agrave; caract&egrave;re personnel et &agrave; la libre circulation de ces donn&eacute;es (ci-apr&egrave;s d&eacute;sign&eacute; le RGPD) et &agrave; loi fran&ccedil;aise n&deg; 78-17 du 6 janvier 1978 relative &agrave; l&rsquo;informatique, aux fichiers et aux libert&eacute;s.</p>\n<br />\n<p>Le 25 mai 2018, le R&egrave;glement G&eacute;n&eacute;ral de Protection des Donn&eacute;es est entr&eacute; en application. Les entreprises traitant de la donn&eacute;e doivent d&eacute;sormais assurer une protection optimale des donn&eacute;es &agrave; chaque instant et &ecirc;tre en mesure de la d&eacute;montrer en documentant leur conformit&eacute;.</p>\n<br />\n<p>Compte-tenu de son activit&eacute;, FDTI Consulting peut &ecirc;tre amen&eacute;e &agrave; traiter des donn&eacute;es personnelles r&eacute;colt&eacute;es et trait&eacute;es par ses clients. Les &eacute;l&eacute;ments suivants ont vocation &agrave; d&eacute;finir des r&egrave;gles de traitements internes &agrave; FDTI Consulting et garantissant le respect des donn&eacute;es personnelles conform&eacute;ment au RGPD.</p>\n<br />\n<p>Dans l&rsquo;ensemble de ses activit&eacute;s FDTI Consulting consid&egrave;re comme fondamentale la protection des donn&eacute;es personnelles et s&rsquo;&eacute;vertue d&egrave;s que possible &agrave; anonymiser l&rsquo;ensemble des donn&eacute;es qu&rsquo;elle traite et &agrave; s&rsquo;assurer de la non-divulgation de donn&eacute;es en dehors des cadres juridiques r&eacute;f&eacute;rents.</p>\n</div>\n<div class=\"text-2xl lg:mx-72 mx-16 mt-5 text-grey1 font-semibold \">Gouvernance</div>\n<div class=\"text-sm lg:mx-72 mx-16 text-grey1\">\n<p>Les donn&eacute;es trait&eacute;es par FDTI ne quittent jamais l&rsquo;Union Europ&eacute;enne et ne sont soumises &agrave; aucune juridiction &eacute;trang&egrave;re &agrave; l&rsquo;union europ&eacute;enne.</p>\n<br />\n<p>Notre h&eacute;bergeur OVH France est situ&eacute; en France et h&eacute;berge nos services en France. Par cons&eacute;quent ces derniers ne sont pas soumis au Cloud Act</p>\n</div>\n<div class=\"text-2xl lg:mx-72 mx-16 mt-5 text-grey1 font-semibold\">Processus de traitements des donn&eacute;es personnelles</div>\n<div class=\"text-sm lg:mx-72 mx-16 text-grey1 mb-28\">\n<p>Sauf cas particuliers, FDTI Consulting n&rsquo;a pas besoin de donn&eacute;es personnelles pour r&eacute;aliser ses missions. FDTI Consulting demande donc &agrave; ses clients de ne pas lui envoyer de donn&eacute;es personnelles. En cas de r&eacute;ception inopin&eacute;e de donn&eacute;es personnelles, FDTI Consulting d&eacute;truira directement ces donn&eacute;es et le signalera &agrave; l&rsquo;exp&eacute;diteur.</p>\n<br />\n<p>Certaines donn&eacute;es personnelles peuvent s&rsquo;av&eacute;rer utiles &agrave; des fins d&rsquo;identification. Dans ce cas, FDTI Consulting demandera au fournisseur de donn&eacute;es de pseudonymiser ces donn&eacute;es. FDTI Consulting apportera son soutien pour r&eacute;aliser cette pseudonymisation.</p>\n<p>Dans le cas o&ugrave; l&rsquo;exp&eacute;diteur ne poss&egrave;de ni les capacit&eacute;s techniques ni les capacit&eacute;s humaines pour r&eacute;aliser cette pseudonymisation dans son environnement, FDTI Consulting le prendra &agrave; sa charge. Une seule personne au sein de FDTI Consulting aura donc acc&egrave;s &agrave; ces donn&eacute;es personnelles, afin de les pseudonymiser et de diffuser ces donn&eacute;es pseudonymis&eacute;es au sein de FDTI Consulting.</p>\n<br />\n<p>Toutes les donn&eacute;es personnelles utilis&eacute;es dans le cadre de nos travaux, sont ainsi stock&eacute;es dans un espace s&eacute;curis&eacute; et respectent le consentement donn&eacute; par les personnes concern&eacute;es. Toutes ces donn&eacute;es sont ensuite supprim&eacute;es d&eacute;finitivement, &agrave; la suite des &eacute;tudes et traitements n&eacute;cessaires &agrave; la conduite de nos diff&eacute;rents projets.</p>\n</div>\n</div>\n</main>"
+    }
+  }
+}

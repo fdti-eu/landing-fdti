@@ -1,13 +1,14 @@
 <script lang="ts">
 	import { locale } from 'svelte-i18n';
 	import ApproachCard from './ApproachCard.svelte';
-	import type { GetApproachPageContent$result } from '$houdini';
+	import type { ApproachContent } from '$lib/data';
 
-	export let content: GetApproachPageContent$result['approach_category'][0];
+	type ApproachCategory = ApproachContent['approach_category'][number];
+
+	export let content: ApproachCategory;
 
 	$: chargeArray = content.charge ? createArray(parseInt(content.charge)) : [];
 	$: valueArray = content.value ? createArray(parseInt(content.value)) : [];
-	$: translatedContent = content?.translations?.length ? content?.translations[0] : null;
 
 	function createArray(value: number) {
 		const fullStars = Array(value).fill('full');
@@ -16,22 +17,22 @@
 	}
 </script>
 
-{#if content && translatedContent}
+{#if content}
 	<div class="relative flex flex-col pr-5 xs:pr-10 md:pr-5 xl:pr-0">
 		<div class="relative pl-16 sm:pl-20 flex flex-col items-start justify-center">
 			<div
 				class="bg-yellow rounded-full border-4 border-darkGrey-2 flex justify-center items-center h-14 w-14 top-0 absolute left-0"
 			>
 				<img
-					src="https://cms.fdti.eu/assets/{content.icon?.filename_disk}"
-					alt={translatedContent.title}
-					title={translatedContent.title}
+					src={content.icon?.url || '/images/plus.svg'}
+					alt={content.title || ''}
+					title={content.title || ''}
 					height="24px"
 					width="24px"
 				/>
 			</div>
 			<h2 class="font-bold text-darkGrey text-xl md:text-2xl text-left">
-				{content.order_value}. {translatedContent.title}
+				{content.order_value}. {content.title}
 			</h2>
 			<div class="flex gap-2 items-center justify-start sm:justify-center pt-2 w-60">
 				<div class="w-26 sm:w-42 text-center">Charge</div>

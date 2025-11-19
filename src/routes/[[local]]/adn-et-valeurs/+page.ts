@@ -1,51 +1,11 @@
-import { graphql, type GetDNAPageContent$input, GetDNAPageContentStore } from '$houdini';
-import { getLocalCode } from '$lib/functions/getLocalCode';
-import type { ILocal } from '$lib/interface';
+import { getDNAPageContent, type Lang } from '$lib/data';
+import type { PageLoad } from './$types';
 
-export const _houdini_load: GetDNAPageContentStore = graphql`
-	query GetDNAPageContent($code: String!, $url: String!) {
-		DNA_content {
-			status
-			card_list(filter: { status: { _eq: "published" } }, sort: ["order"]) {
-				title
-				order
-				icon {
-					filename_disk
-				}
-				translations(filter: { languages_code: { code: { _eq: $code } } }) {
-					title
-					description
-				}
-			}
-			RGPD_img {
-				id
-			}
-			translations(filter: { languages_code: { code: { _eq: $code } } }) {
-				title
-				description
-			}
-		}
-		meta_tags {
-			page_tags(filter: { url: { _eq: $url } }) {
-				url
-				img {
-					id
-				}
-				translations(filter: { languages_code: { code: { _eq: $code } } }) {
-					title
-					description
-				}
-			}
-		}
-	}
-`;
+export const load: PageLoad = async ({ params }) => {
+	const locale = (params.local as Lang) || 'fr';
 
-export function _GetDNAPageContentVariables({
-	params
-}: {
-	params: { local?: string };
-}): GetDNAPageContent$input {
-	const local = (params?.local as ILocal) || 'fr';
-	const code = getLocalCode(local);
-	return { code, url: '/adn-et-valeurs' };
-}
+	return {
+		initialLocale: locale,
+		initialContent: getDNAPageContent(locale)
+	};
+};
