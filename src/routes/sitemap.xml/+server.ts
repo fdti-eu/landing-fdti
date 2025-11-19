@@ -16,14 +16,14 @@ export async function GET() {
         <priority>1.00</priority>
     </url>
     <url>
-        <loc>https://www.fdti.eu/fr/approche-fdti</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.90</priority>
-    </url>
-    <url>
         <loc>https://www.fdti.eu/fr/adn-et-valeurs</loc>
         <changefreq>weekly</changefreq>
         <priority>0.90</priority>
+    </url>
+    <url>
+        <loc>https://www.fdti.eu/fr/cas-d-usage</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.95</priority>
     </url>
     <url>
         <loc>https://www.fdti.eu/en</loc>
@@ -31,14 +31,14 @@ export async function GET() {
         <priority>0.90</priority>
     </url>
     <url>
-        <loc>https://www.fdti.eu/en/approche-fdti</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.90</priority>
-    </url>
-    <url>
         <loc>https://www.fdti.eu/en/adn-et-valeurs</loc>
         <changefreq>weekly</changefreq>
         <priority>0.90</priority>
+    </url>
+    <url>
+        <loc>https://www.fdti.eu/en/cas-d-usage</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.95</priority>
     </url>
     </urlset>`.trim(),
 		{

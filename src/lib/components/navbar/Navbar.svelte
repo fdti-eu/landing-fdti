@@ -64,11 +64,11 @@
 			</li>
 			<li>
 				<a
-					href="/{$locale}/approche-fdti"
-					class="{$page.url.pathname.includes('/approche-fdti') ? 'text-yellow' : ''} w-20 hover:text-yellow transition-all duration-300"
+					href="/{$locale}/cas-d-usage"
+					class="{$page.url.pathname.includes('/cas-d-usage') ? 'text-yellow' : ''} w-20 hover:text-yellow transition-all duration-300"
 					on:click={handleToggleNav}
 				>
-					{$locale === 'fr' ? "L'approche FDTI" : 'The FDTI approach'}
+					{$locale === 'fr' ? 'Cas d’usage' : 'Use cases'}
 				</a>
 			</li>
 			<li>

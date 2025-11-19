@@ -8,6 +8,7 @@ export type CGUContent = LocaleData['GetCGUContent'];
 export type DNAContent = LocaleData['GetDNAPageContent'];
 export type ApproachContent = LocaleData['GetApproachPageContent'];
 export type PrivacyContent = LocaleData['GetPrivacyContent'];
+export type UseCasesContent = LocaleData['GetUseCasesContent'];
 
 const data: Record<Lang, LocaleData> = {
 	fr,
@@ -36,5 +37,9 @@ export function getApproachPageContent(lang: Lang): ApproachContent {
 
 export function getPrivacyContent(lang: Lang): PrivacyContent {
 	return getData(lang).GetPrivacyContent;
+}
+
+export function getUseCasesContent(lang: Lang): UseCasesContent {
+	return getData(lang).GetUseCasesContent;
 }
 

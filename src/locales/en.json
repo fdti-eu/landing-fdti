@@ -565,9 +565,9 @@
           }
         },
         {
-          "title": "Our approach | FDTI - From Data To Insight",
-          "description": "Our data science, AI, ML, Cloud, Infra, data warehouse, ETL, APIs, FDTI - From Data To Insight approach supports you.",
-          "url": "/approche-fdti",
+          "title": "Use cases | FDTI - From Data To Insight",
+          "description": "Discover how we deliver data, application and AI use cases.",
+          "url": "/cas-d-usage",
           "img": {
             "filename_disk": "fdti-from-data-to-insights.svg",
             "url": "/images/cms/branding/fdti-from-data-to-insights.svg",
@@ -1009,6 +1009,263 @@
     "privacy": {
       "title": "Privacy Policy",
       "content": "<div class=\"text-2xl lg:mx-72 mx-16 mt-14 text-grey1 font-semibold\">Legal framework &ndash; compliance with GDPR and French law</div>\n<div class=\"text-sm lg:mx-72 mx-16 text-grey1\">\n<p>FDTI Consulting declares that the company processes personal data in accordance with Regulation (EU) 2016/679 of the European Parliament and of the Council of April 27, 2016, relating to the protection of natural persons with regard to the processing of personal data and the free movement of such data (hereinafter referred to as the GDPR) and French law n&deg; 78-17 of January 6, 1978 relating to data processing, files and freedoms.</p>\n<br />\n<p>On May 25, 2018, the General Data Protection Regulations entered into force. Companies dealing with data must now ensure optimal data protection at all times and be able to demonstrate it by documenting their compliance.</p>\n<br />\n<p>In view of its activity, FDTI Consulting may need to process personal data collected and processed by its customers. The following elements are intended to define internal processing rules at FDTI Consulting and guarantee compliance with personal data in accordance with the GDPR.</p>\n<br />\n<p>In all of its activities, FDTI Consulting considers the protection of personal data to be fundamental and strives as soon as possible to anonymize all the data it processes and to ensure the non-disclosure of data outside the reference legal frameworks.</p>\n</div>\n<div class=\"text-2xl lg:mx-72 mx-16 mt-5 text-grey1 font-semibold \">Governance</div>\n<div class=\"text-sm lg:mx-72 mx-16 text-grey1\">\n<p>The data processed by FDTI never leaves the European Union and is not subject to any jurisdiction outside the European Union.</p>\n<br />\n<p>Our host OVH France is located in France and hosts our services in France. Therefore they are not subject to the Cloud Act</p>\n</div>\n<div class=\"text-2xl lg:mx-72 mx-16 mt-5 text-grey1 font-semibold\">Personal data processing process</div>\n<div class=\"text-sm lg:mx-72 mx-16 text-grey1 mb-28\">\n<p>Except in special cases, FDTI Consulting does not need personal data to carry out its missions. FDTI Consulting therefore asks its clients not to send it any personal data. In the event of unexpected receipt of personal data, FDTI Consulting will directly destroy this data and notify the sender.</p>\n<br />\n<p>Some personal data may be useful for identification purposes. In this case, FDTI Consulting will ask the data provider to pseudonymize this data. FDTI Consulting will support this pseudonymization.</p>\n<p>In the event that the sender hasn't the technical capacities or the human capacities to carry out this pseudonymization in his environment, FDTI Consulting will take care of it. Only one person within FDTI Consulting will therefore have access to this personal data, in order to pseudonymize it and distribute this pseudonymized data within FDTI Consulting.</p>\n<br />\n<p>All personal data used in the context of our work is thus stored in a secure space and respects the consent given by the persons concerned. All this data is then permanently deleted, following the studies and processing necessary for the conduct of our various projects.</p>\n</div>"
+    }
+  },
+  "GetUseCasesContent": {
+    "status": "published",
+    "title": "Use cases",
+    "subtitle": "How we blend data, AI and applications to deliver impact",
+    "description": "Explore how we blend data, applications and AI to solve complex business challenges.",
+    "use_case_list": [
+      {
+        "id": "1",
+        "category": "Justice & public sector",
+        "title": "Court registry automation",
+        "date": "2025",
+        "location": "France",
+        "challenge": "A software vendor for court clerks needed to embed AI capabilities into its platform to speed up sensitive dossier validation.",
+        "approach": "On-prem FastAPI AI stack, tailored LLMs and a TypeScript/SvelteKit portal, fully integrated into the existing system.",
+        "impact": "Processing time divided by 20 while meeting judicial confidentiality requirements.",
+        "metrics": [
+          {
+            "label": "Requests/year",
+            "value": "+3 M"
+          },
+          {
+            "label": "Time saved",
+            "value": "-25 min"
+          }
+        ],
+        "tags": [
+          "LLM",
+          "FastAPI",
+          "Keycloak",
+          "TypeScript",
+          "SvelteKit",
+          "LegalTech"
+        ],
+        "details": [
+          "Critical use cases covered: case summaries, dossier validation, automated extraction of sensitive documents.",
+          "Deployment inside the client's VPN with fine-grained monitoring and contractual SLAs.",
+          "Self-service portal to generate API keys, track usage and troubleshoot calls.",
+          "Re-annotation loops to improve models plus full audit tooling.",
+          "Enablement plan with trainings, playbooks and dedicated support.",
+          "TypeScript/SvelteKit front-end delivering a frictionless experience alongside legacy tools."
+        ]
+      },
+      {
+        "id": "2",
+        "category": "Industry & mobility",
+        "title": "Circular economy platform",
+        "date": "2020-2025",
+        "location": "Europe",
+        "challenge": "After forming a joint venture with an OEM, the circular-economy platform needed to upgrade its existing tool to manage ELV processes (B2B & B2C) under EU constraints.",
+        "approach": "TypeScript/SvelteKit portal plus Azure Functions APIs on the client's Azure infrastructure with MSSQL, matching vehicle owners with ELV centers.",
+        "impact": "End-to-end traceability for 50k+ vehicles per year powering the group's circular economy branch.",
+        "metrics": [
+          {
+            "label": "Countries",
+            "value": "12"
+          },
+          {
+            "label": "Vehicles/year",
+            "value": ">50 k"
+          }
+        ],
+        "tags": [
+          "TypeScript",
+          "SvelteKit",
+          "Azure",
+          "Azure Functions",
+          "MSSQL",
+          "B2B",
+          "B2C"
+        ],
+        "details": [
+          "End-to-end workflow design for dealers, repair centers and households.",
+          "Azure Functions APIs connecting logistics, CRM and finance systems.",
+          "Real-time mapping of material flows plus automatic regulatory documents.",
+          "Multi-brand/catalog management with local rules and pricing.",
+          "Azure infrastructure sized for regulatory peaks and audits.",
+          "Operational and regulatory dashboards unifying B2B/B2C flows.",
+          "Personalized email notifications for each user (garages, dealers, households) at every workflow step."
+        ]
+      },
+      {
+        "id": "3",
+        "category": "Aftermarket & recycling",
+        "title": "Battery reuse marketplace",
+        "date": "2021",
+        "location": "Europe",
+        "challenge": "The automaker required a central platform to manage battery collection, recycling and resale across partners and buyers.",
+        "approach": "TypeScript/SvelteKit B2B marketplace connecting partner ERPs, end to end traceability and automated flows to buyers or recyclers.",
+        "impact": "Thousands of batteries rerouted every month with centralized reporting for authorities.",
+        "metrics": [
+          {
+            "label": "Batteries/month",
+            "value": "+8 k"
+          },
+          {
+            "label": "Partners onboarded",
+            "value": "+300"
+          }
+        ],
+        "tags": [
+          "Marketplace",
+          "API",
+          "Recycling",
+          "Batteries"
+        ],
+        "details": [
+          "Full declaration process for end-of-life batteries plus automatic logistics documents.",
+          "API integrations with recyclers to track pickups, tests and certificates, price offers.",
+          "Buyer workspace to source reusable batteries and manage the transaction.",
+          "Quality/compliance scoring with shared SLAs.",
+          "Regulatory reporting exportable in one click.",
+          "Automated email notifications for partners and buyers across pickup, testing and resale steps."
+        ]
+      },
+      {
+        "id": "4",
+        "category": "Smart city & energy",
+        "title": "Public lighting supervision",
+        "date": "2024",
+        "location": "France",
+        "challenge": "Municipalities and their operators needed a single platform to manage public lighting schedules, detect anomalies and plan maintenance.",
+        "approach": "AWS S3 + DuckDB/Parquet real-time stack, Shell/Cron pipelines, FastAPI backend and TypeScript/SvelteKit UI for local authorities.",
+        "impact": "Dynamic lighting schedules and predictive maintenance deployed across 40+ territories.",
+        "metrics": [
+          {
+            "label": "Measurements/day",
+            "value": ">100 M"
+          },
+          {
+            "label": "Territories",
+            "value": "+40"
+          }
+        ],
+        "tags": [
+          "IoT",
+          "Real-time",
+          "DuckDB",
+          "SvelteKit",
+          "Municipalities"
+        ],
+        "details": [
+          "Continuous collection of lighting meters with optimized S3 + Parquet storage.",
+          "DuckDB analytics delivering KPIs within seconds over multi-year history.",
+          "Alert dashboards for operators (failures, consumption, schedule anomalies).",
+          "Open REST API to plug operator and city systems.",
+          "Multi-tenant management with granular permissions and per-city segmentation."
+        ]
+      },
+      {
+        "id": "5",
+        "category": "NGO & engagement",
+        "title": "Generative analysis of social campaigns",
+        "date": "2023",
+        "location": "International",
+        "challenge": "The NGO needed to compare environmental narratives on Facebook and Instagram to guide communications investments.",
+        "approach": "LLM methodology (ChatGPT + tailored prompts) scoring tone, topics and perspectives, correlated with performance KPIs.",
+        "impact": "Budget reallocation per country/platform and an internalized analysis framework.",
+        "metrics": [
+          {
+            "label": "Posts analyzed",
+            "value": "60 k"
+          },
+          {
+            "label": "Languages",
+            "value": "8"
+          }
+        ],
+        "tags": [
+          "LLM",
+          "OpenAI",
+          "Social Analytics",
+          "Prompt Engineering"
+        ],
+        "details": [
+          "Prompts capturing tone, actors, topics and emotions on Facebook/Instagram.",
+          "Automated pipeline: social data → LLM → scoring of topics/tones/perspectives per audience type.",
+          "Cross-analysis with post performance to recommend priority themes.",
+          "Documented methodology replicable by local teams.",
+          "Enablement sessions to interpret recommendations and adjust budgets."
+        ]
+      },
+      {
+        "id": "6",
+        "category": "Retail & consumer electronics",
+        "title": "Global data hub & NLP",
+        "date": "2021-2023",
+        "location": "Global",
+        "challenge": "Centralize French marketing data for a major electronics brand and industrialize analysis of all domestic customer reviews.",
+        "approach": "Airflow→BigQuery pipelines, GCP governance, HuggingFace NLP (BERTopic, QA) and Tableau delivery.",
+        "impact": "Customer service gains instant access to classified topics, surfaced alerts and a tighter follow-up on all requests.",
+        "metrics": [
+          {
+            "label": "Sources integrated",
+            "value": "+25"
+          },
+          {
+            "label": "Reviews analyzed",
+            "value": "100% France"
+          }
+        ],
+        "tags": [
+          "GCP",
+          "Airflow",
+          "NLP",
+          "Tableau",
+          "HuggingFace"
+        ],
+        "details": [
+          "Multi-API collection (mystery shopping, CRM, social, reviews) orchestrated by Airflow.",
+          "Cloud policies for team/project segmentation, data localisation and security.",
+          "HuggingFace pipelines for similarity, sentiment and topics across languages.",
+          "Documentation and training for data/business teams.",
+          "Automated insight exports to marketing BUs and agencies."
+        ]
+      },
+      {
+        "id": "7",
+        "category": "Specialty retail",
+        "title": "Near real-time data warehouse",
+        "date": "2020-2021",
+        "location": "Europe",
+        "challenge": "Move 98 Azure JSON business objects (150+ SQL tables/views) into Snowflake to feed Qlik in near real-time.",
+        "approach": "Target model, ADLS→Snowflake ingestion via Kafka/ADF, auto-generated SQL and delta flows.",
+        "impact": "Minute-level feeds for BI teams processing millions of files per day.",
+        "metrics": [
+          {
+            "label": "Business objects",
+            "value": "98"
+          },
+          {
+            "label": "Latency",
+            "value": "<1 min"
+          }
+        ],
+        "tags": [
+          "Snowflake",
+          "Azure",
+          "Kafka",
+          "ADF",
+          "Qlik"
+        ],
+        "details": [
+          "Automatic SQL generation from XML metadata to speed up deployments.",
+          "Delta updates orchestrated by Snowflake Tasks with dedicated monitoring.",
+          "Custom Scala functions to denormalize nested JSON.",
+          "Coaching for analysts to leverage the new real-time feeds.",
+          "Environment management via Snowflake API (test / pre-prod / prod)."
+        ]
+      }
+    ],
+    "cta": {
+      "label": "Want to explore a similar use case?",
+      "button": "Book a call",
+      "link": "https://calendly.com/fdti/30min",
+      "description": "Let's align on your next data, app or AI priority and draft an actionable roadmap in days."
     }
   }
 }
