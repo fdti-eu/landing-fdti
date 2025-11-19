@@ -1,36 +1,34 @@
 {
   "GetHomePageContent": {
     "hero_section": {
-      "subtitle": "Entrez dans le futur du management orienté données",
-      "description": "<p>Une bonne utilisation des donn&eacute;es repr&eacute;sente une r&eacute;elle opportunit&eacute; pour les organisations qui savent s'adapter, mais un risque pour celles qui ne le font pas. Notre engagement est de faire prosp&eacute;rer nos clients dans ce nouveau paradigme</p>",
+      "subtitle": "Des plateformes data, des apps et de l'IA opérationnelle, taillées pour vos équipes",
+      "description": "<p>Nous modernisons vos systèmes data, vos outils métiers et vos cas d'usage IA avec des équipes expertes. Accélérez vos projets de transformation sans alourdir vos ressources : nous co-construisons des solutions sur mesure, livrables en quelques semaines et adoptées par le terrain.</p>",
       "btn_brochure": "Téléchargez notre plaquette",
       "btn_contact": "Contactez-nous",
       "brochure_link": "https://docs.google.com/presentation/d/e/2PACX-1vTxf7KCRA90Jm1rClbzRMZqB7wprtcUv30NwlpyT7RsxcGCKEQxW9HneEJBxo0Ml50srOHn18p5ECpD/pub?start=false&loop=false&delayms=3000",
-      "title": "Data, cloud, IA",
+      "title": "Solutions métiers augmentées avec la data",
       "status": "published"
     },
     "fdti_section": {
-      "subtitle": "Nous sommes spécialistes de l'analyse de données",
+      "subtitle": "Des décisions et des outils augmentés par la data",
       "icon_1": {
         "filename_disk": "from-data-to-insight.svg",
         "url": "/images/cms/branding/from-data-to-insight.svg",
         "id": "from-data-to-insight.svg"
       },
-      "content_1": "<p><strong>Notre objectif&nbsp;</strong>est d&rsquo;apporter aux dirigeants et &eacute;quipes m&eacute;tier <strong>une vision plus pr&eacute;cise de leurs activit&eacute;s&nbsp;</strong>et des dynamiques qui les caract&eacute;risent, ainsi que&nbsp;<strong>des recommandations sur les meilleures fa&ccedil;ons d&rsquo;optimiser leur business</strong></p>",
+      "content_1": "<p><strong>Nos équipes transforment vos opérations</strong> en rendant lisibles les dynamiques marché, l'expérience client et la performance interne. Nous combinons data engineering, IA et design produit pour révéler les leviers de croissance et cadrer un plan d'exécution pragmatique.</p><ul><li><strong>Cartographier</strong> vos sources et signaux clés</li><li><strong>Prioriser</strong> les cas d'usage à plus fort ROI</li><li><strong>Aligner</strong> dirigeants et équipes terrain sur l'impact attendu</li></ul>",
       "icon_2": {
         "filename_disk": "from-data-to-insight-1.svg",
         "url": "/images/cms/branding/from-data-to-insight-1.svg",
         "id": "from-data-to-insight-1.svg"
       },
-      "content_2": "<p><strong>Nous vous aidons &agrave; collecter et structurer vos donn&eacute;es&nbsp;</strong>, puis nous utilisons la <strong>science des donn&eacute;es</strong> et <strong>l'intelligence artificielle</strong> pour <strong>cr&eacute;er des mod&egrave;les pr&eacute;dictifs de processus strat&eacute;giques sur-mesure&nbsp;</strong>. Enfin&nbsp;<strong>nous cr&eacute;ons des outils de visualisation et de collaboration autour de cette donn&eacute;e&nbsp;</strong>afin d'impliquer tous vos collaborateurs dans un processus de transformation co-construit.</p>",
-      "btn_label": "Découvrez notre approche en 5 étapes",
-      "btn_name": "L’approche FDTI",
+      "content_2": "<p><strong>Des solutions adoptées sur le terrain</strong> : nous structurons les données utiles, entraînons des modèles (LLM, prédictifs, agents) et livrons applications, API, dashboards et espaces collaboratifs prêts à l'emploi.</p><ul><li><strong>Data & IA</strong> : pipelines, feature stores, modèles spécialisés</li><li><strong>Produits métiers</strong> : apps web, API sécurisées, copilotes IA, workflows automatisés</li><li><strong>Adoption</strong> : coaching, playbooks et itérations courtes avec vos équipes</li></ul>",
       "title": "From Data To Insight",
       "status": "published"
     },
     "technology_content": {
       "title": "Technologies",
-      "subtitle": "Nous utilisons des outils modernes adaptés à chaque situation rencontrée lors du traitement de vos données",
+      "subtitle": "Nous utilisons des outils modernes adaptés à chaque situation rencontrée lors du traitement de vos projets",
       "status": "published",
       "technology_category_list": [
         {

@@ -36,11 +36,8 @@
 					</p>
 				</div>
 
-				<div class="w-fit flex flex-col items-stretch gap-4 mx-auto md:mx-0 md:flex-row">
-					<Button linkUrl={content.brochure_link || ''} color="yellow" isExternalLink>
-						{content.btn_brochure}
-					</Button>
-					<Button linkUrl="https://calendly.com/fdti/30min" color="white" isExternalLink>
+				<div class="w-fit flex flex-col items-stretch gap-4 mx-auto md:mx-0">
+					<Button linkUrl="https://calendly.com/fdti/30min" color="yellow" isExternalLink>
 						{content.btn_contact}
 					</Button>
 				</div>

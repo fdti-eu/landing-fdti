@@ -1,36 +1,34 @@
 {
   "GetHomePageContent": {
     "hero_section": {
-      "subtitle": "We lead organizations into the future of data-driven management",
-      "description": "<p>Good use of data represents a real opportunity for organizations that know how to adapt, but a risk for those that do not. Our commitment is to make our customers thrive in this new paradigm.</p>",
+      "subtitle": "Data platforms, business apps and AI you can deploy fast",
+      "description": "<p>We upgrade your data stack, business tools and AI use cases with dedicated experts. Deliver tailor-made solutions in weeks, keep costs under control, and bring every operational team on board.</p>",
       "btn_brochure": "Download our brochure",
       "btn_contact": "Contact us",
       "brochure_link": "https://docs.google.com/presentation/d/e/2PACX-1vTqoylpjD44uKvXaQVAsPAlGMXDLBP_cqpr7gnuj0S2qXDS07mXwww8rMfjU-nAeTyYgR6CRSICSj17/pub?start=false&loop=false&delayms=3000",
-      "title": "Data, cloud, AI",
+      "title": "Business solutions augmented with data",
       "status": "published"
     },
     "fdti_section": {
-      "subtitle": "We are specialists in data analysis",
+      "subtitle": "Augmented decisions and tools for your teams",
       "icon_1": {
         "filename_disk": "from-data-to-insight.svg",
         "url": "/images/cms/branding/from-data-to-insight.svg",
         "id": "from-data-to-insight.svg"
       },
-      "content_1": "<p>Our goal is to provide executive teams and business units with a more precise <strong>understanding of their activities and the dynamics that drive them</strong>, as well as recommendations on the best ways to <strong>optimize their business</strong></p>",
+      "content_1": "<p><strong>Our teams make your operations intelligible</strong> by exposing market dynamics, customer signals and internal performance. We blend data engineering, AI and product design to surface growth levers and frame a pragmatic execution roadmap.</p><ul><li><strong>Map</strong> every critical source and signal</li><li><strong>Prioritize</strong> the use cases with the highest ROI</li><li><strong>Align</strong> leadership and field teams on expected impact</li></ul>",
       "icon_2": {
         "filename_disk": "from-data-to-insight-1.svg",
         "url": "/images/cms/branding/from-data-to-insight-1.svg",
         "id": "from-data-to-insight-1.svg"
       },
-      "content_2": "<p>We help you gather and structure your data, then we use <strong>data science</strong> and <strong>artificial intelligence</strong> to create customized <strong>predictive models for strategic processes</strong>. Finally, we create <strong>visualization and collaboration tools</strong> around this data to engage all of your collaborators in a co-constructed transformation process.</p>",
-      "btn_label": "Discover our 5-step approach",
-      "btn_name": "The FDTI Approach",
+      "content_2": "<p><strong>Solutions your teams actually use</strong>: we shape the right datasets, train models (LLMs, predictive, agents) and deliver ready-to-use applications, APIs, dashboards and collaboration spaces.</p><ul><li><strong>Data & AI</strong>: pipelines, feature stores, specialized models</li><li><strong>Business products</strong>: web apps, secure APIs, AI copilots, automated workflows</li><li><strong>Adoption</strong>: coaching, playbooks and short iterations with your teams</li></ul>",
       "title": "From Data To Insight",
       "status": "published"
     },
     "technology_content": {
       "title": "Technologies",
-      "subtitle": "We use modern tools adapted to each situation encountered when processing your data",
+      "subtitle": "We use modern tools tailored to each situation encountered when delivering your projects",
       "status": "published",
       "technology_category_list": [
         {

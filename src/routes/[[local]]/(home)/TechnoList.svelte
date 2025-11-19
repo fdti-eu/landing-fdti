@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { locale } from 'svelte-i18n';
+
 	export let title = '';
 	export let description = '';
 	export let iconLink: string | null = null;
@@ -9,7 +11,7 @@
 </script>
 
 <div
-	class="flex flex-col justify-center items-center gap-4 sm:grid sm:grid-cols-8 sm:items-start group/techno p-6 rounded-lg transition-all duration-300 hover:bg-white hover:shadow-md cursor-pointer"
+	class="flex flex-col justify-center items-center gap-4 sm:grid sm:grid-cols-8 sm:items-start group/techno p-6 rounded-lg transition-all duration-300 hover:bg-white hover:shadow-md"
 	class:bg-white={isOpen}
 	class:shadow-md={isOpen}
 	on:click={onToggle}
@@ -41,7 +43,13 @@
 				class:opacity-0={!isOpen}
 				class:opacity-100={isOpen}
 			>
-				<p class="text-sm font-semibold text-darkGrey-2">Technologies and tools used:</p>
+				<p class="text-sm font-semibold text-darkGrey-2">
+					{#if $locale === 'fr'}
+						Technologies et outils utilisés&nbsp;:
+					{:else}
+						Technologies and tools used:
+					{/if}
+				</p>
 			</div>
 			<div
 				class="flex gap-12 flex-wrap justify-center md:justify-start techno-container"
