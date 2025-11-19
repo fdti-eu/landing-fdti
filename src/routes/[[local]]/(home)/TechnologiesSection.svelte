@@ -15,7 +15,7 @@
 					technology_list?: {
 						name?: string | null;
 						url?: string | null;
-						img?: { url?: string | null } | null;
+						img?: { url?: string | null; width?: number | null; height?: number | null } | null;
 					}[];
 				}[];
 		  }
@@ -26,35 +26,8 @@
 	let openIndex: number | null = null;
 	let hoverIndex: number | null = null;
 
-	const LARGE_IMG_WIDTH = 180;
-	const LARGE_IMG_HEIGHT = 72;
-	const COMPACT_IMG_WIDTH = 96;
-	const COMPACT_IMG_HEIGHT = 40;
-	const COMPACT_CATEGORY_TITLES = new Set(['web apps & api building']);
-	const CATEGORY_SIZE_OVERRIDES = new Map<string, { width: number; height: number }>([
-		['data warehouse', { width: 200, height: 80 }]
-	]);
-
-	function getNormalizedTitle(category: { title?: string | null } | null | undefined) {
-		return category?.title?.trim().toLowerCase() || null;
-	}
-
-	function getCategorySize(category: { title?: string | null } | null | undefined) {
-		const normalizedTitle = getNormalizedTitle(category);
-
-		if (normalizedTitle && CATEGORY_SIZE_OVERRIDES.has(normalizedTitle)) {
-			return CATEGORY_SIZE_OVERRIDES.get(normalizedTitle) ?? {
-				width: LARGE_IMG_WIDTH,
-				height: LARGE_IMG_HEIGHT
-			};
-		}
-
-		if (normalizedTitle && COMPACT_CATEGORY_TITLES.has(normalizedTitle)) {
-			return { width: COMPACT_IMG_WIDTH, height: COMPACT_IMG_HEIGHT };
-		}
-
-		return { width: LARGE_IMG_WIDTH, height: LARGE_IMG_HEIGHT };
-	}
+	const DEFAULT_IMG_WIDTH = 140;
+	const DEFAULT_IMG_HEIGHT = 56;
 
 	function handleToggle(index: number) {
 		openIndex = openIndex === index ? null : index;
@@ -84,7 +57,6 @@
 		<article class="w-full flex flex-col gap-14 md:pt-14">
 			{#each technologyList as category, index}
 				{@const isOpen = openIndex === index || hoverIndex === index}
-				{@const categorySize = getCategorySize(category)}
 				<TechnoList
 					title={category?.title || ''}
 					description={category?.description || ''}
@@ -99,8 +71,8 @@
 							<TechnoItem
 								link={technology?.url || ''}
 								imgUrl={technology?.img?.url || null}
-								imgWidth={categorySize.width}
-								imgHeight={categorySize.height}
+								imgWidth={technology?.img?.width ?? DEFAULT_IMG_WIDTH}
+								imgHeight={technology?.img?.height ?? DEFAULT_IMG_HEIGHT}
 								ariaLabel={technology?.name ? `Link to ${technology.name} documentation.` : "Link to documentation."}
 								name={technology?.name}
 							/>

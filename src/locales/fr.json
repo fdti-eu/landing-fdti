@@ -36,7 +36,7 @@
         {
           "description": "Nous concevons et développons des applications web modernes et des APIs robustes pour digitaliser vos processus métier. De l'interface utilisateur jusqu'aux services backend, nous créons des solutions complètes qui s'intègrent parfaitement dans votre écosystème technologique.",
           "status": "published",
-          "title": "Web Apps & API Building",
+          "title": "Applications web & API",
           "order": "1",
           "category_icon": {
             "filename_disk": "web-apps.svg",
@@ -47,15 +47,15 @@
             {
               "status": "published",
               "id": "35",
-              "name": "JavaScript",
+              "name": "TypeScript",
               "img": {
-                "filename_disk": "javascript.webp",
-                "url": "/images/cms/technologies/javascript.webp",
-                "id": "javascript.webp",
-                "width": 78,
-                "height": 32
+                "filename_disk": "typescript.webp",
+                "url": "/images/cms/technologies/typescript.webp",
+                "id": "typescript.webp",
+                "width": 96,
+                "height": 36
               },
-              "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+              "url": "https://www.typescriptlang.org/"
             },
             {
               "status": "published",
@@ -65,8 +65,8 @@
                 "filename_disk": "react.webp",
                 "url": "/images/cms/technologies/react.webp",
                 "id": "react.webp",
-                "width": 78,
-                "height": 32
+                "width": 96,
+                "height": 36
               },
               "url": "https://react.dev/"
             },
@@ -78,8 +78,8 @@
                 "filename_disk": "svelte.webp",
                 "url": "/images/cms/technologies/svelte.webp",
                 "id": "svelte.webp",
-                "width": 78,
-                "height": 32
+                "width": 96,
+                "height": 36
               },
               "url": "https://svelte.dev/"
             },
@@ -91,8 +91,8 @@
                 "filename_disk": "rest-api.webp",
                 "url": "/images/cms/technologies/rest-api.webp",
                 "id": "rest-api.webp",
-                "width": 74,
-                "height": 32
+                "width": 96,
+                "height": 36
               },
               "url": "https://restfulapi.net/"
             },
@@ -104,8 +104,8 @@
                 "filename_disk": "graphql.webp",
                 "url": "/images/cms/technologies/graphql.webp",
                 "id": "graphql.webp",
-                "width": 78,
-                "height": 32
+                "width": 96,
+                "height": 36
               },
               "url": "https://graphql.org/"
             },
@@ -117,8 +117,8 @@
                 "filename_disk": "openid.webp",
                 "url": "/images/cms/technologies/openid.webp",
                 "id": "openid.webp",
-                "width": 78,
-                "height": 32
+                "width": 96,
+                "height": 36
               },
               "url": "https://openid.net/"
             }
@@ -142,7 +142,9 @@
               "img": {
                 "filename_disk": "terraform.webp",
                 "url": "/images/cms/technologies/terraform.webp",
-                "id": "terraform.webp"
+                "id": "terraform.webp",
+                "width": 180,
+                "height": 72
               },
               "url": "https://www.terraform.io/"
             },
@@ -153,7 +155,9 @@
               "img": {
                 "filename_disk": "azure.webp",
                 "url": "/images/cms/technologies/azure.webp",
-                "id": "azure.webp"
+                "id": "azure.webp",
+                "width": 180,
+                "height": 72
               },
               "url": "https://azure.microsoft.com/fr-fr/"
             },
@@ -164,7 +168,9 @@
               "img": {
                 "filename_disk": "aws.webp",
                 "url": "/images/cms/technologies/aws.webp",
-                "id": "aws.webp"
+                "id": "aws.webp",
+                "width": 180,
+                "height": 72
               },
               "url": "https://aws.amazon.com/fr/"
             },
@@ -175,7 +181,9 @@
               "img": {
                 "filename_disk": "google-cloud.webp",
                 "url": "/images/cms/technologies/google-cloud.webp",
-                "id": "google-cloud.webp"
+                "id": "google-cloud.webp",
+                "width": 180,
+                "height": 72
               },
               "url": "https://cloud.google.com/"
             },
@@ -186,7 +194,9 @@
               "img": {
                 "filename_disk": "docker.webp",
                 "url": "/images/cms/technologies/docker.webp",
-                "id": "docker.webp"
+                "id": "docker.webp",
+                "width": 180,
+                "height": 72
               },
               "url": "https://www.docker.com/"
             }
@@ -210,7 +220,9 @@
               "img": {
                 "filename_disk": "scikit-learn.webp",
                 "url": "/images/cms/technologies/scikit-learn.webp",
-                "id": "scikit-learn.webp"
+                "id": "scikit-learn.webp",
+                "width": 180,
+                "height": 72
               },
               "url": "https://scikit-learn.org/stable/"
             },
@@ -221,7 +233,9 @@
               "img": {
                 "filename_disk": "hugging-face.webp",
                 "url": "/images/cms/technologies/hugging-face.webp",
-                "id": "hugging-face.webp"
+                "id": "hugging-face.webp",
+                "width": 180,
+                "height": 72
               },
               "url": "https://huggingface.co/"
             },
@@ -232,7 +246,9 @@
               "img": {
                 "filename_disk": "pytorch.webp",
                 "url": "/images/cms/technologies/pytorch.webp",
-                "id": "pytorch.webp"
+                "id": "pytorch.webp",
+                "width": 180,
+                "height": 72
               },
               "url": "https://pytorch.org/"
             },
@@ -243,7 +259,9 @@
               "img": {
                 "filename_disk": "open-ai.webp",
                 "url": "/images/cms/technologies/open-ai.webp",
-                "id": "open-ai.webp"
+                "id": "open-ai.webp",
+                "width": 180,
+                "height": 72
               },
               "url": "https://openai.com/"
             }
@@ -267,7 +285,9 @@
               "img": {
                 "filename_disk": "python.webp",
                 "url": "/images/cms/technologies/python.webp",
-                "id": "python.webp"
+                "id": "python.webp",
+                "width": 170,
+                "height": 64
               },
               "url": "https://www.python.org/"
             },
@@ -278,7 +298,9 @@
               "img": {
                 "filename_disk": "r.webp",
                 "url": "/images/cms/technologies/r.webp",
-                "id": "r.webp"
+                "id": "r.webp",
+                "width": 170,
+                "height": 64
               },
               "url": "https://www.r-project.org/"
             },
@@ -289,7 +311,9 @@
               "img": {
                 "filename_disk": "bash.webp",
                 "url": "/images/cms/technologies/bash.webp",
-                "id": "bash.webp"
+                "id": "bash.webp",
+                "width": 170,
+                "height": 64
               },
               "url": "https://www.gnu.org/software/bash/"
             },
@@ -300,7 +324,9 @@
               "img": {
                 "filename_disk": "duckdb.webp",
                 "url": "/images/cms/technologies/duckdb.webp",
-                "id": "duckdb.webp"
+                "id": "duckdb.webp",
+                "width": 170,
+                "height": 64
               },
               "url": "https://duckdb.org/"
             }
@@ -324,7 +350,9 @@
               "img": {
                 "filename_disk": "spark.webp",
                 "url": "/images/cms/technologies/spark.webp",
-                "id": "spark.webp"
+                "id": "spark.webp",
+                "width": 180,
+                "height": 72
               },
               "url": "https://spark.apache.org/"
             },
@@ -335,7 +363,9 @@
               "img": {
                 "filename_disk": "postgresql.webp",
                 "url": "/images/cms/technologies/postgresql.webp",
-                "id": "postgresql.webp"
+                "id": "postgresql.webp",
+                "width": 180,
+                "height": 72
               },
               "url": "https://www.postgresql.org/"
             },
@@ -346,7 +376,9 @@
               "img": {
                 "filename_disk": "airflow.webp",
                 "url": "/images/cms/technologies/airflow.webp",
-                "id": "airflow.webp"
+                "id": "airflow.webp",
+                "width": 180,
+                "height": 72
               },
               "url": "https://airflow.apache.org/"
             },
@@ -357,7 +389,9 @@
               "img": {
                 "filename_disk": "dbt.webp",
                 "url": "/images/cms/technologies/dbt.webp",
-                "id": "dbt.webp"
+                "id": "dbt.webp",
+                "width": 180,
+                "height": 72
               },
               "url": "https://www.getdbt.com/"
             }
@@ -381,7 +415,9 @@
               "img": {
                 "filename_disk": "redshift.webp",
                 "url": "/images/cms/technologies/redshift.webp",
-                "id": "redshift.webp"
+                "id": "redshift.webp",
+                "width": 220,
+                "height": 88
               },
               "url": "https://aws.amazon.com/fr/redshift/"
             },
@@ -392,7 +428,9 @@
               "img": {
                 "filename_disk": "snowflake.webp",
                 "url": "/images/cms/technologies/snowflake.webp",
-                "id": "snowflake.webp"
+                "id": "snowflake.webp",
+                "width": 220,
+                "height": 88
               },
               "url": "ttps://www.snowflake.com/?lang=fr"
             },
@@ -403,7 +441,9 @@
               "img": {
                 "filename_disk": "bigquery.webp",
                 "url": "/images/cms/technologies/bigquery.webp",
-                "id": "bigquery.webp"
+                "id": "bigquery.webp",
+                "width": 220,
+                "height": 88
               },
               "url": "https://cloud.google.com/bigquery/"
             }
