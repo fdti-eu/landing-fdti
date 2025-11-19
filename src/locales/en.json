@@ -1122,7 +1122,8 @@
           "Buyer workspace to source reusable batteries and manage the transaction.",
           "Quality/compliance scoring with shared SLAs.",
           "Regulatory reporting exportable in one click.",
-          "Automated email notifications for partners and buyers across pickup, testing and resale steps."
+          "Automated email notifications for partners and buyers across pickup, testing and resale steps.",
+          "Identity federation through Keycloak for group entities and external partners."
         ]
       },
       {

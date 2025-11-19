@@ -1122,7 +1122,8 @@
           "Espace acheteur pour sourcer les batteries reconditionnables et orchestrer la transaction.",
           "Scoring qualité/conformité des partenaires et SLA partagés.",
           "Reporting réglementaire consolidé exportable en un clic.",
-          "Notifications e-mail automatiques pour les partenaires et acheteurs lors des différentes étapes (collecte, tests, revente)."
+          "Notifications e-mail automatiques pour les partenaires et acheteurs lors des différentes étapes (collecte, tests, revente).",
+          "Fédération d'identité via Keycloak pour les entités du groupe et les partenaires externes."
         ]
       },
       {
