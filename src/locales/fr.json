@@ -34,66 +34,100 @@
       "status": "published",
       "technology_category_list": [
         {
-          "description": "Grâce à notre expertise en data science, nous vous offrons des solutions personnalisées pour analyser et exploiter vos données. Nos scripts sur mesure permettent de révéler les tendances cachées et les opportunités de croissance, vous aidant à prendre des décisions éclairées et stratégiques pour votre entreprise.",
+          "description": "Nous concevons et développons des applications web modernes et des APIs robustes pour digitaliser vos processus métier. De l'interface utilisateur jusqu'aux services backend, nous créons des solutions complètes qui s'intègrent parfaitement dans votre écosystème technologique.",
           "status": "published",
-          "title": " Data Science",
+          "title": "Web Apps & API Building",
           "order": "1",
           "category_icon": {
-            "filename_disk": "data-science.svg",
-            "url": "/images/cms/technologies/data-science.svg",
-            "id": "data-science.svg"
+            "filename_disk": "web-apps.svg",
+            "url": "/images/cms/technologies/web-apps.svg",
+            "id": "web-apps.svg"
           },
           "technology_list": [
             {
               "status": "published",
-              "id": "26",
-              "name": "Python",
+              "id": "35",
+              "name": "JavaScript",
               "img": {
-                "filename_disk": "python.webp",
-                "url": "/images/cms/technologies/python.webp",
-                "id": "python.webp"
+                "filename_disk": "javascript.webp",
+                "url": "/images/cms/technologies/javascript.webp",
+                "id": "javascript.webp",
+                "width": 78,
+                "height": 32
               },
-              "url": "https://www.python.org/"
+              "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript"
             },
             {
               "status": "published",
-              "id": "25",
-              "name": "R",
+              "id": "36",
+              "name": "React",
               "img": {
-                "filename_disk": "r.webp",
-                "url": "/images/cms/technologies/r.webp",
-                "id": "r.webp"
+                "filename_disk": "react.webp",
+                "url": "/images/cms/technologies/react.webp",
+                "id": "react.webp",
+                "width": 78,
+                "height": 32
               },
-              "url": "https://www.r-project.org/"
+              "url": "https://react.dev/"
             },
             {
               "status": "published",
-              "id": "28",
-              "name": "Bash",
+              "id": "37",
+              "name": "Svelte",
               "img": {
-                "filename_disk": "bash.webp",
-                "url": "/images/cms/technologies/bash.webp",
-                "id": "bash.webp"
+                "filename_disk": "svelte.webp",
+                "url": "/images/cms/technologies/svelte.webp",
+                "id": "svelte.webp",
+                "width": 78,
+                "height": 32
               },
-              "url": "https://www.gnu.org/software/bash/"
+              "url": "https://svelte.dev/"
             },
             {
               "status": "published",
-              "id": "30",
-              "name": "DuckDB",
+              "id": "38",
+              "name": "REST API",
               "img": {
-                "filename_disk": "duckdb.webp",
-                "url": "/images/cms/technologies/duckdb.webp",
-                "id": "duckdb.webp"
+                "filename_disk": "rest-api.webp",
+                "url": "/images/cms/technologies/rest-api.webp",
+                "id": "rest-api.webp",
+                "width": 74,
+                "height": 32
               },
-              "url": "https://duckdb.org/"
+              "url": "https://restfulapi.net/"
+            },
+            {
+              "status": "published",
+              "id": "39",
+              "name": "GraphQL",
+              "img": {
+                "filename_disk": "graphql.webp",
+                "url": "/images/cms/technologies/graphql.webp",
+                "id": "graphql.webp",
+                "width": 78,
+                "height": 32
+              },
+              "url": "https://graphql.org/"
+            },
+            {
+              "status": "published",
+              "id": "40",
+              "name": "OpenID",
+              "img": {
+                "filename_disk": "openid.webp",
+                "url": "/images/cms/technologies/openid.webp",
+                "id": "openid.webp",
+                "width": 78,
+                "height": 32
+              },
+              "url": "https://openid.net/"
             }
           ]
         },
         {
           "description": "Notre maîtrise des principales plateformes cloud vous assure une intégration fluide et sécurisée de vos données dans l'environnement de votre choix. Nous vous accompagnons dans la migration, la gestion et l'optimisation de vos ressources cloud, garantissant une infrastructure solide et évolutive pour soutenir votre croissance.",
           "status": "published",
-          "title": "Cloud",
+          "title": "Cloud & Infra",
           "order": "2",
           "category_icon": {
             "filename_disk": "cloud.svg",
@@ -159,56 +193,10 @@
           ]
         },
         {
-          "description": "Nous mettons en place des solutions de data warehouse adaptées à vos besoins, permettant une centralisation efficace de vos données et une mise à l'échelle sans limite. Avec un accès rapide et sécurisé à vos informations, votre entreprise bénéficie d'une base solide pour soutenir l'analyse de données, la prise de décision et la croissance continue.",
-          "status": "published",
-          "title": "Data warehouse",
-          "order": "3",
-          "category_icon": {
-            "filename_disk": "data-warehouse.svg",
-            "url": "/images/cms/technologies/data-warehouse.svg",
-            "id": "data-warehouse.svg"
-          },
-          "technology_list": [
-            {
-              "status": "published",
-              "id": "18",
-              "name": "Redshift",
-              "img": {
-                "filename_disk": "redshift.webp",
-                "url": "/images/cms/technologies/redshift.webp",
-                "id": "redshift.webp"
-              },
-              "url": "https://aws.amazon.com/fr/redshift/"
-            },
-            {
-              "status": "published",
-              "id": "19",
-              "name": "Snowflake",
-              "img": {
-                "filename_disk": "snowflake.webp",
-                "url": "/images/cms/technologies/snowflake.webp",
-                "id": "snowflake.webp"
-              },
-              "url": "ttps://www.snowflake.com/?lang=fr"
-            },
-            {
-              "status": "published",
-              "id": "17",
-              "name": "Bigquery",
-              "img": {
-                "filename_disk": "bigquery.webp",
-                "url": "/images/cms/technologies/bigquery.webp",
-                "id": "bigquery.webp"
-              },
-              "url": "https://cloud.google.com/bigquery/"
-            }
-          ]
-        },
-        {
           "description": "En utilisant les meilleures pratiques en matière d'intelligence artificielle et de machine learning, nous concevons et déployons des modèles prédictifs innovants pour optimiser vos processus stratégiques. En automatisant les tâches répétitives et en améliorant la précision des prédictions, nous vous aidons à augmenter l'efficacité de votre entreprise et à vous démarquer de la concurrence.",
           "status": "published",
-          "title": "IA & Machine learning",
-          "order": "4",
+          "title": "Intelligence Artificielle",
+          "order": "3",
           "category_icon": {
             "filename_disk": "ia-machine-learning.svg",
             "url": "/images/cms/technologies/ia-machine-learning.svg",
@@ -262,10 +250,67 @@
           ]
         },
         {
+          "description": "Grâce à notre expertise en data science, nous vous offrons des solutions personnalisées pour analyser et exploiter vos données. Nos scripts sur mesure permettent de révéler les tendances cachées et les opportunités de croissance, vous aidant à prendre des décisions éclairées et stratégiques pour votre entreprise.",
+          "status": "published",
+          "title": "Data Science",
+          "order": "4",
+          "category_icon": {
+            "filename_disk": "data-science.svg",
+            "url": "/images/cms/technologies/data-science.svg",
+            "id": "data-science.svg"
+          },
+          "technology_list": [
+            {
+              "status": "published",
+              "id": "26",
+              "name": "Python",
+              "img": {
+                "filename_disk": "python.webp",
+                "url": "/images/cms/technologies/python.webp",
+                "id": "python.webp"
+              },
+              "url": "https://www.python.org/"
+            },
+            {
+              "status": "published",
+              "id": "25",
+              "name": "R",
+              "img": {
+                "filename_disk": "r.webp",
+                "url": "/images/cms/technologies/r.webp",
+                "id": "r.webp"
+              },
+              "url": "https://www.r-project.org/"
+            },
+            {
+              "status": "published",
+              "id": "28",
+              "name": "Bash",
+              "img": {
+                "filename_disk": "bash.webp",
+                "url": "/images/cms/technologies/bash.webp",
+                "id": "bash.webp"
+              },
+              "url": "https://www.gnu.org/software/bash/"
+            },
+            {
+              "status": "published",
+              "id": "30",
+              "name": "DuckDB",
+              "img": {
+                "filename_disk": "duckdb.webp",
+                "url": "/images/cms/technologies/duckdb.webp",
+                "id": "duckdb.webp"
+              },
+              "url": "https://duckdb.org/"
+            }
+          ]
+        },
+        {
           "description": "Nos vous aidons à collecter, structurer et diffuser vos données dans l'entreprise de manière optimale. Nous concevons des architectures robustes, des pipelines de données efficaces et assurons la qualité et la cohérence des données tout au long de leur cycle de vie",
           "status": "published",
           "title": "Data Engineering",
-          "order": null,
+          "order": "5",
           "category_icon": {
             "filename_disk": "data-engineering.png",
             "url": "/images/cms/technologies/data-engineering.png",
@@ -315,6 +360,52 @@
                 "id": "dbt.webp"
               },
               "url": "https://www.getdbt.com/"
+            }
+          ]
+        },
+        {
+          "description": "Nous mettons en place des solutions de data warehouse adaptées à vos besoins, permettant une centralisation efficace de vos données et une mise à l'échelle sans limite. Avec un accès rapide et sécurisé à vos informations, votre entreprise bénéficie d'une base solide pour soutenir l'analyse de données, la prise de décision et la croissance continue.",
+          "status": "published",
+          "title": "Data Warehouse",
+          "order": "6",
+          "category_icon": {
+            "filename_disk": "data-warehouse.svg",
+            "url": "/images/cms/technologies/data-warehouse.svg",
+            "id": "data-warehouse.svg"
+          },
+          "technology_list": [
+            {
+              "status": "published",
+              "id": "18",
+              "name": "Redshift",
+              "img": {
+                "filename_disk": "redshift.webp",
+                "url": "/images/cms/technologies/redshift.webp",
+                "id": "redshift.webp"
+              },
+              "url": "https://aws.amazon.com/fr/redshift/"
+            },
+            {
+              "status": "published",
+              "id": "19",
+              "name": "Snowflake",
+              "img": {
+                "filename_disk": "snowflake.webp",
+                "url": "/images/cms/technologies/snowflake.webp",
+                "id": "snowflake.webp"
+              },
+              "url": "ttps://www.snowflake.com/?lang=fr"
+            },
+            {
+              "status": "published",
+              "id": "17",
+              "name": "Bigquery",
+              "img": {
+                "filename_disk": "bigquery.webp",
+                "url": "/images/cms/technologies/bigquery.webp",
+                "id": "bigquery.webp"
+              },
+              "url": "https://cloud.google.com/bigquery/"
             }
           ]
         }
