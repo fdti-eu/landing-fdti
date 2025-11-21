@@ -3,6 +3,7 @@
 	import { flip } from 'svelte/animate';
 	import { fade } from 'svelte/transition';
 	import { getContext } from 'svelte';
+	import { tick } from 'svelte';
 	import type { Writable } from 'svelte/store';
 
 	// Récupérer le store du layout parent
@@ -47,6 +48,31 @@
 	let selectedTag: string | null = null;
 	let selectedIndustry: string | null = null;
 	let showFilters = false;
+	let activeSlug: string | null = null;
+
+	const shouldSkipViewTransition = (event: MouseEvent) =>
+		event.defaultPrevented || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || event.button !== 0;
+
+	const handleCardClick = async (event: MouseEvent, slug?: string | null) => {
+		if (!slug || shouldSkipViewTransition(event)) {
+			return;
+		}
+
+		activeSlug = slug;
+		await tick();
+	};
+
+	const getViewTransitionStyle = (slug: string | null | undefined, id: string | null | undefined, part: string) => {
+		if (!id) {
+			return undefined;
+		}
+
+		if (activeSlug && activeSlug !== slug) {
+			return undefined;
+		}
+
+		return `view-transition-name: ${part}-${id};`;
+	};
 
 	// Extraire tous les tags uniques et les trier par fréquence
 	$: allTags = (() => {
@@ -111,7 +137,11 @@
 </svelte:head>
 
 {#if content?.status === 'published'}
-	<section class="bg-darkGrey text-white py-24 md:py-32">
+	<section
+		class="hero-section bg-darkGrey text-white py-24 md:py-32"
+		style="view-transition-name: hero-banner;"
+		class:hero-hidden={Boolean(activeSlug)}
+	>
 		<div class="max-w-6xl mx-auto px-4">
 			<div class="space-y-6 text-center mb-8">
 				<p class="uppercase tracking-[0.2em] text-yellow text-sm">{content.subtitle}</p>
@@ -222,8 +252,11 @@
 					>
 						<a
 							href={`/${$locale}/cas-d-usage/${useCase.slug}`}
-							class="group block bg-white rounded-xl shadow-md hover:shadow-2xl transition-all duration-300 cursor-pointer relative
+							on:click={(event) => handleCardClick(event, useCase.slug)}
+							class="use-case-card group block bg-white rounded-xl shadow-md hover:shadow-2xl transition-all duration-300 cursor-pointer relative
 							{$highlightedUseCase === useCase.slug ? 'animate-highlight' : ''}"
+							class:use-case-card-active={activeSlug === useCase.slug}
+							class:use-case-card-inactive={Boolean(activeSlug) && activeSlug !== useCase.slug}
 						>
 						<article class="p-5">
 							<!-- Version repliée : layout horizontal compact -->
@@ -233,14 +266,14 @@
 									<div class="flex items-baseline gap-6 mb-2">
 										<p
 											class="text-xs uppercase tracking-[0.15em] text-darkGrey/70"
-											style="view-transition-name: category-{useCase.id};"
+											style={getViewTransitionStyle(useCase.slug, useCase.id, 'category')}
 										>
 											{useCase.category}
 										</p>
 										{#if useCase.location || useCase.date}
 											<div
 												class="flex gap-3"
-												style="view-transition-name: meta-{useCase.id};"
+												style={getViewTransitionStyle(useCase.slug, useCase.id, 'meta')}
 											>
 												{#if useCase.location}
 													<span class="text-xs font-medium text-darkGrey/60 flex items-center gap-1">
@@ -263,13 +296,13 @@
 									</div>
 									<h2
 										class="text-lg font-bold text-darkGrey group-hover:text-yellow transition-colors mb-2"
-										style="view-transition-name: title-{useCase.id};"
+										style={getViewTransitionStyle(useCase.slug, useCase.id, 'title')}
 									>
 										{useCase.title}
 									</h2>
 									<p
 										class="text-sm text-darkGrey/80 line-clamp-2 group-hover:line-clamp-none transition-all"
-										style="view-transition-name: challenge-{useCase.id};"
+										style={getViewTransitionStyle(useCase.slug, useCase.id, 'challenge')}
 									>
 										{useCase.challenge}
 									</p>
@@ -280,7 +313,7 @@
 									{#if useCase.metrics?.length}
 										<div
 											class="flex gap-3"
-											style="view-transition-name: metrics-{useCase.id};"
+											style={getViewTransitionStyle(useCase.slug, useCase.id, 'metrics')}
 										>
 											{#each useCase.metrics.slice(0, 2) as metric}
 												<div class="text-right">
@@ -294,7 +327,7 @@
 									{#if useCase.tags?.length}
 										<div
 											class="flex flex-wrap gap-1 max-w-[200px] justify-end"
-											style="view-transition-name: tags-{useCase.id};"
+											style={getViewTransitionStyle(useCase.slug, useCase.id, 'tags')}
 										>
 											{#each useCase.tags as tag, index}
 												<span
@@ -340,23 +373,57 @@
 			</div>
 
 			{#if content.cta}
-				<div class="bg-white rounded-2xl shadow-lg p-10 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
-					<div>
-						<p class="text-sm uppercase tracking-[0.2em] text-darkGrey/70">{content.cta.label}</p>
-						<p class="text-2xl font-bold text-darkGrey mt-3">{content.cta.description}</p>
+				<div class="relative mt-14">
+					<span class="pointer-events-none absolute -inset-8 rounded-[48px] bg-yellow/30 blur-[100px] opacity-70 mix-blend-screen" aria-hidden="true"></span>
+					<div
+						class="relative rounded-3xl border border-yellow/30 bg-darkGrey text-white shadow-2xl p-10 md:p-12 flex flex-col md:flex-row md:items-center md:justify-between gap-8"
+						style="box-shadow: 0 0 65px 10px rgba(251, 210, 67, 0.25);"
+					>
+						<div class="relative z-10">
+							<p class="text-sm uppercase tracking-[0.2em] text-yellow/80">{content.cta.label}</p>
+							<p class="text-2xl md:text-3xl font-bold text-white mt-3 leading-snug">{content.cta.description}</p>
+						</div>
+						{#if content.cta.link}
+							<a
+								href={content.cta.link}
+								target="_blank"
+								rel="noreferrer"
+								class="relative z-10 inline-flex w-full md:w-auto items-center justify-center px-10 py-4 rounded-full bg-yellow text-darkGrey font-semibold text-center tracking-wide border border-yellow/50 hover:bg-yellow/80 transition-colors"
+							>
+								{content.cta.button}
+							</a>
+						{/if}
 					</div>
-					{#if content.cta.link}
-						<a
-							href={content.cta.link}
-							target="_blank"
-							rel="noreferrer"
-							class="inline-flex items-center justify-center px-6 py-3 rounded-full bg-yellow text-darkGrey font-semibold hover:opacity-80 transition"
-						>
-							{content.cta.button}
-						</a>
-					{/if}
 				</div>
 			{/if}
 		</div>
 	</section>
 {/if}
+
+<style>
+	.use-case-card {
+		position: relative;
+	}
+
+	.use-case-card-active {
+		z-index: 10;
+	}
+
+	.use-case-card-inactive {
+		opacity: 0;
+		visibility: hidden;
+		pointer-events: none;
+		transition: none !important;
+	}
+
+	.hero-section {
+		position: relative;
+	}
+
+	.hero-hidden {
+		opacity: 0;
+		visibility: hidden;
+		pointer-events: none;
+		transition: none !important;
+	}
+</style>

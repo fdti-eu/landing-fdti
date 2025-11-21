@@ -47,7 +47,7 @@
 </svelte:head>
 
 {#if useCase}
-	<section class="bg-darkGrey text-white py-24 md:py-32">
+	<section class="bg-darkGrey text-white py-24 md:py-32" style="view-transition-name: hero-banner;">
 		<div class="max-w-5xl mx-auto px-4 space-y-6">
 			<a
 				href="/{currentLocale}/cas-d-usage"
@@ -75,12 +75,18 @@
 				style="view-transition-name: meta-{useCase.id};"
 			>
 				{#if useCase.location}
-					<span class="text-sm font-semibold text-white/90 border border-white/30 rounded-full px-4 py-1">
+					<span class="text-sm font-semibold text-white/90 border border-white/30 rounded-full px-4 py-1 flex items-center gap-2">
+						<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+							<path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+						</svg>
 						{useCase.location}
 					</span>
 				{/if}
 				{#if useCase.date}
-					<span class="text-sm font-semibold text-white/90 border border-white/30 rounded-full px-4 py-1">
+					<span class="text-sm font-semibold text-white/90 border border-white/30 rounded-full px-4 py-1 flex items-center gap-2">
+						<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+							<path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+						</svg>
 						{useCase.date}
 					</span>
 				{/if}
@@ -162,21 +168,27 @@
 			{/if}
 
 			{#if content?.cta}
-				<div class="bg-white rounded-2xl shadow-lg p-10 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
-					<div>
-						<p class="text-sm uppercase tracking-[0.2em] text-darkGrey/70">{content.cta.label}</p>
-						<p class="text-2xl font-bold text-darkGrey mt-3">{content.cta.description}</p>
+				<div class="relative mt-14">
+					<span class="pointer-events-none absolute -inset-8 rounded-[48px] bg-yellow/30 blur-[100px] opacity-70 mix-blend-screen" aria-hidden="true"></span>
+					<div
+						class="relative rounded-3xl border border-yellow/30 bg-darkGrey text-white shadow-2xl p-10 md:p-12 flex flex-col md:flex-row md:items-center md:justify-between gap-8"
+						style="box-shadow: 0 0 65px 10px rgba(251, 210, 67, 0.25);"
+					>
+						<div class="relative z-10">
+							<p class="text-sm uppercase tracking-[0.2em] text-yellow/80">{content.cta.label}</p>
+							<p class="text-2xl md:text-3xl font-bold text-white mt-3 leading-snug">{content.cta.description}</p>
+						</div>
+						{#if content.cta.link}
+							<a
+								href={content.cta.link}
+								target="_blank"
+								rel="noreferrer"
+								class="relative z-10 inline-flex w-full md:w-auto items-center justify-center px-10 py-4 rounded-full bg-yellow text-darkGrey font-semibold text-center tracking-wide border border-yellow/50 hover:bg-yellow/80 transition-colors"
+							>
+								{content.cta.button}
+							</a>
+						{/if}
 					</div>
-					{#if content.cta.link}
-						<a
-							href={content.cta.link}
-							target="_blank"
-							rel="noreferrer"
-							class="inline-flex items-center justify-center px-6 py-3 rounded-full bg-yellow text-darkGrey font-semibold hover:opacity-80 transition"
-						>
-							{content.cta.button}
-						</a>
-					{/if}
 				</div>
 			{/if}
 		</div>
