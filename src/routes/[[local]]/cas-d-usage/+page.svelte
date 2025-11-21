@@ -62,14 +62,19 @@
 			.map(([tag]) => tag);
 	})();
 
-	// Extraire toutes les industries uniques
-	$: allIndustries = Array.from(
-		new Set(
-			(content?.use_case_list ?? [])
-				.map((useCase) => useCase.category)
-				.filter((category): category is string => Boolean(category))
-		)
-	).sort();
+	// Extraire toutes les industries uniques et les trier par fréquence
+	$: allIndustries = (() => {
+		const industryCounts = new Map<string, number>();
+		(content?.use_case_list ?? [])
+			.map((useCase) => useCase.category)
+			.filter((category): category is string => Boolean(category))
+			.forEach((industry) => {
+				industryCounts.set(industry, (industryCounts.get(industry) || 0) + 1);
+			});
+		return Array.from(industryCounts.entries())
+			.sort((a, b) => b[1] - a[1])
+			.map(([industry]) => industry);
+	})();
 
 	// Filtrer les cas d'usage selon le tag OU l'industrie sélectionnés (exclusifs)
 	$: filteredUseCases = (content?.use_case_list ?? []).filter((useCase) => {

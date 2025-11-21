@@ -1090,9 +1090,7 @@
           "Keycloak",
           "TypeScript",
           "SvelteKit",
-          "LegalTech",
-          "PostgreSQL",
-          "Prompt Engineering"
+          "PostgreSQL"
         ],
         "details": [
           "Critical use cases covered: case summaries, dossier validation, automated extraction of sensitive documents.",
@@ -1112,7 +1110,7 @@
         "location": "Europe",
         "challenge": "After forming a joint venture with an OEM, the circular-economy platform needed to upgrade its existing tool to manage ELV processes (B2B & B2C) under EU constraints.",
         "approach": "TypeScript/SvelteKit portal plus Azure Functions APIs on the client's Azure infrastructure (MSSQL, Azure Service Bus) tying into the existing .NET stack to connect owners with ELV centers.",
-        "impact": "End-to-end traceability for 50k+ vehicles per year powering the group's circular economy branch.",
+        "impact": "End-to-end traceability for 50k+ vehicles per year powering the group's circular economy branch while meeting the OEM's Extended Producer Responsibility (EPR) obligations.",
         "metrics": [
           {
             "label": "Countries",
@@ -1129,8 +1127,6 @@
           "Azure",
           "Azure Functions",
           "MSSQL",
-          "B2B",
-          "B2C",
           ".NET",
           "Azure Service Bus"
         ],
@@ -1165,10 +1161,6 @@
           }
         ],
         "tags": [
-          "Marketplace",
-          "API",
-          "Recycling",
-          "Batteries",
           "SvelteKit",
           "FastAPI",
           "PostgreSQL",
@@ -1209,7 +1201,6 @@
           "IoT",
           "DuckDB",
           "SvelteKit",
-          "Municipalities",
           "PostgreSQL",
           "FastAPI"
         ],
@@ -1247,9 +1238,7 @@
         ],
         "tags": [
           "LLM",
-          "OpenAI",
-          "Social Analytics",
-          "Prompt Engineering"
+          "OpenAI"
         ],
         "details": [
           "Prompts capturing tone, actors, topics and emotions on Facebook/Instagram.",
@@ -1284,8 +1273,7 @@
           "Airflow",
           "NLP",
           "Tableau",
-          "HuggingFace",
-          "Prompt Engineering"
+          "HuggingFace"
         ],
         "details": [
           "Multi-API collection (mystery shopping, CRM, social, reviews) orchestrated by Airflow.",

@@ -1094,9 +1094,7 @@
           "Keycloak",
           "TypeScript",
           "SvelteKit",
-          "LegalTech",
-          "PostgreSQL",
-          "Prompt Engineering"
+          "PostgreSQL"
         ],
         "details": [
           "Modélisation de cas d'usage critiques : résumés de procédures, validation de liasses et extraction automatisée de pièces sensibles avec LLM et OCR.",
@@ -1116,7 +1114,7 @@
         "location": "Europe",
         "challenge": "Suite à la création d'une joint-venture avec un constructeur, une plateforme d'économie circulaire devait moderniser son outil existant pour gérer la reprise de véhicules en fin de vie (B2B et B2C) et suivre leur parcours de la collecte chez le propriétaire à la démolition du véhicule.",
         "approach": "Développement d'un portail web avec interfaces de déclaration, d'administration et de suivi des véhicules entre les différents acteurs, processus métiers et APIs Azure Functions déployés sur l'infrastructure Azure du client (bases MSSQL, Azure Service Bus) pour orchestrer un existant .NET connectant propriétaires et centres VHU.",
-        "impact": "Traçabilité bout en bout de plus de 50 000 véhicules/an au service de la branche économie circulaire du groupe.",
+        "impact": "Traçabilité bout en bout de plus de 50 000 véhicules/an au service de la branche économie circulaire du groupe et réponse aux impératifs du constructeur liés à la Responsabilité Etendue des Producteurs (REP).",
         "metrics": [
           {
             "label": "Pays couverts",
@@ -1133,8 +1131,6 @@
           "Azure",
           "Azure Functions",
           "MSSQL",
-          "B2B",
-          "B2C",
           ".NET",
           "Azure Service Bus"
         ],
@@ -1171,10 +1167,6 @@
           }
         ],
         "tags": [
-          "Marketplace",
-          "API",
-          "Recyclage",
-          "Batteries",
           "SvelteKit",
           "FastAPI",
           "PostgreSQL",
@@ -1214,7 +1206,6 @@
         "tags": [
           "DuckDB",
           "SvelteKit",
-          "Collectivités",
           "PostgreSQL",
           "FastAPI"
         ],
@@ -1254,9 +1245,7 @@
         ],
         "tags": [
           "LLM",
-          "OpenAI",
-          "Social Analytics",
-          "Prompt Engineering"
+          "OpenAI"
         ],
         "details": [
           "Prompts spécifiques pour capter ton, acteurs, thématiques et émotions sur Facebook/Instagram.",
@@ -1291,8 +1280,7 @@
           "Airflow",
           "NLP",
           "Tableau",
-          "HuggingFace",
-          "Prompt Engineering"
+          "HuggingFace"
         ],
         "details": [
           "Collecte multi-API (mystery shopping, CRM, social, reviews) orchestrée par Airflow.",
