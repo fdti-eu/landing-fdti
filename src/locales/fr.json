@@ -540,6 +540,22 @@
             "url": "/images/cms/companies/valorauto.webp",
             "id": "valorauto.webp"
           }
+        },
+        {
+          "name": "The Vibe Agency",
+          "img": {
+            "filename_disk": "vibe.webp",
+            "url": "/images/cms/companies/vibe.webp",
+            "id": "vibe.webp"
+          }
+        },
+        {
+          "name": "Ford",
+          "img": {
+            "filename_disk": "ford.webp",
+            "url": "/images/cms/companies/ford.webp",
+            "id": "ford.webp"
+          }
         }
       ]
     },
