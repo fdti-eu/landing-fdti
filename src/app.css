@@ -63,16 +63,6 @@
 		animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 	}
 
-	/* La section héro noire apparaît immédiatement et reste au-dessus */
-	::view-transition-new([style*="hero-banner"]) {
-		animation-duration: 0s;
-		z-index: 30;
-	}
-
-	::view-transition-old([style*="hero-banner"]) {
-		z-index: 25;
-	}
-
 	/* Effet de fondu croisé pour le titre */
 	::view-transition-old([style*="title-"]),
 	::view-transition-new([style*="title-"]) {

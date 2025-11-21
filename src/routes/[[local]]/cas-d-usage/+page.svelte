@@ -137,11 +137,7 @@
 </svelte:head>
 
 {#if content?.status === 'published'}
-	<section
-		class="hero-section bg-darkGrey text-white py-24 md:py-32"
-		style="view-transition-name: hero-banner;"
-		class:hero-hidden={Boolean(activeSlug)}
-	>
+	<section class="hero-section bg-darkGrey text-white py-24 md:py-32" class:hero-hidden={Boolean(activeSlug)}>
 		<div class="max-w-6xl mx-auto px-4">
 			<div class="space-y-6 text-center mb-8">
 				<p class="uppercase tracking-[0.2em] text-yellow text-sm">{content.subtitle}</p>

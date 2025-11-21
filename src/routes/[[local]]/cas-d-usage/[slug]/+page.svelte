@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { tick } from 'svelte';
+
 	export let data:
 		| {
 				content:
@@ -40,6 +42,20 @@
 	$: labels = currentLocale === 'fr'
 		? { context: 'Contexte', approach: 'Approche', impact: 'Impact', delivered: 'Ce que nous avons livré', back: "Cas d'usage" }
 		: { context: 'Context', approach: 'Approach', impact: 'Impact', delivered: 'What we delivered', back: 'Use cases' };
+
+	let isLeaving = false;
+
+	const shouldSkipViewTransition = (event: MouseEvent) =>
+		event.defaultPrevented || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || event.button !== 0;
+
+	const handleBackClick = async (event: MouseEvent) => {
+		if (shouldSkipViewTransition(event)) {
+			return;
+		}
+
+		isLeaving = true;
+		await tick();
+	};
 </script>
 
 <svelte:head>
@@ -47,11 +63,12 @@
 </svelte:head>
 
 {#if useCase}
-	<section class="bg-darkGrey text-white py-24 md:py-32" style="view-transition-name: hero-banner;">
+	<section class="hero-section bg-darkGrey text-white py-24 md:py-32" class:hero-hidden={isLeaving}>
 		<div class="max-w-5xl mx-auto px-4 space-y-6">
 			<a
 				href="/{currentLocale}/cas-d-usage"
 				class="inline-flex items-center gap-2 text-base font-semibold text-white bg-yellow/20 hover:bg-yellow hover:text-darkGrey px-6 py-3 rounded-full transition-all duration-300 border border-yellow/40"
+				on:click={handleBackClick}
 			>
 				<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
 					<path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd" />
@@ -194,3 +211,16 @@
 		</div>
 	</section>
 {/if}
+
+<style>
+	.hero-section {
+		position: relative;
+	}
+
+	.hero-hidden {
+		opacity: 0;
+		visibility: hidden;
+		pointer-events: none;
+		transition: none !important;
+	}
+</style>
