@@ -26,6 +26,41 @@ export async function GET() {
         <priority>0.95</priority>
     </url>
     <url>
+        <loc>https://www.fdti.eu/fr/cas-d-usage/automatisation-greffes</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://www.fdti.eu/fr/cas-d-usage/plateforme-economie-circulaire</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://www.fdti.eu/fr/cas-d-usage/marketplace-batteries</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://www.fdti.eu/fr/cas-d-usage/supervision-eclairage-public</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://www.fdti.eu/fr/cas-d-usage/analyse-generative-campagnes</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://www.fdti.eu/fr/cas-d-usage/data-hub-nlp</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://www.fdti.eu/fr/cas-d-usage/data-warehouse-retail</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
         <loc>https://www.fdti.eu/en</loc>
         <changefreq>weekly</changefreq>
         <priority>0.90</priority>
@@ -39,6 +74,41 @@ export async function GET() {
         <loc>https://www.fdti.eu/en/cas-d-usage</loc>
         <changefreq>weekly</changefreq>
         <priority>0.95</priority>
+    </url>
+    <url>
+        <loc>https://www.fdti.eu/en/cas-d-usage/automatisation-greffes</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://www.fdti.eu/en/cas-d-usage/plateforme-economie-circulaire</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://www.fdti.eu/en/cas-d-usage/marketplace-batteries</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://www.fdti.eu/en/cas-d-usage/supervision-eclairage-public</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://www.fdti.eu/en/cas-d-usage/analyse-generative-campagnes</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://www.fdti.eu/en/cas-d-usage/data-hub-nlp</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://www.fdti.eu/en/cas-d-usage/data-warehouse-retail</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.80</priority>
     </url>
     </urlset>`.trim(),
 		{

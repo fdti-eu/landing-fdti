@@ -1042,7 +1042,9 @@
           "Keycloak",
           "TypeScript",
           "SvelteKit",
-          "LegalTech"
+          "LegalTech",
+          "PostgreSQL",
+          "Prompt Engineering"
         ],
         "details": [
           "Critical use cases covered: case summaries, dossier validation, automated extraction of sensitive documents.",
@@ -1051,16 +1053,17 @@
           "Re-annotation loops to improve models plus full audit tooling.",
           "Enablement plan with trainings, playbooks and dedicated support.",
           "TypeScript/SvelteKit front-end delivering a frictionless experience alongside legacy tools."
-        ]
+        ],
+        "slug": "automatisation-greffes"
       },
       {
         "id": "2",
-        "category": "Industry & mobility",
+        "category": "Aftermarket & recycling",
         "title": "Circular economy platform",
         "date": "2020-2025",
         "location": "Europe",
         "challenge": "After forming a joint venture with an OEM, the circular-economy platform needed to upgrade its existing tool to manage ELV processes (B2B & B2C) under EU constraints.",
-        "approach": "TypeScript/SvelteKit portal plus Azure Functions APIs on the client's Azure infrastructure with MSSQL, matching vehicle owners with ELV centers.",
+        "approach": "TypeScript/SvelteKit portal plus Azure Functions APIs on the client's Azure infrastructure (MSSQL, Azure Service Bus) tying into the existing .NET stack to connect owners with ELV centers.",
         "impact": "End-to-end traceability for 50k+ vehicles per year powering the group's circular economy branch.",
         "metrics": [
           {
@@ -1079,7 +1082,9 @@
           "Azure Functions",
           "MSSQL",
           "B2B",
-          "B2C"
+          "B2C",
+          ".NET",
+          "Azure Service Bus"
         ],
         "details": [
           "End-to-end workflow design for dealers, repair centers and households.",
@@ -1089,7 +1094,8 @@
           "Azure infrastructure sized for regulatory peaks and audits.",
           "Operational and regulatory dashboards unifying B2B/B2C flows.",
           "Personalized email notifications for each user (garages, dealers, households) at every workflow step."
-        ]
+        ],
+        "slug": "plateforme-economie-circulaire"
       },
       {
         "id": "3",
@@ -1114,7 +1120,11 @@
           "Marketplace",
           "API",
           "Recycling",
-          "Batteries"
+          "Batteries",
+          "SvelteKit",
+          "FastAPI",
+          "PostgreSQL",
+          "Keycloak"
         ],
         "details": [
           "Full declaration process for end-of-life batteries plus automatic logistics documents.",
@@ -1124,7 +1134,8 @@
           "Regulatory reporting exportable in one click.",
           "Automated email notifications for partners and buyers across pickup, testing and resale steps.",
           "Identity federation through Keycloak for group entities and external partners."
-        ]
+        ],
+        "slug": "marketplace-batteries"
       },
       {
         "id": "4",
@@ -1147,10 +1158,11 @@
         ],
         "tags": [
           "IoT",
-          "Real-time",
           "DuckDB",
           "SvelteKit",
-          "Municipalities"
+          "Municipalities",
+          "PostgreSQL",
+          "FastAPI"
         ],
         "details": [
           "Continuous collection of lighting meters with optimized S3 + Parquet storage.",
@@ -1158,16 +1170,17 @@
           "Alert dashboards for operators (failures, consumption, schedule anomalies).",
           "Open REST API to plug operator and city systems.",
           "Multi-tenant management with granular permissions and per-city segmentation."
-        ]
+        ],
+        "slug": "supervision-eclairage-public"
       },
       {
         "id": "5",
         "category": "NGO & engagement",
-        "title": "Generative analysis of social campaigns",
+        "title": "AI analysis of social narratives",
         "date": "2023",
         "location": "International",
         "challenge": "The NGO needed to compare environmental narratives on Facebook and Instagram to guide communications investments.",
-        "approach": "LLM methodology (ChatGPT + tailored prompts) scoring tone, topics and perspectives, correlated with performance KPIs.",
+        "approach": "LLM methodology (ChatGPT + tailored prompts) scoring tone/topics/perspectives, correlated with Facebook/Instagram KPIs by audience type (age, country, interests) and yielding comparative visuals.",
         "impact": "Budget reallocation per country/platform and an internalized analysis framework.",
         "metrics": [
           {
@@ -1177,6 +1190,10 @@
           {
             "label": "Languages",
             "value": "8"
+          },
+          {
+            "label": "Visualizations",
+            "value": "50+"
           }
         ],
         "tags": [
@@ -1191,16 +1208,17 @@
           "Cross-analysis with post performance to recommend priority themes.",
           "Documented methodology replicable by local teams.",
           "Enablement sessions to interpret recommendations and adjust budgets."
-        ]
+        ],
+        "slug": "analyse-generative-campagnes"
       },
       {
         "id": "6",
         "category": "Retail & consumer electronics",
-        "title": "Global data hub & NLP",
+        "title": "Data hub & NLP",
         "date": "2021-2023",
         "location": "Global",
         "challenge": "Centralize French marketing data for a major electronics brand and industrialize analysis of all domestic customer reviews.",
-        "approach": "Airflow→BigQuery pipelines, GCP governance, HuggingFace NLP (BERTopic, QA) and Tableau delivery.",
+        "approach": "Airflow→BigQuery pipelines, GCP governance, HuggingFace NLP (BERTopic, QA, LLM) and Tableau delivery.",
         "impact": "Customer service gains instant access to classified topics, surfaced alerts and a tighter follow-up on all requests.",
         "metrics": [
           {
@@ -1225,7 +1243,8 @@
           "HuggingFace pipelines for similarity, sentiment and topics across languages.",
           "Documentation and training for data/business teams.",
           "Automated insight exports to marketing BUs and agencies."
-        ]
+        ],
+        "slug": "data-hub-nlp"
       },
       {
         "id": "7",
@@ -1259,7 +1278,8 @@
           "Custom Scala functions to denormalize nested JSON.",
           "Coaching for analysts to leverage the new real-time feeds.",
           "Environment management via Snowflake API (test / pre-prod / prod)."
-        ]
+        ],
+        "slug": "data-warehouse-retail"
       }
     ],
     "cta": {

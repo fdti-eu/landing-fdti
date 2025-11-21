@@ -16,6 +16,7 @@
 								title?: string | null;
 								date?: string | null;
 								location?: string | null;
+								slug?: string | null;
 								challenge?: string | null;
 								approach?: string | null;
 								impact?: string | null;
@@ -63,7 +64,7 @@
 			<div class="space-y-8">
 				{#each content.use_case_list ?? [] as useCase}
 					<article class="bg-white rounded-2xl shadow-md p-8 flex flex-col gap-6">
-						<header class="flex flex-col md:flex-row md:items-center md:justify-between gap-3 border-b border-slate-100 pb-4">
+						<header class="flex flex-col md:flex-row md:items-center md:justify-between gap-2 border-b border-slate-100 pb-3">
 							<div>
 								<p class="text-xs uppercase tracking-[0.2em] text-darkGrey/70">{useCase.category}</p>
 								<h2 class="text-2xl font-bold text-darkGrey mt-2">{useCase.title}</h2>
@@ -81,7 +82,7 @@
 								{/if}
 							</div>
 						</header>
-						<div class="space-y-3 text-darkGrey-2">
+						<div class="space-y-2 text-darkGrey-2 text-sm">
 							{#if useCase.challenge}
 							<p class="text-base text-darkGrey"><strong>Contexte.</strong> {useCase.challenge}</p>
 							{/if}
@@ -94,7 +95,7 @@
 						</div>
 
 						{#if useCase.metrics?.length}
-							<div class="grid grid-cols-2 gap-4 border border-slate-100 rounded-xl p-4">
+							<div class="grid grid-cols-2 gap-3 border border-slate-100 rounded-xl p-3">
 								{#each useCase.metrics as metric}
 									<div>
 										<p class="text-sm text-slate-500">{metric?.label}</p>
@@ -105,53 +106,20 @@
 						{/if}
 
 						{#if useCase.tags?.length}
-							<div class="flex flex-wrap gap-2">
+							<div class="flex flex-wrap gap-1">
 								{#each useCase.tags as tag}
-							<span class="px-3 py-1 rounded-full bg-slate-200 text-xs font-semibold text-darkGrey">{tag}</span>
+									<span class="px-3 py-1 rounded-full bg-slate-200 text-xs font-semibold text-darkGrey">{tag}</span>
 								{/each}
 							</div>
 						{/if}
 
-						{#if useCase.details?.length}
-							<div class="border-t border-slate-100 pt-4 mt-2">
-								<button
-									type="button"
-									class="flex items-center gap-2 text-sm font-semibold text-darkGrey hover:text-yellow transition"
-									on:click={() => toggleCase(useCase.id)}
-									aria-expanded={openCaseId === useCase.id}
-								>
-									<span>
-										{#if openCaseId === useCase.id}
-											{$locale === 'fr' ? 'Masquer les détails' : 'Hide details'}
-										{:else}
-											{$locale === 'fr' ? 'Voir les détails' : 'View details'}
-										{/if}
-									</span>
-									<svg
-										class="w-4 h-4 transition-transform"
-										viewBox="0 0 20 20"
-										fill="none"
-										xmlns="http://www.w3.org/2000/svg"
-										style={`transform: rotate(${openCaseId === useCase.id ? 180 : 0}deg);`}
-									>
-										<path
-											d="M5 8L10 13L15 8"
-											stroke="currentColor"
-											stroke-width="2"
-											stroke-linecap="round"
-											stroke-linejoin="round"
-										/>
-									</svg>
-								</button>
-
-								{#if openCaseId === useCase.id}
-									<div in:slide out:slide class="mt-4 bg-slate-50 rounded-xl p-4 space-y-2 text-sm text-darkGrey">
-										{#each useCase.details as detail}
-											<p>{detail}</p>
-										{/each}
-									</div>
-								{/if}
-							</div>
+						{#if useCase.slug}
+							<a
+								href={`/${$locale}/cas-d-usage/${useCase.slug}`}
+								class="inline-flex items-center justify-center px-5 py-2 mt-4 rounded-full border border-darkGrey text-darkGrey font-semibold hover:bg-darkGrey hover:text-white transition"
+							>
+								{$locale === 'fr' ? 'Voir le projet' : 'View project'}
+							</a>
 						{/if}
 					</article>
 				{/each}

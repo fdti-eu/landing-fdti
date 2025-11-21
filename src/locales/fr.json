@@ -1024,7 +1024,7 @@
         "date": "2025",
         "location": "France",
         "challenge": "Cet éditeur de logiciels pour greffiers devait intégrer des fonctionnalités d'IA directement dans sa plateforme pour accélérer la validation de dossiers sensibles.",
-        "approach": "API d'intelligence artificielle hébergée chez le client (FastAPI) accessible aus greffiers, modèles LLM spécialisés et portail TypeScript/SvelteKit sécurisé intégrés au logiciel existant.",
+        "approach": "API d'intelligence artificielle hébergée chez le client (FastAPI) accessible aux greffiers, modèles LLM spécialisés et portail TypeScript/SvelteKit sécurisé intégrés au logiciel existant.",
         "impact": "Temps de traitement divisé par 20 tout en respectant les exigences de confidentialité du secteur judiciaire.",
         "metrics": [
           {
@@ -1042,7 +1042,9 @@
           "Keycloak",
           "TypeScript",
           "SvelteKit",
-          "LegalTech"
+          "LegalTech",
+          "PostgreSQL",
+          "Prompt Engineering"
         ],
         "details": [
           "Modélisation de cas d'usage critiques : résumés de procédures, validation de liasses et extraction automatisée de pièces sensibles.",
@@ -1051,16 +1053,17 @@
           "Boucles de ré-annotation pour améliorer les modèles et outillage d'audit sur l'ensemble des flux.",
           "Programme d'adoption : formations, guides opérationnels et support dédié.",
           "Instrumentation TypeScript/SvelteKit pour offrir une expérience fluide sans perturber leurs logiciels existants."
-        ]
+        ],
+        "slug": "automatisation-greffes"
       },
       {
         "id": "2",
-        "category": "Industrie & mobilité",
+        "category": "Aftermarket & recyclage",
         "title": "Plateforme économie circulaire multi-flux",
         "date": "2020-2025",
         "location": "Europe",
         "challenge": "Suite à la création d'une joint-venture avec un constructeur, la plateforme d'économie circulaire devait moderniser son outil existant pour gérer la reprise de véhicules en fin de vie (B2B et B2C) sous contrainte européenne.",
-        "approach": "Portail TypeScript/SvelteKit, processus métiers et APIs Azure Functions déployés sur l'infrastructure Azure du client avec bases MSSQL, reliant propriétaires et centres VHU.",
+        "approach": "Portail TypeScript/SvelteKit, processus métiers et APIs Azure Functions déployés sur l'infrastructure Azure du client (bases MSSQL, Azure Service Bus) pour orchestrer un existant .NET connectant propriétaires et centres VHU.",
         "impact": "Traçabilité bout en bout de plus de 50 000 véhicules/an au service de la branche économie circulaire du groupe.",
         "metrics": [
           {
@@ -1079,7 +1082,9 @@
           "Azure Functions",
           "MSSQL",
           "B2B",
-          "B2C"
+          "B2C",
+          ".NET",
+          "Azure Service Bus"
         ],
         "details": [
           "Design complet du workflow de déclaration pour concessionnaires, centres de réparation et particuliers.",
@@ -1089,7 +1094,8 @@
           "Infrastructure Azure dimensionnée pour absorber les pics de régulation et audits.",
           "Tableaux de bord opérationnels et réglementaires consolidant B2B et B2C.",
           "Notifications e-mail personnalisées pour chaque utilisateur (garages, concessions, particuliers) à chaque étape du workflow."
-        ]
+        ],
+        "slug": "plateforme-economie-circulaire"
       },
       {
         "id": "3",
@@ -1114,7 +1120,11 @@
           "Marketplace",
           "API",
           "Recyclage",
-          "Batteries"
+          "Batteries",
+          "SvelteKit",
+          "FastAPI",
+          "PostgreSQL",
+          "Keycloak"
         ],
         "details": [
           "Process déclaratif complet pour les batteries en fin de vie et génération automatique des bons logistiques.",
@@ -1124,7 +1134,8 @@
           "Reporting réglementaire consolidé exportable en un clic.",
           "Notifications e-mail automatiques pour les partenaires et acheteurs lors des différentes étapes (collecte, tests, revente).",
           "Fédération d'identité via Keycloak pour les entités du groupe et les partenaires externes."
-        ]
+        ],
+        "slug": "marketplace-batteries"
       },
       {
         "id": "4",
@@ -1147,10 +1158,11 @@
         ],
         "tags": [
           "IoT",
-          "Real-time",
           "DuckDB",
           "SvelteKit",
-          "Collectivités"
+          "Collectivités",
+          "PostgreSQL",
+          "FastAPI"
         ],
         "details": [
           "Collecte continue des compteurs d'éclairage et archivage optimisé dans S3 + Parquet.",
@@ -1158,16 +1170,17 @@
           "Dashboards d'alertes dédiés aux exploitants (pannes, consommation, anomalies horaires).",
           "API REST ouverte pour connecter les outils métiers des prestataires et des communes.",
           "Gestion multi-collectivités avec droits fins et segmentation par gestionnaire."
-        ]
+        ],
+        "slug": "supervision-eclairage-public"
       },
       {
         "id": "5",
         "category": "ONG & engagement",
-        "title": "Analyse générative des campagnes sociales",
+        "title": "Analyse IA des narratifs sociaux",
         "date": "2023",
         "location": "International",
         "challenge": "L'ONG devait comparer les narratifs environnementaux sur Facebook et Instagram pour orienter ses investissements communication.",
-        "approach": "Méthodologie LLM (ChatGPT + prompts spécialisés) pour classifier ton, sujets et perspectives, avec corrélation aux KPI d'engagement / collecte.",
+        "approach": "Méthodologie LLM (ChatGPT + prompts spécialisés) pour scorer ton, sujets et perspectives, avec corrélation aux KPI Facebook/Instagram par typologie d'audience (âge, pays, centres d'intérêt) et visuels comparatifs.",
         "impact": "Redéploiement budgétaire par pays/plateforme et grille d'analyse internalisée.",
         "metrics": [
           {
@@ -1177,6 +1190,10 @@
           {
             "label": "Langues",
             "value": "8"
+          },
+          {
+            "label": "Visualisations",
+            "value": "50+"
           }
         ],
         "tags": [
@@ -1191,16 +1208,17 @@
           "Croisement des scores avec les performances des publications pour recommander les thèmes prioritaires.",
           "Méthodologie documentée et reproductible par les équipes locales.",
           "Sessions d'acculturation pour interpréter les recommandations et ajuster les budgets."
-        ]
+        ],
+        "slug": "analyse-generative-campagnes"
       },
       {
         "id": "6",
         "category": "Retail & électronique",
-        "title": "Data hub & NLP mondial",
+        "title": "Data hub & NLP",
         "date": "2021-2023",
         "location": "Global",
         "challenge": "Centraliser les flux marketing France d'un leader électronique et industrialiser l'analyse des avis clients nationaux.",
-        "approach": "Pipelines Airflow→BigQuery, gouvernance GCP, NLP HuggingFace (BERTopic, QA) et restitution Tableau.",
+        "approach": "Pipelines Airflow→BigQuery, gouvernance GCP, NLP HuggingFace (BERTopic, QA, LLM) et restitution Tableau.",
         "impact": "Le service client retrouve instantanément les thématiques classifiées, les alertes remontées et suit plus finement les demandes.",
         "metrics": [
           {
@@ -1225,7 +1243,8 @@
           "Pipelines NLP pour similarité, sentiment et topics dans plusieurs langues.",
           "Documentation et formation des équipes data / business.",
           "Exports automatisés d'insights vers les BU marketing et les agences."
-        ]
+        ],
+        "slug": "data-hub-nlp"
       },
       {
         "id": "7",
@@ -1259,7 +1278,8 @@
           "Fonctions Scala custom pour dénormaliser les JSON imbriqués.",
           "Coaching des analystes pour tirer parti des nouveaux flux temps réel.",
           "Gestion multi-environnements via API Snowflake (test / pré-prod / prod)."
-        ]
+        ],
+        "slug": "data-warehouse-retail"
       }
     ],
     "cta": {
