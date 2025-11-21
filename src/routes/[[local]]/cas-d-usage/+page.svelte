@@ -1,7 +1,12 @@
 <script lang="ts">
 	import { locale } from 'svelte-i18n';
 	import { flip } from 'svelte/animate';
-	import { fade, scale } from 'svelte/transition';
+	import { fade } from 'svelte/transition';
+	import { getContext } from 'svelte';
+	import type { Writable } from 'svelte/store';
+
+	// Récupérer le store du layout parent
+	const highlightedUseCase = getContext<Writable<string | null>>('highlightedUseCase');
 
 	export let data:
 		| {
@@ -170,7 +175,8 @@
 					>
 						<a
 							href={`/${$locale}/cas-d-usage/${useCase.slug}`}
-							class="group block bg-white rounded-xl shadow-md hover:shadow-2xl transition-all duration-300 cursor-pointer"
+							class="group block bg-white rounded-xl shadow-md hover:shadow-2xl transition-all duration-300 cursor-pointer relative
+							{$highlightedUseCase === useCase.slug ? 'animate-highlight' : ''}"
 						>
 						<article class="p-5">
 							<!-- Version repliée : layout horizontal compact -->
@@ -178,9 +184,17 @@
 								<!-- Gauche : Info principale -->
 								<div class="flex-1 min-w-0">
 									<div class="flex items-baseline gap-6 mb-2">
-										<p class="text-xs uppercase tracking-[0.15em] text-darkGrey/70">{useCase.category}</p>
+										<p
+											class="text-xs uppercase tracking-[0.15em] text-darkGrey/70"
+											style="view-transition-name: category-{useCase.id};"
+										>
+											{useCase.category}
+										</p>
 										{#if useCase.location || useCase.date}
-											<div class="flex gap-3">
+											<div
+												class="flex gap-3"
+												style="view-transition-name: meta-{useCase.id};"
+											>
 												{#if useCase.location}
 													<span class="text-xs font-medium text-darkGrey/60 flex items-center gap-1">
 														<svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" viewBox="0 0 20 20" fill="currentColor">
@@ -200,14 +214,27 @@
 											</div>
 										{/if}
 									</div>
-									<h2 class="text-lg font-bold text-darkGrey group-hover:text-yellow transition-colors mb-2">{useCase.title}</h2>
-									<p class="text-sm text-darkGrey/80 line-clamp-2 group-hover:line-clamp-none transition-all">{useCase.challenge}</p>
+									<h2
+										class="text-lg font-bold text-darkGrey group-hover:text-yellow transition-colors mb-2"
+										style="view-transition-name: title-{useCase.id};"
+									>
+										{useCase.title}
+									</h2>
+									<p
+										class="text-sm text-darkGrey/80 line-clamp-2 group-hover:line-clamp-none transition-all"
+										style="view-transition-name: challenge-{useCase.id};"
+									>
+										{useCase.challenge}
+									</p>
 								</div>
 
 								<!-- Droite : Métriques et tags (toujours visibles) -->
 								<div class="flex gap-4 items-start">
 									{#if useCase.metrics?.length}
-										<div class="flex gap-3">
+										<div
+											class="flex gap-3"
+											style="view-transition-name: metrics-{useCase.id};"
+										>
 											{#each useCase.metrics.slice(0, 2) as metric}
 												<div class="text-right">
 													<p class="text-xs text-darkGrey/60">{metric?.label}</p>
@@ -218,7 +245,10 @@
 									{/if}
 
 									{#if useCase.tags?.length}
-										<div class="flex flex-wrap gap-1 max-w-[200px] justify-end">
+										<div
+											class="flex flex-wrap gap-1 max-w-[200px] justify-end"
+											style="view-transition-name: tags-{useCase.id};"
+										>
 											{#each useCase.tags as tag, index}
 												<span
 													class="px-2 py-0.5 rounded-md bg-slate-100 text-xs font-medium text-darkGrey whitespace-nowrap transition-all duration-300 {index >= 3 ? 'max-w-0 opacity-0 group-hover:max-w-xs group-hover:opacity-100' : ''}"

@@ -43,6 +43,73 @@
 			width: 20rem; /* 80 (w-80) = 320px */
 		}
 	}
+
+	/* View Transitions personnalisées */
+	@view-transition {
+		navigation: auto;
+	}
+
+	/* Désactiver l'animation du root pour éviter les conflits avec le scroll */
+	::view-transition-old(root),
+	::view-transition-new(root) {
+		animation: none;
+		mix-blend-mode: normal;
+	}
+
+	/* Transition plus rapide pour les éléments individuels */
+	::view-transition-old(*),
+	::view-transition-new(*) {
+		animation-duration: 0.35s;
+		animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+	}
+
+	/* Effet de fondu croisé pour le titre */
+	::view-transition-old([style*="title-"]),
+	::view-transition-new([style*="title-"]) {
+		animation-duration: 0.3s;
+		mix-blend-mode: normal;
+	}
+
+	/* Transition fluide pour les métriques */
+	::view-transition-old([style*="metrics-"]),
+	::view-transition-new([style*="metrics-"]) {
+		animation-duration: 0.4s;
+	}
+
+	/* Transition pour la catégorie */
+	::view-transition-old([style*="category-"]),
+	::view-transition-new([style*="category-"]) {
+		animation-duration: 0.35s;
+	}
+
+	/* Transition pour les tags */
+	::view-transition-old([style*="tags-"]),
+	::view-transition-new([style*="tags-"]) {
+		animation-duration: 0.4s;
+	}
+
+	/* Animation de highlight pour la carte visitée */
+	@keyframes highlight-ring {
+		0% {
+			box-shadow: 0 0 0 0 rgba(249, 208, 137, 0);
+		}
+		10% {
+			box-shadow: 0 0 0 3px rgba(249, 208, 137, 0.4);
+		}
+		50% {
+			box-shadow: 0 0 0 3px rgba(249, 208, 137, 0.6);
+		}
+		90% {
+			box-shadow: 0 0 0 3px rgba(249, 208, 137, 0.4);
+		}
+		100% {
+			box-shadow: 0 0 0 0 rgba(249, 208, 137, 0);
+		}
+	}
+
+	.animate-highlight {
+		animation: highlight-ring 2.5s ease-in-out 1 forwards;
+	}
 }
 
 

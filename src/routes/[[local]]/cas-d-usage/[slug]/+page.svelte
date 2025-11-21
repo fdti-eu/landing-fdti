@@ -58,9 +58,22 @@
 				</svg>
 				{labels.back}
 			</a>
-			<p class="text-xs uppercase tracking-[0.4em] text-yellow">{useCase.category}</p>
-			<h1 class="text-3xl md:text-5xl font-bold">{useCase.title}</h1>
-			<div class="flex flex-wrap gap-3">
+			<p
+				class="text-xs uppercase tracking-[0.4em] text-yellow"
+				style="view-transition-name: category-{useCase.id};"
+			>
+				{useCase.category}
+			</p>
+			<h1
+				class="text-3xl md:text-5xl font-bold"
+				style="view-transition-name: title-{useCase.id};"
+			>
+				{useCase.title}
+			</h1>
+			<div
+				class="flex flex-wrap gap-3"
+				style="view-transition-name: meta-{useCase.id};"
+			>
 				{#if useCase.location}
 					<span class="text-sm font-semibold text-white/90 border border-white/30 rounded-full px-4 py-1">
 						{useCase.location}
@@ -76,38 +89,66 @@
 	</section>
 
 	<section class="bg-slate-50 py-20 md:py-28">
-		<div class="max-w-4xl mx-auto px-4 space-y-12">
-			<div class="space-y-6 bg-white rounded-2xl shadow-md p-8">
-				{#if useCase.challenge}
-					<div>
-						<h2 class="text-xl font-bold text-darkGrey mb-3">{labels.context}</h2>
-						<p class="text-base text-darkGrey leading-relaxed">{useCase.challenge}</p>
+		<div class="max-w-5xl mx-auto px-4 space-y-8">
+			<!-- Carte principale réorganisée -->
+			<div class="bg-white rounded-2xl shadow-md p-8">
+				<div class="flex gap-8 items-start mb-8">
+					<!-- Gauche : Contenu principal -->
+					<div class="flex-1 min-w-0 space-y-6">
+						{#if useCase.challenge}
+							<div>
+								<h2 class="text-xl font-bold text-darkGrey mb-3">{labels.context}</h2>
+								<p
+									class="text-base text-darkGrey leading-relaxed"
+									style="view-transition-name: challenge-{useCase.id};"
+								>
+									{useCase.challenge}
+								</p>
+							</div>
+						{/if}
+						{#if useCase.approach}
+							<div>
+								<h2 class="text-xl font-bold text-darkGrey mb-3">{labels.approach}</h2>
+								<p class="text-base text-darkGrey leading-relaxed">{useCase.approach}</p>
+							</div>
+						{/if}
+						{#if useCase.impact}
+							<div>
+								<h2 class="text-xl font-bold text-darkGrey mb-3">{labels.impact}</h2>
+								<p class="text-base text-darkGrey leading-relaxed">{useCase.impact}</p>
+							</div>
+						{/if}
 					</div>
-				{/if}
-				{#if useCase.approach}
-					<div>
-						<h2 class="text-xl font-bold text-darkGrey mb-3">{labels.approach}</h2>
-						<p class="text-base text-darkGrey leading-relaxed">{useCase.approach}</p>
-					</div>
-				{/if}
-				{#if useCase.impact}
-					<div>
-						<h2 class="text-xl font-bold text-darkGrey mb-3">{labels.impact}</h2>
-						<p class="text-base text-darkGrey leading-relaxed">{useCase.impact}</p>
-					</div>
-				{/if}
-			</div>
 
-			{#if useCase.metrics?.length}
-				<div class="grid gap-4 md:grid-cols-2">
-					{#each useCase.metrics as metric}
-						<div class="bg-white rounded-2xl shadow p-6">
-							<p class="text-sm font-medium text-darkGrey/70">{metric?.label}</p>
-							<p class="text-2xl font-semibold text-darkGrey mt-2">{metric?.value}</p>
-						</div>
-					{/each}
+					<!-- Droite : Métriques et tags -->
+					<div class="flex flex-col gap-6 w-[280px] flex-shrink-0">
+						{#if useCase.metrics?.length}
+							<div
+								class="space-y-4"
+								style="view-transition-name: metrics-{useCase.id};"
+							>
+								{#each useCase.metrics as metric}
+									<div class="bg-slate-50 rounded-xl p-5">
+										<p class="text-sm font-medium text-darkGrey/70">{metric?.label}</p>
+										<p class="text-2xl font-bold text-darkGrey mt-2">{metric?.value}</p>
+									</div>
+								{/each}
+							</div>
+						{/if}
+
+						{#if useCase.tags?.length}
+							<div
+								class="flex flex-wrap gap-2"
+								style="view-transition-name: tags-{useCase.id};"
+							>
+								{#each useCase.tags as tag}
+									<span class="px-3 py-1.5 rounded-md bg-slate-100 text-sm font-medium text-darkGrey">{tag}</span>
+								{/each}
+							</div>
+						{/if}
+					</div>
 				</div>
-			{/if}
+			</div>
 
 			{#if useCase.details?.length}
 				<div class="bg-white rounded-2xl shadow-md p-8 space-y-3">
@@ -117,14 +158,6 @@
 							<li>{detail}</li>
 						{/each}
 					</ul>
-				</div>
-			{/if}
-
-			{#if useCase.tags?.length}
-				<div class="flex flex-wrap gap-2">
-					{#each useCase.tags as tag}
-						<span class="px-3 py-1 rounded-full bg-white shadow text-sm font-semibold text-darkGrey">{tag}</span>
-					{/each}
 				</div>
 			{/if}
 
