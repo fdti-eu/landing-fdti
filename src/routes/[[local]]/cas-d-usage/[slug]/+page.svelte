@@ -49,7 +49,15 @@
 {#if useCase}
 	<section class="bg-darkGrey text-white py-24 md:py-32">
 		<div class="max-w-5xl mx-auto px-4 space-y-6">
-			<a href="/${currentLocale}/cas-d-usage" class="text-sm uppercase tracking-[0.2em] text-yellow/70">← {labels.back}</a>
+			<a
+				href="/{currentLocale}/cas-d-usage"
+				class="inline-flex items-center gap-2 text-base font-semibold text-white bg-yellow/20 hover:bg-yellow hover:text-darkGrey px-6 py-3 rounded-full transition-all duration-300 border border-yellow/40"
+			>
+				<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+					<path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd" />
+				</svg>
+				{labels.back}
+			</a>
 			<p class="text-xs uppercase tracking-[0.4em] text-yellow">{useCase.category}</p>
 			<h1 class="text-3xl md:text-5xl font-bold">{useCase.title}</h1>
 			<div class="flex flex-wrap gap-3">
@@ -72,20 +80,20 @@
 			<div class="space-y-6 bg-white rounded-2xl shadow-md p-8">
 				{#if useCase.challenge}
 					<div>
-						<h2 class="text-xl font-bold text-darkGrey mb-2">{labels.context}</h2>
-						<p class="text-darkGrey-2">{useCase.challenge}</p>
+						<h2 class="text-xl font-bold text-darkGrey mb-3">{labels.context}</h2>
+						<p class="text-base text-darkGrey leading-relaxed">{useCase.challenge}</p>
 					</div>
 				{/if}
 				{#if useCase.approach}
 					<div>
-						<h2 class="text-xl font-bold text-darkGrey mb-2">{labels.approach}</h2>
-						<p class="text-darkGrey-2">{useCase.approach}</p>
+						<h2 class="text-xl font-bold text-darkGrey mb-3">{labels.approach}</h2>
+						<p class="text-base text-darkGrey leading-relaxed">{useCase.approach}</p>
 					</div>
 				{/if}
 				{#if useCase.impact}
 					<div>
-						<h2 class="text-xl font-bold text-darkGrey mb-2">{labels.impact}</h2>
-						<p class="text-darkGrey-2">{useCase.impact}</p>
+						<h2 class="text-xl font-bold text-darkGrey mb-3">{labels.impact}</h2>
+						<p class="text-base text-darkGrey leading-relaxed">{useCase.impact}</p>
 					</div>
 				{/if}
 			</div>
@@ -94,8 +102,8 @@
 				<div class="grid gap-4 md:grid-cols-2">
 					{#each useCase.metrics as metric}
 						<div class="bg-white rounded-2xl shadow p-6">
-							<p class="text-sm text-slate-500">{metric?.label}</p>
-							<p class="text-2xl font-semibold text-darkGrey">{metric?.value}</p>
+							<p class="text-sm font-medium text-darkGrey/70">{metric?.label}</p>
+							<p class="text-2xl font-semibold text-darkGrey mt-2">{metric?.value}</p>
 						</div>
 					{/each}
 				</div>
@@ -103,8 +111,8 @@
 
 			{#if useCase.details?.length}
 				<div class="bg-white rounded-2xl shadow-md p-8 space-y-3">
-					<h2 class="text-xl font-bold text-darkGrey">{labels.delivered}</h2>
-					<ul class="list-disc pl-5 space-y-2 text-darkGrey-2">
+					<h2 class="text-xl font-bold text-darkGrey mb-4">{labels.delivered}</h2>
+					<ul class="list-disc pl-5 space-y-2 text-base text-darkGrey leading-relaxed">
 						{#each useCase.details as detail}
 							<li>{detail}</li>
 						{/each}

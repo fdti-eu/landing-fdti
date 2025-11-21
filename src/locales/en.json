@@ -1023,7 +1023,7 @@
         "title": "Court registry automation",
         "date": "2025",
         "location": "France",
-        "challenge": "A software vendor for court clerks needed to embed AI capabilities into its platform to speed up sensitive dossier validation.",
+        "challenge": "A software vendor for court clerks wanted to embed AI directly into its platform to optimize processing time and accuracy for clerks.",
         "approach": "On-prem FastAPI AI stack, tailored LLMs and a TypeScript/SvelteKit portal, fully integrated into the existing system.",
         "impact": "Processing time divided by 20 while meeting judicial confidentiality requirements.",
         "metrics": [

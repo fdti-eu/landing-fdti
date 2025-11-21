@@ -1023,7 +1023,7 @@
         "title": "Automatisation IA des greffes",
         "date": "2025",
         "location": "France",
-        "challenge": "Cet éditeur de logiciels pour greffiers devait intégrer des fonctionnalités d'IA directement dans sa plateforme pour accélérer la validation de dossiers sensibles.",
+        "challenge": "Un éditeur de logiciels pour greffiers souhaitait intégrer des fonctionnalités d'IA directement dans sa plateforme pour optimiser le temps et la précision des traitements des greffiers.",
         "approach": "API d'intelligence artificielle hébergée chez le client (FastAPI) accessible aux greffiers, modèles LLM spécialisés et portail TypeScript/SvelteKit sécurisé intégrés au logiciel existant.",
         "impact": "Temps de traitement divisé par 20 tout en respectant les exigences de confidentialité du secteur judiciaire.",
         "metrics": [
