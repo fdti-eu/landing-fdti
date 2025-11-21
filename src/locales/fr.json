@@ -508,6 +508,38 @@
             "url": "/images/cms/companies/agence-francaise-de-developpement.webp",
             "id": "agence-francaise-de-developpement.webp"
           }
+        },
+        {
+          "name": "SNAM",
+          "img": {
+            "filename_disk": "snam.webp",
+            "url": "/images/cms/companies/snam.webp",
+            "id": "snam.webp"
+          }
+        },
+        {
+          "name": "AIMVP",
+          "img": {
+            "filename_disk": "aimvp.webp",
+            "url": "/images/cms/companies/aimvp.webp",
+            "id": "aimvp.webp"
+          }
+        },
+        {
+          "name": "BlaBlaCar",
+          "img": {
+            "filename_disk": "blablacar.webp",
+            "url": "/images/cms/companies/blablacar.webp",
+            "id": "blablacar.webp"
+          }
+        },
+        {
+          "name": "Valorauto",
+          "img": {
+            "filename_disk": "valorauto.webp",
+            "url": "/images/cms/companies/valorauto.webp",
+            "id": "valorauto.webp"
+          }
         }
       ]
     },
@@ -1024,7 +1056,7 @@
         "date": "2025",
         "location": "France",
         "challenge": "Un éditeur de logiciels pour greffiers souhaitait intégrer des fonctionnalités d'IA directement dans sa plateforme pour optimiser le temps et la précision des traitements des greffiers.",
-        "approach": "API d'intelligence artificielle hébergée chez le client (FastAPI) accessible aux greffiers, modèles LLM spécialisés et portail TypeScript/SvelteKit sécurisé intégrés au logiciel existant.",
+        "approach": "API d'intelligence artificielle hébergée sur les serveurs du client derrière son VPN (FastAPI) accessible aux greffiers, modèles LLM spécialisés et portail TypeScript/SvelteKit sécurisé intégrés au logiciel existant.",
         "impact": "Temps de traitement divisé par 20 tout en respectant les exigences de confidentialité du secteur judiciaire.",
         "metrics": [
           {
@@ -1034,6 +1066,10 @@
           {
             "label": "Gain par dossier",
             "value": "-25 min"
+          },
+          {
+            "label": "Greffes clients FR",
+            "value": "30%"
           }
         ],
         "tags": [
@@ -1047,7 +1083,7 @@
           "Prompt Engineering"
         ],
         "details": [
-          "Modélisation de cas d'usage critiques : résumés de procédures, validation de liasses et extraction automatisée de pièces sensibles.",
+          "Modélisation de cas d'usage critiques : résumés de procédures, validation de liasses et extraction automatisée de pièces sensibles avec LLM et OCR.",
           "Déploiement complet dans le VPN client avec monitoring fin des performances et SLA contractualisés.",
           "Portail self-service pour générer des clés API, suivre la consommation et diagnostiquer les requêtes.",
           "Boucles de ré-annotation pour améliorer les modèles et outillage d'audit sur l'ensemble des flux.",
@@ -1059,11 +1095,11 @@
       {
         "id": "2",
         "category": "Aftermarket & recyclage",
-        "title": "Plateforme économie circulaire multi-flux",
+        "title": "Plateforme de gestion des véhicules en fin de vie",
         "date": "2020-2025",
         "location": "Europe",
-        "challenge": "Suite à la création d'une joint-venture avec un constructeur, la plateforme d'économie circulaire devait moderniser son outil existant pour gérer la reprise de véhicules en fin de vie (B2B et B2C) sous contrainte européenne.",
-        "approach": "Portail TypeScript/SvelteKit, processus métiers et APIs Azure Functions déployés sur l'infrastructure Azure du client (bases MSSQL, Azure Service Bus) pour orchestrer un existant .NET connectant propriétaires et centres VHU.",
+        "challenge": "Suite à la création d'une joint-venture avec un constructeur, une plateforme d'économie circulaire devait moderniser son outil existant pour gérer la reprise de véhicules en fin de vie (B2B et B2C) et suivre leur parcours de la collecte chez le propriétaire à la démolition du véhicule.",
+        "approach": "Développement d'un portail web avec interfaces de déclaration, d'administration et de suivi des véhicules entre les différents acteurs, processus métiers et APIs Azure Functions déployés sur l'infrastructure Azure du client (bases MSSQL, Azure Service Bus) pour orchestrer un existant .NET connectant propriétaires et centres VHU.",
         "impact": "Traçabilité bout en bout de plus de 50 000 véhicules/an au service de la branche économie circulaire du groupe.",
         "metrics": [
           {
@@ -1087,8 +1123,10 @@
           "Azure Service Bus"
         ],
         "details": [
+          "Développement de bout en bout de la plateforme, bases de données et API.",
           "Design complet du workflow de déclaration pour concessionnaires, centres de réparation et particuliers.",
           "APIs Azure Functions pour relier les SI logistiques, CRM et finance du groupe.",
+          "Interconnexion avec l'écosystème des autres acteurs de l'économie circulaire par API (recycleurs, propriétaires, acheteurs, éco-organismes).",
           "Cartographie en temps réel des flux matières et génération automatique des documents réglementaires.",
           "Gestion multi-marques : règles locales, catalogues et pricing par pays.",
           "Infrastructure Azure dimensionnée pour absorber les pics de régulation et audits.",
@@ -1101,11 +1139,11 @@
         "id": "3",
         "category": "Aftermarket & recyclage",
         "title": "Marketplace batteries seconde vie",
-        "date": "2021",
+        "date": "2024",
         "location": "Europe",
-        "challenge": "Le constructeur avait besoin d'un outil central pour piloter la collecte, le recyclage et la revente de ses batteries, en lien avec ses partenaires et acheteurs.",
-        "approach": "Marketplace B2B TypeScript/SvelteKit connectée aux ERP partenaires, tracabilité bout en bout et flux automatisés vers les acheteurs ou les recycleurs, négociation de prix et de conditions avec les partenaires intégrés dans l'app.",
-        "impact": "Plusieurs milliers de batteries redirigées chaque mois avec reporting centralisé pour les autorités.",
+        "challenge": "Un constructeur automobile avait besoin d'un outil central pour piloter la collecte, le recyclage et la revente de ses batteries, en lien avec ses partenaires et acheteurs. L'outil devait gérer la traçabilité complète du processus pour répondre à des contraintes réglementaires liées à la structuration des filières REP (Responsabilité Élargie du Producteur).",
+        "approach": "Marketplace web connectée aux ERP partenaires, tracabilité bout en bout et flux automatisés vers les acheteurs ou les recycleurs, négociation de prix et de conditions avec les partenaires intégrés dans l'app.",
+        "impact": "Plusieurs milliers de batteries redirigées chaque mois par des centaines de propriétaires et prestataires de service, avec reporting centralisé pour les autorités et interface d'administration pour les employés du client.",
         "metrics": [
           {
             "label": "Batteries/mois",
@@ -1127,8 +1165,9 @@
           "Keycloak"
         ],
         "details": [
+          "Développement de bout en bout de la plateforme, bases de données et API.",
           "Process déclaratif complet pour les batteries en fin de vie et génération automatique des bons logistiques.",
-          "Intégration API avec les recycleurs pour suivre enlèvements, tests et certificats, propositions de prix.",
+          "Intégration API avec les recycleurs et éco-organismes pour suivre enlèvements, tests et certificats, propositions de prix.",
           "Espace acheteur pour sourcer les batteries reconditionnables et orchestrer la transaction.",
           "Scoring qualité/conformité des partenaires et SLA partagés.",
           "Reporting réglementaire consolidé exportable en un clic.",
@@ -1140,12 +1179,12 @@
       {
         "id": "4",
         "category": "Smart city & énergie",
-        "title": "Supervision de l'éclairage public",
+        "title": "Supervision et modélisation de l'éclairage public",
         "date": "2024",
         "location": "France",
-        "challenge": "Les communes et leurs prestataires avaient besoin d'une plateforme unique pour piloter l'éclairage public, ajuster les horaires, détecter les anomalies et planifier la maintenance.",
+        "challenge": "Un client spécialisé dans la gestion de l'éclairage public pour les communes et leurs prestataires avait besoin d'une plateforme unique pour piloter l'éclairage public, ajuster les horaires, détecter les anomalies et planifier la maintenance.",
         "approach": "Stack temps réel AWS S3 + DuckDB/Parquet, pipelines Shell/Cron, API FastAPI et interface TypeScript/SvelteKit orientée collectivités.",
-        "impact": "Des horaires ajustés dynamiquement et une maintenance prédictive déployée auprès de plus de 40 territoires.",
+        "impact": "Mesures de consommation et d'incidents ajustés dynamiquement, maintenance prédictive et système d'alerting déployés auprès de plus de 40 territoires.",
         "metrics": [
           {
             "label": "Mesures/jour",
@@ -1157,7 +1196,6 @@
           }
         ],
         "tags": [
-          "IoT",
           "DuckDB",
           "SvelteKit",
           "Collectivités",
@@ -1166,7 +1204,9 @@
         ],
         "details": [
           "Collecte continue des compteurs d'éclairage et archivage optimisé dans S3 + Parquet.",
-          "Analyse DuckDB pour générer des KPI en quelques secondes sur plusieurs années d'historique.",
+          "Pipelines Shell/Cron pour mettre à jour le cache.",
+          "Analyse DuckDB pour générer des KPI instantanément sur plusieurs années d'historique et génération de visualisations dynamiques pour afficher les résultats.",
+          "Système de gestion de mandats liés aux propriétaires et utilisateurs des données.",
           "Dashboards d'alertes dédiés aux exploitants (pannes, consommation, anomalies horaires).",
           "API REST ouverte pour connecter les outils métiers des prestataires et des communes.",
           "Gestion multi-collectivités avec droits fins et segmentation par gestionnaire."
@@ -1217,8 +1257,8 @@
         "title": "Data hub & NLP",
         "date": "2021-2023",
         "location": "Global",
-        "challenge": "Centraliser les flux marketing France d'un leader électronique et industrialiser l'analyse des avis clients nationaux.",
-        "approach": "Pipelines Airflow→BigQuery, gouvernance GCP, NLP HuggingFace (BERTopic, QA, LLM) et restitution Tableau.",
+        "challenge": "Centraliser les flux d'avis clients d'un leader électronique en France et industrialiser leur analyse avec de l'IA et des dashboards.",
+        "approach": "Pipelines pour collecter les données auprès des différents prestataires et responsables de collecte par API Airflow→BigQuery, gouvernance GCP, NLP (HuggingFace, BERTopic, QA, LLM), restitution dans des dashboards Tableau et diffusion de la data en interne aux autres équipes concernées.",
         "impact": "Le service client retrouve instantanément les thématiques classifiées, les alertes remontées et suit plus finement les demandes.",
         "metrics": [
           {
@@ -1235,12 +1275,15 @@
           "Airflow",
           "NLP",
           "Tableau",
-          "HuggingFace"
+          "HuggingFace",
+          "Prompt Engineering"
         ],
         "details": [
           "Collecte multi-API (mystery shopping, CRM, social, reviews) orchestrée par Airflow.",
           "Politiques cloud : segmentation par équipe, data localisation, sécurité et bonnes pratiques.",
+          "Pipeline d'analyse et classification avec des LLM.",
           "Pipelines NLP pour similarité, sentiment et topics dans plusieurs langues.",
+          "Conception et implémentation des dashboards utilisés quotidiennement par l'équipe Customer & Market insights.",
           "Documentation et formation des équipes data / business.",
           "Exports automatisés d'insights vers les BU marketing et les agences."
         ],
@@ -1248,17 +1291,21 @@
       },
       {
         "id": "7",
-        "category": "Distribution spécialisée",
+        "category": "Retail & électronique",
         "title": "Data warehouse temps réel retail",
         "date": "2020-2021",
         "location": "Europe",
         "challenge": "Migrer 98 objets métier JSON Azure vers Snowflake pour alimenter Qlik en quasi temps réel, soit plus de 150 tables et vues SQL.",
-        "approach": "Modèle cible, ingestion ADLS→Snowflake via Kafka/ADF, génération SQL automatique et flux delta.",
+        "approach": "Modèle cible, ingestion ADLS→Snowflake via Kafka/ADF, génération SQL automatique et flux delta, orchestration via des streams and tasks.",
         "impact": "Flux minute par minute pour les équipes BI et plusieurs millions de fichiers traités chaque jour.",
         "metrics": [
           {
             "label": "Objets métier",
             "value": "98"
+          },
+          {
+            "label": "Tables et vues",
+            "value": "150+"
           },
           {
             "label": "Latence",

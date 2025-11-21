@@ -3,7 +3,7 @@
 	import { locale } from 'svelte-i18n';
 	import Flag from '../Flag.svelte';
 	import { FLAGS } from '$lib/const';
-	import { goto } from '$app/navigation';
+	import { goto, invalidate } from '$app/navigation';
 
 	let isDropdownOpen = false;
 
@@ -15,7 +15,8 @@
 		$locale = code;
 		const link = $page.url.pathname.replace(/^\/[^\/]*/, '/' + code);
 		isDropdownOpen = false;
-		goto(link);
+		await goto(link);
+		await invalidate('app:locale');
 	}
 </script>
 

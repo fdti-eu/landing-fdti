@@ -1,5 +1,7 @@
 <script lang="ts">
 	import { locale } from 'svelte-i18n';
+	import { flip } from 'svelte/animate';
+	import { fade, scale } from 'svelte/transition';
 
 	export let data:
 		| {
@@ -36,7 +38,7 @@
 		  }
 		| undefined;
 
-	const content = data?.content || null;
+	$: content = data?.content || null;
 	let selectedTag: string | null = null;
 	let selectedIndustry: string | null = null;
 
@@ -96,11 +98,11 @@
 		<div class="max-w-6xl mx-auto px-4 space-y-8">
 			<!-- Filtres compacts -->
 			{#if allIndustries.length > 0 || allTags.length > 0}
-				<div class="bg-white rounded-xl shadow-md p-4 space-y-4">
+				<div class="border-b border-slate-200 pb-6 space-y-4">
 					<!-- Filtre par industrie -->
 					{#if allIndustries.length > 0}
 						<div>
-							<p class="text-xs font-bold text-darkGrey/70 mb-2 uppercase tracking-wider">
+							<p class="text-xs font-bold text-darkGrey/70 mb-3 uppercase tracking-wider">
 								{$locale === 'fr' ? 'Secteur' : 'Industry'}
 							</p>
 							<div class="flex flex-wrap gap-2">
@@ -121,7 +123,7 @@
 					<!-- Filtre par tags -->
 					{#if allTags.length > 0}
 						<div>
-							<p class="text-xs font-bold text-darkGrey/70 mb-2 uppercase tracking-wider">
+							<p class="text-xs font-bold text-darkGrey/70 mb-3 uppercase tracking-wider">
 								{$locale === 'fr' ? 'Technologies' : 'Technologies'}
 							</p>
 							<div class="flex flex-wrap gap-1.5">
@@ -141,7 +143,7 @@
 
 					<!-- Bouton réinitialiser -->
 					{#if selectedTag || selectedIndustry}
-						<div class="pt-2 border-t border-slate-100">
+						<div class="pt-2">
 							<button
 								on:click={() => {
 									selectedTag = null;
@@ -159,26 +161,41 @@
 				</div>
 			{/if}
 
-			<div class="space-y-4">
-				{#each filteredUseCases as useCase}
-					<a
-						href={`/${$locale}/cas-d-usage/${useCase.slug}`}
-						class="group block bg-white rounded-xl shadow-md hover:shadow-2xl transition-all duration-300 cursor-pointer"
+			<div class="space-y-4 overflow-hidden">
+				{#each filteredUseCases as useCase (useCase.id)}
+					<div
+						in:fade={{ duration: 200 }}
+						out:fade={{ duration: 150 }}
+						animate:flip={{ duration: 250 }}
 					>
+						<a
+							href={`/${$locale}/cas-d-usage/${useCase.slug}`}
+							class="group block bg-white rounded-xl shadow-md hover:shadow-2xl transition-all duration-300 cursor-pointer"
+						>
 						<article class="p-5">
 							<!-- Version repliée : layout horizontal compact -->
 							<div class="flex items-start gap-4">
 								<!-- Gauche : Info principale -->
 								<div class="flex-1 min-w-0">
-									<div class="flex items-baseline gap-3 mb-2">
+									<div class="flex items-baseline gap-6 mb-2">
 										<p class="text-xs uppercase tracking-[0.15em] text-darkGrey/70">{useCase.category}</p>
 										{#if useCase.location || useCase.date}
-											<div class="flex gap-2">
+											<div class="flex gap-3">
 												{#if useCase.location}
-													<span class="text-xs font-medium text-darkGrey/60">📍 {useCase.location}</span>
+													<span class="text-xs font-medium text-darkGrey/60 flex items-center gap-1">
+														<svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" viewBox="0 0 20 20" fill="currentColor">
+															<path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+														</svg>
+														{useCase.location}
+													</span>
 												{/if}
 												{#if useCase.date}
-													<span class="text-xs font-medium text-darkGrey/60">📅 {useCase.date}</span>
+													<span class="text-xs font-medium text-darkGrey/60 flex items-center gap-1">
+														<svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" viewBox="0 0 20 20" fill="currentColor">
+															<path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+														</svg>
+														{useCase.date}
+													</span>
 												{/if}
 											</div>
 										{/if}
@@ -210,6 +227,11 @@
 													{tag}
 												</span>
 											{/each}
+											{#if useCase.tags.length > 3}
+												<span class="px-2 py-0.5 rounded-md bg-slate-200 text-xs font-semibold text-darkGrey group-hover:hidden">
+													+{useCase.tags.length - 3}
+												</span>
+											{/if}
 										</div>
 									{/if}
 								</div>
@@ -235,7 +257,8 @@
 								</div>
 							</div>
 						</article>
-					</a>
+						</a>
+					</div>
 				{/each}
 			</div>
 

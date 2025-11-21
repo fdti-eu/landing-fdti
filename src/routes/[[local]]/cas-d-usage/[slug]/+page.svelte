@@ -34,11 +34,11 @@
 			}
 		| undefined;
 
-	const content = data?.content || null;
-	const useCase = data?.useCase || null;
-	const currentLocale = (data as any)?.locale || 'fr';
-	const labels = currentLocale === 'fr'
-		? { context: 'Contexte', approach: 'Approche', impact: 'Impact', delivered: 'Ce que nous avons livré', back: 'Cas d’usage' }
+	$: content = data?.content || null;
+	$: useCase = data?.useCase || null;
+	$: currentLocale = (data as any)?.locale || 'fr';
+	$: labels = currentLocale === 'fr'
+		? { context: 'Contexte', approach: 'Approche', impact: 'Impact', delivered: 'Ce que nous avons livré', back: "Cas d'usage" }
 		: { context: 'Context', approach: 'Approach', impact: 'Impact', delivered: 'What we delivered', back: 'Use cases' };
 </script>
 

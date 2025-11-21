@@ -508,6 +508,38 @@
             "url": "/images/cms/companies/agence-francaise-de-developpement.webp",
             "id": "agence-francaise-de-developpement.webp"
           }
+        },
+        {
+          "name": "SNAM",
+          "img": {
+            "filename_disk": "snam.webp",
+            "url": "/images/cms/companies/snam.webp",
+            "id": "snam.webp"
+          }
+        },
+        {
+          "name": "AIMVP",
+          "img": {
+            "filename_disk": "aimvp.webp",
+            "url": "/images/cms/companies/aimvp.webp",
+            "id": "aimvp.webp"
+          }
+        },
+        {
+          "name": "BlaBlaCar",
+          "img": {
+            "filename_disk": "blablacar.webp",
+            "url": "/images/cms/companies/blablacar.webp",
+            "id": "blablacar.webp"
+          }
+        },
+        {
+          "name": "Valorauto",
+          "img": {
+            "filename_disk": "valorauto.webp",
+            "url": "/images/cms/companies/valorauto.webp",
+            "id": "valorauto.webp"
+          }
         }
       ]
     },
@@ -1101,11 +1133,11 @@
         "id": "3",
         "category": "Aftermarket & recycling",
         "title": "Battery reuse marketplace",
-        "date": "2021",
+        "date": "2024",
         "location": "Europe",
-        "challenge": "The automaker required a central platform to manage battery collection, recycling and resale across partners and buyers.",
-        "approach": "TypeScript/SvelteKit B2B marketplace connecting partner ERPs, end to end traceability and automated flows to buyers or recyclers.",
-        "impact": "Thousands of batteries rerouted every month with centralized reporting for authorities.",
+        "challenge": "An automotive manufacturer needed a central tool to manage the collection, recycling and resale of its batteries, in collaboration with its partners and buyers. The tool had to manage complete process traceability to meet regulatory requirements related to the structuring of EPR (Extended Producer Responsibility) systems.",
+        "approach": "Web marketplace connected to partner ERPs, end-to-end traceability and automated flows to buyers or recyclers, price and terms negotiation with partners integrated in the app.",
+        "impact": "Several thousand batteries redirected each month by hundreds of owners and service providers, with centralized reporting for authorities and administration interface for client employees.",
         "metrics": [
           {
             "label": "Batteries/month",
@@ -1127,8 +1159,9 @@
           "Keycloak"
         ],
         "details": [
+          "End-to-end platform development, databases and APIs.",
           "Full declaration process for end-of-life batteries plus automatic logistics documents.",
-          "API integrations with recyclers to track pickups, tests and certificates, price offers.",
+          "API integrations with recyclers and eco-organizations to track pickups, tests and certificates, price offers.",
           "Buyer workspace to source reusable batteries and manage the transaction.",
           "Quality/compliance scoring with shared SLAs.",
           "Regulatory reporting exportable in one click.",
@@ -1217,9 +1250,9 @@
         "title": "Data hub & NLP",
         "date": "2021-2023",
         "location": "Global",
-        "challenge": "Centralize French marketing data for a major electronics brand and industrialize analysis of all domestic customer reviews.",
-        "approach": "Airflow→BigQuery pipelines, GCP governance, HuggingFace NLP (BERTopic, QA, LLM) and Tableau delivery.",
-        "impact": "Customer service gains instant access to classified topics, surfaced alerts and a tighter follow-up on all requests.",
+        "challenge": "Centralize customer review flows from an electronics leader in France and industrialize their analysis with AI and dashboards.",
+        "approach": "Pipelines to collect data from various providers and collection managers via API Airflow→BigQuery, GCP governance, NLP (HuggingFace, BERTopic, QA, LLM), delivery in Tableau dashboards and internal data distribution to other concerned teams.",
+        "impact": "Customer service instantly retrieves classified topics, escalated alerts and tracks requests more precisely.",
         "metrics": [
           {
             "label": "Sources integrated",
@@ -1235,12 +1268,15 @@
           "Airflow",
           "NLP",
           "Tableau",
-          "HuggingFace"
+          "HuggingFace",
+          "Prompt Engineering"
         ],
         "details": [
           "Multi-API collection (mystery shopping, CRM, social, reviews) orchestrated by Airflow.",
-          "Cloud policies for team/project segmentation, data localisation and security.",
-          "HuggingFace pipelines for similarity, sentiment and topics across languages.",
+          "Cloud policies: team segmentation, data localization, security and best practices.",
+          "Analysis and classification pipeline with LLMs.",
+          "NLP pipelines for similarity, sentiment and topics across multiple languages.",
+          "Design and implementation of dashboards used daily by the Customer & Market insights team.",
           "Documentation and training for data/business teams.",
           "Automated insight exports to marketing BUs and agencies."
         ],
