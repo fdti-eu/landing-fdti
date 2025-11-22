@@ -4,6 +4,7 @@
 	import Hamburger from './Hamburger.svelte';
 	import LocaleToggle from './LocaleToggle.svelte';
 
+	import { slide } from 'svelte/transition';
 	let isNavbarOpen = false;
 
 	let windowY: number;
@@ -68,11 +69,51 @@
 			<span class="text-yellow font-bold text-lg hidden lg:inline">FDTI - From Data To Insight</span
 			>
 		</a>
+
+		<!-- Mobile Menu Overlay -->
+		{#if isNavbarOpen}
+			<div 
+				class="fixed inset-0 bg-black/95 z-40 flex flex-col justify-center items-center md:hidden"
+				transition:slide={{ duration: 300, axis: 'y' }}
+			>
+				<ul class="flex flex-col gap-8 text-center text-2xl">
+					<li>
+						<a
+							href="/{$locale}"
+							class="{$page.url.pathname === '/' || $page.url.pathname === `/${$locale}`
+								? 'text-yellow'
+								: 'text-white'} hover:text-yellow transition-colors"
+							on:click={handleToggleNav}
+						>
+							{$locale === 'fr' ? "Page d'accueil" : 'Home'}
+						</a>
+					</li>
+					<li>
+						<a
+							href="/{$locale}/adn-et-valeurs"
+							class="{$page.url.pathname.includes('/adn-et-valeurs') ? 'text-yellow' : 'text-white'} hover:text-yellow transition-colors"
+							on:click={handleToggleNav}
+						>
+							{$locale === 'fr' ? 'ADN et valeurs' : 'DNA and values'}
+						</a>
+					</li>
+					<li>
+						<a
+							href="/{$locale}/cas-d-usage"
+							class="{$page.url.pathname.includes('/cas-d-usage') ? 'text-yellow' : 'text-white'} hover:text-yellow transition-colors"
+							on:click={handleToggleNav}
+						>
+							{$locale === 'fr' ? 'Cas d’usage' : 'Use cases'}
+						</a>
+					</li>
+				</ul>
+			</div>
+		{/if}
+
+		<!-- Desktop Menu -->
 		<ul
 			bind:this={navListElement}
-			class="{isNavbarOpen
-				? 'absolute top-20 z-50 left-0 flex flex-col bg-black pl-16 md:static md:bg-transparent md:flex-row md:p-0'
-				: 'static hidden md:flex md:p-0'} relative whitespace-nowrap w-full gap-4 p-8 text-white text-base md:text-lg transition-all md:col-span-3 lg:col-span-2 lg:gap-8 xl:col-span-1"
+			class="hidden md:flex md:p-0 relative whitespace-nowrap w-full gap-4 p-8 text-white text-base md:text-lg transition-all md:col-span-3 lg:col-span-2 lg:gap-8 xl:col-span-1"
 			on:mouseleave={handleMouseLeave}
 		>
 			<!-- Halo element -->
@@ -87,7 +128,6 @@
 					class="{$page.url.pathname === '/' || $page.url.pathname === `/${$locale}`
 						? 'text-yellow'
 						: ''} block px-4 py-2 hover:text-yellow transition-all duration-300"
-					on:click={handleToggleNav}
 				>
 					{$locale === 'fr' ? "Page d'accueil" : 'Home'}
 				</a>
@@ -96,7 +136,6 @@
 				<a
 					href="/{$locale}/adn-et-valeurs"
 					class="{$page.url.pathname.includes('/adn-et-valeurs') ? 'text-yellow' : ''} block px-4 py-2 hover:text-yellow transition-all duration-300"
-					on:click={handleToggleNav}
 				>
 					{$locale === 'fr' ? 'ADN et valeurs' : 'DNA and values'}
 				</a>
@@ -105,15 +144,14 @@
 				<a
 					href="/{$locale}/cas-d-usage"
 					class="{$page.url.pathname.includes('/cas-d-usage') ? 'text-yellow' : ''} block px-4 py-2 hover:text-yellow transition-all duration-300"
-					on:click={handleToggleNav}
 				>
 					{$locale === 'fr' ? 'Cas d’usage' : 'Use cases'}
 				</a>
 			</li>
 		</ul>
-		<LocaleToggle class="md:justify-self-end" />
-		<button class="md:hidden" on:click={handleToggleNav} aria-label="hamburger menu" aria-expanded={isNavbarOpen}>
-			<Hamburger />
+		<LocaleToggle class="md:justify-self-end z-50" />
+		<button class="md:hidden z-50 relative" on:click={handleToggleNav} aria-label="hamburger menu" aria-expanded={isNavbarOpen}>
+			<Hamburger isOpen={isNavbarOpen} />
 		</button>
 	</div>
 </nav>
