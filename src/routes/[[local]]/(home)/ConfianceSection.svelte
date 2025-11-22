@@ -17,7 +17,7 @@
 		| null;
 </script>
 
-{#if content && content.status === 'published'}
+{#if content}
 	<section class="relative max-w-screen-2xl space-y-8 mx-auto px-4 py-16 md:py-24" id="trust">
 		<div class="group">
 			<h2 class="text-3xl font-bold text-center md:text-4xl">
@@ -54,7 +54,7 @@
 					</div>
 				</div>
 			</div>
-			{#if cii && cii.status === 'published'}
+			{#if cii}
 				<p class="text-center text-sm">{@html cii.description || ''}</p>
 
 				<figure class="w-fit mx-auto">

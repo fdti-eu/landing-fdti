@@ -136,7 +136,7 @@
 	<title>{content?.title ? `${content.title} | FDTI` : 'FDTI'}</title>
 </svelte:head>
 
-{#if content?.status === 'published'}
+{#if content}
 	<section class="hero-section bg-darkGrey text-white py-24 md:py-32 overflow-x-hidden" class:hero-hidden={Boolean(activeSlug)}>
 		<div class="max-w-6xl mx-auto px-4 w-full">
 			<div class="space-y-6 text-center mb-8">

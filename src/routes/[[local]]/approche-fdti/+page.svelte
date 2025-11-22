@@ -73,7 +73,7 @@
 		class="relative max-w-screen-xl space-y-8 mx-auto px-2 py-16 mt-20 md:px-12 md:py-24"
 		in:fade
 	>
-		{#if intro.status === 'published' || intro.title}
+		{#if intro.title}
 			<div class="text-center">
 				<div class="group">
 					<h1 class="text-3xl font-bold md:text-4xl">{intro.title || ''}</h1>

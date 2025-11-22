@@ -14,7 +14,7 @@
 		| null;
 </script>
 
-{#if content && content.status === 'published'}
+{#if content}
 	<section class="bg-lightGrey py-12 md:py-24" id="contact">
 		<div class="max-w-6xl mx-auto px-2 space-y-8 md:px-12 wrap:px-5">
 			<div class="group">

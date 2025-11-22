@@ -67,7 +67,7 @@
 	/>
 </svelte:head>
 
-{#if dnaContent && cardList?.length && dnaContent.status === 'published'}
+{#if dnaContent && cardList?.length}
 	<section class="relative max-w-screen-xl space-y-8 mx-auto py-16 mt-20 lg:px-12 md:py-24" in:fade>
 		<div class="group">
 			<h1 class="text-3xl font-bold text-center md:text-4xl">{dnaContent.title || ''}</h1>

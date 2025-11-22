@@ -6,8 +6,7 @@
       "btn_brochure": "Téléchargez notre plaquette",
       "btn_contact": "Contactez-nous",
       "brochure_link": "https://docs.google.com/presentation/d/e/2PACX-1vTxf7KCRA90Jm1rClbzRMZqB7wprtcUv30NwlpyT7RsxcGCKEQxW9HneEJBxo0Ml50srOHn18p5ECpD/pub?start=false&loop=false&delayms=3000",
-      "title": "Solutions métiers augmentées avec la data",
-      "status": "published"
+      "title": "Solutions métiers augmentées avec la data"
     },
     "fdti_section": {
       "subtitle": "Des décisions et des outils augmentés par la data",
@@ -23,17 +22,14 @@
         "id": "from-data-to-insight-1.svg"
       },
       "content_2": "<p><strong>Des solutions adoptées sur le terrain</strong> : nous structurons les données utiles, entraînons des modèles (LLM, prédictifs, agents) et livrons applications, API, dashboards et espaces collaboratifs prêts à l'emploi.</p><ul><li><strong>Data & IA</strong> : pipelines, feature stores, modèles spécialisés</li><li><strong>Produits métiers</strong> : apps web, API sécurisées, copilotes IA, workflows automatisés</li><li><strong>Adoption</strong> : coaching, playbooks et itérations courtes avec vos équipes</li></ul>",
-      "title": "From Data To Insight",
-      "status": "published"
+      "title": "From Data To Insight"
     },
     "technology_content": {
       "title": "Technologies",
       "subtitle": "Nous utilisons des outils modernes adaptés à chaque situation rencontrée lors du traitement de vos projets",
-      "status": "published",
       "technology_category_list": [
         {
           "description": "Nous concevons et développons des applications web modernes et des APIs robustes pour digitaliser vos processus métier. De l'interface utilisateur jusqu'aux services backend, nous créons des solutions complètes qui s'intègrent parfaitement dans votre écosystème technologique.",
-          "status": "published",
           "title": "Applications web & API",
           "order": "1",
           "category_icon": {
@@ -43,7 +39,6 @@
           },
           "technology_list": [
             {
-              "status": "published",
               "id": "35",
               "name": "TypeScript",
               "img": {
@@ -56,7 +51,6 @@
               "url": "https://www.typescriptlang.org/"
             },
             {
-              "status": "published",
               "id": "36",
               "name": "React",
               "img": {
@@ -69,7 +63,6 @@
               "url": "https://react.dev/"
             },
             {
-              "status": "published",
               "id": "37",
               "name": "Svelte",
               "img": {
@@ -82,7 +75,6 @@
               "url": "https://svelte.dev/"
             },
             {
-              "status": "published",
               "id": "38",
               "name": "REST API",
               "img": {
@@ -95,7 +87,6 @@
               "url": "https://restfulapi.net/"
             },
             {
-              "status": "published",
               "id": "39",
               "name": "GraphQL",
               "img": {
@@ -108,7 +99,6 @@
               "url": "https://graphql.org/"
             },
             {
-              "status": "published",
               "id": "40",
               "name": "OpenID",
               "img": {
@@ -124,7 +114,6 @@
         },
         {
           "description": "Notre maîtrise des principales plateformes cloud vous assure une intégration fluide et sécurisée de vos données dans l'environnement de votre choix. Nous vous accompagnons dans la migration, la gestion et l'optimisation de vos ressources cloud, garantissant une infrastructure solide et évolutive pour soutenir votre croissance.",
-          "status": "published",
           "title": "Cloud & Infra",
           "order": "2",
           "category_icon": {
@@ -134,7 +123,6 @@
           },
           "technology_list": [
             {
-              "status": "published",
               "id": "15",
               "name": "terraform",
               "img": {
@@ -147,7 +135,6 @@
               "url": "https://www.terraform.io/"
             },
             {
-              "status": "published",
               "id": "13",
               "name": "Azure",
               "img": {
@@ -160,7 +147,6 @@
               "url": "https://azure.microsoft.com/fr-fr/"
             },
             {
-              "status": "published",
               "id": "12",
               "name": "AWS",
               "img": {
@@ -173,7 +159,6 @@
               "url": "https://aws.amazon.com/fr/"
             },
             {
-              "status": "published",
               "id": "14",
               "name": "google cloud",
               "img": {
@@ -186,7 +171,6 @@
               "url": "https://cloud.google.com/"
             },
             {
-              "status": "published",
               "id": "16",
               "name": "docker",
               "img": {
@@ -202,7 +186,6 @@
         },
         {
           "description": "En utilisant les meilleures pratiques en matière d'intelligence artificielle et de machine learning, nous concevons et déployons des modèles prédictifs innovants pour optimiser vos processus stratégiques. En automatisant les tâches répétitives et en améliorant la précision des prédictions, nous vous aidons à augmenter l'efficacité de votre entreprise et à vous démarquer de la concurrence.",
-          "status": "published",
           "title": "Intelligence Artificielle",
           "order": "3",
           "category_icon": {
@@ -212,7 +195,6 @@
           },
           "technology_list": [
             {
-              "status": "published",
               "id": "5",
               "name": "scikit-learn",
               "img": {
@@ -225,7 +207,6 @@
               "url": "https://scikit-learn.org/stable/"
             },
             {
-              "status": "published",
               "id": "11",
               "name": "hugging face",
               "img": {
@@ -238,7 +219,6 @@
               "url": "https://huggingface.co/"
             },
             {
-              "status": "published",
               "id": "6",
               "name": "pytorch",
               "img": {
@@ -251,7 +231,6 @@
               "url": "https://pytorch.org/"
             },
             {
-              "status": "published",
               "id": "29",
               "name": "Open AI",
               "img": {
@@ -267,7 +246,6 @@
         },
         {
           "description": "Grâce à notre expertise en data science, nous vous offrons des solutions personnalisées pour analyser et exploiter vos données. Nos scripts sur mesure permettent de révéler les tendances cachées et les opportunités de croissance, vous aidant à prendre des décisions éclairées et stratégiques pour votre entreprise.",
-          "status": "published",
           "title": "Data Science",
           "order": "4",
           "category_icon": {
@@ -277,7 +255,6 @@
           },
           "technology_list": [
             {
-              "status": "published",
               "id": "26",
               "name": "Python",
               "img": {
@@ -290,7 +267,6 @@
               "url": "https://www.python.org/"
             },
             {
-              "status": "published",
               "id": "25",
               "name": "R",
               "img": {
@@ -303,7 +279,6 @@
               "url": "https://www.r-project.org/"
             },
             {
-              "status": "published",
               "id": "28",
               "name": "Bash",
               "img": {
@@ -316,7 +291,6 @@
               "url": "https://www.gnu.org/software/bash/"
             },
             {
-              "status": "published",
               "id": "30",
               "name": "DuckDB",
               "img": {
@@ -332,7 +306,6 @@
         },
         {
           "description": "Nos vous aidons à collecter, structurer et diffuser vos données dans l'entreprise de manière optimale. Nous concevons des architectures robustes, des pipelines de données efficaces et assurons la qualité et la cohérence des données tout au long de leur cycle de vie",
-          "status": "published",
           "title": "Data Engineering",
           "order": "5",
           "category_icon": {
@@ -342,7 +315,6 @@
           },
           "technology_list": [
             {
-              "status": "published",
               "id": "33",
               "name": "Spark",
               "img": {
@@ -355,7 +327,6 @@
               "url": "https://spark.apache.org/"
             },
             {
-              "status": "published",
               "id": "34",
               "name": "postgreSQL",
               "img": {
@@ -368,7 +339,6 @@
               "url": "https://www.postgresql.org/"
             },
             {
-              "status": "published",
               "id": "31",
               "name": "Airflow",
               "img": {
@@ -381,7 +351,6 @@
               "url": "https://airflow.apache.org/"
             },
             {
-              "status": "published",
               "id": "32",
               "name": "DBT",
               "img": {
@@ -397,7 +366,6 @@
         },
         {
           "description": "Nous mettons en place des solutions de data warehouse adaptées à vos besoins, permettant une centralisation efficace de vos données et une mise à l'échelle sans limite. Avec un accès rapide et sécurisé à vos informations, votre entreprise bénéficie d'une base solide pour soutenir l'analyse de données, la prise de décision et la croissance continue.",
-          "status": "published",
           "title": "Data Warehouse",
           "order": "6",
           "category_icon": {
@@ -407,7 +375,6 @@
           },
           "technology_list": [
             {
-              "status": "published",
               "id": "18",
               "name": "Redshift",
               "img": {
@@ -420,7 +387,6 @@
               "url": "https://aws.amazon.com/fr/redshift/"
             },
             {
-              "status": "published",
               "id": "19",
               "name": "Snowflake",
               "img": {
@@ -433,7 +399,6 @@
               "url": "ttps://www.snowflake.com/?lang=fr"
             },
             {
-              "status": "published",
               "id": "17",
               "name": "Bigquery",
               "img": {
@@ -451,7 +416,6 @@
     },
     "trust_content": {
       "title": "Ils nous font confiance",
-      "status": "published",
       "company_list": [
         {
           "name": "Samsung",
@@ -562,38 +526,13 @@
     "contact_section": {
       "btn_contact": "Contactez-nous",
       "subtitle": "Discutons ensemble de votre projet!",
-      "status": "published",
       "address": "8 place Roger Salengro, 31000 Toulouse, France",
       "company": "FDTI Consulting",
       "mail": "info@fdti.eu",
       "title": "Contact"
     },
-    "case_study_section": {
-      "title": "Études de cas",
-      "description": "testetst",
-      "status": "published",
-      "id": "1",
-      "case_study_list": [
-        {
-          "title": "Migration du Data Warehouse et amélioration de l'analytique pour Gifi",
-          "content": "<p class=\"code-line\" dir=\"auto\" data-line=\"1\">L'entreprise Gifi, acteur majeur dans la distribution de produits non-alimentaires &agrave; petits prix, souhaitait migrer sa base de donn&eacute;es vers une infrastructure plus moderne et adapt&eacute;e &agrave; la gestion des donn&eacute;es en temps r&eacute;el. Le d&eacute;fi &eacute;tait d'impl&eacute;menter un data warehouse Snowflake pour am&eacute;liorer leurs analyses et faciliter l'exploitation de leurs donn&eacute;es, notamment gr&acirc;ce &agrave; la plateforme de visualisation Qlik.</p>\n<h2 id=\"contexte--probl%C3%A8me\" class=\"code-line\" dir=\"auto\" data-line=\"3\">Contexte / Probl&egrave;me</h2>\n<h3 id=\"pr%C3%A9sentation-du-client\" class=\"code-line\" dir=\"auto\" data-line=\"4\">Pr&eacute;sentation du client</h3>\n<p class=\"code-line\" dir=\"auto\" data-line=\"5\">Gifi est un groupe sp&eacute;cialis&eacute; dans la distribution de produits de la maison et de la famille. Ils sont confront&eacute;s &agrave; des d&eacute;fis pour moderniser leurs syst&egrave;mes de gestion et d'analyse des donn&eacute;es afin d'optimiser la prise de d&eacute;cisions.</p>\n<h3 id=\"d%C3%A9fis--probl%C3%A8me-%C3%A0-r%C3%A9soudre\" class=\"code-line\" dir=\"auto\" data-line=\"7\">D&eacute;fis / Probl&egrave;me &agrave; r&eacute;soudre</h3>\n<p class=\"code-line\" dir=\"auto\" data-line=\"8\">Gifi accumule une grande quantit&eacute; de donn&eacute;es en format JSON sur Azure et souhaite les structurer pour les utiliser dans un datawarehouse Snowflake. Les donn&eacute;es concernent divers objets m&eacute;tiers tels que les produits, les caisses enregistreuses, les stocks, la logistique, entre autres. Le d&eacute;fi est de construire un flux de donn&eacute;es performant entre Azure Data Lake Service Gen2 et Snowflake.</p>\n<h3 id=\"objectifs-de-la-mission\" class=\"code-line\" dir=\"auto\" data-line=\"10\">Objectifs de la mission</h3>\n<ul class=\"code-line\" dir=\"auto\" data-line=\"11\">\n<li class=\"code-line\" dir=\"auto\" data-line=\"11\">Mettre en place le data warehouse Snowflake</li>\n<li class=\"code-line\" dir=\"auto\" data-line=\"12\">Int&eacute;grer l'ensemble des objets m&eacute;tiers dans un mod&egrave;le de donn&eacute;es structur&eacute;</li>\n<li class=\"code-line\" dir=\"auto\" data-line=\"13\">Construire un flux de donn&eacute;es performant entre ADLS Gen2 et Snowflake</li>\n<li class=\"code-line\" dir=\"auto\" data-line=\"14\">Faciliter l'utilisation des donn&eacute;es pour les &eacute;quipes d'analystes via des visualisations Qlik</li>\n</ul>\n<h2 id=\"solution-propos%C3%A9e\" class=\"code-line\" dir=\"auto\" data-line=\"16\">Solution propos&eacute;e</h2>\n<h3 id=\"plan-daction\" class=\"code-line\" dir=\"auto\" data-line=\"17\">Plan d'action</h3>\n<p><a href=\"https://www.fdti.eu/\" target=\"_blank\" rel=\"noopener\">FDTI</a> a accompagn&eacute; Gifi tout au long du processus de migration vers un entrep&ocirc;t de donn&eacute;es Snowflake et la cr&eacute;ation de flux de donn&eacute;es adapt&eacute;s. Nous avons &eacute;labor&eacute; une strat&eacute;gie pour d&eacute;finir, collecter et stocker des objets m&eacute;tier, automatiser la g&eacute;n&eacute;ration et l'ex&eacute;cution de requ&ecirc;tes SQL, cr&eacute;er des flux de donn&eacute;es et des t&acirc;ches Snowflake, et guider l'&eacute;quipe interne dans l'utilisation des donn&eacute;es pour la visualisation sur Qlik.</p>\n<ul class=\"code-line\" dir=\"auto\" data-line=\"18\">\n<li class=\"code-line\" dir=\"auto\" data-line=\"18\">D&eacute;finition du mod&egrave;le de donn&eacute;es et des vues m&eacute;tier pour int&eacute;grer les 98 objets m&eacute;tiers dans le datawarehouse</li>\n<li class=\"code-line\" dir=\"auto\" data-line=\"19\">Mise en place d'un flux de donn&eacute;es entre ADLS Gen2 et Snowflake en utilisant Kafka avec Event Grid et Azure Data Factory</li>\n<li class=\"code-line\" dir=\"auto\" data-line=\"20\">Automatisation de la g&eacute;n&eacute;ration et de l'ex&eacute;cution de requ&ecirc;tes SQL &agrave; partir des m&eacute;tadonn&eacute;es des objets m&eacute;tiers au moyen d'un script Python</li>\n<li class=\"code-line\" dir=\"auto\" data-line=\"21\">Conception de mises &agrave; jour delta en temps quasi-r&eacute;el et de t&acirc;ches Snowflake pour alimenter le data warehouse</li>\n<li class=\"code-line\" dir=\"auto\" data-line=\"22\">Impl&eacute;mentation d'une fonction Scala personnalis&eacute;e pour faciliter le d&eacute;nesting des donn&eacute;es JSON</li>\n</ul>\n<h3 id=\"description-des-technologies-utilis%C3%A9es\" class=\"code-line\" dir=\"auto\" data-line=\"24\">Description des technologies utilis&eacute;es</h3>\n<p>Nous avons utilis&eacute; un ensemble de technologies pour r&eacute;soudre les probl&egrave;mes de Gifi :</p>\n<ul>\n<li>Snowflake pour l'entrep&ocirc;t de donn&eacute;es</li>\n<li>Langages de programmation tels que Python, SQL, et Scala</li>\n<li>Services Azure tels qu'Azure Data Lake Storage et Azure Event Grid</li>\n<li>Outils d'int&eacute;gration tels que Kafka et Github</li>\n<li>Qlik pour la visualisation des donn&eacute;es</li>\n</ul>\n<h3 id=\"gestion-du-changement\" class=\"code-line\" dir=\"auto\" data-line=\"27\">Gestion du changement</h3>\n<p class=\"code-line\" dir=\"auto\" data-line=\"28\">Nous avons travaill&eacute; en &eacute;troite collaboration avec les &eacute;quipes internes de Gifi pour partager nos connaissances, les aider &agrave; int&eacute;grer la solution et tirer pleinement parti des avantages offerts par les nouvelles technologies.</p>\n<h2 id=\"r%C3%A9sultats\" class=\"code-line\" dir=\"auto\" data-line=\"30\">R&eacute;sultats</h2>\n<h3 id=\"r%C3%A9alisation-des-objectifs\" class=\"code-line\" dir=\"auto\" data-line=\"31\">R&eacute;alisation des objectifs</h3>\n<p class=\"code-line\" dir=\"auto\" data-line=\"32\">Gr&acirc;ce &agrave; la mise en place du data warehouse Snowflake et &agrave; l'am&eacute;lioration du flux de donn&eacute;es, Gifi a pu atteindre ses objectifs en mati&egrave;re de structuration de donn&eacute;es et d'analyse. Le traitement en temps quasi-r&eacute;el de millions de fichiers par jour a &eacute;t&eacute; r&eacute;alis&eacute; avec succ&egrave;s.</p>\n<h3 id=\"b%C3%A9n%C3%A9fices-pour-le-client\" class=\"code-line\" dir=\"auto\" data-line=\"34\">B&eacute;n&eacute;fices pour le client</h3>\n<p class=\"code-line\" dir=\"auto\" data-line=\"35\">Gifi a b&eacute;n&eacute;fici&eacute; d'un syst&egrave;me de gestion de donn&eacute;es plus efficace et d'analyses plus pertinentes gr&acirc;ce &agrave; l'impl&eacute;mentation r&eacute;ussie de Snowflake et Qlik. Les &eacute;quipes d'analystes ont pu explorer les donn&eacute;es plus facilement et prendre des d&eacute;cisions bas&eacute;es sur des informations d&eacute;taill&eacute;es et actualis&eacute;es.</p>\n<ul>\n<li class=\"code-line\" dir=\"auto\" data-line=\"35\">Migration r&eacute;ussie des donn&eacute;es vers Snowflake</li>\n<li class=\"code-line\" dir=\"auto\" data-line=\"35\">Automatisation des processus pour la g&eacute;n&eacute;ration et l'ex&eacute;cution de requ&ecirc;tes SQL</li>\n<li class=\"code-line\" dir=\"auto\" data-line=\"35\">Mise en place de flux de donn&eacute;es en temps quasi-r&eacute;el</li>\n<li class=\"code-line\" dir=\"auto\" data-line=\"35\">Meilleure compr&eacute;hension et utilisation des donn&eacute;es pour la visualisation</li>\n</ul>\n<h2 id=\"conclusion--r%C3%A9flexions-finales\" class=\"code-line\" dir=\"auto\" data-line=\"37\">Conclusion / R&eacute;flexions finales</h2>\n<p class=\"code-line\" dir=\"auto\" data-line=\"38\">Ce partenariat a permis de moderniser l'infrastructure de donn&eacute;es de Gifi et de d&eacute;ployer de nouvelles technologies pour am&eacute;liorer la qualit&eacute; des analyses. La migration vers Snowflake et l'optimisation des flux de donn&eacute;es ont apport&eacute; une valeur ajout&eacute;e significative pour Gifi.</p>",
-          "tags": [
-            "Snowflake",
-            "Python",
-            "SQL",
-            "Azure",
-            "Kafka",
-            "Scala",
-            "Qlik"
-          ],
-          "slug": "migration-data-warehouse-gifi",
-          "img": null
-        }
-      ]
-    },
     "CII": {
       "description": "<p>Nous sommes agr&eacute;&eacute;s Cr&eacute;dit d&rsquo;Imp&ocirc;t Innovation (CII) depuis 2020 et jusqu'en 2024 par la Direction G&eacute;n&eacute;rale des entreprises. Cela implique que vous pouvez obtenir un cr&eacute;dit d'imp&ocirc;t sur 20% des d&eacute;penses engag&eacute;es avec nous.</p>",
-      "status": "published",
       "image": {
         "filename_disk": "image.png",
         "url": "/images/cms/branding/image.png",
@@ -655,7 +594,6 @@
     "DNA_content": {
       "title": "Adn et Valeurs",
       "description": "<p>La s&eacute;curit&eacute; et la confidentialit&eacute; des donn&eacute;es sont un enjeu primordial pour nous, aussi nous mettons en place des r&egrave;gles strictes dans nos traitements, telles que l'anonymisation des donn&eacute;es personnelles et l'encryptage syst&eacute;matique des connexions. Nos serveurs sont h&eacute;berg&eacute;s en France, les donn&eacute;es qu'ils contiennent ne quittent jamais l'UE et ne sont soumises &agrave; aucune juridiction &eacute;trang&egrave;re &agrave; l'Union europ&eacute;enne. Nous traitons toutes nos donn&eacute;es conform&eacute;ment au RGPD.</p>",
-      "status": "published",
       "card_list": [
         {
           "title": "Flexibilité",
@@ -769,290 +707,6 @@
       ]
     }
   },
-  "GetApproachPageContent": {
-    "approach_intro": {
-      "title": "L’approche FDTI",
-      "description": "<h2>Nous abordons la science des donn&eacute;es de mani&egrave;re pragmatique et transparente, au service de votre strat&eacute;gie d&rsquo;entreprise</h2>",
-      "description_2": "<p>Nous abordons vos probl&eacute;matiques en <strong>5 &eacute;tapes</strong>, de l'acquisition de la <strong>donn&eacute;e au format brut</strong> &agrave; la <strong>co-cr&eacute;ation de solutions</strong> impactant tous les niveaux de votre organisation.</p>\n<p>Ce processus est it&eacute;ratif afin de traiter en profondeur les sujets les plus complexes</p>",
-      "status": "published"
-    },
-    "approach_category": [
-      {
-        "title": "Identification des données",
-        "charge": "1",
-        "value": "3",
-        "order_value": "1",
-        "icon": {
-          "filename_disk": "data-acquisition.svg",
-          "url": "/images/cms/approach/data-acquisition.svg",
-          "id": "data-acquisition.svg"
-        },
-        "card_list": [
-          {
-            "title": "Sélection des données",
-            "description": "<p>Entretiens aupr&egrave;s des acteurs cl&eacute;s suivant notre m&eacute;thode d&rsquo;audit data</p>\n<p>Identification des donn&eacute;es &agrave; forte valeur ajout&eacute;e</p>",
-            "name": "Data selection",
-            "order": 1,
-            "icon": {
-              "filename_disk": "data-selection.svg",
-              "url": "/images/cms/approach/data-selection.svg",
-              "id": "data-selection.svg"
-            }
-          },
-          {
-            "title": "Enrichissement via des données externes",
-            "description": "<p>Donn&eacute;es internes FDTI sur des secteurs vari&eacute;s</p>\n<p>Statistique publiques, open data, fournisseurs de donn&eacute;es tiers, web scraping</p>",
-            "name": "Collection of the data",
-            "order": 2,
-            "icon": {
-              "filename_disk": "collection-of-the-data.svg",
-              "url": "/images/cms/approach/collection-of-the-data.svg",
-              "id": "collection-of-the-data.svg"
-            }
-          },
-          {
-            "title": "Collection des données",
-            "description": "<p>Aupr&egrave;s de votre DSI / vos experts m&eacute;tier</p>\n<p>Dans le respect du RGPD1) et de vos pratiques de gouvernance2)</p>",
-            "name": "Enhancements via external data",
-            "order": 3,
-            "icon": {
-              "filename_disk": "enhancements-via-external-data.svg",
-              "url": "/images/cms/approach/enhancements-via-external-data.svg",
-              "id": "enhancements-via-external-data.svg"
-            }
-          }
-        ]
-      },
-      {
-        "title": "Structuration des données",
-        "charge": "4",
-        "value": "4",
-        "order_value": "2",
-        "icon": {
-          "filename_disk": "data-structuration.svg",
-          "url": "/images/cms/approach/data-structuration.svg",
-          "id": "data-structuration.svg"
-        },
-        "card_list": [
-          {
-            "title": "Nettoyage et structuration de données",
-            "description": "<p>Nettoyage des donn&eacute;es et transformation vers des formats optimaux</p>",
-            "name": "Cleaning and structuring of sources",
-            "order": 1,
-            "icon": {
-              "filename_disk": "cleaning-and-structuring-of-sources.svg",
-              "url": "/images/cms/approach/cleaning-and-structuring-of-sources.svg",
-              "id": "cleaning-and-structuring-of-sources.svg"
-            }
-          },
-          {
-            "title": "Croisement des sources de données",
-            "description": "<p>Croisement des informations pour les rendre pertinentes et coh&eacute;rentes pour vos enjeux strat&eacute;giques</p>",
-            "name": "Cross-referencing of data sources",
-            "order": 2,
-            "icon": {
-              "filename_disk": "cross-referencing-of-data-sources.svg",
-              "url": "/images/cms/approach/cross-referencing-of-data-sources.svg",
-              "id": "cross-referencing-of-data-sources.svg"
-            }
-          },
-          {
-            "title": "Consolidation dans un \"data warehouse\"",
-            "description": "<p>Mise &agrave; disposition des donn&eacute;es fiables et disponibles via une architecture globale</p>",
-            "name": "Consolidation in a \"data warehouse\"",
-            "order": 3,
-            "icon": {
-              "filename_disk": "consolidation-in-a-data-warehouse.svg",
-              "url": "/images/cms/approach/consolidation-in-a-data-warehouse.svg",
-              "id": "consolidation-in-a-data-warehouse.svg"
-            }
-          }
-        ]
-      },
-      {
-        "title": "Modélisation des données",
-        "charge": "2",
-        "value": "1",
-        "order_value": "3",
-        "icon": {
-          "filename_disk": "process-modelling.svg",
-          "url": "/images/cms/approach/process-modelling.svg",
-          "id": "process-modelling.svg"
-        },
-        "card_list": [
-          {
-            "title": "Nous créons des modèles sur-mesure",
-            "description": "<p>Mise en &eacute;quation de vos processus strat&eacute;giques</p>\n<p>Compr&eacute;hension des variables d&rsquo;importance, corr&eacute;lations, r&eacute;gularit&eacute;s</p>\n<p>Analyse Pr&eacute;dictive Comprendre pour pr&eacute;voir</p>",
-            "name": "We create tailor-made models",
-            "order": 1,
-            "icon": {
-              "filename_disk": "we-create-tailor-made-models.svg",
-              "url": "/images/cms/approach/we-create-tailor-made-models.svg",
-              "id": "we-create-tailor-made-models.svg"
-            }
-          },
-          {
-            "title": "Une expertise à la pointe de l’IA",
-            "description": "<p>Nous collaborons avec des laboratoires de recherche en maths/info1</p>\n<p>+30% de notre temps est consacr&eacute; &agrave; la R&amp;D pour rester &agrave; la pointe</p>",
-            "name": "Expertise at the forefront of AI",
-            "order": 2,
-            "icon": {
-              "filename_disk": "expertise-at-the-forefront-of-ai.svg",
-              "url": "/images/cms/approach/expertise-at-the-forefront-of-ai.svg",
-              "id": "expertise-at-the-forefront-of-ai.svg"
-            }
-          },
-          {
-            "title": "Des algorithmes appropriés",
-            "description": "<p>Mod&egrave;les Robustes Statistiquement pertinents</p>\n<p>S&eacute;ries temporelles Segmentation Analyses Multivari&eacute;es Deep / Machine Learning</p>",
-            "name": "Appropriate algorithms",
-            "order": 3,
-            "icon": {
-              "filename_disk": "appropriate-algorithms.svg",
-              "url": "/images/cms/approach/appropriate-algorithms.svg",
-              "id": "appropriate-algorithms.svg"
-            }
-          }
-        ]
-      },
-      {
-        "title": "Interprétation des prévisions",
-        "charge": "2",
-        "value": "3",
-        "order_value": "4",
-        "icon": {
-          "filename_disk": "interpretation-of-prediction.svg",
-          "url": "/images/cms/approach/interpretation-of-prediction.svg",
-          "id": "interpretation-of-prediction.svg"
-        },
-        "card_list": [
-          {
-            "title": "Exploitation des modèles",
-            "description": "<p>Anticipation des dynamiques de votre activit&eacute;</p>\n<p>Identification de potentiels d&rsquo;optimisation</p>",
-            "name": "Exploitation of models",
-            "order": 1,
-            "icon": {
-              "filename_disk": "relevance.png",
-              "url": "/images/cms/values/relevance.png",
-              "id": "relevance.png"
-            }
-          },
-          {
-            "title": "Mise en valeur des résultats pertinents",
-            "description": "<p>Mise en &eacute;vidence des r&eacute;sultats importants</p>\n<p>Visualisations efficaces, dashboards, rapports, apps web (avec <a href=\"https://www.onicorn.dev\" target=\"_blank\" rel=\"noopener\">Onicorn</a>).</p>",
-            "name": "Intuitive representation",
-            "order": 2,
-            "icon": {
-              "filename_disk": "intuitive-representation.svg",
-              "url": "/images/cms/approach/intuitive-representation.svg",
-              "id": "intuitive-representation.svg"
-            }
-          },
-          {
-            "title": "Vision pragmatique",
-            "description": "<p>Transparence sur l&rsquo;origine des r&eacute;sultats et les limites d&rsquo;interpr&eacute;tation. Pas de jargon technique superflu.</p>",
-            "name": "Pragmatic vision",
-            "order": 3,
-            "icon": {
-              "filename_disk": "pragmatic-vision.svg",
-              "url": "/images/cms/approach/pragmatic-vision.svg",
-              "id": "pragmatic-vision.svg"
-            }
-          }
-        ]
-      },
-      {
-        "title": "Co-construction de solutions",
-        "charge": "3",
-        "value": "4",
-        "order_value": "5",
-        "icon": {
-          "filename_disk": "strategic-recommendations.svg",
-          "url": "/images/cms/approach/strategic-recommendations.svg",
-          "id": "strategic-recommendations.svg"
-        },
-        "card_list": [
-          {
-            "title": "Un objectif commun",
-            "description": "<p>Nous travaillons ensemble &agrave; atteindre vos objectifs</p>\n<p>Les &eacute;changes entre vos experts et les n&ocirc;tres font &eacute;merger les solutions optimales</p>\n<p>Processus de changement impuls&eacute; par vos collaborateurs</p>",
-            "name": "A common objective",
-            "order": 1,
-            "icon": {
-              "filename_disk": "a-common-objective.svg",
-              "url": "/images/cms/approach/a-common-objective.svg",
-              "id": "a-common-objective.svg"
-            }
-          },
-          {
-            "title": "Un impact à tous les niveaux",
-            "description": "<p>Outils d&rsquo;aide &agrave; la d&eacute;cision pour un pilotage optimale de votre business</p>\n<p>Recommandations sur la gestion de vos donn&eacute;es</p>\n<p>Optimisation de vos pratiques</p>\n<p>Formation de vos employ&eacute;s, transformation de la culture d&rsquo;entreprise</p>",
-            "name": "An impact at all levels",
-            "order": 2,
-            "icon": {
-              "filename_disk": "an-impact-at-all-levels.svg",
-              "url": "/images/cms/approach/an-impact-at-all-levels.svg",
-              "id": "an-impact-at-all-levels.svg"
-            }
-          },
-          {
-            "title": "Un accompagnement dans la prise de décision",
-            "description": "<p>Sc&eacute;narisation de votre strat&eacute;gie</p>\n<p>Pr&eacute;visions de r&eacute;sultats financiers et op&eacute;rationnels</p>\n<p>Relation de confiance durable</p>",
-            "name": "A support in the decision-making process",
-            "order": 3,
-            "icon": {
-              "filename_disk": "a-support-in-the-decision-making-process.svg",
-              "url": "/images/cms/approach/a-support-in-the-decision-making-process.svg",
-              "id": "a-support-in-the-decision-making-process.svg"
-            }
-          }
-        ]
-      }
-    ],
-    "meta_tags": {
-      "page_tags": [
-        {
-          "title": "FDTI - From Data To Insight : expert en gestion de données",
-          "description": "Prestataire data science, IA, ML, Cloud, Infra, data warehouse, ETL, APIs, FDTI - From Data To Insight vous accompagne",
-          "url": "/",
-          "img": {
-            "filename_disk": "fdti-from-data-to-insights.svg",
-            "url": "/images/cms/branding/fdti-from-data-to-insights.svg",
-            "id": "fdti-from-data-to-insights.svg"
-          }
-        },
-        {
-          "title": "Notre approche | FDTI - From Data To Insight",
-          "description": "Notre approche data science, IA, ML, Cloud, Infra, data warehouse, ETL, APIs, FDTI - From Data To Insight vous accompagne.",
-          "url": "/approche-fdti",
-          "img": {
-            "filename_disk": "fdti-from-data-to-insights.svg",
-            "url": "/images/cms/branding/fdti-from-data-to-insights.svg",
-            "id": "fdti-from-data-to-insights.svg"
-          }
-        },
-        {
-          "title": "Adn et valeurs | FDTI - From Data To Insight",
-          "description": "ADN et valeurs en data science, IA, ML, Cloud, Infra, data warehouse, ETL, APIs, FDTI - From Data To Insight vous accompagne.",
-          "url": "/adn-et-valeurs",
-          "img": {
-            "filename_disk": "fdti-from-data-to-insights.svg",
-            "url": "/images/cms/branding/fdti-from-data-to-insights.svg",
-            "id": "fdti-from-data-to-insights.svg"
-          }
-        },
-        {
-          "title": "Index des retours d'expériences",
-          "description": "Retours d'expériences",
-          "url": "/retours-dexperiences",
-          "img": {
-            "filename_disk": "fdti-from-data-to-insights.svg",
-            "url": "/images/cms/branding/fdti-from-data-to-insights.svg",
-            "id": "fdti-from-data-to-insights.svg"
-          }
-        }
-      ]
-    }
-  },
   "GetPrivacyContent": {
     "privacy": {
       "title": "Politique de confidentialité",
@@ -1060,10 +714,8 @@
     }
   },
   "GetUseCasesContent": {
-    "status": "published",
     "title": "Cas d'usage",
     "subtitle": "Comment nous activons la data, l'IA et l'applicatif pour livrer de l'impact",
-    "description": "Découvrez comment nous mobilisons la data, l'IA et l'applicatif pour résoudre des cas métiers complexes.",
     "use_case_list": [
       {
         "id": "1",

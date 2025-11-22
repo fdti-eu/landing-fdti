@@ -42,7 +42,7 @@
 	}
 </script>
 
-{#if technologyList && content?.status === 'published'}
+{#if technologyList && content}
 	<section class="relative max-w-5xl space-y-8 mx-auto md:px-12 py-16 md:py-24" id="technologies">
 		<div class="group">
 			<h2 class="text-3xl font-bold text-center md:text-4xl">
