@@ -17,8 +17,9 @@ const staticPages: SitemapPage[] = [
 	{ path: '/condition-utilisation', changefreq: 'monthly', priority: '0.60' }
 ];
 
-const getUseCaseSlugs = () => {
-	const frUseCases = getUseCasesContent('fr').use_case_list ?? [];
+const getUseCaseSlugs = async () => {
+	const content = await getUseCasesContent('fr');
+	const frUseCases = content.use_case_list ?? [];
 	return frUseCases.map((useCase) => useCase.slug).filter((slug): slug is string => Boolean(slug));
 };
 
@@ -40,7 +41,7 @@ export async function GET() {
 		}
 	}
 
-	const useCaseSlugs = getUseCaseSlugs();
+	const useCaseSlugs = await getUseCaseSlugs();
 	for (const slug of useCaseSlugs) {
 		for (const locale of locales) {
 			urls.push(

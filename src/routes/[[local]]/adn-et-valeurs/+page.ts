@@ -6,6 +6,6 @@ export const load: PageLoad = async ({ params }) => {
 
 	return {
 		initialLocale: locale,
-		initialContent: getDNAPageContent(locale)
+		initialContent: await getDNAPageContent(locale)
 	};
 };

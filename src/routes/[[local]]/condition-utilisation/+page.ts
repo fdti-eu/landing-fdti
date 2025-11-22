@@ -6,6 +6,6 @@ export const load: PageLoad = async ({ params }) => {
 
 	return {
 		initialLocale: locale,
-		initialContent: getCGUContent(locale)
+		initialContent: await getCGUContent(locale)
 	};
 };

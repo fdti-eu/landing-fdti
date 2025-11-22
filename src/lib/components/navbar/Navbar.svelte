@@ -12,8 +12,6 @@
 	function handleToggleNav() {
 		isNavbarOpen = !isNavbarOpen;
 	}
-
-	$: console.log("page", $page.url.pathname)
 </script>
 
 <svelte:window bind:scrollY={windowY} bind:innerHeight={windowHeight} />
@@ -82,7 +80,7 @@
 			</li>
 		</ul>
 		<LocaleToggle class="md:justify-self-end" />
-		<button class="md:hidden" on:click={handleToggleNav} aria-label="hamburger menu">
+		<button class="md:hidden" on:click={handleToggleNav} aria-label="hamburger menu" aria-expanded={isNavbarOpen}>
 			<Hamburger />
 		</button>
 	</div>

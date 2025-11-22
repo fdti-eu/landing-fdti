@@ -13,10 +13,9 @@
 
 	export let data: PageData;
 
-	const { initialContent, initialLocale } = data;
-
-	$: currentLocale = (browser ? ($locale as Lang) : initialLocale) || initialLocale;
-	$: pageContent = browser ? getDNAPageContent(currentLocale) : initialContent;
+	$: ({ initialContent, initialLocale } = data);
+	$: currentLocale = initialLocale;
+	$: pageContent = initialContent;
 
 	$: dnaContent = pageContent?.DNA_content;
 	$: cardList = dnaContent?.card_list || [];

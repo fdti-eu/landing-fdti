@@ -51,6 +51,8 @@
 					height="458"
 					alt="analyst working"
 					title="analyst working"
+					fetchpriority="high"
+					loading="eager"
 				/>
 			</figure>
 		</div>

@@ -4,7 +4,7 @@ import type { PageLoad } from './$types';
 export const load: PageLoad = async ({ params, depends }) => {
 	depends('app:locale');
 	const local = (params.local as Lang) || 'fr';
-	const content = getUseCasesContent(local);
+	const content = await getUseCasesContent(local);
 
 	return { content, locale: local };
 };

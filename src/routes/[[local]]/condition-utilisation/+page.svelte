@@ -12,10 +12,9 @@
 
 	export let data: PageData;
 
-	const { initialContent, initialLocale } = data;
-
-	$: currentLocale = (browser ? ($locale as Lang) : initialLocale) || initialLocale;
-	$: pageContent = browser ? getCGUContent(currentLocale) : initialContent;
+	$: ({ initialContent, initialLocale } = data);
+	$: currentLocale = initialLocale;
+	$: pageContent = initialContent;
 
 	$: cgu = pageContent?.CGU;
 	$: metaSource = pageContent?.meta_tags?.page_tags?.[0];

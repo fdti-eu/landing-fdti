@@ -6,6 +6,6 @@ export const load: PageLoad = async ({ params }) => {
 
 	return {
 		initialLocale: locale,
-		initialContent: getPrivacyContent(locale)
+		initialContent: await getPrivacyContent(locale)
 	};
 };

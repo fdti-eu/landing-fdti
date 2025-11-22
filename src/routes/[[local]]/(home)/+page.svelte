@@ -1,9 +1,9 @@
 <script lang="ts">
-	import Hero from './Hero.svelte';
-	import FdtiSection from './FdtiSection.svelte';
-	import TechnologiesSection from './TechnologiesSection.svelte';
-	import ConfianceSection from './ConfianceSection.svelte';
-	import ContactSection from './ContactSection.svelte';
+	import Hero from '$lib/components/sections/Hero.svelte';
+	import FdtiSection from '$lib/components/sections/FdtiSection.svelte';
+	import TechnologiesSection from '$lib/components/sections/TechnologiesSection.svelte';
+	import ConfianceSection from '$lib/components/sections/ConfianceSection.svelte';
+	import ContactSection from '$lib/components/sections/ContactSection.svelte';
 	import { MetaTags } from 'svelte-meta-tags';
 	import LdTag from '$lib/components/json-ld/LDTag.svelte';
 	import { schema } from '$lib/components/json-ld/json-ld';

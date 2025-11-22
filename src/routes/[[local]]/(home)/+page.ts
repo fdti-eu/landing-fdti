@@ -3,7 +3,7 @@ import type { PageLoad } from './$types';
 
 export const load: PageLoad = async ({ params }) => {
     const local = (params.local as Lang) || 'fr';
-    const content = getHomePageContent(local);
+    const content = await getHomePageContent(local);
     
     return {
         ...content,

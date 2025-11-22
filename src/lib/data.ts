@@ -1,40 +1,46 @@
-import fr from '$locales/fr.json';
-import en from '$locales/en.json';
-
 export type Lang = 'fr' | 'en';
-export type LocaleData = typeof fr;
+
+// Import de type seulement pour l'inférence
+import type FrData from '../locales/fr.json';
+export type LocaleData = typeof FrData;
+
 export type HomePageContent = LocaleData['GetHomePageContent'];
 export type CGUContent = LocaleData['GetCGUContent'];
 export type DNAContent = LocaleData['GetDNAPageContent'];
 export type PrivacyContent = LocaleData['GetPrivacyContent'];
 export type UseCasesContent = LocaleData['GetUseCasesContent'];
 
-const data: Record<Lang, LocaleData> = {
-	fr,
-	en
+const loaders: Record<Lang, () => Promise<LocaleData>> = {
+	fr: () => import('../locales/fr.json').then((m) => m.default),
+	en: () => import('../locales/en.json').then((m) => m.default)
 };
 
-export function getData(lang: Lang): LocaleData {
-	return data[lang] || data.fr;
+export async function getData(lang: Lang): Promise<LocaleData> {
+	const loader = loaders[lang] || loaders.fr;
+	return await loader();
 }
 
-export function getHomePageContent(lang: Lang): HomePageContent {
-	return getData(lang).GetHomePageContent;
+export async function getHomePageContent(lang: Lang): Promise<HomePageContent> {
+	const data = await getData(lang);
+	return data.GetHomePageContent;
 }
 
-export function getCGUContent(lang: Lang): CGUContent {
-	return getData(lang).GetCGUContent;
+export async function getCGUContent(lang: Lang): Promise<CGUContent> {
+	const data = await getData(lang);
+	return data.GetCGUContent;
 }
 
-export function getDNAPageContent(lang: Lang): DNAContent {
-	return getData(lang).GetDNAPageContent;
+export async function getDNAPageContent(lang: Lang): Promise<DNAContent> {
+	const data = await getData(lang);
+	return data.GetDNAPageContent;
 }
 
-export function getPrivacyContent(lang: Lang): PrivacyContent {
-	return getData(lang).GetPrivacyContent;
+export async function getPrivacyContent(lang: Lang): Promise<PrivacyContent> {
+	const data = await getData(lang);
+	return data.GetPrivacyContent;
 }
 
-export function getUseCasesContent(lang: Lang): UseCasesContent {
-	return getData(lang).GetUseCasesContent;
+export async function getUseCasesContent(lang: Lang): Promise<UseCasesContent> {
+	const data = await getData(lang);
+	return data.GetUseCasesContent;
 }
-
