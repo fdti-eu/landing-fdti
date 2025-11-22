@@ -1216,7 +1216,7 @@
       {
         "id": "5",
         "category": "NGO & engagement",
-        "title": "AI analysis of social narratives",
+        "title": "AI analysis of social media campaigns",
         "date": "2023",
         "location": "International",
         "challenge": "The NGO needed to compare environmental narratives on Facebook and Instagram to guide communications investments.",
@@ -1238,7 +1238,9 @@
         ],
         "tags": [
           "LLM",
-          "OpenAI"
+          "OpenAI",
+          "NLP",
+          "TypeScript"
         ],
         "details": [
           "Prompts capturing tone, actors, topics and emotions on Facebook/Instagram.",
@@ -1257,7 +1259,7 @@
         "location": "Global",
         "challenge": "Centralize customer review flows from an electronics leader in France and industrialize their analysis with AI and dashboards.",
         "approach": "Pipelines to collect data from various providers and collection managers via API Airflow→BigQuery, GCP governance, NLP (HuggingFace, BERTopic, QA, LLM), delivery in Tableau dashboards and internal data distribution to other concerned teams.",
-        "impact": "Customer service instantly retrieves classified topics, escalated alerts and tracks requests more precisely.",
+        "impact": "Customer service instantly retrieves classified topics, escalated alerts and tracks requests more precisely. The product team identifies and anticipates defects and logistics issues. The legal team anticipates litigation.",
         "metrics": [
           {
             "label": "Sources integrated",

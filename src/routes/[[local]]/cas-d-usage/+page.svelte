@@ -322,19 +322,19 @@
 
 									{#if useCase.tags?.length}
 										<div
-											class="flex flex-wrap gap-1 max-w-full lg:max-w-[200px] lg:justify-end"
+											class="relative flex flex-wrap gap-1 max-w-full lg:max-w-[200px] lg:justify-end"
 											style={getViewTransitionStyle(useCase.slug, useCase.id, 'tags')}
 										>
 											{#each useCase.tags as tag, index}
 												<span
-													class="px-2 py-0.5 rounded-md bg-slate-100 text-xs font-medium text-darkGrey whitespace-nowrap transition-all duration-300 {index >= 3 ? 'max-w-0 opacity-0 group-hover:max-w-xs group-hover:opacity-100' : ''}"
+													class="px-2 py-0.5 rounded-md bg-slate-100 text-xs font-medium text-darkGrey whitespace-nowrap transition-all duration-300 {index >= 3 ? 'hidden group-hover:inline-block' : ''}"
 													style={index >= 3 ? `transition-delay: ${(index - 3) * 50}ms` : ''}
 												>
 													{tag}
 												</span>
 											{/each}
 											{#if useCase.tags.length > 3}
-												<span class="px-2 py-0.5 rounded-md bg-slate-200 text-xs font-semibold text-darkGrey group-hover:hidden">
+												<span class="px-2 py-0.5 rounded-md bg-slate-200 text-xs font-semibold text-darkGrey group-hover:hidden transition-opacity duration-200">
 													+{useCase.tags.length - 3}
 												</span>
 											{/if}

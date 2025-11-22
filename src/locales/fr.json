@@ -1223,7 +1223,7 @@
       {
         "id": "5",
         "category": "ONG & engagement",
-        "title": "Analyse IA des narratifs sociaux",
+        "title": "Analyse des campagnes social media par IA",
         "date": "2023",
         "location": "International",
         "challenge": "L'ONG devait comparer les narratifs environnementaux sur Facebook et Instagram pour orienter ses investissements communication.",
@@ -1245,7 +1245,9 @@
         ],
         "tags": [
           "LLM",
-          "OpenAI"
+          "OpenAI",
+          "NLP",
+          "TypeScript"
         ],
         "details": [
           "Prompts spécifiques pour capter ton, acteurs, thématiques et émotions sur Facebook/Instagram.",
@@ -1264,7 +1266,7 @@
         "location": "Global",
         "challenge": "Centraliser les flux d'avis clients d'un leader électronique en France et industrialiser leur analyse avec de l'IA et des dashboards.",
         "approach": "Pipelines pour collecter les données auprès des différents prestataires et responsables de collecte par API Airflow→BigQuery, gouvernance GCP, NLP (HuggingFace, BERTopic, QA, LLM), restitution dans des dashboards Tableau et diffusion de la data en interne aux autres équipes concernées.",
-        "impact": "Le service client retrouve instantanément les thématiques classifiées, les alertes remontées et suit plus finement les demandes.",
+        "impact": "Le service client retrouve instantanément les thématiques classifiées, les alertes remontées et suit plus finement les demandes. L'équipe produit identifie et anticipe les défauts et problèmes logistiques. L'équipe légale anticipe les litiges.",
         "metrics": [
           {
             "label": "Sources intégrées",
