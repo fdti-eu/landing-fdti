@@ -27,7 +27,7 @@
 		class="{($page.url.pathname === '/' && windowY < windowHeight - 120 && windowY > 120) ||
 		($page.url.pathname === `/${$locale}` && windowY < windowHeight - 120 && windowY > 120)
 			? 'md:opacity-0'
-			: 'opacity-100'} transition-all duration-500 w-full max-w-screen-xl flex justify-between items-center gap-4 mx-auto md:grid md:grid-cols-5 xl:grid-cols-3 md:justify-items-center"
+			: 'opacity-100'} transition-all duration-500 w-full max-w-7xl flex justify-between items-center gap-4 mx-auto md:grid md:grid-cols-5 xl:grid-cols-3 md:justify-items-center"
 	>
 		<a href="/{$locale}" class="flex items-center gap-4 mr-auto lg:col-span-2 xl:col-span-1">
 			<figure

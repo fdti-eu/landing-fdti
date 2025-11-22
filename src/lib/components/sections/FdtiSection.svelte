@@ -18,7 +18,7 @@
 </script>
 
 {#if content}
-	<section class="relative max-w-screen-lg space-y-8 mx-auto mt-16 md:mt-20 lg:mt-24 md:px-12 py-16 md:py-24" id="fdti">
+	<section class="relative max-w-5xl space-y-8 mx-auto mt-16 md:mt-20 lg:mt-24 md:px-12 py-16 md:py-24" id="fdti">
 		<div class="group">
 			<h2 class="text-3xl font-bold text-center md:text-4xl">{content.title}</h2>
 			<Underline />
