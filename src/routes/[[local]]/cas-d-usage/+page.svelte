@@ -10,6 +10,7 @@
 	import { schema } from '$lib/components/json-ld/json-ld';
 	import type { Lang } from '$lib/data';
 	import { absoluteImageUrl, buildLocalizedUrl } from '$lib/functions/seo';
+	import { beforeNavigate, afterNavigate } from '$app/navigation';
 
 	// Récupérer le store du layout parent
 	const highlightedUseCase = getContext<Writable<string | null>>('highlightedUseCase');
@@ -67,6 +68,16 @@
 	let selectedIndustry: string | null = null;
 	let showFilters = false;
 	let activeSlug: string | null = null;
+
+	beforeNavigate(({ to }) => {
+		if (!to?.route.id?.includes('/cas-d-usage/')) {
+			document.documentElement.classList.add('disable-card-transitions');
+		}
+	});
+
+	afterNavigate(() => {
+		document.documentElement.classList.remove('disable-card-transitions');
+	});
 
 	const shouldSkipViewTransition = (event: MouseEvent) =>
 		event.defaultPrevented || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || event.button !== 0;

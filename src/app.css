@@ -91,9 +91,19 @@
 	}
 
 	/* Garder la navbar stable pendant les transitions */
-	nav {
+	/* nav {
 		view-transition-name: none;
-	}
+	} */
+
+    /* Assurer que la navbar (si elle a view-transition-name: navbar) reste au-dessus pendant les transitions */
+    ::view-transition-group(navbar) {
+        z-index: 100;
+    }
+
+    /* Quand on quitte la section Use Cases vers ailleurs, on désactive explicitement les view-transition-names des cartes */
+    html.disable-card-transitions [style*="view-transition-name"] {
+        view-transition-name: none !important;
+    }
 
 	/* Animation de highlight pour la carte visitée */
 	@keyframes highlight-ring {

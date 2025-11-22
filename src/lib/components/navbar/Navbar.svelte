@@ -17,6 +17,7 @@
 <svelte:window bind:scrollY={windowY} bind:innerHeight={windowHeight} />
 
 <nav
+	style="view-transition-name: navbar;"
 	class="{($page.url.pathname === '/' && windowY < windowHeight - 120) ||
 	($page.url.pathname === `/${$locale}` && windowY < windowHeight - 120)
 		? 'md:absolute transition-all duration-300'
