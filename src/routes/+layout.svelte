@@ -13,6 +13,13 @@
 		$locale = 'en';
 	}
 
+	// Générer les URLs hreflang pour la page actuelle
+	$: currentPath = $page.url.pathname;
+	$: pathWithoutLocale = currentPath.replace(/^\/(fr|en)/, '') || '/';
+	$: frUrl = `https://www.fdti.eu/fr${pathWithoutLocale}`;
+	$: enUrl = `https://www.fdti.eu/en${pathWithoutLocale}`;
+	$: xDefaultUrl = `https://www.fdti.eu/fr${pathWithoutLocale}`; // Default to French
+
 	// Activer les view transitions tout en préservant le scroll natif de SvelteKit
 	onNavigate((navigation) => {
 		if (!document.startViewTransition) return;
@@ -25,6 +32,12 @@
 		});
 	});
 </script>
+
+<svelte:head>
+	<link rel="alternate" hreflang="fr" href={frUrl} />
+	<link rel="alternate" hreflang="en" href={enUrl} />
+	<link rel="alternate" hreflang="x-default" href={xDefaultUrl} />
+</svelte:head>
 
 {#if !$isLoading}
 	<div class="min-h-screen flex flex-col font-quattrocento ">

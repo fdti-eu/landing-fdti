@@ -6,7 +6,6 @@ export type LocaleData = typeof fr;
 export type HomePageContent = LocaleData['GetHomePageContent'];
 export type CGUContent = LocaleData['GetCGUContent'];
 export type DNAContent = LocaleData['GetDNAPageContent'];
-export type ApproachContent = LocaleData['GetApproachPageContent'];
 export type PrivacyContent = LocaleData['GetPrivacyContent'];
 export type UseCasesContent = LocaleData['GetUseCasesContent'];
 
@@ -29,10 +28,6 @@ export function getCGUContent(lang: Lang): CGUContent {
 
 export function getDNAPageContent(lang: Lang): DNAContent {
 	return getData(lang).GetDNAPageContent;
-}
-
-export function getApproachPageContent(lang: Lang): ApproachContent {
-	return getData(lang).GetApproachPageContent;
 }
 
 export function getPrivacyContent(lang: Lang): PrivacyContent {

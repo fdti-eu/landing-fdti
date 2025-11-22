@@ -5,6 +5,9 @@
 	import { getContext } from 'svelte';
 	import { tick } from 'svelte';
 	import type { Writable } from 'svelte/store';
+	import { MetaTags } from 'svelte-meta-tags';
+	import LdTag from '$lib/components/json-ld/LDTag.svelte';
+	import { schema } from '$lib/components/json-ld/json-ld';
 
 	// Récupérer le store du layout parent
 	const highlightedUseCase = getContext<Writable<string | null>>('highlightedUseCase');
@@ -45,6 +48,17 @@
 		| undefined;
 
 	$: content = data?.content || null;
+	$: metaSource = content?.meta_tags?.page_tags?.[0];
+	$: metatags = {
+		url: metaSource?.url || '/cas-d-usage',
+		img: metaSource?.img?.url || '/logo.webp',
+		description: metaSource?.description || '',
+		title: metaSource?.title || 'FDTI - Use Cases'
+	};
+
+	const absoluteImage = (path: string) =>
+		path?.startsWith('/') ? `https://www.fdti.eu${path}` : path || 'https://www.fdti.eu/logo.webp';
+
 	let selectedTag: string | null = null;
 	let selectedIndustry: string | null = null;
 	let showFilters = false;
@@ -132,8 +146,40 @@
 	};
 </script>
 
+{#if metatags}
+	<MetaTags
+		title={metatags.title}
+		description={metatags.description}
+		canonical={`https://www.fdti.eu${metatags.url}`}
+		openGraph={{
+			type: 'website',
+			url: `https://www.fdti.eu${metatags.url}`,
+			title: metatags.title,
+			description: metatags.description,
+			images: [
+				{
+					url: absoluteImage(metatags.img),
+					alt: metatags.description
+				}
+			],
+			siteName: 'FDTI'
+		}}
+		twitter={{
+			creator: '@handle',
+			site: '@site',
+			cardType: 'summary_large_image',
+			title: metatags.title,
+			description: metatags.description,
+			image: `https://www.fdti.eu/images/fdti_vector_54px.svg`,
+			imageAlt: metatags.description
+		}}
+	/>
+{/if}
+
 <svelte:head>
-	<title>{content?.title ? `${content.title} | FDTI` : 'FDTI'}</title>
+	<LdTag
+		schema={schema('CollectionPage', metatags.title, absoluteImage(metatags.img), metatags.description, metatags.url)}
+	/>
 </svelte:head>
 
 {#if content}

@@ -676,6 +676,20 @@
   "GetUseCasesContent": {
     "title": "Cas d'usage",
     "subtitle": "Comment nous activons la data, l'IA et l'applicatif pour livrer de l'impact",
+    "meta_tags": {
+      "page_tags": [
+        {
+          "title": "Cas d'Usage | Projets Data, IA & Applications - FDTI",
+          "description": "Implémentations réelles : automatisation IA des greffes, plateformes d'économie circulaire, marketplaces batteries, éclairage public intelligent, analyse social media par LLMs, data warehouses retail et justice.",
+          "url": "/cas-d-usage",
+          "img": {
+            "filename_disk": "fdti-from-data-to-insights.svg",
+            "url": "/images/cms/branding/fdti-from-data-to-insights.svg",
+            "id": "fdti-from-data-to-insights.svg"
+          }
+        }
+      ]
+    },
     "use_case_list": [
       {
         "id": "1",

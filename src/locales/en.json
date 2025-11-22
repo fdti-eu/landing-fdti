@@ -676,6 +676,20 @@
   "GetUseCasesContent": {
     "title": "Use cases",
     "subtitle": "How we blend data, AI and applications to deliver impact",
+    "meta_tags": {
+      "page_tags": [
+        {
+          "title": "Use Cases | Data, AI & Application Projects - FDTI",
+          "description": "Real-world implementations: court automation with AI, circular economy platforms, battery marketplaces, smart city lighting, social media analytics with LLMs, data warehouses for retail and justice sectors.",
+          "url": "/cas-d-usage",
+          "img": {
+            "filename_disk": "fdti-from-data-to-insights.svg",
+            "url": "/images/cms/branding/fdti-from-data-to-insights.svg",
+            "id": "fdti-from-data-to-insights.svg"
+          }
+        }
+      ]
+    },
     "use_case_list": [
       {
         "id": "1",

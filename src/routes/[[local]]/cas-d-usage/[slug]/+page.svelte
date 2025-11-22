@@ -1,5 +1,8 @@
 <script lang="ts">
 	import { tick } from 'svelte';
+	import { MetaTags } from 'svelte-meta-tags';
+	import LdTag from '$lib/components/json-ld/LDTag.svelte';
+	import { schema } from '$lib/components/json-ld/json-ld';
 
 	export let data:
 		| {
@@ -43,6 +46,17 @@
 		? { context: 'Contexte', approach: 'Approche', impact: 'Impact', delivered: 'Ce que nous avons livré', back: "Cas d'usage" }
 		: { context: 'Context', approach: 'Approach', impact: 'Impact', delivered: 'What we delivered', back: 'Use cases' };
 
+	// Meta-tags dynamiques pour chaque cas d'usage
+	$: metatags = {
+		title: useCase?.title ? `${useCase.title} | FDTI` : 'FDTI',
+		description: useCase?.challenge || useCase?.impact || '',
+		url: useCase?.slug ? `/cas-d-usage/${useCase.slug}` : '/cas-d-usage',
+		img: '/images/cms/branding/fdti-from-data-to-insights.svg'
+	};
+
+	const absoluteImage = (path: string) =>
+		path?.startsWith('/') ? `https://www.fdti.eu${path}` : path || 'https://www.fdti.eu/logo.webp';
+
 	let isLeaving = false;
 
 	const shouldSkipViewTransition = (event: MouseEvent) =>
@@ -58,8 +72,40 @@
 	};
 </script>
 
+{#if metatags}
+	<MetaTags
+		title={metatags.title}
+		description={metatags.description}
+		canonical={`https://www.fdti.eu${metatags.url}`}
+		openGraph={{
+			type: 'article',
+			url: `https://www.fdti.eu${metatags.url}`,
+			title: metatags.title,
+			description: metatags.description,
+			images: [
+				{
+					url: absoluteImage(metatags.img),
+					alt: metatags.description
+				}
+			],
+			siteName: 'FDTI'
+		}}
+		twitter={{
+			creator: '@handle',
+			site: '@site',
+			cardType: 'summary_large_image',
+			title: metatags.title,
+			description: metatags.description,
+			image: `https://www.fdti.eu/images/fdti_vector_54px.svg`,
+			imageAlt: metatags.description
+		}}
+	/>
+{/if}
+
 <svelte:head>
-	<title>{useCase?.title ? `${useCase.title} | FDTI` : 'FDTI'}</title>
+	<LdTag
+		schema={schema('Article', metatags.title, absoluteImage(metatags.img), metatags.description, metatags.url)}
+	/>
 </svelte:head>
 
 {#if useCase}
