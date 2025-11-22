@@ -61,7 +61,17 @@
 	$: ogImage = absoluteImageUrl(metatags.img);
 	$: twitterImage = absoluteImageUrl('/images/fdti_vector_54px.svg');
 
+	import { beforeNavigate } from '$app/navigation';
+
 	let isLeaving = false;
+	let enableViewTransition = true;
+
+	beforeNavigate(({ to }) => {
+		// Si on ne retourne pas vers la liste des cas d'usage, on désactive les transitions
+		if (!to?.route.id?.includes('/cas-d-usage')) {
+			enableViewTransition = false;
+		}
+	});
 
 	const shouldSkipViewTransition = (event: MouseEvent) =>
 		event.defaultPrevented || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || event.button !== 0;
@@ -160,7 +170,7 @@
 			
 			<p
 				class="text-xs uppercase tracking-wider sm:tracking-[0.4em] text-yellow font-semibold"
-				style="view-transition-name: category-{useCase.id};"
+				style={enableViewTransition ? `view-transition-name: category-${useCase.id};` : ''}
 				in:fly={{ y: 20, duration: 500, delay: 200, easing: cubicOut }}
 			>
 				{useCase.category}
@@ -168,7 +178,7 @@
 			
 			<h1
 				class="text-2xl sm:text-3xl md:text-5xl font-bold leading-tight"
-				style="view-transition-name: title-{useCase.id};"
+				style={enableViewTransition ? `view-transition-name: title-${useCase.id};` : ''}
 				in:fly={{ y: 20, duration: 500, delay: 300, easing: cubicOut }}
 			>
 				{useCase.title}
@@ -176,7 +186,7 @@
 			
 			<div
 				class="flex flex-wrap gap-3 pt-2"
-				style="view-transition-name: meta-{useCase.id};"
+				style={enableViewTransition ? `view-transition-name: meta-${useCase.id};` : ''}
 				in:fly={{ y: 20, duration: 500, delay: 400, easing: cubicOut }}
 			>
 				{#if useCase.location}
@@ -217,7 +227,7 @@
 								<h2 class="text-lg sm:text-xl font-bold text-darkGrey mb-2 sm:mb-3 uppercase tracking-wide">{labels.context}</h2>
 								<p
 									class="text-base sm:text-lg text-darkGrey leading-relaxed font-medium"
-									style="view-transition-name: challenge-{useCase.id};"
+									style={enableViewTransition ? `view-transition-name: challenge-${useCase.id};` : ''}
 								>
 									{useCase.challenge}
 								</p>
@@ -248,7 +258,7 @@
 						{#if useCase.metrics?.length}
 							<div
 								class="space-y-3 sm:space-y-4"
-								style="view-transition-name: metrics-{useCase.id};"
+								style={enableViewTransition ? `view-transition-name: metrics-${useCase.id};` : ''}
 							>
 								{#each useCase.metrics as metric, index}
 									<div 
@@ -265,7 +275,7 @@
 						{#if useCase.tags?.length}
 							<div
 								class="flex flex-wrap gap-2"
-								style="view-transition-name: tags-{useCase.id};"
+								style={enableViewTransition ? `view-transition-name: tags-${useCase.id};` : ''}
 							>
 								{#each useCase.tags as tag, index}
 									<span 
