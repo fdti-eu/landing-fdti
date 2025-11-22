@@ -542,8 +542,8 @@
     "meta_tags": {
       "page_tags": [
         {
-          "title": "FDTI - From Data To Insight : expert en gestion de données",
-          "description": "Prestataire data science, IA, ML, Cloud, Infra, data warehouse, ETL, APIs, FDTI - From Data To Insight vous accompagne",
+          "title": "FDTI | Plateformes Data, IA & Apps Métiers - Livraison Rapide",
+          "description": "Déployez des plateformes data, modèles IA (LLMs, prédictifs, agents) et applications métiers en quelques semaines. Équipes expertes en data engineering, copilotes IA, APIs et automatisation. Clients : Stellantis, Samsung, Blablacar and many more.",
           "url": "/",
           "img": {
             "filename_disk": "fdti-from-data-to-insights.svg",
@@ -552,8 +552,8 @@
           }
         },
         {
-          "title": "Cas d'usage | FDTI - From Data To Insight",
-          "description": "Explorez des cas d'usage data, applicatifs et IA livrés par FDTI.",
+          "title": "Cas d'Usage | Projets Data, IA & Applications - FDTI",
+          "description": "Implémentations réelles : automatisation IA des greffes, plateformes d'économie circulaire, marketplaces batteries, éclairage public intelligent, analyse social media par LLMs, data warehouses retail et justice.",
           "url": "/cas-d-usage",
           "img": {
             "filename_disk": "fdti-from-data-to-insights.svg",
@@ -562,19 +562,9 @@
           }
         },
         {
-          "title": "Adn et valeurs | FDTI - From Data To Insight",
-          "description": "ADN et valeurs en data science, IA, ML, Cloud, Infra, data warehouse, ETL, APIs, FDTI - From Data To Insight vous accompagne.",
+          "title": "ADN & Valeurs | Experts Data Science Conformes RGPD - FDTI",
+          "description": "Experts data européens engagés sur la sécurité, le pragmatisme et l'excellence opérationnelle. Infrastructure conforme RGPD, hébergement français. Valeurs : flexibilité, expertise end-to-end, exécution, coopération.",
           "url": "/adn-et-valeurs",
-          "img": {
-            "filename_disk": "fdti-from-data-to-insights.svg",
-            "url": "/images/cms/branding/fdti-from-data-to-insights.svg",
-            "id": "fdti-from-data-to-insights.svg"
-          }
-        },
-        {
-          "title": "Index des retours d'expériences",
-          "description": "Retours d'expériences",
-          "url": "/retours-dexperiences",
           "img": {
             "filename_disk": "fdti-from-data-to-insights.svg",
             "url": "/images/cms/branding/fdti-from-data-to-insights.svg",
@@ -665,39 +655,9 @@
     "meta_tags": {
       "page_tags": [
         {
-          "title": "FDTI - From Data To Insight : expert en gestion de données",
-          "description": "Prestataire data science, IA, ML, Cloud, Infra, data warehouse, ETL, APIs, FDTI - From Data To Insight vous accompagne",
-          "url": "/",
-          "img": {
-            "filename_disk": "fdti-from-data-to-insights.svg",
-            "url": "/images/cms/branding/fdti-from-data-to-insights.svg",
-            "id": "fdti-from-data-to-insights.svg"
-          }
-        },
-        {
-          "title": "Notre approche | FDTI - From Data To Insight",
-          "description": "Notre approche data science, IA, ML, Cloud, Infra, data warehouse, ETL, APIs, FDTI - From Data To Insight vous accompagne.",
-          "url": "/approche-fdti",
-          "img": {
-            "filename_disk": "fdti-from-data-to-insights.svg",
-            "url": "/images/cms/branding/fdti-from-data-to-insights.svg",
-            "id": "fdti-from-data-to-insights.svg"
-          }
-        },
-        {
-          "title": "Adn et valeurs | FDTI - From Data To Insight",
-          "description": "ADN et valeurs en data science, IA, ML, Cloud, Infra, data warehouse, ETL, APIs, FDTI - From Data To Insight vous accompagne.",
+          "title": "ADN & Valeurs | Experts Data Science Conformes RGPD - FDTI",
+          "description": "Experts data européens engagés sur la sécurité, le pragmatisme et l'excellence opérationnelle. Infrastructure conforme RGPD, hébergement français. Valeurs : flexibilité, expertise end-to-end, exécution, coopération.",
           "url": "/adn-et-valeurs",
-          "img": {
-            "filename_disk": "fdti-from-data-to-insights.svg",
-            "url": "/images/cms/branding/fdti-from-data-to-insights.svg",
-            "id": "fdti-from-data-to-insights.svg"
-          }
-        },
-        {
-          "title": "Index des retours d'expériences",
-          "description": "Retours d'expériences",
-          "url": "/retours-dexperiences",
           "img": {
             "filename_disk": "fdti-from-data-to-insights.svg",
             "url": "/images/cms/branding/fdti-from-data-to-insights.svg",

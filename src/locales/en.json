@@ -542,8 +542,8 @@
     "meta_tags": {
       "page_tags": [
         {
-          "title": "FDTI - From Data To Insights",
-          "description": "Enter in the new era of data oriented management",
+          "title": "FDTI | Data Platforms, AI & Business Apps - Fast Implementation",
+          "description": "Deploy data platforms, AI models (LLMs, predictive, agents) and business applications in weeks. Expert teams for data engineering, AI copilots, APIs and automation. Trusted by Stellantis, Samsung, Blablacar and many more.",
           "url": "/",
           "img": {
             "filename_disk": "fdti-from-data-to-insights.svg",
@@ -552,8 +552,8 @@
           }
         },
         {
-          "title": "Use cases | FDTI - From Data To Insight",
-          "description": "Discover how we deliver data, application and AI use cases.",
+          "title": "Use Cases | Data, AI & Application Projects - FDTI",
+          "description": "Real-world implementations: court automation with AI, circular economy platforms, battery marketplaces, smart city lighting, social media analytics with LLMs, data warehouses for retail and justice sectors.",
           "url": "/cas-d-usage",
           "img": {
             "filename_disk": "fdti-from-data-to-insights.svg",
@@ -562,19 +562,9 @@
           }
         },
         {
-          "title": "Dna and values | FDTI - From Data To Insight",
-          "description": "DNA and values ​​in data science, AI, ML, Cloud, Infra, data warehouse, ETL, APIs, FDTI - From Data To Insight supports you.",
+          "title": "DNA & Values | GDPR-Compliant Data Science Experts - FDTI",
+          "description": "European data experts committed to security, pragmatism and operational excellence. GDPR-compliant, French-hosted infrastructure. Values: flexibility, end-to-end expertise, execution, cooperation.",
           "url": "/adn-et-valeurs",
-          "img": {
-            "filename_disk": "fdti-from-data-to-insights.svg",
-            "url": "/images/cms/branding/fdti-from-data-to-insights.svg",
-            "id": "fdti-from-data-to-insights.svg"
-          }
-        },
-        {
-          "title": "Case study Index",
-          "description": "Here are the case studies",
-          "url": "/retours-dexperiences",
           "img": {
             "filename_disk": "fdti-from-data-to-insights.svg",
             "url": "/images/cms/branding/fdti-from-data-to-insights.svg",
@@ -665,39 +655,9 @@
     "meta_tags": {
       "page_tags": [
         {
-          "title": "FDTI - From Data To Insights",
-          "description": "Enter in the new era of data oriented management",
-          "url": "/",
-          "img": {
-            "filename_disk": "fdti-from-data-to-insights.svg",
-            "url": "/images/cms/branding/fdti-from-data-to-insights.svg",
-            "id": "fdti-from-data-to-insights.svg"
-          }
-        },
-        {
-          "title": "Our approach | FDTI - From Data To Insight",
-          "description": "Our data science, AI, ML, Cloud, Infra, data warehouse, ETL, APIs, FDTI - From Data To Insight approach supports you.",
-          "url": "/approche-fdti",
-          "img": {
-            "filename_disk": "fdti-from-data-to-insights.svg",
-            "url": "/images/cms/branding/fdti-from-data-to-insights.svg",
-            "id": "fdti-from-data-to-insights.svg"
-          }
-        },
-        {
-          "title": "Dna and values | FDTI - From Data To Insight",
-          "description": "DNA and values ​​in data science, AI, ML, Cloud, Infra, data warehouse, ETL, APIs, FDTI - From Data To Insight supports you.",
+          "title": "DNA & Values | GDPR-Compliant Data Science Experts - FDTI",
+          "description": "European data experts committed to security, pragmatism and operational excellence. GDPR-compliant, French-hosted infrastructure. Values: flexibility, end-to-end expertise, execution, cooperation.",
           "url": "/adn-et-valeurs",
-          "img": {
-            "filename_disk": "fdti-from-data-to-insights.svg",
-            "url": "/images/cms/branding/fdti-from-data-to-insights.svg",
-            "id": "fdti-from-data-to-insights.svg"
-          }
-        },
-        {
-          "title": "Case study Index",
-          "description": "Here are the case studies",
-          "url": "/retours-dexperiences",
           "img": {
             "filename_disk": "fdti-from-data-to-insights.svg",
             "url": "/images/cms/branding/fdti-from-data-to-insights.svg",
