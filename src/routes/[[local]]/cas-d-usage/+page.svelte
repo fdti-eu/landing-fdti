@@ -373,12 +373,12 @@
 								<div class="flex flex-row lg:flex-col xl:flex-row gap-4 items-start lg:items-end xl:items-start">
 									{#if useCase.metrics?.length}
 										<div
-											class="flex gap-3"
+											class="grid grid-cols-2 gap-x-4 gap-y-2 w-full lg:w-auto"
 											style={getViewTransitionStyle(useCase.slug, useCase.id, 'metrics')}
 										>
-											{#each useCase.metrics.slice(0, 2) as metric}
-												<div class="text-left lg:text-right">
-													<p class="text-xs text-darkGrey/60">{metric?.label}</p>
+											{#each useCase.metrics as metric, index}
+												<div class="text-left lg:text-right transition-all duration-300 {index >= 2 ? 'opacity-0 h-0 overflow-hidden group-hover:opacity-100 group-hover:h-auto group-hover:overflow-visible' : ''}">
+													<p class="text-xs text-darkGrey/60 whitespace-nowrap">{metric?.label}</p>
 													<p class="text-sm sm:text-base font-bold text-darkGrey whitespace-nowrap">{metric?.value}</p>
 												</div>
 											{/each}
