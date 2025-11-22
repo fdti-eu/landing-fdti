@@ -773,6 +773,10 @@
           {
             "label": "Vehicles/year",
             "value": ">50 k"
+          },
+          {
+            "label": "Score Trustpilot",
+            "value": "4.8"
           }
         ],
         "tags": [
@@ -812,6 +816,10 @@
           {
             "label": "Partners onboarded",
             "value": "+300"
+          },
+          {
+            "label": "Countries covered",
+            "value": "18"
           }
         ],
         "tags": [
@@ -949,9 +957,9 @@
         "title": "Near real-time data warehouse",
         "date": "2020-2021",
         "location": "Europe",
-        "challenge": "Migrate 98 high-volume JSON business objects with complex structures (shops, warehouses, users, receipts, stocks...) from Azure to Snowflake to feed Qlik in near real-time.",
+        "challenge": "As part of an ERP migration, migrate 98 high-volume JSON business objects with complex structures (shops, warehouses, users, receipts, stocks...) from Azure to Snowflake to feed Qlik in near real-time.",
         "approach": "Automatic generation of hundreds of SQL and Scala queries from specifications to denest complex objects. The system produced and feeds 150+ tables and views updated in real-time. ADLS→Snowflake ingestion via Kafka/ADF and orchestration via streams and tasks.",
-        "impact": "Minute-level feeds for BI teams processing millions of files per day.",
+        "impact": "Minute-level feeds for BI teams processing millions of files per day. Transition to the new analysis system followed by deprecation of the legacy one.",
         "metrics": [
           {
             "label": "Business objects",

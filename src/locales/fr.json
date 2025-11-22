@@ -777,6 +777,10 @@
           {
             "label": "Véhicules suivis/an",
             "value": ">50 k"
+          },
+          {
+            "label": "Score Trustpilot",
+            "value": "4.8"
           }
         ],
         "tags": [
@@ -818,6 +822,10 @@
           {
             "label": "Partenaires connectés",
             "value": "+300"
+          },
+          {
+            "label": "Pays couverts",
+            "value": "18"
           }
         ],
         "tags": [
@@ -956,9 +964,9 @@
         "title": "Data warehouse temps réel retail",
         "date": "2020-2021",
         "location": "Europe",
-        "challenge": "Migrer 98 objets métier JSON avec une structure complexe et une volumétrie élevée (boutiques, entrepôts, utilisateurs, tickets de caisse, stocks...) depuis Azure vers Snowflake pour alimenter Qlik en quasi temps réel.",
+        "challenge": "Dans le cadre d'une migration d'ERP, migrer 98 objets métier JSON avec une structure complexe et une volumétrie élevée (boutiques, entrepôts, utilisateurs, tickets de caisse, stocks...) depuis Azure vers Snowflake pour alimenter Qlik en quasi temps réel.",
         "approach": "Génération automatique de centaines de requêtes SQL et Scala depuis les spécifications pour dé-nester les objets complexes. Le système a produit et alimente plus de 150 tables et vues mises à jour en temps réel. Ingestion ADLS→Snowflake via Kafka/ADF et orchestration via streams and tasks.",
-        "impact": "Flux minute par minute pour les équipes BI et plusieurs millions de fichiers traités chaque jour.",
+        "impact": "Flux minute par minute pour les équipes BI et plusieurs millions de fichiers traités chaque jour. Transition vers le nouveau système d'analyse puis déprécation de l'ancien.",
         "metrics": [
           {
             "label": "Objets métier",
