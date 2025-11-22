@@ -808,8 +808,8 @@
         "date": "2024",
         "location": "Europe",
         "challenge": "Un constructeur automobile avait besoin d'un outil central pour piloter la collecte, le recyclage et la revente de ses batteries, en lien avec ses partenaires et acheteurs. L'outil devait gérer la traçabilité complète du processus pour répondre à des contraintes réglementaires liées à la structuration des filières REP (Responsabilité Élargie du Producteur).",
-        "approach": "Marketplace web connectée aux ERP partenaires, tracabilité bout en bout et flux automatisés vers les acheteurs ou les recycleurs, négociation de prix et de conditions avec les partenaires intégrés dans l'app.",
-        "impact": "Plusieurs milliers de batteries redirigées chaque mois par des centaines de propriétaires et prestataires de service, avec reporting centralisé pour les autorités et interface d'administration pour les employés du client.",
+        "approach": "Marketplace web connectée aux ERP partenaires, agissant comme plateforme de logistique et de mise en relation. Tracabilité de bout en bout et flux automatisés vers les acheteurs ou les recycleurs, négociation de prix et de conditions avec les partenaires intégrés dans l'app. Tout le processus peut être géré depuis le portail ou par l'API.",
+        "impact": "Plusieurs milliers de batteries redirigées chaque mois par des centaines de propriétaires et prestataires de service, avec reporting centralisé pour les autorités et interface d'administration pour les employés du client. Intégration de la solution dans l'écosystème.",
         "metrics": [
           {
             "label": "Batteries/mois",
@@ -935,6 +935,7 @@
           "GCP",
           "Airflow",
           "NLP",
+          "LLM",
           "Tableau",
           "HuggingFace"
         ],

@@ -802,8 +802,8 @@
         "date": "2024",
         "location": "Europe",
         "challenge": "An automotive manufacturer needed a central tool to manage the collection, recycling and resale of its batteries, in collaboration with its partners and buyers. The tool had to manage complete process traceability to meet regulatory requirements related to the structuring of EPR (Extended Producer Responsibility) systems.",
-        "approach": "Web marketplace connected to partner ERPs, end-to-end traceability and automated flows to buyers or recyclers, price and terms negotiation with partners integrated in the app.",
-        "impact": "Several thousand batteries redirected each month by hundreds of owners and service providers, with centralized reporting for authorities and administration interface for client employees.",
+        "approach": "Web marketplace connected to partner ERPs, acting as a logistics and matchmaking platform. End-to-end traceability and automated flows to buyers or recyclers, price and terms negotiation with partners integrated in the app. The entire process can be managed from the portal or via the API.",
+        "impact": "Several thousand batteries redirected each month by hundreds of owners and service providers, with centralized reporting for authorities and administration interface for client employees. Seamless integration of the solution into the ecosystem.",
         "metrics": [
           {
             "label": "Batteries/month",
@@ -928,6 +928,7 @@
           "GCP",
           "Airflow",
           "NLP",
+          "LLM",
           "Tableau",
           "HuggingFace"
         ],
