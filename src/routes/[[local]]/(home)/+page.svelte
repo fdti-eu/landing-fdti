@@ -7,6 +7,8 @@
 	import { MetaTags } from 'svelte-meta-tags';
 	import LdTag from '$lib/components/json-ld/LDTag.svelte';
 	import { schema } from '$lib/components/json-ld/json-ld';
+	import type { Lang } from '$lib/data';
+	import { absoluteImageUrl, buildLocalizedUrl } from '$lib/functions/seo';
 
 	export let data;
 
@@ -19,41 +21,48 @@
 		description: items[0]?.description || '',
 		title: items[0]?.title || 'FDTI'
 	};
+	$: currentLocale = (pageContent?.locale as Lang) ?? 'fr';
+	$: canonicalUrl = buildLocalizedUrl(metatags.url || '/', currentLocale);
+	$: ogImage = absoluteImageUrl(metatags.img);
+	$: twitterImage = absoluteImageUrl('/images/fdti_vector_54px.svg');
 </script>
 
 {#if metatags}
 	<MetaTags
 		title={metatags.title}
 		description={metatags.description}
-		canonical={`https://www.fdti.eu${metatags.url}`}
+		canonical={canonicalUrl}
 		openGraph={{
 			type: 'website',
-			url: `https://www.fdti.eu${metatags.url}`,
-			title: `${metatags.title}`,
-			description: `${metatags.description}`,
+			url: canonicalUrl,
+			title: metatags.title,
+			description: metatags.description,
 			images: [
 				{
-					url: metatags.img.startsWith('/') ? `https://www.fdti.eu${metatags.img}` : metatags.img,
-					alt: `${metatags.description}`
+					url: ogImage,
+					alt: metatags.description
 				}
 			],
 			siteName: 'FDTI'
 		}}
 		twitter={{
-			creator: '@handle',
-			site: '@site',
 			cardType: 'summary_large_image',
-			title: `${metatags.title}`,
-			description: `${metatags.description}`,
-			image: `https://www.fdti.eu/images/fdti_vector_54px.svg`,
-			imageAlt: `${metatags.description}`
+			title: metatags.title,
+			description: metatags.description,
+			image: twitterImage,
+			imageAlt: metatags.description
 		}}
 	/>
 {/if}
 
 <svelte:head>
 	<LdTag
-		schema={schema('WebSite', metatags.title, metatags.img, metatags.description, metatags.url)}
+		schema={schema('WebSite', {
+			name: metatags.title,
+			description: metatags.description,
+			image: ogImage,
+			url: canonicalUrl
+		})}
 	/>
 </svelte:head>
 

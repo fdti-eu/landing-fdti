@@ -3,6 +3,8 @@
 	import { MetaTags } from 'svelte-meta-tags';
 	import LdTag from '$lib/components/json-ld/LDTag.svelte';
 	import { schema } from '$lib/components/json-ld/json-ld';
+	import type { Lang } from '$lib/data';
+	import { absoluteImageUrl, buildLocalizedUrl } from '$lib/functions/seo';
 
 	export let data:
 		| {
@@ -41,7 +43,7 @@
 
 	$: content = data?.content || null;
 	$: useCase = data?.useCase || null;
-	$: currentLocale = (data as any)?.locale || 'fr';
+	$: currentLocale = ((data as any)?.locale as Lang) || 'fr';
 	$: labels = currentLocale === 'fr'
 		? { context: 'Contexte', approach: 'Approche', impact: 'Impact', delivered: 'Ce que nous avons livré', back: "Cas d'usage" }
 		: { context: 'Context', approach: 'Approach', impact: 'Impact', delivered: 'What we delivered', back: 'Use cases' };
@@ -53,9 +55,9 @@
 		url: useCase?.slug ? `/cas-d-usage/${useCase.slug}` : '/cas-d-usage',
 		img: '/images/cms/branding/fdti-from-data-to-insights.svg'
 	};
-
-	const absoluteImage = (path: string) =>
-		path?.startsWith('/') ? `https://www.fdti.eu${path}` : path || 'https://www.fdti.eu/logo.webp';
+	$: canonicalUrl = buildLocalizedUrl(metatags.url || '/cas-d-usage', currentLocale);
+	$: ogImage = absoluteImageUrl(metatags.img);
+	$: twitterImage = absoluteImageUrl('/images/fdti_vector_54px.svg');
 
 	let isLeaving = false;
 
@@ -76,27 +78,25 @@
 	<MetaTags
 		title={metatags.title}
 		description={metatags.description}
-		canonical={`https://www.fdti.eu${metatags.url}`}
+		canonical={canonicalUrl}
 		openGraph={{
 			type: 'article',
-			url: `https://www.fdti.eu${metatags.url}`,
+			url: canonicalUrl,
 			title: metatags.title,
 			description: metatags.description,
 			images: [
 				{
-					url: absoluteImage(metatags.img),
+					url: ogImage,
 					alt: metatags.description
 				}
 			],
 			siteName: 'FDTI'
 		}}
 		twitter={{
-			creator: '@handle',
-			site: '@site',
 			cardType: 'summary_large_image',
 			title: metatags.title,
 			description: metatags.description,
-			image: `https://www.fdti.eu/images/fdti_vector_54px.svg`,
+			image: twitterImage,
 			imageAlt: metatags.description
 		}}
 	/>
@@ -104,7 +104,16 @@
 
 <svelte:head>
 	<LdTag
-		schema={schema('Article', metatags.title, absoluteImage(metatags.img), metatags.description, metatags.url)}
+		schema={schema('Article', {
+			name: metatags.title,
+			headline: useCase?.title || metatags.title,
+			description: metatags.description,
+			image: ogImage,
+			url: canonicalUrl,
+			inLanguage: currentLocale,
+			articleSection: useCase?.category,
+			mainEntityOfPage: canonicalUrl
+		})}
 	/>
 </svelte:head>
 

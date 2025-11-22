@@ -6,5 +6,5 @@ export const load: PageLoad = async ({ params, depends }) => {
 	const local = (params.local as Lang) || 'fr';
 	const content = getUseCasesContent(local);
 
-	return { content };
+	return { content, locale: local };
 };

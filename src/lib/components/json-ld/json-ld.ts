@@ -1,18 +1,20 @@
-export function serializeSchema(thing: { [key: string]: any }) {
+export function serializeSchema(thing: Record<string, any>) {
 	return `<script type="application/ld+json">${JSON.stringify(thing, null, 2)}</script>`;
 }
 
-export const schema = (
-	type: 'WebSite' | 'WebPage' | 'AboutPage',
-	name: string,
-	imageUrl: string,
-	description: string,
-	url: string
-) => ({
-	'@context': 'https://schema.org',
-	'@type': type,
-	name: name,
-	description: description,
-	image: imageUrl,
-	url: url
-});
+type SchemaData = {
+	name: string;
+	description: string;
+	url: string;
+	image?: string;
+} & Record<string, any>;
+
+export const schema = (type: string, data: SchemaData) => {
+	const cleanedEntries = Object.entries(data).filter(([, value]) => value !== undefined && value !== null);
+
+	return {
+		'@context': 'https://schema.org',
+		'@type': type,
+		...Object.fromEntries(cleanedEntries)
+	};
+};

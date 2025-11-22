@@ -5,6 +5,10 @@
 	import { locale } from 'svelte-i18n';
 	import { browser } from '$app/environment';
 	import { getPrivacyContent, type Lang } from '$lib/data';
+	import { MetaTags } from 'svelte-meta-tags';
+	import LdTag from '$lib/components/json-ld/LDTag.svelte';
+	import { schema } from '$lib/components/json-ld/json-ld';
+	import { absoluteImageUrl, buildLocalizedUrl } from '$lib/functions/seo';
 
 	export let data: PageData;
 
@@ -14,7 +18,57 @@
 	$: pageContent = browser ? getPrivacyContent(currentLocale) : initialContent;
 
 	$: privacy = pageContent?.privacy;
+	$: metaSource = pageContent?.meta_tags?.page_tags?.[0];
+	$: metatags = {
+		url: metaSource?.url || '/confidentialite',
+		img: metaSource?.img?.url || '/logo.webp',
+		description: metaSource?.description || '',
+		title: metaSource?.title || privacy?.title || 'FDTI'
+	};
+	$: canonicalUrl = buildLocalizedUrl(metatags.url, currentLocale);
+	$: ogImage = absoluteImageUrl(metatags.img);
+	$: twitterImage = absoluteImageUrl('/images/fdti_vector_54px.svg');
 </script>
+
+{#if metatags}
+	<MetaTags
+		title={metatags.title}
+		description={metatags.description}
+		canonical={canonicalUrl}
+		openGraph={{
+			type: 'website',
+			url: canonicalUrl,
+			title: metatags.title,
+			description: metatags.description,
+			images: [
+				{
+					url: ogImage,
+					alt: metatags.description
+				}
+			],
+			siteName: 'FDTI'
+		}}
+		twitter={{
+			cardType: 'summary_large_image',
+			title: metatags.title,
+			description: metatags.description,
+			image: twitterImage,
+			imageAlt: metatags.description
+		}}
+	/>
+{/if}
+
+<svelte:head>
+	<LdTag
+		schema={schema('WebPage', {
+			name: metatags.title,
+			description: metatags.description,
+			image: ogImage,
+			url: canonicalUrl,
+			inLanguage: currentLocale
+		})}
+	/>
+</svelte:head>
 
 <section
 	class="relative w-full max-w-[120rem] px-4 sm:px-8 lg:px-16 xl:px-24 mx-auto space-y-8 py-16 mt-20 md:py-24"

@@ -6,6 +6,7 @@ export const load: PageLoad = async ({ params }) => {
     const content = getHomePageContent(local);
     
     return {
-        ...content
+        ...content,
+        locale: local
     };
 };

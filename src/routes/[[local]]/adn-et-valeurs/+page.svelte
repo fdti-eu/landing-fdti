@@ -9,6 +9,7 @@
 	import { locale } from 'svelte-i18n';
 	import { browser } from '$app/environment';
 	import { getDNAPageContent, type Lang } from '$lib/data';
+	import { absoluteImageUrl, buildLocalizedUrl } from '$lib/functions/seo';
 
 	export let data: PageData;
 
@@ -27,35 +28,34 @@
 		title: metaSource?.title || 'FDTI'
 	};
 
-	const absoluteImage = (path: string) =>
-		path?.startsWith('/') ? `https://www.fdti.eu${path}` : path || 'https://www.fdti.eu/logo.webp';
+	$: canonicalUrl = buildLocalizedUrl(metatags.url || '/adn-et-valeurs', currentLocale);
+	$: ogImage = absoluteImageUrl(metatags.img);
+	$: twitterImage = absoluteImageUrl('/images/fdti_vector_54px.svg');
 </script>
 
 {#if metatags}
 	<MetaTags
 		title={metatags.title}
 		description={metatags.description}
-		canonical={`https://www.fdti.eu${metatags.url}`}
+		canonical={canonicalUrl}
 		openGraph={{
 			type: 'website',
-			url: `https://www.fdti.eu${metatags.url}`,
+			url: canonicalUrl,
 			title: metatags.title,
 			description: metatags.description,
 			images: [
 				{
-					url: absoluteImage(metatags.img),
+					url: ogImage,
 					alt: metatags.description
 				}
 			],
 			siteName: 'FDTI'
 		}}
 		twitter={{
-			creator: '@handle',
-			site: '@site',
 			cardType: 'summary_large_image',
 			title: metatags.title,
 			description: metatags.description,
-			image: `https://www.fdti.eu/images/fdti_vector_54px.svg`,
+			image: twitterImage,
 			imageAlt: metatags.description
 		}}
 	/>
@@ -63,7 +63,13 @@
 
 <svelte:head>
 	<LdTag
-		schema={schema('WebPage', metatags.title, absoluteImage(metatags.img), metatags.description, metatags.url)}
+		schema={schema('WebPage', {
+			name: metatags.title,
+			description: metatags.description,
+			image: ogImage,
+			url: canonicalUrl,
+			inLanguage: currentLocale
+		})}
 	/>
 </svelte:head>
 

@@ -1,120 +1,62 @@
+import { getUseCasesContent, type Lang } from '$lib/data';
+import { buildLocalizedUrl } from '$lib/functions/seo';
+
+type SitemapPage = {
+	path: string;
+	changefreq: string;
+	priority: string;
+};
+
+const locales: Lang[] = ['fr', 'en'];
+
+const staticPages: SitemapPage[] = [
+	{ path: '/', changefreq: 'weekly', priority: '1.00' },
+	{ path: '/adn-et-valeurs', changefreq: 'weekly', priority: '0.90' },
+	{ path: '/cas-d-usage', changefreq: 'weekly', priority: '0.95' },
+	{ path: '/confidentialite', changefreq: 'monthly', priority: '0.60' },
+	{ path: '/condition-utilisation', changefreq: 'monthly', priority: '0.60' }
+];
+
+const getUseCaseSlugs = () => {
+	const frUseCases = getUseCasesContent('fr').use_case_list ?? [];
+	return frUseCases.map((useCase) => useCase.slug).filter((slug): slug is string => Boolean(slug));
+};
+
+const buildUrlEntry = (loc: string, changefreq: string, priority: string) => {
+	return `
+    <url>
+        <loc>${loc}</loc>
+        <changefreq>${changefreq}</changefreq>
+        <priority>${priority}</priority>
+    </url>`;
+};
+
 export async function GET() {
-	return new Response(
-		`
-    <?xml version="1.0" encoding="UTF-8" ?>
-    <urlset
-      xmlns="https://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xhtml="https://www.w3.org/1999/xhtml"
-      xmlns:mobile="https://www.google.com/schemas/sitemap-mobile/1.0"
-      xmlns:news="https://www.google.com/schemas/sitemap-news/0.9"
-      xmlns:image="https://www.google.com/schemas/sitemap-image/1.1"
-      xmlns:video="https://www.google.com/schemas/sitemap-video/1.1"
-    >
-    <url>
-        <loc>https://www.fdti.eu/fr</loc>
-        <changefreq>weekly</changefreq>
-        <priority>1.00</priority>
-    </url>
-    <url>
-        <loc>https://www.fdti.eu/fr/adn-et-valeurs</loc>
-        <changefreq>weekly</changefreq>
-        <priority>0.90</priority>
-    </url>
-    <url>
-        <loc>https://www.fdti.eu/fr/cas-d-usage</loc>
-        <changefreq>weekly</changefreq>
-        <priority>0.95</priority>
-    </url>
-    <url>
-        <loc>https://www.fdti.eu/fr/cas-d-usage/automatisation-greffes</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://www.fdti.eu/fr/cas-d-usage/plateforme-economie-circulaire</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://www.fdti.eu/fr/cas-d-usage/marketplace-batteries</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://www.fdti.eu/fr/cas-d-usage/supervision-eclairage-public</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://www.fdti.eu/fr/cas-d-usage/analyse-generative-campagnes</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://www.fdti.eu/fr/cas-d-usage/data-hub-nlp</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://www.fdti.eu/fr/cas-d-usage/data-warehouse-retail</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://www.fdti.eu/en</loc>
-        <changefreq>weekly</changefreq>
-        <priority>0.90</priority>
-    </url>
-    <url>
-        <loc>https://www.fdti.eu/en/adn-et-valeurs</loc>
-        <changefreq>weekly</changefreq>
-        <priority>0.90</priority>
-    </url>
-    <url>
-        <loc>https://www.fdti.eu/en/cas-d-usage</loc>
-        <changefreq>weekly</changefreq>
-        <priority>0.95</priority>
-    </url>
-    <url>
-        <loc>https://www.fdti.eu/en/cas-d-usage/automatisation-greffes</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://www.fdti.eu/en/cas-d-usage/plateforme-economie-circulaire</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://www.fdti.eu/en/cas-d-usage/marketplace-batteries</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://www.fdti.eu/en/cas-d-usage/supervision-eclairage-public</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://www.fdti.eu/en/cas-d-usage/analyse-generative-campagnes</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://www.fdti.eu/en/cas-d-usage/data-hub-nlp</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://www.fdti.eu/en/cas-d-usage/data-warehouse-retail</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.80</priority>
-    </url>
-    </urlset>`.trim(),
-		{
-			headers: {
-				'Content-Type': 'application/xml'
-			}
+	const urls: string[] = [];
+
+	for (const locale of locales) {
+		for (const page of staticPages) {
+			urls.push(buildUrlEntry(buildLocalizedUrl(page.path, locale), page.changefreq, page.priority));
 		}
-	);
+	}
+
+	const useCaseSlugs = getUseCaseSlugs();
+	for (const slug of useCaseSlugs) {
+		for (const locale of locales) {
+			urls.push(
+				buildUrlEntry(buildLocalizedUrl(`/cas-d-usage/${slug}`, locale), 'monthly', '0.80')
+			);
+		}
+	}
+
+	const xml = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
+${urls.join('\n')}
+</urlset>`;
+
+	return new Response(xml, {
+		headers: {
+			'Content-Type': 'application/xml'
+		}
+	});
 }

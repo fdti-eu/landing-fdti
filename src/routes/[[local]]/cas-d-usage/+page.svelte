@@ -8,6 +8,8 @@
 	import { MetaTags } from 'svelte-meta-tags';
 	import LdTag from '$lib/components/json-ld/LDTag.svelte';
 	import { schema } from '$lib/components/json-ld/json-ld';
+	import type { Lang } from '$lib/data';
+	import { absoluteImageUrl, buildLocalizedUrl } from '$lib/functions/seo';
 
 	// Récupérer le store du layout parent
 	const highlightedUseCase = getContext<Writable<string | null>>('highlightedUseCase');
@@ -56,8 +58,10 @@
 		title: metaSource?.title || 'FDTI - Use Cases'
 	};
 
-	const absoluteImage = (path: string) =>
-		path?.startsWith('/') ? `https://www.fdti.eu${path}` : path || 'https://www.fdti.eu/logo.webp';
+	$: currentLocale = (data?.locale as Lang) ?? 'fr';
+	$: canonicalUrl = buildLocalizedUrl(metatags.url || '/cas-d-usage', currentLocale);
+	$: ogImage = absoluteImageUrl(metatags.img);
+	$: twitterImage = absoluteImageUrl('/images/fdti_vector_54px.svg');
 
 	let selectedTag: string | null = null;
 	let selectedIndustry: string | null = null;
@@ -150,27 +154,25 @@
 	<MetaTags
 		title={metatags.title}
 		description={metatags.description}
-		canonical={`https://www.fdti.eu${metatags.url}`}
+		canonical={canonicalUrl}
 		openGraph={{
 			type: 'website',
-			url: `https://www.fdti.eu${metatags.url}`,
+			url: canonicalUrl,
 			title: metatags.title,
 			description: metatags.description,
 			images: [
 				{
-					url: absoluteImage(metatags.img),
+					url: ogImage,
 					alt: metatags.description
 				}
 			],
 			siteName: 'FDTI'
 		}}
 		twitter={{
-			creator: '@handle',
-			site: '@site',
 			cardType: 'summary_large_image',
 			title: metatags.title,
 			description: metatags.description,
-			image: `https://www.fdti.eu/images/fdti_vector_54px.svg`,
+			image: twitterImage,
 			imageAlt: metatags.description
 		}}
 	/>
@@ -178,7 +180,13 @@
 
 <svelte:head>
 	<LdTag
-		schema={schema('CollectionPage', metatags.title, absoluteImage(metatags.img), metatags.description, metatags.url)}
+		schema={schema('CollectionPage', {
+			name: metatags.title,
+			description: metatags.description,
+			image: ogImage,
+			url: canonicalUrl,
+			inLanguage: currentLocale
+		})}
 	/>
 </svelte:head>
 

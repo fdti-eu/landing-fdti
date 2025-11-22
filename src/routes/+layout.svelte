@@ -6,19 +6,18 @@
 	import Navbar from '$lib/components/navbar/Navbar.svelte';
 	import { page } from '$app/stores';
 	import { onNavigate } from '$app/navigation';
+	import { buildAbsoluteUrl, buildLocalizedUrl, resolveLocaleFromPath, stripLocaleFromPath } from '$lib/functions/seo';
 
-	$: if($page.url.pathname.includes('/fr')) {
-		$locale = 'fr';
-	} else if($page.url.pathname.includes('/en')) {
-		$locale = 'en';
+	$: detectedLocale = resolveLocaleFromPath($page.url.pathname);
+	$: if ($locale !== detectedLocale) {
+		$locale = detectedLocale;
 	}
 
 	// Générer les URLs hreflang pour la page actuelle
-	$: currentPath = $page.url.pathname;
-	$: pathWithoutLocale = currentPath.replace(/^\/(fr|en)/, '') || '/';
-	$: frUrl = `https://www.fdti.eu/fr${pathWithoutLocale}`;
-	$: enUrl = `https://www.fdti.eu/en${pathWithoutLocale}`;
-	$: xDefaultUrl = `https://www.fdti.eu/fr${pathWithoutLocale}`; // Default to French
+	$: currentPathWithoutLocale = stripLocaleFromPath($page.url.pathname);
+	$: frUrl = buildLocalizedUrl(currentPathWithoutLocale, 'fr');
+	$: enUrl = buildLocalizedUrl(currentPathWithoutLocale, 'en');
+	$: xDefaultUrl = buildAbsoluteUrl(currentPathWithoutLocale);
 
 	// Activer les view transitions tout en préservant le scroll natif de SvelteKit
 	onNavigate((navigation) => {
