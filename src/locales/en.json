@@ -725,9 +725,9 @@
         "title": "AI platform for commercial courts",
         "date": "2025",
         "location": "France",
-        "challenge": "A software vendor for court clerks wanted to embed AI directly into its platform to optimize processing time and accuracy for clerks.",
-        "approach": "On-prem FastAPI AI stack, tailored LLMs and a TypeScript/SvelteKit portal, fully integrated into the existing system.",
-        "impact": "Processing time divided by 20 while meeting judicial confidentiality requirements.",
+        "challenge": "A software vendor for court clerks wanted to embed AI directly into its platform to optimize processing time and accuracy for specific time-consuming clerk tasks.",
+        "approach": "Modular architecture structured by AI use cases (tailored LLMs). On-prem FastAPI AI stack, fully integrated into the existing tool via API, but also accessible to other users via secure API. TypeScript/SvelteKit portal.",
+        "impact": "Processing time divided by 20 on targeted tasks while meeting judicial confidentiality requirements.",
         "metrics": [
           {
             "label": "Requests/year",
@@ -839,8 +839,8 @@
         "date": "2024",
         "location": "France",
         "challenge": "Municipalities and their operators needed a single platform to manage public lighting schedules, detect anomalies and plan maintenance.",
-        "approach": "AWS S3 + DuckDB/Parquet real-time stack, Shell/Cron pipelines, FastAPI backend and TypeScript/SvelteKit UI for local authorities.",
-        "impact": "Dynamic lighting schedules and predictive maintenance deployed across 40+ territories.",
+        "approach": "Development of a web application serving as a management portal and analysis dashboards. AWS S3 + DuckDB/Parquet real-time stack, Shell/Cron pipelines, FastAPI backend and TypeScript/SvelteKit UI.",
+        "impact": "Application consulted every morning by network managers. Dynamic lighting schedules and predictive maintenance deployed across 40+ territories.",
         "metrics": [
           {
             "label": "Measurements/day",
@@ -949,8 +949,8 @@
         "title": "Near real-time data warehouse",
         "date": "2020-2021",
         "location": "Europe",
-        "challenge": "Move 98 Azure JSON business objects (150+ SQL tables/views) into Snowflake to feed Qlik in near real-time.",
-        "approach": "Target model, ADLS→Snowflake ingestion via Kafka/ADF, auto-generated SQL and delta flows.",
+        "challenge": "Migrate 98 high-volume JSON business objects with complex structures (shops, warehouses, users, receipts, stocks...) from Azure to Snowflake to feed Qlik in near real-time.",
+        "approach": "Automatic generation of hundreds of SQL and Scala queries from specifications to denest complex objects. The system produced and feeds 150+ tables and views updated in real-time. ADLS→Snowflake ingestion via Kafka/ADF and orchestration via streams and tasks.",
         "impact": "Minute-level feeds for BI teams processing millions of files per day.",
         "metrics": [
           {

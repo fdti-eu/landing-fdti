@@ -725,9 +725,9 @@
         "title": "Plateforme d'IA pour les tribunaux de commerce",
         "date": "2025",
         "location": "France",
-        "challenge": "Un éditeur de logiciels pour greffiers souhaitait intégrer des fonctionnalités d'IA directement dans sa plateforme pour optimiser le temps et la précision des traitements des greffiers.",
-        "approach": "API d'intelligence artificielle hébergée sur les serveurs du client derrière son VPN (FastAPI) accessible aux greffiers, modèles LLM spécialisés et portail TypeScript/SvelteKit sécurisé intégrés au logiciel existant.",
-        "impact": "Temps de traitement divisé par 20 tout en respectant les exigences de confidentialité du secteur judiciaire.",
+        "challenge": "Un éditeur de logiciels pour greffiers souhaitait intégrer des fonctionnalités d'IA directement dans sa plateforme pour optimiser le temps et la précision de certaines tâches chronophages des greffiers.",
+        "approach": "Architecture modulaire structurée par cas d'usage IA (LLM spécialisés). API d'intelligence artificielle hébergée sur les serveurs du client (FastAPI), parfaitement intégrée à l'outil existant mais aussi accessible à d'autres utilisateurs via API sécurisée. Portail TypeScript/SvelteKit.",
+        "impact": "Temps de traitement divisé par 20 sur les tâches ciblées tout en respectant les exigences de confidentialité du secteur judiciaire.",
         "metrics": [
           {
             "label": "Requêtes/an",
@@ -845,8 +845,8 @@
         "date": "2024",
         "location": "France",
         "challenge": "Un client spécialisé dans la gestion de l'éclairage public pour les communes et leurs prestataires avait besoin d'une plateforme unique pour piloter l'éclairage public, ajuster les horaires, détecter les anomalies et planifier la maintenance.",
-        "approach": "Stack temps réel AWS S3 + DuckDB/Parquet, pipelines Shell/Cron, API FastAPI et interface TypeScript/SvelteKit orientée collectivités.",
-        "impact": "Mesures de consommation et d'incidents ajustés dynamiquement, maintenance prédictive et système d'alerting déployés auprès de plus de 40 territoires.",
+        "approach": "Développement d'une application web servant de portail de gestion et de dashboards d'analyse. Stack temps réel AWS S3 + DuckDB/Parquet, pipelines Shell/Cron, API FastAPI et interface TypeScript/SvelteKit.",
+        "impact": "Application consultée chaque matin par les gestionnaires de réseau. Mesures de consommation et d'incidents ajustés dynamiquement, maintenance prédictive et système d'alerting déployés auprès de plus de 40 territoires.",
         "metrics": [
           {
             "label": "Mesures/jour",
@@ -956,8 +956,8 @@
         "title": "Data warehouse temps réel retail",
         "date": "2020-2021",
         "location": "Europe",
-        "challenge": "Migrer 98 objets métier JSON Azure vers Snowflake pour alimenter Qlik en quasi temps réel, soit plus de 150 tables et vues SQL.",
-        "approach": "Modèle cible, ingestion ADLS→Snowflake via Kafka/ADF, génération SQL automatique et flux delta, orchestration via des streams and tasks.",
+        "challenge": "Migrer 98 objets métier JSON avec une structure complexe et une volumétrie élevée (boutiques, entrepôts, utilisateurs, tickets de caisse, stocks...) depuis Azure vers Snowflake pour alimenter Qlik en quasi temps réel.",
+        "approach": "Génération automatique de centaines de requêtes SQL et Scala depuis les spécifications pour dé-nester les objets complexes. Le système a produit et alimente plus de 150 tables et vues mises à jour en temps réel. Ingestion ADLS→Snowflake via Kafka/ADF et orchestration via streams and tasks.",
         "impact": "Flux minute par minute pour les équipes BI et plusieurs millions de fichiers traités chaque jour.",
         "metrics": [
           {
