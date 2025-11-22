@@ -63,8 +63,8 @@
 </svelte:head>
 
 {#if useCase}
-	<section class="hero-section bg-darkGrey text-white py-24 md:py-32" class:hero-hidden={isLeaving}>
-		<div class="max-w-5xl mx-auto px-4 space-y-6">
+	<section class="hero-section bg-darkGrey text-white py-24 md:py-32 overflow-x-hidden" class:hero-hidden={isLeaving}>
+		<div class="max-w-5xl mx-auto px-4 space-y-6 w-full">
 			<a
 				href="/{currentLocale}/cas-d-usage"
 				class="inline-flex items-center gap-2 text-base font-semibold text-white bg-yellow/20 hover:bg-yellow hover:text-darkGrey px-6 py-3 rounded-full transition-all duration-300 border border-yellow/40"
@@ -76,13 +76,13 @@
 				{labels.back}
 			</a>
 			<p
-				class="text-xs uppercase tracking-[0.4em] text-yellow"
+				class="text-xs uppercase tracking-wider sm:tracking-[0.4em] text-yellow"
 				style="view-transition-name: category-{useCase.id};"
 			>
 				{useCase.category}
 			</p>
 			<h1
-				class="text-3xl md:text-5xl font-bold"
+				class="text-2xl sm:text-3xl md:text-5xl font-bold"
 				style="view-transition-name: title-{useCase.id};"
 			>
 				{useCase.title}
@@ -111,8 +111,8 @@
 		</div>
 	</section>
 
-	<section class="bg-slate-50 py-12 sm:py-16 md:py-20 lg:py-28">
-		<div class="max-w-5xl mx-auto px-4 space-y-8">
+	<section class="bg-slate-50 py-12 sm:py-16 md:py-20 lg:py-28 overflow-x-hidden">
+		<div class="max-w-5xl mx-auto px-4 space-y-8 w-full">
 			<!-- Carte principale réorganisée -->
 			<div class="bg-white rounded-2xl shadow-md p-4 sm:p-6 md:p-8">
 				<div class="flex flex-col lg:flex-row gap-6 lg:gap-8 items-start mb-6 lg:mb-8">
@@ -185,15 +185,15 @@
 			{/if}
 
 			{#if content?.cta}
-				<div class="relative mt-14">
+				<div class="relative mt-14 overflow-hidden">
 					<span class="pointer-events-none absolute -inset-8 rounded-[48px] bg-yellow/30 blur-[100px] opacity-70 mix-blend-screen" aria-hidden="true"></span>
 					<div
-						class="relative rounded-3xl border border-yellow/30 bg-darkGrey text-white shadow-2xl p-10 md:p-12 flex flex-col md:flex-row md:items-center md:justify-between gap-8"
+						class="relative rounded-3xl border border-yellow/30 bg-darkGrey text-white shadow-2xl p-6 sm:p-8 md:p-10 lg:p-12 flex flex-col md:flex-row md:items-center md:justify-between gap-6 sm:gap-8"
 						style="box-shadow: 0 0 65px 10px rgba(251, 210, 67, 0.25);"
 					>
 						<div class="relative z-10">
-							<p class="text-sm uppercase tracking-[0.2em] text-yellow/80">{content.cta.label}</p>
-							<p class="text-2xl md:text-3xl font-bold text-white mt-3 leading-snug">{content.cta.description}</p>
+							<p class="text-xs sm:text-sm uppercase tracking-wider sm:tracking-[0.2em] text-yellow/80">{content.cta.label}</p>
+							<p class="text-xl sm:text-2xl md:text-3xl font-bold text-white mt-2 sm:mt-3 leading-snug">{content.cta.description}</p>
 						</div>
 						{#if content.cta.link}
 							<a

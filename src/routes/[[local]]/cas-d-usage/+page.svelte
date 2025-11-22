@@ -137,11 +137,11 @@
 </svelte:head>
 
 {#if content?.status === 'published'}
-	<section class="hero-section bg-darkGrey text-white py-24 md:py-32" class:hero-hidden={Boolean(activeSlug)}>
-		<div class="max-w-6xl mx-auto px-4">
+	<section class="hero-section bg-darkGrey text-white py-24 md:py-32 overflow-x-hidden" class:hero-hidden={Boolean(activeSlug)}>
+		<div class="max-w-6xl mx-auto px-4 w-full">
 			<div class="space-y-6 text-center mb-8">
-				<p class="uppercase tracking-[0.2em] text-yellow text-sm">{content.subtitle}</p>
-				<h1 class="text-3xl md:text-5xl font-bold">{content.title}</h1>
+				<p class="uppercase tracking-wider sm:tracking-[0.2em] text-yellow text-xs sm:text-sm">{content.subtitle}</p>
+				<h1 class="text-2xl sm:text-3xl md:text-5xl font-bold">{content.title}</h1>
 			</div>
 
 			<!-- Bouton Filtrer -->
@@ -236,8 +236,8 @@
 		</div>
 	</section>
 
-	<section class="bg-slate-50 py-12 md:py-16">
-		<div class="max-w-6xl mx-auto px-4 space-y-6">
+	<section class="bg-slate-50 py-12 md:py-16 overflow-x-hidden">
+		<div class="max-w-6xl mx-auto px-4 space-y-6 w-full">
 
 			<div class="space-y-4 overflow-hidden">
 				{#each filteredUseCases as useCase (useCase.id)}
@@ -261,7 +261,7 @@
 								<div class="flex-1 min-w-0">
 									<div class="flex flex-col sm:flex-row sm:items-baseline gap-2 sm:gap-6 mb-2">
 										<p
-											class="text-xs uppercase tracking-[0.15em] text-darkGrey/70"
+											class="text-xs uppercase tracking-wide sm:tracking-[0.15em] text-darkGrey/70"
 											style={getViewTransitionStyle(useCase.slug, useCase.id, 'category')}
 										>
 											{useCase.category}
@@ -369,15 +369,15 @@
 			</div>
 
 			{#if content.cta}
-				<div class="relative mt-14">
+				<div class="relative mt-14 overflow-hidden">
 					<span class="pointer-events-none absolute -inset-8 rounded-[48px] bg-yellow/30 blur-[100px] opacity-70 mix-blend-screen" aria-hidden="true"></span>
 					<div
-						class="relative rounded-3xl border border-yellow/30 bg-darkGrey text-white shadow-2xl p-10 md:p-12 flex flex-col md:flex-row md:items-center md:justify-between gap-8"
+						class="relative rounded-3xl border border-yellow/30 bg-darkGrey text-white shadow-2xl p-6 sm:p-8 md:p-10 lg:p-12 flex flex-col md:flex-row md:items-center md:justify-between gap-6 sm:gap-8"
 						style="box-shadow: 0 0 65px 10px rgba(251, 210, 67, 0.25);"
 					>
 						<div class="relative z-10">
-							<p class="text-sm uppercase tracking-[0.2em] text-yellow/80">{content.cta.label}</p>
-							<p class="text-2xl md:text-3xl font-bold text-white mt-3 leading-snug">{content.cta.description}</p>
+							<p class="text-xs sm:text-sm uppercase tracking-wider sm:tracking-[0.2em] text-yellow/80">{content.cta.label}</p>
+							<p class="text-xl sm:text-2xl md:text-3xl font-bold text-white mt-2 sm:mt-3 leading-snug">{content.cta.description}</p>
 						</div>
 						{#if content.cta.link}
 							<a
