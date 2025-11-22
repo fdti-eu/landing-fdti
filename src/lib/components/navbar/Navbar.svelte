@@ -64,20 +64,20 @@
 			</li>
 			<li>
 				<a
-					href="/{$locale}/cas-d-usage"
-					class="{$page.url.pathname.includes('/cas-d-usage') ? 'text-yellow' : ''} w-20 hover:text-yellow transition-all duration-300"
-					on:click={handleToggleNav}
-				>
-					{$locale === 'fr' ? 'Cas d’usage' : 'Use cases'}
-				</a>
-			</li>
-			<li>
-				<a
 					href="/{$locale}/adn-et-valeurs"
 					class="{$page.url.pathname.includes('/adn-et-valeurs') ? 'text-yellow' : ''} w-20 hover:text-yellow transition-all duration-300"
 					on:click={handleToggleNav}
 				>
 					{$locale === 'fr' ? 'ADN et valeurs' : 'DNA and values'}
+				</a>
+			</li>
+			<li>
+				<a
+					href="/{$locale}/cas-d-usage"
+					class="{$page.url.pathname.includes('/cas-d-usage') ? 'text-yellow' : ''} w-20 hover:text-yellow transition-all duration-300"
+					on:click={handleToggleNav}
+				>
+					{$locale === 'fr' ? 'Cas d’usage' : 'Use cases'}
 				</a>
 			</li>
 		</ul>

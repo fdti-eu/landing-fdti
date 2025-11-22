@@ -111,18 +111,18 @@
 		</div>
 	</section>
 
-	<section class="bg-slate-50 py-20 md:py-28">
+	<section class="bg-slate-50 py-12 sm:py-16 md:py-20 lg:py-28">
 		<div class="max-w-5xl mx-auto px-4 space-y-8">
 			<!-- Carte principale réorganisée -->
-			<div class="bg-white rounded-2xl shadow-md p-8">
-				<div class="flex gap-8 items-start mb-8">
+			<div class="bg-white rounded-2xl shadow-md p-4 sm:p-6 md:p-8">
+				<div class="flex flex-col lg:flex-row gap-6 lg:gap-8 items-start mb-6 lg:mb-8">
 					<!-- Gauche : Contenu principal -->
-					<div class="flex-1 min-w-0 space-y-6">
+					<div class="flex-1 min-w-0 space-y-4 sm:space-y-6 w-full">
 						{#if useCase.challenge}
 							<div>
-								<h2 class="text-xl font-bold text-darkGrey mb-3">{labels.context}</h2>
+								<h2 class="text-lg sm:text-xl font-bold text-darkGrey mb-2 sm:mb-3">{labels.context}</h2>
 								<p
-									class="text-base text-darkGrey leading-relaxed"
+									class="text-sm sm:text-base text-darkGrey leading-relaxed"
 									style="view-transition-name: challenge-{useCase.id};"
 								>
 									{useCase.challenge}
@@ -131,29 +131,29 @@
 						{/if}
 						{#if useCase.approach}
 							<div>
-								<h2 class="text-xl font-bold text-darkGrey mb-3">{labels.approach}</h2>
-								<p class="text-base text-darkGrey leading-relaxed">{useCase.approach}</p>
+								<h2 class="text-lg sm:text-xl font-bold text-darkGrey mb-2 sm:mb-3">{labels.approach}</h2>
+								<p class="text-sm sm:text-base text-darkGrey leading-relaxed">{useCase.approach}</p>
 							</div>
 						{/if}
 						{#if useCase.impact}
 							<div>
-								<h2 class="text-xl font-bold text-darkGrey mb-3">{labels.impact}</h2>
-								<p class="text-base text-darkGrey leading-relaxed">{useCase.impact}</p>
+								<h2 class="text-lg sm:text-xl font-bold text-darkGrey mb-2 sm:mb-3">{labels.impact}</h2>
+								<p class="text-sm sm:text-base text-darkGrey leading-relaxed">{useCase.impact}</p>
 							</div>
 						{/if}
 					</div>
 
-					<!-- Droite : Métriques et tags -->
-					<div class="flex flex-col gap-6 w-[280px] flex-shrink-0">
+					<!-- Droite : Métriques et tags - Stack vertical sur mobile, sidebar sur desktop -->
+					<div class="flex flex-col gap-4 sm:gap-6 w-full lg:w-[280px] lg:shrink-0">
 						{#if useCase.metrics?.length}
 							<div
-								class="space-y-4"
+								class="space-y-3 sm:space-y-4"
 								style="view-transition-name: metrics-{useCase.id};"
 							>
 								{#each useCase.metrics as metric}
-									<div class="bg-slate-50 rounded-xl p-5">
-										<p class="text-sm font-medium text-darkGrey/70">{metric?.label}</p>
-										<p class="text-2xl font-bold text-darkGrey mt-2">{metric?.value}</p>
+									<div class="bg-slate-50 rounded-xl p-4 sm:p-5">
+										<p class="text-xs sm:text-sm font-medium text-darkGrey/70">{metric?.label}</p>
+										<p class="text-xl sm:text-2xl font-bold text-darkGrey mt-1 sm:mt-2">{metric?.value}</p>
 									</div>
 								{/each}
 							</div>
@@ -165,7 +165,7 @@
 								style="view-transition-name: tags-{useCase.id};"
 							>
 								{#each useCase.tags as tag}
-									<span class="px-3 py-1.5 rounded-md bg-slate-100 text-sm font-medium text-darkGrey">{tag}</span>
+									<span class="px-3 py-1.5 rounded-md bg-slate-100 text-xs sm:text-sm font-medium text-darkGrey">{tag}</span>
 								{/each}
 							</div>
 						{/if}
@@ -174,9 +174,9 @@
 			</div>
 
 			{#if useCase.details?.length}
-				<div class="bg-white rounded-2xl shadow-md p-8 space-y-3">
-					<h2 class="text-xl font-bold text-darkGrey mb-4">{labels.delivered}</h2>
-					<ul class="list-disc pl-5 space-y-2 text-base text-darkGrey leading-relaxed">
+				<div class="bg-white rounded-2xl shadow-md p-4 sm:p-6 md:p-8 space-y-3">
+					<h2 class="text-lg sm:text-xl font-bold text-darkGrey mb-3 sm:mb-4">{labels.delivered}</h2>
+					<ul class="list-disc pl-4 sm:pl-5 space-y-2 text-sm sm:text-base text-darkGrey leading-relaxed">
 						{#each useCase.details as detail}
 							<li>{detail}</li>
 						{/each}

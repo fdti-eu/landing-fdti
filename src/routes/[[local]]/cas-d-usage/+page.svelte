@@ -254,12 +254,12 @@
 							class:use-case-card-active={activeSlug === useCase.slug}
 							class:use-case-card-inactive={Boolean(activeSlug) && activeSlug !== useCase.slug}
 						>
-						<article class="p-5">
-							<!-- Version repliée : layout horizontal compact -->
-							<div class="flex items-start gap-4">
+						<article class="p-4 md:p-5">
+							<!-- Version repliée : layout horizontal compact sur desktop, vertical sur mobile -->
+							<div class="flex flex-col lg:flex-row lg:items-start gap-4">
 								<!-- Gauche : Info principale -->
 								<div class="flex-1 min-w-0">
-									<div class="flex items-baseline gap-6 mb-2">
+									<div class="flex flex-col sm:flex-row sm:items-baseline gap-2 sm:gap-6 mb-2">
 										<p
 											class="text-xs uppercase tracking-[0.15em] text-darkGrey/70"
 											style={getViewTransitionStyle(useCase.slug, useCase.id, 'category')}
@@ -268,7 +268,7 @@
 										</p>
 										{#if useCase.location || useCase.date}
 											<div
-												class="flex gap-3"
+												class="flex flex-wrap gap-2 sm:gap-3"
 												style={getViewTransitionStyle(useCase.slug, useCase.id, 'meta')}
 											>
 												{#if useCase.location}
@@ -291,7 +291,7 @@
 										{/if}
 									</div>
 									<h2
-										class="text-lg font-bold text-darkGrey group-hover:text-yellow transition-colors mb-2"
+										class="text-base sm:text-lg font-bold text-darkGrey group-hover:text-yellow transition-colors mb-2"
 										style={getViewTransitionStyle(useCase.slug, useCase.id, 'title')}
 									>
 										{useCase.title}
@@ -304,17 +304,17 @@
 									</p>
 								</div>
 
-								<!-- Droite : Métriques et tags (toujours visibles) -->
-								<div class="flex gap-4 items-start">
+								<!-- Droite : Métriques et tags (stack vertical sur mobile, horizontal sur desktop) -->
+								<div class="flex flex-row lg:flex-col xl:flex-row gap-4 items-start lg:items-end xl:items-start">
 									{#if useCase.metrics?.length}
 										<div
 											class="flex gap-3"
 											style={getViewTransitionStyle(useCase.slug, useCase.id, 'metrics')}
 										>
 											{#each useCase.metrics.slice(0, 2) as metric}
-												<div class="text-right">
+												<div class="text-left lg:text-right">
 													<p class="text-xs text-darkGrey/60">{metric?.label}</p>
-													<p class="text-base font-bold text-darkGrey whitespace-nowrap">{metric?.value}</p>
+													<p class="text-sm sm:text-base font-bold text-darkGrey whitespace-nowrap">{metric?.value}</p>
 												</div>
 											{/each}
 										</div>
@@ -322,7 +322,7 @@
 
 									{#if useCase.tags?.length}
 										<div
-											class="flex flex-wrap gap-1 max-w-[200px] justify-end"
+											class="flex flex-wrap gap-1 max-w-full lg:max-w-[200px] lg:justify-end"
 											style={getViewTransitionStyle(useCase.slug, useCase.id, 'tags')}
 										>
 											{#each useCase.tags as tag, index}
