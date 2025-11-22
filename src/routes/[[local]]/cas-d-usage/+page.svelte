@@ -249,7 +249,7 @@
 						<a
 							href={`/${$locale}/cas-d-usage/${useCase.slug}`}
 							on:click={(event) => handleCardClick(event, useCase.slug)}
-							class="use-case-card group block bg-white rounded-xl shadow-md hover:shadow-2xl transition-all duration-300 cursor-pointer relative
+							class="use-case-card group block bg-white rounded-xl shadow-md hover:shadow-2xl hover:scale-[1.02] hover:border-yellow/50 border-2 border-transparent transition-all duration-300 cursor-pointer relative
 							{$highlightedUseCase === useCase.slug ? 'animate-highlight' : ''}"
 							class:use-case-card-active={activeSlug === useCase.slug}
 							class:use-case-card-inactive={Boolean(activeSlug) && activeSlug !== useCase.slug}
@@ -399,6 +399,11 @@
 <style>
 	.use-case-card {
 		position: relative;
+	}
+
+	.use-case-card:hover {
+		box-shadow: 0 20px 50px -12px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(251, 210, 67, 0.2);
+		background: linear-gradient(to bottom, #ffffff, #fffef8);
 	}
 
 	.use-case-card-active {
