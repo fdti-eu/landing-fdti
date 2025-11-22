@@ -377,7 +377,10 @@
 											style={getViewTransitionStyle(useCase.slug, useCase.id, 'metrics')}
 										>
 											{#each useCase.metrics as metric, index}
-												<div class="text-left lg:text-right transition-all duration-300 {index >= 2 ? 'opacity-0 h-0 overflow-hidden group-hover:opacity-100 group-hover:h-auto group-hover:overflow-visible' : ''}">
+												<div 
+													class="text-left lg:text-right transition-all duration-300 {index >= 2 ? 'opacity-0 h-0 overflow-hidden group-hover:opacity-100 group-hover:h-auto group-hover:overflow-visible' : ''}"
+													style={index >= 2 ? `transition-delay: ${(index - 2) * 50}ms` : ''}
+												>
 													<p class="text-xs text-darkGrey/60 whitespace-nowrap">{metric?.label}</p>
 													<p class="text-sm sm:text-base font-bold text-darkGrey whitespace-nowrap">{metric?.value}</p>
 												</div>
@@ -392,14 +395,14 @@
 										>
 											{#each useCase.tags as tag, index}
 												<span
-													class="px-2 py-0.5 rounded-md bg-slate-100 text-xs font-medium text-darkGrey whitespace-nowrap transition-all duration-300 {index >= 3 ? 'hidden group-hover:inline-block' : ''}"
+													class="px-2 py-0.5 rounded-md bg-slate-100 text-xs font-medium text-darkGrey whitespace-nowrap transition-all duration-300 {index >= 3 ? 'opacity-0 w-0 overflow-hidden group-hover:opacity-100 group-hover:w-auto group-hover:overflow-visible' : ''}"
 													style={index >= 3 ? `transition-delay: ${(index - 3) * 50}ms` : ''}
 												>
 													{tag}
 												</span>
 											{/each}
 											{#if useCase.tags.length > 3}
-												<span class="px-2 py-0.5 rounded-md bg-slate-200 text-xs font-semibold text-darkGrey group-hover:hidden transition-opacity duration-200">
+												<span class="px-2 py-0.5 rounded-md bg-slate-200 text-xs font-semibold text-darkGrey group-hover:opacity-0 group-hover:w-0 group-hover:overflow-hidden transition-all duration-200">
 													+{useCase.tags.length - 3}
 												</span>
 											{/if}
