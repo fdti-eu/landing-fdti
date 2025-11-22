@@ -9,8 +9,31 @@
 	let windowY: number;
 	let windowHeight: number;
 
+	// Variables pour l'effet de halo
+	let hoverStyle = { left: 0, width: 0, opacity: 0 };
+	let navListElement: HTMLUListElement;
+
 	function handleToggleNav() {
 		isNavbarOpen = !isNavbarOpen;
+	}
+
+	function handleMouseEnter(e: MouseEvent) {
+		const target = e.target as HTMLElement;
+		// On s'assure de cibler le <li> ou le <a> pour récupérer les dimensions
+		const li = target.closest('li'); 
+		if (li && navListElement) {
+			// Use offsetLeft/offsetWidth relative to the parent UL instead of getBoundingClientRect
+			// because the halo is absolute positioned inside the relative UL
+			hoverStyle = {
+				left: li.offsetLeft,
+				width: li.offsetWidth,
+				opacity: 1
+			};
+		}
+	}
+
+	function handleMouseLeave() {
+		hoverStyle = { ...hoverStyle, opacity: 0 };
 	}
 </script>
 
@@ -46,34 +69,42 @@
 			>
 		</a>
 		<ul
+			bind:this={navListElement}
 			class="{isNavbarOpen
 				? 'absolute top-20 z-50 left-0 flex flex-col bg-black pl-16 md:static md:bg-transparent md:flex-row md:p-0'
-				: 'static hidden md:flex md:p-0'} whitespace-nowrap w-full gap-4 p-8 text-white text-base md:text-lg transition-all md:col-span-3 lg:col-span-2 lg:gap-8 xl:col-span-1"
+				: 'static hidden md:flex md:p-0'} relative whitespace-nowrap w-full gap-4 p-8 text-white text-base md:text-lg transition-all md:col-span-3 lg:col-span-2 lg:gap-8 xl:col-span-1"
+			on:mouseleave={handleMouseLeave}
 		>
-			<li>
+			<!-- Halo element -->
+			<div
+				class="absolute h-8 bg-white/10 rounded-md pointer-events-none transition-all duration-300 ease-out hidden md:block"
+				style="left: {hoverStyle.left}px; width: {hoverStyle.width}px; opacity: {hoverStyle.opacity}; top: 50%; transform: translateY(-50%);"
+			></div>
+
+			<li on:mouseenter={handleMouseEnter} class="relative z-10">
 				<a
 					href="/{$locale}"
 					class="{$page.url.pathname === '/' || $page.url.pathname === `/${$locale}`
 						? 'text-yellow'
-						: ''} w-20 hover:text-yellow transition-all duration-300"
+						: ''} block px-4 py-2 hover:text-yellow transition-all duration-300"
 					on:click={handleToggleNav}
 				>
 					{$locale === 'fr' ? "Page d'accueil" : 'Home'}
 				</a>
 			</li>
-			<li>
+			<li on:mouseenter={handleMouseEnter} class="relative z-10">
 				<a
 					href="/{$locale}/adn-et-valeurs"
-					class="{$page.url.pathname.includes('/adn-et-valeurs') ? 'text-yellow' : ''} w-20 hover:text-yellow transition-all duration-300"
+					class="{$page.url.pathname.includes('/adn-et-valeurs') ? 'text-yellow' : ''} block px-4 py-2 hover:text-yellow transition-all duration-300"
 					on:click={handleToggleNav}
 				>
 					{$locale === 'fr' ? 'ADN et valeurs' : 'DNA and values'}
 				</a>
 			</li>
-			<li>
+			<li on:mouseenter={handleMouseEnter} class="relative z-10">
 				<a
 					href="/{$locale}/cas-d-usage"
-					class="{$page.url.pathname.includes('/cas-d-usage') ? 'text-yellow' : ''} w-20 hover:text-yellow transition-all duration-300"
+					class="{$page.url.pathname.includes('/cas-d-usage') ? 'text-yellow' : ''} block px-4 py-2 hover:text-yellow transition-all duration-300"
 					on:click={handleToggleNav}
 				>
 					{$locale === 'fr' ? 'Cas d’usage' : 'Use cases'}

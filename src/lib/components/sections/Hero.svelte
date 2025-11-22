@@ -1,6 +1,7 @@
 <script lang="ts">
 	import Button from '$lib/components/Button.svelte';
 	import { fade } from 'svelte/transition';
+	import { onMount } from 'svelte';
 
 	export let content:
 		| {
@@ -13,12 +14,31 @@
 				brochure_link?: string | null;
 		  }
 		| null;
+
+	let scrollY = 0;
+
+	// Listen to scroll events
+	onMount(() => {
+		const updateScroll = () => {
+			scrollY = window.scrollY;
+		};
+		window.addEventListener('scroll', updateScroll);
+		return () => {
+			window.removeEventListener('scroll', updateScroll);
+		};
+	});
 </script>
 
-<section class="relative h-screen flex items-center bg-gradient-2 px-2 py-16 md:px-4 md:py-24">
+<section class="relative h-screen flex items-center overflow-hidden">
+    <!-- Background with parallax effect -->
+    <div 
+        class="absolute inset-0 bg-gradient-2 z-0 w-full h-[120%]"
+        style="transform: translateY({scrollY * 0.5}px);"
+    ></div>
+
 	{#if content}
 		<div
-			class="max-w-6xl mx-auto md:grid md:grid-cols-2 md:gap-4 lg:gap-10"
+			class="max-w-6xl mx-auto md:grid md:grid-cols-2 md:gap-4 lg:gap-10 relative z-10 px-2 py-16 md:px-4 md:py-24"
 			in:fade={{ duration: 500 }}
 		>
 			<div class="space-y-6 md:max-w-lg">
