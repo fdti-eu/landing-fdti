@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
-	import { fade, fly } from 'svelte/transition';
+	import { onMount } from "svelte";
+	import { fade, fly } from "svelte/transition";
 
 	let visible = false;
 	let scrollY = 0;
@@ -10,11 +10,17 @@
 		const updateScroll = () => {
 			scrollY = window.scrollY;
 		};
-		window.addEventListener('scroll', updateScroll);
-		return () => window.removeEventListener('scroll', updateScroll);
+		window.addEventListener("scroll", updateScroll);
+		return () => window.removeEventListener("scroll", updateScroll);
 	});
 
-	const clients = ['BlaBlaCar', 'Samsung', 'Synamedia', 'Addoxe', 'Noside', 'Amitel'];
+	const clients = [
+		{ name: "BlaBlaCar", logo: "/images/cms/companies/blablacar.webp" },
+		{ name: "Samsung", logo: "/images/cms/companies/samsung.webp" },
+		{ name: "Ford", logo: "/images/cms/companies/ford.webp" },
+		{ name: "Mastercard", logo: "/images/cms/companies/mastercard.webp" },
+		{ name: "Stellantis", logo: "/images/cms/companies/stellantis.webp" }
+	];
 </script>
 
 <section class="relative min-h-screen flex items-center justify-center overflow-hidden bg-dark-grey">
@@ -68,7 +74,7 @@
 					class="text-xl md:text-2xl text-white/60 max-w-2xl mx-auto leading-relaxed"
 					in:fly={{ y: 30, duration: 800, delay: 700 }}
 				>
-					Transformez vos opérations avec l'intelligence artificielle.
+					Transformez vos opérations avec l&#39;intelligence artificielle.
 					<span class="text-white/90">Pragmatisme. Livraison rapide. Adoption terrain.</span>
 				</p>
 
@@ -90,24 +96,29 @@
 						href="#cas-usage"
 						class="px-8 py-4 border border-white/20 text-white font-semibold rounded-lg transition-all duration-300 hover:bg-white/5 hover:border-white/40"
 					>
-						Découvrir nos cas d'usage
+						Découvrir nos cas d&#39;usage
 					</a>
 				</div>
 
-				<!-- Social proof -->
+				<!-- Social proof with logos -->
 				<div 
-					class="pt-16 space-y-4"
+					class="pt-16 space-y-6"
 					in:fly={{ y: 30, duration: 800, delay: 1100 }}
 				>
 					<p class="text-sm text-white/40 uppercase tracking-wider">Ils nous font confiance</p>
-					<div class="flex flex-wrap justify-center gap-8 md:gap-12">
+					<div class="flex flex-wrap justify-center items-center gap-8 md:gap-12">
 						{#each clients as client, i}
-							<span 
-								class="text-white/30 font-medium text-lg hover:text-white/60 transition-colors cursor-default"
+							<div 
+								class="opacity-50 hover:opacity-80 transition-opacity grayscale hover:grayscale-0"
 								style="animation: fadeInUp 0.5s ease-out {1200 + i * 100}ms both;"
 							>
-								{client}
-							</span>
+								<img 
+									src={client.logo} 
+									alt={client.name} 
+									class="h-8 md:h-10 w-auto object-contain brightness-0 invert"
+									loading="lazy"
+								/>
+							</div>
 						{/each}
 					</div>
 				</div>
