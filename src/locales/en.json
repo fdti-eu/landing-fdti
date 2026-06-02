@@ -652,24 +652,24 @@
       {
         "id": "2",
         "category": "Aftermarket & recycling",
-        "title": "Circular economy platform",
+        "title": "End-of-life vehicle management platform",
         "date": "2020-2025",
         "location": "Europe",
-        "challenge": "After forming a joint venture with an OEM, the circular-economy platform needed to upgrade its existing tool to manage ELV processes (B2B & B2C) under EU constraints.",
-        "approach": "TypeScript/SvelteKit portal plus Azure Functions APIs on the client's Azure infrastructure (MSSQL, Azure Service Bus) tying into the existing .NET stack to connect owners with ELV centers.",
-        "impact": "End-to-end traceability for 50k+ vehicles per year powering the group's circular economy branch while meeting the OEM's Extended Producer Responsibility (EPR) obligations.",
+        "challenge": "Following the creation of Valorauto, a joint venture between Stellantis and Galloo, the circular-economy platform needed to modernize its existing tool to manage end-of-life vehicle take-back processes (B2B and B2C) and track each vehicle journey from owner collection to vehicle dismantling.",
+        "approach": "Development of the Valorauto portal with declaration, administration and vehicle-tracking interfaces across the different stakeholders, business workflows and Azure Functions APIs deployed on the client Azure infrastructure (MSSQL databases, Azure Service Bus) to orchestrate an existing .NET stack connecting owners and ELV centers.",
+        "impact": "End-to-end traceability supporting the group circular-economy branch, with a network of more than 5,000 partner companies and a response to the manufacturer obligations related to Extended Producer Responsibility (EPR).",
         "metrics": [
           {
-            "label": "Countries",
-            "value": "12"
+            "label": "Countries covered",
+            "value": "5"
           },
           {
-            "label": "Vehicles/year",
-            "value": ">50 k"
+            "label": "Partner network",
+            "value": "+5,000"
           },
           {
-            "label": "Score Trustpilot",
-            "value": "4.8"
+            "label": "Trustpilot score",
+            "value": "4.7"
           }
         ],
         "tags": [
@@ -682,15 +682,27 @@
           "Azure Service Bus"
         ],
         "details": [
-          "End-to-end workflow design for dealers, repair centers and households.",
-          "Azure Functions APIs connecting logistics, CRM and finance systems.",
-          "Real-time mapping of material flows plus automatic regulatory documents.",
-          "Multi-brand/catalog management with local rules and pricing.",
+          "End-to-end development of the platform, databases and APIs.",
+          "Complete declaration workflow design for dealers, repair centers and private owners.",
+          "Azure Functions APIs connecting the group logistics, CRM and finance systems.",
+          "API interconnection with the wider circular-economy ecosystem (recyclers, owners, buyers, eco-organizations).",
+          "Real-time mapping of material flows and automatic generation of regulatory documents.",
+          "Multi-brand management: local rules, catalogs and pricing by country.",
           "Azure infrastructure sized for regulatory peaks and audits.",
-          "Operational and regulatory dashboards unifying B2B/B2C flows.",
-          "Personalized email notifications for each user (garages, dealers, households) at every workflow step."
+          "Operational and regulatory dashboards consolidating B2B and B2C flows.",
+          "Personalized email notifications for every user (garages, dealers, private owners) at each workflow step."
         ],
-        "slug": "plateforme-economie-circulaire"
+        "slug": "end-of-life-vehicle-platform",
+        "links": [
+          {
+            "label": "Valorauto website",
+            "url": "https://www.valorauto.com/"
+          },
+          {
+            "label": "Valorauto Trustpilot reviews",
+            "url": "https://www.trustpilot.com/review/valorauto.com"
+          }
+        ]
       },
       {
         "id": "3",
