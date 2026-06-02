@@ -1,9 +1,11 @@
 <script lang="ts">
 	import Hero from '$lib/components/sections/Hero.svelte';
 	import FdtiSection from '$lib/components/sections/FdtiSection.svelte';
+	import CapabilitiesSection from '$lib/components/sections/CapabilitiesSection.svelte';
 	import TechnologiesSection from '$lib/components/sections/TechnologiesSection.svelte';
 	import ConfianceSection from '$lib/components/sections/ConfianceSection.svelte';
 	import ContactSection from '$lib/components/sections/ContactSection.svelte';
+	import UseCasesPreviewSection from '$lib/components/sections/UseCasesPreviewSection.svelte';
 	import { MetaTags } from 'svelte-meta-tags';
 	import LdTag from '$lib/components/json-ld/LDTag.svelte';
 	import { schema } from '$lib/components/json-ld/json-ld';
@@ -71,8 +73,15 @@
 {#if pageContent}
 	<div class="max-w-6xl mx-auto px-2 md:px-12">
 		<FdtiSection content={pageContent.fdti_section} />
+		<CapabilitiesSection locale={currentLocale} />
+		<UseCasesPreviewSection
+			title={pageContent.homepage_use_cases_title}
+			subtitle={pageContent.homepage_use_cases_subtitle}
+			useCases={pageContent.homepage_use_cases}
+			locale={currentLocale}
+		/>
 		<TechnologiesSection content={pageContent.technology_content} />
-		<ConfianceSection content={pageContent.trust_content} cii={pageContent.CII} />
+		<ConfianceSection content={pageContent.trust_content} />
 	</div>
 	<ContactSection content={pageContent.contact_section} />
 {/if}

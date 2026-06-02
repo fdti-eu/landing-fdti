@@ -23,6 +23,14 @@
 							title?: string | null;
 							subtitle?: string | null;
 							description?: string | null;
+							meta_tags?: {
+								page_tags?: {
+									title?: string | null;
+									description?: string | null;
+									url?: string | null;
+									img?: { url?: string | null } | null;
+								}[];
+							} | null;
 							use_case_list?: {
 								id?: string | null;
 								category?: string | null;
@@ -34,6 +42,7 @@
 								approach?: string | null;
 								impact?: string | null;
 								metrics?: { label?: string | null; value?: string | null }[];
+								links?: { label?: string | null; url?: string | null }[];
 								tags?: string[];
 								details?: string[];
 							}[];
@@ -47,6 +56,7 @@
 								| null;
 					  }
 					| null;
+				locale?: Lang;
 		  }
 		| undefined;
 

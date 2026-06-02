@@ -11,7 +11,7 @@
 </script>
 
 <div
-	class="flex flex-col justify-center items-center gap-4 sm:grid sm:grid-cols-8 sm:items-start group/techno p-6 rounded-lg transition-all duration-300 hover:bg-white hover:shadow-md"
+	class="flex h-full flex-col justify-start items-center gap-3 sm:grid sm:grid-cols-8 sm:items-start group/techno p-4 rounded-lg border border-slate-200 transition-all duration-300 hover:bg-white hover:shadow-md"
 	class:bg-white={isOpen}
 	class:shadow-md={isOpen}
 	on:click={onToggle}
@@ -22,19 +22,19 @@
 	tabindex="0"
 >
 	<div
-		class="w-16 aspect-square bg-yellow rounded-full border-4 border-darkGrey-2 flex justify-center justify-self-center items-center col-span-1 p-2 sm:w-14"
+		class="w-14 aspect-square bg-yellow rounded-full border-4 border-darkGrey-2 flex justify-center justify-self-center items-center col-span-1 p-2 sm:w-12"
 	>
 		{#if iconLink}
 			<img src={iconLink} width="64" height="64" class="w-full" alt={title} {title} />
 		{/if}
 	</div>
 	<div class="col-span-7 pl-2 md:pl-0">
-		<h3 class="font-bold text-darkGrey text-xl md:text-2xl text-left min-h-14 flex items-center">
+		<h3 class="font-bold text-darkGrey text-lg md:text-xl text-left min-h-10 flex items-center">
 			{title}
 		</h3>
-		<p>{description}</p>
+		<p class="text-sm leading-relaxed text-darkGrey/80">{description}</p>
 		<div
-			class="relative mt-8 overflow-hidden transition-all duration-500 ease-in-out"
+			class="relative mt-4 overflow-hidden transition-all duration-500 ease-in-out"
 			class:max-h-0={!isOpen}
 			class:max-h-[600px]={isOpen}
 		>

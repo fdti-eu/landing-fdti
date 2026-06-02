@@ -45,6 +45,11 @@
 				<div
 					class="max-w-lg flex flex-col gap-4 pb-4 text-white text-center md:text-left md:text-xl lg:pr-20"
 				>
+					{#if content.status}
+						<div class="w-fit mx-auto md:mx-0 rounded-full border border-white/20 bg-white/10 px-4 py-1 text-sm font-semibold text-yellow backdrop-blur-sm">
+							{content.status}
+						</div>
+					{/if}
 					<h1 class="text-3xl font-bold text-white text-center sm:text-5xl md:text-left">
 						{content.title}
 					</h1>

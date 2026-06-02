@@ -66,7 +66,8 @@
 					width="48px"
 				/>
 			</figure>
-			<span class="text-yellow font-bold text-lg hidden lg:inline">FDTI - From Data To Insight</span
+			<span class="text-yellow font-bold text-base hidden xl:inline"
+				>FDTI - From Data To Insights</span
 			>
 		</a>
 

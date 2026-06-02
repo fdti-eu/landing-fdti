@@ -14,7 +14,7 @@
 				description?: string | null;
 				image?: { url?: string | null } | null;
 		  }
-		| null;
+		| null = null;
 </script>
 
 {#if content}

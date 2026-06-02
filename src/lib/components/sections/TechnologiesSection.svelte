@@ -54,7 +54,7 @@
 			{content.subtitle ||
 				'Nous utilisons des outils modernes adaptés à chaque situation rencontrée lors du traitement de vos données'}
 		</h3>
-		<article class="w-full flex flex-col gap-14 md:pt-14">
+		<article class="grid w-full gap-6 md:grid-cols-2 md:pt-8">
 			{#each technologyList as category, index}
 				{@const isOpen = openIndex === index || hoverIndex === index}
 				<TechnoList

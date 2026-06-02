@@ -6,10 +6,11 @@
       "btn_brochure": "Download our brochure",
       "btn_contact": "Contact us",
       "brochure_link": "https://docs.google.com/presentation/d/e/2PACX-1vTqoylpjD44uKvXaQVAsPAlGMXDLBP_cqpr7gnuj0S2qXDS07mXwww8rMfjU-nAeTyYgR6CRSICSj17/pub?start=false&loop=false&delayms=3000",
-      "title": "Business solutions augmented with data"
+      "title": "Business solutions augmented with data",
+      "status": "AI studio & business automation"
     },
     "fdti_section": {
-      "subtitle": "Augmented decisions and tools for your teams",
+      "subtitle": "Your data and tools as a starting point. Code and AI where they matter. Operations that run faster, smoother, and more reliably.",
       "icon_1": {
         "filename_disk": "from-data-to-insight.svg",
         "url": "/images/cms/branding/from-data-to-insight.svg",
@@ -22,15 +23,15 @@
         "id": "from-data-to-insight-1.svg"
       },
       "content_2": "<p><strong>Solutions your teams actually use</strong>: we shape the right datasets, train models (LLMs, predictive, agents) and deliver ready-to-use applications, APIs, dashboards and collaboration spaces.</p><ul><li><strong>Data & AI</strong>: pipelines, feature stores, specialized models</li><li><strong>Business products</strong>: web apps, secure APIs, AI copilots, automated workflows</li><li><strong>Adoption</strong>: coaching, playbooks and short iterations with your teams</li></ul>",
-      "title": "From Data To Insight"
+      "title": "Our approach"
     },
     "technology_content": {
       "title": "Technologies",
-      "subtitle": "We use modern tools tailored to each situation encountered when delivering your projects",
+      "subtitle": "Four main building blocks, with a compact level of technical detail for those who want to look under the hood.",
       "technology_category_list": [
         {
-          "description": "We design and develop modern web applications and robust APIs to digitalize your business processes. From user interface to backend services, we create complete solutions that integrate seamlessly into your technology ecosystem.",
-          "title": "Web Apps & API Building",
+          "title": "Web apps & APIs",
+          "description": "Business interfaces, back offices, portals, and robust APIs to integrate application logic and AI cleanly into your existing stack.",
           "order": "1",
           "category_icon": {
             "filename_disk": "web-apps.svg",
@@ -97,24 +98,12 @@
                 "height": 36
               },
               "url": "https://graphql.org/"
-            },
-            {
-              "id": "40",
-              "name": "OpenID",
-              "img": {
-                "filename_disk": "openid.webp",
-                "url": "/images/cms/technologies/openid.webp",
-                "id": "openid.webp",
-                "width": 96,
-                "height": 36
-              },
-              "url": "https://openid.net/"
             }
           ]
         },
         {
-          "description": "Our mastery of the leading cloud platforms ensures seamless and secure integration of your data into the environment of your choice. We support you in migrating, managing, and optimizing your cloud resources, guaranteeing a robust and scalable infrastructure to back your growth.",
           "title": "Cloud & Infra",
+          "description": "Infrastructure, deployment, and security to run reliable, scalable, well-integrated systems.",
           "order": "2",
           "category_icon": {
             "filename_disk": "cloud.svg",
@@ -123,16 +112,16 @@
           },
           "technology_list": [
             {
-              "id": "15",
-              "name": "terraform",
+              "id": "12",
+              "name": "AWS",
               "img": {
-                "filename_disk": "terraform.webp",
-                "url": "/images/cms/technologies/terraform.webp",
-                "id": "terraform.webp",
+                "filename_disk": "aws.webp",
+                "url": "/images/cms/technologies/aws.webp",
+                "id": "aws.webp",
                 "width": 180,
                 "height": 72
               },
-              "url": "https://www.terraform.io/"
+              "url": "https://aws.amazon.com/fr/"
             },
             {
               "id": "13",
@@ -145,18 +134,6 @@
                 "height": 72
               },
               "url": "https://azure.microsoft.com/fr-fr/"
-            },
-            {
-              "id": "12",
-              "name": "AWS",
-              "img": {
-                "filename_disk": "aws.webp",
-                "url": "/images/cms/technologies/aws.webp",
-                "id": "aws.webp",
-                "width": 180,
-                "height": 72
-              },
-              "url": "https://aws.amazon.com/fr/"
             },
             {
               "id": "14",
@@ -181,12 +158,24 @@
                 "height": 72
               },
               "url": "https://www.docker.com/"
+            },
+            {
+              "id": "15",
+              "name": "terraform",
+              "img": {
+                "filename_disk": "terraform.webp",
+                "url": "/images/cms/technologies/terraform.webp",
+                "id": "terraform.webp",
+                "width": 180,
+                "height": 72
+              },
+              "url": "https://www.terraform.io/"
             }
           ]
         },
         {
-          "description": "Using best practices in artificial intelligence and machine learning, we design and deploy innovative predictive models to optimize your strategic processes. By automating repetitive tasks and improving prediction accuracy, we help you increase your business efficiency and stand out from the competition.",
-          "title": "Artificial Intelligence",
+          "title": "Artificial intelligence",
+          "description": "Copilots, business assistants, augmented retrieval, agents, and workflow automation powered by language models.",
           "order": "3",
           "category_icon": {
             "filename_disk": "ia-machine-learning.svg",
@@ -195,16 +184,16 @@
           },
           "technology_list": [
             {
-              "id": "5",
-              "name": "scikit-learn",
+              "id": "29",
+              "name": "Open AI",
               "img": {
-                "filename_disk": "scikit-learn.webp",
-                "url": "/images/cms/technologies/scikit-learn.webp",
-                "id": "scikit-learn.webp",
+                "filename_disk": "open-ai.webp",
+                "url": "/images/cms/technologies/open-ai.webp",
+                "id": "open-ai.webp",
                 "width": 180,
                 "height": 72
               },
-              "url": "https://scikit-learn.org/stable/"
+              "url": "https://openai.com/"
             },
             {
               "id": "11",
@@ -229,24 +218,12 @@
                 "height": 72
               },
               "url": "https://pytorch.org/"
-            },
-            {
-              "id": "29",
-              "name": "Open AI",
-              "img": {
-                "filename_disk": "open-ai.webp",
-                "url": "/images/cms/technologies/open-ai.webp",
-                "id": "open-ai.webp",
-                "width": 180,
-                "height": 72
-              },
-              "url": "https://openai.com/"
             }
           ]
         },
         {
-          "description": "With our data science expertise, we provide you with tailored solutions to analyze and harness your data. Our custom scripts reveal hidden trends and growth opportunities, helping you make informed and strategic decisions for your business.",
-          "title": "Data Science",
+          "title": "Data",
+          "description": "Data collection, structuring, modeling, and delivery: the foundation required to power workflows, dashboards, and useful AI systems.",
           "order": "4",
           "category_icon": {
             "filename_disk": "data-science.svg",
@@ -267,30 +244,6 @@
               "url": "https://www.python.org/"
             },
             {
-              "id": "25",
-              "name": "R",
-              "img": {
-                "filename_disk": "r.webp",
-                "url": "/images/cms/technologies/r.webp",
-                "id": "r.webp",
-                "width": 170,
-                "height": 64
-              },
-              "url": "https://www.r-project.org/"
-            },
-            {
-              "id": "28",
-              "name": "Bash",
-              "img": {
-                "filename_disk": "bash.webp",
-                "url": "/images/cms/technologies/bash.webp",
-                "id": "bash.webp",
-                "width": 170,
-                "height": 64
-              },
-              "url": "https://www.gnu.org/software/bash/"
-            },
-            {
               "id": "30",
               "name": "DuckDB",
               "img": {
@@ -301,54 +254,6 @@
                 "height": 64
               },
               "url": "https://duckdb.org/"
-            }
-          ]
-        },
-        {
-          "description": "We assist you in optimally collecting, structuring, and disseminating your data throughout the enterprise. We design robust architectures, effective data pipelines, and ensure the quality and consistency of data throughout their lifecycle.",
-          "title": "Data Engineering",
-          "order": "5",
-          "category_icon": {
-            "filename_disk": "data-engineering.png",
-            "url": "/images/cms/technologies/data-engineering.png",
-            "id": "data-engineering.png"
-          },
-          "technology_list": [
-            {
-              "id": "33",
-              "name": "Spark",
-              "img": {
-                "filename_disk": "spark.webp",
-                "url": "/images/cms/technologies/spark.webp",
-                "id": "spark.webp",
-                "width": 180,
-                "height": 72
-              },
-              "url": "https://spark.apache.org/"
-            },
-            {
-              "id": "34",
-              "name": "postgreSQL",
-              "img": {
-                "filename_disk": "postgresql.webp",
-                "url": "/images/cms/technologies/postgresql.webp",
-                "id": "postgresql.webp",
-                "width": 180,
-                "height": 72
-              },
-              "url": "https://www.postgresql.org/"
-            },
-            {
-              "id": "31",
-              "name": "Airflow",
-              "img": {
-                "filename_disk": "airflow.webp",
-                "url": "/images/cms/technologies/airflow.webp",
-                "id": "airflow.webp",
-                "width": 180,
-                "height": 72
-              },
-              "url": "https://airflow.apache.org/"
             },
             {
               "id": "32",
@@ -361,42 +266,6 @@
                 "height": 72
               },
               "url": "https://www.getdbt.com/"
-            }
-          ]
-        },
-        {
-          "description": "We implement data warehouse solutions tailored to your needs, enabling efficient centralization of your data and limitless scaling. With fast and secure access to your information, your business benefits from a solid foundation to support data analysis, decision-making, and ongoing growth.",
-          "title": "Data Warehouse",
-          "order": "6",
-          "category_icon": {
-            "filename_disk": "data-warehouse.svg",
-            "url": "/images/cms/technologies/data-warehouse.svg",
-            "id": "data-warehouse.svg"
-          },
-          "technology_list": [
-            {
-              "id": "18",
-              "name": "Redshift",
-              "img": {
-                "filename_disk": "redshift.webp",
-                "url": "/images/cms/technologies/redshift.webp",
-                "id": "redshift.webp",
-                "width": 220,
-                "height": 88
-              },
-              "url": "https://aws.amazon.com/fr/redshift/"
-            },
-            {
-              "id": "19",
-              "name": "Snowflake",
-              "img": {
-                "filename_disk": "snowflake.webp",
-                "url": "/images/cms/technologies/snowflake.webp",
-                "id": "snowflake.webp",
-                "width": 220,
-                "height": 88
-              },
-              "url": "ttps://www.snowflake.com/?lang=fr"
             },
             {
               "id": "17",
@@ -409,6 +278,30 @@
                 "height": 88
               },
               "url": "https://cloud.google.com/bigquery/"
+            },
+            {
+              "id": "19",
+              "name": "Snowflake",
+              "img": {
+                "filename_disk": "snowflake.webp",
+                "url": "/images/cms/technologies/snowflake.webp",
+                "id": "snowflake.webp",
+                "width": 220,
+                "height": 88
+              },
+              "url": "https://www.snowflake.com/fr/"
+            },
+            {
+              "id": "31",
+              "name": "Airflow",
+              "img": {
+                "filename_disk": "airflow.webp",
+                "url": "/images/cms/technologies/airflow.webp",
+                "id": "airflow.webp",
+                "width": 180,
+                "height": 72
+              },
+              "url": "https://airflow.apache.org/"
             }
           ]
         }
@@ -525,7 +418,7 @@
     },
     "contact_section": {
       "btn_contact": "Contact us",
-      "subtitle": "Let's talk about your project!",
+      "subtitle": "Let's discuss your project together!",
       "address": "8 place Roger Salengro, 31000 Toulouse, France",
       "company": "FDTI Consulting",
       "mail": "info@fdti.eu",
@@ -542,8 +435,8 @@
     "meta_tags": {
       "page_tags": [
         {
-          "title": "FDTI | Data Platforms, AI & Business Apps - Fast Implementation",
-          "description": "Deploy data platforms, AI models (LLMs, predictive, agents) and business applications in weeks. Expert teams for data engineering, AI copilots, APIs and automation. Trusted by Stellantis, Samsung, Blablacar and many more.",
+          "title": "FDTI | From Data To Insights",
+          "description": "FDTI is an AI studio building copilots, workflow automation, business applications, APIs, and data foundations integrated into your tools.",
           "url": "/",
           "img": {
             "filename_disk": "fdti-from-data-to-insights.svg",

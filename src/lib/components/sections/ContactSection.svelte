@@ -34,14 +34,14 @@
 						<img
 							class="w-14"
 							src="/images/fdti_vector_54px.svg"
-							alt="FDTI - From Data To Insight"
-							title="FDTI - From Data To Insight"
+							alt="FDTI - From Data To Insights"
+							title="FDTI - From Data To Insights"
 							height="60"
 							width="60"
 						/>
 					</figure>
 					<h3 class="col-span-4 self-center xs:text-5xl text-4xl font-medium text-darkGrey-1">
-						FDTI - From Data To Insight
+						FDTI - From Data To Insights
 					</h3>
 					<ul class="col-span-4 col-start-2 self-start space-y-2">
 						<li class="flex items-center gap-2">

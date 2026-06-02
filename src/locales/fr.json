@@ -1,36 +1,37 @@
 {
   "GetHomePageContent": {
     "hero_section": {
-      "subtitle": "Des plateformes data, des apps et de l'IA opérationnelle, taillées pour vos équipes",
-      "description": "<p>Nous modernisons vos systèmes data, vos outils métiers et vos cas d'usage IA avec des équipes expertes. Accélérez vos projets de transformation sans alourdir vos ressources : nous co-construisons des solutions sur mesure, livrables en quelques semaines et adoptées par le terrain.</p>",
+      "subtitle": "Copilotes, automatisations et applications métier intégrés à vos outils existants",
+      "description": "<p>Nous construisons des outils qui connectent vos données, vos SaaS et vos outils internes pour rendre vos opérations plus rapides, plus fiables et plus automatisées. L’IA n’est pas un gadget en plus : elle devient une brique centrale dans vos processus quotidiens.</p>",
       "btn_brochure": "Téléchargez notre plaquette",
-      "btn_contact": "Contactez-nous",
+      "btn_contact": "Diagnostiquer votre besoin en 30 min",
       "brochure_link": "https://docs.google.com/presentation/d/e/2PACX-1vTxf7KCRA90Jm1rClbzRMZqB7wprtcUv30NwlpyT7RsxcGCKEQxW9HneEJBxo0Ml50srOHn18p5ECpD/pub?start=false&loop=false&delayms=3000",
-      "title": "Solutions métiers augmentées avec la data"
+      "title": "IA, code et data au service de vos processus métiers",
+      "status": "Studio IA & automatisation métier"
     },
     "fdti_section": {
-      "subtitle": "Des décisions et des outils augmentés par la data",
+      "subtitle": "Vos données et vos outils comme point de départ. Du code et de l’IA là où ça compte. Des opérations plus fluides, plus fiables, plus automatisées.",
       "icon_1": {
         "filename_disk": "from-data-to-insight.svg",
         "url": "/images/cms/branding/from-data-to-insight.svg",
         "id": "from-data-to-insight.svg"
       },
-      "content_1": "<p><strong>Nos équipes transforment vos opérations</strong> en rendant lisibles les dynamiques marché, l'expérience client et la performance interne. Nous combinons data engineering, IA et design produit pour révéler les leviers de croissance et cadrer un plan d'exécution pragmatique.</p><ul><li><strong>Cartographier</strong> vos sources et signaux clés</li><li><strong>Prioriser</strong> les cas d'usage à plus fort ROI</li><li><strong>Aligner</strong> dirigeants et équipes terrain sur l'impact attendu</li></ul>",
+      "content_1": "<p><strong>Nous partons du travail réel de vos équipes</strong> : documents à traiter, informations à retrouver, décisions à préparer, coordinations à fluidifier, tâches à automatiser.</p><ul><li><strong>Identifier</strong> les étapes où l’IA apporte un gain concret</li><li><strong>Brancher</strong> les bonnes sources : bases, SaaS, fichiers, APIs, outils internes</li><li><strong>Concevoir</strong> un système robuste, sécurisé et exploitable au quotidien</li></ul>",
       "icon_2": {
         "filename_disk": "from-data-to-insight-1.svg",
         "url": "/images/cms/branding/from-data-to-insight-1.svg",
         "id": "from-data-to-insight-1.svg"
       },
-      "content_2": "<p><strong>Des solutions adoptées sur le terrain</strong> : nous structurons les données utiles, entraînons des modèles (LLM, prédictifs, agents) et livrons applications, API, dashboards et espaces collaboratifs prêts à l'emploi.</p><ul><li><strong>Data & IA</strong> : pipelines, feature stores, modèles spécialisés</li><li><strong>Produits métiers</strong> : apps web, API sécurisées, copilotes IA, workflows automatisés</li><li><strong>Adoption</strong> : coaching, playbooks et itérations courtes avec vos équipes</li></ul>",
-      "title": "From Data To Insight"
+      "content_2": "<p><strong>Nous livrons le bon niveau de solution</strong> selon le besoin : un copilote, un workflow assisté, une API, un back-office ou une application métier complète.</p><ul><li><strong>Copilotes IA</strong> : recherche, synthèse, aide à la décision, rédaction assistée</li><li><strong>Automatisation de processus</strong> : traitement documentaire, qualification, coordination, alerting, reporting</li><li><strong>Applications métier</strong> : portails, dashboards, back-offices, APIs sécurisées et outils internes</li></ul>",
+      "title": "Notre approche"
     },
     "technology_content": {
       "title": "Technologies",
-      "subtitle": "Nous utilisons des outils modernes adaptés à chaque situation rencontrée lors du traitement de vos projets",
+      "subtitle": "Quatre briques techniques maîtrisées et composables, que nous assemblons selon les besoins de chaque projet.",
       "technology_category_list": [
         {
-          "description": "Nous concevons et développons des applications web modernes et des APIs robustes pour digitaliser vos processus métier. De l'interface utilisateur jusqu'aux services backend, nous créons des solutions complètes qui s'intègrent parfaitement dans votre écosystème technologique.",
           "title": "Applications web & API",
+          "description": "Interfaces métier, back-offices, portails et APIs robustes pour intégrer proprement la logique applicative et l’IA dans votre existant.",
           "order": "1",
           "category_icon": {
             "filename_disk": "web-apps.svg",
@@ -97,24 +98,12 @@
                 "height": 36
               },
               "url": "https://graphql.org/"
-            },
-            {
-              "id": "40",
-              "name": "OpenID",
-              "img": {
-                "filename_disk": "openid.webp",
-                "url": "/images/cms/technologies/openid.webp",
-                "id": "openid.webp",
-                "width": 96,
-                "height": 36
-              },
-              "url": "https://openid.net/"
             }
           ]
         },
         {
-          "description": "Notre maîtrise des principales plateformes cloud vous assure une intégration fluide et sécurisée de vos données dans l'environnement de votre choix. Nous vous accompagnons dans la migration, la gestion et l'optimisation de vos ressources cloud, garantissant une infrastructure solide et évolutive pour soutenir votre croissance.",
           "title": "Cloud & Infra",
+          "description": "Infrastructure, déploiement et sécurité pour faire tourner des systèmes fiables, évolutifs et bien intégrés.",
           "order": "2",
           "category_icon": {
             "filename_disk": "cloud.svg",
@@ -123,16 +112,16 @@
           },
           "technology_list": [
             {
-              "id": "15",
-              "name": "terraform",
+              "id": "12",
+              "name": "AWS",
               "img": {
-                "filename_disk": "terraform.webp",
-                "url": "/images/cms/technologies/terraform.webp",
-                "id": "terraform.webp",
+                "filename_disk": "aws.webp",
+                "url": "/images/cms/technologies/aws.webp",
+                "id": "aws.webp",
                 "width": 180,
                 "height": 72
               },
-              "url": "https://www.terraform.io/"
+              "url": "https://aws.amazon.com/fr/"
             },
             {
               "id": "13",
@@ -145,18 +134,6 @@
                 "height": 72
               },
               "url": "https://azure.microsoft.com/fr-fr/"
-            },
-            {
-              "id": "12",
-              "name": "AWS",
-              "img": {
-                "filename_disk": "aws.webp",
-                "url": "/images/cms/technologies/aws.webp",
-                "id": "aws.webp",
-                "width": 180,
-                "height": 72
-              },
-              "url": "https://aws.amazon.com/fr/"
             },
             {
               "id": "14",
@@ -181,12 +158,24 @@
                 "height": 72
               },
               "url": "https://www.docker.com/"
+            },
+            {
+              "id": "15",
+              "name": "terraform",
+              "img": {
+                "filename_disk": "terraform.webp",
+                "url": "/images/cms/technologies/terraform.webp",
+                "id": "terraform.webp",
+                "width": 180,
+                "height": 72
+              },
+              "url": "https://www.terraform.io/"
             }
           ]
         },
         {
-          "description": "En utilisant les meilleures pratiques en matière d'intelligence artificielle et de machine learning, nous concevons et déployons des modèles prédictifs innovants pour optimiser vos processus stratégiques. En automatisant les tâches répétitives et en améliorant la précision des prédictions, nous vous aidons à augmenter l'efficacité de votre entreprise et à vous démarquer de la concurrence.",
-          "title": "Intelligence Artificielle",
+          "title": "Intelligence artificielle",
+          "description": "Copilotes, assistants métier, recherche augmentée, agents et automatisations propulsés par les modèles de langage.",
           "order": "3",
           "category_icon": {
             "filename_disk": "ia-machine-learning.svg",
@@ -195,16 +184,16 @@
           },
           "technology_list": [
             {
-              "id": "5",
-              "name": "scikit-learn",
+              "id": "29",
+              "name": "Open AI",
               "img": {
-                "filename_disk": "scikit-learn.webp",
-                "url": "/images/cms/technologies/scikit-learn.webp",
-                "id": "scikit-learn.webp",
+                "filename_disk": "open-ai.webp",
+                "url": "/images/cms/technologies/open-ai.webp",
+                "id": "open-ai.webp",
                 "width": 180,
                 "height": 72
               },
-              "url": "https://scikit-learn.org/stable/"
+              "url": "https://openai.com/"
             },
             {
               "id": "11",
@@ -229,24 +218,12 @@
                 "height": 72
               },
               "url": "https://pytorch.org/"
-            },
-            {
-              "id": "29",
-              "name": "Open AI",
-              "img": {
-                "filename_disk": "open-ai.webp",
-                "url": "/images/cms/technologies/open-ai.webp",
-                "id": "open-ai.webp",
-                "width": 180,
-                "height": 72
-              },
-              "url": "https://openai.com/"
             }
           ]
         },
         {
-          "description": "Grâce à notre expertise en data science, nous vous offrons des solutions personnalisées pour analyser et exploiter vos données. Nos scripts sur mesure permettent de révéler les tendances cachées et les opportunités de croissance, vous aidant à prendre des décisions éclairées et stratégiques pour votre entreprise.",
-          "title": "Data Science",
+          "title": "Data",
+          "description": "Collecte, structuration, modélisation et diffusion de la donnée : la base nécessaire pour alimenter des workflows, des dashboards et des systèmes IA utiles.",
           "order": "4",
           "category_icon": {
             "filename_disk": "data-science.svg",
@@ -267,30 +244,6 @@
               "url": "https://www.python.org/"
             },
             {
-              "id": "25",
-              "name": "R",
-              "img": {
-                "filename_disk": "r.webp",
-                "url": "/images/cms/technologies/r.webp",
-                "id": "r.webp",
-                "width": 170,
-                "height": 64
-              },
-              "url": "https://www.r-project.org/"
-            },
-            {
-              "id": "28",
-              "name": "Bash",
-              "img": {
-                "filename_disk": "bash.webp",
-                "url": "/images/cms/technologies/bash.webp",
-                "id": "bash.webp",
-                "width": 170,
-                "height": 64
-              },
-              "url": "https://www.gnu.org/software/bash/"
-            },
-            {
               "id": "30",
               "name": "DuckDB",
               "img": {
@@ -301,54 +254,6 @@
                 "height": 64
               },
               "url": "https://duckdb.org/"
-            }
-          ]
-        },
-        {
-          "description": "Nos vous aidons à collecter, structurer et diffuser vos données dans l'entreprise de manière optimale. Nous concevons des architectures robustes, des pipelines de données efficaces et assurons la qualité et la cohérence des données tout au long de leur cycle de vie",
-          "title": "Data Engineering",
-          "order": "5",
-          "category_icon": {
-            "filename_disk": "data-engineering.png",
-            "url": "/images/cms/technologies/data-engineering.png",
-            "id": "data-engineering.png"
-          },
-          "technology_list": [
-            {
-              "id": "33",
-              "name": "Spark",
-              "img": {
-                "filename_disk": "spark.webp",
-                "url": "/images/cms/technologies/spark.webp",
-                "id": "spark.webp",
-                "width": 180,
-                "height": 72
-              },
-              "url": "https://spark.apache.org/"
-            },
-            {
-              "id": "34",
-              "name": "postgreSQL",
-              "img": {
-                "filename_disk": "postgresql.webp",
-                "url": "/images/cms/technologies/postgresql.webp",
-                "id": "postgresql.webp",
-                "width": 180,
-                "height": 72
-              },
-              "url": "https://www.postgresql.org/"
-            },
-            {
-              "id": "31",
-              "name": "Airflow",
-              "img": {
-                "filename_disk": "airflow.webp",
-                "url": "/images/cms/technologies/airflow.webp",
-                "id": "airflow.webp",
-                "width": 180,
-                "height": 72
-              },
-              "url": "https://airflow.apache.org/"
             },
             {
               "id": "32",
@@ -361,42 +266,6 @@
                 "height": 72
               },
               "url": "https://www.getdbt.com/"
-            }
-          ]
-        },
-        {
-          "description": "Nous mettons en place des solutions de data warehouse adaptées à vos besoins, permettant une centralisation efficace de vos données et une mise à l'échelle sans limite. Avec un accès rapide et sécurisé à vos informations, votre entreprise bénéficie d'une base solide pour soutenir l'analyse de données, la prise de décision et la croissance continue.",
-          "title": "Data Warehouse",
-          "order": "6",
-          "category_icon": {
-            "filename_disk": "data-warehouse.svg",
-            "url": "/images/cms/technologies/data-warehouse.svg",
-            "id": "data-warehouse.svg"
-          },
-          "technology_list": [
-            {
-              "id": "18",
-              "name": "Redshift",
-              "img": {
-                "filename_disk": "redshift.webp",
-                "url": "/images/cms/technologies/redshift.webp",
-                "id": "redshift.webp",
-                "width": 220,
-                "height": 88
-              },
-              "url": "https://aws.amazon.com/fr/redshift/"
-            },
-            {
-              "id": "19",
-              "name": "Snowflake",
-              "img": {
-                "filename_disk": "snowflake.webp",
-                "url": "/images/cms/technologies/snowflake.webp",
-                "id": "snowflake.webp",
-                "width": 220,
-                "height": 88
-              },
-              "url": "ttps://www.snowflake.com/?lang=fr"
             },
             {
               "id": "17",
@@ -409,13 +278,37 @@
                 "height": 88
               },
               "url": "https://cloud.google.com/bigquery/"
+            },
+            {
+              "id": "19",
+              "name": "Snowflake",
+              "img": {
+                "filename_disk": "snowflake.webp",
+                "url": "/images/cms/technologies/snowflake.webp",
+                "id": "snowflake.webp",
+                "width": 220,
+                "height": 88
+              },
+              "url": "https://www.snowflake.com/fr/"
+            },
+            {
+              "id": "31",
+              "name": "Airflow",
+              "img": {
+                "filename_disk": "airflow.webp",
+                "url": "/images/cms/technologies/airflow.webp",
+                "id": "airflow.webp",
+                "width": 180,
+                "height": 72
+              },
+              "url": "https://airflow.apache.org/"
             }
           ]
         }
       ]
     },
     "trust_content": {
-      "title": "Ils nous font confiance",
+      "title": "Ils nous confient des sujets critiques",
       "company_list": [
         {
           "name": "Samsung",
@@ -524,8 +417,8 @@
       ]
     },
     "contact_section": {
-      "btn_contact": "Contactez-nous",
-      "subtitle": "Discutons ensemble de votre projet!",
+      "btn_contact": "Planifier un échange",
+      "subtitle": "Discutons ensemble de votre projet !",
       "address": "8 place Roger Salengro, 31000 Toulouse, France",
       "company": "FDTI Consulting",
       "mail": "info@fdti.eu",
@@ -542,8 +435,8 @@
     "meta_tags": {
       "page_tags": [
         {
-          "title": "FDTI | Plateformes Data, IA & Apps Métiers - Livraison Rapide",
-          "description": "Déployez des plateformes data, modèles IA (LLMs, prédictifs, agents) et applications métiers en quelques semaines. Équipes expertes en data engineering, copilotes IA, APIs et automatisation. Clients : Stellantis, Samsung, Blablacar and many more.",
+          "title": "FDTI | Studio IA & automatisation métier",
+          "description": "FDTI est un studio IA qui conçoit des copilotes, des automatisations de processus, des applications métier, des APIs et des bases de données intégrés à vos outils.",
           "url": "/",
           "img": {
             "filename_disk": "fdti-from-data-to-insights.svg",
@@ -594,7 +487,7 @@
       "content": "<div class=\"text-2xl lg:mx-72 mx-16 mt-14 text-grey1 font-semibold s-_nwK2CU3lMz9\">Éditeur du site</div>\n<div class=\"text-sm lg:mx-72 mx-16 text-grey1 s-_nwK2CU3lMz9\">\n<p class=\"s-_nwK2CU3lMz9\">Le site <strong>fdti.eu</strong> est édité par la société <strong>FDTI Consulting</strong>, SARL au capital de 2 000 €, immatriculée au RCS de Toulouse sous le n° 850 172 164.</p>\n<p class=\"s-_nwK2CU3lMz9\">Siège social : 8 place Roger Salengro, 31000 Toulouse.</p>\n<p class=\"s-_nwK2CU3lMz9\">Email : <a href=\"mailto:info@fdti.eu\" class=\"text-blue-700\">info@fdti.eu</a></p>\n</div>\n<div class=\"text-2xl lg:mx-72 mx-16 mt-5 text-grey1 font-semibold s-_nwK2CU3lMz9\">Propriété intellectuelle</div>\n<div class=\"text-sm lg:mx-72 mx-16 text-grey1 s-_nwK2CU3lMz9\">\n<p class=\"s-_nwK2CU3lMz9\">L'ensemble des contenus (textes, images, logos) présents sur ce site est la propriété exclusive de FDTI Consulting. Toute reproduction ou utilisation sans autorisation préalable est interdite.</p>\n</div>\n<div class=\"text-2xl lg:mx-72 mx-16 mt-5 text-grey1 font-semibold s-_nwK2CU3lMz9\">Données personnelles</div>\n<div class=\"text-sm lg:mx-72 mx-16 text-grey1 s-_nwK2CU3lMz9\">\n<p class=\"s-_nwK2CU3lMz9\">Ce site ne collecte aucune donnée personnelle.</p>\n</div>\n<div class=\"text-2xl lg:mx-72 mx-16 mt-5 text-grey1 font-semibold s-_nwK2CU3lMz9\">Responsabilité</div>\n<div class=\"text-sm lg:mx-72 mx-16 text-grey1 mb-28 s-_nwK2CU3lMz9\">\n<p class=\"s-_nwK2CU3lMz9\">FDTI Consulting s'efforce de fournir des informations précises sur ce site mais ne saurait être tenue responsable des erreurs ou omissions. L'utilisation du site se fait sous votre entière responsabilité.</p>\n</div>"
     }
   },
-    "GetDNAPageContent": {
+  "GetDNAPageContent": {
     "DNA_content": {
       "title": "ADN & Valeurs",
       "description": "<p>La sécurité et la confidentialité des données sont un enjeu primordial pour nous, aussi nous mettons en place des règles strictes dans nos traitements, telles que l'anonymisation des données personnelles et l'encryptage systématique des connexions. Nos serveurs sont hébergés en France, les données qu'ils contiennent ne quittent jamais l'UE et ne sont soumises à aucune juridiction étrangère à l'Union européenne. Nous traitons toutes nos données conformément au RGPD.</p>",
@@ -727,15 +620,15 @@
         "location": "France",
         "challenge": "Un éditeur de logiciels pour greffiers souhaitait intégrer des fonctionnalités d'IA directement dans sa plateforme pour optimiser le temps et la précision de certaines tâches chronophages des greffiers.",
         "approach": "Architecture modulaire structurée par cas d'usage IA (LLM spécialisés). API d'intelligence artificielle hébergée sur les serveurs du client (FastAPI), parfaitement intégrée à l'outil existant mais aussi accessible à d'autres utilisateurs via API sécurisée. Portail TypeScript/SvelteKit.",
-        "impact": "Temps de traitement divisé par 20 sur les tâches ciblées tout en respectant les exigences de confidentialité du secteur judiciaire.",
+        "impact": "Pré-analyse IA lancée en parallèle des flux métier : jusqu’à 1 600 dossiers traités par jour sur un premier cas d’usage, avec un équivalent temps économisé significatif tout en respectant les exigences de confidentialité du secteur judiciaire.",
         "metrics": [
           {
-            "label": "Requêtes/an",
-            "value": "+3 M"
+            "label": "Dossiers / jour",
+            "value": "1 600"
           },
           {
-            "label": "Gain par dossier",
-            "value": "-25 min"
+            "label": "Équivalent économisé",
+            "value": "≈16 j.h / jour"
           },
           {
             "label": "Greffes clients FR",
@@ -766,21 +659,31 @@
         "title": "Plateforme de gestion des véhicules en fin de vie",
         "date": "2020-2025",
         "location": "Europe",
-        "challenge": "Suite à la création d'une joint-venture avec un constructeur, une plateforme d'économie circulaire devait moderniser son outil existant pour gérer la reprise de véhicules en fin de vie (B2B et B2C) et suivre leur parcours de la collecte chez le propriétaire à la démolition du véhicule.",
-        "approach": "Développement d'un portail web avec interfaces de déclaration, d'administration et de suivi des véhicules entre les différents acteurs, processus métiers et APIs Azure Functions déployés sur l'infrastructure Azure du client (bases MSSQL, Azure Service Bus) pour orchestrer un existant .NET connectant propriétaires et centres VHU.",
-        "impact": "Traçabilité bout en bout de plus de 50 000 véhicules/an au service de la branche économie circulaire du groupe et réponse aux impératifs du constructeur liés à la Responsabilité Etendue des Producteurs (REP).",
+        "challenge": "Suite à la création de Valorauto, joint-venture entre Stellantis et Galloo, une plateforme d'économie circulaire devait moderniser son outil existant pour gérer la reprise de véhicules en fin de vie (B2B et B2C) et suivre leur parcours de la collecte chez le propriétaire à la démolition du véhicule.",
+        "approach": "Développement du portail Valorauto avec interfaces de déclaration, d'administration et de suivi des véhicules entre les différents acteurs, processus métiers et APIs Azure Functions déployés sur l'infrastructure Azure du client (bases MSSQL, Azure Service Bus) pour orchestrer un existant .NET connectant propriétaires et centres VHU.",
+        "impact": "Traçabilité bout en bout au service de la branche économie circulaire du groupe, avec un réseau de plus de 5 000 entreprises partenaires et une réponse aux impératifs du constructeur liés à la Responsabilité Etendue des Producteurs (REP).",
         "metrics": [
           {
             "label": "Pays couverts",
-            "value": "12"
+            "value": "5"
           },
           {
-            "label": "Véhicules suivis/an",
-            "value": ">50 k"
+            "label": "Réseau partenaires",
+            "value": "+5 000"
           },
           {
             "label": "Score Trustpilot",
-            "value": "4.8"
+            "value": "4.7"
+          }
+        ],
+        "links": [
+          {
+            "label": "Site Valorauto",
+            "url": "https://www.valorauto.com/"
+          },
+          {
+            "label": "Avis Trustpilot Valorauto",
+            "url": "https://www.trustpilot.com/review/valorauto.com"
           }
         ],
         "tags": [

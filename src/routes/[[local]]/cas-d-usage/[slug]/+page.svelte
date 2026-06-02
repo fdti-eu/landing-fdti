@@ -36,6 +36,7 @@
 							approach?: string | null;
 							impact?: string | null;
 							metrics?: { label?: string | null; value?: string | null }[];
+							links?: { label?: string | null; url?: string | null }[];
 							tags?: string[];
 							details?: string[];
 					}
@@ -284,6 +285,23 @@
 									>
 										{tag}
 									</span>
+								{/each}
+							</div>
+						{/if}
+
+						{#if useCase.links?.length}
+							<div class="space-y-2">
+								{#each useCase.links as link}
+									{#if link?.url}
+										<a
+											href={link.url}
+											target="_blank"
+											rel="noreferrer"
+											class="block rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm font-semibold text-darkGrey hover:border-yellow hover:shadow-md transition"
+										>
+											{link.label || link.url}
+										</a>
+									{/if}
 								{/each}
 							</div>
 						{/if}
