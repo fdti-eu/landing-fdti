@@ -2,6 +2,21 @@ import { error } from '@sveltejs/kit';
 import { getUseCasesContent, type Lang } from '$lib/data';
 import type { PageLoad } from './$types';
 
+export const prerender = true;
+
+export async function entries() {
+	const entries: { local: Lang; slug: string }[] = [];
+
+	for (const local of ['fr', 'en'] as Lang[]) {
+		const content = await getUseCasesContent(local);
+		for (const useCase of content.use_case_list ?? []) {
+			if (useCase.slug) entries.push({ local, slug: useCase.slug });
+		}
+	}
+
+	return entries;
+}
+
 export const load: PageLoad = async ({ params, depends }) => {
 	depends('app:locale');
 	const local = (params.local as Lang) || 'fr';

@@ -1,6 +1,6 @@
 import type { Lang } from '$lib/data';
 
-export const BASE_URL = 'https://www.fdti.eu';
+export const BASE_URL = 'https://fdti.eu';
 export const SUPPORTED_LOCALES: Lang[] = ['fr', 'en'];
 export const DEFAULT_LOCALE: Lang = 'fr';
 

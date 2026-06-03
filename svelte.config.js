@@ -1,26 +1,30 @@
-import vercel from '@sveltejs/adapter-vercel';
+import adapter from '@sveltejs/adapter-static';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
-	// Consult https://kit.svelte.dev/docs/integrations#preprocessors
-	// for more information about preprocessors
 	preprocess: vitePreprocess(),
 
 	kit: {
 		serviceWorker: {
 			register: false
 		},
-		adapter: vercel({
-			runtime: 'nodejs20.x',
-			external: [],
-			split: false
+		adapter: adapter({
+			pages: 'build',
+			assets: 'build',
+			fallback: undefined,
+			precompress: true,
+			strict: true
 		}),
 		alias: {
 			$locales: 'src/locales'
 		},
 		env: {
 			dir: 'env'
+		},
+		prerender: {
+			crawl: true,
+			entries: ['*']
 		}
 	}
 };

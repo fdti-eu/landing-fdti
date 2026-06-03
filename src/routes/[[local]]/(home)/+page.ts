@@ -1,6 +1,12 @@
 import { getHomePageContent, getUseCasesContent, type Lang } from '$lib/data';
 import type { PageLoad } from './$types';
 
+export const prerender = true;
+
+export function entries() {
+	return [{ local: 'fr' }, { local: 'en' }];
+}
+
 export const load: PageLoad = async ({ params }) => {
 	const local = (params.local as Lang) || 'fr';
 	const content = await getHomePageContent(local);

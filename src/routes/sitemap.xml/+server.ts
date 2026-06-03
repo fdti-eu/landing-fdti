@@ -32,6 +32,8 @@ const buildUrlEntry = (loc: string, changefreq: string, priority: string) => {
     </url>`;
 };
 
+export const prerender = true;
+
 export async function GET() {
 	const urls: string[] = [];
 

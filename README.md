@@ -1,95 +1,84 @@
-# Template Front end Svelte Kit
+# FDTI website
 
-## fichiers à modifier
+Site vitrine public de FDTI Consulting : `https://fdti.eu`.
 
-- developper2.svelte pour les url vers leprospecteur à changer
-- gitlab-ci : changer les options
-- docker-compose.yml : labels du gatekeeper
-- MYQUERY.gql
-- le .env à créer (cf ci-dessous)
+Stack : SvelteKit, Svelte 5, TypeScript, Tailwind CSS.
 
-## Keycloak auth
+## Contenu
 
-Le client doit être `confidential` afin d'avoir un secret.
+Le contenu éditorial principal est stocké dans les fichiers JSON :
 
-## Local configuration
+- `src/locales/fr.json`
+- `src/locales/en.json`
 
-Create an .env file in project root with following content
+Les pages, cas d’usage, métadonnées SEO, `sitemap.xml` et `llms.txt` sont générés à partir de ces fichiers pendant le build.
 
-```ts
-VITE_OIDC_ISSUER = 'https://auth.<domain>/auth/realms/<realms-name (domain)>'
-VITE_OIDC_CLIENT_ID = '<client-name>'
-VITE_OIDC_CLIENT_SECRET = '<client-secret>'
-VITE_OIDC_REDIRECT_URI = 'http://localhost:3000'
-VITE_OIDC_POST_LOGOUT_REDIRECT_URI = 'http://localhost:3000'
-VITE_OIDC_CLIENT_SCOPE = '<client-scopes>'
-# usually 'openid profile email hasura_token_mapper'
-VITE_OIDC_TOKEN_REFRESH_MAX_RETRIES = '5'
-VITE_REFRESH_TOKEN_ENDPOINT = '/auth/refresh_token'
-VITE_REFRESH_PAGE_ON_SESSION_TIMEOUT = true
-```
-
-## Production configuration
-
-Create an .env file in project root with following content
-
-```ts
-VITE_OIDC_ISSUER = 'https://auth.<domain>/auth/realms/<realms-name (domain)>'
-VITE_OIDC_CLIENT_ID = '<client_name>'
-VITE_OIDC_CLIENT_SECRET = '<client-secret>'
-VITE_OIDC_REDIRECT_URI = 'https://<domain>'
-VITE_OIDC_POST_LOGOUT_REDIRECT_URI = 'https://<domain>'
-VITE_OIDC_CLIENT_SCOPE = '<client-scopes>'
-# usually 'openid profile email hasura_token_mapper'
-VITE_OIDC_TOKEN_REFRESH_MAX_RETRIES = '5'
-VITE_REFRESH_TOKEN_ENDPOINT = '/auth/refresh_token'
-VITE_REFRESH_PAGE_ON_SESSION_TIMEOUT = true
-```
-
-### Use these stores for auth information
-
-```html
-<script lang="ts">
-	import { isAuthenticated, isLoading, authError, accessToken, idToken, userInfo, refreshToken, LoginButton } from 'sveltekit-oidc';
-</script>
-
-{#if $isAuthenticated}
-<div>User is authenticated</div>
-{:else}
-<LoginButton class="btn btn-primary">Login</LoginButton>
-{/if}
-<div></div>
-```
-
-### For protected routes
-
-```html
-<script lang="ts">
-	import { KeycloakProtectedRoute, LogoutButton } from 'sveltekit-oidc';
-</script>
-
-<KeycloakProtectedRoute>
-	<div class="h-screen-minus-navbar bg-gray-800 text-white flex flex-col justify-center items-center w-full">
-		This is a protected page
-
-		<LogoutButton class="btn btn-primary">Logout</LogoutButton>
-	</div>
-</KeycloakProtectedRoute>
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+## Développement local
 
 ```bash
+npm install
 npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
 ```
 
-## Building
+Ouvrir l’URL affichée par Vite, généralement `http://localhost:5173`.
+
+## Vérifications
 
 ```bash
+npm run check
 npm run build
 ```
+
+Le build génère un site statique dans `build/`.
+
+## Déploiement GitHub Pages
+
+Le site est préparé pour GitHub Pages via `.github/workflows/pages.yml`.
+
+À chaque push sur `master`, GitHub Actions :
+
+1. installe les dépendances avec `npm ci` ;
+2. lance `npm run check` ;
+3. lance `npm run build` ;
+4. publie le dossier `build/` sur GitHub Pages.
+
+Le domaine custom apex est déclaré dans `static/CNAME` :
+
+```text
+fdti.eu
+```
+
+### Activation côté GitHub
+
+Dans le repo GitHub :
+
+1. aller dans **Settings → Pages** ;
+2. choisir **Source: GitHub Actions** ;
+3. vérifier que le domaine custom est `fdti.eu` ;
+4. activer **Enforce HTTPS** quand GitHub le permet.
+
+### DNS attendu
+
+Pour le domaine apex `fdti.eu`, configurer les enregistrements A GitHub Pages :
+
+```text
+185.199.108.153
+185.199.109.153
+185.199.110.153
+185.199.111.153
+```
+
+Optionnel : si `www.fdti.eu` doit aussi répondre, ajouter un CNAME `www` vers `fdti-eu.github.io` et laisser GitHub Pages rediriger vers le domaine apex `fdti.eu`.
+
+## Routes statiques importantes
+
+- `/fr` et `/en`
+- `/fr/cas-d-usage` et `/en/cas-d-usage`
+- pages détaillées des cas d’usage
+- `/sitemap.xml`
+- `/llms.txt`
+- `/llm.txt` — même contenu que `/llms.txt` pour compatibilité
+
+## Déploiement Vercel historique
+
+Le projet utilisait auparavant `@sveltejs/adapter-vercel` et le script `npm run deploy` pour déclencher Vercel. Cette voie est considérée legacy depuis la préparation GitHub Pages.
