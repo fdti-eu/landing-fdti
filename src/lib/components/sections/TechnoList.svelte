@@ -45,9 +45,9 @@
 			>
 				<p class="text-sm font-semibold text-darkGrey-2">
 					{#if $locale === 'fr'}
-						Technologies et outils utilisés&nbsp;:
+						Stack possible&nbsp;:
 					{:else}
-						Technologies and tools used:
+						Possible stack:
 					{/if}
 				</p>
 			</div>

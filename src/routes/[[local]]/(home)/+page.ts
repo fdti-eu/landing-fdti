@@ -9,11 +9,11 @@ export const load: PageLoad = async ({ params }) => {
 	return {
 		...content,
 		homepage_use_cases: useCasesContent.use_case_list?.slice(0, 3) || [],
-		homepage_use_cases_title: local === 'fr' ? 'Cas concrets' : 'Concrete examples',
+		homepage_use_cases_title: local === 'fr' ? 'Preuves terrain' : 'Field proof',
 		homepage_use_cases_subtitle:
 			local === 'fr'
-				? 'Quelques projets déjà déployés en IA, applications métier et automatisation de processus.'
-				: 'A few shipped projects across AI, business applications, and workflow automation.',
+				? 'Des problèmes déjà traités dans plusieurs environnements exigeants, sans enfermer FDTI dans une seule verticale.'
+				: 'Problems already solved in demanding environments, without locking FDTI into a single vertical.',
 		locale: local
 	};
 };

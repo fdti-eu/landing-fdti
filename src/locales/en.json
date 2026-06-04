@@ -1,13 +1,14 @@
 {
   "GetHomePageContent": {
     "hero_section": {
-      "subtitle": "Data platforms, business apps and AI you can deploy fast",
-      "description": "<p>We upgrade your data stack, business tools and AI use cases with dedicated experts. Deliver tailor-made solutions in weeks, keep costs under control, and bring every operational team on board.</p>",
+      "subtitle": "Copilots, automated workflows, and platforms integrated into your existing tools",
+      "description": "<p>We design and deploy AI copilots, workflow automation, and business platforms in weeks, connected to your data, SaaS tools, APIs, and operational constraints.</p>",
       "btn_brochure": "Download our brochure",
-      "btn_contact": "Contact us",
+      "btn_contact": "Diagnose your need in 30 min",
       "brochure_link": "https://docs.google.com/presentation/d/e/2PACX-1vTqoylpjD44uKvXaQVAsPAlGMXDLBP_cqpr7gnuj0S2qXDS07mXwww8rMfjU-nAeTyYgR6CRSICSj17/pub?start=false&loop=false&delayms=3000",
-      "title": "Business solutions augmented with data",
-      "status": "AI studio & business automation"
+      "title": "AI agents and business applications for critical processes",
+      "status": "AI studio & business automation",
+      "proof": "Already deployed for Stellantis, Samsung, Mastercard, BlaBlaCar, and AFD."
     },
     "fdti_section": {
       "subtitle": "Your data and tools as a starting point. Code and AI where they matter. Operations that run faster, smoother, and more reliably.",
@@ -26,12 +27,12 @@
       "title": "Our approach"
     },
     "technology_content": {
-      "title": "Technologies",
-      "subtitle": "Four main building blocks, with a compact level of technical detail for those who want to look under the hood.",
+      "title": "From idea to production system",
+      "subtitle": "We keep the stack focused on outcomes: clean integration, security, reliable data, and tools teams actually use.",
       "technology_category_list": [
         {
-          "title": "Web apps & APIs",
-          "description": "Business interfaces, back offices, portals, and robust APIs to integrate application logic and AI cleanly into your existing stack.",
+          "title": "Business applications",
+          "description": "Portals, back offices, dashboards, and internal interfaces designed around daily use, roles, permissions, and operational workflows.",
           "order": "1",
           "category_icon": {
             "filename_disk": "web-apps.svg",
@@ -102,8 +103,8 @@
           ]
         },
         {
-          "title": "Cloud & Infra",
-          "description": "Infrastructure, deployment, and security to run reliable, scalable, well-integrated systems.",
+          "title": "Systems integration & cloud",
+          "description": "APIs, SaaS tools, existing databases, authentication, monitoring, and cloud deployment to connect the solution without weakening what already works.",
           "order": "2",
           "category_icon": {
             "filename_disk": "cloud.svg",
@@ -174,8 +175,8 @@
           ]
         },
         {
-          "title": "Artificial intelligence",
-          "description": "Copilots, business assistants, augmented retrieval, agents, and workflow automation powered by language models.",
+          "title": "AI in production",
+          "description": "LLMs, RAG, agents, extraction, classification, and decision support with guardrails, traceability, and operational integration.",
           "order": "3",
           "category_icon": {
             "filename_disk": "ia-machine-learning.svg",
@@ -222,8 +223,8 @@
           ]
         },
         {
-          "title": "Data",
-          "description": "Data collection, structuring, modeling, and delivery: the foundation required to power workflows, dashboards, and useful AI systems.",
+          "title": "Data engineering",
+          "description": "Pipelines, warehouses, batch or real-time processing, and data quality to power workflows, dashboards, and useful AI systems.",
           "order": "4",
           "category_icon": {
             "filename_disk": "data-science.svg",
@@ -417,26 +418,19 @@
       ]
     },
     "contact_section": {
-      "btn_contact": "Contact us",
-      "subtitle": "Let's discuss your project together!",
+      "btn_contact": "Plan a diagnostic",
+      "subtitle": "Do you have a manual, document-heavy, or data-driven process to automate?",
+      "description": "In 30 minutes, we identify the use case, required data, integration constraints, and a first delivery path.",
       "address": "8 place Roger Salengro, 31000 Toulouse, France",
       "company": "FDTI Consulting",
       "mail": "info@fdti.eu",
       "title": "Contact"
     },
-    "CII": {
-      "description": "<p>We have been approved for the Innovation Tax Credit (CII) since 2020 and until 2024 by the Direction G&eacute;n&eacute;rale des Entreprises. This means that you can obtain a tax credit on 20% of the expenses incurred with us.</p>",
-      "image": {
-        "filename_disk": "image.png",
-        "url": "/images/cms/branding/image.png",
-        "id": "image.png"
-      }
-    },
     "meta_tags": {
       "page_tags": [
         {
-          "title": "FDTI | From Data To Insights",
-          "description": "FDTI is an AI studio building copilots, workflow automation, business applications, APIs, and data foundations integrated into your tools.",
+          "title": "FDTI | AI agents, workflow automation and business applications",
+          "description": "FDTI designs and deploys AI agents, automated workflows, business applications, APIs, and data foundations integrated into your existing tools.",
           "url": "/",
           "img": {
             "filename_disk": "fdti-from-data-to-insights.svg",

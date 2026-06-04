@@ -3,51 +3,51 @@
 
 	export let locale: string = 'fr';
 
-	$: title = locale === 'fr' ? 'Ce que nous construisons' : 'What we build';
+	$: title = locale === 'fr' ? 'Nos formats d’intervention' : 'How we engage';
 	$: subtitle =
 		locale === 'fr'
-			? 'Une expertise lisible, avec des formats d’intervention concrets pour vos équipes.'
-			: 'A clear expertise, with concrete delivery formats for your teams.';
+			? 'Trois portes d’entrée concrètes pour passer d’un problème métier à un système utilisable.'
+			: 'Three concrete entry points to move from a business problem to a usable system.';
 	$: items =
 		locale === 'fr'
 			? [
 					{
-						title: 'Copilotes IA',
+						title: 'Agent IA métier',
 						description:
-							'Recherche d’information, synthèse, aide à la décision, rédaction assistée, support opérationnel ou métier directement dans vos outils.',
-						points: ['LLM', 'RAG', 'agents', 'interfaces métier']
+							'Rechercher, résumer, extraire, qualifier ou assister une décision à partir de vos documents, données et outils internes.',
+						points: ['Cadrage rapide', 'Prototype en quelques semaines', 'Intégré à vos outils']
 					},
 					{
-						title: 'Automatisation de workflows',
+						title: 'Workflow automatisé',
 						description:
-							'Traitement documentaire, qualification, orchestration, reporting, alerting et coordination entre équipes, logiciels et données.',
-						points: ['workflows assistés', 'APIs', 'règles métier', 'automatisation']
+							'Supprimer les traitements manuels récurrents : contrôle, reporting, alerting, qualification et coordination entre équipes ou logiciels.',
+						points: ['Process cartographié', 'Automatisation opérable', 'APIs et règles métier']
 					},
 					{
-						title: 'Applications, bases de données & APIs métier',
+						title: 'Application métier augmentée',
 						description:
-							'Portails, back-offices, dashboards, bases de données, APIs sécurisées et outils internes pensés pour intégrer l’IA proprement dans l’existant.',
-						points: ['apps métier', 'bases de données', 'API sécurisée', 'intégration']
+							'Créer un portail, back-office, dashboard ou API qui met l’IA et la data au bon endroit dans vos opérations existantes.',
+						points: ['Interface métier', 'Droits et sécurité', 'Production et adoption']
 					}
 			  ]
 			: [
 					{
-						title: 'AI copilots for teams',
+						title: 'Business AI agent',
 						description:
-							'Information retrieval, summarization, decision support, assisted writing, and operational help embedded into your tools.',
-						points: ['LLM', 'RAG', 'agents', 'business interfaces']
+							'Search, summarize, extract, qualify, or support decisions using your documents, data, and internal tools.',
+						points: ['Fast scoping', 'Prototype in weeks', 'Embedded in your tools']
 					},
 					{
-						title: 'Workflow automation',
+						title: 'Automated workflow',
 						description:
-							'Document processing, qualification, orchestration, reporting, alerting, and coordination across teams, software, and data.',
-						points: ['assisted workflows', 'APIs', 'business rules', 'automation']
+							'Remove recurring manual work: checks, reporting, alerting, qualification, and coordination between teams or tools.',
+						points: ['Mapped process', 'Operable automation', 'APIs and business rules']
 					},
 					{
-						title: 'Business apps, databases & APIs',
+						title: 'AI-augmented business app',
 						description:
-							'Portals, back offices, dashboards, databases, secure APIs, and internal tools designed to integrate AI cleanly into existing systems.',
-						points: ['business apps', 'databases', 'secure API', 'integration']
+							'Build a portal, back office, dashboard, or API that puts AI and data where they matter in existing operations.',
+						points: ['Business interface', 'Rights and security', 'Production and adoption']
 					}
 			  ];
 </script>
@@ -63,7 +63,7 @@
 
 	<div class="grid gap-6 md:grid-cols-3 md:pt-10">
 		{#each items as item}
-			<article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+			<article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-yellow hover:shadow-xl">
 				<h4 class="text-xl font-bold text-darkGrey">{item.title}</h4>
 				<p class="mt-3 text-sm leading-relaxed text-darkGrey/80">{item.description}</p>
 				<div class="mt-5 flex flex-wrap gap-2">

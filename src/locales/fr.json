@@ -1,13 +1,14 @@
 {
   "GetHomePageContent": {
     "hero_section": {
-      "subtitle": "Copilotes, automatisations et applications métier intégrés à vos outils existants",
-      "description": "<p>Nous construisons des outils qui connectent vos données, vos SaaS et vos outils internes pour rendre vos opérations plus rapides, plus fiables et plus automatisées. L’IA n’est pas un gadget en plus : elle devient une brique centrale dans vos processus quotidiens.</p>",
+      "subtitle": "Copilotes, workflows automatisés et plateformes intégrés à vos outils existants",
+      "description": "<p>Nous concevons et déployons en quelques semaines des copilotes, automatisations et plateformes métier qui s’intègrent à vos données, vos SaaS, vos APIs et vos contraintes opérationnelles.</p>",
       "btn_brochure": "Téléchargez notre plaquette",
       "btn_contact": "Diagnostiquer votre besoin en 30 min",
       "brochure_link": "https://docs.google.com/presentation/d/e/2PACX-1vTxf7KCRA90Jm1rClbzRMZqB7wprtcUv30NwlpyT7RsxcGCKEQxW9HneEJBxo0Ml50srOHn18p5ECpD/pub?start=false&loop=false&delayms=3000",
-      "title": "IA, code et data au service de vos processus métiers",
-      "status": "Studio IA & automatisation métier"
+      "title": "Agents IA et applications métier pour processus critiques",
+      "status": "Studio IA & automatisation métier",
+      "proof": "Déjà déployé pour Stellantis, Samsung, Mastercard, BlaBlaCar et l’AFD."
     },
     "fdti_section": {
       "subtitle": "Vos données et vos outils comme point de départ. Du code et de l’IA là où ça compte. Des opérations plus fluides, plus fiables, plus automatisées.",
@@ -26,12 +27,12 @@
       "title": "Notre approche"
     },
     "technology_content": {
-      "title": "Technologies",
-      "subtitle": "Quatre briques techniques maîtrisées et composables, que nous assemblons selon les besoins de chaque projet.",
+      "title": "De l’idée au système en production",
+      "subtitle": "Nous gardons la stack au service du résultat : intégration propre, sécurité, données fiables et outils vraiment utilisés.",
       "technology_category_list": [
         {
-          "title": "Applications web & API",
-          "description": "Interfaces métier, back-offices, portails et APIs robustes pour intégrer proprement la logique applicative et l’IA dans votre existant.",
+          "title": "Applications métier",
+          "description": "Portails, back-offices, dashboards et interfaces internes pensés pour les usages quotidiens, avec les droits, rôles et parcours nécessaires.",
           "order": "1",
           "category_icon": {
             "filename_disk": "web-apps.svg",
@@ -102,8 +103,8 @@
           ]
         },
         {
-          "title": "Cloud & Infra",
-          "description": "Infrastructure, déploiement et sécurité pour faire tourner des systèmes fiables, évolutifs et bien intégrés.",
+          "title": "Intégration SI & cloud",
+          "description": "APIs, SaaS, bases existantes, authentification, monitoring et déploiement cloud pour brancher la solution sans fragiliser l’existant.",
           "order": "2",
           "category_icon": {
             "filename_disk": "cloud.svg",
@@ -174,8 +175,8 @@
           ]
         },
         {
-          "title": "Intelligence artificielle",
-          "description": "Copilotes, assistants métier, recherche augmentée, agents et automatisations propulsés par les modèles de langage.",
+          "title": "IA en production",
+          "description": "LLMs, RAG, agents, extraction, classification et aide à la décision avec garde-fous, traçabilité et intégration dans les opérations.",
           "order": "3",
           "category_icon": {
             "filename_disk": "ia-machine-learning.svg",
@@ -222,8 +223,8 @@
           ]
         },
         {
-          "title": "Data",
-          "description": "Collecte, structuration, modélisation et diffusion de la donnée : la base nécessaire pour alimenter des workflows, des dashboards et des systèmes IA utiles.",
+          "title": "Data engineering",
+          "description": "Pipelines, entrepôts, traitements batch ou temps réel et qualité de données pour alimenter les workflows, dashboards et systèmes IA.",
           "order": "4",
           "category_icon": {
             "filename_disk": "data-science.svg",
@@ -417,26 +418,19 @@
       ]
     },
     "contact_section": {
-      "btn_contact": "Planifier un échange",
-      "subtitle": "Discutons ensemble de votre projet !",
+      "btn_contact": "Planifier un diagnostic",
+      "subtitle": "Vous avez un processus manuel, documentaire ou data à automatiser ?",
+      "description": "En 30 minutes, on identifie le cas d’usage, les données nécessaires, les contraintes d’intégration et une première trajectoire de livraison.",
       "address": "8 place Roger Salengro, 31000 Toulouse, France",
       "company": "FDTI Consulting",
       "mail": "info@fdti.eu",
       "title": "Contact"
     },
-    "CII": {
-      "description": "<p>Nous sommes agr&eacute;&eacute;s Cr&eacute;dit d&rsquo;Imp&ocirc;t Innovation (CII) depuis 2020 et jusqu'en 2024 par la Direction G&eacute;n&eacute;rale des entreprises. Cela implique que vous pouvez obtenir un cr&eacute;dit d'imp&ocirc;t sur 20% des d&eacute;penses engag&eacute;es avec nous.</p>",
-      "image": {
-        "filename_disk": "image.png",
-        "url": "/images/cms/branding/image.png",
-        "id": "image.png"
-      }
-    },
     "meta_tags": {
       "page_tags": [
         {
-          "title": "FDTI | Studio IA & automatisation métier",
-          "description": "FDTI est un studio IA qui conçoit des copilotes, des automatisations de processus, des applications métier, des APIs et des bases de données intégrés à vos outils.",
+          "title": "FDTI | Agents IA, workflows automatisés et applications métier",
+          "description": "FDTI conçoit et déploie des agents IA, workflows automatisés, applications métier, APIs et fondations data intégrés à vos outils existants.",
           "url": "/",
           "img": {
             "filename_disk": "fdti-from-data-to-insights.svg",
@@ -596,7 +590,7 @@
   },
   "GetUseCasesContent": {
     "title": "Cas d'usage",
-    "subtitle": "Comment nous activons la data, l'IA et l'applicatif pour livrer de l'impact",
+    "subtitle": "Des problèmes déjà traités dans plusieurs environnements exigeants",
     "meta_tags": {
       "page_tags": [
         {

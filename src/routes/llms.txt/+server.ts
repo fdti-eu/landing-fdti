@@ -49,9 +49,6 @@ export async function GET() {
              output += `\n# TRUSTED BY\n${clients}\n`;
         }
         
-        if (home.CII) {
-             output += `\n# CERTIFICATION\n${home.CII.description?.replace(/<[^>]*>/g, ' ').trim()}\n`;
-        }
     }
 
     // 2. Use Cases (The most valuable part for LLMs to understand capabilities)

@@ -9,6 +9,7 @@
 				mail?: string | null;
 				translations?: never;
 				subtitle?: string | null;
+				description?: string | null;
 				btn_contact?: string | null;
 		  }
 		| null;
@@ -87,6 +88,9 @@
 				</div>
 				<div class="w-full flex-1 flex flex-col justify-center items-center gap-8 pt-5">
 					<h3 class="text-4xl text-center">{content.subtitle}</h3>
+					{#if content.description}
+						<p class="max-w-xl text-center text-lg text-darkGrey/80">{content.description}</p>
+					{/if}
 					<div class="flex flex-col gap-8 items-center">
 						<a
 							href="https://calendly.com/fdti/30min"

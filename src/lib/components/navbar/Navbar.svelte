@@ -45,7 +45,7 @@
 	class="{($page.url.pathname === '/' && windowY < windowHeight - 120) ||
 	($page.url.pathname === `/${$locale}` && windowY < windowHeight - 120)
 		? 'md:absolute transition-all duration-300'
-		: ''} fixed bg-darkGrey top-0 left-0 w-full p-4 z-50 xl:p-8"
+		: ''} fixed bg-darkGrey top-0 left-0 w-full p-4 z-50 xl:p-6"
 >
 	<div
 		class="{($page.url.pathname === '/' && windowY < windowHeight - 120 && windowY > 120) ||
@@ -114,7 +114,7 @@
 		<!-- Desktop Menu -->
 		<ul
 			bind:this={navListElement}
-			class="hidden md:flex md:p-0 relative whitespace-nowrap w-full gap-4 p-8 text-white text-base md:text-lg transition-all md:col-span-3 lg:col-span-2 lg:gap-8 xl:col-span-1"
+			class="hidden md:flex md:p-0 relative whitespace-nowrap w-full gap-3 p-8 text-white text-base transition-all md:col-span-3 lg:col-span-2 lg:gap-6 lg:text-lg xl:col-span-1"
 			on:mouseleave={handleMouseLeave}
 		>
 			<!-- Halo element -->
