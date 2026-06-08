@@ -6,9 +6,6 @@
 	import { fade } from 'svelte/transition';
 	import LdTag from '$lib/components/json-ld/LDTag.svelte';
 	import { schema } from '$lib/components/json-ld/json-ld';
-	import { locale } from 'svelte-i18n';
-	import { browser } from '$app/environment';
-	import { getDNAPageContent, type Lang } from '$lib/data';
 	import { absoluteImageUrl, buildLocalizedUrl } from '$lib/functions/seo';
 
 	export let data: PageData;

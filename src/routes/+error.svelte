@@ -4,7 +4,7 @@
 
 <section class="relative py-16 md:py-24 overflow-hidden">
 	<div class="max-w-screen-wrap mx-auto px-3 wrap:px-5">
-		<div class="flex flex-col gap-10 ">
+		<div class="flex flex-col gap-10">
 			<div
 				class="w-40 h-40 rounded-full bg-yellow/40 flex justify-center items-center mx-auto border-4 border-white p-5"
 			>
@@ -18,7 +18,7 @@
 				<img src="/images/sad-smile.svg" alt="sad smile" title="sad smile" class="w-16" />
 			</div>
 			<div class="flex justify-center my-2 relative h-4">
-				<span class="bg-yellow h-2 w-18  absolute top-1/2 -translate-y-1/2 z-10"></span>
+				<span class="bg-yellow h-2 w-18 absolute top-1/2 -translate-y-1/2 z-10"></span>
 				<span class="bg-black h-px absolute inset-x-0 top-1/2 -translate-y-1/2"></span>
 			</div>
 		</div>
@@ -32,7 +32,7 @@
 			<a
 				href="/"
 				type="submit"
-				class="inline-flex items-center justify-center px-8 py-2 border border-transparent text-base font-bold rounded-full text-white bg-darkGrey hover:bg-white hover:text-darkGrey hover:border-darkGrey transition-all ease-in-out duration-300 gap-4 "
+				class="inline-flex items-center justify-center px-8 py-2 border border-transparent text-base font-bold rounded-full text-white bg-darkGrey hover:bg-white hover:text-darkGrey hover:border-darkGrey transition-all ease-in-out duration-300 gap-4"
 				><span>{$locale === 'en' ? 'Back to home' : "Retour à la page d'accueil"}</span><svg
 					class="w-4"
 					viewBox="0 0 13 12"

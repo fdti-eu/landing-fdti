@@ -1,12 +1,17 @@
 <script lang="ts">
 	import '../app.css';
 	import '$lib/i18n';
-	import { isLoading, _, locale } from 'svelte-i18n';
+	import { isLoading, locale } from 'svelte-i18n';
 	import Footer from './Footer.svelte';
 	import Navbar from '$lib/components/navbar/Navbar.svelte';
 	import { page } from '$app/stores';
 	import { onNavigate } from '$app/navigation';
-	import { buildAbsoluteUrl, buildLocalizedUrl, resolveLocaleFromPath, stripLocaleFromPath } from '$lib/functions/seo';
+	import {
+		buildAbsoluteUrl,
+		buildLocalizedUrl,
+		resolveLocaleFromPath,
+		stripLocaleFromPath
+	} from '$lib/functions/seo';
 
 	$: detectedLocale = resolveLocaleFromPath($page.url.pathname);
 	$: if ($locale !== detectedLocale) {
@@ -39,7 +44,7 @@
 </svelte:head>
 
 {#if !$isLoading}
-	<div class="min-h-screen flex flex-col font-quattrocento ">
+	<div class="min-h-screen flex flex-col font-quattrocento">
 		<Navbar />
 		<main class="flex-1">
 			<slot />
@@ -47,4 +52,3 @@
 		<Footer />
 	</div>
 {/if}
-

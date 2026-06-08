@@ -13,7 +13,7 @@
 
 	async function handleChangeLocale(code: 'fr' | 'en') {
 		$locale = code;
-		const link = $page.url.pathname.replace(/^\/[^\/]*/, '/' + code);
+		const link = $page.url.pathname.replace(/^\/[^/]*/, '/' + code);
 		isDropdownOpen = false;
 		await goto(link);
 		await invalidate('app:locale');
@@ -42,7 +42,9 @@
 		</svg>
 	</button>
 	{#if isDropdownOpen}
-		<ul class="absolute top-full right-0 mt-2 p-2 gap-1 bg-white rounded-lg shadow-xl min-w-[120px] z-50">
+		<ul
+			class="absolute top-full right-0 mt-2 p-2 gap-1 bg-white rounded-lg shadow-xl min-w-[120px] z-50"
+		>
 			{#each FLAGS as { code }}
 				<li class="border-b border-darkGrey/10 last:border-none">
 					<button

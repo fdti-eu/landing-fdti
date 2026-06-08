@@ -13,7 +13,11 @@
 
 	beforeNavigate((nav) => {
 		// Si on quitte la page liste pour aller vers un use case
-		if (browser && nav.to?.route.id?.includes('[slug]') && !nav.from?.route.id?.includes('[slug]')) {
+		if (
+			browser &&
+			nav.to?.route.id?.includes('[slug]') &&
+			!nav.from?.route.id?.includes('[slug]')
+		) {
 			scrollPosition = window.scrollY;
 			// Extraire le slug de l'URL
 			const slug = nav.to.url.pathname.split('/').pop();
@@ -25,7 +29,11 @@
 
 	afterNavigate((nav) => {
 		// Restaurer le scroll uniquement si on revient à la liste depuis un use case
-		if (browser && nav.from?.route.id?.includes('[slug]') && !nav.to?.route.id?.includes('[slug]')) {
+		if (
+			browser &&
+			nav.from?.route.id?.includes('[slug]') &&
+			!nav.to?.route.id?.includes('[slug]')
+		) {
 			// Restaurer immédiatement le scroll (avant la view transition visuelle)
 			window.scrollTo(0, scrollPosition);
 

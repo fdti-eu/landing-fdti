@@ -19,13 +19,18 @@
 </script>
 
 {#if useCases?.length}
-	<section class="relative max-w-6xl space-y-8 mx-auto px-2 md:px-12 py-16 md:py-24" id="use-cases-preview">
+	<section
+		class="relative max-w-6xl space-y-8 mx-auto px-2 md:px-12 py-16 md:py-24"
+		id="use-cases-preview"
+	>
 		<div class="group">
 			<h2 class="text-3xl font-bold text-center md:text-4xl">{title}</h2>
 			<Underline />
 		</div>
 		{#if subtitle}
-			<h3 class="text-xl font-bold text-center sm:text-2xl md:text-3xl lg:text-4xl max-w-4xl mx-auto">
+			<h3
+				class="text-xl font-bold text-center sm:text-2xl md:text-3xl lg:text-4xl max-w-4xl mx-auto"
+			>
 				{subtitle}
 			</h3>
 		{/if}
@@ -36,11 +41,17 @@
 					href={`/${locale}/cas-d-usage/${useCase.slug}`}
 					class="group block rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-yellow hover:shadow-xl"
 				>
-					<p class="text-xs font-bold uppercase tracking-[0.18em] text-darkGrey/60">{useCase.category}</p>
-					<h4 class="mt-3 text-xl font-bold text-darkGrey group-hover:text-yellow transition-colors">
+					<p class="text-xs font-bold uppercase tracking-[0.18em] text-darkGrey/60">
+						{useCase.category}
+					</p>
+					<h4
+						class="mt-3 text-xl font-bold text-darkGrey group-hover:text-yellow transition-colors"
+					>
 						{useCase.title}
 					</h4>
-					<p class="mt-3 text-sm leading-relaxed text-darkGrey/80 line-clamp-4">{useCase.impact || useCase.challenge}</p>
+					<p class="mt-3 text-sm leading-relaxed text-darkGrey/80 line-clamp-4">
+						{useCase.impact || useCase.challenge}
+					</p>
 
 					{#if useCase.metrics?.length}
 						<div class="mt-5 grid grid-cols-2 gap-3">

@@ -95,7 +95,12 @@ function collectAssets(node, parents = [], pathStack = []) {
 			if (filename && !assetMap.has(filename)) {
 				const extension = filename.split('.').pop();
 				const propName = pathStack[pathStack.length - 1];
-				const label = deriveLabel(node, parents, pathStack, typeof propName === 'string' ? propName : '');
+				const label = deriveLabel(
+					node,
+					parents,
+					pathStack,
+					typeof propName === 'string' ? propName : ''
+				);
 				registerAsset(filename, label, extension);
 			}
 		}
@@ -153,4 +158,3 @@ fs.writeFileSync(FR_LOCALE_PATH, JSON.stringify(frLocale, null, 2));
 fs.writeFileSync(ASSET_MAP_PATH, JSON.stringify(Object.fromEntries(assetMap), null, 2));
 
 console.log(`Renamed ${assetMap.size} assets and updated locale files.`);
-

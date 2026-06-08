@@ -10,8 +10,8 @@
 	--color-grey-2: #242930;
 	--color-light-grey: #e6e6e9;
 	--shadow-4: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    
-    /* Legacy aliases to be removed after refactoring */
+
+	/* Legacy aliases to be removed after refactoring */
 	--color-darkGrey: #1d2024;
 	--color-darkGrey-1: #555555;
 	--color-darkGrey-2: #bbbcbd;
@@ -65,45 +65,20 @@
 		animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 	}
 
-	/* Effet de fondu croisé pour le titre */
-	::view-transition-old([style*="title-"]),
-	::view-transition-new([style*="title-"]) {
-		animation-duration: 0.3s;
-		mix-blend-mode: normal;
-	}
-
-	/* Transition fluide pour les métriques */
-	::view-transition-old([style*="metrics-"]),
-	::view-transition-new([style*="metrics-"]) {
-		animation-duration: 0.4s;
-	}
-
-	/* Transition pour la catégorie */
-	::view-transition-old([style*="category-"]),
-	::view-transition-new([style*="category-"]) {
-		animation-duration: 0.35s;
-	}
-
-	/* Transition pour les tags */
-	::view-transition-old([style*="tags-"]),
-	::view-transition-new([style*="tags-"]) {
-		animation-duration: 0.4s;
-	}
-
 	/* Garder la navbar stable pendant les transitions */
 	/* nav {
 		view-transition-name: none;
 	} */
 
-    /* Assurer que la navbar (si elle a view-transition-name: navbar) reste au-dessus pendant les transitions */
-    ::view-transition-group(navbar) {
-        z-index: 100;
-    }
+	/* Assurer que la navbar (si elle a view-transition-name: navbar) reste au-dessus pendant les transitions */
+	::view-transition-group(navbar) {
+		z-index: 100;
+	}
 
-    /* Quand on quitte la section Use Cases vers ailleurs, on désactive explicitement les view-transition-names des cartes */
-    html.disable-card-transitions [style*="view-transition-name"] {
-        view-transition-name: none !important;
-    }
+	/* Quand on quitte la section Use Cases vers ailleurs, on désactive explicitement les view-transition-names des cartes */
+	html.disable-card-transitions [style*='view-transition-name'] {
+		view-transition-name: none !important;
+	}
 
 	/* Animation de highlight pour la carte visitée */
 	@keyframes highlight-ring {
@@ -129,20 +104,20 @@
 	}
 }
 
-
 @font-face {
 	font-family: 'Quattrocento Sans';
-	src: local('Quattrocento Sans'), local('Quattrocento-Sans'), local('quattrocento sans'), local('quattrocento-sans'),
-		url('/fonts/quattrocento_sans/QuattrocentoSans-Regular.ttf');
+	src:
+		local('Quattrocento Sans'), local('Quattrocento-Sans'), local('quattrocento sans'),
+		local('quattrocento-sans'), url('/fonts/quattrocento_sans/QuattrocentoSans-Regular.ttf');
 	font-weight: normal;
 	font-display: swap;
 }
 
 @font-face {
 	font-family: 'Quattrocento Sans';
-	src: local('Quattrocento Sans'), local('Quattrocento-Sans'), local('quattrocento sans'), local('quattrocento-sans'),
-		url('/fonts/quattrocento_sans/QuattrocentoSans-Bold.ttf');
+	src:
+		local('Quattrocento Sans'), local('Quattrocento-Sans'), local('quattrocento sans'),
+		local('quattrocento-sans'), url('/fonts/quattrocento_sans/QuattrocentoSans-Bold.ttf');
 	font-weight: bold;
 	font-display: swap;
 }
-

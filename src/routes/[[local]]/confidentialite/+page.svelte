@@ -2,9 +2,6 @@
 	import Underline from '$lib/components/Underline.svelte';
 	import { fade } from 'svelte/transition';
 	import type { PageData } from './$types';
-	import { locale } from 'svelte-i18n';
-	import { browser } from '$app/environment';
-	import { getPrivacyContent, type Lang } from '$lib/data';
 	import { MetaTags } from 'svelte-meta-tags';
 	import LdTag from '$lib/components/json-ld/LDTag.svelte';
 	import { schema } from '$lib/components/json-ld/json-ld';

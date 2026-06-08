@@ -1,6 +1,7 @@
 # Fichiers à modifier manuellement
 
 ## Pages à corriger
+
 Envelopper le h1/h2 + Underline dans un `<div class="group">` et retirer `group` de la section parente :
 
 1. ✅ src/routes/[[local]]/approche-fdti/+page.svelte

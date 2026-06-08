@@ -1,20 +1,16 @@
 <script lang="ts">
 	import Underline from '$lib/components/Underline.svelte';
 
-	export let content:
-		| {
-				status?: string | null;
-				title?: string | null;
-				company_list?: { name?: string | null; img?: { url?: string | null } | null }[];
-		  }
-		| null;
-	export let cii:
-		| {
-				status?: string | null;
-				description?: string | null;
-				image?: { url?: string | null } | null;
-		  }
-		| null = null;
+	export let content: {
+		status?: string | null;
+		title?: string | null;
+		company_list?: { name?: string | null; img?: { url?: string | null } | null }[];
+	} | null;
+	export let cii: {
+		status?: string | null;
+		description?: string | null;
+		image?: { url?: string | null } | null;
+	} | null = null;
 </script>
 
 {#if content}
@@ -35,7 +31,9 @@
 									src={company?.img?.url || '/logo.webp'}
 									alt={company?.name || 'Company logo'}
 									title={company?.name || 'Company logo'}
-									class="logo-img {['Mastercard', 'Galloo', 'SNAM'].includes(company?.name || '') ? 'logo-small' : ''} object-contain grayscale hover:grayscale-0 transition-all duration-300"
+									class="logo-img {['Mastercard', 'Galloo', 'SNAM'].includes(company?.name || '')
+										? 'logo-small'
+										: ''} object-contain grayscale hover:grayscale-0 transition-all duration-300"
 								/>
 							</div>
 						{/each}
@@ -47,7 +45,9 @@
 									src={company?.img?.url || '/logo.webp'}
 									alt={company?.name || 'Company logo'}
 									title={company?.name || 'Company logo'}
-									class="logo-img {['Mastercard', 'Galloo', 'SNAM'].includes(company?.name || '') ? 'logo-small' : ''} object-contain grayscale hover:grayscale-0 transition-all duration-300"
+									class="logo-img {['Mastercard', 'Galloo', 'SNAM'].includes(company?.name || '')
+										? 'logo-small'
+										: ''} object-contain grayscale hover:grayscale-0 transition-all duration-300"
 								/>
 							</div>
 						{/each}
@@ -58,7 +58,13 @@
 				<p class="text-center text-sm">{@html cii.description || ''}</p>
 
 				<figure class="w-fit mx-auto">
-					<img src={cii?.image?.url || '/logo.webp'} alt="CII" title="CII" width="150" height="100" />
+					<img
+						src={cii?.image?.url || '/logo.webp'}
+						alt="CII"
+						title="CII"
+						width="150"
+						height="100"
+					/>
 				</figure>
 			{/if}
 		{/if}

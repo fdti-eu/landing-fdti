@@ -1,17 +1,15 @@
 <script lang="ts">
 	import Underline from '$lib/components/Underline.svelte';
 
-	export let content:
-		| {
-				status?: string | null;
-				title?: string | null;
-				address?: string | null;
-				mail?: string | null;
-				translations?: never;
-				subtitle?: string | null;
-				btn_contact?: string | null;
-		  }
-		| null;
+	export let content: {
+		status?: string | null;
+		title?: string | null;
+		address?: string | null;
+		mail?: string | null;
+		translations?: never;
+		subtitle?: string | null;
+		btn_contact?: string | null;
+	} | null;
 </script>
 
 {#if content}
@@ -29,7 +27,7 @@
 					class="flex flex-col items-center gap-8 sm:grid sm:grid-cols-5 sm:items-start sm:gap-2"
 				>
 					<figure
-						class="flex overflow-hidden w-20 h-20 justify-center items-center rounded-full bg-grey-2 border border-yellow "
+						class="flex overflow-hidden w-20 h-20 justify-center items-center rounded-full bg-grey-2 border border-yellow"
 					>
 						<img
 							class="w-14"

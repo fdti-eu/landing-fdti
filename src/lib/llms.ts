@@ -1,8 +1,14 @@
 import enLocale from '$locales/en.json';
 import frLocale from '$locales/fr.json';
+import type { LocaleData } from '$lib/data';
 
 function stripHtml(content?: string): string {
-	return content?.replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim() || '';
+	return (
+		content
+			?.replace(/<[^>]*>/g, ' ')
+			.replace(/\s+/g, ' ')
+			.trim() || ''
+	);
 }
 
 function formatSection(title: string, content?: string): string {
@@ -11,13 +17,14 @@ function formatSection(title: string, content?: string): string {
 	return `\n## ${title}\n${cleanContent}\n`;
 }
 
-function buildLanguageSection(locale: string, data: any): string {
+function buildLanguageSection(locale: string, data: LocaleData): string {
 	const home = data.GetHomePageContent;
 	let output = `\n# ${locale.toUpperCase()}\n`;
 
 	if (home) {
-		const seoTitle = home.meta?.title || home.hero_section?.title || 'FDTI';
-		const seoDescription = home.meta?.description || stripHtml(home.hero_section?.description);
+		const meta = home.meta_tags?.page_tags?.[0];
+		const seoTitle = meta?.title || home.hero_section?.title || 'FDTI';
+		const seoDescription = meta?.description || stripHtml(home.hero_section?.description);
 
 		output += `\n# ${seoTitle}\n\n`;
 		if (seoDescription) output += `${seoDescription}\n`;
@@ -36,17 +43,17 @@ function buildLanguageSection(locale: string, data: any): string {
 
 		if (home.technology_content?.technology_category_list) {
 			output += '\n# EXPERTISE & TECHNOLOGIES\n';
-			home.technology_content.technology_category_list.forEach((cat: any) => {
+			home.technology_content.technology_category_list.forEach((cat) => {
 				output += `\n### ${cat.title}\n${cat.description || ''}\n`;
 				if (cat.technology_list) {
-					const techs = cat.technology_list.map((t: any) => t.name).join(', ');
+					const techs = cat.technology_list.map((t) => t.name).join(', ');
 					output += `Tools: ${techs}\n`;
 				}
 			});
 		}
 
 		if (home.trust_content?.company_list) {
-			const clients = home.trust_content.company_list.map((c: any) => c.name).join(', ');
+			const clients = home.trust_content.company_list.map((c) => c.name).join(', ');
 			output += `\n# TRUSTED BY\n${clients}\n`;
 		}
 
@@ -59,7 +66,7 @@ function buildLanguageSection(locale: string, data: any): string {
 	if (useCases?.use_case_list) {
 		output += '\n# USE CASES & SUCCESS STORIES\n';
 		output += useCases.use_case_list
-			.map((uc: any) => {
+			.map((uc) => {
 				let ucText = `\n## ${uc.title} (${uc.category})\n`;
 				ucText += `Context: ${uc.location} | ${uc.date}\n`;
 				ucText += `Challenge: ${uc.challenge}\n`;
@@ -67,7 +74,7 @@ function buildLanguageSection(locale: string, data: any): string {
 				ucText += `Impact: ${uc.impact}\n`;
 
 				if (uc.metrics) {
-					ucText += `Key Metrics: ${uc.metrics.map((m: any) => `${m.label}: ${m.value}`).join(', ')}\n`;
+					ucText += `Key Metrics: ${uc.metrics.map((m) => `${m.label}: ${m.value}`).join(', ')}\n`;
 				}
 				if (uc.tags) {
 					ucText += `Stack: ${uc.tags.join(', ')}\n`;
@@ -85,9 +92,7 @@ function buildLanguageSection(locale: string, data: any): string {
 		output += '\n# COMPANY VALUES (DNA)\n';
 		output += `${stripHtml(dna.description)}\n`;
 		if (dna.card_list) {
-			output += dna.card_list
-				.map((v: any) => `- ${v.title}: ${stripHtml(v.description)}`)
-				.join('\n');
+			output += dna.card_list.map((v) => `- ${v.title}: ${stripHtml(v.description)}`).join('\n');
 		}
 	}
 

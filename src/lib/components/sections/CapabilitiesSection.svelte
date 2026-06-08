@@ -29,7 +29,7 @@
 							'Portails, back-offices, dashboards, bases de données, APIs sécurisées et outils internes pensés pour intégrer l’IA proprement dans l’existant.',
 						points: ['apps métier', 'bases de données', 'API sécurisée', 'intégration']
 					}
-			  ]
+				]
 			: [
 					{
 						title: 'AI copilots for teams',
@@ -49,10 +49,13 @@
 							'Portals, back offices, dashboards, databases, secure APIs, and internal tools designed to integrate AI cleanly into existing systems.',
 						points: ['business apps', 'databases', 'secure API', 'integration']
 					}
-			  ];
+				];
 </script>
 
-<section class="relative max-w-6xl space-y-8 mx-auto px-2 md:px-12 py-16 md:py-24" id="capabilities">
+<section
+	class="relative max-w-6xl space-y-8 mx-auto px-2 md:px-12 py-16 md:py-24"
+	id="capabilities"
+>
 	<div class="group">
 		<h2 class="text-3xl font-bold text-center md:text-4xl">{title}</h2>
 		<Underline />
@@ -68,7 +71,9 @@
 				<p class="mt-3 text-sm leading-relaxed text-darkGrey/80">{item.description}</p>
 				<div class="mt-5 flex flex-wrap gap-2">
 					{#each item.points as point}
-						<span class="rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-darkGrey">{point}</span>
+						<span class="rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-darkGrey"
+							>{point}</span
+						>
 					{/each}
 				</div>
 			</article>

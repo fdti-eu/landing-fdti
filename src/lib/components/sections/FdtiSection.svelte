@@ -1,24 +1,24 @@
 <script lang="ts">
-	import Button from '$lib/components/Button.svelte';
 	import Underline from '$lib/components/Underline.svelte';
 
-	export let content:
-		| {
-				status?: string | null;
-				title?: string | null;
-				subtitle?: string | null;
-				icon_1?: { url?: string | null } | null;
-				content_1?: string | null;
-				icon_2?: { url?: string | null } | null;
-				content_2?: string | null;
-				btn_label?: string | null;
-				btn_name?: string | null;
-		  }
-		| null;
+	export let content: {
+		status?: string | null;
+		title?: string | null;
+		subtitle?: string | null;
+		icon_1?: { url?: string | null } | null;
+		content_1?: string | null;
+		icon_2?: { url?: string | null } | null;
+		content_2?: string | null;
+		btn_label?: string | null;
+		btn_name?: string | null;
+	} | null;
 </script>
 
 {#if content}
-	<section class="relative max-w-5xl space-y-8 mx-auto mt-16 md:mt-20 lg:mt-24 md:px-12 py-16 md:py-24" id="fdti">
+	<section
+		class="relative max-w-5xl space-y-8 mx-auto mt-16 md:mt-20 lg:mt-24 md:px-12 py-16 md:py-24"
+		id="fdti"
+	>
 		<div class="group">
 			<h2 class="text-3xl font-bold text-center md:text-4xl">{content.title}</h2>
 			<Underline />

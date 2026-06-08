@@ -1,911 +1,876 @@
 {
-  "GetHomePageContent": {
-    "hero_section": {
-      "subtitle": "Copilotes, automatisations et applications métier intégrés à vos outils existants",
-      "description": "<p>Nous construisons des outils qui connectent vos données, vos SaaS et vos outils internes pour rendre vos opérations plus rapides, plus fiables et plus automatisées. L’IA n’est pas un gadget en plus : elle devient une brique centrale dans vos processus quotidiens.</p>",
-      "btn_brochure": "Téléchargez notre plaquette",
-      "btn_contact": "Diagnostiquer votre besoin en 30 min",
-      "brochure_link": "https://docs.google.com/presentation/d/e/2PACX-1vTxf7KCRA90Jm1rClbzRMZqB7wprtcUv30NwlpyT7RsxcGCKEQxW9HneEJBxo0Ml50srOHn18p5ECpD/pub?start=false&loop=false&delayms=3000",
-      "title": "IA, code et data au service de vos processus métiers",
-      "status": "Studio IA & automatisation métier"
-    },
-    "fdti_section": {
-      "subtitle": "Vos données et vos outils comme point de départ. Du code et de l’IA là où ça compte. Des opérations plus fluides, plus fiables, plus automatisées.",
-      "icon_1": {
-        "filename_disk": "from-data-to-insight.svg",
-        "url": "/images/cms/branding/from-data-to-insight.svg",
-        "id": "from-data-to-insight.svg"
-      },
-      "content_1": "<p><strong>Nous partons du travail réel de vos équipes</strong> : documents à traiter, informations à retrouver, décisions à préparer, coordinations à fluidifier, tâches à automatiser.</p><ul><li><strong>Identifier</strong> les étapes où l’IA apporte un gain concret</li><li><strong>Brancher</strong> les bonnes sources : bases, SaaS, fichiers, APIs, outils internes</li><li><strong>Concevoir</strong> un système robuste, sécurisé et exploitable au quotidien</li></ul>",
-      "icon_2": {
-        "filename_disk": "from-data-to-insight-1.svg",
-        "url": "/images/cms/branding/from-data-to-insight-1.svg",
-        "id": "from-data-to-insight-1.svg"
-      },
-      "content_2": "<p><strong>Nous livrons le bon niveau de solution</strong> selon le besoin : un copilote, un workflow assisté, une API, un back-office ou une application métier complète.</p><ul><li><strong>Copilotes IA</strong> : recherche, synthèse, aide à la décision, rédaction assistée</li><li><strong>Automatisation de processus</strong> : traitement documentaire, qualification, coordination, alerting, reporting</li><li><strong>Applications métier</strong> : portails, dashboards, back-offices, APIs sécurisées et outils internes</li></ul>",
-      "title": "Notre approche"
-    },
-    "technology_content": {
-      "title": "Technologies",
-      "subtitle": "Quatre briques techniques maîtrisées et composables, que nous assemblons selon les besoins de chaque projet.",
-      "technology_category_list": [
-        {
-          "title": "Applications web & API",
-          "description": "Interfaces métier, back-offices, portails et APIs robustes pour intégrer proprement la logique applicative et l’IA dans votre existant.",
-          "order": "1",
-          "category_icon": {
-            "filename_disk": "web-apps.svg",
-            "url": "/images/cms/technologies/web-apps.svg",
-            "id": "web-apps.svg"
-          },
-          "technology_list": [
-            {
-              "id": "35",
-              "name": "TypeScript",
-              "img": {
-                "filename_disk": "typescript.webp",
-                "url": "/images/cms/technologies/typescript.webp",
-                "id": "typescript.webp",
-                "width": 96,
-                "height": 36
-              },
-              "url": "https://www.typescriptlang.org/"
-            },
-            {
-              "id": "36",
-              "name": "React",
-              "img": {
-                "filename_disk": "react.webp",
-                "url": "/images/cms/technologies/react.webp",
-                "id": "react.webp",
-                "width": 96,
-                "height": 36
-              },
-              "url": "https://react.dev/"
-            },
-            {
-              "id": "37",
-              "name": "Svelte",
-              "img": {
-                "filename_disk": "svelte.webp",
-                "url": "/images/cms/technologies/svelte.webp",
-                "id": "svelte.webp",
-                "width": 96,
-                "height": 36
-              },
-              "url": "https://svelte.dev/"
-            },
-            {
-              "id": "38",
-              "name": "REST API",
-              "img": {
-                "filename_disk": "rest-api.webp",
-                "url": "/images/cms/technologies/rest-api.webp",
-                "id": "rest-api.webp",
-                "width": 96,
-                "height": 36
-              },
-              "url": "https://restfulapi.net/"
-            },
-            {
-              "id": "39",
-              "name": "GraphQL",
-              "img": {
-                "filename_disk": "graphql.webp",
-                "url": "/images/cms/technologies/graphql.webp",
-                "id": "graphql.webp",
-                "width": 96,
-                "height": 36
-              },
-              "url": "https://graphql.org/"
-            }
-          ]
-        },
-        {
-          "title": "Cloud & Infra",
-          "description": "Infrastructure, déploiement et sécurité pour faire tourner des systèmes fiables, évolutifs et bien intégrés.",
-          "order": "2",
-          "category_icon": {
-            "filename_disk": "cloud.svg",
-            "url": "/images/cms/technologies/cloud.svg",
-            "id": "cloud.svg"
-          },
-          "technology_list": [
-            {
-              "id": "12",
-              "name": "AWS",
-              "img": {
-                "filename_disk": "aws.webp",
-                "url": "/images/cms/technologies/aws.webp",
-                "id": "aws.webp",
-                "width": 180,
-                "height": 72
-              },
-              "url": "https://aws.amazon.com/fr/"
-            },
-            {
-              "id": "13",
-              "name": "Azure",
-              "img": {
-                "filename_disk": "azure.webp",
-                "url": "/images/cms/technologies/azure.webp",
-                "id": "azure.webp",
-                "width": 180,
-                "height": 72
-              },
-              "url": "https://azure.microsoft.com/fr-fr/"
-            },
-            {
-              "id": "14",
-              "name": "google cloud",
-              "img": {
-                "filename_disk": "google-cloud.webp",
-                "url": "/images/cms/technologies/google-cloud.webp",
-                "id": "google-cloud.webp",
-                "width": 180,
-                "height": 72
-              },
-              "url": "https://cloud.google.com/"
-            },
-            {
-              "id": "16",
-              "name": "docker",
-              "img": {
-                "filename_disk": "docker.webp",
-                "url": "/images/cms/technologies/docker.webp",
-                "id": "docker.webp",
-                "width": 180,
-                "height": 72
-              },
-              "url": "https://www.docker.com/"
-            },
-            {
-              "id": "15",
-              "name": "terraform",
-              "img": {
-                "filename_disk": "terraform.webp",
-                "url": "/images/cms/technologies/terraform.webp",
-                "id": "terraform.webp",
-                "width": 180,
-                "height": 72
-              },
-              "url": "https://www.terraform.io/"
-            }
-          ]
-        },
-        {
-          "title": "Intelligence artificielle",
-          "description": "Copilotes, assistants métier, recherche augmentée, agents et automatisations propulsés par les modèles de langage.",
-          "order": "3",
-          "category_icon": {
-            "filename_disk": "ia-machine-learning.svg",
-            "url": "/images/cms/technologies/ia-machine-learning.svg",
-            "id": "ia-machine-learning.svg"
-          },
-          "technology_list": [
-            {
-              "id": "29",
-              "name": "Open AI",
-              "img": {
-                "filename_disk": "open-ai.webp",
-                "url": "/images/cms/technologies/open-ai.webp",
-                "id": "open-ai.webp",
-                "width": 180,
-                "height": 72
-              },
-              "url": "https://openai.com/"
-            },
-            {
-              "id": "11",
-              "name": "hugging face",
-              "img": {
-                "filename_disk": "hugging-face.webp",
-                "url": "/images/cms/technologies/hugging-face.webp",
-                "id": "hugging-face.webp",
-                "width": 180,
-                "height": 72
-              },
-              "url": "https://huggingface.co/"
-            },
-            {
-              "id": "6",
-              "name": "pytorch",
-              "img": {
-                "filename_disk": "pytorch.webp",
-                "url": "/images/cms/technologies/pytorch.webp",
-                "id": "pytorch.webp",
-                "width": 180,
-                "height": 72
-              },
-              "url": "https://pytorch.org/"
-            }
-          ]
-        },
-        {
-          "title": "Data",
-          "description": "Collecte, structuration, modélisation et diffusion de la donnée : la base nécessaire pour alimenter des workflows, des dashboards et des systèmes IA utiles.",
-          "order": "4",
-          "category_icon": {
-            "filename_disk": "data-science.svg",
-            "url": "/images/cms/technologies/data-science.svg",
-            "id": "data-science.svg"
-          },
-          "technology_list": [
-            {
-              "id": "26",
-              "name": "Python",
-              "img": {
-                "filename_disk": "python.webp",
-                "url": "/images/cms/technologies/python.webp",
-                "id": "python.webp",
-                "width": 170,
-                "height": 64
-              },
-              "url": "https://www.python.org/"
-            },
-            {
-              "id": "30",
-              "name": "DuckDB",
-              "img": {
-                "filename_disk": "duckdb.webp",
-                "url": "/images/cms/technologies/duckdb.webp",
-                "id": "duckdb.webp",
-                "width": 170,
-                "height": 64
-              },
-              "url": "https://duckdb.org/"
-            },
-            {
-              "id": "32",
-              "name": "DBT",
-              "img": {
-                "filename_disk": "dbt.webp",
-                "url": "/images/cms/technologies/dbt.webp",
-                "id": "dbt.webp",
-                "width": 180,
-                "height": 72
-              },
-              "url": "https://www.getdbt.com/"
-            },
-            {
-              "id": "17",
-              "name": "Bigquery",
-              "img": {
-                "filename_disk": "bigquery.webp",
-                "url": "/images/cms/technologies/bigquery.webp",
-                "id": "bigquery.webp",
-                "width": 220,
-                "height": 88
-              },
-              "url": "https://cloud.google.com/bigquery/"
-            },
-            {
-              "id": "19",
-              "name": "Snowflake",
-              "img": {
-                "filename_disk": "snowflake.webp",
-                "url": "/images/cms/technologies/snowflake.webp",
-                "id": "snowflake.webp",
-                "width": 220,
-                "height": 88
-              },
-              "url": "https://www.snowflake.com/fr/"
-            },
-            {
-              "id": "31",
-              "name": "Airflow",
-              "img": {
-                "filename_disk": "airflow.webp",
-                "url": "/images/cms/technologies/airflow.webp",
-                "id": "airflow.webp",
-                "width": 180,
-                "height": 72
-              },
-              "url": "https://airflow.apache.org/"
-            }
-          ]
-        }
-      ]
-    },
-    "trust_content": {
-      "title": "Ils nous confient des sujets critiques",
-      "company_list": [
-        {
-          "name": "Samsung",
-          "img": {
-            "filename_disk": "samsung.webp",
-            "url": "/images/cms/companies/samsung.webp",
-            "id": "samsung.webp"
-          }
-        },
-        {
-          "name": "Cognac",
-          "img": {
-            "filename_disk": "cognac.webp",
-            "url": "/images/cms/companies/cognac.webp",
-            "id": "cognac.webp"
-          }
-        },
-        {
-          "name": "Mastercard",
-          "img": {
-            "filename_disk": "mastercard.webp",
-            "url": "/images/cms/companies/mastercard.webp",
-            "id": "mastercard.webp"
-          }
-        },
-        {
-          "name": "Euro-CRM",
-          "img": {
-            "filename_disk": "euro-crm.webp",
-            "url": "/images/cms/companies/euro-crm.webp",
-            "id": "euro-crm.webp"
-          }
-        },
-        {
-          "name": "Stellantis",
-          "img": {
-            "filename_disk": "stellantis.webp",
-            "url": "/images/cms/companies/stellantis.webp",
-            "id": "stellantis.webp"
-          }
-        },
-        {
-          "name": "Galloo",
-          "img": {
-            "filename_disk": "galloo.webp",
-            "url": "/images/cms/companies/galloo.webp",
-            "id": "galloo.webp"
-          }
-        },
-        {
-          "name": "Agence Française de Développement",
-          "img": {
-            "filename_disk": "agence-francaise-de-developpement.webp",
-            "url": "/images/cms/companies/agence-francaise-de-developpement.webp",
-            "id": "agence-francaise-de-developpement.webp"
-          }
-        },
-        {
-          "name": "SNAM",
-          "img": {
-            "filename_disk": "snam.webp",
-            "url": "/images/cms/companies/snam.webp",
-            "id": "snam.webp"
-          }
-        },
-        {
-          "name": "AIMVP",
-          "img": {
-            "filename_disk": "aimvp.webp",
-            "url": "/images/cms/companies/aimvp.webp",
-            "id": "aimvp.webp"
-          }
-        },
-        {
-          "name": "BlaBlaCar",
-          "img": {
-            "filename_disk": "blablacar.webp",
-            "url": "/images/cms/companies/blablacar.webp",
-            "id": "blablacar.webp"
-          }
-        },
-        {
-          "name": "Valorauto",
-          "img": {
-            "filename_disk": "valorauto.webp",
-            "url": "/images/cms/companies/valorauto.webp",
-            "id": "valorauto.webp"
-          }
-        },
-        {
-          "name": "The Vibe Agency",
-          "img": {
-            "filename_disk": "vibe.webp",
-            "url": "/images/cms/companies/vibe.webp",
-            "id": "vibe.webp"
-          }
-        },
-        {
-          "name": "Ford",
-          "img": {
-            "filename_disk": "ford.webp",
-            "url": "/images/cms/companies/ford.webp",
-            "id": "ford.webp"
-          }
-        }
-      ]
-    },
-    "contact_section": {
-      "btn_contact": "Planifier un échange",
-      "subtitle": "Discutons ensemble de votre projet !",
-      "address": "8 place Roger Salengro, 31000 Toulouse, France",
-      "company": "FDTI Consulting",
-      "mail": "info@fdti.eu",
-      "title": "Contact"
-    },
-    "CII": {
-      "description": "<p>Nous sommes agr&eacute;&eacute;s Cr&eacute;dit d&rsquo;Imp&ocirc;t Innovation (CII) depuis 2020 et jusqu'en 2024 par la Direction G&eacute;n&eacute;rale des entreprises. Cela implique que vous pouvez obtenir un cr&eacute;dit d'imp&ocirc;t sur 20% des d&eacute;penses engag&eacute;es avec nous.</p>",
-      "image": {
-        "filename_disk": "image.png",
-        "url": "/images/cms/branding/image.png",
-        "id": "image.png"
-      }
-    },
-    "meta_tags": {
-      "page_tags": [
-        {
-          "title": "FDTI | Studio IA & automatisation métier",
-          "description": "FDTI est un studio IA qui conçoit des copilotes, des automatisations de processus, des applications métier, des APIs et des bases de données intégrés à vos outils.",
-          "url": "/",
-          "img": {
-            "filename_disk": "fdti-from-data-to-insights.svg",
-            "url": "/images/cms/branding/fdti-from-data-to-insights.svg",
-            "id": "fdti-from-data-to-insights.svg"
-          }
-        },
-        {
-          "title": "Cas d'Usage | Projets Data, IA & Applications - FDTI",
-          "description": "Implémentations réelles : automatisation IA des greffes, plateformes d'économie circulaire, marketplaces batteries, éclairage public intelligent, analyse social media par LLMs, data warehouses retail et justice.",
-          "url": "/cas-d-usage",
-          "img": {
-            "filename_disk": "fdti-from-data-to-insights.svg",
-            "url": "/images/cms/branding/fdti-from-data-to-insights.svg",
-            "id": "fdti-from-data-to-insights.svg"
-          }
-        },
-        {
-          "title": "ADN & Valeurs | Experts Data Science Conformes RGPD - FDTI",
-          "description": "Experts data européens engagés sur la sécurité, le pragmatisme et l'excellence opérationnelle. Infrastructure conforme RGPD, hébergement français. Valeurs : flexibilité, expertise end-to-end, exécution, coopération.",
-          "url": "/adn-et-valeurs",
-          "img": {
-            "filename_disk": "fdti-from-data-to-insights.svg",
-            "url": "/images/cms/branding/fdti-from-data-to-insights.svg",
-            "id": "fdti-from-data-to-insights.svg"
-          }
-        }
-      ]
-    }
-  },
-  "GetCGUContent": {
-    "meta_tags": {
-      "page_tags": [
-        {
-          "title": "Conditions d'utilisation | Mentions légales - FDTI",
-          "description": "Cadre légal, responsabilités et informations éditeur du site fdti.eu. Consultez nos conditions générales pour comprendre l'usage autorisé de nos contenus et services.",
-          "url": "/condition-utilisation",
-          "img": {
-            "filename_disk": "fdti-from-data-to-insights.svg",
-            "url": "/images/cms/branding/fdti-from-data-to-insights.svg",
-            "id": "fdti-from-data-to-insights.svg"
-          }
-        }
-      ]
-    },
-    "CGU": {
-      "title": "Mentions Légales et Conditions Générales d'Utilisation",
-      "content": "<div class=\"text-2xl lg:mx-72 mx-16 mt-14 text-grey1 font-semibold s-_nwK2CU3lMz9\">Éditeur du site</div>\n<div class=\"text-sm lg:mx-72 mx-16 text-grey1 s-_nwK2CU3lMz9\">\n<p class=\"s-_nwK2CU3lMz9\">Le site <strong>fdti.eu</strong> est édité par la société <strong>FDTI Consulting</strong>, SARL au capital de 2 000 €, immatriculée au RCS de Toulouse sous le n° 850 172 164.</p>\n<p class=\"s-_nwK2CU3lMz9\">Siège social : 8 place Roger Salengro, 31000 Toulouse.</p>\n<p class=\"s-_nwK2CU3lMz9\">Email : <a href=\"mailto:info@fdti.eu\" class=\"text-blue-700\">info@fdti.eu</a></p>\n</div>\n<div class=\"text-2xl lg:mx-72 mx-16 mt-5 text-grey1 font-semibold s-_nwK2CU3lMz9\">Propriété intellectuelle</div>\n<div class=\"text-sm lg:mx-72 mx-16 text-grey1 s-_nwK2CU3lMz9\">\n<p class=\"s-_nwK2CU3lMz9\">L'ensemble des contenus (textes, images, logos) présents sur ce site est la propriété exclusive de FDTI Consulting. Toute reproduction ou utilisation sans autorisation préalable est interdite.</p>\n</div>\n<div class=\"text-2xl lg:mx-72 mx-16 mt-5 text-grey1 font-semibold s-_nwK2CU3lMz9\">Données personnelles</div>\n<div class=\"text-sm lg:mx-72 mx-16 text-grey1 s-_nwK2CU3lMz9\">\n<p class=\"s-_nwK2CU3lMz9\">Ce site ne collecte aucune donnée personnelle.</p>\n</div>\n<div class=\"text-2xl lg:mx-72 mx-16 mt-5 text-grey1 font-semibold s-_nwK2CU3lMz9\">Responsabilité</div>\n<div class=\"text-sm lg:mx-72 mx-16 text-grey1 mb-28 s-_nwK2CU3lMz9\">\n<p class=\"s-_nwK2CU3lMz9\">FDTI Consulting s'efforce de fournir des informations précises sur ce site mais ne saurait être tenue responsable des erreurs ou omissions. L'utilisation du site se fait sous votre entière responsabilité.</p>\n</div>"
-    }
-  },
-  "GetDNAPageContent": {
-    "DNA_content": {
-      "title": "ADN & Valeurs",
-      "description": "<p>La sécurité et la confidentialité des données sont un enjeu primordial pour nous, aussi nous mettons en place des règles strictes dans nos traitements, telles que l'anonymisation des données personnelles et l'encryptage systématique des connexions. Nos serveurs sont hébergés en France, les données qu'ils contiennent ne quittent jamais l'UE et ne sont soumises à aucune juridiction étrangère à l'Union européenne. Nous traitons toutes nos données conformément au RGPD.</p>",
-      "card_list": [
-        {
-          "title": "Flexibilité",
-          "description": "<p><strong>S’intégrer à vos équipes</strong> ou travailler en autonomie sur des projets nouveaux ou existants.</p>",
-          "order": 1,
-          "icon": {
-            "filename_disk": "flexibilite.svg",
-            "url": "/images/cms/values/flexibilite.svg",
-            "id": "flexibilite.svg"
-          }
-        },
-        {
-          "title": "Expérience",
-          "description": "<p><strong>Vision end-to-end</strong> des processus data, capacité d’intervention à tous les niveaux.</p>",
-          "order": 2,
-          "icon": {
-            "filename_disk": "experience.svg",
-            "url": "/images/cms/values/experience.svg",
-            "id": "experience.svg"
-          }
-        },
-        {
-          "title": "Pertinence",
-          "description": "<p>Apporter des <strong>solutions pragmatiques</strong> grâce à notre expertise en gestion de la donnée.</p>",
-          "order": 3,
-          "icon": {
-            "filename_disk": "relevance.png",
-            "url": "/images/cms/values/relevance.png",
-            "id": "relevance.png"
-          }
-        },
-        {
-          "title": "Engagement",
-          "description": "<p>Prendre des <strong>responsabilités</strong> et proposer des solutions de manière proactive.</p>",
-          "order": 4,
-          "icon": {
-            "filename_disk": "commitment.png",
-            "url": "/images/cms/values/commitment.png",
-            "id": "commitment.png"
-          }
-        },
-        {
-          "title": "Exécution",
-          "description": "<p><strong>Gérer des projets</strong> et des équipes en respectant les contraintes et les délais.</p>",
-          "order": 5,
-          "icon": {
-            "filename_disk": "execution.png",
-            "url": "/images/cms/values/execution.png",
-            "id": "execution.png"
-          }
-        },
-        {
-          "title": "Coopération",
-          "description": "<p><strong>Collaborer et communiquer</strong> clairement les solutions et les résultats.</p>",
-          "order": 6,
-          "icon": {
-            "filename_disk": "cooperation.png",
-            "url": "/images/cms/values/cooperation.png",
-            "id": "cooperation.png"
-          }
-        }
-      ],
-      "RGPD_img": {
-        "filename_disk": "dna-and-values.webp",
-        "url": "/images/cms/values/dna-and-values.webp",
-        "id": "dna-and-values.webp"
-      }
-    },
-    "meta_tags": {
-      "page_tags": [
-        {
-          "title": "ADN & Valeurs | Experts Data Science Conformes RGPD - FDTI",
-          "description": "Experts data européens engagés sur la sécurité, le pragmatisme et l'excellence opérationnelle. Infrastructure conforme RGPD, hébergement français. Valeurs : flexibilité, expertise end-to-end, exécution, coopération.",
-          "url": "/adn-et-valeurs",
-          "img": {
-            "filename_disk": "fdti-from-data-to-insights.svg",
-            "url": "/images/cms/branding/fdti-from-data-to-insights.svg",
-            "id": "fdti-from-data-to-insights.svg"
-          }
-        }
-      ]
-    }
-  },
-  "GetPrivacyContent": {
-    "meta_tags": {
-      "page_tags": [
-        {
-          "title": "Politique de confidentialité | Traitements RGPD - FDTI",
-          "description": "Découvrez comment FDTI protège les données personnelles : hébergement en France, traitements conformes RGPD, gouvernance et procédures internes.",
-          "url": "/confidentialite",
-          "img": {
-            "filename_disk": "fdti-from-data-to-insights.svg",
-            "url": "/images/cms/branding/fdti-from-data-to-insights.svg",
-            "id": "fdti-from-data-to-insights.svg"
-          }
-        }
-      ]
-    },
-    "privacy": {
-      "title": "Politique de confidentialité",
-      "content": "<main class=\"flex-1  s-7IPF32Wcq3s8\">\n<div>\n<div class=\"text-2xl lg:mx-72 mx-16 mt-14 text-grey1 font-semibold\">Cadre juridique &ndash; conformit&eacute; au RGPD et &agrave; la loi fran&ccedil;aise</div>\n<div class=\"text-sm lg:mx-72 mx-16 text-grey1\">\n<p>FDTI Consulting d&eacute;clare que l&rsquo;entreprise effectue des traitements de donn&eacute;es personnelles conform&eacute;ment au r&egrave;glement (UE) 2016/679 du Parlement europ&eacute;en et du Conseil du 27 avril 2016, relatif &agrave; la protection des personnes physiques &agrave; l&rsquo;&eacute;gard du traitement des donn&eacute;es &agrave; caract&egrave;re personnel et &agrave; la libre circulation de ces donn&eacute;es (ci-apr&egrave;s d&eacute;sign&eacute; le RGPD) et &agrave; loi fran&ccedil;aise n&deg; 78-17 du 6 janvier 1978 relative &agrave; l&rsquo;informatique, aux fichiers et aux libert&eacute;s.</p>\n<br />\n<p>Le 25 mai 2018, le R&egrave;glement G&eacute;n&eacute;ral de Protection des Donn&eacute;es est entr&eacute; en application. Les entreprises traitant de la donn&eacute;e doivent d&eacute;sormais assurer une protection optimale des donn&eacute;es &agrave; chaque instant et &ecirc;tre en mesure de la d&eacute;montrer en documentant leur conformit&eacute;.</p>\n<br />\n<p>Compte-tenu de son activit&eacute;, FDTI Consulting peut &ecirc;tre amen&eacute;e &agrave; traiter des donn&eacute;es personnelles r&eacute;colt&eacute;es et trait&eacute;es par ses clients. Les &eacute;l&eacute;ments suivants ont vocation &agrave; d&eacute;finir des r&egrave;gles de traitements internes &agrave; FDTI Consulting et garantissant le respect des donn&eacute;es personnelles conform&eacute;ment au RGPD.</p>\n<br />\n<p>Dans l&rsquo;ensemble de ses activit&eacute;s FDTI Consulting consid&egrave;re comme fondamentale la protection des donn&eacute;es personnelles et s&rsquo;&eacute;vertue d&egrave;s que possible &agrave; anonymiser l&rsquo;ensemble des donn&eacute;es qu&rsquo;elle traite et &agrave; s&rsquo;assurer de la non-divulgation de donn&eacute;es en dehors des cadres juridiques r&eacute;f&eacute;rents.</p>\n</div>\n<div class=\"text-2xl lg:mx-72 mx-16 mt-5 text-grey1 font-semibold \">Gouvernance</div>\n<div class=\"text-sm lg:mx-72 mx-16 text-grey1\">\n<p>Les donn&eacute;es trait&eacute;es par FDTI ne quittent jamais l&rsquo;Union Europ&eacute;enne et ne sont soumises &agrave; aucune juridiction &eacute;trang&egrave;re &agrave; l&rsquo;union europ&eacute;enne.</p>\n<br />\n<p>Notre h&eacute;bergeur OVH France est situ&eacute; en France et h&eacute;berge nos services en France. Par cons&eacute;quent ces derniers ne sont pas soumis au Cloud Act</p>\n</div>\n<div class=\"text-2xl lg:mx-72 mx-16 mt-5 text-grey1 font-semibold\">Processus de traitements des donn&eacute;es personnelles</div>\n<div class=\"text-sm lg:mx-72 mx-16 text-grey1 mb-28\">\n<p>Sauf cas particuliers, FDTI Consulting n&rsquo;a pas besoin de donn&eacute;es personnelles pour r&eacute;aliser ses missions. FDTI Consulting demande donc &agrave; ses clients de ne pas lui envoyer de donn&eacute;es personnelles. En cas de r&eacute;ception inopin&eacute;e de donn&eacute;es personnelles, FDTI Consulting d&eacute;truira directement ces donn&eacute;es et le signalera &agrave; l&rsquo;exp&eacute;diteur.</p>\n<br />\n<p>Certaines donn&eacute;es personnelles peuvent s&rsquo;av&eacute;rer utiles &agrave; des fins d&rsquo;identification. Dans ce cas, FDTI Consulting demandera au fournisseur de donn&eacute;es de pseudonymiser ces donn&eacute;es. FDTI Consulting apportera son soutien pour r&eacute;aliser cette pseudonymisation.</p>\n<p>Dans le cas o&ugrave; l&rsquo;exp&eacute;diteur ne poss&egrave;de ni les capacit&eacute;s techniques ni les capacit&eacute;s humaines pour r&eacute;aliser cette pseudonymisation dans son environnement, FDTI Consulting le prendra &agrave; sa charge. Une seule personne au sein de FDTI Consulting aura donc acc&egrave;s &agrave; ces donn&eacute;es personnelles, afin de les pseudonymiser et de diffuser ces donn&eacute;es pseudonymis&eacute;es au sein de FDTI Consulting.</p>\n<br />\n<p>Toutes les donn&eacute;es personnelles utilis&eacute;es dans le cadre de nos travaux, sont ainsi stock&eacute;es dans un espace s&eacute;curis&eacute; et respectent le consentement donn&eacute; par les personnes concern&eacute;es. Toutes ces donn&eacute;es sont ensuite supprim&eacute;es d&eacute;finitivement, &agrave; la suite des &eacute;tudes et traitements n&eacute;cessaires &agrave; la conduite de nos diff&eacute;rents projets.</p>\n</div>\n</div>\n</main>"
-    }
-  },
-  "GetUseCasesContent": {
-    "title": "Cas d'usage",
-    "subtitle": "Comment nous activons la data, l'IA et l'applicatif pour livrer de l'impact",
-    "meta_tags": {
-      "page_tags": [
-        {
-          "title": "Cas d'Usage | Projets Data, IA & Applications - FDTI",
-          "description": "Implémentations réelles : automatisation IA des greffes, plateformes d'économie circulaire, marketplaces batteries, éclairage public intelligent, analyse social media par LLMs, data warehouses retail et justice.",
-          "url": "/cas-d-usage",
-          "img": {
-            "filename_disk": "fdti-from-data-to-insights.svg",
-            "url": "/images/cms/branding/fdti-from-data-to-insights.svg",
-            "id": "fdti-from-data-to-insights.svg"
-          }
-        }
-      ]
-    },
-    "use_case_list": [
-      {
-        "id": "1",
-        "category": "Justice & secteur public",
-        "title": "Plateforme d'IA pour les tribunaux de commerce",
-        "date": "2025",
-        "location": "France",
-        "challenge": "Un éditeur de logiciels pour greffiers souhaitait intégrer des fonctionnalités d'IA directement dans sa plateforme pour optimiser le temps et la précision de certaines tâches chronophages des greffiers.",
-        "approach": "Architecture modulaire structurée par cas d'usage IA (LLM spécialisés). API d'intelligence artificielle hébergée sur les serveurs du client (FastAPI), parfaitement intégrée à l'outil existant mais aussi accessible à d'autres utilisateurs via API sécurisée. Portail TypeScript/SvelteKit.",
-        "impact": "Pré-analyse IA lancée en parallèle des flux métier : jusqu’à 1 600 dossiers traités par jour sur un premier cas d’usage, avec un équivalent temps économisé significatif tout en respectant les exigences de confidentialité du secteur judiciaire.",
-        "metrics": [
-          {
-            "label": "Dossiers / jour",
-            "value": "1 600"
-          },
-          {
-            "label": "Équivalent économisé",
-            "value": "≈16 j.h / jour"
-          },
-          {
-            "label": "Greffes clients FR",
-            "value": "30%"
-          }
-        ],
-        "tags": [
-          "LLM",
-          "FastAPI",
-          "Keycloak",
-          "TypeScript",
-          "SvelteKit",
-          "PostgreSQL"
-        ],
-        "details": [
-          "Modélisation de cas d'usage critiques : résumés de procédures, validation de liasses et extraction automatisée de pièces sensibles avec LLM et OCR.",
-          "Déploiement complet dans le VPN client avec monitoring fin des performances et SLA contractualisés.",
-          "Portail self-service pour générer des clés API, suivre la consommation et diagnostiquer les requêtes.",
-          "Boucles de ré-annotation pour améliorer les modèles et outillage d'audit sur l'ensemble des flux.",
-          "Programme d'adoption : formations, guides opérationnels et support dédié.",
-          "Instrumentation TypeScript/SvelteKit pour offrir une expérience fluide sans perturber leurs logiciels existants."
-        ],
-        "slug": "automatisation-greffes"
-      },
-      {
-        "id": "2",
-        "category": "Aftermarket & recyclage",
-        "title": "Plateforme de gestion des véhicules en fin de vie",
-        "date": "2020-2025",
-        "location": "Europe",
-        "challenge": "Suite à la création de Valorauto, joint-venture entre Stellantis et Galloo, une plateforme d'économie circulaire devait moderniser son outil existant pour gérer la reprise de véhicules en fin de vie (B2B et B2C) et suivre leur parcours de la collecte chez le propriétaire à la démolition du véhicule.",
-        "approach": "Développement du portail Valorauto avec interfaces de déclaration, d'administration et de suivi des véhicules entre les différents acteurs, processus métiers et APIs Azure Functions déployés sur l'infrastructure Azure du client (bases MSSQL, Azure Service Bus) pour orchestrer un existant .NET connectant propriétaires et centres VHU.",
-        "impact": "Traçabilité bout en bout au service de la branche économie circulaire du groupe, avec un réseau de plus de 5 000 entreprises partenaires et une réponse aux impératifs du constructeur liés à la Responsabilité Etendue des Producteurs (REP).",
-        "metrics": [
-          {
-            "label": "Pays couverts",
-            "value": "5"
-          },
-          {
-            "label": "Réseau partenaires",
-            "value": "+5 000"
-          },
-          {
-            "label": "Score Trustpilot",
-            "value": "4.7"
-          }
-        ],
-        "links": [
-          {
-            "label": "Site Valorauto",
-            "url": "https://www.valorauto.com/"
-          },
-          {
-            "label": "Avis Trustpilot Valorauto",
-            "url": "https://www.trustpilot.com/review/valorauto.com"
-          }
-        ],
-        "tags": [
-          "TypeScript",
-          "SvelteKit",
-          "Azure",
-          "Azure Functions",
-          "MSSQL",
-          ".NET",
-          "Azure Service Bus"
-        ],
-        "details": [
-          "Développement de bout en bout de la plateforme, bases de données et API.",
-          "Design complet du workflow de déclaration pour concessionnaires, centres de réparation et particuliers.",
-          "APIs Azure Functions pour relier les SI logistiques, CRM et finance du groupe.",
-          "Interconnexion avec l'écosystème des autres acteurs de l'économie circulaire par API (recycleurs, propriétaires, acheteurs, éco-organismes).",
-          "Cartographie en temps réel des flux matières et génération automatique des documents réglementaires.",
-          "Gestion multi-marques : règles locales, catalogues et pricing par pays.",
-          "Infrastructure Azure dimensionnée pour absorber les pics de régulation et audits.",
-          "Tableaux de bord opérationnels et réglementaires consolidant B2B et B2C.",
-          "Notifications e-mail personnalisées pour chaque utilisateur (garages, concessions, particuliers) à chaque étape du workflow."
-        ],
-        "slug": "plateforme-economie-circulaire"
-      },
-      {
-        "id": "3",
-        "category": "Aftermarket & recyclage",
-        "title": "Marketplace batteries seconde vie",
-        "date": "2024",
-        "location": "Europe",
-        "challenge": "Un constructeur automobile avait besoin d'un outil central pour piloter la collecte, le recyclage et la revente de ses batteries, en lien avec ses partenaires et acheteurs. L'outil devait gérer la traçabilité complète du processus pour répondre à des contraintes réglementaires liées à la structuration des filières REP (Responsabilité Élargie du Producteur).",
-        "approach": "Marketplace web connectée aux ERP partenaires, agissant comme plateforme de logistique et de mise en relation. Tracabilité de bout en bout et flux automatisés vers les acheteurs ou les recycleurs, négociation de prix et de conditions avec les partenaires intégrés dans l'app. Tout le processus peut être géré depuis le portail ou par l'API.",
-        "impact": "Plusieurs milliers de batteries redirigées chaque mois par des centaines de propriétaires et prestataires de service, avec reporting centralisé pour les autorités et interface d'administration pour les employés du client. Intégration de la solution dans l'écosystème.",
-        "metrics": [
-          {
-            "label": "Batteries/mois",
-            "value": "+8 k"
-          },
-          {
-            "label": "Partenaires connectés",
-            "value": "+300"
-          },
-          {
-            "label": "Pays couverts",
-            "value": "18"
-          }
-        ],
-        "tags": [
-          "SvelteKit",
-          "FastAPI",
-          "PostgreSQL",
-          "Keycloak"
-        ],
-        "details": [
-          "Développement de bout en bout de la plateforme, bases de données et API.",
-          "Process déclaratif complet pour les batteries en fin de vie et génération automatique des bons logistiques.",
-          "Intégration API avec les recycleurs et éco-organismes pour suivre enlèvements, tests et certificats, propositions de prix.",
-          "Espace acheteur pour sourcer les batteries reconditionnables et orchestrer la transaction.",
-          "Scoring qualité/conformité des partenaires et SLA partagés.",
-          "Reporting réglementaire consolidé exportable en un clic.",
-          "Notifications e-mail automatiques pour les partenaires et acheteurs lors des différentes étapes (collecte, tests, revente).",
-          "Fédération d'identité via Keycloak pour les entités du groupe et les partenaires externes."
-        ],
-        "slug": "marketplace-batteries"
-      },
-      {
-        "id": "4",
-        "category": "Smart city & énergie",
-        "title": "Supervision et modélisation de l'éclairage public",
-        "date": "2024",
-        "location": "France",
-        "challenge": "Un client spécialisé dans la gestion de l'éclairage public pour les communes et leurs prestataires avait besoin d'une plateforme unique pour piloter l'éclairage public, ajuster les horaires, détecter les anomalies et planifier la maintenance.",
-        "approach": "Développement d'une application web servant de portail de gestion et de dashboards d'analyse. Stack temps réel AWS S3 + DuckDB/Parquet, pipelines Shell/Cron, API FastAPI et interface TypeScript/SvelteKit.",
-        "impact": "Application consultée chaque matin par les gestionnaires de réseau. Mesures de consommation et d'incidents ajustés dynamiquement, maintenance prédictive et système d'alerting déployés auprès de plus de 40 territoires.",
-        "metrics": [
-          {
-            "label": "Mesures/jour",
-            "value": ">100 M"
-          },
-          {
-            "label": "Territoires",
-            "value": "+40"
-          }
-        ],
-        "tags": [
-          "DuckDB",
-          "SvelteKit",
-          "PostgreSQL",
-          "FastAPI"
-        ],
-        "details": [
-          "Collecte continue des compteurs d'éclairage et archivage optimisé dans S3 + Parquet.",
-          "Pipelines Shell/Cron pour mettre à jour le cache.",
-          "Analyse DuckDB pour générer des KPI instantanément sur plusieurs années d'historique et génération de visualisations dynamiques pour afficher les résultats.",
-          "Système de gestion de mandats liés aux propriétaires et utilisateurs des données.",
-          "Dashboards d'alertes dédiés aux exploitants (pannes, consommation, anomalies horaires).",
-          "API REST ouverte pour connecter les outils métiers des prestataires et des communes.",
-          "Gestion multi-collectivités avec droits fins et segmentation par gestionnaire."
-        ],
-        "slug": "supervision-eclairage-public"
-      },
-      {
-        "id": "5",
-        "category": "ONG & engagement",
-        "title": "Analyse des campagnes social media par IA",
-        "date": "2023",
-        "location": "International",
-        "challenge": "L'ONG devait comparer les narratifs environnementaux sur Facebook et Instagram pour orienter ses investissements communication.",
-        "approach": "Méthodologie LLM (ChatGPT + prompts spécialisés) pour scorer ton, sujets et perspectives, avec corrélation aux KPI Facebook/Instagram par typologie d'audience (âge, pays, centres d'intérêt) et visuels comparatifs.",
-        "impact": "Redéploiement budgétaire par pays/plateforme et grille d'analyse internalisée.",
-        "metrics": [
-          {
-            "label": "Posts analysés",
-            "value": "60 k"
-          },
-          {
-            "label": "Langues",
-            "value": "8"
-          },
-          {
-            "label": "Visualisations",
-            "value": "50+"
-          }
-        ],
-        "tags": [
-          "LLM",
-          "OpenAI",
-          "NLP",
-          "TypeScript"
-        ],
-        "details": [
-          "Prompts spécifiques pour capter ton, acteurs, thématiques et émotions sur Facebook/Instagram.",
-          "Pipeline automatisé : collecte social data → LLM → scoring des sujets/tons/perspectives par type de public.",
-          "Croisement des scores avec les performances des publications pour recommander les thèmes prioritaires.",
-          "Méthodologie documentée et reproductible par les équipes locales.",
-          "Sessions d'acculturation pour interpréter les recommandations et ajuster les budgets."
-        ],
-        "slug": "analyse-generative-campagnes"
-      },
-      {
-        "id": "6",
-        "category": "Retail & électronique",
-        "title": "Data hub & NLP",
-        "date": "2021-2023",
-        "location": "Global",
-        "challenge": "Centraliser les flux d'avis clients d'un leader électronique en France et industrialiser leur analyse avec de l'IA et des dashboards.",
-        "approach": "Pipelines pour collecter les données auprès des différents prestataires et responsables de collecte par API Airflow→BigQuery, gouvernance GCP, NLP (HuggingFace, BERTopic, QA, LLM), restitution dans des dashboards Tableau et diffusion de la data en interne aux autres équipes concernées.",
-        "impact": "Le service client retrouve instantanément les thématiques classifiées, les alertes remontées et suit plus finement les demandes. L'équipe produit identifie et anticipe les défauts et problèmes logistiques. L'équipe légale anticipe les litiges.",
-        "metrics": [
-          {
-            "label": "Sources intégrées",
-            "value": "+25"
-          },
-          {
-            "label": "Commentaires analysés",
-            "value": "Toute la France"
-          }
-        ],
-        "tags": [
-          "GCP",
-          "Airflow",
-          "NLP",
-          "LLM",
-          "Tableau",
-          "HuggingFace"
-        ],
-        "details": [
-          "Collecte multi-API (mystery shopping, CRM, social, reviews) orchestrée par Airflow.",
-          "Politiques cloud : segmentation par équipe, data localisation, sécurité et bonnes pratiques.",
-          "Pipeline d'analyse et classification avec des LLM.",
-          "Pipelines NLP pour similarité, sentiment et topics dans plusieurs langues.",
-          "Conception et implémentation des dashboards utilisés quotidiennement par l'équipe Customer & Market insights.",
-          "Documentation et formation des équipes data / business.",
-          "Exports automatisés d'insights vers les BU marketing et les agences."
-        ],
-        "slug": "data-hub-nlp"
-      },
-      {
-        "id": "7",
-        "category": "Retail & électronique",
-        "title": "Data warehouse temps réel retail",
-        "date": "2020-2021",
-        "location": "Europe",
-        "challenge": "Dans le cadre d'une migration d'ERP, migrer 98 objets métier JSON avec une structure complexe et une volumétrie élevée (boutiques, entrepôts, utilisateurs, tickets de caisse, stocks...) depuis Azure vers Snowflake pour alimenter Qlik en quasi temps réel.",
-        "approach": "Génération automatique de centaines de requêtes SQL et Scala depuis les spécifications pour dé-nester les objets complexes. Le système a produit et alimente plus de 150 tables et vues mises à jour en temps réel. Ingestion ADLS→Snowflake via Kafka/ADF et orchestration via streams and tasks.",
-        "impact": "Flux minute par minute pour les équipes BI et plusieurs millions de fichiers traités chaque jour. Transition vers le nouveau système d'analyse puis déprécation de l'ancien.",
-        "metrics": [
-          {
-            "label": "Objets métier",
-            "value": "98"
-          },
-          {
-            "label": "Tables et vues",
-            "value": "150+"
-          },
-          {
-            "label": "Latence",
-            "value": "<1 min"
-          }
-        ],
-        "tags": [
-          "Snowflake",
-          "Azure",
-          "Kafka",
-          "ADF",
-          "Qlik"
-        ],
-        "details": [
-          "Génération SQL automatique depuis les metadata XML pour accélérer les déploiements.",
-          "Delta updates orchestrés par Snowflake Tasks avec monitoring dédié.",
-          "Fonctions Scala custom pour dénormaliser les JSON imbriqués.",
-          "Coaching des analystes pour tirer parti des nouveaux flux temps réel.",
-          "Gestion multi-environnements via API Snowflake (test / pré-prod / prod)."
-        ],
-        "slug": "data-warehouse-retail"
-      }
-    ],
-    "cta": {
-      "label": "Envie d'explorer un cas similaire ?",
-      "button": "Diagnostiquer votre besoin en 30 min",
-      "link": "https://calendly.com/fdti/30min",
-      "description": "Parlons de vos priorités data, applicatives ou IA et dessinons une trajectoire en quelques jours."
-    }
-  }
+	"GetHomePageContent": {
+		"hero_section": {
+			"subtitle": "Copilotes, automatisations et applications métier intégrés à vos outils existants",
+			"description": "<p>Nous construisons des outils qui connectent vos données, vos SaaS et vos outils internes pour rendre vos opérations plus rapides, plus fiables et plus automatisées. L’IA n’est pas un gadget en plus : elle devient une brique centrale dans vos processus quotidiens.</p>",
+			"btn_brochure": "Téléchargez notre plaquette",
+			"btn_contact": "Diagnostiquer votre besoin en 30 min",
+			"brochure_link": "https://docs.google.com/presentation/d/e/2PACX-1vTxf7KCRA90Jm1rClbzRMZqB7wprtcUv30NwlpyT7RsxcGCKEQxW9HneEJBxo0Ml50srOHn18p5ECpD/pub?start=false&loop=false&delayms=3000",
+			"title": "IA, code et data au service de vos processus métiers",
+			"status": "Studio IA & automatisation métier"
+		},
+		"fdti_section": {
+			"subtitle": "Vos données et vos outils comme point de départ. Du code et de l’IA là où ça compte. Des opérations plus fluides, plus fiables, plus automatisées.",
+			"icon_1": {
+				"filename_disk": "from-data-to-insight.svg",
+				"url": "/images/cms/branding/from-data-to-insight.svg",
+				"id": "from-data-to-insight.svg"
+			},
+			"content_1": "<p><strong>Nous partons du travail réel de vos équipes</strong> : documents à traiter, informations à retrouver, décisions à préparer, coordinations à fluidifier, tâches à automatiser.</p><ul><li><strong>Identifier</strong> les étapes où l’IA apporte un gain concret</li><li><strong>Brancher</strong> les bonnes sources : bases, SaaS, fichiers, APIs, outils internes</li><li><strong>Concevoir</strong> un système robuste, sécurisé et exploitable au quotidien</li></ul>",
+			"icon_2": {
+				"filename_disk": "from-data-to-insight-1.svg",
+				"url": "/images/cms/branding/from-data-to-insight-1.svg",
+				"id": "from-data-to-insight-1.svg"
+			},
+			"content_2": "<p><strong>Nous livrons le bon niveau de solution</strong> selon le besoin : un copilote, un workflow assisté, une API, un back-office ou une application métier complète.</p><ul><li><strong>Copilotes IA</strong> : recherche, synthèse, aide à la décision, rédaction assistée</li><li><strong>Automatisation de processus</strong> : traitement documentaire, qualification, coordination, alerting, reporting</li><li><strong>Applications métier</strong> : portails, dashboards, back-offices, APIs sécurisées et outils internes</li></ul>",
+			"title": "Notre approche"
+		},
+		"technology_content": {
+			"title": "Technologies",
+			"subtitle": "Quatre briques techniques maîtrisées et composables, que nous assemblons selon les besoins de chaque projet.",
+			"technology_category_list": [
+				{
+					"title": "Applications web & API",
+					"description": "Interfaces métier, back-offices, portails et APIs robustes pour intégrer proprement la logique applicative et l’IA dans votre existant.",
+					"order": "1",
+					"category_icon": {
+						"filename_disk": "web-apps.svg",
+						"url": "/images/cms/technologies/web-apps.svg",
+						"id": "web-apps.svg"
+					},
+					"technology_list": [
+						{
+							"id": "35",
+							"name": "TypeScript",
+							"img": {
+								"filename_disk": "typescript.webp",
+								"url": "/images/cms/technologies/typescript.webp",
+								"id": "typescript.webp",
+								"width": 96,
+								"height": 36
+							},
+							"url": "https://www.typescriptlang.org/"
+						},
+						{
+							"id": "36",
+							"name": "React",
+							"img": {
+								"filename_disk": "react.webp",
+								"url": "/images/cms/technologies/react.webp",
+								"id": "react.webp",
+								"width": 96,
+								"height": 36
+							},
+							"url": "https://react.dev/"
+						},
+						{
+							"id": "37",
+							"name": "Svelte",
+							"img": {
+								"filename_disk": "svelte.webp",
+								"url": "/images/cms/technologies/svelte.webp",
+								"id": "svelte.webp",
+								"width": 96,
+								"height": 36
+							},
+							"url": "https://svelte.dev/"
+						},
+						{
+							"id": "38",
+							"name": "REST API",
+							"img": {
+								"filename_disk": "rest-api.webp",
+								"url": "/images/cms/technologies/rest-api.webp",
+								"id": "rest-api.webp",
+								"width": 96,
+								"height": 36
+							},
+							"url": "https://restfulapi.net/"
+						},
+						{
+							"id": "39",
+							"name": "GraphQL",
+							"img": {
+								"filename_disk": "graphql.webp",
+								"url": "/images/cms/technologies/graphql.webp",
+								"id": "graphql.webp",
+								"width": 96,
+								"height": 36
+							},
+							"url": "https://graphql.org/"
+						}
+					]
+				},
+				{
+					"title": "Cloud & Infra",
+					"description": "Infrastructure, déploiement et sécurité pour faire tourner des systèmes fiables, évolutifs et bien intégrés.",
+					"order": "2",
+					"category_icon": {
+						"filename_disk": "cloud.svg",
+						"url": "/images/cms/technologies/cloud.svg",
+						"id": "cloud.svg"
+					},
+					"technology_list": [
+						{
+							"id": "12",
+							"name": "AWS",
+							"img": {
+								"filename_disk": "aws.webp",
+								"url": "/images/cms/technologies/aws.webp",
+								"id": "aws.webp",
+								"width": 180,
+								"height": 72
+							},
+							"url": "https://aws.amazon.com/fr/"
+						},
+						{
+							"id": "13",
+							"name": "Azure",
+							"img": {
+								"filename_disk": "azure.webp",
+								"url": "/images/cms/technologies/azure.webp",
+								"id": "azure.webp",
+								"width": 180,
+								"height": 72
+							},
+							"url": "https://azure.microsoft.com/fr-fr/"
+						},
+						{
+							"id": "14",
+							"name": "google cloud",
+							"img": {
+								"filename_disk": "google-cloud.webp",
+								"url": "/images/cms/technologies/google-cloud.webp",
+								"id": "google-cloud.webp",
+								"width": 180,
+								"height": 72
+							},
+							"url": "https://cloud.google.com/"
+						},
+						{
+							"id": "16",
+							"name": "docker",
+							"img": {
+								"filename_disk": "docker.webp",
+								"url": "/images/cms/technologies/docker.webp",
+								"id": "docker.webp",
+								"width": 180,
+								"height": 72
+							},
+							"url": "https://www.docker.com/"
+						},
+						{
+							"id": "15",
+							"name": "terraform",
+							"img": {
+								"filename_disk": "terraform.webp",
+								"url": "/images/cms/technologies/terraform.webp",
+								"id": "terraform.webp",
+								"width": 180,
+								"height": 72
+							},
+							"url": "https://www.terraform.io/"
+						}
+					]
+				},
+				{
+					"title": "Intelligence artificielle",
+					"description": "Copilotes, assistants métier, recherche augmentée, agents et automatisations propulsés par les modèles de langage.",
+					"order": "3",
+					"category_icon": {
+						"filename_disk": "ia-machine-learning.svg",
+						"url": "/images/cms/technologies/ia-machine-learning.svg",
+						"id": "ia-machine-learning.svg"
+					},
+					"technology_list": [
+						{
+							"id": "29",
+							"name": "Open AI",
+							"img": {
+								"filename_disk": "open-ai.webp",
+								"url": "/images/cms/technologies/open-ai.webp",
+								"id": "open-ai.webp",
+								"width": 180,
+								"height": 72
+							},
+							"url": "https://openai.com/"
+						},
+						{
+							"id": "11",
+							"name": "hugging face",
+							"img": {
+								"filename_disk": "hugging-face.webp",
+								"url": "/images/cms/technologies/hugging-face.webp",
+								"id": "hugging-face.webp",
+								"width": 180,
+								"height": 72
+							},
+							"url": "https://huggingface.co/"
+						},
+						{
+							"id": "6",
+							"name": "pytorch",
+							"img": {
+								"filename_disk": "pytorch.webp",
+								"url": "/images/cms/technologies/pytorch.webp",
+								"id": "pytorch.webp",
+								"width": 180,
+								"height": 72
+							},
+							"url": "https://pytorch.org/"
+						}
+					]
+				},
+				{
+					"title": "Data",
+					"description": "Collecte, structuration, modélisation et diffusion de la donnée : la base nécessaire pour alimenter des workflows, des dashboards et des systèmes IA utiles.",
+					"order": "4",
+					"category_icon": {
+						"filename_disk": "data-science.svg",
+						"url": "/images/cms/technologies/data-science.svg",
+						"id": "data-science.svg"
+					},
+					"technology_list": [
+						{
+							"id": "26",
+							"name": "Python",
+							"img": {
+								"filename_disk": "python.webp",
+								"url": "/images/cms/technologies/python.webp",
+								"id": "python.webp",
+								"width": 170,
+								"height": 64
+							},
+							"url": "https://www.python.org/"
+						},
+						{
+							"id": "30",
+							"name": "DuckDB",
+							"img": {
+								"filename_disk": "duckdb.webp",
+								"url": "/images/cms/technologies/duckdb.webp",
+								"id": "duckdb.webp",
+								"width": 170,
+								"height": 64
+							},
+							"url": "https://duckdb.org/"
+						},
+						{
+							"id": "32",
+							"name": "DBT",
+							"img": {
+								"filename_disk": "dbt.webp",
+								"url": "/images/cms/technologies/dbt.webp",
+								"id": "dbt.webp",
+								"width": 180,
+								"height": 72
+							},
+							"url": "https://www.getdbt.com/"
+						},
+						{
+							"id": "17",
+							"name": "Bigquery",
+							"img": {
+								"filename_disk": "bigquery.webp",
+								"url": "/images/cms/technologies/bigquery.webp",
+								"id": "bigquery.webp",
+								"width": 220,
+								"height": 88
+							},
+							"url": "https://cloud.google.com/bigquery/"
+						},
+						{
+							"id": "19",
+							"name": "Snowflake",
+							"img": {
+								"filename_disk": "snowflake.webp",
+								"url": "/images/cms/technologies/snowflake.webp",
+								"id": "snowflake.webp",
+								"width": 220,
+								"height": 88
+							},
+							"url": "https://www.snowflake.com/fr/"
+						},
+						{
+							"id": "31",
+							"name": "Airflow",
+							"img": {
+								"filename_disk": "airflow.webp",
+								"url": "/images/cms/technologies/airflow.webp",
+								"id": "airflow.webp",
+								"width": 180,
+								"height": 72
+							},
+							"url": "https://airflow.apache.org/"
+						}
+					]
+				}
+			]
+		},
+		"trust_content": {
+			"title": "Ils nous confient des sujets critiques",
+			"company_list": [
+				{
+					"name": "Samsung",
+					"img": {
+						"filename_disk": "samsung.webp",
+						"url": "/images/cms/companies/samsung.webp",
+						"id": "samsung.webp"
+					}
+				},
+				{
+					"name": "Cognac",
+					"img": {
+						"filename_disk": "cognac.webp",
+						"url": "/images/cms/companies/cognac.webp",
+						"id": "cognac.webp"
+					}
+				},
+				{
+					"name": "Mastercard",
+					"img": {
+						"filename_disk": "mastercard.webp",
+						"url": "/images/cms/companies/mastercard.webp",
+						"id": "mastercard.webp"
+					}
+				},
+				{
+					"name": "Euro-CRM",
+					"img": {
+						"filename_disk": "euro-crm.webp",
+						"url": "/images/cms/companies/euro-crm.webp",
+						"id": "euro-crm.webp"
+					}
+				},
+				{
+					"name": "Stellantis",
+					"img": {
+						"filename_disk": "stellantis.webp",
+						"url": "/images/cms/companies/stellantis.webp",
+						"id": "stellantis.webp"
+					}
+				},
+				{
+					"name": "Galloo",
+					"img": {
+						"filename_disk": "galloo.webp",
+						"url": "/images/cms/companies/galloo.webp",
+						"id": "galloo.webp"
+					}
+				},
+				{
+					"name": "Agence Française de Développement",
+					"img": {
+						"filename_disk": "agence-francaise-de-developpement.webp",
+						"url": "/images/cms/companies/agence-francaise-de-developpement.webp",
+						"id": "agence-francaise-de-developpement.webp"
+					}
+				},
+				{
+					"name": "SNAM",
+					"img": {
+						"filename_disk": "snam.webp",
+						"url": "/images/cms/companies/snam.webp",
+						"id": "snam.webp"
+					}
+				},
+				{
+					"name": "AIMVP",
+					"img": {
+						"filename_disk": "aimvp.webp",
+						"url": "/images/cms/companies/aimvp.webp",
+						"id": "aimvp.webp"
+					}
+				},
+				{
+					"name": "BlaBlaCar",
+					"img": {
+						"filename_disk": "blablacar.webp",
+						"url": "/images/cms/companies/blablacar.webp",
+						"id": "blablacar.webp"
+					}
+				},
+				{
+					"name": "Valorauto",
+					"img": {
+						"filename_disk": "valorauto.webp",
+						"url": "/images/cms/companies/valorauto.webp",
+						"id": "valorauto.webp"
+					}
+				},
+				{
+					"name": "The Vibe Agency",
+					"img": {
+						"filename_disk": "vibe.webp",
+						"url": "/images/cms/companies/vibe.webp",
+						"id": "vibe.webp"
+					}
+				},
+				{
+					"name": "Ford",
+					"img": {
+						"filename_disk": "ford.webp",
+						"url": "/images/cms/companies/ford.webp",
+						"id": "ford.webp"
+					}
+				}
+			]
+		},
+		"contact_section": {
+			"btn_contact": "Planifier un échange",
+			"subtitle": "Discutons ensemble de votre projet !",
+			"address": "8 place Roger Salengro, 31000 Toulouse, France",
+			"company": "FDTI Consulting",
+			"mail": "info@fdti.eu",
+			"title": "Contact"
+		},
+		"CII": {
+			"description": "<p>Nous sommes agr&eacute;&eacute;s Cr&eacute;dit d&rsquo;Imp&ocirc;t Innovation (CII) depuis 2020 et jusqu'en 2024 par la Direction G&eacute;n&eacute;rale des entreprises. Cela implique que vous pouvez obtenir un cr&eacute;dit d'imp&ocirc;t sur 20% des d&eacute;penses engag&eacute;es avec nous.</p>",
+			"image": {
+				"filename_disk": "image.png",
+				"url": "/images/cms/branding/image.png",
+				"id": "image.png"
+			}
+		},
+		"meta_tags": {
+			"page_tags": [
+				{
+					"title": "FDTI | Studio IA & automatisation métier",
+					"description": "FDTI est un studio IA qui conçoit des copilotes, des automatisations de processus, des applications métier, des APIs et des bases de données intégrés à vos outils.",
+					"url": "/",
+					"img": {
+						"filename_disk": "fdti-from-data-to-insights.svg",
+						"url": "/images/cms/branding/fdti-from-data-to-insights.svg",
+						"id": "fdti-from-data-to-insights.svg"
+					}
+				},
+				{
+					"title": "Cas d'Usage | Projets Data, IA & Applications - FDTI",
+					"description": "Implémentations réelles : automatisation IA des greffes, plateformes d'économie circulaire, marketplaces batteries, éclairage public intelligent, analyse social media par LLMs, data warehouses retail et justice.",
+					"url": "/cas-d-usage",
+					"img": {
+						"filename_disk": "fdti-from-data-to-insights.svg",
+						"url": "/images/cms/branding/fdti-from-data-to-insights.svg",
+						"id": "fdti-from-data-to-insights.svg"
+					}
+				},
+				{
+					"title": "ADN & Valeurs | Experts Data Science Conformes RGPD - FDTI",
+					"description": "Experts data européens engagés sur la sécurité, le pragmatisme et l'excellence opérationnelle. Infrastructure conforme RGPD, hébergement français. Valeurs : flexibilité, expertise end-to-end, exécution, coopération.",
+					"url": "/adn-et-valeurs",
+					"img": {
+						"filename_disk": "fdti-from-data-to-insights.svg",
+						"url": "/images/cms/branding/fdti-from-data-to-insights.svg",
+						"id": "fdti-from-data-to-insights.svg"
+					}
+				}
+			]
+		}
+	},
+	"GetCGUContent": {
+		"meta_tags": {
+			"page_tags": [
+				{
+					"title": "Conditions d'utilisation | Mentions légales - FDTI",
+					"description": "Cadre légal, responsabilités et informations éditeur du site fdti.eu. Consultez nos conditions générales pour comprendre l'usage autorisé de nos contenus et services.",
+					"url": "/condition-utilisation",
+					"img": {
+						"filename_disk": "fdti-from-data-to-insights.svg",
+						"url": "/images/cms/branding/fdti-from-data-to-insights.svg",
+						"id": "fdti-from-data-to-insights.svg"
+					}
+				}
+			]
+		},
+		"CGU": {
+			"title": "Mentions Légales et Conditions Générales d'Utilisation",
+			"content": "<div class=\"text-2xl lg:mx-72 mx-16 mt-14 text-grey1 font-semibold s-_nwK2CU3lMz9\">Éditeur du site</div>\n<div class=\"text-sm lg:mx-72 mx-16 text-grey1 s-_nwK2CU3lMz9\">\n<p class=\"s-_nwK2CU3lMz9\">Le site <strong>fdti.eu</strong> est édité par la société <strong>FDTI Consulting</strong>, SARL au capital de 2 000 €, immatriculée au RCS de Toulouse sous le n° 850 172 164.</p>\n<p class=\"s-_nwK2CU3lMz9\">Siège social : 8 place Roger Salengro, 31000 Toulouse.</p>\n<p class=\"s-_nwK2CU3lMz9\">Email : <a href=\"mailto:info@fdti.eu\" class=\"text-blue-700\">info@fdti.eu</a></p>\n</div>\n<div class=\"text-2xl lg:mx-72 mx-16 mt-5 text-grey1 font-semibold s-_nwK2CU3lMz9\">Propriété intellectuelle</div>\n<div class=\"text-sm lg:mx-72 mx-16 text-grey1 s-_nwK2CU3lMz9\">\n<p class=\"s-_nwK2CU3lMz9\">L'ensemble des contenus (textes, images, logos) présents sur ce site est la propriété exclusive de FDTI Consulting. Toute reproduction ou utilisation sans autorisation préalable est interdite.</p>\n</div>\n<div class=\"text-2xl lg:mx-72 mx-16 mt-5 text-grey1 font-semibold s-_nwK2CU3lMz9\">Données personnelles</div>\n<div class=\"text-sm lg:mx-72 mx-16 text-grey1 s-_nwK2CU3lMz9\">\n<p class=\"s-_nwK2CU3lMz9\">Ce site ne collecte aucune donnée personnelle.</p>\n</div>\n<div class=\"text-2xl lg:mx-72 mx-16 mt-5 text-grey1 font-semibold s-_nwK2CU3lMz9\">Responsabilité</div>\n<div class=\"text-sm lg:mx-72 mx-16 text-grey1 mb-28 s-_nwK2CU3lMz9\">\n<p class=\"s-_nwK2CU3lMz9\">FDTI Consulting s'efforce de fournir des informations précises sur ce site mais ne saurait être tenue responsable des erreurs ou omissions. L'utilisation du site se fait sous votre entière responsabilité.</p>\n</div>"
+		}
+	},
+	"GetDNAPageContent": {
+		"DNA_content": {
+			"title": "ADN & Valeurs",
+			"description": "<p>La sécurité et la confidentialité des données sont un enjeu primordial pour nous, aussi nous mettons en place des règles strictes dans nos traitements, telles que l'anonymisation des données personnelles et l'encryptage systématique des connexions. Nos serveurs sont hébergés en France, les données qu'ils contiennent ne quittent jamais l'UE et ne sont soumises à aucune juridiction étrangère à l'Union européenne. Nous traitons toutes nos données conformément au RGPD.</p>",
+			"card_list": [
+				{
+					"title": "Flexibilité",
+					"description": "<p><strong>S’intégrer à vos équipes</strong> ou travailler en autonomie sur des projets nouveaux ou existants.</p>",
+					"order": 1,
+					"icon": {
+						"filename_disk": "flexibilite.svg",
+						"url": "/images/cms/values/flexibilite.svg",
+						"id": "flexibilite.svg"
+					}
+				},
+				{
+					"title": "Expérience",
+					"description": "<p><strong>Vision end-to-end</strong> des processus data, capacité d’intervention à tous les niveaux.</p>",
+					"order": 2,
+					"icon": {
+						"filename_disk": "experience.svg",
+						"url": "/images/cms/values/experience.svg",
+						"id": "experience.svg"
+					}
+				},
+				{
+					"title": "Pertinence",
+					"description": "<p>Apporter des <strong>solutions pragmatiques</strong> grâce à notre expertise en gestion de la donnée.</p>",
+					"order": 3,
+					"icon": {
+						"filename_disk": "relevance.png",
+						"url": "/images/cms/values/relevance.png",
+						"id": "relevance.png"
+					}
+				},
+				{
+					"title": "Engagement",
+					"description": "<p>Prendre des <strong>responsabilités</strong> et proposer des solutions de manière proactive.</p>",
+					"order": 4,
+					"icon": {
+						"filename_disk": "commitment.png",
+						"url": "/images/cms/values/commitment.png",
+						"id": "commitment.png"
+					}
+				},
+				{
+					"title": "Exécution",
+					"description": "<p><strong>Gérer des projets</strong> et des équipes en respectant les contraintes et les délais.</p>",
+					"order": 5,
+					"icon": {
+						"filename_disk": "execution.png",
+						"url": "/images/cms/values/execution.png",
+						"id": "execution.png"
+					}
+				},
+				{
+					"title": "Coopération",
+					"description": "<p><strong>Collaborer et communiquer</strong> clairement les solutions et les résultats.</p>",
+					"order": 6,
+					"icon": {
+						"filename_disk": "cooperation.png",
+						"url": "/images/cms/values/cooperation.png",
+						"id": "cooperation.png"
+					}
+				}
+			],
+			"RGPD_img": {
+				"filename_disk": "dna-and-values.webp",
+				"url": "/images/cms/values/dna-and-values.webp",
+				"id": "dna-and-values.webp"
+			}
+		},
+		"meta_tags": {
+			"page_tags": [
+				{
+					"title": "ADN & Valeurs | Experts Data Science Conformes RGPD - FDTI",
+					"description": "Experts data européens engagés sur la sécurité, le pragmatisme et l'excellence opérationnelle. Infrastructure conforme RGPD, hébergement français. Valeurs : flexibilité, expertise end-to-end, exécution, coopération.",
+					"url": "/adn-et-valeurs",
+					"img": {
+						"filename_disk": "fdti-from-data-to-insights.svg",
+						"url": "/images/cms/branding/fdti-from-data-to-insights.svg",
+						"id": "fdti-from-data-to-insights.svg"
+					}
+				}
+			]
+		}
+	},
+	"GetPrivacyContent": {
+		"meta_tags": {
+			"page_tags": [
+				{
+					"title": "Politique de confidentialité | Traitements RGPD - FDTI",
+					"description": "Découvrez comment FDTI protège les données personnelles : hébergement en France, traitements conformes RGPD, gouvernance et procédures internes.",
+					"url": "/confidentialite",
+					"img": {
+						"filename_disk": "fdti-from-data-to-insights.svg",
+						"url": "/images/cms/branding/fdti-from-data-to-insights.svg",
+						"id": "fdti-from-data-to-insights.svg"
+					}
+				}
+			]
+		},
+		"privacy": {
+			"title": "Politique de confidentialité",
+			"content": "<main class=\"flex-1  s-7IPF32Wcq3s8\">\n<div>\n<div class=\"text-2xl lg:mx-72 mx-16 mt-14 text-grey1 font-semibold\">Cadre juridique &ndash; conformit&eacute; au RGPD et &agrave; la loi fran&ccedil;aise</div>\n<div class=\"text-sm lg:mx-72 mx-16 text-grey1\">\n<p>FDTI Consulting d&eacute;clare que l&rsquo;entreprise effectue des traitements de donn&eacute;es personnelles conform&eacute;ment au r&egrave;glement (UE) 2016/679 du Parlement europ&eacute;en et du Conseil du 27 avril 2016, relatif &agrave; la protection des personnes physiques &agrave; l&rsquo;&eacute;gard du traitement des donn&eacute;es &agrave; caract&egrave;re personnel et &agrave; la libre circulation de ces donn&eacute;es (ci-apr&egrave;s d&eacute;sign&eacute; le RGPD) et &agrave; loi fran&ccedil;aise n&deg; 78-17 du 6 janvier 1978 relative &agrave; l&rsquo;informatique, aux fichiers et aux libert&eacute;s.</p>\n<br />\n<p>Le 25 mai 2018, le R&egrave;glement G&eacute;n&eacute;ral de Protection des Donn&eacute;es est entr&eacute; en application. Les entreprises traitant de la donn&eacute;e doivent d&eacute;sormais assurer une protection optimale des donn&eacute;es &agrave; chaque instant et &ecirc;tre en mesure de la d&eacute;montrer en documentant leur conformit&eacute;.</p>\n<br />\n<p>Compte-tenu de son activit&eacute;, FDTI Consulting peut &ecirc;tre amen&eacute;e &agrave; traiter des donn&eacute;es personnelles r&eacute;colt&eacute;es et trait&eacute;es par ses clients. Les &eacute;l&eacute;ments suivants ont vocation &agrave; d&eacute;finir des r&egrave;gles de traitements internes &agrave; FDTI Consulting et garantissant le respect des donn&eacute;es personnelles conform&eacute;ment au RGPD.</p>\n<br />\n<p>Dans l&rsquo;ensemble de ses activit&eacute;s FDTI Consulting consid&egrave;re comme fondamentale la protection des donn&eacute;es personnelles et s&rsquo;&eacute;vertue d&egrave;s que possible &agrave; anonymiser l&rsquo;ensemble des donn&eacute;es qu&rsquo;elle traite et &agrave; s&rsquo;assurer de la non-divulgation de donn&eacute;es en dehors des cadres juridiques r&eacute;f&eacute;rents.</p>\n</div>\n<div class=\"text-2xl lg:mx-72 mx-16 mt-5 text-grey1 font-semibold \">Gouvernance</div>\n<div class=\"text-sm lg:mx-72 mx-16 text-grey1\">\n<p>Les donn&eacute;es trait&eacute;es par FDTI ne quittent jamais l&rsquo;Union Europ&eacute;enne et ne sont soumises &agrave; aucune juridiction &eacute;trang&egrave;re &agrave; l&rsquo;union europ&eacute;enne.</p>\n<br />\n<p>Notre h&eacute;bergeur OVH France est situ&eacute; en France et h&eacute;berge nos services en France. Par cons&eacute;quent ces derniers ne sont pas soumis au Cloud Act</p>\n</div>\n<div class=\"text-2xl lg:mx-72 mx-16 mt-5 text-grey1 font-semibold\">Processus de traitements des donn&eacute;es personnelles</div>\n<div class=\"text-sm lg:mx-72 mx-16 text-grey1 mb-28\">\n<p>Sauf cas particuliers, FDTI Consulting n&rsquo;a pas besoin de donn&eacute;es personnelles pour r&eacute;aliser ses missions. FDTI Consulting demande donc &agrave; ses clients de ne pas lui envoyer de donn&eacute;es personnelles. En cas de r&eacute;ception inopin&eacute;e de donn&eacute;es personnelles, FDTI Consulting d&eacute;truira directement ces donn&eacute;es et le signalera &agrave; l&rsquo;exp&eacute;diteur.</p>\n<br />\n<p>Certaines donn&eacute;es personnelles peuvent s&rsquo;av&eacute;rer utiles &agrave; des fins d&rsquo;identification. Dans ce cas, FDTI Consulting demandera au fournisseur de donn&eacute;es de pseudonymiser ces donn&eacute;es. FDTI Consulting apportera son soutien pour r&eacute;aliser cette pseudonymisation.</p>\n<p>Dans le cas o&ugrave; l&rsquo;exp&eacute;diteur ne poss&egrave;de ni les capacit&eacute;s techniques ni les capacit&eacute;s humaines pour r&eacute;aliser cette pseudonymisation dans son environnement, FDTI Consulting le prendra &agrave; sa charge. Une seule personne au sein de FDTI Consulting aura donc acc&egrave;s &agrave; ces donn&eacute;es personnelles, afin de les pseudonymiser et de diffuser ces donn&eacute;es pseudonymis&eacute;es au sein de FDTI Consulting.</p>\n<br />\n<p>Toutes les donn&eacute;es personnelles utilis&eacute;es dans le cadre de nos travaux, sont ainsi stock&eacute;es dans un espace s&eacute;curis&eacute; et respectent le consentement donn&eacute; par les personnes concern&eacute;es. Toutes ces donn&eacute;es sont ensuite supprim&eacute;es d&eacute;finitivement, &agrave; la suite des &eacute;tudes et traitements n&eacute;cessaires &agrave; la conduite de nos diff&eacute;rents projets.</p>\n</div>\n</div>\n</main>"
+		}
+	},
+	"GetUseCasesContent": {
+		"title": "Cas d'usage",
+		"subtitle": "Comment nous activons la data, l'IA et l'applicatif pour livrer de l'impact",
+		"meta_tags": {
+			"page_tags": [
+				{
+					"title": "Cas d'Usage | Projets Data, IA & Applications - FDTI",
+					"description": "Implémentations réelles : automatisation IA des greffes, plateformes d'économie circulaire, marketplaces batteries, éclairage public intelligent, analyse social media par LLMs, data warehouses retail et justice.",
+					"url": "/cas-d-usage",
+					"img": {
+						"filename_disk": "fdti-from-data-to-insights.svg",
+						"url": "/images/cms/branding/fdti-from-data-to-insights.svg",
+						"id": "fdti-from-data-to-insights.svg"
+					}
+				}
+			]
+		},
+		"use_case_list": [
+			{
+				"id": "1",
+				"category": "Justice & secteur public",
+				"title": "Plateforme d'IA pour les tribunaux de commerce",
+				"date": "2025",
+				"location": "France",
+				"challenge": "Un éditeur de logiciels pour greffiers souhaitait intégrer des fonctionnalités d'IA directement dans sa plateforme pour optimiser le temps et la précision de certaines tâches chronophages des greffiers.",
+				"approach": "Architecture modulaire structurée par cas d'usage IA (LLM spécialisés). API d'intelligence artificielle hébergée sur les serveurs du client (FastAPI), parfaitement intégrée à l'outil existant mais aussi accessible à d'autres utilisateurs via API sécurisée. Portail TypeScript/SvelteKit.",
+				"impact": "Pré-analyse IA lancée en parallèle des flux métier : jusqu’à 1 600 dossiers traités par jour sur un premier cas d’usage, avec un équivalent temps économisé significatif tout en respectant les exigences de confidentialité du secteur judiciaire.",
+				"metrics": [
+					{
+						"label": "Dossiers / jour",
+						"value": "1 600"
+					},
+					{
+						"label": "Équivalent économisé",
+						"value": "≈16 j.h / jour"
+					},
+					{
+						"label": "Greffes clients FR",
+						"value": "30%"
+					}
+				],
+				"tags": ["LLM", "FastAPI", "Keycloak", "TypeScript", "SvelteKit", "PostgreSQL"],
+				"details": [
+					"Modélisation de cas d'usage critiques : résumés de procédures, validation de liasses et extraction automatisée de pièces sensibles avec LLM et OCR.",
+					"Déploiement complet dans le VPN client avec monitoring fin des performances et SLA contractualisés.",
+					"Portail self-service pour générer des clés API, suivre la consommation et diagnostiquer les requêtes.",
+					"Boucles de ré-annotation pour améliorer les modèles et outillage d'audit sur l'ensemble des flux.",
+					"Programme d'adoption : formations, guides opérationnels et support dédié.",
+					"Instrumentation TypeScript/SvelteKit pour offrir une expérience fluide sans perturber leurs logiciels existants."
+				],
+				"slug": "automatisation-greffes"
+			},
+			{
+				"id": "2",
+				"category": "Aftermarket & recyclage",
+				"title": "Plateforme de gestion des véhicules en fin de vie",
+				"date": "2020-2025",
+				"location": "Europe",
+				"challenge": "Suite à la création de Valorauto, joint-venture entre Stellantis et Galloo, une plateforme d'économie circulaire devait moderniser son outil existant pour gérer la reprise de véhicules en fin de vie (B2B et B2C) et suivre leur parcours de la collecte chez le propriétaire à la démolition du véhicule.",
+				"approach": "Développement du portail Valorauto avec interfaces de déclaration, d'administration et de suivi des véhicules entre les différents acteurs, processus métiers et APIs Azure Functions déployés sur l'infrastructure Azure du client (bases MSSQL, Azure Service Bus) pour orchestrer un existant .NET connectant propriétaires et centres VHU.",
+				"impact": "Traçabilité bout en bout au service de la branche économie circulaire du groupe, avec un réseau de plus de 5 000 entreprises partenaires et une réponse aux impératifs du constructeur liés à la Responsabilité Etendue des Producteurs (REP).",
+				"metrics": [
+					{
+						"label": "Pays couverts",
+						"value": "5"
+					},
+					{
+						"label": "Réseau partenaires",
+						"value": "+5 000"
+					},
+					{
+						"label": "Score Trustpilot",
+						"value": "4.7"
+					}
+				],
+				"links": [
+					{
+						"label": "Site Valorauto",
+						"url": "https://www.valorauto.com/"
+					},
+					{
+						"label": "Avis Trustpilot Valorauto",
+						"url": "https://www.trustpilot.com/review/valorauto.com"
+					}
+				],
+				"tags": [
+					"TypeScript",
+					"SvelteKit",
+					"Azure",
+					"Azure Functions",
+					"MSSQL",
+					".NET",
+					"Azure Service Bus"
+				],
+				"details": [
+					"Développement de bout en bout de la plateforme, bases de données et API.",
+					"Design complet du workflow de déclaration pour concessionnaires, centres de réparation et particuliers.",
+					"APIs Azure Functions pour relier les SI logistiques, CRM et finance du groupe.",
+					"Interconnexion avec l'écosystème des autres acteurs de l'économie circulaire par API (recycleurs, propriétaires, acheteurs, éco-organismes).",
+					"Cartographie en temps réel des flux matières et génération automatique des documents réglementaires.",
+					"Gestion multi-marques : règles locales, catalogues et pricing par pays.",
+					"Infrastructure Azure dimensionnée pour absorber les pics de régulation et audits.",
+					"Tableaux de bord opérationnels et réglementaires consolidant B2B et B2C.",
+					"Notifications e-mail personnalisées pour chaque utilisateur (garages, concessions, particuliers) à chaque étape du workflow."
+				],
+				"slug": "plateforme-economie-circulaire"
+			},
+			{
+				"id": "3",
+				"category": "Aftermarket & recyclage",
+				"title": "Marketplace batteries seconde vie",
+				"date": "2024",
+				"location": "Europe",
+				"challenge": "Un constructeur automobile avait besoin d'un outil central pour piloter la collecte, le recyclage et la revente de ses batteries, en lien avec ses partenaires et acheteurs. L'outil devait gérer la traçabilité complète du processus pour répondre à des contraintes réglementaires liées à la structuration des filières REP (Responsabilité Élargie du Producteur).",
+				"approach": "Marketplace web connectée aux ERP partenaires, agissant comme plateforme de logistique et de mise en relation. Tracabilité de bout en bout et flux automatisés vers les acheteurs ou les recycleurs, négociation de prix et de conditions avec les partenaires intégrés dans l'app. Tout le processus peut être géré depuis le portail ou par l'API.",
+				"impact": "Plusieurs milliers de batteries redirigées chaque mois par des centaines de propriétaires et prestataires de service, avec reporting centralisé pour les autorités et interface d'administration pour les employés du client. Intégration de la solution dans l'écosystème.",
+				"metrics": [
+					{
+						"label": "Batteries/mois",
+						"value": "+8 k"
+					},
+					{
+						"label": "Partenaires connectés",
+						"value": "+300"
+					},
+					{
+						"label": "Pays couverts",
+						"value": "18"
+					}
+				],
+				"tags": ["SvelteKit", "FastAPI", "PostgreSQL", "Keycloak"],
+				"details": [
+					"Développement de bout en bout de la plateforme, bases de données et API.",
+					"Process déclaratif complet pour les batteries en fin de vie et génération automatique des bons logistiques.",
+					"Intégration API avec les recycleurs et éco-organismes pour suivre enlèvements, tests et certificats, propositions de prix.",
+					"Espace acheteur pour sourcer les batteries reconditionnables et orchestrer la transaction.",
+					"Scoring qualité/conformité des partenaires et SLA partagés.",
+					"Reporting réglementaire consolidé exportable en un clic.",
+					"Notifications e-mail automatiques pour les partenaires et acheteurs lors des différentes étapes (collecte, tests, revente).",
+					"Fédération d'identité via Keycloak pour les entités du groupe et les partenaires externes."
+				],
+				"slug": "marketplace-batteries"
+			},
+			{
+				"id": "4",
+				"category": "Smart city & énergie",
+				"title": "Supervision et modélisation de l'éclairage public",
+				"date": "2024",
+				"location": "France",
+				"challenge": "Un client spécialisé dans la gestion de l'éclairage public pour les communes et leurs prestataires avait besoin d'une plateforme unique pour piloter l'éclairage public, ajuster les horaires, détecter les anomalies et planifier la maintenance.",
+				"approach": "Développement d'une application web servant de portail de gestion et de dashboards d'analyse. Stack temps réel AWS S3 + DuckDB/Parquet, pipelines Shell/Cron, API FastAPI et interface TypeScript/SvelteKit.",
+				"impact": "Application consultée chaque matin par les gestionnaires de réseau. Mesures de consommation et d'incidents ajustés dynamiquement, maintenance prédictive et système d'alerting déployés auprès de plus de 40 territoires.",
+				"metrics": [
+					{
+						"label": "Mesures/jour",
+						"value": ">100 M"
+					},
+					{
+						"label": "Territoires",
+						"value": "+40"
+					}
+				],
+				"tags": ["DuckDB", "SvelteKit", "PostgreSQL", "FastAPI"],
+				"details": [
+					"Collecte continue des compteurs d'éclairage et archivage optimisé dans S3 + Parquet.",
+					"Pipelines Shell/Cron pour mettre à jour le cache.",
+					"Analyse DuckDB pour générer des KPI instantanément sur plusieurs années d'historique et génération de visualisations dynamiques pour afficher les résultats.",
+					"Système de gestion de mandats liés aux propriétaires et utilisateurs des données.",
+					"Dashboards d'alertes dédiés aux exploitants (pannes, consommation, anomalies horaires).",
+					"API REST ouverte pour connecter les outils métiers des prestataires et des communes.",
+					"Gestion multi-collectivités avec droits fins et segmentation par gestionnaire."
+				],
+				"slug": "supervision-eclairage-public"
+			},
+			{
+				"id": "5",
+				"category": "ONG & engagement",
+				"title": "Analyse des campagnes social media par IA",
+				"date": "2023",
+				"location": "International",
+				"challenge": "L'ONG devait comparer les narratifs environnementaux sur Facebook et Instagram pour orienter ses investissements communication.",
+				"approach": "Méthodologie LLM (ChatGPT + prompts spécialisés) pour scorer ton, sujets et perspectives, avec corrélation aux KPI Facebook/Instagram par typologie d'audience (âge, pays, centres d'intérêt) et visuels comparatifs.",
+				"impact": "Redéploiement budgétaire par pays/plateforme et grille d'analyse internalisée.",
+				"metrics": [
+					{
+						"label": "Posts analysés",
+						"value": "60 k"
+					},
+					{
+						"label": "Langues",
+						"value": "8"
+					},
+					{
+						"label": "Visualisations",
+						"value": "50+"
+					}
+				],
+				"tags": ["LLM", "OpenAI", "NLP", "TypeScript"],
+				"details": [
+					"Prompts spécifiques pour capter ton, acteurs, thématiques et émotions sur Facebook/Instagram.",
+					"Pipeline automatisé : collecte social data → LLM → scoring des sujets/tons/perspectives par type de public.",
+					"Croisement des scores avec les performances des publications pour recommander les thèmes prioritaires.",
+					"Méthodologie documentée et reproductible par les équipes locales.",
+					"Sessions d'acculturation pour interpréter les recommandations et ajuster les budgets."
+				],
+				"slug": "analyse-generative-campagnes"
+			},
+			{
+				"id": "6",
+				"category": "Retail & électronique",
+				"title": "Data hub & NLP",
+				"date": "2021-2023",
+				"location": "Global",
+				"challenge": "Centraliser les flux d'avis clients d'un leader électronique en France et industrialiser leur analyse avec de l'IA et des dashboards.",
+				"approach": "Pipelines pour collecter les données auprès des différents prestataires et responsables de collecte par API Airflow→BigQuery, gouvernance GCP, NLP (HuggingFace, BERTopic, QA, LLM), restitution dans des dashboards Tableau et diffusion de la data en interne aux autres équipes concernées.",
+				"impact": "Le service client retrouve instantanément les thématiques classifiées, les alertes remontées et suit plus finement les demandes. L'équipe produit identifie et anticipe les défauts et problèmes logistiques. L'équipe légale anticipe les litiges.",
+				"metrics": [
+					{
+						"label": "Sources intégrées",
+						"value": "+25"
+					},
+					{
+						"label": "Commentaires analysés",
+						"value": "Toute la France"
+					}
+				],
+				"tags": ["GCP", "Airflow", "NLP", "LLM", "Tableau", "HuggingFace"],
+				"details": [
+					"Collecte multi-API (mystery shopping, CRM, social, reviews) orchestrée par Airflow.",
+					"Politiques cloud : segmentation par équipe, data localisation, sécurité et bonnes pratiques.",
+					"Pipeline d'analyse et classification avec des LLM.",
+					"Pipelines NLP pour similarité, sentiment et topics dans plusieurs langues.",
+					"Conception et implémentation des dashboards utilisés quotidiennement par l'équipe Customer & Market insights.",
+					"Documentation et formation des équipes data / business.",
+					"Exports automatisés d'insights vers les BU marketing et les agences."
+				],
+				"slug": "data-hub-nlp"
+			},
+			{
+				"id": "7",
+				"category": "Retail & électronique",
+				"title": "Data warehouse temps réel retail",
+				"date": "2020-2021",
+				"location": "Europe",
+				"challenge": "Dans le cadre d'une migration d'ERP, migrer 98 objets métier JSON avec une structure complexe et une volumétrie élevée (boutiques, entrepôts, utilisateurs, tickets de caisse, stocks...) depuis Azure vers Snowflake pour alimenter Qlik en quasi temps réel.",
+				"approach": "Génération automatique de centaines de requêtes SQL et Scala depuis les spécifications pour dé-nester les objets complexes. Le système a produit et alimente plus de 150 tables et vues mises à jour en temps réel. Ingestion ADLS→Snowflake via Kafka/ADF et orchestration via streams and tasks.",
+				"impact": "Flux minute par minute pour les équipes BI et plusieurs millions de fichiers traités chaque jour. Transition vers le nouveau système d'analyse puis déprécation de l'ancien.",
+				"metrics": [
+					{
+						"label": "Objets métier",
+						"value": "98"
+					},
+					{
+						"label": "Tables et vues",
+						"value": "150+"
+					},
+					{
+						"label": "Latence",
+						"value": "<1 min"
+					}
+				],
+				"tags": ["Snowflake", "Azure", "Kafka", "ADF", "Qlik"],
+				"details": [
+					"Génération SQL automatique depuis les metadata XML pour accélérer les déploiements.",
+					"Delta updates orchestrés par Snowflake Tasks avec monitoring dédié.",
+					"Fonctions Scala custom pour dénormaliser les JSON imbriqués.",
+					"Coaching des analystes pour tirer parti des nouveaux flux temps réel.",
+					"Gestion multi-environnements via API Snowflake (test / pré-prod / prod)."
+				],
+				"slug": "data-warehouse-retail"
+			}
+		],
+		"cta": {
+			"label": "Envie d'explorer un cas similaire ?",
+			"button": "Diagnostiquer votre besoin en 30 min",
+			"link": "https://calendly.com/fdti/30min",
+			"description": "Parlons de vos priorités data, applicatives ou IA et dessinons une trajectoire en quelques jours."
+		}
+	}
 }

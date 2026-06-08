@@ -39,7 +39,9 @@ export async function GET() {
 
 	for (const locale of locales) {
 		for (const page of staticPages) {
-			urls.push(buildUrlEntry(buildLocalizedUrl(page.path, locale), page.changefreq, page.priority));
+			urls.push(
+				buildUrlEntry(buildLocalizedUrl(page.path, locale), page.changefreq, page.priority)
+			);
 		}
 	}
 

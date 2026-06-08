@@ -3,17 +3,15 @@
 	import { fade } from 'svelte/transition';
 	import { onMount } from 'svelte';
 
-	export let content:
-		| {
-				status?: string | null;
-				title?: string | null;
-				subtitle?: string | null;
-				description?: string | null;
-				btn_brochure?: string | null;
-				btn_contact?: string | null;
-				brochure_link?: string | null;
-		  }
-		| null;
+	export let content: {
+		status?: string | null;
+		title?: string | null;
+		subtitle?: string | null;
+		description?: string | null;
+		btn_brochure?: string | null;
+		btn_contact?: string | null;
+		brochure_link?: string | null;
+	} | null;
 
 	let scrollY = 0;
 
@@ -30,11 +28,11 @@
 </script>
 
 <section class="relative h-screen flex items-center overflow-hidden">
-    <!-- Background with parallax effect -->
-    <div 
-        class="absolute inset-0 bg-gradient-2 z-0 w-full h-[120%]"
-        style="transform: translateY({scrollY * 0.5}px);"
-    ></div>
+	<!-- Background with parallax effect -->
+	<div
+		class="absolute inset-0 bg-gradient-2 z-0 w-full h-[120%]"
+		style="transform: translateY({scrollY * 0.5}px);"
+	></div>
 
 	{#if content}
 		<div
@@ -46,7 +44,9 @@
 					class="max-w-lg flex flex-col gap-4 pb-4 text-white text-center md:text-left md:text-xl lg:pr-20"
 				>
 					{#if content.status}
-						<div class="w-fit mx-auto md:mx-0 rounded-full border border-white/20 bg-white/10 px-4 py-1 text-sm font-semibold text-yellow backdrop-blur-sm">
+						<div
+							class="w-fit mx-auto md:mx-0 rounded-full border border-white/20 bg-white/10 px-4 py-1 text-sm font-semibold text-yellow backdrop-blur-sm"
+						>
 							{content.status}
 						</div>
 					{/if}

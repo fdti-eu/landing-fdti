@@ -1,6 +1,6 @@
-# FDTI website
+# FDTI Website
 
-Site vitrine public de FDTI Consulting : `https://fdti.eu`.
+Site vitrine public de FDTI Consulting : `https://www.fdti.eu`.
 
 Stack : SvelteKit, Svelte 5, TypeScript, Tailwind CSS.
 
@@ -42,10 +42,10 @@ Le site est préparé pour GitHub Pages via `.github/workflows/pages.yml`.
 3. lance `npm run build` ;
 4. publie le dossier `build/` sur GitHub Pages.
 
-Le domaine custom apex est déclaré dans `static/CNAME` :
+Le domaine custom est déclaré dans `static/CNAME` :
 
 ```text
-fdti.eu
+www.fdti.eu
 ```
 
 ### Activation côté GitHub
@@ -54,7 +54,7 @@ Dans le repo GitHub :
 
 1. aller dans **Settings → Pages** ;
 2. choisir **Source: GitHub Actions** ;
-3. vérifier que le domaine custom est `fdti.eu` ;
+3. vérifier que le domaine custom est `www.fdti.eu` ;
 4. activer **Enforce HTTPS** quand GitHub le permet.
 
 ### DNS attendu
@@ -68,7 +68,9 @@ Pour le domaine apex `fdti.eu`, configurer les enregistrements A GitHub Pages :
 185.199.111.153
 ```
 
-Optionnel : si `www.fdti.eu` doit aussi répondre, ajouter un CNAME `www` vers `fdti-eu.github.io` et laisser GitHub Pages rediriger vers le domaine apex `fdti.eu`.
+Pour `www.fdti.eu`, configurer un CNAME `www` vers `fdti-eu.github.io`.
+
+Le domaine canonique est `https://www.fdti.eu`. GitHub Pages redirige l'apex `https://fdti.eu` vers `https://www.fdti.eu`.
 
 ## Routes statiques importantes
 

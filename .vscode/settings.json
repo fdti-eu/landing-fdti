@@ -1,9 +1,5 @@
 {
-	"i18n-ally.localesPaths": [
-		"src/lib/langs",
-		"src/lib/i18n",
-		"src/lib/i18n/locales"
-	],
+	"i18n-ally.localesPaths": ["src/lib/langs", "src/lib/i18n", "src/lib/i18n/locales"],
 	"i18n-ally.sourceLanguage": "fr",
 	"i18n-ally.keystyle": "nested"
 }

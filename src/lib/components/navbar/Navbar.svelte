@@ -21,7 +21,7 @@
 	function handleMouseEnter(e: MouseEvent) {
 		const target = e.target as HTMLElement;
 		// On s'assure de cibler le <li> ou le <a> pour récupérer les dimensions
-		const li = target.closest('li'); 
+		const li = target.closest('li');
 		if (li && navListElement) {
 			// Use offsetLeft/offsetWidth relative to the parent UL instead of getBoundingClientRect
 			// because the halo is absolute positioned inside the relative UL
@@ -73,7 +73,7 @@
 
 		<!-- Mobile Menu Overlay -->
 		{#if isNavbarOpen}
-			<div 
+			<div
 				class="fixed inset-0 bg-black/95 z-40 flex flex-col justify-center items-center md:hidden"
 				transition:slide={{ duration: 300, axis: 'y' }}
 			>
@@ -92,7 +92,9 @@
 					<li>
 						<a
 							href="/{$locale}/adn-et-valeurs"
-							class="{$page.url.pathname.includes('/adn-et-valeurs') ? 'text-yellow' : 'text-white'} hover:text-yellow transition-colors"
+							class="{$page.url.pathname.includes('/adn-et-valeurs')
+								? 'text-yellow'
+								: 'text-white'} hover:text-yellow transition-colors"
 							on:click={handleToggleNav}
 						>
 							{$locale === 'fr' ? 'ADN et valeurs' : 'DNA and values'}
@@ -101,7 +103,9 @@
 					<li>
 						<a
 							href="/{$locale}/cas-d-usage"
-							class="{$page.url.pathname.includes('/cas-d-usage') ? 'text-yellow' : 'text-white'} hover:text-yellow transition-colors"
+							class="{$page.url.pathname.includes('/cas-d-usage')
+								? 'text-yellow'
+								: 'text-white'} hover:text-yellow transition-colors"
 							on:click={handleToggleNav}
 						>
 							{$locale === 'fr' ? 'Cas d’usage' : 'Use cases'}
@@ -136,7 +140,9 @@
 			<li on:mouseenter={handleMouseEnter} class="relative z-10">
 				<a
 					href="/{$locale}/adn-et-valeurs"
-					class="{$page.url.pathname.includes('/adn-et-valeurs') ? 'text-yellow' : ''} block px-4 py-2 hover:text-yellow transition-all duration-300"
+					class="{$page.url.pathname.includes('/adn-et-valeurs')
+						? 'text-yellow'
+						: ''} block px-4 py-2 hover:text-yellow transition-all duration-300"
 				>
 					{$locale === 'fr' ? 'ADN et valeurs' : 'DNA and values'}
 				</a>
@@ -144,14 +150,21 @@
 			<li on:mouseenter={handleMouseEnter} class="relative z-10">
 				<a
 					href="/{$locale}/cas-d-usage"
-					class="{$page.url.pathname.includes('/cas-d-usage') ? 'text-yellow' : ''} block px-4 py-2 hover:text-yellow transition-all duration-300"
+					class="{$page.url.pathname.includes('/cas-d-usage')
+						? 'text-yellow'
+						: ''} block px-4 py-2 hover:text-yellow transition-all duration-300"
 				>
 					{$locale === 'fr' ? 'Cas d’usage' : 'Use cases'}
 				</a>
 			</li>
 		</ul>
 		<LocaleToggle class="md:justify-self-end z-50" />
-		<button class="md:hidden z-50 relative" on:click={handleToggleNav} aria-label="hamburger menu" aria-expanded={isNavbarOpen}>
+		<button
+			class="md:hidden z-50 relative"
+			on:click={handleToggleNav}
+			aria-label="hamburger menu"
+			aria-expanded={isNavbarOpen}
+		>
 			<Hamburger isOpen={isNavbarOpen} />
 		</button>
 	</div>
