@@ -43,9 +43,9 @@ export const jobOffers: JobOffer[] = [
 		location: 'Télétravail complet',
 		experience: '0-2 ans',
 		startDate: '2026-06-15',
-		startLabel: 'ASAP ou septembre 2026',
+		startLabel: 'Entrées possibles toute l’année',
 		postedAt: '2026-06-04',
-		status: 'Poste en cours de création',
+		status: 'Offre active',
 		summary:
 			'Un stage hybride pour structurer les projets, préparer les échanges client et utiliser l’IA comme levier de coordination, spécification et pilotage.',
 		intro: [
@@ -102,9 +102,8 @@ export const jobOffers: JobOffer[] = [
 		],
 		conditions: [
 			'Stage de 6 mois.',
-			'Début possible ASAP ou septembre 2026.',
+			'Entrées possibles toute l’année, selon votre calendrier école et les projets en cours.',
 			'Télétravail complet.',
-			'Convention de stage obligatoire.',
 			'Gratification selon cadre légal, à préciser selon profil/contexte.',
 			'Encadrement par l’équipe FDTI.',
 			'Possibilité de poursuivre la collaboration selon le niveau, le contexte et les opportunités.'
@@ -138,9 +137,9 @@ export const jobOffers: JobOffer[] = [
 		location: 'Télétravail complet',
 		experience: '0-2 ans',
 		startDate: '2026-06-15',
-		startLabel: 'ASAP ou septembre 2026',
+		startLabel: 'Entrées possibles toute l’année',
 		postedAt: '2026-06-03',
-		status: 'Poste en cours de création',
+		status: 'Offre active',
 		summary:
 			'Un stage technique pour développer des agents IA métier, applications, APIs et workflows data reliés à des projets réellement utilisés.',
 		intro: [
@@ -194,9 +193,8 @@ export const jobOffers: JobOffer[] = [
 		],
 		conditions: [
 			'Stage de 6 mois.',
-			'Début possible ASAP ou septembre 2026.',
+			'Entrées possibles toute l’année, selon votre calendrier école et les projets en cours.',
 			'Télétravail complet.',
-			'Convention de stage obligatoire.',
 			'Gratification selon cadre légal, à préciser selon profil/contexte.',
 			'Encadrement par l’équipe FDTI.',
 			'Possibilité de poursuivre la collaboration selon le niveau, le contexte et les opportunités.'

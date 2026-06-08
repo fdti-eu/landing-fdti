@@ -9,7 +9,7 @@
 
 	const title = 'Offres de stage IA, code et data | FDTI';
 	const description =
-		'Rejoignez FDTI sur des stages en IA métier, agents IA, applications, data et opérations projet. Postes en télétravail complet.';
+		'Rejoignez FDTI en stage sur des missions IA, agents métier, applications, data et opérations projet. Postes en télétravail complet.';
 	const canonicalUrl = buildLocalizedUrl('/offres-emploi', 'fr');
 	const ogImage = absoluteImageUrl('/images/cms/branding/fdti-from-data-to-insights.svg');
 </script>
@@ -57,15 +57,15 @@
 				Stages IA, code et data chez FDTI
 			</h1>
 			<p class="text-lg md:text-xl text-white/80 leading-relaxed">
-				Nous recrutons deux profils stagiaires pour contribuer à des projets concrets : agents IA
-				métier, applications, automatisations, data et coordination projet.
+				Nous accueillons régulièrement des stagiaires pour travailler sur des sujets IA, code et
+				data directement liés aux opérations de nos clients et de nos équipes.
 			</p>
 		</div>
 
 		<div class="grid md:grid-cols-3 gap-4 text-sm text-white/80">
 			<div class="rounded-2xl border border-white/10 bg-white/5 p-5">
 				<p class="text-yellow font-semibold mb-1">Format</p>
-				<p>Stage de 6 mois, convention obligatoire.</p>
+				<p>Stages de 6 mois, avec encadrement par l’équipe FDTI.</p>
 			</div>
 			<div class="rounded-2xl border border-white/10 bg-white/5 p-5">
 				<p class="text-yellow font-semibold mb-1">Lieu</p>
@@ -73,7 +73,7 @@
 			</div>
 			<div class="rounded-2xl border border-white/10 bg-white/5 p-5">
 				<p class="text-yellow font-semibold mb-1">Démarrage</p>
-				<p>ASAP ou septembre 2026 selon profil et calendrier école.</p>
+				<p>Entrées possibles tout au long de l’année selon les projets ouverts.</p>
 			</div>
 		</div>
 	</div>
@@ -87,8 +87,8 @@
 				<h2 class="text-3xl md:text-4xl font-bold text-darkGrey mt-2">Nos offres</h2>
 			</div>
 			<p class="text-grey max-w-2xl">
-				Nous cherchons des profils autonomes, clairs à l’écrit et à l’aise avec l’idée de travailler
-				sur des sujets réels plutôt que des démonstrateurs isolés.
+				Ces stages s’adressent à des profils curieux, structurés et prêts à apprendre vite au
+				contact de projets livrés en production.
 			</p>
 		</div>
 

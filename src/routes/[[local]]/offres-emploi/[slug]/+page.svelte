@@ -84,57 +84,42 @@
 			Toutes les offres
 		</a>
 
-		<div class="grid lg:grid-cols-[1fr_320px] gap-10 items-start">
-			<div class="space-y-6">
-				<div class="flex flex-wrap gap-2">
-					<span class="rounded-full bg-yellow text-darkGrey px-4 py-1.5 text-sm font-bold">
-						{job.contractType}
-					</span>
-					<span class="rounded-full bg-white/10 text-white px-4 py-1.5 text-sm font-semibold">
-						{job.location}
-					</span>
-					<span class="rounded-full bg-white/10 text-white px-4 py-1.5 text-sm font-semibold">
-						{job.experience}
-					</span>
-				</div>
-
-				<div class="space-y-5">
-					<p class="uppercase tracking-[0.25em] text-yellow text-xs sm:text-sm font-semibold">
-						Offre de stage
-					</p>
-					<h1 class="text-3xl sm:text-4xl md:text-6xl font-bold leading-tight">{job.title}</h1>
-					<p class="text-lg md:text-xl text-white/80 leading-relaxed max-w-3xl">{job.summary}</p>
-				</div>
+		<div class="max-w-4xl space-y-8">
+			<div class="flex flex-wrap gap-2">
+				<span class="rounded-full bg-yellow text-darkGrey px-4 py-1.5 text-sm font-bold">
+					{job.contractType}
+				</span>
+				<span class="rounded-full bg-white/10 text-white px-4 py-1.5 text-sm font-semibold">
+					{job.location}
+				</span>
+				<span class="rounded-full bg-white/10 text-white px-4 py-1.5 text-sm font-semibold">
+					{job.experience}
+				</span>
+				<span class="rounded-full bg-white/10 text-white px-4 py-1.5 text-sm font-semibold">
+					{job.startLabel}
+				</span>
 			</div>
 
-			<aside
-				class="rounded-3xl border border-white/10 bg-white/5 p-6 space-y-5 lg:sticky lg:top-28"
+			<div class="space-y-5">
+				<p class="uppercase tracking-[0.25em] text-yellow text-xs sm:text-sm font-semibold">
+					Offre de stage
+				</p>
+				<h1 class="text-3xl sm:text-4xl md:text-6xl font-bold leading-tight">{job.title}</h1>
+				<p class="text-lg md:text-xl text-white/80 leading-relaxed">{job.summary}</p>
+			</div>
+
+			<a
+				href="#candidature"
+				class="inline-flex items-center justify-center rounded-full bg-yellow text-darkGrey px-6 py-3 font-bold hover:bg-white transition-all"
 			>
-				<div>
-					<p class="text-sm text-white/60">Début</p>
-					<p class="font-semibold">{job.startLabel}</p>
-				</div>
-				<div>
-					<p class="text-sm text-white/60">Durée</p>
-					<p class="font-semibold">6 mois</p>
-				</div>
-				<div>
-					<p class="text-sm text-white/60">Lieu</p>
-					<p class="font-semibold">{job.location}</p>
-				</div>
-				<a
-					href="#candidature"
-					class="inline-flex w-full items-center justify-center rounded-full bg-yellow text-darkGrey px-6 py-3 font-bold hover:bg-white transition-all"
-				>
-					Candidater
-				</a>
-			</aside>
+				Candidater
+			</a>
 		</div>
 	</div>
 </section>
 
 <main class="bg-slate-50 py-12 md:py-20">
-	<div class="max-w-6xl mx-auto px-4 grid lg:grid-cols-[minmax(0,1fr)_320px] gap-10 items-start">
+	<div class="max-w-4xl mx-auto px-4">
 		<div class="space-y-10">
 			<section class="rounded-3xl bg-white border border-slate-200 p-6 md:p-8 space-y-4">
 				<h2 class="text-2xl md:text-3xl font-bold text-darkGrey">Rejoignez notre équipe</h2>
@@ -202,6 +187,15 @@
 			</section>
 
 			<section class="rounded-3xl bg-white border border-slate-200 p-6 md:p-8 space-y-5">
+				<h2 class="text-2xl md:text-3xl font-bold text-darkGrey">Conditions</h2>
+				<ul class="grid sm:grid-cols-2 gap-3 text-grey leading-relaxed">
+					{#each job.conditions as condition}
+						<li class="rounded-2xl bg-slate-50 border border-slate-100 p-4">{condition}</li>
+					{/each}
+				</ul>
+			</section>
+
+			<section class="rounded-3xl bg-white border border-slate-200 p-6 md:p-8 space-y-5">
 				<h2 class="text-2xl md:text-3xl font-bold text-darkGrey">Processus de recrutement</h2>
 				<div class="space-y-5">
 					{#each job.process as step, index}
@@ -259,34 +253,5 @@
 				</a>
 			</section>
 		</div>
-
-		<aside class="hidden lg:block sticky top-28 space-y-5">
-			<div class="rounded-3xl bg-darkGrey text-white p-6 space-y-5">
-				<h2 class="text-xl font-bold">À préparer</h2>
-				<ul class="space-y-3 text-sm text-white/80 leading-relaxed">
-					{#each job.applicationItems as item}
-						<li class="flex gap-3">
-							<span class="mt-2 h-2 w-2 shrink-0 rounded-full bg-yellow"></span>
-							<span>{item}</span>
-						</li>
-					{/each}
-				</ul>
-				<a
-					href="#candidature"
-					class="inline-flex w-full items-center justify-center rounded-full bg-yellow text-darkGrey px-6 py-3 font-bold hover:bg-white transition-all"
-				>
-					Candidater
-				</a>
-			</div>
-
-			<div class="rounded-3xl bg-white border border-slate-200 p-6 space-y-3 text-sm text-grey">
-				<h2 class="text-lg font-bold text-darkGrey">Conditions</h2>
-				<ul class="space-y-2">
-					{#each job.conditions as condition}
-						<li>{condition}</li>
-					{/each}
-				</ul>
-			</div>
-		</aside>
 	</div>
 </main>
