@@ -1,5 +1,6 @@
 import { getUseCasesContent, type Lang } from '$lib/data';
 import { buildLocalizedUrl } from '$lib/functions/seo';
+import { jobOffers } from '$lib/jobs';
 
 type SitemapPage = {
 	path: string;
@@ -52,6 +53,13 @@ export async function GET() {
 				buildUrlEntry(buildLocalizedUrl(`/cas-d-usage/${slug}`, locale), 'monthly', '0.80')
 			);
 		}
+	}
+
+	urls.push(buildUrlEntry(buildLocalizedUrl('/offres-emploi', 'fr'), 'weekly', '0.80'));
+	for (const job of jobOffers) {
+		urls.push(
+			buildUrlEntry(buildLocalizedUrl(`/offres-emploi/${job.slug}`, 'fr'), 'weekly', '0.75')
+		);
 	}
 
 	const xml = `<?xml version="1.0" encoding="UTF-8"?>

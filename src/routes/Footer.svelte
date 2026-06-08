@@ -12,6 +12,11 @@
 			</div>
 			<div class="flex items-center gap-4 flex-wrap justify-center h-full">
 				<a
+					href="/fr/offres-emploi"
+					class="font-medium leading-none text-white hover:text-yellow transition-all ease-in-out duration-300"
+					>{$locale === 'fr' ? 'Offres' : 'Jobs'}</a
+				>
+				<a
 					href="/{$locale}/confidentialite"
 					class="font-medium leading-none text-white hover:text-yellow transition-all ease-in-out duration-300"
 					>{$locale === 'fr' ? 'Politique de confidentialité' : 'Privacy'}</a

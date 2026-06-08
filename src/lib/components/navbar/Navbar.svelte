@@ -36,6 +36,8 @@
 	function handleMouseLeave() {
 		hoverStyle = { ...hoverStyle, opacity: 0 };
 	}
+
+	$: jobsPath = '/fr/offres-emploi';
 </script>
 
 <svelte:window bind:scrollY={windowY} bind:innerHeight={windowHeight} />
@@ -111,6 +113,17 @@
 							{$locale === 'fr' ? 'Cas d’usage' : 'Use cases'}
 						</a>
 					</li>
+					<li>
+						<a
+							href={jobsPath}
+							class="{$page.url.pathname.includes('/offres-emploi')
+								? 'text-yellow'
+								: 'text-white'} hover:text-yellow transition-colors"
+							on:click={handleToggleNav}
+						>
+							{$locale === 'fr' ? 'Offres' : 'Jobs'}
+						</a>
+					</li>
 				</ul>
 			</div>
 		{/if}
@@ -155,6 +168,16 @@
 						: ''} block px-4 py-2 hover:text-yellow transition-all duration-300"
 				>
 					{$locale === 'fr' ? 'Cas d’usage' : 'Use cases'}
+				</a>
+			</li>
+			<li on:mouseenter={handleMouseEnter} class="relative z-10">
+				<a
+					href={jobsPath}
+					class="{$page.url.pathname.includes('/offres-emploi')
+						? 'text-yellow'
+						: ''} block px-4 py-2 hover:text-yellow transition-all duration-300"
+				>
+					{$locale === 'fr' ? 'Offres' : 'Jobs'}
 				</a>
 			</li>
 		</ul>
