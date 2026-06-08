@@ -29,9 +29,22 @@ export type JobOffer = {
 };
 
 const tallyBaseUrl = 'https://tally.so/embed/wLjrVp';
+const siteBaseUrl = 'https://www.fdti.eu';
 
-const buildTallyUrl = (offerId: string) =>
-	`${tallyBaseUrl}?offer_id=${offerId}&alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1`;
+const buildTallyUrl = (offerId: string, slug: string, title: string) => {
+	const params = new URLSearchParams({
+		offer_id: offerId,
+		offer_slug: slug,
+		offer_title: title,
+		source_url: `${siteBaseUrl}/fr/offres-emploi/${slug}`,
+		alignLeft: '1',
+		hideTitle: '1',
+		transparentBackground: '1',
+		dynamicHeight: '1'
+	});
+
+	return `${tallyBaseUrl}?${params.toString()}`;
+};
 
 export const jobOffers: JobOffer[] = [
 	{
@@ -126,7 +139,11 @@ export const jobOffers: JobOffer[] = [
 			'La durée de stage recherchée.',
 			'Ce qui vous intéresse dans cette offre.'
 		],
-		tallyUrl: buildTallyUrl('375dd0f6-002e-8181-8f3e-e074888bcbdb')
+		tallyUrl: buildTallyUrl(
+			'375dd0f6-002e-8181-8f3e-e074888bcbdb',
+			'stage-consultant-ia-metier-project-operations',
+			'Stage Consultant IA métier - Project Operations'
+		)
 	},
 	{
 		id: '374dd0f6-002e-81e6-87cb-dfacae38b970',
@@ -222,7 +239,11 @@ export const jobOffers: JobOffer[] = [
 			'La durée de stage recherchée.',
 			'Ce qui vous intéresse dans cette offre.'
 		],
-		tallyUrl: buildTallyUrl('374dd0f6-002e-81e6-87cb-dfacae38b970')
+		tallyUrl: buildTallyUrl(
+			'374dd0f6-002e-81e6-87cb-dfacae38b970',
+			'stage-dev-ia-agents-ia-metier-applications-data',
+			'Stage Dev/IA - Agents IA métier, applications et data'
+		)
 	}
 ];
 
