@@ -94,8 +94,9 @@
 
 		<div class="grid lg:grid-cols-2 gap-6">
 			{#each data.jobs as job}
-				<article
-					class="group rounded-3xl bg-white border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden"
+				<a
+					href="/fr/offres-emploi/{job.slug}"
+					class="group block rounded-3xl bg-white border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden focus:outline-none focus-visible:ring-4 focus-visible:ring-yellow/60"
 				>
 					<div class="p-6 md:p-8 space-y-6">
 						<div class="flex flex-wrap gap-2">
@@ -130,14 +131,13 @@
 							</div>
 						</div>
 
-						<a
-							href="/fr/offres-emploi/{job.slug}"
+						<span
 							class="inline-flex items-center justify-center rounded-full bg-darkGrey text-white px-6 py-3 font-semibold hover:bg-yellow hover:text-darkGrey transition-all"
 						>
 							Voir l’offre et candidater
-						</a>
+						</span>
 					</div>
-				</article>
+				</a>
 			{/each}
 		</div>
 	</div>
