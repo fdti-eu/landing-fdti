@@ -1,6 +1,6 @@
 import { getUseCasesContent, type Lang } from '$lib/data';
 import { buildLocalizedUrl } from '$lib/functions/seo';
-import { jobOffers } from '$lib/jobs';
+import { getJobOffers } from '$lib/jobs';
 
 type SitemapPage = {
 	path: string;
@@ -55,11 +55,13 @@ export async function GET() {
 		}
 	}
 
-	urls.push(buildUrlEntry(buildLocalizedUrl('/offres-emploi', 'fr'), 'weekly', '0.80'));
-	for (const job of jobOffers) {
-		urls.push(
-			buildUrlEntry(buildLocalizedUrl(`/offres-emploi/${job.slug}`, 'fr'), 'weekly', '0.75')
-		);
+	for (const locale of locales) {
+		urls.push(buildUrlEntry(buildLocalizedUrl('/offres-emploi', locale), 'weekly', '0.80'));
+		for (const job of getJobOffers(locale)) {
+			urls.push(
+				buildUrlEntry(buildLocalizedUrl(`/offres-emploi/${job.slug}`, locale), 'weekly', '0.75')
+			);
+		}
 	}
 
 	const xml = `<?xml version="1.0" encoding="UTF-8"?>

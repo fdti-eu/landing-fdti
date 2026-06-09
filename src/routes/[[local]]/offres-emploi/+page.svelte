@@ -5,12 +5,55 @@
 	import { absoluteImageUrl, buildLocalizedUrl } from '$lib/functions/seo';
 	import type { JobOffer } from '$lib/jobs';
 
-	export let data: { jobs: JobOffer[]; locale: string };
+	export let data: { jobs: JobOffer[]; locale: 'fr' | 'en' };
 
-	const title = 'Offres de stage IA, code et data | FDTI';
-	const description =
-		'Rejoignez FDTI en stage sur des missions IA, agents métier, applications, data et opérations projet. Postes en télétravail complet.';
-	const canonicalUrl = buildLocalizedUrl('/offres-emploi', 'fr');
+	$: copy =
+		data.locale === 'fr'
+			? {
+					title: 'Offres de stage IA, code et data | FDTI',
+					description:
+						'Rejoignez FDTI en stage sur des missions IA, agents métier, applications, data et opérations projet. Postes en télétravail complet.',
+					eyebrow: 'Recrutement',
+					h1: 'Stages IA, code et data chez FDTI',
+					hero: 'Nous accueillons régulièrement des stagiaires pour travailler sur des sujets IA, code et data directement liés aux opérations de nos clients et de nos équipes.',
+					formatTitle: 'Format',
+					formatText: 'Stages de 6 mois, avec encadrement par l’équipe FDTI.',
+					locationTitle: 'Lieu',
+					locationText: 'Télétravail complet, avec échanges réguliers en visio.',
+					startTitle: 'Démarrage',
+					startText: 'Entrées possibles tout au long de l’année selon les projets ouverts.',
+					openRoles: 'Postes ouverts',
+					offersTitle: 'Nos offres',
+					offersIntro:
+						'Ces stages s’adressent à des profils curieux, structurés et prêts à apprendre vite au contact de projets livrés en production.',
+					startLabel: 'Début',
+					statusLabel: 'Statut',
+					cta: 'Voir l’offre et candidater'
+				}
+			: {
+					title: 'AI, code and data internships | FDTI',
+					description:
+						'Join FDTI as an intern on AI, domain agents, applications, data and project operations. Fully remote positions.',
+					eyebrow: 'Hiring',
+					h1: 'AI, code and data internships at FDTI',
+					hero: 'We regularly welcome interns to work on AI, code and data topics directly connected to our clients’ and teams’ operations.',
+					formatTitle: 'Format',
+					formatText: '6-month internships, mentored by the FDTI team.',
+					locationTitle: 'Location',
+					locationText: 'Fully remote, with regular video check-ins.',
+					startTitle: 'Start date',
+					startText: 'Start dates available year-round depending on active projects.',
+					openRoles: 'Open roles',
+					offersTitle: 'Our roles',
+					offersIntro:
+						'These internships are for curious, structured profiles ready to learn fast on projects delivered to production.',
+					startLabel: 'Start',
+					statusLabel: 'Status',
+					cta: 'View role and apply'
+				};
+	$: title = copy.title;
+	$: description = copy.description;
+	$: canonicalUrl = buildLocalizedUrl('/offres-emploi', data.locale);
 	const ogImage = absoluteImageUrl('/images/cms/branding/fdti-from-data-to-insights.svg');
 
 	const transitionName = (job: JobOffer, part: string) =>
@@ -45,7 +88,7 @@
 			description,
 			url: canonicalUrl,
 			image: ogImage,
-			inLanguage: 'fr'
+			inLanguage: data.locale
 		})}
 	/>
 </svelte:head>
@@ -54,29 +97,28 @@
 	<div class="max-w-6xl mx-auto px-4 space-y-8">
 		<div class="max-w-3xl space-y-5">
 			<p class="uppercase tracking-[0.25em] text-yellow text-xs sm:text-sm font-semibold">
-				Recrutement
+				{copy.eyebrow}
 			</p>
 			<h1 class="text-3xl sm:text-4xl md:text-6xl font-bold leading-tight">
-				Stages IA, code et data chez FDTI
+				{copy.h1}
 			</h1>
 			<p class="text-lg md:text-xl text-white/80 leading-relaxed">
-				Nous accueillons régulièrement des stagiaires pour travailler sur des sujets IA, code et
-				data directement liés aux opérations de nos clients et de nos équipes.
+				{copy.hero}
 			</p>
 		</div>
 
 		<div class="grid md:grid-cols-3 gap-4 text-sm text-white/80">
 			<div class="rounded-2xl border border-white/10 bg-white/5 p-5">
-				<p class="text-yellow font-semibold mb-1">Format</p>
-				<p>Stages de 6 mois, avec encadrement par l’équipe FDTI.</p>
+				<p class="text-yellow font-semibold mb-1">{copy.formatTitle}</p>
+				<p>{copy.formatText}</p>
 			</div>
 			<div class="rounded-2xl border border-white/10 bg-white/5 p-5">
-				<p class="text-yellow font-semibold mb-1">Lieu</p>
-				<p>Télétravail complet, avec échanges réguliers en visio.</p>
+				<p class="text-yellow font-semibold mb-1">{copy.locationTitle}</p>
+				<p>{copy.locationText}</p>
 			</div>
 			<div class="rounded-2xl border border-white/10 bg-white/5 p-5">
-				<p class="text-yellow font-semibold mb-1">Démarrage</p>
-				<p>Entrées possibles tout au long de l’année selon les projets ouverts.</p>
+				<p class="text-yellow font-semibold mb-1">{copy.startTitle}</p>
+				<p>{copy.startText}</p>
 			</div>
 		</div>
 	</div>
@@ -86,19 +128,18 @@
 	<div class="max-w-6xl mx-auto px-4 space-y-10">
 		<div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
 			<div>
-				<p class="text-sm uppercase tracking-[0.2em] text-grey font-semibold">Postes ouverts</p>
-				<h2 class="text-3xl md:text-4xl font-bold text-darkGrey mt-2">Nos offres</h2>
+				<p class="text-sm uppercase tracking-[0.2em] text-grey font-semibold">{copy.openRoles}</p>
+				<h2 class="text-3xl md:text-4xl font-bold text-darkGrey mt-2">{copy.offersTitle}</h2>
 			</div>
 			<p class="text-grey max-w-2xl">
-				Ces stages s’adressent à des profils curieux, structurés et prêts à apprendre vite au
-				contact de projets livrés en production.
+				{copy.offersIntro}
 			</p>
 		</div>
 
 		<div class="grid lg:grid-cols-2 gap-6">
 			{#each data.jobs as job}
 				<a
-					href="/fr/offres-emploi/{job.slug}"
+					href="/{data.locale}/offres-emploi/{job.slug}"
 					class="group block rounded-3xl bg-white border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden focus:outline-none focus-visible:ring-4 focus-visible:ring-yellow/60"
 				>
 					<div class="p-6 md:p-8 space-y-6">
@@ -128,11 +169,11 @@
 
 						<div class="grid sm:grid-cols-2 gap-3 text-sm">
 							<div class="rounded-2xl bg-slate-50 p-4">
-								<p class="font-semibold text-darkGrey">Début</p>
+								<p class="font-semibold text-darkGrey">{copy.startLabel}</p>
 								<p class="text-grey">{job.startLabel}</p>
 							</div>
 							<div class="rounded-2xl bg-slate-50 p-4">
-								<p class="font-semibold text-darkGrey">Statut</p>
+								<p class="font-semibold text-darkGrey">{copy.statusLabel}</p>
 								<p class="text-grey">{job.status}</p>
 							</div>
 						</div>
@@ -140,7 +181,7 @@
 						<span
 							class="inline-flex items-center justify-center rounded-full bg-darkGrey text-white px-6 py-3 font-semibold hover:bg-yellow hover:text-darkGrey transition-all"
 						>
-							Voir l’offre et candidater
+							{copy.cta}
 						</span>
 					</div>
 				</a>

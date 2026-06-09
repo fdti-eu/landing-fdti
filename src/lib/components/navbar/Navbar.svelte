@@ -37,7 +37,7 @@
 		hoverStyle = { ...hoverStyle, opacity: 0 };
 	}
 
-	$: jobsPath = '/fr/offres-emploi';
+	$: jobsPath = `/${$locale}/offres-emploi`;
 </script>
 
 <svelte:window bind:scrollY={windowY} bind:innerHeight={windowHeight} />
