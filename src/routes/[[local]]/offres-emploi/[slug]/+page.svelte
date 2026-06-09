@@ -14,6 +14,7 @@
 	$: ogImage = absoluteImageUrl('/images/cms/branding/fdti-from-data-to-insights.svg');
 	$: applyUrl = job.tallyUrl.replace('/embed/', '/');
 	$: jobDescription = [...job.intro, job.summary].join('\n\n');
+	$: transitionName = (part: string) => `view-transition-name: job-${part}-${job.slug};`;
 </script>
 
 <MetaTags
@@ -85,7 +86,7 @@
 		</a>
 
 		<div class="max-w-4xl space-y-8">
-			<div class="flex flex-wrap gap-2">
+			<div class="flex flex-wrap gap-2" style={transitionName('meta')}>
 				<span class="rounded-full bg-yellow text-darkGrey px-4 py-1.5 text-sm font-bold">
 					{job.contractType}
 				</span>
@@ -104,8 +105,18 @@
 				<p class="uppercase tracking-[0.25em] text-yellow text-xs sm:text-sm font-semibold">
 					Offre de stage
 				</p>
-				<h1 class="text-3xl sm:text-4xl md:text-6xl font-bold leading-tight">{job.title}</h1>
-				<p class="text-lg md:text-xl text-white/80 leading-relaxed">{job.summary}</p>
+				<h1
+					class="text-3xl sm:text-4xl md:text-6xl font-bold leading-tight"
+					style={transitionName('title')}
+				>
+					{job.title}
+				</h1>
+				<p
+					class="text-lg md:text-xl text-white/80 leading-relaxed"
+					style={transitionName('summary')}
+				>
+					{job.summary}
+				</p>
 			</div>
 
 			<a

@@ -12,6 +12,9 @@
 		'Rejoignez FDTI en stage sur des missions IA, agents métier, applications, data et opérations projet. Postes en télétravail complet.';
 	const canonicalUrl = buildLocalizedUrl('/offres-emploi', 'fr');
 	const ogImage = absoluteImageUrl('/images/cms/branding/fdti-from-data-to-insights.svg');
+
+	const transitionName = (job: JobOffer, part: string) =>
+		`view-transition-name: job-${part}-${job.slug};`;
 </script>
 
 <MetaTags
@@ -99,7 +102,7 @@
 					class="group block rounded-3xl bg-white border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden focus:outline-none focus-visible:ring-4 focus-visible:ring-yellow/60"
 				>
 					<div class="p-6 md:p-8 space-y-6">
-						<div class="flex flex-wrap gap-2">
+						<div class="flex flex-wrap gap-2" style={transitionName(job, 'meta')}>
 							<span class="rounded-full bg-yellow/30 text-darkGrey px-3 py-1 text-sm font-semibold">
 								{job.contractType}
 							</span>
@@ -114,10 +117,13 @@
 						<div class="space-y-3">
 							<h3
 								class="text-2xl md:text-3xl font-bold text-darkGrey group-hover:text-grey transition-colors"
+								style={transitionName(job, 'title')}
 							>
 								{job.title}
 							</h3>
-							<p class="text-grey leading-relaxed">{job.summary}</p>
+							<p class="text-grey leading-relaxed" style={transitionName(job, 'summary')}>
+								{job.summary}
+							</p>
 						</div>
 
 						<div class="grid sm:grid-cols-2 gap-3 text-sm">
