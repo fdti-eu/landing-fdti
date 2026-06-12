@@ -19,7 +19,7 @@ export const load: PageLoad = async ({ params }) => {
 		homepage_use_cases_subtitle:
 			local === 'fr'
 				? 'Quelques projets déjà déployés en IA, applications métier et automatisation de processus.'
-				: 'A few shipped projects across AI, business applications, and workflow automation.',
+				: 'Selected projects already deployed across AI, business applications, and workflow automation.',
 		locale: local
 	};
 };

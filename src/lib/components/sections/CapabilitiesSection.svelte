@@ -7,7 +7,7 @@
 	$: subtitle =
 		locale === 'fr'
 			? 'Une expertise lisible, avec des formats d’intervention concrets pour vos équipes.'
-			: 'A clear expertise, with concrete delivery formats for your teams.';
+			: 'Clear expertise, with concrete delivery formats for your teams.';
 	$: items =
 		locale === 'fr'
 			? [

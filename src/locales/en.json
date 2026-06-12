@@ -1,12 +1,12 @@
 {
 	"GetHomePageContent": {
 		"hero_section": {
-			"subtitle": "Data platforms, business apps and AI you can deploy fast",
-			"description": "<p>We upgrade your data stack, business tools and AI use cases with dedicated experts. Deliver tailor-made solutions in weeks, keep costs under control, and bring every operational team on board.</p>",
+			"subtitle": "Copilots, automation and business applications integrated into your existing tools",
+			"description": "<p>We build tools that connect your data, SaaS platforms and internal systems to make your operations faster, more reliable and more automated. AI is not an extra gadget: it becomes a central building block in your daily processes.</p>",
 			"btn_brochure": "Download our brochure",
-			"btn_contact": "Contact us",
+			"btn_contact": "Diagnose your need in 30 min",
 			"brochure_link": "https://docs.google.com/presentation/d/e/2PACX-1vTqoylpjD44uKvXaQVAsPAlGMXDLBP_cqpr7gnuj0S2qXDS07mXwww8rMfjU-nAeTyYgR6CRSICSj17/pub?start=false&loop=false&delayms=3000",
-			"title": "Business solutions augmented with data",
+			"title": "AI, code and data for your business processes",
 			"status": "AI studio & business automation"
 		},
 		"fdti_section": {
@@ -16,18 +16,18 @@
 				"url": "/images/cms/branding/from-data-to-insight.svg",
 				"id": "from-data-to-insight.svg"
 			},
-			"content_1": "<p><strong>Our teams make your operations intelligible</strong> by exposing market dynamics, customer signals and internal performance. We blend data engineering, AI and product design to surface growth levers and frame a pragmatic execution roadmap.</p><ul><li><strong>Map</strong> every critical source and signal</li><li><strong>Prioritize</strong> the use cases with the highest ROI</li><li><strong>Align</strong> leadership and field teams on expected impact</li></ul>",
+			"content_1": "<p><strong>We start from the real work your teams do</strong>: documents to process, information to retrieve, decisions to prepare, coordination to streamline, tasks to automate.</p><ul><li><strong>Identify</strong> the steps where AI creates a concrete gain</li><li><strong>Connect</strong> the right sources: databases, SaaS, files, APIs, internal tools</li><li><strong>Design</strong> a robust, secure system your teams can use every day</li></ul>",
 			"icon_2": {
 				"filename_disk": "from-data-to-insight-1.svg",
 				"url": "/images/cms/branding/from-data-to-insight-1.svg",
 				"id": "from-data-to-insight-1.svg"
 			},
-			"content_2": "<p><strong>Solutions your teams actually use</strong>: we shape the right datasets, train models (LLMs, predictive, agents) and deliver ready-to-use applications, APIs, dashboards and collaboration spaces.</p><ul><li><strong>Data & AI</strong>: pipelines, feature stores, specialized models</li><li><strong>Business products</strong>: web apps, secure APIs, AI copilots, automated workflows</li><li><strong>Adoption</strong>: coaching, playbooks and short iterations with your teams</li></ul>",
+			"content_2": "<p><strong>We deliver the right level of solution</strong> for the need: a copilot, an assisted workflow, an API, a back office or a complete business application.</p><ul><li><strong>AI copilots</strong>: search, synthesis, decision support, assisted writing</li><li><strong>Process automation</strong>: document processing, qualification, coordination, alerting, reporting</li><li><strong>Business applications</strong>: portals, dashboards, back offices, secure APIs and internal tools</li></ul>",
 			"title": "Our approach"
 		},
 		"technology_content": {
 			"title": "Technologies",
-			"subtitle": "Four main building blocks, with a compact level of technical detail for those who want to look under the hood.",
+			"subtitle": "Four mastered and composable technical building blocks that we assemble according to each project's needs.",
 			"technology_category_list": [
 				{
 					"title": "Web apps & APIs",
@@ -417,7 +417,7 @@
 			]
 		},
 		"contact_section": {
-			"btn_contact": "Contact us",
+			"btn_contact": "Plan a conversation",
 			"subtitle": "Let's discuss your project together!",
 			"address": "8 place Roger Salengro, 31000 Toulouse, France",
 			"company": "FDTI Consulting",
@@ -425,7 +425,7 @@
 			"title": "Contact"
 		},
 		"CII": {
-			"description": "<p>We have been approved for the Innovation Tax Credit (CII) since 2020 and until 2024 by the Direction G&eacute;n&eacute;rale des Entreprises. This means that you can obtain a tax credit on 20% of the expenses incurred with us.</p>",
+			"description": "<p>We have been approved for the French Innovation Tax Credit (CII) from 2020 to 2024 by the French Directorate General for Enterprise. This means eligible clients can obtain a tax credit covering 20% of qualifying expenses incurred with us.</p>",
 			"image": {
 				"filename_disk": "image.png",
 				"url": "/images/cms/branding/image.png",
@@ -435,7 +435,7 @@
 		"meta_tags": {
 			"page_tags": [
 				{
-					"title": "FDTI | From Data To Insights",
+					"title": "FDTI | AI studio & business automation",
 					"description": "FDTI is an AI studio building copilots, workflow automation, business applications, APIs, and data foundations integrated into your tools.",
 					"url": "/",
 					"img": {
@@ -489,11 +489,11 @@
 	},
 	"GetDNAPageContent": {
 		"DNA_content": {
-			"title": "Dna and Values",
-			"description": "<p>Data security and confidentiality being a key point in our perspective, we enforce strict rules in our processing, like anonymizing personal data or systematically encrypting connexions. Our servers are hosted in France, the data we handle never leave the EU and are not subjected to any jurisdiction outside the EU. We process all of our data according to GDPR standards.</p>",
+			"title": "DNA & Values",
+			"description": "<p>Data security and confidentiality are central to the way we work. We enforce strict processing rules, including personal data anonymization and systematic connection encryption. Our servers are hosted in France, the data they contain never leaves the EU, and it is not subject to any jurisdiction outside the European Union. All data is processed in compliance with GDPR.</p>",
 			"card_list": [
 				{
-					"title": "Flexibilité",
+					"title": "Flexibility",
 					"description": "<p><strong>Integrating with your teams</strong>&nbsp;or working independently on new or existing projects.</p>",
 					"order": 1,
 					"icon": {
@@ -620,15 +620,19 @@
 				"location": "France",
 				"challenge": "A software vendor for court clerks wanted to embed AI directly into its platform to optimize processing time and accuracy for specific time-consuming clerk tasks.",
 				"approach": "Modular architecture structured by AI use cases (tailored LLMs). On-prem FastAPI AI stack, fully integrated into the existing tool via API, but also accessible to other users via secure API. TypeScript/SvelteKit portal.",
-				"impact": "Processing time divided by 20 on targeted tasks while meeting judicial confidentiality requirements.",
+				"impact": "AI pre-analysis runs in parallel with business workflows: up to 1,600 cases processed per day on a first use case, with a significant time-saving equivalent while meeting judicial confidentiality requirements.",
 				"metrics": [
 					{
-						"label": "Requests/year",
-						"value": "+3 M"
+						"label": "Cases / day",
+						"value": "1,600"
 					},
 					{
-						"label": "Time saved",
-						"value": "-25 min"
+						"label": "Equivalent saved",
+						"value": "≈16 p.d / day"
+					},
+					{
+						"label": "FR court registries served",
+						"value": "30%"
 					}
 				],
 				"tags": ["LLM", "FastAPI", "Keycloak", "TypeScript", "SvelteKit", "PostgreSQL"],
@@ -739,9 +743,9 @@
 				"title": "Public lighting supervision",
 				"date": "2024",
 				"location": "France",
-				"challenge": "Municipalities and their operators needed a single platform to manage public lighting schedules, detect anomalies and plan maintenance.",
+				"challenge": "A client specialized in public lighting management for municipalities and their service providers needed a single platform to manage public lighting, adjust schedules, detect anomalies and plan maintenance.",
 				"approach": "Development of a web application serving as a management portal and analysis dashboards. AWS S3 + DuckDB/Parquet real-time stack, Shell/Cron pipelines, FastAPI backend and TypeScript/SvelteKit UI.",
-				"impact": "Application consulted every morning by network managers. Dynamic lighting schedules and predictive maintenance deployed across 40+ territories.",
+				"impact": "The application is consulted every morning by network managers. Consumption and incident measurements are dynamically adjusted, with predictive maintenance and alerting deployed across more than 40 territories.",
 				"metrics": [
 					{
 						"label": "Measurements/day",
@@ -752,10 +756,12 @@
 						"value": "+40"
 					}
 				],
-				"tags": ["IoT", "DuckDB", "SvelteKit", "PostgreSQL", "FastAPI"],
+				"tags": ["DuckDB", "SvelteKit", "PostgreSQL", "FastAPI"],
 				"details": [
 					"Continuous collection of lighting meters with optimized S3 + Parquet storage.",
-					"DuckDB analytics delivering KPIs within seconds over multi-year history.",
+					"Shell/Cron pipelines to refresh the cache.",
+					"DuckDB analytics delivering KPIs instantly over multi-year history, with dynamic visualizations to display results.",
+					"Mandate management system for data owners and users.",
 					"Alert dashboards for operators (failures, consumption, schedule anomalies).",
 					"Open REST API to plug operator and city systems.",
 					"Multi-tenant management with granular permissions and per-city segmentation."
@@ -841,6 +847,10 @@
 						"value": "98"
 					},
 					{
+						"label": "Tables and views",
+						"value": "150+"
+					},
+					{
 						"label": "Latency",
 						"value": "<1 min"
 					}
@@ -858,7 +868,7 @@
 		],
 		"cta": {
 			"label": "Want to explore a similar use case?",
-			"button": "Book a call",
+			"button": "Diagnose your need in 30 min",
 			"link": "https://calendly.com/fdti/30min",
 			"description": "Let's align on your next data, app or AI priority and draft an actionable roadmap in days."
 		}
