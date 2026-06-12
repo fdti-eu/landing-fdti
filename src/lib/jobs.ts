@@ -36,11 +36,14 @@ const tallyPublicBaseUrl = 'https://tally.so/r/wLjrVp';
 const siteBaseUrl = 'https://www.fdti.eu';
 
 const buildTallyUrls = (locale: Lang, offerId: string, slug: string, title: string) => {
-	const params = new URLSearchParams({
+	const contextParams = new URLSearchParams({
 		offer_id: offerId,
 		offer_slug: slug,
 		offer_title: title,
-		source_url: `${siteBaseUrl}/${locale}/offres-emploi/${slug}`,
+		source_url: `${siteBaseUrl}/${locale}/offres-emploi/${slug}`
+	});
+	const embedParams = new URLSearchParams({
+		...Object.fromEntries(contextParams),
 		alignLeft: '1',
 		hideTitle: '1',
 		transparentBackground: '1',
@@ -48,8 +51,8 @@ const buildTallyUrls = (locale: Lang, offerId: string, slug: string, title: stri
 	});
 
 	return {
-		tallyEmbedUrl: `${tallyEmbedBaseUrl}?${params.toString()}`,
-		tallyPublicUrl: `${tallyPublicBaseUrl}?${params.toString()}`
+		tallyEmbedUrl: `${tallyEmbedBaseUrl}?${embedParams.toString()}`,
+		tallyPublicUrl: `${tallyPublicBaseUrl}?${contextParams.toString()}`
 	};
 };
 
