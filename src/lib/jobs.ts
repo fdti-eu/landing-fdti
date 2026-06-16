@@ -62,7 +62,7 @@ const consultantFr = {
 	title: 'Stage Consultant IA métier - Project Operations',
 	shortTitle: 'Consultant IA métier',
 	contractType: 'Stage',
-	location: 'Télétravail complet',
+	location: 'Modalités à définir',
 	experience: '0-2 ans',
 	startDate: '2026-06-15',
 	startLabel: 'Entrées possibles toute l’année',
@@ -125,7 +125,7 @@ const consultantFr = {
 	conditions: [
 		'Stage de 6 mois.',
 		'Entrées possibles toute l’année, selon votre calendrier école et les projets en cours.',
-		'Télétravail complet.',
+		'Modalités de travail à définir selon le cadre du stage, l’école et les projets en cours.',
 		'Gratification selon cadre légal, à préciser selon profil/contexte.',
 		'Encadrement par l’équipe FDTI.',
 		'Possibilité de poursuivre la collaboration selon le niveau, le contexte et les opportunités.'
@@ -149,7 +149,7 @@ const developerFr = {
 	title: 'Stage Dev/IA - Agents IA métier, applications et data',
 	shortTitle: 'Dev/IA agents métier',
 	contractType: 'Stage',
-	location: 'Télétravail complet',
+	location: 'Modalités à définir',
 	experience: '0-2 ans',
 	startDate: '2026-06-15',
 	startLabel: 'Entrées possibles toute l’année',
@@ -182,7 +182,7 @@ const developerFr = {
 		'Capacité à lire et comprendre un code existant.',
 		'Compréhension des APIs, bases de données et architectures web modernes.',
 		'Usage régulier de Git.',
-		'Capacité à travailler en autonomie en full remote.',
+		'Capacité à travailler en autonomie avec un encadrement régulier.',
 		'Communication écrite claire : savoir expliquer ce qui est fait, ce qui bloque et les choix techniques.',
 		'Intérêt réel pour l’IA appliquée à des problèmes métier, pas seulement pour les outils de génération de texte.'
 	],
@@ -230,7 +230,7 @@ const consultantEn = {
 	title: 'Business AI Consultant Internship - Project Operations',
 	shortTitle: 'Business AI Consultant intern',
 	contractType: 'Internship',
-	location: 'Fully remote',
+	location: 'Work setup to be defined',
 	startLabel: 'Start dates available year-round',
 	status: 'Active role',
 	summary:
@@ -290,7 +290,7 @@ const consultantEn = {
 	conditions: [
 		'6-month internship.',
 		'Start dates available year-round, depending on your school calendar and active projects.',
-		'Fully remote.',
+		'Work setup to be defined according to the internship framework, school requirements, and active projects.',
 		'Compensation according to the applicable French internship framework, depending on profile and context.',
 		'Mentoring by the FDTI team.',
 		'Possibility to continue working together depending on level, context, and opportunities.'
@@ -312,7 +312,7 @@ const developerEn = {
 	title: 'AI Developer Internship - Domain Agents, Applications and Data',
 	shortTitle: 'AI Developer intern',
 	contractType: 'Internship',
-	location: 'Fully remote',
+	location: 'Work setup to be defined',
 	startLabel: 'Start dates available year-round',
 	status: 'Active role',
 	summary:
@@ -342,7 +342,7 @@ const developerEn = {
 		'Ability to read and understand an existing codebase.',
 		'Understanding of APIs, databases, and modern web architectures.',
 		'Regular use of Git.',
-		'Ability to work autonomously in a fully remote setup.',
+		'Ability to work autonomously with regular guidance.',
 		'Clear written communication: explaining what was done, what is blocked, and the technical trade-offs.',
 		'Genuine interest in AI applied to business problems, beyond text generation tools.'
 	],

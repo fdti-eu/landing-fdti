@@ -121,3 +121,295 @@
 	font-weight: bold;
 	font-display: swap;
 }
+
+@media print {
+	@page {
+		size: A4;
+		margin: 10mm;
+	}
+
+	* {
+		-webkit-print-color-adjust: exact;
+		print-color-adjust: exact;
+		box-shadow: none !important;
+		text-shadow: none !important;
+	}
+
+	html,
+	body {
+		background: #ffffff !important;
+		color: #111827 !important;
+		font-size: 10.5pt;
+	}
+
+	nav,
+	footer:not(.print-job-apply) {
+		display: none !important;
+	}
+
+	a {
+		color: inherit;
+		text-decoration: none;
+	}
+
+	.print-avoid-break {
+		break-inside: avoid;
+		page-break-inside: avoid;
+	}
+
+	.print-job-offer {
+		display: block !important;
+		max-width: none;
+		font-family: 'Quattrocento Sans', 'Segoe UI', Arial, sans-serif;
+		line-height: 1.3;
+		color: #1d2024;
+	}
+
+	.print-job-hero {
+		margin-bottom: 5mm;
+		padding: 7mm;
+		border-radius: 7mm;
+		background: linear-gradient(135deg, #1d2024 0%, #242930 68%, #555555 100%);
+		color: #ffffff;
+		position: relative;
+		overflow: hidden;
+	}
+
+	.print-job-hero::after {
+		content: '';
+		position: absolute;
+		right: -20mm;
+		top: -24mm;
+		width: 70mm;
+		height: 70mm;
+		border-radius: 999px;
+		background: rgba(249, 208, 137, 0.18);
+	}
+
+	.print-job-topline {
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-between;
+		gap: 8mm;
+		position: relative;
+		z-index: 1;
+	}
+
+	.print-job-company {
+		margin: 0 0 2mm;
+		font-size: 8.6pt;
+		font-weight: 700;
+		letter-spacing: 0.16em;
+		text-transform: uppercase;
+		color: #f9d089;
+	}
+
+	.print-job-eyebrow {
+		margin: 0;
+		font-size: 8.2pt;
+		color: rgba(255, 255, 255, 0.72);
+		letter-spacing: 0.1em;
+		text-transform: uppercase;
+	}
+
+	.print-job-logo {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 16mm;
+		height: 16mm;
+		border: 1.2pt solid #f9d089;
+		border-radius: 999px;
+		background: rgba(255, 255, 255, 0.06);
+		position: relative;
+		z-index: 1;
+	}
+
+	.print-job-logo img {
+		width: 10mm;
+		height: 10mm;
+	}
+
+	.print-job-title-block {
+		margin-top: 9mm;
+		max-width: 158mm;
+		position: relative;
+		z-index: 1;
+	}
+
+	.print-job-title-block h1 {
+		margin: 0 0 3mm;
+		font-size: 25.5pt;
+		line-height: 1.04;
+		font-weight: 700;
+		color: #ffffff;
+	}
+
+	.print-job-title-block p {
+		max-width: 170mm;
+		margin: 0;
+		font-size: 11.4pt;
+		line-height: 1.35;
+		color: rgba(255, 255, 255, 0.82);
+	}
+
+	.print-job-meta {
+		display: grid;
+		grid-template-columns: repeat(5, minmax(0, 1fr));
+		gap: 1.7mm;
+		margin-top: 7mm;
+		position: relative;
+		z-index: 1;
+	}
+
+	.print-job-meta div {
+		border: 0.7pt solid rgba(249, 208, 137, 0.42);
+		border-radius: 3mm;
+		padding: 2.4mm;
+		background: rgba(255, 255, 255, 0.08);
+	}
+
+	.print-job-meta span {
+		display: block;
+		margin-bottom: 1.2mm;
+		font-size: 7.6pt;
+		font-weight: 700;
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+		color: #f9d089;
+	}
+
+	.print-job-meta strong {
+		display: block;
+		font-size: 9.2pt;
+		line-height: 1.2;
+		color: #ffffff;
+	}
+
+	.print-job-section {
+		margin: 0 0 4.4mm;
+		padding: 3mm 0 0;
+		border-top: 0.7pt solid #d8dde5;
+		background: transparent;
+	}
+
+	.print-job-intro {
+		padding: 3.8mm 4.4mm;
+		border: 0.7pt solid #e5e7eb;
+		border-left: 2.2pt solid #1d2024;
+		border-radius: 3.5mm;
+		background: #f9fafb;
+	}
+
+	.print-job-environment {
+		padding: 3.5mm 4mm;
+		border: 0.7pt solid #e5e7eb;
+		border-left: 2.2pt solid #f9d089;
+		border-radius: 3.5mm;
+		background: #ffffff;
+	}
+
+	.print-job-section h2,
+	.print-job-apply h2 {
+		margin: 0 0 2mm;
+		font-size: 12.8pt;
+		line-height: 1.15;
+		font-weight: 700;
+		color: #111827;
+	}
+
+	.print-job-section p,
+	.print-job-apply p {
+		margin: 0 0 1.8mm;
+		font-size: 9.4pt;
+		color: #374151;
+	}
+
+	.print-job-section ul,
+	.print-job-process {
+		margin: 0;
+		padding-left: 5.2mm;
+		color: #374151;
+		list-style-position: outside;
+	}
+
+	.print-job-section ul {
+		list-style-type: disc;
+	}
+
+	.print-job-process {
+		list-style-type: decimal;
+	}
+
+	.print-job-section li,
+	.print-job-process li {
+		padding-left: 0.7mm;
+		margin-bottom: 1.2mm;
+		font-size: 9.2pt;
+	}
+
+	.print-job-section li::marker,
+	.print-job-process li::marker {
+		color: #d49a2f;
+		font-size: 1.05em;
+	}
+
+	.print-job-editorial {
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+	.print-job-tags {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 1.6mm;
+		margin-top: 2.2mm;
+	}
+
+	.print-job-tags span {
+		display: inline-block;
+		border: 0.7pt solid #d1d5db;
+		border-radius: 999px;
+		padding: 1.05mm 2.1mm;
+		font-size: 8.4pt;
+		line-height: 1.15;
+		background: #f9fafb;
+		color: #374151;
+	}
+
+	.print-job-process {
+		padding-left: 6mm;
+	}
+
+	.print-job-process strong {
+		display: block;
+		margin-bottom: 0.8mm;
+		color: #111827;
+	}
+
+	.print-job-apply {
+		display: grid;
+		grid-template-columns: 1fr 1.25fr;
+		gap: 5mm;
+		margin-top: 5mm;
+		padding: 5mm;
+		border: 1.1pt solid #1d2024;
+		border-radius: 4mm;
+		background: linear-gradient(135deg, #f9fafb 0%, #ffffff 65%, #fff7e8 100%);
+	}
+
+	.print-job-apply a {
+		display: block;
+		margin: 0 0 2mm;
+		font-size: 8.6pt;
+		line-height: 1.25;
+		word-break: break-all;
+		color: #111827;
+	}
+
+	.print-job-apply .print-job-page-url {
+		white-space: nowrap;
+		word-break: normal;
+		font-size: 7.8pt;
+	}
+}

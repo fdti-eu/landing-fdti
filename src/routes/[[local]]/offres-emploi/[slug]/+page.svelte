@@ -3,6 +3,7 @@
 	import LdTag from '$lib/components/json-ld/LDTag.svelte';
 	import { schema } from '$lib/components/json-ld/json-ld';
 	import { absoluteImageUrl, buildLocalizedUrl } from '$lib/functions/seo';
+	import PrintableJobOffer from '$lib/components/jobs/PrintableJobOffer.svelte';
 	import type { JobOffer } from '$lib/jobs';
 
 	export let data: { job: JobOffer; locale: 'fr' | 'en' };
@@ -14,6 +15,8 @@
 					back: 'Toutes les offres',
 					eyebrow: 'Offre de stage',
 					apply: 'Candidater',
+					print: 'Imprimer / PDF',
+					printSub: 'Version A4',
 					introTitle: 'Rejoignez notre équipe',
 					skillsTitle: 'Compétences et expériences recherchées',
 					requiredTitle: 'Nécessaires',
@@ -34,6 +37,8 @@
 					back: 'All roles',
 					eyebrow: 'Internship role',
 					apply: 'Apply',
+					print: 'Print / PDF',
+					printSub: 'A4 version',
 					introTitle: 'Join our team',
 					skillsTitle: 'Skills and experience we are looking for',
 					requiredTitle: 'Required',
@@ -56,6 +61,10 @@
 	$: ogImage = absoluteImageUrl('/images/cms/branding/fdti-from-data-to-insights.svg');
 	$: jobDescription = [...job.intro, job.summary].join('\n\n');
 	$: transitionName = (part: string) => `view-transition-name: job-${part}-${job.slug};`;
+
+	const printJobOffer = () => {
+		window.print();
+	};
 </script>
 
 <MetaTags
@@ -116,7 +125,7 @@
 	<script async src="https://tally.so/widgets/embed.js"></script>
 </svelte:head>
 
-<section class="bg-darkGrey text-white pt-28 pb-16 md:pt-36 md:pb-24">
+<section class="bg-darkGrey text-white pt-28 pb-16 md:pt-36 md:pb-24 print:hidden">
 	<div class="max-w-6xl mx-auto px-4 space-y-8">
 		<a
 			href="/{data.locale}/offres-emploi"
@@ -160,17 +169,44 @@
 				</p>
 			</div>
 
-			<a
-				href="#candidature"
-				class="inline-flex items-center justify-center rounded-full bg-yellow text-darkGrey px-6 py-3 font-bold hover:bg-white transition-all"
-			>
-				{copy.apply}
-			</a>
+			<div class="flex flex-wrap gap-3">
+				<a
+					href="#candidature"
+					class="inline-flex items-center justify-center rounded-full bg-yellow text-darkGrey px-6 py-3 font-bold hover:bg-white transition-all"
+				>
+					{copy.apply}
+				</a>
+				<button
+					type="button"
+					on:click={printJobOffer}
+					class="inline-flex cursor-pointer items-center justify-center gap-3 rounded-full border border-white/20 bg-white/10 text-white px-6 py-3 font-bold hover:bg-white hover:text-darkGrey transition-all"
+				>
+					<svg
+						class="h-5 w-5"
+						viewBox="0 0 24 24"
+						fill="none"
+						xmlns="http://www.w3.org/2000/svg"
+						aria-hidden="true"
+					>
+						<path
+							d="M7 9V3h10v6M7 17H5a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-2M7 14h10v7H7v-7Z"
+							stroke="currentColor"
+							stroke-width="1.8"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+						/>
+					</svg>
+					<span class="text-left leading-tight">
+						<span class="block">{copy.print}</span>
+						<span class="block text-xs font-semibold opacity-70">{copy.printSub}</span>
+					</span>
+				</button>
+			</div>
 		</div>
 	</div>
 </section>
 
-<main class="bg-slate-50 py-12 md:py-20">
+<main class="bg-slate-50 py-12 md:py-20 print:hidden">
 	<div class="max-w-4xl mx-auto px-4">
 		<div class="space-y-10">
 			<section class="rounded-3xl bg-white border border-slate-200 p-6 md:p-8 space-y-4">
@@ -308,3 +344,5 @@
 		</div>
 	</div>
 </main>
+
+<PrintableJobOffer {job} locale={data.locale} />

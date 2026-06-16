@@ -12,14 +12,14 @@
 			? {
 					title: 'Offres de stage IA, code et data | FDTI',
 					description:
-						'Rejoignez FDTI en stage sur des missions IA, agents métier, applications, data et opérations projet. Postes en télétravail complet.',
+						'Rejoignez FDTI en stage sur des missions IA, agents métier, applications, data et opérations projet.',
 					eyebrow: 'Recrutement',
 					h1: 'Stages IA, code et data chez FDTI',
 					hero: 'Nous accueillons régulièrement des stagiaires pour travailler sur des sujets IA, code et data directement liés aux opérations de nos clients et de nos équipes.',
 					formatTitle: 'Format',
 					formatText: 'Stages de 6 mois, avec encadrement par l’équipe FDTI.',
 					locationTitle: 'Lieu',
-					locationText: 'Télétravail complet, avec échanges réguliers en visio.',
+					locationText: 'Modalités à définir selon le cadre du stage.',
 					startTitle: 'Démarrage',
 					startText: 'Entrées possibles tout au long de l’année selon les projets ouverts.',
 					openRoles: 'Postes ouverts',
@@ -33,14 +33,14 @@
 			: {
 					title: 'AI, code and data internships | FDTI',
 					description:
-						'Join FDTI as an intern on AI, domain agents, applications, data and project operations. Fully remote positions.',
+						'Join FDTI as an intern on AI, domain agents, applications, data and project operations.',
 					eyebrow: 'Hiring',
 					h1: 'AI, code and data internships at FDTI',
 					hero: 'We regularly welcome interns to work on AI, code and data topics directly connected to our clients’ and teams’ operations.',
 					formatTitle: 'Format',
 					formatText: '6-month internships, mentored by the FDTI team.',
 					locationTitle: 'Location',
-					locationText: 'Fully remote, with regular video check-ins.',
+					locationText: 'Work setup to be defined according to the internship framework.',
 					startTitle: 'Start date',
 					startText: 'Start dates available year-round depending on active projects.',
 					openRoles: 'Open roles',
