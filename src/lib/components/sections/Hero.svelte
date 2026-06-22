@@ -27,7 +27,7 @@
 	});
 </script>
 
-<section class="relative h-screen flex items-center overflow-hidden">
+<section class="relative min-h-screen flex items-center overflow-hidden pt-24 sm:pt-28 md:pt-32 xl:pt-28">
 	<!-- Background with parallax effect -->
 	<div
 		class="absolute inset-0 bg-gradient-2 z-0 w-full h-[120%]"
@@ -36,7 +36,7 @@
 
 	{#if content}
 		<div
-			class="max-w-6xl mx-auto md:grid md:grid-cols-2 md:gap-4 lg:gap-10 relative z-10 px-2 py-16 md:px-4 md:py-24"
+			class="max-w-6xl mx-auto md:grid md:grid-cols-2 md:gap-4 lg:gap-10 relative z-10 px-4 pb-12 sm:pb-16 md:px-6 md:pb-20 xl:pb-10"
 			in:fade={{ duration: 500 }}
 		>
 			<div class="space-y-6 md:max-w-lg">
