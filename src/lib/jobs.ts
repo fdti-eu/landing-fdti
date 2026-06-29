@@ -94,6 +94,7 @@ const consultantFr = {
 	requiredSkills: [
 		'Très bonne capacité d’analyse, de synthèse et de structuration de l’information.',
 		'Communication écrite claire et précise.',
+		'Français professionnel courant, à l’écrit comme à l’oral, pour travailler avec l’équipe et les interlocuteurs projet.',
 		'Capacité à tenir un échange professionnel avec un client ou une équipe projet.',
 		'Autonomie, rigueur et sens de l’organisation.',
 		'Intérêt réel pour l’IA appliquée à des problèmes métier et opérationnels.',
@@ -184,6 +185,7 @@ const developerFr = {
 		'Usage régulier de Git.',
 		'Capacité à travailler en autonomie avec un encadrement régulier.',
 		'Communication écrite claire : savoir expliquer ce qui est fait, ce qui bloque et les choix techniques.',
+		'Français professionnel courant, à l’écrit comme à l’oral, pour travailler avec l’équipe et les interlocuteurs projet.',
 		'Intérêt réel pour l’IA appliquée à des problèmes métier, pas seulement pour les outils de génération de texte.'
 	],
 	niceToHaveSkills: [
@@ -259,6 +261,7 @@ const consultantEn = {
 	requiredSkills: [
 		'Strong analytical, synthesis, and information-structuring skills.',
 		'Clear and precise written communication.',
+		'Professional working proficiency in French, written and spoken, to work with the team and project stakeholders.',
 		'Ability to hold a professional conversation with clients or project teams.',
 		'Autonomy, rigor, and strong organizational habits.',
 		'Genuine interest in AI applied to business and operational problems.',
@@ -344,6 +347,7 @@ const developerEn = {
 		'Regular use of Git.',
 		'Ability to work autonomously with regular guidance.',
 		'Clear written communication: explaining what was done, what is blocked, and the technical trade-offs.',
+		'Professional working proficiency in French, written and spoken, to work with the team and project stakeholders.',
 		'Genuine interest in AI applied to business problems, beyond text generation tools.'
 	],
 	niceToHaveSkills: [
