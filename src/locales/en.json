@@ -631,8 +631,8 @@
 						"value": "≈16 p.d / day"
 					},
 					{
-						"label": "FR court registries served",
-						"value": "30%"
+						"label": "Courts impacted",
+						"value": "48"
 					}
 				],
 				"tags": ["LLM", "FastAPI", "Keycloak", "TypeScript", "SvelteKit", "PostgreSQL"],

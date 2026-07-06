@@ -631,8 +631,8 @@
 						"value": "≈16 j.h / jour"
 					},
 					{
-						"label": "Greffes clients FR",
-						"value": "30%"
+						"label": "Tribunaux impactés",
+						"value": "48"
 					}
 				],
 				"tags": ["LLM", "FastAPI", "Keycloak", "TypeScript", "SvelteKit", "PostgreSQL"],
