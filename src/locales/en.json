@@ -620,11 +620,11 @@
 				"location": "France",
 				"challenge": "A software vendor for court clerks wanted to embed AI directly into its platform to optimize processing time and accuracy for specific time-consuming clerk tasks.",
 				"approach": "Modular architecture structured by AI use cases (tailored LLMs). On-prem FastAPI AI stack, fully integrated into the existing tool via API, but also accessible to other users via secure API. TypeScript/SvelteKit portal.",
-				"impact": "AI pre-analysis runs in parallel with business workflows: up to 1,600 cases processed per day on a first use case, with a significant time-saving equivalent while meeting judicial confidentiality requirements.",
+				"impact": "AI pre-analysis runs in parallel with business workflows: up to 10 GB of data processed per day on a first use case, with a significant time-saving equivalent while meeting judicial confidentiality requirements.",
 				"metrics": [
 					{
-						"label": "Cases / day",
-						"value": "1,600"
+						"label": "Data processed / day",
+						"value": "10 GB"
 					},
 					{
 						"label": "Equivalent saved",
