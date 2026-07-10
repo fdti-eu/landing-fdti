@@ -620,18 +620,18 @@
 				"location": "France",
 				"challenge": "Un éditeur de logiciels pour greffiers souhaitait intégrer des fonctionnalités d'IA directement dans sa plateforme pour optimiser le temps et la précision de certaines tâches chronophages des greffiers.",
 				"approach": "Architecture modulaire structurée par cas d'usage IA (LLM spécialisés). API d'intelligence artificielle hébergée sur les serveurs du client (FastAPI), parfaitement intégrée à l'outil existant mais aussi accessible à d'autres utilisateurs via API sécurisée. Portail TypeScript/SvelteKit.",
-				"impact": "Pré-analyse IA lancée en parallèle des flux métier : jusqu’à 400 000 dossiers analysés par an sur un premier cas d’usage, avec un équivalent temps économisé significatif tout en respectant les exigences de confidentialité du secteur judiciaire.",
+				"impact": "Pré-analyse IA lancée en parallèle des flux métier : environ 40 milliards de tokens traités par an sur un premier cas d’usage, avec un équivalent temps économisé significatif tout en respectant les exigences de confidentialité du secteur judiciaire.",
 				"metrics": [
 					{
-						"label": "Dossiers analysés / an",
-						"value": "400k"
+						"label": "Tokens traités / an",
+						"value": "40 Md"
 					},
 					{
 						"label": "Équivalent économisé",
 						"value": "≈16 j.h / jour"
 					},
 					{
-						"label": "Tribunaux impactés",
+						"label": "Tribunaux équipés",
 						"value": "48"
 					}
 				],
