@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Underline from '$lib/components/Underline.svelte';
+	import CapabilityDiagram from './CapabilityDiagram.svelte';
 
 	export let locale: string = 'fr';
 
@@ -52,21 +53,21 @@
 				];
 </script>
 
-<section
-	class="relative max-w-6xl space-y-8 mx-auto px-2 md:px-12 py-16 md:py-24"
-	id="capabilities"
->
-	<div class="group">
-		<h2 class="text-3xl font-bold text-center md:text-4xl">{title}</h2>
-		<Underline />
+<section class="capabilities-section" id="capabilities">
+	<div class="section-heading">
+		<div class="group">
+			<h2 class="text-3xl font-bold text-center md:text-4xl">{title}</h2>
+			<Underline />
+		</div>
+		<h3 class="text-xl font-bold text-center sm:text-2xl md:text-3xl lg:text-4xl max-w-4xl mx-auto">
+			{subtitle}
+		</h3>
 	</div>
-	<h3 class="text-xl font-bold text-center sm:text-2xl md:text-3xl lg:text-4xl max-w-4xl mx-auto">
-		{subtitle}
-	</h3>
 
-	<div class="grid gap-6 md:grid-cols-3 md:pt-10">
-		{#each items as item}
-			<article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+	<div class="capabilities-grid">
+		{#each items as item, index}
+			<article class="capability-card">
+				<CapabilityDiagram {index} />
 				<h4 class="text-xl font-bold text-darkGrey">{item.title}</h4>
 				<p class="mt-3 text-sm leading-relaxed text-darkGrey/80">{item.description}</p>
 				<div class="mt-5 flex flex-wrap gap-2">

@@ -4,7 +4,7 @@
 </script>
 
 <!-- footer -->
-<footer class="bg-darkGrey pt-10 pb-20 md:py-5">
+<footer class="fdti-footer bg-darkGrey pt-10 pb-20 md:py-5">
 	<div class="max-w-screen-wrap mx-auto px-3 wrap:px-5">
 		<div class="flex flex-col gap-8 md:flex-row justify-between items-center">
 			<div class="flex items-center gap-10 h-full">

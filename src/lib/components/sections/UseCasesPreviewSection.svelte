@@ -19,28 +19,23 @@
 </script>
 
 {#if useCases?.length}
-	<section
-		class="relative max-w-6xl space-y-8 mx-auto px-2 md:px-12 py-16 md:py-24"
-		id="use-cases-preview"
-	>
-		<div class="group">
-			<h2 class="text-3xl font-bold text-center md:text-4xl">{title}</h2>
-			<Underline />
-		</div>
-		{#if subtitle}
-			<h3
-				class="text-xl font-bold text-center sm:text-2xl md:text-3xl lg:text-4xl max-w-4xl mx-auto"
-			>
-				{subtitle}
-			</h3>
-		{/if}
-
-		<div class="grid gap-6 md:grid-cols-3 md:pt-10">
-			{#each useCases as useCase}
-				<a
-					href={`/${locale}/cas-d-usage/${useCase.slug}`}
-					class="group block rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-yellow hover:shadow-xl"
+	<section class="cases-preview-section" id="use-cases-preview">
+		<div class="section-heading">
+			<div class="group">
+				<h2 class="text-3xl font-bold text-center md:text-4xl">{title}</h2>
+				<Underline />
+			</div>
+			{#if subtitle}
+				<h3
+					class="text-xl font-bold text-center sm:text-2xl md:text-3xl lg:text-4xl max-w-4xl mx-auto"
 				>
+					{subtitle}
+				</h3>
+			{/if}
+		</div>
+		<div class="cases-preview-grid">
+			{#each useCases as useCase}
+				<a href={`/${locale}/cas-d-usage/${useCase.slug}`} class="case-preview-card group">
 					<p class="text-xs font-bold uppercase tracking-[0.18em] text-darkGrey/60">
 						{useCase.category}
 					</p>
@@ -54,7 +49,7 @@
 					</p>
 
 					{#if useCase.metrics?.length}
-						<div class="mt-5 grid grid-cols-2 gap-3">
+						<div class="preview-metrics">
 							{#each useCase.metrics.slice(0, 2) as metric}
 								<div class="rounded-xl bg-slate-50 p-3 border border-slate-100">
 									<p class="text-[11px] uppercase tracking-wide text-darkGrey/60">{metric.label}</p>
@@ -65,7 +60,7 @@
 					{/if}
 
 					{#if useCase.tags?.length}
-						<div class="mt-5 flex flex-wrap gap-2">
+						<div class="preview-tags">
 							{#each useCase.tags.slice(0, 4) as tag}
 								<span class="rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-darkGrey">
 									{tag}
@@ -78,10 +73,7 @@
 		</div>
 
 		<div class="flex justify-center pt-4">
-			<a
-				href={`/${locale}/cas-d-usage`}
-				class="inline-flex items-center justify-center rounded-lg bg-black px-8 py-3 text-center font-bold text-white transition-all duration-300 hover:bg-yellow hover:text-black"
-			>
+			<a href={`/${locale}/cas-d-usage`} class="cases-all-link">
 				{locale === 'fr' ? 'Voir tous les cas d’usage' : 'See all use cases'}
 			</a>
 		</div>

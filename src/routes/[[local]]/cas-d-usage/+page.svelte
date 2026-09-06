@@ -218,7 +218,7 @@
 
 {#if content}
 	<section
-		class="hero-section bg-darkGrey text-white py-24 md:py-32 overflow-x-hidden"
+		class="case-index-hero hero-section bg-darkGrey text-white py-24 md:py-32 overflow-x-hidden"
 		class:hero-hidden={Boolean(activeSlug)}
 	>
 		<div class="max-w-6xl mx-auto px-4 w-full">
@@ -343,9 +343,9 @@
 		</div>
 	</section>
 
-	<section class="bg-slate-50 py-12 md:py-16 overflow-x-hidden">
+	<section class="case-index-body bg-slate-50 py-12 md:py-16 overflow-x-hidden">
 		<div class="max-w-6xl mx-auto px-4 space-y-6 w-full">
-			<div class="space-y-4 overflow-hidden">
+			<div class="case-index-grid space-y-4 overflow-hidden">
 				{#each filteredUseCases as useCase (useCase.id)}
 					<div
 						in:fade={{ duration: 200 }}
@@ -419,7 +419,7 @@
 											{/if}
 										</div>
 										<h2
-											class="text-base sm:text-lg font-bold text-darkGrey group-hover:text-yellow transition-colors mb-2"
+											class="case-index-title text-base sm:text-lg font-bold text-darkGrey group-hover:text-yellow transition-colors mb-2"
 											style={getViewTransitionStyle(useCase.slug, useCase.id, 'title')}
 										>
 											{useCase.title}
@@ -531,7 +531,7 @@
 						aria-hidden="true"
 					></span>
 					<div
-						class="relative rounded-3xl border border-yellow/30 bg-darkGrey text-white shadow-2xl p-6 sm:p-8 md:p-10 lg:p-12 flex flex-col md:flex-row md:items-center md:justify-between gap-6 sm:gap-8"
+						class="case-cta relative rounded-3xl border border-yellow/30 bg-darkGrey text-white shadow-2xl p-6 sm:p-8 md:p-10 lg:p-12 flex flex-col md:flex-row md:items-center md:justify-between gap-6 sm:gap-8"
 						style="box-shadow: 0 0 65px 10px rgba(251, 210, 67, 0.25);"
 					>
 						<div class="relative z-10">

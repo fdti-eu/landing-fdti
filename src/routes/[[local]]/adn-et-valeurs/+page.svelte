@@ -70,12 +70,15 @@
 </svelte:head>
 
 {#if dnaContent && cardList?.length}
-	<section class="relative max-w-screen-xl space-y-8 mx-auto py-16 mt-20 lg:px-12 md:py-24" in:fade>
+	<section
+		class="dna-page relative max-w-screen-xl space-y-8 mx-auto py-16 mt-20 lg:px-12 md:py-24"
+		in:fade
+	>
 		<div class="group">
 			<h1 class="text-3xl font-bold text-center md:text-4xl">{dnaContent.title || ''}</h1>
 			<Underline />
 		</div>
-		<div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-2 px-2 lg:gap-8">
+		<div class="dna-grid grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-2 px-2 lg:gap-8">
 			{#each cardList as card}
 				<AdNcard content={card} />
 			{/each}

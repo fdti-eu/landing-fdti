@@ -67,7 +67,7 @@
 </svelte:head>
 
 <section
-	class="relative w-full max-w-[120rem] px-4 sm:px-8 lg:px-16 xl:px-24 mx-auto space-y-8 py-16 mt-20 md:py-24"
+	class="legal-page relative w-full max-w-[120rem] px-4 sm:px-8 lg:px-16 xl:px-24 mx-auto space-y-8 py-16 mt-20 md:py-24"
 	in:fade
 >
 	{#if cgu}

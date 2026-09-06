@@ -22,7 +22,6 @@
 	$: technologyList = content?.technology_category_list || [];
 
 	let openIndex: number | null = null;
-	let hoverIndex: number | null = null;
 
 	const DEFAULT_IMG_WIDTH = 140;
 	const DEFAULT_IMG_HEIGHT = 56;
@@ -30,39 +29,31 @@
 	function handleToggle(index: number) {
 		openIndex = openIndex === index ? null : index;
 	}
-
-	function handleMouseEnter(index: number) {
-		hoverIndex = index;
-	}
-
-	function handleMouseLeave() {
-		hoverIndex = null;
-	}
 </script>
 
 {#if technologyList && content}
-	<section class="relative max-w-5xl space-y-8 mx-auto md:px-12 py-16 md:py-24" id="technologies">
-		<div class="group">
-			<h2 class="text-3xl font-bold text-center md:text-4xl">
-				{content.title || 'Technologies'}
-			</h2>
-			<Underline />
+	<section class="technologies-section" id="technologies">
+		<div class="section-heading">
+			<div class="group">
+				<h2 class="text-3xl font-bold text-center md:text-4xl">
+					{content.title || 'Technologies'}
+				</h2>
+				<Underline />
+			</div>
+			<h3 class="text-xl font-bold text-center sm:text-2xl md:text-3xl lg:text-4xl">
+				{content.subtitle ||
+					'Nous utilisons des outils modernes adaptés à chaque situation rencontrée lors du traitement de vos données'}
+			</h3>
 		</div>
-		<h3 class="text-xl font-bold text-center sm:text-2xl md:text-3xl lg:text-4xl">
-			{content.subtitle ||
-				'Nous utilisons des outils modernes adaptés à chaque situation rencontrée lors du traitement de vos données'}
-		</h3>
-		<article class="grid w-full gap-6 md:grid-cols-2 md:pt-8">
+		<article class="technologies-grid">
 			{#each technologyList as category, index}
-				{@const isOpen = openIndex === index || hoverIndex === index}
+				{@const isOpen = openIndex === index}
 				<TechnoList
 					title={category?.title || ''}
 					description={category?.description || ''}
 					iconLink={category?.category_icon?.url || ''}
 					{isOpen}
 					onToggle={() => handleToggle(index)}
-					onMouseEnter={() => handleMouseEnter(index)}
-					onMouseLeave={handleMouseLeave}
 				>
 					{#if category?.technology_list && category?.technology_list.length}
 						{#each category.technology_list as technology}

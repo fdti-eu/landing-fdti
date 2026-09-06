@@ -13,8 +13,8 @@
 </script>
 
 {#if content}
-	<section class="bg-lightGrey py-12 md:py-24" id="contact">
-		<div class="max-w-6xl mx-auto px-2 space-y-8 md:px-12 wrap:px-5">
+	<section class="contact-section" id="contact">
+		<div class="contact-shell">
 			<div class="group">
 				<h2 class="text-3xl font-bold text-center md:text-4xl">
 					{content.title || 'Contact'}
@@ -22,10 +22,8 @@
 				<Underline />
 			</div>
 
-			<div class="flex flex-col items-center gap-12 lg:flex-row lg:items-start">
-				<div
-					class="flex flex-col items-center gap-8 sm:grid sm:grid-cols-5 sm:items-start sm:gap-2"
-				>
+			<div class="contact-grid">
+				<div class="contact-identity">
 					<figure
 						class="flex overflow-hidden w-20 h-20 justify-center items-center rounded-full bg-grey-2 border border-yellow"
 					>
@@ -83,7 +81,7 @@
 						</li>
 					</ul>
 				</div>
-				<div class="w-full flex-1 flex flex-col justify-center items-center gap-8 pt-5">
+				<div class="contact-invitation">
 					<h3 class="text-4xl text-center">{content.subtitle}</h3>
 					<div class="flex flex-col gap-8 items-center">
 						<a

@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1" />
+		<title>FDTI · Vérification design</title>
+		<style>
+			body {
+				margin: 0;
+				background: #555;
+				font: 13px system-ui;
+				color: #fff;
+			}
+			header {
+				padding: 12px 18px;
+				background: #1d2024;
+				display: flex;
+				align-items: center;
+				gap: 9px;
+				flex-wrap: wrap;
+			}
+			button,
+			select,
+			a {
+				font: inherit;
+				padding: 9px 12px;
+				border: 1px solid #555;
+				background: #242930;
+				color: #fff;
+				cursor: pointer;
+			}
+			button.active {
+				color: #1d2024;
+				background: #f9d089;
+			}
+			#stage {
+				display: flex;
+				justify-content: center;
+				padding-top: 20px;
+				overflow: auto;
+			}
+			iframe {
+				border: 0;
+				background: white;
+				flex-shrink: 0;
+				height: 900px;
+			}
+			pre {
+				padding: 20px;
+				white-space: pre-wrap;
+				line-height: 1.7;
+			}
+			#report {
+				background: #1d2024;
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<strong>FDTI · DESIGN REVIEW</strong
+			><button data-width="390" class="active">Mobile 390</button
+			><button data-width="768">768</button><button data-width="1440">Desktop 1440</button
+			><select id="route" aria-label="Page">
+				<option value="/fr">Accueil FR</option>
+				<option value="/en">Accueil EN</option>
+				<option value="/fr/cas-d-usage">Cas clients</option>
+				<option value="/fr/cas-d-usage/automatisation-greffes">Cas détaillé</option>
+				<option value="/fr/adn-et-valeurs">ADN</option>
+				<option value="/fr/offres-emploi">Offres</option></select
+			><select id="section" aria-label="Section">
+				<option value="top">Haut</option>
+				<option value="fdti">Approche</option>
+				<option value="capabilities">Expertises</option>
+				<option value="use-cases-preview">Cas clients</option>
+				<option value="technologies">Technologies</option>
+				<option value="trust">Références</option>
+				<option value="contact">Contact</option></select
+			><button id="run">Tester</button><a href="/fr">Ouvrir</a>
+		</header>
+		<div id="stage">
+			<iframe id="site" src="/fr" title="Prévisualisation FDTI" style="width: 390px"></iframe>
+		</div>
+		<pre id="report" aria-live="polite">Prêt.</pre>
+		<script type="module">
+			const frame = document.querySelector('#site'),
+				report = document.querySelector('#report');
+			const pause = (ms = 120) => new Promise((r) => setTimeout(r, ms));
+			const lines = [];
+			let failures = 0;
+			function assert(ok, label, detail = '') {
+				if (!ok) failures++;
+				lines.push(`${ok ? 'PASS' : 'FAIL'} · ${label}${detail ? '\n  ' + detail : ''}`);
+				report.textContent = lines.join('\n');
+			}
+			function resize(w) {
+				frame.style.width = w + 'px';
+				frame.style.transformOrigin = 'top center';
+				frame.style.transform = `scale(${Math.min(1, (innerWidth - 40) / w)})`;
+				document
+					.querySelectorAll('[data-width]')
+					.forEach((b) => b.classList.toggle('active', +b.dataset.width === w));
+			}
+			async function load(path) {
+				await new Promise((resolve, reject) => {
+					const timeout = setTimeout(() => reject(new Error('Page load timeout: ' + path)), 20000);
+					frame.onload = () => {
+						clearTimeout(timeout);
+						resolve();
+					};
+					frame.src = path;
+				});
+				await frame.contentDocument.fonts.ready;
+				await pause(700);
+			}
+			async function axe(label) {
+				const doc = frame.contentDocument;
+				await new Promise((resolve, reject) => {
+					const s = doc.createElement('script');
+					s.src = '/__axe';
+					s.onload = resolve;
+					s.onerror = reject;
+					doc.head.append(s);
+				});
+				const r = await frame.contentWindow.axe.run(doc, {
+					runOnly: { type: 'tag', values: ['wcag2a', 'wcag2aa', 'wcag21aa'] }
+				});
+				assert(
+					!r.violations.length,
+					'axe ' + label,
+					r.violations
+						.map(
+							(v) =>
+								v.id +
+								': ' +
+								v.nodes
+									.slice(0, 2)
+									.map((n) => n.target.join(' ') + ' ' + n.failureSummary)
+									.join('; ')
+						)
+						.join('\n')
+				);
+			}
+			for (const b of document.querySelectorAll('[data-width]'))
+				b.onclick = () => resize(+b.dataset.width);
+			document.querySelector('#route').onchange = (e) => load(e.target.value);
+			document.querySelector('#section').onchange = (e) => {
+				if (e.target.value === 'top') frame.contentWindow.scrollTo({ top: 0, behavior: 'instant' });
+				else
+					frame.contentDocument
+						.getElementById(e.target.value)
+						?.scrollIntoView({ behavior: 'instant' });
+			};
+			async function run() {
+				document.querySelector('#run').disabled = true;
+				lines.length = 0;
+				failures = 0;
+				report.textContent = 'En cours…';
+				try {
+					for (const language of ['fr', 'en']) {
+						await load('/' + language);
+						let doc = frame.contentDocument;
+						assert(
+							doc
+								.querySelector('h1')
+								.textContent.includes(
+									language === 'fr' ? 'processus métiers' : 'business processes'
+								),
+							'Contenu accueil ' + language
+						);
+						assert(
+							frame.contentWindow
+								.getComputedStyle(doc.querySelector('.fdti-site'))
+								.fontFamily.includes('Quattrocento'),
+							'Police de marque ' + language
+						);
+						assert(
+							frame.contentWindow
+								.getComputedStyle(doc.documentElement)
+								.getPropertyValue('--color-yellow')
+								.trim() === '#f9d089',
+							'Jaune original ' + language
+						);
+						for (const width of [320, 390, 600, 768, 900, 1024, 1440]) {
+							resize(width);
+							await pause();
+							assert(
+								doc.documentElement.scrollWidth <= width,
+								'Accueil ' + language + ' sans débordement à ' + width
+							);
+						}
+						const logos = [...doc.querySelectorAll('.marquee-content:not([aria-hidden]) img')];
+						assert(
+							logos.length === 13 &&
+								logos.every((img) => {
+									const r = img.getBoundingClientRect();
+									return r.width > 0 && r.right <= 1440 && img.complete && img.naturalWidth > 0;
+								}),
+							'Les 13 logos clients sont affichés ' + language
+						);
+						resize(390);
+						await pause();
+						const toggle = doc.querySelector('.nav-menu-button');
+						toggle.click();
+						await pause();
+						assert(
+							toggle.getAttribute('aria-expanded') === 'true' &&
+								frame.contentWindow.getComputedStyle(doc.querySelector('.nav-links')).display !==
+									'none',
+							'Menu mobile ouvert ' + language
+						);
+						doc.querySelector('.nav-links a').focus();
+						frame.contentWindow.dispatchEvent(new KeyboardEvent('keydown', { key: 'Escape' }));
+						await pause();
+						assert(
+							toggle.getAttribute('aria-expanded') === 'false' && doc.activeElement === toggle,
+							'Échap referme le menu et rend le focus ' + language
+						);
+						const tech = doc.querySelector('.tech-toggle');
+						tech.click();
+						await pause();
+						assert(
+							tech.getAttribute('aria-expanded') === 'true' &&
+								!doc.getElementById(tech.getAttribute('aria-controls')).hidden,
+							'Technologies ouvertes ' + language
+						);
+						tech.click();
+						await pause();
+						assert(
+							doc.getElementById(tech.getAttribute('aria-controls')).hidden,
+							'Technologies fermées ' + language
+						);
+						await axe('accueil ' + language + ' mobile');
+						resize(1440);
+						await pause();
+						await axe('accueil ' + language + ' desktop');
+						doc.querySelector('[aria-label="toggle language"]').click();
+						await pause();
+						doc
+							.querySelector(`.nav-locale button[value="${language === 'fr' ? 'en' : 'fr'}"]`)
+							.click();
+						await pause(1000);
+						assert(
+							frame.contentWindow.location.pathname === '/' + (language === 'fr' ? 'en' : 'fr'),
+							'Sélecteur de langue ' + language
+						);
+					}
+					for (const route of [
+						'/fr/adn-et-valeurs',
+						'/en/adn-et-valeurs',
+						'/fr/cas-d-usage',
+						'/en/cas-d-usage',
+						'/fr/cas-d-usage/automatisation-greffes',
+						'/en/cas-d-usage/automatisation-greffes',
+						'/fr/offres-emploi',
+						'/en/offres-emploi',
+						'/fr/confidentialite',
+						'/en/condition-utilisation'
+					]) {
+						await load(route);
+						let doc = frame.contentDocument;
+						assert(doc.querySelector('h1') !== null, 'Accès direct ' + route);
+						for (const width of [320, 390, 768, 1024, 1440]) {
+							resize(width);
+							await pause();
+							assert(
+								doc.documentElement.scrollWidth <= width,
+								route + ' sans débordement à ' + width
+							);
+						}
+						resize(390);
+						await pause();
+						await axe(route + ' mobile');
+						if (route === '/fr/cas-d-usage') {
+							const total = doc.querySelectorAll('.use-case-card').length;
+							doc.querySelector('.case-index-hero button').click();
+							await pause(300);
+							doc.querySelectorAll('.case-index-hero button')[1].click();
+							await pause(500);
+							assert(
+								doc.querySelectorAll('.use-case-card').length < total,
+								'Filtre de secteur fonctionnel'
+							);
+							[...doc.querySelectorAll('.case-index-hero button')]
+								.find((b) => b.textContent.includes('Réinitialiser'))
+								.click();
+							await pause(500);
+							assert(
+								doc.querySelectorAll('.use-case-card').length === total,
+								'Réinitialisation des filtres'
+							);
+							doc.querySelector('.use-case-card').click();
+							await pause(1000);
+							assert(
+								frame.contentDocument.querySelector('.case-detail-hero'),
+								'Navigation vers un cas'
+							);
+							frame.contentDocument.querySelector('.case-detail-hero a').click();
+							await pause(1000);
+							assert(
+								frame.contentDocument.querySelectorAll('.use-case-card').length === total,
+								'Retour vers la liste'
+							);
+						}
+						if (route === '/fr/offres-emploi') {
+							const href = doc.querySelector('.job-card').getAttribute('href');
+							await load(href);
+							doc = frame.contentDocument;
+							assert(doc.querySelector('#candidature iframe'), 'Formulaire existant conservé');
+							assert(doc.querySelector('.print-job-offer'), 'Version A4 conservée');
+							assert(
+								doc.documentElement.scrollWidth <= 390,
+								'Offre détaillée sans débordement mobile'
+							);
+						}
+					}
+					await load('/fr');
+					resize(390);
+					report.textContent =
+						`TERMINÉ : ${failures} échec(s), ${lines.length} contrôles.\n\n` +
+						lines.filter((l) => l.startsWith('FAIL')).join('\n') +
+						'\n\n' +
+						lines.filter((l) => l.startsWith('PASS')).join('\n');
+				} catch (e) {
+					assert(false, 'Erreur fixture', e.stack || String(e));
+				} finally {
+					document.querySelector('#run').disabled = false;
+				}
+			}
+			document.querySelector('#run').onclick = run;
+			const params = new URLSearchParams(location.search);
+			if (params.has('width')) {
+				resize(Number(params.get('width')));
+				await load(params.get('page') || '/fr');
+				if (params.has('section'))
+					frame.contentDocument
+						.getElementById(params.get('section'))
+						?.scrollIntoView({ behavior: 'instant' });
+			}
+		</script>
+	</body>
+</html>

@@ -164,7 +164,7 @@
 
 {#if useCase}
 	<section
-		class="hero-section {getIndustryGradient(
+		class="case-detail-hero hero-section {getIndustryGradient(
 			useCase.id
 		)} text-white py-24 md:py-32 overflow-x-hidden relative"
 		class:hero-hidden={isLeaving}
@@ -263,7 +263,9 @@
 		</div>
 	</section>
 
-	<section class="bg-slate-50 py-12 sm:py-16 md:py-20 lg:py-28 overflow-x-hidden relative">
+	<section
+		class="case-detail-body bg-slate-50 py-12 sm:py-16 md:py-20 lg:py-28 overflow-x-hidden relative"
+	>
 		<!-- Forme décorative -->
 		<div
 			class="absolute top-0 right-0 -mt-20 -mr-20 w-96 h-96 bg-yellow/5 rounded-full blur-3xl pointer-events-none"
@@ -272,7 +274,7 @@
 		<div class="max-w-5xl mx-auto px-4 space-y-8 w-full relative z-10">
 			<!-- Carte principale réorganisée -->
 			<div
-				class="bg-white rounded-2xl shadow-xl shadow-slate-200/50 p-6 sm:p-8 md:p-10 border border-slate-100"
+				class="case-narrative bg-white rounded-2xl shadow-xl shadow-slate-200/50 p-6 sm:p-8 md:p-10 border border-slate-100"
 				in:fly={{ y: 30, duration: 600, delay: 500, easing: cubicOut }}
 			>
 				<div class="flex flex-col lg:flex-row gap-8 lg:gap-12 items-start mb-8 lg:mb-10">
@@ -320,7 +322,7 @@
 					</div>
 
 					<!-- Droite : Métriques et tags - Stack vertical sur mobile, sidebar sur desktop -->
-					<div class="flex flex-col gap-4 sm:gap-6 w-full lg:w-[280px] lg:shrink-0">
+					<div class="case-sidebar flex flex-col gap-4 sm:gap-6 w-full lg:w-[280px] lg:shrink-0">
 						{#if useCase.metrics?.length}
 							<div
 								class="space-y-3 sm:space-y-4"
@@ -381,7 +383,7 @@
 			</div>
 
 			{#if useCase.details?.length}
-				<div class="bg-white rounded-2xl shadow-md p-4 sm:p-6 md:p-8 space-y-3">
+				<div class="case-delivered bg-white rounded-2xl shadow-md p-4 sm:p-6 md:p-8 space-y-3">
 					<h2 class="text-lg sm:text-xl font-bold text-darkGrey mb-3 sm:mb-4">
 						{labels.delivered}
 					</h2>
@@ -402,7 +404,7 @@
 						aria-hidden="true"
 					></span>
 					<div
-						class="relative rounded-3xl border border-yellow/30 bg-darkGrey text-white shadow-2xl p-6 sm:p-8 md:p-10 lg:p-12 flex flex-col md:flex-row md:items-center md:justify-between gap-6 sm:gap-8"
+						class="case-cta relative rounded-3xl border border-yellow/30 bg-darkGrey text-white shadow-2xl p-6 sm:p-8 md:p-10 lg:p-12 flex flex-col md:flex-row md:items-center md:justify-between gap-6 sm:gap-8"
 						style="box-shadow: 0 0 65px 10px rgba(251, 210, 67, 0.25);"
 					>
 						<div class="relative z-10">

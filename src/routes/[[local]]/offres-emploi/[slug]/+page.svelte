@@ -125,7 +125,7 @@
 	<script async src="https://tally.so/widgets/embed.js"></script>
 </svelte:head>
 
-<section class="bg-darkGrey text-white pt-28 pb-16 md:pt-36 md:pb-24 print:hidden">
+<section class="job-detail-hero bg-darkGrey text-white pt-28 pb-16 md:pt-36 md:pb-24 print:hidden">
 	<div class="max-w-6xl mx-auto px-4 space-y-8">
 		<a
 			href="/{data.locale}/offres-emploi"
@@ -206,7 +206,7 @@
 	</div>
 </section>
 
-<main class="bg-slate-50 py-12 md:py-20 print:hidden">
+<main class="job-detail-body bg-slate-50 py-12 md:py-20 print:hidden">
 	<div class="max-w-4xl mx-auto px-4">
 		<div class="space-y-10">
 			<section class="rounded-3xl bg-white border border-slate-200 p-6 md:p-8 space-y-4">

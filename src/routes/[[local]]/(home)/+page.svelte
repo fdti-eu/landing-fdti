@@ -68,20 +68,22 @@
 	/>
 </svelte:head>
 
-<Hero content={pageContent?.hero_section} />
+<div class="fdti-home">
+	<Hero content={pageContent?.hero_section} />
 
-{#if pageContent}
-	<div class="max-w-6xl mx-auto px-2 md:px-12">
-		<FdtiSection content={pageContent.fdti_section} />
-		<CapabilitiesSection locale={currentLocale} />
-		<UseCasesPreviewSection
-			title={pageContent.homepage_use_cases_title}
-			subtitle={pageContent.homepage_use_cases_subtitle}
-			useCases={pageContent.homepage_use_cases}
-			locale={currentLocale}
-		/>
-		<TechnologiesSection content={pageContent.technology_content} />
-		<ConfianceSection content={pageContent.trust_content} />
-	</div>
-	<ContactSection content={pageContent.contact_section} />
-{/if}
+	{#if pageContent}
+		<div class="home-sections">
+			<FdtiSection content={pageContent.fdti_section} />
+			<CapabilitiesSection locale={currentLocale} />
+			<UseCasesPreviewSection
+				title={pageContent.homepage_use_cases_title}
+				subtitle={pageContent.homepage_use_cases_subtitle}
+				useCases={pageContent.homepage_use_cases}
+				locale={currentLocale}
+			/>
+			<TechnologiesSection content={pageContent.technology_content} />
+			<ConfianceSection content={pageContent.trust_content} />
+		</div>
+		<ContactSection content={pageContent.contact_section} />
+	{/if}
+</div>

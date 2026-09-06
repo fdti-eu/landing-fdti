@@ -93,7 +93,7 @@
 	/>
 </svelte:head>
 
-<section class="bg-darkGrey text-white pt-28 pb-20 md:pt-36 md:pb-28">
+<section class="jobs-hero bg-darkGrey text-white pt-28 pb-20 md:pt-36 md:pb-28">
 	<div class="max-w-6xl mx-auto px-4 space-y-8">
 		<div class="max-w-3xl space-y-5">
 			<p class="uppercase tracking-[0.25em] text-yellow text-xs sm:text-sm font-semibold">
@@ -124,7 +124,7 @@
 	</div>
 </section>
 
-<main class="bg-slate-50 py-16 md:py-24">
+<main class="jobs-body bg-slate-50 py-16 md:py-24">
 	<div class="max-w-6xl mx-auto px-4 space-y-10">
 		<div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
 			<div>
@@ -140,7 +140,7 @@
 			{#each data.jobs as job}
 				<a
 					href="/{data.locale}/offres-emploi/{job.slug}"
-					class="group block rounded-3xl bg-white border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden focus:outline-none focus-visible:ring-4 focus-visible:ring-yellow/60"
+					class="job-card group block rounded-3xl bg-white border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden focus:outline-none focus-visible:ring-4 focus-visible:ring-yellow/60"
 				>
 					<div class="p-6 md:p-8 space-y-6">
 						<div class="flex flex-wrap gap-2" style={transitionName(job, 'meta')}>

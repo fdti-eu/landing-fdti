@@ -1,5 +1,6 @@
 <script lang="ts">
 	import '../app.css';
+	import '$lib/styles/design.css';
 	import '$lib/i18n';
 	import { isLoading, locale } from 'svelte-i18n';
 	import Footer from './Footer.svelte';
@@ -26,7 +27,11 @@
 
 	// Activer les view transitions tout en préservant le scroll natif de SvelteKit
 	onNavigate((navigation) => {
-		if (!document.startViewTransition) return;
+		if (
+			!document.startViewTransition ||
+			window.matchMedia('(prefers-reduced-motion: reduce)').matches
+		)
+			return;
 
 		return new Promise((resolve) => {
 			document.startViewTransition(async () => {
@@ -44,7 +49,7 @@
 </svelte:head>
 
 {#if !$isLoading}
-	<div class="min-h-screen flex flex-col font-quattrocento">
+	<div class="fdti-site min-h-screen flex flex-col font-quattrocento">
 		<Navbar />
 		<main class="flex-1">
 			<slot />

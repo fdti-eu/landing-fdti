@@ -22,10 +22,18 @@
 		target={isExternalLink ? '_blank' : '_self'}
 		rel={isExternalLink ? 'noreferrer' : null}
 		href={linkUrl}
-		class="max-w-sm flex justify-center items-center gap-2 py-2 px-8 rounded-lg {colorClass[
+		class="fdti-button max-w-sm flex justify-center items-center gap-2 py-2 px-8 rounded-lg {colorClass[
 			color
 		]} text-center font-bold transition-all duration-300"
 	>
 		<slot />
+		<svg
+			width="20"
+			height="20"
+			viewBox="0 0 24 24"
+			fill="none"
+			stroke="currentColor"
+			aria-hidden="true"><path d="M5 19 19 5M5 5h14v14" /></svg
+		>
 	</a>
 {/if}
