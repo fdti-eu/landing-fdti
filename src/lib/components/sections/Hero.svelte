@@ -31,8 +31,6 @@
 				<div class="hero-orbit orbit-one" aria-hidden="true"></div>
 				<div class="hero-orbit orbit-two" aria-hidden="true"></div>
 				<div class="hero-figure-surface">
-					<span class="figure-cross cross-top" aria-hidden="true"></span>
-					<span class="figure-cross cross-bottom" aria-hidden="true"></span>
 					<img
 						src="/images/analysts-working.svg"
 						width="512"

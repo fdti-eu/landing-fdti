@@ -10,6 +10,7 @@
 				title?: string | null;
 				slug?: string | null;
 				challenge?: string | null;
+				approach?: string | null;
 				impact?: string | null;
 				metrics?: { label?: string | null; value?: string | null }[];
 				tags?: string[];
@@ -34,7 +35,7 @@
 			{/if}
 		</div>
 		<div class="cases-preview-grid">
-			{#each useCases as useCase}
+			{#each useCases as useCase, index}
 				<a href={`/${locale}/cas-d-usage/${useCase.slug}`} class="case-preview-card group">
 					<p class="text-xs font-bold uppercase tracking-[0.18em] text-darkGrey/60">
 						{useCase.category}
@@ -44,9 +45,15 @@
 					>
 						{useCase.title}
 					</h4>
-					<p class="mt-3 text-sm leading-relaxed text-darkGrey/80 line-clamp-4">
-						{useCase.impact || useCase.challenge}
-					</p>
+					<div class="case-preview-copy">
+						{#if index === 0}
+							{#if useCase.challenge}<p>{useCase.challenge}</p>{/if}
+							{#if useCase.approach}<p>{useCase.approach}</p>{/if}
+							{#if useCase.impact}<p>{useCase.impact}</p>{/if}
+						{:else}
+							<p>{useCase.impact || useCase.challenge}</p>
+						{/if}
+					</div>
 
 					{#if useCase.metrics?.length}
 						<div class="preview-metrics">
