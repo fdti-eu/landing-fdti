@@ -2,7 +2,6 @@
 	import AdNcard from './ADNcard.svelte';
 	import type { PageData } from './$types';
 	import { MetaTags } from 'svelte-meta-tags';
-	import Underline from '$lib/components/Underline.svelte';
 	import { fade } from 'svelte/transition';
 	import LdTag from '$lib/components/json-ld/LDTag.svelte';
 	import { schema } from '$lib/components/json-ld/json-ld';
@@ -76,7 +75,6 @@
 	>
 		<div class="group">
 			<h1 class="text-3xl font-bold text-center md:text-4xl">{dnaContent.title || ''}</h1>
-			<Underline />
 		</div>
 		<div class="dna-grid grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-2 px-2 lg:gap-8">
 			{#each cardList as card}

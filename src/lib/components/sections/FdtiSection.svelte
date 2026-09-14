@@ -1,6 +1,4 @@
 <script lang="ts">
-	import Underline from '$lib/components/Underline.svelte';
-
 	export let content: {
 		status?: string | null;
 		title?: string | null;
@@ -19,7 +17,6 @@
 		<div class="section-heading">
 			<div class="group">
 				<h2 class="text-3xl font-bold text-center md:text-4xl">{content.title}</h2>
-				<Underline />
 			</div>
 			<h3 class="text-xl font-bold text-center sm:text-2xl md:text-3xl lg:text-4xl">
 				{content.subtitle}

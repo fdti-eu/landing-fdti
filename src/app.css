@@ -30,22 +30,6 @@
 		background-image: linear-gradient(150deg, #1d2024 60%, #555555);
 	}
 
-	/* Animation de la barre noire sous les titres */
-	.underline-bar {
-		width: 15rem; /* 60 (w-60) = 240px */
-		transition: width 500ms;
-	}
-
-	@media (min-width: 640px) {
-		.underline-bar {
-			width: 5rem; /* 20 (w-20) = 80px */
-		}
-
-		.group:hover .underline-bar {
-			width: 20rem; /* 80 (w-80) = 320px */
-		}
-	}
-
 	/* View Transitions personnalisées */
 	@view-transition {
 		navigation: auto;

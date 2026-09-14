@@ -1,6 +1,4 @@
 <script lang="ts">
-	import Underline from '$lib/components/Underline.svelte';
-
 	export let content: {
 		status?: string | null;
 		title?: string | null;
@@ -19,7 +17,6 @@
 				<h2 class="text-3xl font-bold text-center md:text-4xl">
 					{content.title || 'Contact'}
 				</h2>
-				<Underline />
 			</div>
 
 			<div class="contact-grid">

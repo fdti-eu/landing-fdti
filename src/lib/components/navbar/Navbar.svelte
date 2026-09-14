@@ -22,11 +22,6 @@
 			href: `/${$locale}/cas-d-usage`,
 			label: $locale === 'fr' ? 'Cas d’usage' : 'Use cases',
 			active: $page.url.pathname.includes('/cas-d-usage')
-		},
-		{
-			href: `/${$locale}/offres-emploi`,
-			label: $locale === 'fr' ? 'Offres' : 'Jobs',
-			active: $page.url.pathname.includes('/offres-emploi')
 		}
 	];
 	function closeOnEscape(event: KeyboardEvent) {

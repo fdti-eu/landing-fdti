@@ -1,5 +1,4 @@
 <script lang="ts">
-	import Underline from '$lib/components/Underline.svelte';
 	import CapabilityDiagram from './CapabilityDiagram.svelte';
 
 	export let locale: string = 'fr';
@@ -57,7 +56,6 @@
 	<div class="section-heading">
 		<div class="group">
 			<h2 class="text-3xl font-bold text-center md:text-4xl">{title}</h2>
-			<Underline />
 		</div>
 		<h3 class="text-xl font-bold text-center sm:text-2xl md:text-3xl lg:text-4xl max-w-4xl mx-auto">
 			{subtitle}

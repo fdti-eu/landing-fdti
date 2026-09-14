@@ -1,12 +1,10 @@
 <script lang="ts">
-	import { tick } from 'svelte';
-	import { fly } from 'svelte/transition';
-	import { cubicOut } from 'svelte/easing';
 	import { MetaTags } from 'svelte-meta-tags';
 	import LdTag from '$lib/components/json-ld/LDTag.svelte';
 	import { schema } from '$lib/components/json-ld/json-ld';
 	import type { Lang } from '$lib/data';
 	import { absoluteImageUrl, buildLocalizedUrl } from '$lib/functions/seo';
+	import { browser } from '$app/environment';
 
 	export let data:
 		| {
@@ -51,14 +49,16 @@
 					approach: 'Approche',
 					impact: 'Impact',
 					delivered: 'Ce que nous avons livré',
-					back: "Cas d'usage"
+					back: "Cas d'usage",
+					home: 'Accueil'
 				}
 			: {
 					context: 'Context',
 					approach: 'Approach',
 					impact: 'Impact',
 					delivered: 'What we delivered',
-					back: 'Use cases'
+					back: 'Use cases',
+					home: 'Home'
 				};
 
 	// Meta-tags dynamiques pour chaque cas d'usage
@@ -73,18 +73,18 @@
 	$: twitterImage = absoluteImageUrl('/images/fdti_vector_54px.svg');
 
 	import { beforeNavigate } from '$app/navigation';
+	import { page } from '$app/stores';
 
-	let isLeaving = false;
 	let enableViewTransition = true;
 
-	beforeNavigate(({ to }) => {
-		// Si on ne retourne pas vers la liste des cas d'usage, on désactive les transitions
-		if (!to?.route.id?.includes('/cas-d-usage')) {
-			enableViewTransition = false;
-		}
-	});
+	$: cameFromHome = browser && new URLSearchParams(window.location.search).get('from') === 'home';
+	$: backHref = cameFromHome
+		? `/${currentLocale}/#use-cases-preview`
+		: `/${currentLocale}/cas-d-usage`;
 
-	const shouldSkipViewTransition = (event: MouseEvent) =>
+	type CaseNavigationState = { caseOrigin?: 'home' | 'list' };
+
+	const shouldUseNativeLink = (event: MouseEvent) =>
 		event.defaultPrevented ||
 		event.metaKey ||
 		event.ctrlKey ||
@@ -92,14 +92,20 @@
 		event.altKey ||
 		event.button !== 0;
 
-	const handleBackClick = async (event: MouseEvent) => {
-		if (shouldSkipViewTransition(event)) {
-			return;
-		}
+	const handleBackClick = (event: MouseEvent) => {
+		const { caseOrigin } = $page.state as CaseNavigationState;
+		if (!caseOrigin || shouldUseNativeLink(event)) return;
 
-		isLeaving = true;
-		await tick();
+		event.preventDefault();
+		history.back();
 	};
+
+	beforeNavigate(({ to }) => {
+		const returnsToHome = cameFromHome && to?.route.id?.includes('(home)');
+		if (!to?.route.id?.includes('/cas-d-usage') && !returnsToHome) {
+			enableViewTransition = false;
+		}
+	});
 
 	// Fonction pour générer un dégradé subtil basé sur l'ID du cas d'usage (pour avoir une couleur stable mais "aléatoire")
 	function getIndustryGradient(id: string | null | undefined) {
@@ -167,7 +173,6 @@
 		class="case-detail-hero hero-section {getIndustryGradient(
 			useCase.id
 		)} text-white py-24 md:py-32 overflow-x-hidden relative"
-		class:hero-hidden={isLeaving}
 	>
 		<!-- Motif subtil en fond -->
 		<div
@@ -176,9 +181,9 @@
 		></div>
 
 		<div class="max-w-5xl mx-auto px-4 space-y-6 w-full relative z-10">
-			<div in:fly={{ y: 20, duration: 500, delay: 100, easing: cubicOut }}>
+			<div>
 				<a
-					href="/{currentLocale}/cas-d-usage"
+					href={backHref}
 					class="inline-flex items-center gap-2 text-base font-semibold text-white bg-white/10 hover:bg-yellow hover:text-darkGrey px-6 py-3 rounded-full transition-all duration-300 border border-white/20 backdrop-blur-sm"
 					on:click={handleBackClick}
 				>
@@ -194,14 +199,13 @@
 							clip-rule="evenodd"
 						/>
 					</svg>
-					{labels.back}
+					{cameFromHome ? labels.home : labels.back}
 				</a>
 			</div>
 
 			<p
 				class="text-xs uppercase tracking-wider sm:tracking-[0.4em] text-yellow font-semibold"
 				style={enableViewTransition ? `view-transition-name: category-${useCase.id};` : ''}
-				in:fly={{ y: 20, duration: 500, delay: 200, easing: cubicOut }}
 			>
 				{useCase.category}
 			</p>
@@ -209,7 +213,6 @@
 			<h1
 				class="text-2xl sm:text-3xl md:text-5xl font-bold leading-tight"
 				style={enableViewTransition ? `view-transition-name: title-${useCase.id};` : ''}
-				in:fly={{ y: 20, duration: 500, delay: 300, easing: cubicOut }}
 			>
 				{useCase.title}
 			</h1>
@@ -217,7 +220,6 @@
 			<div
 				class="flex flex-wrap gap-3 pt-2"
 				style={enableViewTransition ? `view-transition-name: meta-${useCase.id};` : ''}
-				in:fly={{ y: 20, duration: 500, delay: 400, easing: cubicOut }}
 			>
 				{#if useCase.location}
 					<span
@@ -275,7 +277,6 @@
 			<!-- Carte principale réorganisée -->
 			<div
 				class="case-narrative bg-white rounded-2xl shadow-xl shadow-slate-200/50 p-6 sm:p-8 md:p-10 border border-slate-100"
-				in:fly={{ y: 30, duration: 600, delay: 500, easing: cubicOut }}
 			>
 				<div class="flex flex-col lg:flex-row gap-8 lg:gap-12 items-start mb-8 lg:mb-10">
 					<!-- Gauche : Contenu principal -->
@@ -324,14 +325,13 @@
 					<!-- Droite : Métriques et tags - Stack vertical sur mobile, sidebar sur desktop -->
 					<div class="case-sidebar flex flex-col gap-4 sm:gap-6 w-full lg:w-[280px] lg:shrink-0">
 						{#if useCase.metrics?.length}
-							<div
-								class="space-y-3 sm:space-y-4"
-								style={enableViewTransition ? `view-transition-name: metrics-${useCase.id};` : ''}
-							>
+							<div class="space-y-3 sm:space-y-4">
 								{#each useCase.metrics as metric, index}
 									<div
 										class="bg-linear-to-br from-slate-50 to-slate-100 rounded-xl p-4 sm:p-5 border border-slate-200 hover:shadow-md transition-shadow"
-										in:fly={{ x: 20, duration: 500, delay: 400 + index * 100, easing: cubicOut }}
+										style={enableViewTransition
+											? `view-transition-name: metric-${index}-${useCase.id};`
+											: ''}
 									>
 										<p
 											class="text-xs sm:text-sm font-medium text-darkGrey/70 uppercase tracking-wider"
@@ -347,14 +347,13 @@
 						{/if}
 
 						{#if useCase.tags?.length}
-							<div
-								class="flex flex-wrap gap-2"
-								style={enableViewTransition ? `view-transition-name: tags-${useCase.id};` : ''}
-							>
+							<div class="flex flex-wrap gap-2">
 								{#each useCase.tags as tag, index}
 									<span
 										class="px-3 py-1.5 rounded-full bg-slate-100 text-xs sm:text-sm font-medium text-darkGrey border border-slate-200 transition-transform hover:scale-105"
-										in:fly={{ y: 10, duration: 400, delay: 600 + index * 50, easing: cubicOut }}
+										style={enableViewTransition
+											? `view-transition-name: tag-${index}-${useCase.id};`
+											: ''}
 									>
 										{tag}
 									</span>
@@ -439,12 +438,5 @@
 <style>
 	.hero-section {
 		position: relative;
-	}
-
-	.hero-hidden {
-		opacity: 0;
-		visibility: hidden;
-		pointer-events: none;
-		transition: none !important;
 	}
 </style>

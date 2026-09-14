@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { locale } from 'svelte-i18n';
-	import { flip } from 'svelte/animate';
 	import { fade } from 'svelte/transition';
 	import { getContext } from 'svelte';
 	import { tick } from 'svelte';
@@ -10,7 +9,7 @@
 	import { schema } from '$lib/components/json-ld/json-ld';
 	import type { Lang } from '$lib/data';
 	import { absoluteImageUrl, buildLocalizedUrl } from '$lib/functions/seo';
-	import { beforeNavigate, afterNavigate } from '$app/navigation';
+	import { beforeNavigate, afterNavigate, goto } from '$app/navigation';
 
 	// Récupérer le store du layout parent
 	const highlightedUseCase = getContext<Writable<string | null>>('highlightedUseCase');
@@ -98,8 +97,11 @@
 			return;
 		}
 
+		const href = (event.currentTarget as HTMLAnchorElement).href;
+		event.preventDefault();
 		activeSlug = slug;
 		await tick();
+		await goto(href, { state: { caseOrigin: 'list' } });
 	};
 
 	const getViewTransitionStyle = (
@@ -345,13 +347,9 @@
 
 	<section class="case-index-body bg-slate-50 py-12 md:py-16 overflow-x-hidden">
 		<div class="max-w-6xl mx-auto px-4 space-y-6 w-full">
-			<div class="case-index-grid space-y-4 overflow-hidden">
+			<div class="case-index-grid">
 				{#each filteredUseCases as useCase (useCase.id)}
-					<div
-						in:fade={{ duration: 200 }}
-						out:fade={{ duration: 150 }}
-						animate:flip={{ duration: 250 }}
-					>
+					<div>
 						<a
 							href={`/${$locale}/cas-d-usage/${useCase.slug}`}
 							on:click={(event) => handleCardClick(event, useCase.slug)}
@@ -425,7 +423,7 @@
 											{useCase.title}
 										</h2>
 										<p
-											class="text-sm text-darkGrey/80 line-clamp-2 group-hover:line-clamp-none transition-all"
+											class="text-sm text-darkGrey/80 line-clamp-2"
 											style={getViewTransitionStyle(useCase.slug, useCase.id, 'challenge')}
 										>
 											{useCase.challenge}
@@ -438,15 +436,18 @@
 									>
 										{#if useCase.metrics?.length}
 											<div
-												class="grid grid-cols-2 gap-x-4 gap-y-2 w-full lg:w-auto"
-												style={getViewTransitionStyle(useCase.slug, useCase.id, 'metrics')}
+												class="case-index-metrics grid grid-cols-2 gap-x-4 gap-y-2 w-full lg:w-auto"
 											>
-												{#each useCase.metrics as metric, index}
+												{#each useCase.metrics.slice(0, 2) as metric, index}
 													<div
 														class="text-left lg:text-right transition-all duration-300 {index >= 2
 															? 'opacity-0 h-0 overflow-hidden group-hover:opacity-100 group-hover:h-auto group-hover:overflow-visible'
 															: ''}"
-														style={index >= 2 ? `transition-delay: ${(index - 2) * 50}ms` : ''}
+														style={getViewTransitionStyle(
+															useCase.slug,
+															useCase.id,
+															`metric-${index}`
+														)}
 													>
 														<p class="text-xs text-darkGrey/60 whitespace-nowrap">
 															{metric?.label}
@@ -463,23 +464,22 @@
 
 										{#if useCase.tags?.length}
 											<div
-												class="relative flex flex-wrap gap-1 max-w-full lg:max-w-[200px] lg:justify-end"
-												style={getViewTransitionStyle(useCase.slug, useCase.id, 'tags')}
+												class="case-index-tags relative flex flex-wrap gap-1 max-w-full lg:max-w-[200px] lg:justify-end"
 											>
-												{#each useCase.tags as tag, index}
+												{#each useCase.tags.slice(0, 3) as tag, index}
 													<span
 														class="px-2 py-0.5 rounded-md bg-slate-100 text-xs font-medium text-darkGrey whitespace-nowrap transition-all duration-300 {index >=
 														3
 															? 'opacity-0 w-0 overflow-hidden group-hover:opacity-100 group-hover:w-auto group-hover:overflow-visible'
 															: ''}"
-														style={index >= 3 ? `transition-delay: ${(index - 3) * 50}ms` : ''}
+														style={getViewTransitionStyle(useCase.slug, useCase.id, `tag-${index}`)}
 													>
 														{tag}
 													</span>
 												{/each}
 												{#if useCase.tags.length > 3}
 													<span
-														class="px-2 py-0.5 rounded-md bg-slate-200 text-xs font-semibold text-darkGrey group-hover:opacity-0 group-hover:w-0 group-hover:overflow-hidden transition-all duration-200"
+														class="px-2 py-0.5 rounded-md bg-slate-200 text-xs font-semibold text-darkGrey"
 													>
 														+{useCase.tags.length - 3}
 													</span>
@@ -490,9 +490,7 @@
 								</div>
 
 								<!-- Version dépliée : Approche et Impact -->
-								<div
-									class="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-all duration-500"
-								>
+								<div class="hidden">
 									<div class="overflow-hidden">
 										<div class="pt-4 mt-4 border-t border-slate-100 grid md:grid-cols-2 gap-4">
 											{#if useCase.approach}

@@ -6,7 +6,7 @@
 	import Footer from './Footer.svelte';
 	import Navbar from '$lib/components/navbar/Navbar.svelte';
 	import { page } from '$app/stores';
-	import { onNavigate } from '$app/navigation';
+	import { afterNavigate, beforeNavigate, onNavigate } from '$app/navigation';
 	import {
 		buildAbsoluteUrl,
 		buildLocalizedUrl,
@@ -24,6 +24,24 @@
 	$: frUrl = buildLocalizedUrl(currentPathWithoutLocale, 'fr');
 	$: enUrl = buildLocalizedUrl(currentPathWithoutLocale, 'en');
 	$: xDefaultUrl = buildAbsoluteUrl(currentPathWithoutLocale);
+
+	let previousPopstateScrollBehavior = '';
+
+	beforeNavigate(({ type }) => {
+		if (type !== 'popstate') return;
+
+		const root = document.documentElement;
+		previousPopstateScrollBehavior = root.style.scrollBehavior;
+		root.style.scrollBehavior = 'auto';
+	});
+
+	afterNavigate(({ type }) => {
+		if (type !== 'popstate') return;
+
+		requestAnimationFrame(() => {
+			document.documentElement.style.scrollBehavior = previousPopstateScrollBehavior;
+		});
+	});
 
 	// Activer les view transitions tout en préservant le scroll natif de SvelteKit
 	onNavigate((navigation) => {
