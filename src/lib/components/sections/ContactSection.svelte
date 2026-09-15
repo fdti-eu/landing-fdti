@@ -85,6 +85,8 @@
 							href="https://calendly.com/fdti/30min"
 							target="_blank"
 							rel="noreferrer"
+							data-umami-event="calendly_click"
+							data-umami-event-placement="contact"
 							class="bg-black text-white py-2 px-8 rounded-lg text-xl font-semibold hover:text-black hover:bg-transparent border border-black transition-all ease-in duration-300"
 						>
 							{content.btn_contact}

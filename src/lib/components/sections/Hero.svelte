@@ -22,7 +22,12 @@
 				<p class="hero-subtitle">{content.subtitle}</p>
 				<div class="hero-description">{@html content.description || ''}</div>
 				<div class="hero-action">
-					<Button linkUrl="https://calendly.com/fdti/30min" color="yellow" isExternalLink
+					<Button
+						linkUrl="https://calendly.com/fdti/30min"
+						color="yellow"
+						isExternalLink
+						analyticsEvent="calendly_click"
+						analyticsPlacement="hero"
 						>{content.btn_contact}</Button
 					>
 				</div>

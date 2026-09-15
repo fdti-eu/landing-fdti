@@ -2,6 +2,8 @@
 	export let isLink = false;
 	export let isExternalLink = false;
 	export let linkUrl = '';
+	export let analyticsEvent: string | undefined = undefined;
+	export let analyticsPlacement: string | undefined = undefined;
 	export let color: IColor = 'yellow';
 
 	type IColor = 'yellow' | 'white' | 'black' | 'blue' | 'red' | 'green' | 'gray';
@@ -22,6 +24,8 @@
 		target={isExternalLink ? '_blank' : '_self'}
 		rel={isExternalLink ? 'noreferrer' : null}
 		href={linkUrl}
+		data-umami-event={analyticsEvent}
+		data-umami-event-placement={analyticsPlacement}
 		class="fdti-button max-w-sm flex justify-center items-center gap-2 py-2 px-8 rounded-lg {colorClass[
 			color
 		]} text-center font-bold transition-all duration-300"
