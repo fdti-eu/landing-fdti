@@ -89,7 +89,8 @@
 					Les données collectées sont limitées aux pages consultées, à la provenance, aux
 					caractéristiques techniques du navigateur et de l'appareil, aux performances Web et
 					aux interactions avec les liens de prise de rendez-vous. Elles ne sont pas transmises
-					à des tiers et sont supprimées au plus tard après 13 mois.
+					à des tiers. FDTI les conserve sans échéance automatique afin d'étudier les tendances
+					historiques du site.
 				</p>
 			{:else}
 				<p>
@@ -100,7 +101,8 @@
 				<p>
 					The collected data is limited to viewed pages, referral source, technical browser and
 					device characteristics, Web performance and interactions with appointment links. It
-					is not shared with third parties and is deleted after no more than 13 months.
+					is not shared with third parties. FDTI retains it without an automatic expiry so that
+					long-term website trends can be analyzed.
 				</p>
 			{/if}
 		</div>
