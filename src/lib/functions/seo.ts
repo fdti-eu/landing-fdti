@@ -27,6 +27,9 @@ export const resolveLocaleFromPath = (path: string): Lang => {
 export const buildLocalizedPath = (path: string, locale: Lang) => {
 	const normalized = normalizePath(path);
 	const suffix = normalized === '/' ? '' : normalized;
+	if (locale === DEFAULT_LOCALE) {
+		return suffix || '/';
+	}
 	return `/${locale}${suffix}`;
 };
 
