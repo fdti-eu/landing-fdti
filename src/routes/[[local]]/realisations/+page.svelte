@@ -7,7 +7,7 @@
 	import LdTag from '$lib/components/json-ld/LDTag.svelte';
 	import { schema } from '$lib/components/json-ld/json-ld';
 	import type { Lang } from '$lib/data';
-	import { absoluteImageUrl, buildLocalizedUrl } from '$lib/functions/seo';
+	import { absoluteImageUrl, buildLocalizedUrl, SOCIAL_IMAGE_PATH } from '$lib/functions/seo';
 	import { beforeNavigate, afterNavigate, goto } from '$app/navigation';
 
 	// Récupérer le store du layout parent
@@ -58,7 +58,7 @@
 	$: metaSource = content?.meta_tags?.page_tags?.[0];
 	$: metatags = {
 		url: '/realisations',
-		img: metaSource?.img?.url || '/logo.webp',
+		img: SOCIAL_IMAGE_PATH,
 		description: metaSource?.description || '',
 		title: metaSource?.title || 'FDTI - Use Cases'
 	};
@@ -66,7 +66,7 @@
 	$: currentLocale = (data?.locale as Lang) ?? 'fr';
 	$: canonicalUrl = buildLocalizedUrl('/realisations', currentLocale);
 	$: ogImage = absoluteImageUrl(metatags.img);
-	$: twitterImage = absoluteImageUrl('/images/fdti_vector_54px.svg');
+	$: twitterImage = absoluteImageUrl(SOCIAL_IMAGE_PATH);
 
 	let selectedSector: string | null = null;
 	let activeSlug: string | null = null;

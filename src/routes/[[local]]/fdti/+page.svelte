@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { MetaTags } from 'svelte-meta-tags';
-	import { absoluteImageUrl, buildLocalizedUrl } from '$lib/functions/seo';
+	import { absoluteImageUrl, buildLocalizedUrl, SOCIAL_IMAGE_PATH } from '$lib/functions/seo';
 	import type { PageData } from './$types';
 
 	export let data: PageData;
@@ -81,7 +81,7 @@
 		title: content.metaTitle,
 		description: content.metaDescription,
 		siteName: 'FDTI',
-		images: [{ url: absoluteImageUrl('/logo.webp'), alt: 'FDTI' }]
+		images: [{ url: absoluteImageUrl(SOCIAL_IMAGE_PATH), alt: 'FDTI - AI, code and data' }]
 	}}
 />
 
@@ -120,7 +120,11 @@
 	<section class="editorial-cta">
 		<div class="editorial-shell">
 			<div><h2>{content.ctaTitle}</h2></div>
-			<a href="https://calendly.com/fdti/30min">{content.ctaButton} ↗</a>
+			<a
+				href="https://calendly.com/fdti/30min"
+				data-umami-event="calendly_click"
+				data-umami-event-placement="fdti_contact">{content.ctaButton} ↗</a
+			>
 		</div>
 	</section>
 </div>

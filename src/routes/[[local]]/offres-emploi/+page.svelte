@@ -2,7 +2,7 @@
 	import { MetaTags } from 'svelte-meta-tags';
 	import LdTag from '$lib/components/json-ld/LDTag.svelte';
 	import { schema } from '$lib/components/json-ld/json-ld';
-	import { absoluteImageUrl, buildLocalizedUrl } from '$lib/functions/seo';
+	import { absoluteImageUrl, buildLocalizedUrl, SOCIAL_IMAGE_PATH } from '$lib/functions/seo';
 	import type { JobOffer } from '$lib/jobs';
 
 	export let data: { jobs: JobOffer[]; locale: 'fr' | 'en' };
@@ -54,7 +54,7 @@
 	$: title = copy.title;
 	$: description = copy.description;
 	$: canonicalUrl = buildLocalizedUrl('/offres-emploi', data.locale);
-	const ogImage = absoluteImageUrl('/images/cms/branding/fdti-from-data-to-insights.svg');
+	const ogImage = absoluteImageUrl(SOCIAL_IMAGE_PATH);
 
 	const transitionName = (job: JobOffer, part: string) =>
 		`view-transition-name: job-${part}-${job.slug};`;
@@ -76,7 +76,7 @@
 		cardType: 'summary_large_image',
 		title,
 		description,
-		image: absoluteImageUrl('/images/fdti_vector_54px.svg'),
+		image: ogImage,
 		imageAlt: description
 	}}
 />

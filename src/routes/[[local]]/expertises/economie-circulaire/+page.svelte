@@ -1,7 +1,14 @@
 <script lang="ts">
 	import { MetaTags } from 'svelte-meta-tags';
 	import CircularContact from '$lib/components/CircularContact.svelte';
-	import { absoluteImageUrl, buildLocalizedUrl } from '$lib/functions/seo';
+	import LdTag from '$lib/components/json-ld/LDTag.svelte';
+	import { schema } from '$lib/components/json-ld/json-ld';
+	import {
+		absoluteImageUrl,
+		buildLocalizedPath,
+		buildLocalizedUrl,
+		SOCIAL_IMAGE_PATH
+	} from '$lib/functions/seo';
 	import type { PageData } from './$types';
 
 	export let data: PageData;
@@ -100,9 +107,54 @@
 		title: content.metaTitle,
 		description: content.metaDescription,
 		siteName: 'FDTI',
-		images: [{ url: absoluteImageUrl('/logo.webp'), alt: 'FDTI' }]
+		images: [{ url: absoluteImageUrl(SOCIAL_IMAGE_PATH), alt: 'FDTI - AI, code and data' }]
 	}}
 />
+
+<svelte:head>
+	<LdTag
+		schema={schema('BreadcrumbList', {
+			name: content.metaTitle,
+			description: content.metaDescription,
+			url: canonical,
+			itemListElement: [
+				{
+					'@type': 'ListItem',
+					position: 1,
+					name: data.locale === 'fr' ? 'Accueil' : 'Home',
+					item: buildLocalizedUrl('/', data.locale)
+				},
+				{
+					'@type': 'ListItem',
+					position: 2,
+					name: data.locale === 'fr' ? 'Expertises' : 'Expertise',
+					item: buildLocalizedUrl('/expertises', data.locale)
+				},
+				{
+					'@type': 'ListItem',
+					position: 3,
+					name: content.label,
+					item: canonical
+				}
+			]
+		})}
+	/>
+	<LdTag
+		schema={schema('FAQPage', {
+			name: content.metaTitle,
+			description: content.metaDescription,
+			url: canonical,
+			mainEntity: content.faqs.slice(0, 3).map((faq) => ({
+				'@type': 'Question',
+				name: faq.question,
+				acceptedAnswer: {
+					'@type': 'Answer',
+					text: faq.answer
+				}
+			}))
+		})}
+	/>
+</svelte:head>
 
 <header class="ce-hero">
 	<div class="ce-shell ce-simple-hero">
@@ -116,7 +168,11 @@
 		<p class="ce-positioning">{content.positioning}</p>
 		<div class="ce-hero-actions">
 			<a class="ce-button" href="#flux">{content.explore}<span aria-hidden="true">↓</span></a>
-			<a class="ce-link" href="https://calendly.com/fdti/30min"
+			<a
+				class="ce-link"
+				href="https://calendly.com/fdti/30min"
+				data-umami-event="calendly_click"
+				data-umami-event-placement="circular_hero"
 				>{content.contact}<span aria-hidden="true">↗</span></a
 			>
 		</div>
@@ -135,6 +191,26 @@
 					<p>{workflow.situation}</p>
 					<strong>{workflow.result}</strong>
 				</article>
+			{/each}
+		</div>
+	</div>
+</section>
+
+<section class="ce-section ce-related">
+	<div class="ce-shell">
+		<p class="ce-eyebrow ce-section-label">{content.dossiersLabel}</p>
+		<h2>{content.dossiersTitle}</h2>
+		<p>{content.dossiersIntro}</p>
+		<div class="ce-related-grid">
+			{#each content.dossiers as dossier}
+				<a
+					href={buildLocalizedPath(`/expertises/economie-circulaire/${dossier.slug}`, data.locale)}
+				>
+					<span class="ce-eyebrow">{dossier.label}</span>
+					<h3>{dossier.title}</h3>
+					<p>{dossier.summary}</p>
+					<span class="ce-link">{content.detailLink}<span aria-hidden="true">↗</span></span>
+				</a>
 			{/each}
 		</div>
 	</div>

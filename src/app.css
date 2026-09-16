@@ -221,7 +221,7 @@
 		z-index: 1;
 	}
 
-	.print-job-title-block h1 {
+	.print-job-title-block h2 {
 		margin: 0 0 3mm;
 		font-size: 25.5pt;
 		line-height: 1.04;

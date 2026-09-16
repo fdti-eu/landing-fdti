@@ -1,14 +1,21 @@
 <script lang="ts">
 	import { MetaTags } from 'svelte-meta-tags';
 	import CircularContact from '$lib/components/CircularContact.svelte';
-	import { absoluteImageUrl, buildLocalizedUrl } from '$lib/functions/seo';
+	import LdTag from '$lib/components/json-ld/LDTag.svelte';
+	import { schema } from '$lib/components/json-ld/json-ld';
+	import {
+		absoluteImageUrl,
+		buildLocalizedPath,
+		buildLocalizedUrl,
+		SOCIAL_IMAGE_PATH
+	} from '$lib/functions/seo';
 	import type { PageData } from './$types';
 	import { afterNavigate } from '$app/navigation';
 	import { onDestroy } from 'svelte';
 
 	export let data: PageData;
 	$: ({ content, dossier } = data);
-	$: root = `/${data.locale}/expertises/economie-circulaire`;
+	$: root = buildLocalizedPath('/expertises/economie-circulaire', data.locale);
 	$: canonical = buildLocalizedUrl(`/expertises/economie-circulaire/${dossier.slug}`, data.locale);
 	$: title = `${dossier.label} | FDTI`;
 	let activeSection = '';
@@ -43,9 +50,39 @@
 		title,
 		description: dossier.summary,
 		siteName: 'FDTI',
-		images: [{ url: absoluteImageUrl('/logo.webp'), alt: 'FDTI' }]
+		images: [{ url: absoluteImageUrl(SOCIAL_IMAGE_PATH), alt: 'FDTI - AI, code and data' }]
 	}}
 />
+
+<svelte:head>
+	<LdTag
+		schema={schema('BreadcrumbList', {
+			name: title,
+			description: dossier.summary,
+			url: canonical,
+			itemListElement: [
+				{
+					'@type': 'ListItem',
+					position: 1,
+					name: data.locale === 'fr' ? 'Accueil' : 'Home',
+					item: buildLocalizedUrl('/', data.locale)
+				},
+				{
+					'@type': 'ListItem',
+					position: 2,
+					name: content.label,
+					item: buildLocalizedUrl('/expertises/economie-circulaire', data.locale)
+				},
+				{
+					'@type': 'ListItem',
+					position: 3,
+					name: dossier.label,
+					item: canonical
+				}
+			]
+		})}
+	/>
+</svelte:head>
 
 <header class="ce-hero ce-detail-hero">
 	<div class="ce-shell">
@@ -76,7 +113,11 @@
 					{/each}
 				</ol>
 			</nav>
-			<a class="ce-link" href="https://calendly.com/fdti/30min"
+			<a
+				class="ce-link"
+				href="https://calendly.com/fdti/30min"
+				data-umami-event="calendly_click"
+				data-umami-event-placement="circular_topic_toc"
 				>{content.contact}<span aria-hidden="true">↗</span></a
 			>
 		</aside>

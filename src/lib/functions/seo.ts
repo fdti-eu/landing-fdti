@@ -3,6 +3,9 @@ import type { Lang } from '$lib/data';
 export const BASE_URL = 'https://www.fdti.eu';
 export const SUPPORTED_LOCALES: Lang[] = ['fr', 'en'];
 export const DEFAULT_LOCALE: Lang = 'fr';
+export const SOCIAL_IMAGE_PATH = '/images/social/fdti-social.png';
+
+export type SeoAlternatePaths = Record<Lang, string>;
 
 const normalizePath = (path?: string) => {
 	if (!path) {

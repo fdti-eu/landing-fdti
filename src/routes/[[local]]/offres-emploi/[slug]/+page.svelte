@@ -2,7 +2,7 @@
 	import { MetaTags } from 'svelte-meta-tags';
 	import LdTag from '$lib/components/json-ld/LDTag.svelte';
 	import { schema } from '$lib/components/json-ld/json-ld';
-	import { absoluteImageUrl, buildLocalizedUrl } from '$lib/functions/seo';
+	import { absoluteImageUrl, buildLocalizedUrl, SOCIAL_IMAGE_PATH } from '$lib/functions/seo';
 	import PrintableJobOffer from '$lib/components/jobs/PrintableJobOffer.svelte';
 	import type { JobOffer } from '$lib/jobs';
 
@@ -30,8 +30,7 @@
 						'Merci d’indiquer les éléments demandés dans le formulaire. Si l’intégration ne s’affiche pas correctement, vous pouvez ouvrir le formulaire dans un nouvel onglet.',
 					iframeTitle: 'Formulaire de candidature',
 					iframeLoading: 'Chargement du formulaire…',
-					openForm: 'Ouvrir le formulaire dans un nouvel onglet',
-					baseSalary: 'Gratification selon cadre légal'
+					openForm: 'Ouvrir le formulaire dans un nouvel onglet'
 				}
 			: {
 					back: 'All roles',
@@ -52,13 +51,12 @@
 						'Please provide the requested information in the form. If the embed does not display correctly, you can open the form in a new tab.',
 					iframeTitle: 'Application form',
 					iframeLoading: 'Loading form…',
-					openForm: 'Open the form in a new tab',
-					baseSalary: 'Compensation according to the applicable French internship framework'
+					openForm: 'Open the form in a new tab'
 				};
 	$: title = `${job.title} | FDTI`;
 	$: description = job.summary;
 	$: canonicalUrl = buildLocalizedUrl(`/offres-emploi/${job.slug}`, data.locale);
-	$: ogImage = absoluteImageUrl('/images/cms/branding/fdti-from-data-to-insights.svg');
+	$: ogImage = absoluteImageUrl(SOCIAL_IMAGE_PATH);
 	$: jobDescription = [...job.intro, job.summary].join('\n\n');
 	$: transitionName = (part: string) => `view-transition-name: job-${part}-${job.slug};`;
 
@@ -83,7 +81,7 @@
 		cardType: 'summary_large_image',
 		title,
 		description,
-		image: absoluteImageUrl('/images/fdti_vector_54px.svg'),
+		image: ogImage,
 		imageAlt: description
 	}}
 />
@@ -99,27 +97,43 @@
 			inLanguage: data.locale,
 			datePosted: job.postedAt,
 			employmentType: 'INTERN',
-			validThrough: '2026-09-30',
 			directApply: true,
 			applicantLocationRequirements: {
 				'@type': 'Country',
 				name: 'France'
 			},
-			jobLocationType: 'TELECOMMUTE',
 			hiringOrganization: {
 				'@type': 'Organization',
 				name: 'FDTI Consulting',
 				sameAs: 'https://www.fdti.eu'
-			},
-			baseSalary: {
-				'@type': 'MonetaryAmount',
-				currency: 'EUR',
-				value: {
-					'@type': 'QuantitativeValue',
-					unitText: 'MONTH',
-					value: copy.baseSalary
-				}
 			}
+		})}
+	/>
+	<LdTag
+		schema={schema('BreadcrumbList', {
+			name: title,
+			description,
+			url: canonicalUrl,
+			itemListElement: [
+				{
+					'@type': 'ListItem',
+					position: 1,
+					name: data.locale === 'fr' ? 'Accueil' : 'Home',
+					item: buildLocalizedUrl('/', data.locale)
+				},
+				{
+					'@type': 'ListItem',
+					position: 2,
+					name: copy.back,
+					item: buildLocalizedUrl('/offres-emploi', data.locale)
+				},
+				{
+					'@type': 'ListItem',
+					position: 3,
+					name: job.title,
+					item: canonicalUrl
+				}
+			]
 		})}
 	/>
 	<script async src="https://tally.so/widgets/embed.js"></script>
@@ -336,6 +350,8 @@
 					href={job.tallyPublicUrl}
 					target="_blank"
 					rel="noreferrer"
+					data-umami-event="job_application_click"
+					data-umami-event-offer={job.slug}
 					class="inline-flex text-darkGrey font-bold underline underline-offset-4 hover:text-grey"
 				>
 					{copy.openForm}

@@ -5,7 +5,7 @@
 	import { fade } from 'svelte/transition';
 	import LdTag from '$lib/components/json-ld/LDTag.svelte';
 	import { schema } from '$lib/components/json-ld/json-ld';
-	import { absoluteImageUrl, buildLocalizedUrl } from '$lib/functions/seo';
+	import { absoluteImageUrl, buildLocalizedUrl, SOCIAL_IMAGE_PATH } from '$lib/functions/seo';
 
 	export let data: PageData;
 
@@ -18,14 +18,14 @@
 	$: metaSource = pageContent?.meta_tags?.page_tags?.[0];
 	$: metatags = {
 		url: metaSource?.url || '/',
-		img: metaSource?.img?.url || '/logo.webp',
+		img: SOCIAL_IMAGE_PATH,
 		description: metaSource?.description || '',
 		title: metaSource?.title || 'FDTI'
 	};
 
 	$: canonicalUrl = buildLocalizedUrl(metatags.url || '/adn-et-valeurs', currentLocale);
 	$: ogImage = absoluteImageUrl(metatags.img);
-	$: twitterImage = absoluteImageUrl('/images/fdti_vector_54px.svg');
+	$: twitterImage = absoluteImageUrl(SOCIAL_IMAGE_PATH);
 </script>
 
 {#if metatags}

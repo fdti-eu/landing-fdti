@@ -3,7 +3,12 @@
 	import LdTag from '$lib/components/json-ld/LDTag.svelte';
 	import { schema } from '$lib/components/json-ld/json-ld';
 	import type { Lang } from '$lib/data';
-	import { absoluteImageUrl, buildLocalizedUrl } from '$lib/functions/seo';
+	import {
+		absoluteImageUrl,
+		buildLocalizedPath,
+		buildLocalizedUrl,
+		SOCIAL_IMAGE_PATH
+	} from '$lib/functions/seo';
 	import { browser } from '$app/environment';
 
 	export let data:
@@ -66,11 +71,11 @@
 		title: useCase?.title ? `${useCase.title} | FDTI` : 'FDTI',
 		description: useCase?.challenge || useCase?.impact || '',
 		url: useCase?.slug ? `/realisations/${useCase.slug}` : '/realisations',
-		img: '/images/cms/branding/fdti-from-data-to-insights.svg'
+		img: SOCIAL_IMAGE_PATH
 	};
 	$: canonicalUrl = buildLocalizedUrl(metatags.url || '/realisations', currentLocale);
 	$: ogImage = absoluteImageUrl(metatags.img);
-	$: twitterImage = absoluteImageUrl('/images/fdti_vector_54px.svg');
+	$: twitterImage = absoluteImageUrl(SOCIAL_IMAGE_PATH);
 
 	import { beforeNavigate } from '$app/navigation';
 	import { page } from '$app/stores';
@@ -79,8 +84,8 @@
 
 	$: cameFromHome = browser && new URLSearchParams(window.location.search).get('from') === 'home';
 	$: backHref = cameFromHome
-		? `/${currentLocale}/#use-cases-preview`
-		: `/${currentLocale}/realisations`;
+		? `${buildLocalizedPath('/', currentLocale)}#use-cases-preview`
+		: buildLocalizedPath('/realisations', currentLocale);
 
 	type CaseNavigationState = { caseOrigin?: 'home' | 'list' };
 
@@ -164,6 +169,33 @@
 			inLanguage: currentLocale,
 			articleSection: useCase?.category,
 			mainEntityOfPage: canonicalUrl
+		})}
+	/>
+	<LdTag
+		schema={schema('BreadcrumbList', {
+			name: metatags.title,
+			description: metatags.description,
+			url: canonicalUrl,
+			itemListElement: [
+				{
+					'@type': 'ListItem',
+					position: 1,
+					name: labels.home,
+					item: buildLocalizedUrl('/', currentLocale)
+				},
+				{
+					'@type': 'ListItem',
+					position: 2,
+					name: labels.back,
+					item: buildLocalizedUrl('/realisations', currentLocale)
+				},
+				{
+					'@type': 'ListItem',
+					position: 3,
+					name: useCase?.title || metatags.title,
+					item: canonicalUrl
+				}
+			]
 		})}
 	/>
 </svelte:head>

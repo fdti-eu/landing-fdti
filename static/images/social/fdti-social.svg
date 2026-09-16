@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <pattern id="grid" width="44" height="44" patternUnits="userSpaceOnUse">
+      <path d="M44 0H0V44" fill="none" stroke="#ffffff" stroke-opacity="0.055"/>
+    </pattern>
+    <linearGradient id="glow" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f9d089" stop-opacity="0.24"/>
+      <stop offset="1" stop-color="#f9d089" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="#1d2024"/>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  <circle cx="1080" cy="-20" r="380" fill="url(#glow)"/>
+  <path d="M870 118h210v210H870z" fill="none" stroke="#f9d089" stroke-width="2"/>
+  <path d="M905 153h140v140H905z" fill="none" stroke="#f9d089" stroke-opacity="0.42"/>
+  <circle cx="975" cy="223" r="25" fill="#f9d089"/>
+  <path d="M975 118v80M975 248v80M870 223h80M1000 223h80" stroke="#f9d089" stroke-width="2"/>
+  <rect x="72" y="74" width="98" height="8" fill="#f9d089"/>
+  <text x="72" y="210" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="128" font-weight="700" letter-spacing="-6">FDTI</text>
+  <text x="78" y="283" fill="#f9d089" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700" letter-spacing="8">AI · CODE · DATA</text>
+  <text x="76" y="445" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="58" font-weight="600">FDTI.EU</text>
+</svg>

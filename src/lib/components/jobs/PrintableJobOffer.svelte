@@ -70,7 +70,7 @@
 		</div>
 
 		<div class="print-job-title-block">
-			<h1>{job.title}</h1>
+			<h2>{job.title}</h2>
 			<p>{job.summary}</p>
 		</div>
 

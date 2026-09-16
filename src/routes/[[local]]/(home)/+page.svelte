@@ -11,7 +11,7 @@
 	import LdTag from '$lib/components/json-ld/LDTag.svelte';
 	import { schema } from '$lib/components/json-ld/json-ld';
 	import type { Lang } from '$lib/data';
-	import { absoluteImageUrl, buildLocalizedUrl } from '$lib/functions/seo';
+	import { absoluteImageUrl, buildLocalizedUrl, SOCIAL_IMAGE_PATH } from '$lib/functions/seo';
 
 	export let data;
 
@@ -20,14 +20,14 @@
 	$: items = pageContent?.meta_tags?.page_tags || [];
 	$: metatags = {
 		url: items[0]?.url || '/',
-		img: items[0]?.img?.url || '/logo.webp',
+		img: SOCIAL_IMAGE_PATH,
 		description: items[0]?.description || '',
 		title: items[0]?.title || 'FDTI'
 	};
 	$: currentLocale = (pageContent?.locale as Lang) ?? 'fr';
 	$: canonicalUrl = buildLocalizedUrl(metatags.url || '/', currentLocale);
 	$: ogImage = absoluteImageUrl(metatags.img);
-	$: twitterImage = absoluteImageUrl('/images/fdti_vector_54px.svg');
+	$: twitterImage = absoluteImageUrl(SOCIAL_IMAGE_PATH);
 </script>
 
 {#if metatags}

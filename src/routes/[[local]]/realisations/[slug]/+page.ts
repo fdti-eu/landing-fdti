@@ -5,12 +5,14 @@ import type { PageLoad } from './$types';
 export const prerender = true;
 
 export async function entries() {
-	const entries: { local: Lang; slug: string }[] = [];
+	const entries: { local?: Lang; slug: string }[] = [];
 
 	for (const local of ['fr', 'en'] as Lang[]) {
 		const content = await getUseCasesContent(local);
 		for (const useCase of content.use_case_list ?? []) {
-			if (useCase.slug) entries.push({ local, slug: useCase.slug });
+			if (!useCase.slug) continue;
+			entries.push({ local, slug: useCase.slug });
+			if (local === 'fr') entries.push({ slug: useCase.slug });
 		}
 	}
 
@@ -27,9 +29,16 @@ export const load: PageLoad = async ({ params, depends }) => {
 		throw error(404, 'Use case not found');
 	}
 
+	const translatedContent = await getUseCasesContent(local === 'fr' ? 'en' : 'fr');
+	const translatedUseCase = translatedContent.use_case_list?.find((item) => item.id === useCase.id);
+
 	return {
 		content,
 		useCase,
-		locale: local
+		locale: local,
+		alternatePaths: {
+			fr: `/realisations/${local === 'fr' ? useCase.slug : translatedUseCase?.slug || useCase.slug}`,
+			en: `/realisations/${local === 'en' ? useCase.slug : translatedUseCase?.slug || useCase.slug}`
+		}
 	};
 };

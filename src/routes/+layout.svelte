@@ -11,7 +11,8 @@
 		buildAbsoluteUrl,
 		buildLocalizedUrl,
 		resolveLocaleFromPath,
-		stripLocaleFromPath
+		stripLocaleFromPath,
+		type SeoAlternatePaths
 	} from '$lib/functions/seo';
 
 	$: detectedLocale = resolveLocaleFromPath($page.url.pathname);
@@ -19,11 +20,14 @@
 		$locale = detectedLocale;
 	}
 
-	// Générer les URLs hreflang pour la page actuelle
+	// Use page-provided paths when translated dynamic routes have different slugs.
 	$: currentPathWithoutLocale = stripLocaleFromPath($page.url.pathname);
-	$: frUrl = buildLocalizedUrl(currentPathWithoutLocale, 'fr');
-	$: enUrl = buildLocalizedUrl(currentPathWithoutLocale, 'en');
-	$: xDefaultUrl = buildAbsoluteUrl(currentPathWithoutLocale);
+	$: alternatePaths = ($page.data as { alternatePaths?: SeoAlternatePaths }).alternatePaths;
+	$: frPath = alternatePaths?.fr || currentPathWithoutLocale;
+	$: enPath = alternatePaths?.en || currentPathWithoutLocale;
+	$: frUrl = buildLocalizedUrl(frPath, 'fr');
+	$: enUrl = buildLocalizedUrl(enPath, 'en');
+	$: xDefaultUrl = buildAbsoluteUrl(frPath);
 
 	let previousPopstateScrollBehavior = '';
 

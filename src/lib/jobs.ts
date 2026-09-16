@@ -40,7 +40,7 @@ const buildTallyUrls = (locale: Lang, offerId: string, slug: string, title: stri
 		offer_id: offerId,
 		offer_slug: slug,
 		offer_title: title,
-		source_url: `${siteBaseUrl}/${locale}/offres-emploi/${slug}`
+		source_url: `${siteBaseUrl}${locale === 'fr' ? '' : '/en'}/offres-emploi/${slug}`
 	});
 	const embedParams = new URLSearchParams({
 		...Object.fromEntries(contextParams),

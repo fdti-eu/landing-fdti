@@ -10,7 +10,10 @@ export async function entries() {
 		await Promise.all(
 			locales.map(async (local) => {
 				const content = (await getData(local)).CircularEconomy;
-				return content.dossiers.map(({ slug }) => ({ local, topic: slug }));
+				return content.dossiers.flatMap(({ slug }) => [
+					{ local, topic: slug },
+					...(local === 'fr' ? [{ topic: slug }] : [])
+				]);
 			})
 		)
 	).flat();
@@ -20,5 +23,13 @@ export const load: PageLoad = async ({ params, parent }) => {
 	const { content, locale } = await parent();
 	const dossier = content.dossiers.find(({ slug }) => slug === params.topic);
 	if (!dossier) error(404, 'Topic not found');
-	return { content, dossier, locale };
+	return {
+		content,
+		dossier,
+		locale,
+		alternatePaths: {
+			fr: `/expertises/economie-circulaire/${dossier.slug}`,
+			en: `/expertises/economie-circulaire/${dossier.slug}`
+		}
+	};
 };

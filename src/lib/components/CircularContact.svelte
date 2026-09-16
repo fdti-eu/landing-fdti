@@ -9,7 +9,12 @@
 			<p class="ce-eyebrow">FDTI</p>
 			<p class="ce-contact-copy">{content.ctaText}</p>
 		</div>
-		<a class="ce-button" href="https://calendly.com/fdti/30min">
+		<a
+			class="ce-button"
+			href="https://calendly.com/fdti/30min"
+			data-umami-event="calendly_click"
+			data-umami-event-placement="circular_contact"
+		>
 			{content.ctaButton}<span aria-hidden="true">↗</span>
 		</a>
 	</div>
