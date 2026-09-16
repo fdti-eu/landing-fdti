@@ -14,15 +14,11 @@
 						},
 						{
 							title: 'Analyse documentaire',
-							text: 'Lire, structurer et faire circuler des pièces sensibles sans détacher l’IA du processus métier.',
-							href: `/${locale}/realisations/automatisation-greffes`,
-							link: 'Voir une réalisation'
+							text: 'Lire, structurer et faire circuler des pièces sensibles sans détacher l’IA du processus métier.'
 						},
 						{
 							title: 'Opérations multi-acteurs',
-							text: 'Portails, droits, statuts et APIs pour faire travailler équipes internes et partenaires sur le même flux.',
-							href: `/${locale}/realisations`,
-							link: 'Voir les réalisations'
+							text: 'Portails, droits, statuts et APIs pour faire travailler équipes internes et partenaires sur le même flux.'
 						}
 					],
 					all: 'Découvrir toutes nos expertises'
@@ -38,15 +34,11 @@
 						},
 						{
 							title: 'Document analysis',
-							text: 'Read, structure and route sensitive files without separating AI from the business process.',
-							href: `/${locale}/realisations/automatisation-greffes`,
-							link: 'See a project'
+							text: 'Read, structure and route sensitive files without separating AI from the business process.'
 						},
 						{
 							title: 'Multi-party operations',
-							text: 'Portals, permissions, statuses and APIs that keep internal teams and partners on the same workflow.',
-							href: `/${locale}/realisations`,
-							link: 'See our work'
+							text: 'Portals, permissions, statuses and APIs that keep internal teams and partners on the same workflow.'
 						}
 					],
 					all: 'Explore all our expertise'
@@ -59,12 +51,20 @@
 	</div>
 	<div class="expertise-preview-grid">
 		{#each content.items as item, index}
-			<a href={item.href}>
-				<span aria-hidden="true">0{index + 1}</span>
-				<h3>{item.title}</h3>
-				<p>{item.text}</p>
-				<strong>{item.link}<span aria-hidden="true"> ↗</span></strong>
-			</a>
+			{#if item.href && item.link}
+				<a href={item.href}>
+					<span aria-hidden="true">0{index + 1}</span>
+					<h3>{item.title}</h3>
+					<p>{item.text}</p>
+					<strong>{item.link}<span aria-hidden="true"> ↗</span></strong>
+				</a>
+			{:else}
+				<article>
+					<span aria-hidden="true">0{index + 1}</span>
+					<h3>{item.title}</h3>
+					<p>{item.text}</p>
+				</article>
+			{/if}
 		{/each}
 	</div>
 	<a class="editorial-text-link" href={`/${locale}/expertises`}>{content.all} →</a>

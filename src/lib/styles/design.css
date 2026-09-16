@@ -506,7 +506,7 @@
 	.expertise-preview-heading h2 {
 		font-weight: 700;
 	}
-	.expertise-preview-grid > a {
+	.expertise-preview-grid > :is(a, article) {
 		display: flex;
 		flex-direction: column;
 		min-height: 330px;
@@ -514,16 +514,16 @@
 		border-right: 1px solid #c9cbc8;
 		transition: background 0.2s;
 	}
-	.expertise-preview-grid > a:first-child {
+	.expertise-preview-grid > :is(a, article):first-child {
 		padding-left: 0;
 	}
-	.expertise-preview-grid > a:last-child {
+	.expertise-preview-grid > :is(a, article):last-child {
 		border-right: 0;
 	}
 	.expertise-preview-grid > a:hover {
 		background: white;
 	}
-	.expertise-preview-grid > a > span {
+	.expertise-preview-grid > :is(a, article) > span {
 		font-size: 12px;
 		color: #777d82;
 	}
@@ -2457,13 +2457,13 @@
 		.expertise-build-grid {
 			grid-template-columns: 1fr;
 		}
-		.expertise-preview-grid > a {
+		.expertise-preview-grid > :is(a, article) {
 			min-height: 0;
 			padding: 27px 0;
 			border-right: 0;
 			border-bottom: 1px solid #c9cbc8;
 		}
-		.expertise-preview-grid > a:last-child {
+		.expertise-preview-grid > :is(a, article):last-child {
 			border-bottom: 0;
 		}
 		.expertise-preview-grid h3 {
