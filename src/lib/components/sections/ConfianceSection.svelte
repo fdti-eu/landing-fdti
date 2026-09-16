@@ -9,6 +9,12 @@
 		description?: string | null;
 		image?: { url?: string | null } | null;
 	} | null = null;
+	const featuredCompanies = ['Stellantis', 'Samsung', 'Mastercard', 'BlaBlaCar'];
+	$: companies = [...(content?.company_list ?? [])].sort(
+		(a, b) =>
+			Number(featuredCompanies.includes(b.name || '')) -
+			Number(featuredCompanies.includes(a.name || ''))
+	);
 </script>
 
 {#if content}
@@ -18,33 +24,39 @@
 				{content.title || 'Technologies'}
 			</h2>
 		</div>
-		{#if content.company_list?.length}
+		{#if companies.length}
 			<div class="relative overflow-hidden">
 				<div class="marquee-container">
 					<div class="marquee-content">
-						{#each content.company_list as company}
-							<div class="marquee-item">
+						{#each companies as company}
+							<div
+								class="marquee-item"
+								class:featured-logo={featuredCompanies.includes(company.name || '')}
+							>
 								<img
 									src={company?.img?.url || '/logo.webp'}
 									alt={company?.name || 'Company logo'}
 									title={company?.name || 'Company logo'}
 									class="logo-img {['Mastercard', 'Galloo', 'SNAM'].includes(company?.name || '')
 										? 'logo-small'
-										: ''} object-contain grayscale hover:grayscale-0 transition-all duration-300"
+										: ''} object-contain"
 								/>
 							</div>
 						{/each}
 					</div>
 					<div class="marquee-content" aria-hidden="true">
-						{#each content.company_list as company}
-							<div class="marquee-item">
+						{#each companies as company}
+							<div
+								class="marquee-item"
+								class:featured-logo={featuredCompanies.includes(company.name || '')}
+							>
 								<img
 									src={company?.img?.url || '/logo.webp'}
 									alt={company?.name || 'Company logo'}
 									title={company?.name || 'Company logo'}
 									class="logo-img {['Mastercard', 'Galloo', 'SNAM'].includes(company?.name || '')
 										? 'logo-small'
-										: ''} object-contain grayscale hover:grayscale-0 transition-all duration-300"
+										: ''} object-contain"
 								/>
 							</div>
 						{/each}

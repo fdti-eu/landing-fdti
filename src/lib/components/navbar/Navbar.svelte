@@ -7,6 +7,13 @@
 
 	let isNavbarOpen = false;
 	let menuButton: HTMLButtonElement;
+	type NavLink = {
+		href: string;
+		label: string;
+		active: boolean;
+		children?: { href: string; label: string }[];
+	};
+	let links: NavLink[];
 	$: links = [
 		{
 			href: `/${$locale}`,
@@ -14,14 +21,57 @@
 			active: $page.url.pathname === '/' || $page.url.pathname === `/${$locale}`
 		},
 		{
-			href: `/${$locale}/adn-et-valeurs`,
-			label: $locale === 'fr' ? 'ADN et valeurs' : 'DNA and values',
-			active: $page.url.pathname.includes('/adn-et-valeurs')
+			href: `/${$locale}/expertises`,
+			label: $locale === 'fr' ? 'Expertises' : 'Expertise',
+			active: $page.url.pathname.includes('/expertises'),
+			children: [
+				{
+					href: `/${$locale}/expertises`,
+					label: $locale === 'fr' ? 'Toutes les expertises' : 'All expertise'
+				},
+				{
+					href: `/${$locale}/expertises/economie-circulaire`,
+					label: $locale === 'fr' ? 'Économie circulaire' : 'Circular economy'
+				}
+			]
 		},
 		{
-			href: `/${$locale}/cas-d-usage`,
-			label: $locale === 'fr' ? 'Cas d’usage' : 'Use cases',
-			active: $page.url.pathname.includes('/cas-d-usage')
+			href: `/${$locale}/realisations`,
+			label: $locale === 'fr' ? 'Réalisations' : 'Work',
+			active: $page.url.pathname.includes('/realisations'),
+			children: [
+				{
+					href: `/${$locale}/realisations`,
+					label: $locale === 'fr' ? 'Toutes les réalisations' : 'All work'
+				},
+				{
+					href: `/${$locale}/realisations/automatisation-greffes`,
+					label: $locale === 'fr' ? 'IA pour la justice' : 'AI for commercial courts'
+				},
+				{
+					href: `/${$locale}/realisations/${
+						$locale === 'fr' ? 'plateforme-economie-circulaire' : 'end-of-life-vehicle-platform'
+					}`,
+					label: $locale === 'fr' ? 'Véhicules en fin de vie' : 'End-of-life vehicles'
+				},
+				{
+					href: `/${$locale}/realisations/marketplace-batteries`,
+					label: $locale === 'fr' ? 'Batteries seconde vie' : 'Second-life batteries'
+				},
+				{
+					href: `/${$locale}/realisations/${
+						$locale === 'fr'
+							? 'plateforme-operations-recyclage-batteries'
+							: 'battery-recycling-operations-platform'
+					}`,
+					label: $locale === 'fr' ? 'Opérations de recyclage' : 'Recycling operations'
+				}
+			]
+		},
+		{
+			href: `/${$locale}/fdti`,
+			label: 'FDTI',
+			active: $page.url.pathname.includes('/fdti') || $page.url.pathname.includes('/adn-et-valeurs')
 		}
 	];
 	function closeOnEscape(event: KeyboardEvent) {
@@ -51,13 +101,22 @@
 			<span>FDTI - From Data To Insights</span>
 		</a>
 		<ul id="fdti-navigation" class="nav-links" class:open={isNavbarOpen}>
-			{#each links as link}<li>
+			{#each links as link}<li class:has-submenu={link.children?.length}>
 					<a
 						href={link.href}
 						class:active={link.active}
 						aria-current={link.active ? 'page' : undefined}
 						on:click={() => (isNavbarOpen = false)}>{link.label}</a
 					>
+					{#if link.children?.length}
+						<ul class="nav-submenu">
+							{#each link.children as child, childIndex}
+								<li class:nav-overview={childIndex === 0}>
+									<a href={child.href} on:click={() => (isNavbarOpen = false)}>{child.label}</a>
+								</li>
+							{/each}
+						</ul>
+					{/if}
 				</li>{/each}
 		</ul>
 		<LocaleToggle class="nav-locale" />

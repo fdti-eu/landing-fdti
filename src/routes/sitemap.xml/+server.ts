@@ -12,16 +12,19 @@ const locales: Lang[] = ['fr', 'en'];
 
 const staticPages: SitemapPage[] = [
 	{ path: '/', changefreq: 'weekly', priority: '1.00' },
-	{ path: '/adn-et-valeurs', changefreq: 'weekly', priority: '0.90' },
-	{ path: '/cas-d-usage', changefreq: 'weekly', priority: '0.95' },
+	{ path: '/expertises', changefreq: 'weekly', priority: '0.95' },
+	{ path: '/realisations', changefreq: 'weekly', priority: '0.95' },
+	{ path: '/expertises/economie-circulaire', changefreq: 'monthly', priority: '0.90' },
+	{ path: '/fdti', changefreq: 'monthly', priority: '0.85' },
 	{ path: '/confidentialite', changefreq: 'monthly', priority: '0.60' },
 	{ path: '/condition-utilisation', changefreq: 'monthly', priority: '0.60' }
 ];
 
-const getUseCaseSlugs = async () => {
-	const content = await getUseCasesContent('fr');
-	const frUseCases = content.use_case_list ?? [];
-	return frUseCases.map((useCase) => useCase.slug).filter((slug): slug is string => Boolean(slug));
+const getUseCaseSlugs = async (locale: Lang) => {
+	const content = await getUseCasesContent(locale);
+	return (content.use_case_list ?? [])
+		.map((useCase) => useCase.slug)
+		.filter((slug): slug is string => Boolean(slug));
 };
 
 const buildUrlEntry = (loc: string, changefreq: string, priority: string) => {
@@ -46,11 +49,10 @@ export async function GET() {
 		}
 	}
 
-	const useCaseSlugs = await getUseCaseSlugs();
-	for (const slug of useCaseSlugs) {
-		for (const locale of locales) {
+	for (const locale of locales) {
+		for (const slug of await getUseCaseSlugs(locale)) {
 			urls.push(
-				buildUrlEntry(buildLocalizedUrl(`/cas-d-usage/${slug}`, locale), 'monthly', '0.80')
+				buildUrlEntry(buildLocalizedUrl(`/realisations/${slug}`, locale), 'monthly', '0.80')
 			);
 		}
 	}

@@ -7,7 +7,7 @@
 	let scrollPosition = 0;
 	let lastVisitedSlug = '';
 
-	const isUseCaseList = (routeId?: string | null) => routeId?.endsWith('/cas-d-usage') ?? false;
+	const isUseCaseList = (routeId?: string | null) => routeId?.endsWith('/realisations') ?? false;
 
 	const restoreScrollImmediately = (top: number) => {
 		const root = document.documentElement;

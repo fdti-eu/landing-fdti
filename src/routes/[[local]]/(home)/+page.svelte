@@ -6,6 +6,7 @@
 	import ConfianceSection from '$lib/components/sections/ConfianceSection.svelte';
 	import ContactSection from '$lib/components/sections/ContactSection.svelte';
 	import UseCasesPreviewSection from '$lib/components/sections/UseCasesPreviewSection.svelte';
+	import ExpertisePreviewSection from '$lib/components/sections/ExpertisePreviewSection.svelte';
 	import { MetaTags } from 'svelte-meta-tags';
 	import LdTag from '$lib/components/json-ld/LDTag.svelte';
 	import { schema } from '$lib/components/json-ld/json-ld';
@@ -81,6 +82,7 @@
 				useCases={pageContent.homepage_use_cases}
 				locale={currentLocale}
 			/>
+			<ExpertisePreviewSection locale={currentLocale} />
 			<TechnologiesSection content={pageContent.technology_content} />
 			<ConfianceSection content={pageContent.trust_content} />
 		</div>

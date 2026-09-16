@@ -1,0 +1,16 @@
+<script lang="ts">
+	import type { LocaleData } from '$lib/data';
+	export let content: LocaleData['CircularEconomy'];
+</script>
+
+<section class="ce-section ce-contact">
+	<div class="ce-shell ce-contact-layout">
+		<div>
+			<p class="ce-eyebrow">FDTI</p>
+			<p class="ce-contact-copy">{content.ctaText}</p>
+		</div>
+		<a class="ce-button" href="https://calendly.com/fdti/30min">
+			{content.ctaButton}<span aria-hidden="true">↗</span>
+		</a>
+	</div>
+</section>

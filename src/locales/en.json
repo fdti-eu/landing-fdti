@@ -1,4 +1,453 @@
 {
+	"CircularEconomy": {
+		"metaTitle": "Business applications for recycling, batteries and end-of-life vehicles | FDTI",
+		"metaDescription": "VIN identification, EWC codes, collection, price offers, Trackdechets waste tracking and partner integrations: explore the features developed by FDTI.",
+		"label": "Circular economy",
+		"overview": "Overview",
+		"topicNavigation": "Circular economy navigation",
+		"backToContents": "Back to contents",
+		"readGuide": "Read the guide",
+		"title": "From vehicle identification to waste collection and treatment.",
+		"intro": "We develop the applications manufacturers and recyclers use to manage take-back operations: identify a vehicle, assess a battery, prepare a pickup, negotiate a price, generate and track documents.",
+		"positioning": "Custom software for business teams, collection networks and their partners.",
+		"contact": "Let’s discuss a real operation",
+		"explore": "Explore the features",
+		"proofNote": "The features presented come from several projects developed for automotive manufacturers and recycling operators. They illustrate our work; scope and rules are adapted to each organization.",
+		"exampleLabel": "A closer look at a feature",
+		"exampleNote": "Explanatory examples based on developed features. These are not screenshots of client applications.",
+		"inputLabel": "Starting point",
+		"actionLabel": "What the application does",
+		"outputLabel": "Result",
+		"exceptionsTitle": "What happens when the process is not straightforward?",
+		"caseLabel": "Situation encountered",
+		"behaviorLabel": "Behavior implemented in the workflow",
+		"examples": [
+			{
+				"label": "License plate / VIN",
+				"cases": [
+					{ "when": "Specifications are returned", "then": "They populate the vehicle record." },
+					{
+						"when": "Some required fields remain empty",
+						"then": "The form requests the missing information."
+					},
+					{
+						"when": "Lookup cannot complete the record",
+						"then": "The user can continue with manual entry."
+					}
+				],
+				"title": "Identify a vehicle without entering everything again",
+				"input": "A registration country and a license plate or VIN.",
+				"action": "Query the identification service, retrieve available specifications and request only the missing information.",
+				"output": "A completed vehicle record. Manual entry remains available when data cannot be retrieved.",
+				"page": "vehicules",
+				"anchor": "identification"
+			},
+			{
+				"label": "EWC code",
+				"cases": [
+					{
+						"when": "The declaration already has a code",
+						"then": "That code is suggested when the record is reopened."
+					},
+					{
+						"when": "The battery type has a reference code",
+						"then": "It can prefill the declaration field."
+					},
+					{
+						"when": "The declarant selects another code",
+						"then": "The selected code is saved with the declaration."
+					}
+				],
+				"title": "Link the waste code to the battery record",
+				"input": "An identified battery and its reference type.",
+				"action": "Suggest the EWC code from reference data, allow selection or correction, and save it with the declaration.",
+				"output": "The record includes the code and changes can be tracked. Classification remains the responsibility of the relevant business stakeholders.",
+				"page": "batteries",
+				"anchor": "identification"
+			},
+			{
+				"label": "Waste tracking signatures",
+				"cases": [
+					{
+						"when": "The producer has not signed yet",
+						"then": "The receiving action indicates the missing producer signature."
+					},
+					{
+						"when": "The producer has signed, but the collector has not",
+						"then": "The action indicates that the collector signature is pending."
+					},
+					{
+						"when": "Both signatures are present",
+						"then": "This blocking reason is cleared; other workflow conditions still apply."
+					}
+				],
+				"title": "Identify the missing signature",
+				"input": "A collected battery declaration with a linked French waste tracking form (BSD).",
+				"action": "Read the form’s status and distinguish a pending producer signature from a pending collector signature.",
+				"output": "The user sees why the receiving action is blocked in the configured workflow and which stakeholder needs to act.",
+				"page": "documents-et-integrations",
+				"anchor": "bsd"
+			}
+		],
+		"detailLink": "See how it works",
+		"dossiersLabel": "What we have developed",
+		"dossiersTitle": "Three ways to examine the work in detail.",
+		"dossiersIntro": "From fields completed by the declarant to partner exchanges: each guide explains the data, rules, documents and actions involved.",
+		"audienceLabel": "Your starting point",
+		"audienceTitle": "Which problem do you need to solve?",
+		"audiences": [
+			{
+				"role": "Operations & recycling",
+				"question": "What is stopping us from preparing this pickup?",
+				"answer": "Battery record, packaging, selected packages, collector and delivery site: the information is brought together before creating the packing list.",
+				"page": "batteries",
+				"anchor": "collecte",
+				"link": "Prepare a collection"
+			},
+			{
+				"role": "Manufacturer program & network",
+				"question": "How can owners and service providers work on the same records?",
+				"answer": "A declaration workflow for the network, management interfaces for internal teams and exchanges with treatment centers. Access rules follow each party’s responsibilities.",
+				"page": "vehicules",
+				"anchor": "reseau",
+				"link": "Organize a take-back network"
+			},
+			{
+				"role": "Commercial & procurement",
+				"question": "Which processing price and logistics cost were accepted?",
+				"answer": "Proposals retain their price components, author, date and status. Their history shows the terms discussed and those agreed.",
+				"page": "batteries",
+				"anchor": "offres",
+				"link": "Manage price proposals"
+			},
+			{
+				"role": "Quality & waste compliance",
+				"question": "Does the record contain the right code, documents and required signatures?",
+				"answer": "EWC codes, battery diagnostics, documents and waste tracking statuses are handled within the workflow. Application controls make required items and incomplete steps visible.",
+				"page": "documents-et-integrations",
+				"anchor": "classification",
+				"link": "Connect documents to operations"
+			},
+			{
+				"role": "IT & application owners",
+				"question": "Which information should be exchanged with existing systems?",
+				"answer": "Battery data, status changes and accepted offers can flow to partner systems through APIs and notifications. Integration is defined for each business object and its access rights.",
+				"page": "documents-et-integrations",
+				"anchor": "connexions",
+				"link": "Examine the integrations"
+			}
+		],
+		"scopeLabel": "Scope built around your operations",
+		"scopeTitle": "A focused module or a complete application.",
+		"scopeItems": [
+			{
+				"title": "Extend an existing tool",
+				"text": "Your logistics software works, but declarations arrive by email? The project can focus on collecting the information and passing it to that system."
+			},
+			{
+				"title": "Rework a limiting workflow",
+				"text": "Your network already uses an application? We examine the data, rules and exchanges to preserve before extending or replacing the relevant part."
+			},
+			{
+				"title": "Build an end-to-end service",
+				"text": "You are setting up a new take-back activity? We can develop the network portal, administration tools and exchanges needed with partners."
+			}
+		],
+		"faqTitle": "Before starting a project",
+		"faqs": [
+			{
+				"question": "Is this an off-the-shelf software product?",
+				"answer": "We design and develop custom applications. The examples show features we have already built; together we define which ones meet your needs, which rules to adapt and which systems to connect."
+			},
+			{
+				"question": "Do we have to replace our existing tools (ERP, transport, MES, billing, etc.)?",
+				"answer": "The first step is to establish what is already covered. An integration or complementary module may be enough. We check exchange capabilities with your IT teams before agreeing on scope."
+			},
+			{
+				"question": "Does the application guarantee regulatory compliance?",
+				"answer": "It implements the controls and document exchanges defined for the project. Waste classification, transport rules and applicable obligations must be validated by the responsible specialists. An EWC code or a Trackdechets connection alone does not guarantee compliance."
+			},
+			{
+				"question": "Do you only work with vehicles and batteries?",
+				"answer": "These are the industries illustrated here by our projects. For another activity, we examine similarities and differences: products or materials, stakeholders, documents, transactions and existing tools. Relevance depends on the operations to support."
+			},
+			{
+				"question": "Where does AI fit?",
+				"answer": "When a need involves reading documents, extracting information or supporting assessment, we can explore an AI component. Not all the features in these guides depend on AI: API-based identification, input rules and status exchanges already address concrete needs."
+			}
+		],
+		"ctaTitle": "Scope a real flow",
+		"ctaText": "Show us a real flow, its participants and the tools already in place.",
+		"ctaButton": "Talk to FDTI — 30 minutes",
+		"back": "All circular economy topics",
+		"contents": "In this guide",
+		"situationLabel": "The business situation",
+		"ruleLabel": "The detail that matters",
+		"resultLabel": "What the team gets",
+		"dataLabel": "Data and actions supported",
+		"relatedTitle": "Explore the other topics",
+		"dossiers": [
+			{
+				"slug": "vehicules",
+				"navLabel": "Vehicles",
+				"label": "End-of-life vehicles",
+				"title": "Identify the vehicle. Complete the record. Organize take-back.",
+				"summary": "License plate or VIN, retrieved specifications, administrative documents and interfaces for the take-back network.",
+				"description": "An individual or a garage starts by declaring a vehicle. Behind that form, teams need reliable information, prepared documents and a request they can pass to the parties handling collection. Here are the functions we have developed to connect these steps.",
+				"context": "Project example: a vehicle take-back platform with individual and professional workflows connected to an existing management system.",
+				"terms": ["License plate / VIN", "B2B & B2C workflows", "Electronic signature"],
+				"sections": [
+					{
+						"id": "identification",
+						"title": "Start with a plate or VIN, not an empty record.",
+						"navLabel": "License plate / VIN lookup",
+						"situation": "Asking users to reenter a vehicle’s make, model and specifications adds fields to complete and corrections to handle later.",
+						"actions": [
+							"The declarant provides the country and available identifier: a license plate or VIN, the vehicle identification number.",
+							"The application queries an identification service and populates the record with the returned specifications.",
+							"The user is asked to complete required fields that remain empty. Manual entry is available when data cannot be retrieved."
+						],
+						"rule": "The identification method and required fields vary by country. The integration does not assume that every lookup returns a complete record.",
+						"result": "A structured vehicle record with available specifications retrieved and missing information completed.",
+						"data": [
+							"Registration country",
+							"License plate or VIN",
+							"Make and model",
+							"Specifications and missing fields"
+						]
+					},
+					{
+						"id": "dossier",
+						"title": "Move the administrative record forward with the request.",
+						"navLabel": "Documents and signatures",
+						"situation": "A take-back request is not ready to process simply because the vehicle has been identified. It also includes declarative information and documents.",
+						"actions": [
+							"The workflow brings together the information and documents needed to handle the request.",
+							"The team finds these items in the vehicle record rather than in separate exchanges.",
+							"Generation and electronic signing of transfer and destruction documents are integrated into the process for the relevant French operations."
+						],
+						"rule": "Document content and signature steps depend on the country and procedure. The project uses the applicable documents and defines the expected signatories.",
+						"result": "The request, supporting documents and signature tracking are linked to the relevant vehicle.",
+						"data": [
+							"Declarant information",
+							"Supporting documents",
+							"Transfer / destruction documents",
+							"Signature tracking"
+						]
+					},
+					{
+						"id": "reseau",
+						"title": "Give the network a shared operational tool.",
+						"navLabel": "Take-back network",
+						"situation": "Owners, garages, end-of-life vehicle treatment centers and program teams act at different times with different responsibilities.",
+						"actions": [
+							"Separate workflows support individual and professional requests.",
+							"Management interfaces let teams and partners follow vehicles and handling steps.",
+							"Connections to the existing system exchange the information needed between declaration, collection and tracking through dismantling."
+						],
+						"rule": "The public portal and professional tool serve different uses. Screens and access rights need to reflect that separation.",
+						"result": "Vehicle-level tracking and interfaces suited to the people declaring, handling and managing operations.",
+						"data": [
+							"Individual / professional declaration",
+							"Garages and treatment centers",
+							"Handling steps",
+							"Existing-system exchanges"
+						]
+					}
+				]
+			},
+			{
+				"slug": "batteries",
+				"navLabel": "Batteries",
+				"label": "Batteries, collection & recovery",
+				"title": "A battery to handle, with its specifications, constraints and take-back terms.",
+				"summary": "EWC code, condition and diagnostics, packing lists, processing and transport prices, receiving and treatment tracking.",
+				"description": "A battery is more than a reference and a pickup address. Its type, condition, documents and agreed terms affect handling. We have developed the modules below across recycling and second-life projects.",
+				"context": "Examples from several applications developed for an automotive manufacturer and a battery recycler. The modules are presented together to explain the operations they support.",
+				"terms": ["EWC code", "Condition / diagnostics / ADR", "Packing lists & price offers"],
+				"sections": [
+					{
+						"id": "identification",
+						"title": "Identify the battery and record its waste code.",
+						"navLabel": "Characterization, EWC and UN codes",
+						"situation": "The reference data combines model, VIN or BIN, condition, charge, health, dimensions and weight. The declaration completes these characteristics with EWC and UN codes, evidence and photos.",
+						"actions": [
+							"The declaration links the battery to its type and owner information.",
+							"The workflow suggests an EWC code — from the European waste classification — using the existing declaration or reference battery type.",
+							"The declarant can select or correct the code. It is saved in the record and changes are available in the history."
+						],
+						"rule": "Prefilled information comes from reference data. It does not replace validation of the waste classification by the responsible stakeholders.",
+						"result": "A battery characterized in a record ready for collection, transport and traceability.",
+						"data": ["Battery reference and type", "Owner", "Selected EWC code", "Change history"]
+					},
+					{
+						"id": "diagnostic",
+						"title": "Capture battery condition before collection.",
+						"navLabel": "Diagnostics and condition",
+						"situation": "A damaged battery requires different preparation from a battery in another condition. Stakeholders need diagnostics and relevant documents before organizing the next steps.",
+						"actions": [
+							"The declarant records battery condition and attaches the diagnostic and checklist documents required by the workflow.",
+							"ADR transport information associated with the selected condition is shown in the interface.",
+							"General photos and, depending on the declaring party and identifier readability, a serial-number photo are requested."
+						],
+						"rule": "Required documents depend on context. Transport and packaging rules are defined with the responsible specialists; the portal does not infer them from a photograph.",
+						"result": "A record bringing together declared condition, photos and documents needed to assess handling.",
+						"data": [
+							"Battery condition",
+							"Diagnostic and checklist",
+							"Photos and serial number",
+							"ADR information"
+						]
+					},
+					{
+						"id": "collecte",
+						"title": "Build a consistent packing list.",
+						"navLabel": "Packing, palletization and collection",
+						"situation": "Several declarations and packages may be ready to leave. Selecting them without considering the collector or delivery site can produce a list that does not fit the intended operation.",
+						"actions": [
+							"Users review declarations with their owner, collector, delivery site, chemistry, packaging and status.",
+							"They select the packages to include in the packing list.",
+							"In the developed workflow, selection prevents mixing delivery sites or collectors incompatible with the current grouping."
+						],
+						"rule": "This grouping check is an explicit business rule. For your organization, we define the criteria that permit or prevent a shared departure.",
+						"result": "A packing list linked to declarations, packaging, palletization and the planned transport.",
+						"data": [
+							"Declarations and packages",
+							"Collector",
+							"Delivery site",
+							"Chemistry, packaging and ADR"
+						]
+					},
+					{
+						"id": "offres",
+						"title": "Separate processing price from logistics cost.",
+						"navLabel": "Offers and prices",
+						"situation": "Negotiation with a provider may cover both battery processing and transport. A single amount does not capture the terms of the agreement.",
+						"actions": [
+							"A proposal includes processing price, logistics price, currency and an optional comment.",
+							"Successive proposals are kept with their author, date and acceptance or refusal status.",
+							"Offer operations are also available to providers through an API. Notifications can inform their system when an offer is created or accepted."
+						],
+						"rule": "This example covers price negotiation for batteries and pickup groups. A trading arrangement involving multiple purchase and resale contracts would require specific scoping.",
+						"result": "Proposed and agreed terms remain available with the record, without searching an email chain for the latest agreement.",
+						"data": [
+							"Processing price",
+							"Logistics cost and currency",
+							"Proposal author and date",
+							"Acceptance / refusal"
+						]
+					},
+					{
+						"id": "reception",
+						"title": "Connect collection, receiving and treatment.",
+						"navLabel": "Receiving and treatment",
+						"situation": "A battery reported as collected must then be received and tracked through treatment. Document status may also condition which actions are available in the tool.",
+						"actions": [
+							"Statuses distinguish batteries ready for pickup, collected, received and processed.",
+							"In a workflow connected to Trackdechets, receiving records a date and receiver’s name, then updates the linked waste tracking form and declaration.",
+							"Partners can be notified of status changes to update their own tracking."
+						],
+						"rule": "Physical and document tracking are linked but remain distinct. The workflow shows the stage reached and the actions still required.",
+						"result": "A declaration tracked after departure from the owner’s site, with associated steps and documents.",
+						"data": [
+							"Battery status",
+							"Receiving date and person",
+							"Linked waste tracking form, where applicable",
+							"Treatment status"
+						]
+					}
+				]
+			},
+			{
+				"slug": "documents-et-integrations",
+				"navLabel": "Documents & APIs",
+				"label": "Documents & integrations",
+				"title": "Keep information and documents connected to operations.",
+				"summary": "EWC, ADR, Trackdechets waste tracking, signatures and API exchanges: what the applications handle and where your systems fit.",
+				"description": "Operations often involve several applications. The business record needs to retain useful references, track document stages and send events to partners. Here are integrations and controls we have developed.",
+				"context": "Examples from vehicle and battery projects. Document obligations and integration capabilities must be checked for each country, activity and system involved.",
+				"terms": ["EWC & ADR", "Trackdechets waste tracking", "APIs & notifications"],
+				"sections": [
+					{
+						"id": "classification",
+						"title": "EWC and ADR: separate information, separate purposes.",
+						"navLabel": "EWC and ADR",
+						"situation": "Waste classification codes and transport information need to be recorded in the right place. Grouping them under a compliance label does not explain what the tool actually does.",
+						"actions": [
+							"The EWC code is linked to the declaration and can be suggested from the reference battery type.",
+							"Battery condition is recorded separately with the required diagnostic documents.",
+							"The interface displays the ADR information defined for that condition. Teams define input rules, supporting documents and required approvals."
+						],
+						"rule": "The application organizes data and applies defined rules. It does not automatically turn an EWC code into authorization for transport or treatment.",
+						"result": "Distinct, accessible information that helps qualified stakeholders review the record.",
+						"data": [
+							"EWC waste code",
+							"Condition and diagnostics",
+							"ADR transport information",
+							"Documents and approvals"
+						]
+					},
+					{
+						"id": "bsd",
+						"title": "Include the waste tracking form in declaration tracking.",
+						"navLabel": "BSD and Trackdechets",
+						"situation": "For relevant French operations, the waste tracking form (BSD) has its own statuses. Teams need to know whether it is created, signed and ready for the next step.",
+						"actions": [
+							"The application creates or updates a form through Trackdechets and stores its identifier with the declaration.",
+							"It checks status and distinguishes a missing producer signature from a missing collector signature.",
+							"The workflow can condition receiving on these signatures, then transmit receiving and treatment information."
+						],
+						"rule": "A blocked step should explain why and who needs to resolve it. This describes a control in the developed workflow, not a universal legal rule.",
+						"result": "The form and declaration remain linked; the user sees document status and required actions.",
+						"data": [
+							"Waste tracking form identifier",
+							"Status and signatures",
+							"Receiving date and person",
+							"Treatment information"
+						]
+					},
+					{
+						"id": "signature",
+						"title": "Link signatures to the right record.",
+						"navLabel": "Electronic signatures",
+						"situation": "A document sent for signature should remain connected to the vehicle or operation that generated it.",
+						"actions": [
+							"In the relevant vehicle workflows, transfer and destruction documents are generated within the process.",
+							"The DocuSign electronic signature service is integrated into the workflow.",
+							"The business record provides access to the documents and signature progress."
+						],
+						"rule": "Signatories, documents and signature timing are defined by the procedure. The project also accounts for incomplete steps.",
+						"result": "Continuity between the request, prepared documents and signature tracking.",
+						"data": [
+							"Vehicle record",
+							"Generated document",
+							"Expected signatories",
+							"Signature status"
+						]
+					},
+					{
+						"id": "connexions",
+						"title": "Exchange business objects, not just files.",
+						"navLabel": "APIs and partner systems",
+						"situation": "A provider may already manage operations in its own system. Requiring every change to be entered again in a portal adds work instead of removing it.",
+						"actions": [
+							"A provider API supports operations including battery data exports and imports and price proposals.",
+							"Outgoing notifications report specific events: a battery assigned, ready for pickup, received or processed; an offer created or accepted.",
+							"Access is authenticated and limited to the partner’s scope. Interfaces and exchange formats are defined for the relevant operations."
+						],
+						"rule": "A connection to your ERP or logistics software needs assessment: available data, exchange direction, access rights and error handling. We do not assume a universal connector exists.",
+						"result": "A partner can update tracking from its system and receive events relevant to its operations.",
+						"data": [
+							"Battery data",
+							"Price proposals and agreements",
+							"Status events",
+							"Partner identity and scope"
+						]
+					}
+				]
+			}
+		]
+	},
 	"GetHomePageContent": {
 		"hero_section": {
 			"subtitle": "Copilots, automation and business applications integrated into your existing tools",
@@ -447,7 +896,7 @@
 				{
 					"title": "Use Cases | Data, AI & Application Projects - FDTI",
 					"description": "Real-world implementations: court automation with AI, circular economy platforms, battery marketplaces, smart city lighting, social media analytics with LLMs, data warehouses for retail and justice sectors.",
-					"url": "/cas-d-usage",
+					"url": "/realisations",
 					"img": {
 						"filename_disk": "fdti-from-data-to-insights.svg",
 						"url": "/images/cms/branding/fdti-from-data-to-insights.svg",
@@ -595,14 +1044,14 @@
 		}
 	},
 	"GetUseCasesContent": {
-		"title": "Use cases",
-		"subtitle": "How we blend data, AI and applications to deliver impact",
+		"title": "Work",
+		"subtitle": "Deployed systems, specific business problems and observable results",
 		"meta_tags": {
 			"page_tags": [
 				{
-					"title": "Use Cases | Data, AI & Application Projects - FDTI",
+					"title": "Work | Data, AI & Application Projects - FDTI",
 					"description": "Real-world implementations: court automation with AI, circular economy platforms, battery marketplaces, smart city lighting, social media analytics with LLMs, data warehouses for retail and justice sectors.",
-					"url": "/cas-d-usage",
+					"url": "/realisations",
 					"img": {
 						"filename_disk": "fdti-from-data-to-insights.svg",
 						"url": "/images/cms/branding/fdti-from-data-to-insights.svg",
@@ -738,6 +1187,24 @@
 				"slug": "marketplace-batteries"
 			},
 			{
+				"id": "8",
+				"category": "Aftermarket & recycling",
+				"title": "Operations platform for a battery recycler",
+				"location": "France",
+				"challenge": "A recycler needed one tool for battery declarations, preliminary review, collection preparation, tracking records, reception and treatment steps.",
+				"approach": "Development of a business application connecting declarations, battery reference data, packing lists, grouping controls, Trackdechets records and reception actions.",
+				"impact": "Teams follow each file from declaration to treatment, with explicit controls over collectors, destination sites, signatures and document statuses.",
+				"tags": ["SvelteKit", "FastAPI", "PostgreSQL", "Trackdechets"],
+				"details": [
+					"Declaration qualification based on battery chemistry, sub-chemistry and typology.",
+					"Packing lists that prevent incompatible collectors or destination sites from being grouped together.",
+					"Trackdechets record creation and updates, with visibility into expected signatures.",
+					"Declaration reception and treatment stages followed in the same business record.",
+					"Interfaces suited to internal teams and collection partners."
+				],
+				"slug": "battery-recycling-operations-platform"
+			},
+			{
 				"id": "4",
 				"category": "Smart city & energy",
 				"title": "Public lighting supervision",
@@ -867,10 +1334,10 @@
 			}
 		],
 		"cta": {
-			"label": "Want to explore a similar use case?",
-			"button": "Diagnose your need in 30 min",
+			"label": "Critical work deserves more than generic software.",
+			"button": "Define a first scope",
 			"link": "https://calendly.com/fdti/30min",
-			"description": "Let's align on your next data, app or AI priority and draft an actionable roadmap in days."
+			"description": "Start from a real case, its participants and its data to identify the next useful step."
 		}
 	}
 }

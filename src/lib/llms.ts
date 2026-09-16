@@ -88,6 +88,12 @@ function buildLanguageSection(locale: string, data: LocaleData): string {
 	}
 
 	const dna = data.GetDNAPageContent?.DNA_content;
+	const circular = data.CircularEconomy;
+	output += formatSection(circular.title, circular.intro);
+	output += `\nhttps://www.fdti.eu/${locale}/expertises/economie-circulaire\n`;
+	output += `\n# EXPERTISE\nhttps://www.fdti.eu/${locale}/expertises\n`;
+	output += `\n# FDTI\nhttps://www.fdti.eu/${locale}/fdti\n`;
+
 	if (dna) {
 		output += '\n# COMPANY VALUES (DNA)\n';
 		output += `${stripHtml(dna.description)}\n`;

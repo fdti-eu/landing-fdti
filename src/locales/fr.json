@@ -1,4 +1,461 @@
 {
+	"CircularEconomy": {
+		"metaTitle": "Applications métier pour le recyclage, les batteries et les VHU | FDTI",
+		"metaDescription": "Identification VIN, codes EWC, collecte, offres de prix, BSD Trackdéchets et connexions partenaires : découvrez les fonctionnalités développées par FDTI.",
+		"label": "Économie circulaire",
+		"overview": "Vue d’ensemble",
+		"topicNavigation": "Navigation économie circulaire",
+		"backToContents": "Revenir au sommaire",
+		"readGuide": "Lire le dossier",
+		"title": "Du véhicule identifié au déchet pris en charge.",
+		"intro": "Nous développons les applications qui permettent aux industriels et aux recycleurs de gérer leurs reprises : identifier un véhicule, qualifier une batterie, préparer un enlèvement, négocier un prix, générer et suivre les documents.",
+		"positioning": "Logiciels sur mesure pour les équipes métier, leurs réseaux de collecte et leurs partenaires.",
+		"contact": "Parlons d’un cas concret",
+		"explore": "Explorer les fonctionnalités",
+		"proofNote": "Les fonctionnalités présentées sont issues de plusieurs projets développés pour des constructeurs automobiles et des opérateurs du recyclage. Elles illustrent notre travail ; le périmètre et les règles sont adaptés à chaque organisation.",
+		"exampleLabel": "Une fonctionnalité, dans le détail",
+		"exampleNote": "Exemples explicatifs issus de fonctionnalités développées. Ce ne sont pas des captures d’applications clientes.",
+		"inputLabel": "Au départ",
+		"actionLabel": "Ce que fait l’application",
+		"outputLabel": "À l’arrivée",
+		"exceptionsTitle": "Et quand tout ne se passe pas comme prévu ?",
+		"caseLabel": "Situation rencontrée",
+		"behaviorLabel": "Comportement prévu dans le parcours",
+		"examples": [
+			{
+				"label": "Immatriculation / VIN",
+				"cases": [
+					{
+						"when": "Les caractéristiques sont retournées",
+						"then": "Elles sont reprises dans la fiche véhicule."
+					},
+					{
+						"when": "Certains champs requis restent vides",
+						"then": "Le formulaire demande les compléments manquants."
+					},
+					{
+						"when": "La recherche ne permet pas de compléter la fiche",
+						"then": "L’utilisateur peut poursuivre en saisie manuelle."
+					}
+				],
+				"title": "Identifier un véhicule sans tout ressaisir",
+				"input": "Un pays d’immatriculation et une plaque ou un numéro VIN.",
+				"action": "Interroger le service d’identification, reprendre les caractéristiques disponibles et demander uniquement les compléments manquants.",
+				"output": "Une fiche véhicule complétée. La saisie manuelle reste possible si les données ne sont pas disponibles.",
+				"page": "vehicules",
+				"anchor": "identification"
+			},
+			{
+				"label": "Code EWC",
+				"cases": [
+					{
+						"when": "La déclaration possède déjà un code",
+						"then": "Ce code sert de valeur proposée lors de la reprise du dossier."
+					},
+					{
+						"when": "Le type de batterie possède un code de référence",
+						"then": "Il peut préremplir le champ de la déclaration."
+					},
+					{
+						"when": "Le déclarant sélectionne un autre code",
+						"then": "Le code sélectionné est enregistré avec la déclaration."
+					}
+				],
+				"title": "Rattacher le code déchet au dossier batterie",
+				"input": "Une batterie identifiée et son type de référence.",
+				"action": "Proposer le code EWC du référentiel, permettre sa sélection ou sa correction et l’enregistrer avec la déclaration.",
+				"output": "Le code figure dans le dossier et ses modifications peuvent être suivies. La qualification reste sous la responsabilité des acteurs métier.",
+				"page": "batteries",
+				"anchor": "identification"
+			},
+			{
+				"label": "Signature du BSD",
+				"cases": [
+					{
+						"when": "Le producteur n’a pas encore signé",
+						"then": "L’action de réception indique la signature du producteur manquante."
+					},
+					{
+						"when": "Le producteur a signé, le collecteur pas encore",
+						"then": "L’action indique que la signature du collecteur est attendue."
+					},
+					{
+						"when": "Les deux signatures sont présentes",
+						"then": "Ce motif de blocage est levé ; les autres conditions du parcours restent applicables."
+					}
+				],
+				"title": "Savoir quelle signature manque",
+				"input": "Une déclaration collectée avec un bordereau de suivi des déchets associé.",
+				"action": "Lire le statut du BSD et distinguer l’attente de signature du producteur de celle du collecteur.",
+				"output": "L’utilisateur voit pourquoi l’action de réception est bloquée dans le parcours configuré et quel acteur doit intervenir.",
+				"page": "documents-et-integrations",
+				"anchor": "bsd"
+			}
+		],
+		"detailLink": "Voir le fonctionnement",
+		"dossiersLabel": "Ce que nous avons développé",
+		"dossiersTitle": "Trois entrées pour regarder le travail de près.",
+		"dossiersIntro": "Des champs renseignés par le déclarant jusqu’aux échanges avec les partenaires : données, règles, documents et actions sont détaillés dans chaque dossier.",
+		"audienceLabel": "Votre point de départ",
+		"audienceTitle": "Quel sujet avez-vous à résoudre ?",
+		"audiences": [
+			{
+				"role": "Exploitation & recyclage",
+				"question": "Qu’est-ce qui empêche de préparer cet enlèvement ?",
+				"answer": "Dossier batterie, conditionnement, colis sélectionnés, collecteur et site destinataire : les informations nécessaires sont rapprochées avant de constituer la liste de colisage.",
+				"page": "batteries",
+				"anchor": "collecte",
+				"link": "Préparer une collecte"
+			},
+			{
+				"role": "Filière & réseau constructeur",
+				"question": "Comment faire travailler les détenteurs et les prestataires sur les mêmes dossiers ?",
+				"answer": "Un parcours de déclaration pour le réseau, des interfaces de gestion pour les équipes internes et des échanges avec les centres de traitement. Les règles d’accès suivent les responsabilités de chacun.",
+				"page": "vehicules",
+				"anchor": "reseau",
+				"link": "Organiser un réseau de reprise"
+			},
+			{
+				"role": "Commerce & achats",
+				"question": "Quel prix de traitement et quel coût logistique ont été acceptés ?",
+				"answer": "Les propositions portent leurs composantes de prix, leur auteur, leur date et leur statut. L’historique permet de retrouver les conditions discutées et celles qui ont été retenues.",
+				"page": "batteries",
+				"anchor": "offres",
+				"link": "Gérer les propositions de prix"
+			},
+			{
+				"role": "Qualité & conformité métier",
+				"question": "Le dossier porte-t-il le bon code, les bonnes pièces et les signatures attendues ?",
+				"answer": "Codes EWC, diagnostic batterie, documents et statuts de BSD sont traités dans le parcours. Les contrôles applicatifs rendent visibles les éléments attendus et les étapes encore incomplètes.",
+				"page": "documents-et-integrations",
+				"anchor": "classification",
+				"link": "Relier documents et opérations"
+			},
+			{
+				"role": "DSI & responsables d’application",
+				"question": "Quelles informations échanger avec les outils déjà en place ?",
+				"answer": "Données batterie, changements de statut et offres acceptées peuvent circuler par API et notifications vers les systèmes partenaires. L’intégration se définit objet par objet, avec ses droits d’accès.",
+				"page": "documents-et-integrations",
+				"anchor": "connexions",
+				"link": "Examiner les connexions"
+			}
+		],
+		"scopeLabel": "Un périmètre qui sert vos opérations",
+		"scopeTitle": "Un module ciblé ou une application complète.",
+		"scopeItems": [
+			{
+				"title": "Compléter un outil existant",
+				"text": "Votre outil logistique fonctionne, mais les déclarations arrivent par e-mail ? Le projet peut porter sur la collecte des informations et leur transmission à cet outil."
+			},
+			{
+				"title": "Reprendre un parcours devenu limitant",
+				"text": "Votre réseau utilise déjà une application ? Nous examinons les données, les règles et les échanges à préserver avant de faire évoluer ou de remplacer la partie concernée."
+			},
+			{
+				"title": "Construire un service de bout en bout",
+				"text": "Vous organisez une nouvelle activité de reprise ? Nous pouvons développer le portail du réseau, les outils d’administration et les échanges nécessaires avec les partenaires."
+			}
+		],
+		"faqTitle": "Avant de lancer un projet",
+		"faqs": [
+			{
+				"question": "Est-ce un logiciel prêt à acheter ?",
+				"answer": "Nous concevons et développons des applications sur mesure. Les exemples montrent des fonctionnalités que nous avons déjà réalisées ; nous définissons avec vous celles qui répondent à votre besoin, les règles à adapter et les systèmes à connecter."
+			},
+			{
+				"question": "Faut-il remplacer nos outils existants (ERP, outils de transport, GPAO, facturation…) ?",
+				"answer": "Le premier travail consiste à identifier ce qui est déjà couvert. Une connexion ou un module complémentaire peut suffire. Nous vérifions les possibilités d’échange avec vos équipes informatiques avant de retenir un périmètre."
+			},
+			{
+				"question": "L’application garantit-elle la conformité réglementaire ?",
+				"answer": "Elle met en œuvre les contrôles et les échanges documentaires définis pour le projet. La classification d’un déchet, les règles de transport et les obligations applicables doivent être validées par les responsables compétents. Un code EWC ou une connexion Trackdéchets ne constitue pas à lui seul une garantie de conformité."
+			},
+			{
+				"question": "Travaillez-vous uniquement sur les véhicules et les batteries ?",
+				"answer": "Ce sont les filières illustrées ici par nos réalisations. Pour une autre activité, nous examinons les similitudes et les différences : produits ou matières, acteurs, documents, transactions et outils existants. La pertinence se juge sur les opérations à traiter."
+			},
+			{
+				"question": "Quelle place pour l’IA ?",
+				"answer": "Lorsqu’un besoin porte sur la lecture de documents, l’extraction d’informations ou l’aide à la qualification, nous pouvons étudier une brique IA. Les fonctionnalités décrites dans ces dossiers n’en dépendent pas toutes : l’identification par API, les règles de saisie et les échanges de statuts répondent déjà à des besoins concrets."
+			}
+		],
+		"ctaTitle": "Cadrer un flux réel",
+		"ctaText": "Montrez-nous un flux réel, ses acteurs et les outils en place.",
+		"ctaButton": "Échanger avec FDTI — 30 minutes",
+		"back": "Toute l’économie circulaire",
+		"contents": "Dans ce dossier",
+		"situationLabel": "La situation métier",
+		"ruleLabel": "Le détail qui compte",
+		"resultLabel": "Ce que l’équipe retrouve",
+		"dataLabel": "Données et actions prises en charge",
+		"relatedTitle": "Les autres parties du dossier",
+		"dossiers": [
+			{
+				"slug": "vehicules",
+				"navLabel": "Véhicules",
+				"label": "Véhicules en fin de vie",
+				"title": "Identifier le véhicule. Compléter le dossier. Organiser sa reprise.",
+				"summary": "Immatriculation ou VIN, caractéristiques récupérées, pièces administratives et interfaces pour le réseau de reprise.",
+				"description": "Un particulier ou un garage commence par déclarer un véhicule. Derrière cette saisie, les équipes doivent obtenir des informations fiables, préparer les documents et transmettre la demande aux acteurs de la prise en charge. Voici les fonctions que nous avons développées pour relier ces étapes.",
+				"context": "Exemple de réalisation : plateforme de reprise de véhicules, avec parcours particuliers et professionnels, connectée à un système de gestion existant.",
+				"terms": ["Immatriculation / VIN", "Parcours B2B & B2C", "Signature électronique"],
+				"sections": [
+					{
+						"id": "identification",
+						"title": "Partir d’une plaque ou d’un VIN, pas d’une fiche vide.",
+						"navLabel": "Identification par plaque / VIN",
+						"situation": "Faire ressaisir la marque, le modèle et les caractéristiques d’un véhicule multiplie les champs à remplir et les corrections à traiter ensuite.",
+						"actions": [
+							"Le déclarant indique le pays et le type d’identifiant disponible : immatriculation ou VIN, le numéro d’identification du véhicule.",
+							"L’application interroge un service d’identification et reprend les caractéristiques retournées dans la fiche.",
+							"Les champs requis qui restent vides sont demandés à l’utilisateur. Un mode manuel permet de compléter la déclaration lorsque les données ne sont pas disponibles."
+						],
+						"rule": "Le mode d’identification et les champs attendus varient selon le pays. L’intégration ne suppose pas qu’une recherche renvoie toujours une fiche complète.",
+						"result": "Une fiche véhicule structurée, dont les caractéristiques disponibles ont été reprises et les informations manquantes complétées.",
+						"data": [
+							"Pays d’immatriculation",
+							"Plaque ou VIN",
+							"Marque et modèle",
+							"Caractéristiques et champs manquants"
+						]
+					},
+					{
+						"id": "dossier",
+						"title": "Faire avancer le dossier administratif avec la demande.",
+						"navLabel": "Dossier et signatures",
+						"situation": "Une demande de reprise n’est pas prête à être traitée simplement parce que le véhicule a été identifié. Elle comporte aussi des informations déclaratives et des documents.",
+						"actions": [
+							"Le parcours rassemble les informations et pièces nécessaires au traitement de la demande.",
+							"L’équipe retrouve les éléments dans le dossier du véhicule, plutôt que dans des échanges séparés.",
+							"La génération de documents de cession et de destruction et leur signature électronique sont intégrées au processus prévu pour les opérations françaises concernées."
+						],
+						"rule": "Le contenu documentaire et les étapes de signature dépendent du pays et de la procédure. Le projet reprend les documents applicables et définit les signataires attendus.",
+						"result": "La demande, ses pièces et le suivi des signatures sont rattachés au véhicule concerné.",
+						"data": [
+							"Informations du déclarant",
+							"Pièces du dossier",
+							"Documents de cession / destruction",
+							"Suivi de signature"
+						]
+					},
+					{
+						"id": "reseau",
+						"title": "Donner au réseau un outil de travail commun.",
+						"navLabel": "Réseau de reprise",
+						"situation": "Le propriétaire, le garage, le centre VHU et les équipes de pilotage n’interviennent pas au même moment et n’ont pas les mêmes responsabilités.",
+						"actions": [
+							"Des parcours distincts accueillent les demandes des particuliers et des professionnels.",
+							"Les interfaces de gestion permettent aux équipes et aux partenaires de suivre les véhicules et les étapes de prise en charge.",
+							"Les connexions au système existant font circuler les informations nécessaires entre la déclaration, la collecte et le suivi jusqu’à la démolition."
+						],
+						"rule": "Le portail public et l’outil professionnel répondent à des usages différents. Les écrans et les accès doivent suivre cette séparation.",
+						"result": "Un suivi par véhicule et des interfaces adaptées aux personnes qui déclarent, prennent en charge et pilotent les opérations.",
+						"data": [
+							"Déclaration particulier / professionnel",
+							"Garages et centres VHU",
+							"Étapes de prise en charge",
+							"Échanges avec le système existant"
+						]
+					}
+				]
+			},
+			{
+				"slug": "batteries",
+				"navLabel": "Batteries",
+				"label": "Batteries, collecte & valorisation",
+				"title": "Une batterie à traiter, avec ses caractéristiques, ses contraintes et ses conditions de reprise.",
+				"summary": "Code EWC, état et diagnostic, colisage, prix de traitement et de transport, réception et suivi du traitement.",
+				"description": "Une batterie ne se résume pas à une référence et une adresse d’enlèvement. Son type, son état, ses documents et les conditions acceptées influencent la prise en charge. Nous avons développé les modules ci-dessous sur des projets de recyclage et de seconde vie.",
+				"context": "Exemples issus de plusieurs applications développées pour un constructeur automobile et un recycleur de batteries. Les modules sont présentés ensemble pour expliquer les opérations qu’ils couvrent.",
+				"terms": ["Code EWC", "État / diagnostic / ADR", "Colisage & offres de prix"],
+				"sections": [
+					{
+						"id": "identification",
+						"title": "Identifier la batterie et renseigner son code déchet.",
+						"navLabel": "Caractérisation, EWC et ONU",
+						"situation": "Le référentiel réunit modèle, VIN ou BIN, état, charge, santé, dimensions et poids. La déclaration complète ces caractéristiques avec les codes EWC et ONU, les justificatifs et les photos.",
+						"actions": [
+							"La déclaration associe la batterie à son type et aux informations du détenteur.",
+							"Le parcours propose un code EWC — le code de la nomenclature européenne des déchets — à partir de la déclaration existante ou du type de batterie de référence.",
+							"Le déclarant peut sélectionner ou corriger ce code. Il est enregistré dans le dossier et les changements sont consultables dans l’historique."
+						],
+						"rule": "Le préremplissage provient d’un référentiel. Il ne remplace pas la validation de la classification du déchet par les acteurs responsables.",
+						"result": "Une batterie caractérisée dans un dossier exploitable pour la collecte, le transport et la traçabilité.",
+						"data": [
+							"Référence et type de batterie",
+							"Détenteur",
+							"Code EWC sélectionné",
+							"Historique des modifications"
+						]
+					},
+					{
+						"id": "diagnostic",
+						"title": "Faire remonter l’état de la batterie avant l’enlèvement.",
+						"navLabel": "Diagnostic et état",
+						"situation": "Une batterie endommagée ne se prépare pas comme une batterie dans un autre état. Les intervenants ont besoin du diagnostic et des pièces pertinentes avant d’organiser la suite.",
+						"actions": [
+							"Le déclarant renseigne l’état de la batterie et joint les documents de diagnostic et de contrôle prévus dans le parcours.",
+							"Les informations de transport ADR associées à l’état sélectionné sont présentées dans l’interface.",
+							"Des photos générales et, selon le contexte du déclarant et la lisibilité de l’identifiant, une photo du numéro de série sont demandées."
+						],
+						"rule": "Les pièces attendues dépendent du contexte. Les règles de transport et de conditionnement sont définies avec les responsables compétents ; elles ne sont pas déduites d’une photo par le portail.",
+						"result": "Un dossier regroupant l’état déclaré, les photos et les documents nécessaires à l’examen de la prise en charge.",
+						"data": [
+							"État de la batterie",
+							"Diagnostic et liste de contrôle",
+							"Photos et numéro de série",
+							"Informations ADR"
+						]
+					},
+					{
+						"id": "collecte",
+						"title": "Constituer une liste de colisage cohérente.",
+						"navLabel": "Colisage, palettisation et collecte",
+						"situation": "Plusieurs déclarations et plusieurs colis peuvent être prêts à partir. Les sélectionner sans tenir compte du collecteur ou du site de livraison crée une liste inutilisable pour l’opération prévue.",
+						"actions": [
+							"L’utilisateur consulte les déclarations avec leur propriétaire, collecteur, site de livraison, chimie, conditionnement et statut.",
+							"Il sélectionne les colis à inclure dans la liste de colisage, aussi appelée packing list.",
+							"Dans le parcours développé, la sélection empêche de mélanger des sites destinataires ou des collecteurs incompatibles avec le regroupement en cours."
+						],
+						"rule": "Ce contrôle de regroupement est une règle métier explicite. Pour votre organisation, nous définissons les critères qui autorisent ou empêchent un départ commun.",
+						"result": "Une liste de colisage reliée aux déclarations, à l’emballage, à la palettisation et au transport prévu.",
+						"data": [
+							"Déclarations et colis",
+							"Collecteur",
+							"Site de livraison",
+							"Chimie, conditionnement et ADR"
+						]
+					},
+					{
+						"id": "offres",
+						"title": "Distinguer le prix de traitement du coût logistique.",
+						"navLabel": "Offres et prix",
+						"situation": "La discussion avec un prestataire peut porter à la fois sur le traitement de la batterie et sur son transport. Un montant isolé ne permet pas de retrouver les conditions de l’accord.",
+						"actions": [
+							"Une proposition comporte le prix de traitement, le prix logistique, la devise et un commentaire éventuel.",
+							"Les propositions successives sont conservées avec leur auteur, leur date et leur statut d’acceptation ou de refus.",
+							"Des opérations d’offre sont également accessibles aux prestataires par API. Des notifications peuvent signaler la création ou l’acceptation d’une offre à leur système."
+						],
+						"rule": "L’exemple couvre la négociation de prix sur des batteries et des groupes d’enlèvement. Un montage de négoce avec plusieurs contrats d’achat et de vente demanderait un cadrage spécifique.",
+						"result": "Les conditions proposées et retenues restent consultables avec le dossier, sans devoir retrouver le dernier accord dans une chaîne d’e-mails.",
+						"data": [
+							"Prix de traitement",
+							"Coût logistique et devise",
+							"Auteur et date de proposition",
+							"Acceptation / refus"
+						]
+					},
+					{
+						"id": "reception",
+						"title": "Relier collecte, réception et traitement.",
+						"navLabel": "Réception et traitement",
+						"situation": "Une batterie annoncée comme collectée doit ensuite être réceptionnée et suivie jusqu’au traitement. L’état documentaire peut aussi conditionner les actions autorisées dans l’outil.",
+						"actions": [
+							"Les statuts distinguent notamment les batteries prêtes à enlever, collectées, reçues et traitées.",
+							"Sur un parcours connecté à Trackdéchets, la réception renseigne une date et le nom de la personne qui reçoit, puis met à jour le BSD associé et la déclaration.",
+							"Les partenaires peuvent être informés des changements de statut pour mettre à jour leur propre suivi."
+						],
+						"rule": "Le suivi physique et le suivi documentaire sont liés, mais ne sont pas confondus. Le parcours rend visible l’étape atteinte et les actions qui restent à réaliser.",
+						"result": "Une déclaration suivie après le départ du site détenteur, avec les étapes et documents associés.",
+						"data": [
+							"Statut de la batterie",
+							"Date et acteur de réception",
+							"BSD associé, le cas échéant",
+							"Statut de traitement"
+						]
+					}
+				]
+			},
+			{
+				"slug": "documents-et-integrations",
+				"navLabel": "Documents & API",
+				"label": "Documents & connexions",
+				"title": "Faire suivre les informations et les documents avec les opérations.",
+				"summary": "EWC, ADR, BSD Trackdéchets, signatures et échanges par API : ce que les applications prennent en charge, et où interviennent vos outils.",
+				"description": "Les opérations impliquent souvent plusieurs applications. Le dossier métier doit conserver les références utiles, connaître les étapes documentaires et transmettre les événements aux partenaires. Voici des intégrations et des contrôles que nous avons développés.",
+				"context": "Exemples issus de projets véhicules et batteries. Les obligations documentaires et les possibilités d’intégration se vérifient pour chaque pays, activité et système concerné.",
+				"terms": ["EWC & ADR", "BSD Trackdéchets", "API & notifications"],
+				"sections": [
+					{
+						"id": "classification",
+						"title": "EWC et ADR : deux informations, deux usages.",
+						"navLabel": "EWC et ADR",
+						"situation": "Le code de la nomenclature déchets et les informations relatives au transport doivent être renseignés au bon endroit. Les réunir sous une étiquette « conformité » ne suffit pas à expliquer ce que l’outil fait.",
+						"actions": [
+							"Le code EWC est associé à la déclaration et peut être proposé depuis le type de batterie du référentiel.",
+							"L’état de la batterie est renseigné séparément, avec les documents de diagnostic attendus.",
+							"L’interface présente les informations ADR prévues selon cet état. Les équipes définissent les règles de saisie, les justificatifs et les validations nécessaires."
+						],
+						"rule": "L’application organise la donnée et applique des règles définies. Elle ne transforme pas automatiquement un code EWC en autorisation de transport ou de traitement.",
+						"result": "Des informations distinctes et consultables, utiles à l’examen du dossier par les intervenants compétents.",
+						"data": [
+							"Code déchet EWC",
+							"État et diagnostic",
+							"Informations de transport ADR",
+							"Pièces et validations"
+						]
+					},
+					{
+						"id": "bsd",
+						"title": "Intégrer le BSD dans le suivi de la déclaration.",
+						"navLabel": "BSD et Trackdéchets",
+						"situation": "Dans les opérations françaises concernées, le bordereau de suivi des déchets possède ses propres statuts. Les équipes doivent savoir s’il est créé, signé et prêt pour l’étape suivante.",
+						"actions": [
+							"L’application crée ou met à jour un BSD via Trackdéchets et conserve son identifiant avec la déclaration.",
+							"Elle consulte son statut et distingue notamment une signature du producteur manquante d’une signature du collecteur manquante.",
+							"Le parcours peut conditionner l’action de réception à ces signatures, puis transmettre les informations de réception et de traitement."
+						],
+						"rule": "Une étape bloquée doit dire pourquoi et par qui elle doit être débloquée. Le contrôle décrit est celui du parcours développé, pas une règle juridique universelle.",
+						"result": "Le BSD et la déclaration restent reliés ; l’utilisateur voit le statut documentaire et les actions attendues.",
+						"data": [
+							"Identifiant du BSD",
+							"Statut et signatures",
+							"Date et acteur de réception",
+							"Informations de traitement"
+						]
+					},
+					{
+						"id": "signature",
+						"title": "Rattacher la signature au bon dossier.",
+						"navLabel": "Signature électronique",
+						"situation": "Un document envoyé pour signature ne doit pas devenir une pièce détachée du véhicule ou de l’opération qui l’a généré.",
+						"actions": [
+							"Sur les parcours véhicules concernés, les documents de cession et de destruction sont générés dans le processus.",
+							"Le service de signature électronique DocuSign est intégré à ce parcours.",
+							"Le dossier métier permet de retrouver les documents et de suivre la progression de la signature."
+						],
+						"rule": "Signataires, documents et moment de la signature se définissent selon la procédure. Le projet prévoit aussi les cas où une étape reste incomplète.",
+						"result": "Une continuité entre la demande, les documents préparés et le suivi de leur signature.",
+						"data": [
+							"Dossier véhicule",
+							"Document généré",
+							"Signataires attendus",
+							"État de signature"
+						]
+					},
+					{
+						"id": "connexions",
+						"title": "Échanger des objets métier, pas seulement des fichiers.",
+						"navLabel": "API et systèmes partenaires",
+						"situation": "Un prestataire peut déjà gérer ses opérations dans son propre système. Lui demander de ressaisir chaque changement dans un portail ajoute une tâche au lieu de la supprimer.",
+						"actions": [
+							"Une API prestataire permet notamment d’exporter ou d’importer des données batteries et de gérer des propositions de prix.",
+							"Des notifications sortantes signalent des événements précis : batterie attribuée, prête à enlever, reçue ou traitée ; offre créée ou acceptée.",
+							"Les accès sont authentifiés et limités au périmètre du partenaire. Les interfaces et les formats d’échange sont définis pour les opérations concernées."
+						],
+						"rule": "Une connexion à votre ERP ou à votre outil logistique doit être vérifiée : données disponibles, sens de l’échange, droits et traitement des erreurs. Nous ne supposons pas qu’un connecteur universel existe.",
+						"result": "Un partenaire peut alimenter le suivi depuis son système et recevoir les événements utiles à ses propres opérations.",
+						"data": [
+							"Données batterie",
+							"Propositions et accords de prix",
+							"Événements de statut",
+							"Identité et périmètre du partenaire"
+						]
+					}
+				]
+			}
+		]
+	},
 	"GetHomePageContent": {
 		"hero_section": {
 			"subtitle": "Copilotes, automatisations et applications métier intégrés à vos outils existants",
@@ -447,7 +904,7 @@
 				{
 					"title": "Cas d'Usage | Projets Data, IA & Applications - FDTI",
 					"description": "Implémentations réelles : automatisation IA des greffes, plateformes d'économie circulaire, marketplaces batteries, éclairage public intelligent, analyse social media par LLMs, data warehouses retail et justice.",
-					"url": "/cas-d-usage",
+					"url": "/realisations",
 					"img": {
 						"filename_disk": "fdti-from-data-to-insights.svg",
 						"url": "/images/cms/branding/fdti-from-data-to-insights.svg",
@@ -595,14 +1052,14 @@
 		}
 	},
 	"GetUseCasesContent": {
-		"title": "Cas d'usage",
-		"subtitle": "Comment nous activons la data, l'IA et l'applicatif pour livrer de l'impact",
+		"title": "Réalisations",
+		"subtitle": "Des systèmes déployés, des problèmes métier précis et des résultats observables",
 		"meta_tags": {
 			"page_tags": [
 				{
-					"title": "Cas d'Usage | Projets Data, IA & Applications - FDTI",
+					"title": "Réalisations | Projets Data, IA & Applications - FDTI",
 					"description": "Implémentations réelles : automatisation IA des greffes, plateformes d'économie circulaire, marketplaces batteries, éclairage public intelligent, analyse social media par LLMs, data warehouses retail et justice.",
-					"url": "/cas-d-usage",
+					"url": "/realisations",
 					"img": {
 						"filename_disk": "fdti-from-data-to-insights.svg",
 						"url": "/images/cms/branding/fdti-from-data-to-insights.svg",
@@ -738,6 +1195,24 @@
 				"slug": "marketplace-batteries"
 			},
 			{
+				"id": "8",
+				"category": "Aftermarket & recyclage",
+				"title": "Plateforme d'opérations pour un recycleur de batteries",
+				"location": "France",
+				"challenge": "Un recycleur devait réunir dans un même outil les déclarations de batteries, leur examen préalable, la préparation des collectes, les documents de suivi et les étapes de réception et de traitement.",
+				"approach": "Développement d'une application métier reliant déclarations, référentiels batteries, listes de colisage, contrôles de regroupement, BSD Trackdéchets et actions de réception.",
+				"impact": "Les équipes suivent les dossiers depuis la déclaration jusqu'au traitement, avec des contrôles explicites sur les collecteurs, les sites destinataires, les signatures et les statuts documentaires.",
+				"tags": ["SvelteKit", "FastAPI", "PostgreSQL", "Trackdéchets"],
+				"details": [
+					"Qualification des déclarations à partir de la chimie, de la sous-chimie et de la typologie des batteries.",
+					"Constitution de listes de colisage sans mélanger des collecteurs ou sites destinataires incompatibles.",
+					"Création et mise à jour des BSD via Trackdéchets, avec suivi des signatures attendues.",
+					"Réception des déclarations et suivi des étapes de traitement dans le même dossier métier.",
+					"Interfaces adaptées aux équipes internes et aux partenaires de la collecte."
+				],
+				"slug": "plateforme-operations-recyclage-batteries"
+			},
+			{
 				"id": "4",
 				"category": "Smart city & énergie",
 				"title": "Supervision et modélisation de l'éclairage public",
@@ -867,10 +1342,10 @@
 			}
 		],
 		"cta": {
-			"label": "Envie d'explorer un cas similaire ?",
-			"button": "Diagnostiquer votre besoin en 30 min",
+			"label": "Un processus critique mérite mieux qu'un outil générique.",
+			"button": "Cadrer un premier périmètre",
 			"link": "https://calendly.com/fdti/30min",
-			"description": "Parlons de vos priorités data, applicatives ou IA et dessinons une trajectoire en quelques jours."
+			"description": "Partons d'un cas réel, de ses acteurs et de ses données pour identifier la prochaine étape utile."
 		}
 	}
 }

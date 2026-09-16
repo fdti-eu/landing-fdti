@@ -66,7 +66,7 @@
 		<div class="cases-preview-grid">
 			{#each useCases as useCase, index}
 				<a
-					href={`/${locale}/cas-d-usage/${useCase.slug}?from=home`}
+					href={`/${locale}/realisations/${useCase.slug}?from=home`}
 					on:click={(event) => handleCardClick(event, useCase.slug)}
 					class="case-preview-card group"
 				>
@@ -127,7 +127,7 @@
 		</div>
 
 		<div class="flex justify-center pt-4">
-			<a href={`/${locale}/cas-d-usage`} class="cases-all-link">
+			<a href={`/${locale}/realisations`} class="cases-all-link">
 				{locale === 'fr' ? 'Voir tous les cas d’usage' : 'See all use cases'}
 			</a>
 		</div>

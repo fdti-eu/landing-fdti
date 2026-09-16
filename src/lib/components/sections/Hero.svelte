@@ -27,8 +27,7 @@
 						color="yellow"
 						isExternalLink
 						analyticsEvent="calendly_click"
-						analyticsPlacement="hero"
-						>{content.btn_contact}</Button
+						analyticsPlacement="hero">{content.btn_contact}</Button
 					>
 				</div>
 			</div>
