@@ -4,15 +4,33 @@
 		<meta charset="utf-8" />
 		<link rel="icon" href="%sveltekit.assets%/favicon.png" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="preconnect" href="https://analytics.fdti.eu" crossorigin />
-		<script
-			defer
-			src="https://analytics.fdti.eu/script.js"
-			data-website-id="67a87d52-56eb-419c-8691-e4717fefdb65"
-			data-domains="www.fdti.eu"
-			data-do-not-track="true"
-			data-performance="true"
-		></script>
+		<script>
+			const analyticsOptOut = new URLSearchParams(window.location.search).get('analytics') === 'off';
+			if (analyticsOptOut) sessionStorage.setItem('fdti.analytics.disabled', 'true');
+
+			const automated =
+				navigator.webdriver ||
+				/(?:Chrome-Lighthouse|Lighthouse)/i.test(navigator.userAgent) ||
+				analyticsOptOut ||
+				sessionStorage.getItem('fdti.analytics.disabled') === 'true';
+
+			if (!automated) {
+				const preconnect = document.createElement('link');
+				preconnect.rel = 'preconnect';
+				preconnect.href = 'https://analytics.fdti.eu';
+				preconnect.crossOrigin = 'anonymous';
+				document.head.appendChild(preconnect);
+
+				const analytics = document.createElement('script');
+				analytics.defer = true;
+				analytics.src = 'https://analytics.fdti.eu/script.js';
+				analytics.dataset.websiteId = '67a87d52-56eb-419c-8691-e4717fefdb65';
+				analytics.dataset.domains = 'www.fdti.eu';
+				analytics.dataset.doNotTrack = 'true';
+				analytics.dataset.performance = 'true';
+				document.head.appendChild(analytics);
+			}
+		</script>
 		%sveltekit.head%
 	</head>
 	<body data-sveltekit-preload-data="hover">
