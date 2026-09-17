@@ -1,69 +1,106 @@
 <script lang="ts">
 	import CapabilityDiagram from './CapabilityDiagram.svelte';
+	import type { Lang } from '$lib/data';
 
-	export let locale: string = 'fr';
+	export let locale: Lang = 'fr';
 
-	$: title = locale === 'fr' ? 'Ce que nous construisons' : 'What we build';
-	$: subtitle =
-		locale === 'fr'
-			? 'Une expertise lisible, avec des formats d’intervention concrets pour vos équipes.'
-			: 'Clear expertise, with concrete delivery formats for your teams.';
-	$: items =
-		locale === 'fr'
-			? [
-					{
-						title: 'Copilotes IA',
-						description:
-							'Recherche d’information, synthèse, aide à la décision, rédaction assistée, support opérationnel ou métier directement dans vos outils.',
-						points: ['LLM', 'RAG', 'agents', 'interfaces métier']
-					},
-					{
-						title: 'Automatisation de workflows',
-						description:
-							'Traitement documentaire, qualification, orchestration, reporting, alerting et coordination entre équipes, logiciels et données.',
-						points: ['workflows assistés', 'APIs', 'règles métier', 'automatisation']
-					},
-					{
-						title: 'Applications, bases de données & APIs métier',
-						description:
-							'Portails, back-offices, dashboards, bases de données, APIs sécurisées et outils internes pensés pour intégrer l’IA proprement dans l’existant.',
-						points: ['apps métier', 'bases de données', 'API sécurisée', 'intégration']
-					}
-				]
-			: [
-					{
-						title: 'AI copilots for teams',
-						description:
-							'Information retrieval, summarization, decision support, assisted writing, and operational help embedded into your tools.',
-						points: ['LLM', 'RAG', 'agents', 'business interfaces']
-					},
-					{
-						title: 'Workflow automation',
-						description:
-							'Document processing, qualification, orchestration, reporting, alerting, and coordination across teams, software, and data.',
-						points: ['assisted workflows', 'APIs', 'business rules', 'automation']
-					},
-					{
-						title: 'Business apps, databases & APIs',
-						description:
-							'Portals, back offices, dashboards, databases, secure APIs, and internal tools designed to integrate AI cleanly into existing systems.',
-						points: ['business apps', 'databases', 'secure API', 'integration']
-					}
-				];
+	const content: Record<
+		Lang,
+		{
+			title: string;
+			subtitle: string;
+			items: { title: string; description: string; points: string[] }[];
+		}
+	> = {
+		fr: {
+			title: 'Ce que nous construisons',
+			subtitle: 'Une expertise lisible, avec des formats d’intervention concrets pour vos équipes.',
+			items: [
+				{
+					title: 'Copilotes IA',
+					description:
+						'Recherche d’information, synthèse, aide à la décision, rédaction assistée, support opérationnel ou métier directement dans vos outils.',
+					points: ['LLM', 'RAG', 'agents', 'interfaces métier']
+				},
+				{
+					title: 'Automatisation de workflows',
+					description:
+						'Traitement documentaire, qualification, orchestration, reporting, alerting et coordination entre équipes, logiciels et données.',
+					points: ['workflows assistés', 'APIs', 'règles métier', 'automatisation']
+				},
+				{
+					title: 'Applications, bases de données & APIs métier',
+					description:
+						'Portails, back-offices, dashboards, bases de données, APIs sécurisées et outils internes pensés pour intégrer l’IA proprement dans l’existant.',
+					points: ['apps métier', 'bases de données', 'API sécurisée', 'intégration']
+				}
+			]
+		},
+		en: {
+			title: 'What we build',
+			subtitle: 'Clear expertise, with concrete delivery formats for your teams.',
+			items: [
+				{
+					title: 'AI copilots for teams',
+					description:
+						'Information retrieval, summarization, decision support, assisted writing, and operational help embedded into your tools.',
+					points: ['LLM', 'RAG', 'agents', 'business interfaces']
+				},
+				{
+					title: 'Workflow automation',
+					description:
+						'Document processing, qualification, orchestration, reporting, alerting, and coordination across teams, software, and data.',
+					points: ['assisted workflows', 'APIs', 'business rules', 'automation']
+				},
+				{
+					title: 'Business apps, databases & APIs',
+					description:
+						'Portals, back offices, dashboards, databases, secure APIs, and internal tools designed to integrate AI cleanly into existing systems.',
+					points: ['business apps', 'databases', 'secure API', 'integration']
+				}
+			]
+		},
+		es: {
+			title: 'Lo que construimos',
+			subtitle:
+				'Competencias claramente definidas, con formatos de intervención concretos para sus equipos.',
+			items: [
+				{
+					title: 'Copilotos de IA para equipos',
+					description:
+						'Búsqueda de información, síntesis, ayuda para la toma de decisiones, redacción asistida y apoyo operativo integrados en sus herramientas.',
+					points: ['LLM', 'RAG', 'agentes', 'interfaces empresariales']
+				},
+				{
+					title: 'Automatización de procesos',
+					description:
+						'Tratamiento documental, clasificación, orquestación, reporting, alertas y coordinación entre equipos, software y datos.',
+					points: ['procesos asistidos', 'API', 'reglas de negocio', 'automatización']
+				},
+				{
+					title: 'Aplicaciones, bases de datos y API empresariales',
+					description:
+						'Portales, back offices, dashboards, bases de datos, API seguras y herramientas internas diseñadas para integrar la IA correctamente en los sistemas existentes.',
+					points: ['aplicaciones empresariales', 'bases de datos', 'API segura', 'integración']
+				}
+			]
+		}
+	};
+	$: copy = content[locale];
 </script>
 
 <section class="capabilities-section" id="capabilities">
 	<div class="section-heading">
 		<div class="group">
-			<h2 class="text-3xl font-bold text-center md:text-4xl">{title}</h2>
+			<h2 class="text-3xl font-bold text-center md:text-4xl">{copy.title}</h2>
 		</div>
 		<h3 class="text-xl font-bold text-center sm:text-2xl md:text-3xl lg:text-4xl max-w-4xl mx-auto">
-			{subtitle}
+			{copy.subtitle}
 		</h3>
 	</div>
 
 	<div class="capabilities-grid">
-		{#each items as item, index}
+		{#each copy.items as item, index}
 			<article class="capability-card">
 				<CapabilityDiagram {index} />
 				<h4 class="text-xl font-bold text-darkGrey">{item.title}</h4>

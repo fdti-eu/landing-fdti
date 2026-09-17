@@ -57,14 +57,23 @@
 					back: 'Réalisations',
 					home: 'Accueil'
 				}
-			: {
-					context: 'Context',
-					approach: 'Approach',
-					impact: 'Impact',
-					delivered: 'What we delivered',
-					back: 'Work',
-					home: 'Home'
-				};
+			: currentLocale === 'es'
+				? {
+						context: 'Contexto',
+						approach: 'Enfoque',
+						impact: 'Impacto',
+						delivered: 'Lo que hemos entregado',
+						back: 'Proyectos',
+						home: 'Inicio'
+					}
+				: {
+						context: 'Context',
+						approach: 'Approach',
+						impact: 'Impact',
+						delivered: 'What we delivered',
+						back: 'Work',
+						home: 'Home'
+					};
 
 	// Meta-tags dynamiques pour chaque cas d'usage
 	$: metatags = {

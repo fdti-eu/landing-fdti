@@ -5,8 +5,18 @@ import { resolve } from 'node:path';
 const root = process.cwd();
 const frPath = 'src/locales/fr.json';
 const enPath = 'src/locales/en.json';
+const esPath = 'src/locales/es.json';
+const localePaths = [frPath, enPath, esPath];
 
 const errors = [];
+const staleEnglishPhrases = [
+	'Data platforms, business apps and AI you can deploy fast',
+	'Business solutions augmented with data',
+	'FDTI | From Data To Insights',
+	'Book a call',
+	'Requests/year',
+	'Time saved'
+];
 
 function readJson(path) {
 	try {
@@ -17,50 +27,58 @@ function readJson(path) {
 	}
 }
 
-function compareStructure(frValue, enValue, path = '$') {
-	if (Array.isArray(frValue) || Array.isArray(enValue)) {
-		if (!Array.isArray(frValue) || !Array.isArray(enValue)) {
-			errors.push(`${path}: type mismatch (array expected in both locales)`);
-			return;
+function compareStructure(frValue, localeValue, localePath, path = '$') {
+	const frType = valueType(frValue);
+	const localeType = valueType(localeValue);
+
+	if (frType !== localeType) {
+		errors.push(
+			`${localePath} ${path}: type mismatch against ${frPath} (${frType} expected, got ${localeType})`
+		);
+		return;
+	}
+
+	if (frType === 'array') {
+		if (frValue.length !== localeValue.length) {
+			errors.push(
+				`${localePath} ${path}: array length mismatch against ${frPath} (fr=${frValue.length}, locale=${localeValue.length})`
+			);
 		}
 
-		if (frValue.length !== enValue.length) {
-			errors.push(`${path}: array length mismatch (fr=${frValue.length}, en=${enValue.length})`);
-		}
-
-		for (let index = 0; index < Math.min(frValue.length, enValue.length); index += 1) {
-			compareStructure(frValue[index], enValue[index], `${path}[${index}]`);
+		for (let index = 0; index < Math.min(frValue.length, localeValue.length); index += 1) {
+			compareStructure(frValue[index], localeValue[index], localePath, `${path}[${index}]`);
 		}
 
 		return;
 	}
 
-	if (isObject(frValue) || isObject(enValue)) {
-		if (!isObject(frValue) || !isObject(enValue)) {
-			errors.push(`${path}: type mismatch (object expected in both locales)`);
-			return;
-		}
-
+	if (frType === 'object') {
 		const frKeys = Object.keys(frValue).sort();
-		const enKeys = Object.keys(enValue).sort();
-		const allKeys = new Set([...frKeys, ...enKeys]);
+		const localeKeys = Object.keys(localeValue).sort();
+		const allKeys = new Set([...frKeys, ...localeKeys]);
 
 		for (const key of allKeys) {
 			const nextPath = `${path}.${key}`;
 
 			if (!(key in frValue)) {
-				errors.push(`${nextPath}: missing in ${frPath}`);
+				errors.push(`${localePath} ${nextPath}: extra key not present in ${frPath}`);
 				continue;
 			}
 
-			if (!(key in enValue)) {
-				errors.push(`${nextPath}: missing in ${enPath}`);
+			if (!(key in localeValue)) {
+				errors.push(`${localePath} ${nextPath}: missing key required by ${frPath}`);
 				continue;
 			}
 
-			compareStructure(frValue[key], enValue[key], nextPath);
+			compareStructure(frValue[key], localeValue[key], localePath, nextPath);
 		}
 	}
+}
+
+function valueType(value) {
+	if (Array.isArray(value)) return 'array';
+	if (value === null) return 'null';
+	return typeof value;
 }
 
 function isObject(value) {
@@ -86,29 +104,35 @@ function walkStrings(value, callback, path = '$') {
 }
 
 function checkEnglishText(enData) {
-	const allowedFrenchTextPaths = new Set(['$.GetHomePageContent.trust_content.company_list[6].name']);
+	const allowedFrenchTextPaths = new Set([
+		'$.GetHomePageContent.trust_content.company_list[6].name'
+	]);
 	const forbiddenPatterns = [
 		/[éèêàùçÉÀÇœ]/,
 		/\b(Flexibilité|Téléchargez|Contactez|Diagnostiquer|Plateforme|Tracabilité|Tableaux|Système)\b/i,
 		/\b(votre|nous|avec|pour|données|métier|processus|équipe|équipes)\b/i
 	];
-	const staleEnglishPhrases = [
-		'Data platforms, business apps and AI you can deploy fast',
-		'Business solutions augmented with data',
-		'FDTI | From Data To Insights',
-		'Book a call',
-		'Requests/year',
-		'Time saved'
-	];
-
 	walkStrings(enData, (text, path) => {
-		if (!allowedFrenchTextPaths.has(path) && forbiddenPatterns.some((pattern) => pattern.test(text))) {
+		if (
+			!allowedFrenchTextPaths.has(path) &&
+			forbiddenPatterns.some((pattern) => pattern.test(text))
+		) {
 			errors.push(`${enPath} ${path}: possible French text in English locale (${truncate(text)})`);
 		}
 
 		for (const phrase of staleEnglishPhrases) {
 			if (text.includes(phrase)) {
 				errors.push(`${enPath} ${path}: stale English phrase still present (${phrase})`);
+			}
+		}
+	});
+}
+
+function checkSpanishText(esData) {
+	walkStrings(esData, (text, path) => {
+		for (const phrase of staleEnglishPhrases) {
+			if (text.includes(phrase)) {
+				errors.push(`${esPath} ${path}: stale English phrase still present (${phrase})`);
 			}
 		}
 	});
@@ -131,7 +155,7 @@ function getChangedFiles() {
 
 function gitDiffNames(args) {
 	try {
-		const output = execFileSync('git', ['diff', '--name-only', ...args, '--', frPath, enPath], {
+		const output = execFileSync('git', ['diff', '--name-only', ...args, '--', ...localePaths], {
 			cwd: root,
 			encoding: 'utf8'
 		});
@@ -146,20 +170,37 @@ function checkChangedLocaleFiles() {
 	const changedFiles = new Set(getChangedFiles());
 	const frChanged = changedFiles.has(frPath);
 	const enChanged = changedFiles.has(enPath);
+	const esChanged = changedFiles.has(esPath);
 
 	if (frChanged && !enChanged) {
-		errors.push(`${frPath} changed without ${enPath}. Update the English locale in the same change.`);
+		errors.push(
+			`${frPath} changed without ${enPath}. Update the English locale in the same change.`
+		);
+	}
+
+	if (frChanged && !esChanged) {
+		errors.push(
+			`${frPath} changed without ${esPath}. Update the Spanish locale in the same change.`
+		);
 	}
 }
 
 const frData = readJson(frPath);
 const enData = readJson(enPath);
+const esData = readJson(esPath);
 
-if (frData && enData) {
-	compareStructure(frData, enData);
-	checkEnglishText(enData);
-	checkChangedLocaleFiles();
+if (frData) {
+	if (enData) compareStructure(frData, enData, enPath);
+	if (esData) compareStructure(frData, esData, esPath);
 }
+
+if (enData) {
+	checkEnglishText(enData);
+}
+
+if (esData) checkSpanishText(esData);
+
+checkChangedLocaleFiles();
 
 if (errors.length > 0) {
 	console.error('i18n parity check failed:');

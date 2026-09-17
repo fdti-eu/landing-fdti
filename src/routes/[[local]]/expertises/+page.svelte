@@ -1,10 +1,17 @@
 <script lang="ts">
 	import { MetaTags } from 'svelte-meta-tags';
 	import { absoluteImageUrl, buildLocalizedUrl, SOCIAL_IMAGE_PATH } from '$lib/functions/seo';
+	import type { Lang } from '$lib/data';
 	import type { PageData } from './$types';
 
 	export let data: PageData;
 
+	const courtCaseSlugs: Record<Lang, string> = {
+		fr: 'automatisation-greffes',
+		en: 'automatisation-greffes',
+		es: 'automatizacion-secretarias-judiciales'
+	};
+	$: courtCaseSlug = courtCaseSlugs[data.locale];
 	$: content =
 		data.locale === 'fr'
 			? {
@@ -47,7 +54,7 @@
 							id: 'documents-critiques',
 							title: 'Analyse documentaire',
 							text: 'Des pièces sensibles à lire, qualifier, rapprocher et restituer dans un processus contrôlé.',
-							href: `/${data.locale}/realisations/automatisation-greffes`,
+							href: `/${data.locale}/realisations/${courtCaseSlug}`,
 							link: 'Voir le cas des tribunaux de commerce'
 						},
 						{
@@ -62,62 +69,124 @@
 						'Pour commencer, il nous faut un exemple réel, les acteurs concernés, les outils actuellement en place, les données disponibles et les points de douleur.',
 					ctaButton: 'Cadrer un premier périmètre'
 				}
-			: {
-					metaTitle: 'Business software, data and AI expertise | FDTI',
-					metaDescription:
-						'FDTI designs business applications, automations and AI systems integrated into operations and existing software.',
-					label: 'Expertise',
-					title: 'Broad technical capabilities. Concrete starting points.',
-					intro:
-						'We design custom systems when an operation needs automation, AI, connections between existing tools or a new business application.',
-					buildLabel: 'What we build',
-					build: [
-						{
-							title: 'Applied AI',
-							text: 'Analysis, generation, classification, vision, voice, agents and conversational assistants embedded in your teams’ workflows.'
-						},
-						{
-							title: 'Automation',
-							text: 'Documents, business rules, approvals and handoffs orchestrated without adding another re-entry chain.'
-						},
-						{
-							title: 'Business applications',
-							text: 'Portals, back offices, APIs and platforms designed around real operations and existing systems.'
-						},
-						{
-							title: 'Integration & connectivity',
-							text: 'APIs, webhooks, identity and data exchanges connecting ERPs, CRMs, SaaS products, partners and internal tools.'
-						}
-					],
-					fieldLabel: 'Industry experience',
-					fields: [
-						{
-							id: 'economie-circulaire',
-							title: 'Circular economy',
-							text: 'Take-back, batteries, end-of-life vehicles, collection, regulatory records and partner networks.',
-							href: `/${data.locale}/expertises/economie-circulaire`,
-							link: 'Explore our circular-economy expertise'
-						},
-						{
-							id: 'documents-critiques',
-							title: 'Document analysis',
-							text: 'Sensitive files that must be read, qualified, reconciled and returned through a controlled process.',
-							href: `/${data.locale}/realisations/automatisation-greffes`,
-							link: 'See the commercial-court project'
-						},
-						{
-							id: 'operations-multi-acteurs',
-							title: 'Multi-party operations',
-							text: 'Different responsibilities, permissions and systems brought together around the same business record.',
-							href: `/${data.locale}/realisations`,
-							link: 'Browse our work'
-						}
-					],
-					ctaText:
-						'To get started, we need a real example, the people involved, the tools already in place, the available data and the pain points.',
-					ctaButton: 'Define a first scope'
-				};
+			: data.locale === 'es'
+				? {
+						metaTitle: 'Especialidades en software empresarial, datos e IA | FDTI',
+						metaDescription:
+							'FDTI diseña aplicaciones empresariales, automatizaciones y sistemas de IA integrados en las operaciones y el software existente.',
+						label: 'Especialidades',
+						title: 'Amplias capacidades técnicas. Puntos de partida concretos.',
+						intro:
+							'Diseñamos sistemas a medida cuando una operación requiere automatización, IA, conexiones entre herramientas existentes o una nueva aplicación empresarial.',
+						buildLabel: 'Lo que construimos',
+						build: [
+							{
+								title: 'IA aplicada',
+								text: 'Análisis, generación, clasificación, visión, voz, agentes y asistentes conversacionales integrados en los procesos de sus equipos.'
+							},
+							{
+								title: 'Automatización',
+								text: 'Documentos, reglas de negocio, validaciones e intercambios orquestados sin añadir otra cadena de introducción manual.'
+							},
+							{
+								title: 'Aplicaciones empresariales',
+								text: 'Portales, back offices, API y plataformas diseñados en torno a las operaciones reales y los sistemas existentes.'
+							},
+							{
+								title: 'Integración y conectividad',
+								text: 'API, webhooks, identidades e intercambios de datos para conectar ERP, CRM, SaaS, socios y herramientas internas.'
+							}
+						],
+						fieldLabel: 'Experiencia sectorial',
+						fields: [
+							{
+								id: 'economie-circulaire',
+								title: 'Economía circular',
+								text: 'Recuperación, baterías, VFU, recogida, documentos normativos y redes de socios.',
+								href: `/${data.locale}/expertises/economie-circulaire`,
+								link: 'Explorar nuestra especialidad en economía circular'
+							},
+							{
+								id: 'documents-critiques',
+								title: 'Análisis documental',
+								text: 'Documentos sensibles que deben leerse, clasificarse, conciliarse y devolverse mediante un proceso controlado.',
+								href: `/${data.locale}/realisations/${courtCaseSlug}`,
+								link: 'Ver el proyecto de los tribunales de comercio'
+							},
+							{
+								id: 'operations-multi-acteurs',
+								title: 'Operaciones con múltiples actores',
+								text: 'Responsabilidades, permisos y sistemas diferentes reunidos en torno a un mismo expediente empresarial.',
+								href: `/${data.locale}/realisations`,
+								link: 'Explorar nuestros proyectos'
+							}
+						],
+						ctaText:
+							'Para empezar, necesitamos un ejemplo real, las personas implicadas, las herramientas existentes, los datos disponibles y los puntos problemáticos.',
+						ctaButton: 'Definir un primer alcance'
+					}
+				: {
+						metaTitle: 'Business software, data and AI expertise | FDTI',
+						metaDescription:
+							'FDTI designs business applications, automations and AI systems integrated into operations and existing software.',
+						label: 'Expertise',
+						title: 'Broad technical capabilities. Concrete starting points.',
+						intro:
+							'We design custom systems when an operation needs automation, AI, connections between existing tools or a new business application.',
+						buildLabel: 'What we build',
+						build: [
+							{
+								title: 'Applied AI',
+								text: 'Analysis, generation, classification, vision, voice, agents and conversational assistants embedded in your teams’ workflows.'
+							},
+							{
+								title: 'Automation',
+								text: 'Documents, business rules, approvals and handoffs orchestrated without adding another re-entry chain.'
+							},
+							{
+								title: 'Business applications',
+								text: 'Portals, back offices, APIs and platforms designed around real operations and existing systems.'
+							},
+							{
+								title: 'Integration & connectivity',
+								text: 'APIs, webhooks, identity and data exchanges connecting ERPs, CRMs, SaaS products, partners and internal tools.'
+							}
+						],
+						fieldLabel: 'Industry experience',
+						fields: [
+							{
+								id: 'economie-circulaire',
+								title: 'Circular economy',
+								text: 'Take-back, batteries, end-of-life vehicles, collection, regulatory records and partner networks.',
+								href: `/${data.locale}/expertises/economie-circulaire`,
+								link: 'Explore our circular-economy expertise'
+							},
+							{
+								id: 'documents-critiques',
+								title: 'Document analysis',
+								text: 'Sensitive files that must be read, qualified, reconciled and returned through a controlled process.',
+								href: `/${data.locale}/realisations/${courtCaseSlug}`,
+								link: 'See the commercial-court project'
+							},
+							{
+								id: 'operations-multi-acteurs',
+								title: 'Multi-party operations',
+								text: 'Different responsibilities, permissions and systems brought together around the same business record.',
+								href: `/${data.locale}/realisations`,
+								link: 'Browse our work'
+							}
+						],
+						ctaText:
+							'To get started, we need a real example, the people involved, the tools already in place, the available data and the pain points.',
+						ctaButton: 'Define a first scope'
+					};
 	$: canonical = buildLocalizedUrl('/expertises', data.locale);
+	$: imageAlt =
+		data.locale === 'fr'
+			? 'FDTI - IA, code et données'
+			: data.locale === 'es'
+				? 'FDTI - IA, código y datos'
+				: 'FDTI - AI, code and data';
 </script>
 
 <MetaTags
@@ -130,7 +199,7 @@
 		title: content.metaTitle,
 		description: content.metaDescription,
 		siteName: 'FDTI',
-		images: [{ url: absoluteImageUrl(SOCIAL_IMAGE_PATH), alt: 'FDTI - AI, code and data' }]
+		images: [{ url: absoluteImageUrl(SOCIAL_IMAGE_PATH), alt: imageAlt }]
 	}}
 />
 

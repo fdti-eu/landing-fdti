@@ -1,4 +1,5 @@
 import type { Lang } from '$lib/data';
+import { buildLocalizedUrl } from '$lib/functions/seo';
 
 export type JobSection = {
 	title: string;
@@ -33,14 +34,12 @@ export type JobOffer = {
 
 const tallyEmbedBaseUrl = 'https://tally.so/embed/wLjrVp';
 const tallyPublicBaseUrl = 'https://tally.so/r/wLjrVp';
-const siteBaseUrl = 'https://www.fdti.eu';
-
 const buildTallyUrls = (locale: Lang, offerId: string, slug: string, title: string) => {
 	const contextParams = new URLSearchParams({
 		offer_id: offerId,
 		offer_slug: slug,
 		offer_title: title,
-		source_url: `${siteBaseUrl}${locale === 'fr' ? '' : '/en'}/offres-emploi/${slug}`
+		source_url: buildLocalizedUrl(`/offres-emploi/${slug}`, locale)
 	});
 	const embedParams = new URLSearchParams({
 		...Object.fromEntries(contextParams),
@@ -388,6 +387,173 @@ const developerEn = {
 	]
 } satisfies Omit<JobOffer, 'tallyEmbedUrl' | 'tallyPublicUrl'>;
 
+const consultantEs = {
+	...consultantFr,
+	slug: 'practicas-consultor-ia-negocio-operaciones-proyectos',
+	title: 'Prácticas de Consultoría de IA de negocio - Operaciones de proyectos',
+	shortTitle: 'Consultoría de IA de negocio',
+	contractType: 'Prácticas',
+	location: 'Modalidad por definir',
+	experience: '0-2 años',
+	startLabel: 'Incorporaciones posibles durante todo el año',
+	status: 'Oferta activa',
+	summary:
+		'Unas prácticas híbridas para estructurar proyectos, preparar las conversaciones con clientes y utilizar la IA como palanca de coordinación, especificación y gestión.',
+	intro: [
+		'FDTI es un estudio de IA, código y datos especializado en diseñar soluciones digitales a medida: aplicaciones de negocio, API, agentes de IA especializados, automatización de procesos, plataformas de datos y herramientas internas.',
+		'Trabajamos en proyectos en los que la tecnología está directamente vinculada a las operaciones: procesar documentos, conectar sistemas, estructurar datos, automatizar flujos de trabajo, ayudar a los equipos a tomar mejores decisiones e integrar la IA en herramientas que se utilizan de verdad.',
+		'Este puesto está dirigido a un perfil híbrido, capaz de comprender un proyecto de negocio, estructurar la información, preparar las conversaciones con clientes, hacer seguimiento de las decisiones y utilizar la IA para agilizar la coordinación, la especificación y la gestión de proyectos.'
+	],
+	sections: [
+		{
+			title: 'Tus funciones',
+			items: [
+				'Participar en el seguimiento operativo de proyectos de IA, datos y aplicaciones de negocio.',
+				'Preparar reuniones con clientes: contexto, orden del día, puntos por aclarar y materiales de apoyo.',
+				'Revisar, estructurar y mejorar especificaciones funcionales o técnicas con la ayuda del equipo.',
+				'Convertir actas, conversaciones con clientes o decisiones de proyecto en tickets accionables.',
+				'Elaborar notas de versión, documentos de definición, resúmenes de proyecto y documentos de seguimiento.',
+				'Utilizar agentes de IA para analizar repositorios, resumir cambios, preparar revisiones diarias o identificar puntos de atención.',
+				'Hacer seguimiento de los comentarios de los clientes, calificar las solicitudes y ayudar al equipo a priorizar los temas.',
+				'Comprender progresivamente las reglas de negocio de los proyectos para conectar al cliente, el producto y el equipo técnico.',
+				'Participar en la mejora de los métodos internos de FDTI: plantillas, flujos de trabajo de Notion, automatizaciones y documentación de proyectos.'
+			]
+		}
+	],
+	requiredSkills: [
+		'Muy buena capacidad de análisis, síntesis y estructuración de la información.',
+		'Comunicación escrita clara y precisa.',
+		'Dominio profesional del francés, tanto escrito como oral, para trabajar con el equipo y las partes implicadas en los proyectos.',
+		'Capacidad para mantener una conversación profesional con un cliente o un equipo de proyecto.',
+		'Autonomía, rigor y capacidad de organización.',
+		'Interés real por la IA aplicada a problemas de negocio y operativos.',
+		'Capacidad para aprender rápidamente un sector, un producto o el contexto de un cliente.',
+		'Soltura con las herramientas digitales y capacidad para documentar el trabajo de forma clara.',
+		'Se valorará un buen nivel de inglés profesional según los proyectos.'
+	],
+	niceToHaveSkills: [
+		'Primera experiencia en gestión de proyectos, consultoría, gestión de producto, análisis de negocio o asistencia a la dirección de proyectos.',
+		'Conocimientos básicos de API, bases de datos, aplicaciones web o arquitecturas de software.',
+		'Experiencia con Notion, Linear, Jira, GitHub, Google Workspace o herramientas de seguimiento de proyectos.',
+		'Experiencia avanzada con herramientas de IA para resumir, analizar, estructurar o elaborar documentos.',
+		'Nociones de SQL, datos, automatización o no-code.',
+		'Interés por temas industriales, normativos, documentales o ámbitos de negocio complejos.'
+	],
+	environmentIntro:
+		'Trabajarás con desarrolladores, responsables de proyecto e interlocutores de negocio en temas concretos.',
+	environment: [
+		'Agentes de IA especializados.',
+		'Aplicaciones de negocio y back offices.',
+		'Herramientas internas.',
+		'Flujos de trabajo asistidos.',
+		'Especificaciones funcionales y técnicas.',
+		'Documentación de proyectos.',
+		'Seguimiento de clientes.',
+		'Análisis de procesos de negocio.',
+		'Automatizaciones de Notion, GitHub, Google Workspace o herramientas internas.'
+	],
+	conditions: [
+		'Prácticas de 6 meses.',
+		'Incorporaciones posibles durante todo el año, según tu calendario académico y los proyectos en curso.',
+		'Modalidad de trabajo por definir según el marco de las prácticas, el centro educativo y los proyectos en curso.',
+		'Remuneración conforme al marco legal aplicable, que se concretará según el perfil y el contexto.',
+		'Tutorización por parte del equipo de FDTI.',
+		'Posibilidad de continuar la colaboración según el nivel, el contexto y las oportunidades.'
+	],
+	process: [
+		{
+			title: 'Primera conversación',
+			items: [
+				'Conocernos, comprender tus expectativas y comprobar que existe un buen encaje con FDTI.'
+			]
+		},
+		{
+			title: 'Conversación sobre un caso práctico',
+			items: ['Una conversación adaptada al puesto y centrada en un caso operativo estructurado.']
+		}
+	]
+} satisfies Omit<JobOffer, 'tallyEmbedUrl' | 'tallyPublicUrl'>;
+
+const developerEs = {
+	...developerFr,
+	slug: 'practicas-desarrollador-ia-agentes-negocio-aplicaciones-datos',
+	title: 'Prácticas de Desarrollo/IA - Agentes de IA de negocio, aplicaciones y datos',
+	shortTitle: 'Desarrollo/IA de agentes de negocio',
+	contractType: 'Prácticas',
+	location: 'Modalidad por definir',
+	experience: '0-2 años',
+	startLabel: 'Incorporaciones posibles durante todo el año',
+	status: 'Oferta activa',
+	summary:
+		'Unas prácticas técnicas para desarrollar agentes de IA especializados, aplicaciones, API y flujos de datos vinculados a proyectos utilizados en entornos reales.',
+	intro: [
+		'FDTI es un estudio de IA, código y datos especializado en diseñar soluciones digitales a medida: aplicaciones de negocio, API, agentes de IA especializados, automatización de procesos, plataformas de datos y herramientas internas.',
+		'Trabajamos en proyectos en los que la tecnología está directamente vinculada a las operaciones: procesar documentos, conectar sistemas, estructurar datos, automatizar flujos de trabajo, ayudar a los equipos a tomar mejores decisiones e integrar la IA en herramientas que se utilizan de verdad.',
+		'Para acompañar nuestro crecimiento, buscamos una persona en prácticas de Desarrollo/IA durante un periodo de 6 meses.'
+	],
+	sections: [
+		{
+			title: 'Tus funciones',
+			items: [
+				'Participar en el desarrollo de agentes de IA especializados conectados a datos, API o herramientas existentes.',
+				'Desarrollar aplicaciones de negocio, back offices, paneles de control o portales internos.',
+				'Diseñar e integrar API seguras para conectar bases de datos, soluciones SaaS, archivos y herramientas internas.',
+				'Crear prototipos de flujos de trabajo asistidos: extracción de información, síntesis, calificación, enrutamiento, informes y alertas.',
+				'Trabajar en componentes de I+D relacionados con LLM, agentes, harnesses, RAG, OCR, NLP, auditoría y monitorización.',
+				'Contribuir a las herramientas internas de FDTI para mejorar la entrega, la gestión de proyectos y la calidad del código.',
+				'Participar en las pruebas, el despliegue, la monitorización y la documentación técnica.',
+				'Intervenir en proyectos de clientes en producción.'
+			]
+		}
+	],
+	requiredSkills: [
+		'Buenas prácticas de programación, con proyectos demostrables.',
+		'Capacidad para leer y comprender código existente.',
+		'Conocimientos de API, bases de datos y arquitecturas web modernas.',
+		'Uso habitual de Git.',
+		'Capacidad para trabajar con autonomía y seguimiento periódico.',
+		'Comunicación escrita clara: saber explicar qué se ha hecho, qué bloquea el avance y qué decisiones técnicas se han tomado.',
+		'Dominio profesional del francés, tanto escrito como oral, para trabajar con el equipo y las partes implicadas en los proyectos.',
+		'Interés real por la IA aplicada a problemas de negocio, más allá de las herramientas de generación de texto.'
+	],
+	niceToHaveSkills: [
+		'Experiencia con TypeScript, SvelteKit, React o Node.js.',
+		'Experiencia con Python, FastAPI o scripts de automatización.',
+		'Nociones de SQL, PostgreSQL, SQLite, DuckDB o pipelines de datos.',
+		'Primera experiencia con LLM, RAG, agentes, OCR, NLP o API de OpenAI/HuggingFace.',
+		'Conocimientos de Docker, Linux, cloud o despliegue.',
+		'Experiencia con Notion, GitHub, Google Workspace o herramientas internas de equipo.',
+		'Buen nivel de inglés profesional.'
+	],
+	environmentIntro: 'Según el proyecto, podrás trabajar con:',
+	environment: [
+		'TypeScript, SvelteKit, React, Node.js.',
+		'Python, FastAPI.',
+		'Rust, Axum.',
+		'PostgreSQL, SQLite, DuckDB, BigQuery, Snowflake.',
+		'API REST, GraphQL, Keycloak e integraciones SaaS.',
+		'OpenAI, HuggingFace, LLM, RAG, agentes, OCR y NLP.',
+		'Docker, cloud, infraestructura privada y monitorización.',
+		'Notion, GitHub, Google Workspace y herramientas internas de FDTI.'
+	],
+	conditions: consultantEs.conditions,
+	process: [
+		{
+			title: 'Primera conversación',
+			items: [
+				'Una videollamada para conocer tu trayectoria, disponibilidad, nivel técnico y expectativas.'
+			]
+		},
+		{
+			title: 'Entrevista técnica en directo',
+			items: [
+				'Una entrevista técnica por videollamada y con pantalla compartida, centrada en tu razonamiento y en tu forma de abordar un tema, buscar información, utilizar la IA, depurar errores y comunicarte.',
+				'Duración orientativa: entre 60 y 90 minutos.'
+			]
+		}
+	]
+} satisfies Omit<JobOffer, 'tallyEmbedUrl' | 'tallyPublicUrl'>;
+
 const withTallyUrls = (
 	locale: Lang,
 	job: Omit<JobOffer, 'tallyEmbedUrl' | 'tallyPublicUrl'>
@@ -398,7 +564,8 @@ const withTallyUrls = (
 
 export const jobOffersByLocale: Record<Lang, JobOffer[]> = {
 	fr: [consultantFr, developerFr].map((job) => withTallyUrls('fr', job)),
-	en: [consultantEn, developerEn].map((job) => withTallyUrls('en', job))
+	en: [consultantEn, developerEn].map((job) => withTallyUrls('en', job)),
+	es: [consultantEs, developerEs].map((job) => withTallyUrls('es', job))
 };
 
 export const jobOffers = jobOffersByLocale.fr;

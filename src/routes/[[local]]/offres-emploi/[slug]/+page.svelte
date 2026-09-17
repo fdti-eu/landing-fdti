@@ -2,57 +2,88 @@
 	import { MetaTags } from 'svelte-meta-tags';
 	import LdTag from '$lib/components/json-ld/LDTag.svelte';
 	import { schema } from '$lib/components/json-ld/json-ld';
-	import { absoluteImageUrl, buildLocalizedUrl, SOCIAL_IMAGE_PATH } from '$lib/functions/seo';
+	import type { Lang } from '$lib/data';
+	import {
+		absoluteImageUrl,
+		buildLocalizedPath,
+		buildLocalizedUrl,
+		SOCIAL_IMAGE_PATH
+	} from '$lib/functions/seo';
 	import PrintableJobOffer from '$lib/components/jobs/PrintableJobOffer.svelte';
 	import type { JobOffer } from '$lib/jobs';
 
-	export let data: { job: JobOffer; locale: 'fr' | 'en' };
+	export let data: { job: JobOffer; locale: Lang };
 
 	$: job = data.job;
-	$: copy =
-		data.locale === 'fr'
-			? {
-					back: 'Toutes les offres',
-					eyebrow: 'Offre de stage',
-					apply: 'Candidater',
-					print: 'Imprimer / PDF',
-					printSub: 'Version A4',
-					introTitle: 'Rejoignez notre équipe',
-					skillsTitle: 'Compétences et expériences recherchées',
-					requiredTitle: 'Nécessaires',
-					niceTitle: 'Appréciées',
-					environmentTitle: 'Environnement de travail',
-					conditionsTitle: 'Conditions',
-					processTitle: 'Processus de recrutement',
-					applicationEyebrow: 'Candidature',
-					applicationTitle: 'Postuler à cette offre',
-					applicationText:
-						'Merci d’indiquer les éléments demandés dans le formulaire. Si l’intégration ne s’affiche pas correctement, vous pouvez ouvrir le formulaire dans un nouvel onglet.',
-					iframeTitle: 'Formulaire de candidature',
-					iframeLoading: 'Chargement du formulaire…',
-					openForm: 'Ouvrir le formulaire dans un nouvel onglet'
-				}
-			: {
-					back: 'All roles',
-					eyebrow: 'Internship role',
-					apply: 'Apply',
-					print: 'Print / PDF',
-					printSub: 'A4 version',
-					introTitle: 'Join our team',
-					skillsTitle: 'Skills and experience we are looking for',
-					requiredTitle: 'Required',
-					niceTitle: 'Nice to have',
-					environmentTitle: 'Working environment',
-					conditionsTitle: 'Conditions',
-					processTitle: 'Hiring process',
-					applicationEyebrow: 'Application',
-					applicationTitle: 'Apply for this role',
-					applicationText:
-						'Please provide the requested information in the form. If the embed does not display correctly, you can open the form in a new tab.',
-					iframeTitle: 'Application form',
-					iframeLoading: 'Loading form…',
-					openForm: 'Open the form in a new tab'
-				};
+	const copies = {
+		fr: {
+			back: 'Toutes les offres',
+			home: 'Accueil',
+			eyebrow: 'Offre de stage',
+			apply: 'Candidater',
+			print: 'Imprimer / PDF',
+			printSub: 'Version A4',
+			introTitle: 'Rejoignez notre équipe',
+			skillsTitle: 'Compétences et expériences recherchées',
+			requiredTitle: 'Nécessaires',
+			niceTitle: 'Appréciées',
+			environmentTitle: 'Environnement de travail',
+			conditionsTitle: 'Conditions',
+			processTitle: 'Processus de recrutement',
+			applicationEyebrow: 'Candidature',
+			applicationTitle: 'Postuler à cette offre',
+			applicationText:
+				'Merci d’indiquer les éléments demandés dans le formulaire. Si l’intégration ne s’affiche pas correctement, vous pouvez ouvrir le formulaire dans un nouvel onglet.',
+			iframeTitle: 'Formulaire de candidature',
+			iframeLoading: 'Chargement du formulaire…',
+			openForm: 'Ouvrir le formulaire dans un nouvel onglet'
+		},
+		en: {
+			back: 'All roles',
+			home: 'Home',
+			eyebrow: 'Internship role',
+			apply: 'Apply',
+			print: 'Print / PDF',
+			printSub: 'A4 version',
+			introTitle: 'Join our team',
+			skillsTitle: 'Skills and experience we are looking for',
+			requiredTitle: 'Required',
+			niceTitle: 'Nice to have',
+			environmentTitle: 'Working environment',
+			conditionsTitle: 'Conditions',
+			processTitle: 'Hiring process',
+			applicationEyebrow: 'Application',
+			applicationTitle: 'Apply for this role',
+			applicationText:
+				'Please provide the requested information in the form. If the embed does not display correctly, you can open the form in a new tab.',
+			iframeTitle: 'Application form',
+			iframeLoading: 'Loading form…',
+			openForm: 'Open the form in a new tab'
+		},
+		es: {
+			back: 'Todas las ofertas',
+			home: 'Inicio',
+			eyebrow: 'Oferta de prácticas',
+			apply: 'Presentar mi candidatura',
+			print: 'Imprimir / PDF',
+			printSub: 'Versión A4',
+			introTitle: 'Únete a nuestro equipo',
+			skillsTitle: 'Competencias y experiencia que buscamos',
+			requiredTitle: 'Requisitos',
+			niceTitle: 'Se valorará',
+			environmentTitle: 'Entorno de trabajo',
+			conditionsTitle: 'Condiciones',
+			processTitle: 'Proceso de selección',
+			applicationEyebrow: 'Candidatura',
+			applicationTitle: 'Presenta tu candidatura a esta oferta',
+			applicationText:
+				'Indica en el formulario la información solicitada. Si el formulario integrado no se muestra correctamente, puedes abrirlo en una pestaña nueva.',
+			iframeTitle: 'Formulario de candidatura',
+			iframeLoading: 'Cargando el formulario…',
+			openForm: 'Abrir el formulario en una pestaña nueva'
+		}
+	} satisfies Record<Lang, Record<string, string>>;
+	$: copy = copies[data.locale];
 	$: title = `${job.title} | FDTI`;
 	$: description = job.summary;
 	$: canonicalUrl = buildLocalizedUrl(`/offres-emploi/${job.slug}`, data.locale);
@@ -118,7 +149,7 @@
 				{
 					'@type': 'ListItem',
 					position: 1,
-					name: data.locale === 'fr' ? 'Accueil' : 'Home',
+					name: copy.home,
 					item: buildLocalizedUrl('/', data.locale)
 				},
 				{
@@ -142,7 +173,7 @@
 <section class="job-detail-hero bg-darkGrey text-white pt-28 pb-16 md:pt-36 md:pb-24 print:hidden">
 	<div class="max-w-6xl mx-auto px-4 space-y-8">
 		<a
-			href="/{data.locale}/offres-emploi"
+			href={buildLocalizedPath('/offres-emploi', data.locale)}
 			class="inline-flex items-center gap-2 text-sm font-semibold text-white/80 hover:text-yellow transition-colors"
 		>
 			<span aria-hidden="true">←</span>

@@ -9,13 +9,58 @@
 		buildLocalizedUrl,
 		SOCIAL_IMAGE_PATH
 	} from '$lib/functions/seo';
+	import type { Lang } from '$lib/data';
 	import type { PageData } from './$types';
 
 	export let data: PageData;
 	$: content = data.content;
 	$: canonical = buildLocalizedUrl('/expertises/economie-circulaire', data.locale);
-	$: vehicleSlug =
-		data.locale === 'fr' ? 'plateforme-economie-circulaire' : 'end-of-life-vehicle-platform';
+	const workSlugs: Record<'2' | '3' | '8', Record<Lang, string>> = {
+		'2': {
+			fr: 'plateforme-economie-circulaire',
+			en: 'end-of-life-vehicle-platform',
+			es: 'plataforma-economia-circular'
+		},
+		'3': { fr: 'marketplace-batteries', en: 'marketplace-batteries', es: 'marketplace-baterias' },
+		'8': {
+			fr: 'plateforme-operations-recyclage-batteries',
+			en: 'battery-recycling-operations-platform',
+			es: 'plataforma-operaciones-reciclaje-baterias'
+		}
+	};
+	const commonCopy: Record<
+		Lang,
+		{
+			home: string;
+			expertise: string;
+			heroTitle: string;
+			multiCountry: string;
+			marketplace: string;
+		}
+	> = {
+		fr: {
+			home: 'Accueil',
+			expertise: 'Expertises',
+			heroTitle: 'Faire circuler les matières sans perdre l’information en route.',
+			multiCountry: 'Déploiement multi-pays',
+			marketplace: 'Marketplace batteries'
+		},
+		en: {
+			home: 'Home',
+			expertise: 'Expertise',
+			heroTitle: 'Keep materials moving without losing information along the way.',
+			multiCountry: 'Multi-country delivery',
+			marketplace: 'Battery marketplace'
+		},
+		es: {
+			home: 'Inicio',
+			expertise: 'Especialidades',
+			heroTitle: 'Hacer circular los materiales sin perder información por el camino.',
+			multiCountry: 'Despliegue multinacional',
+			marketplace: 'Marketplace de baterías'
+		}
+	};
+	$: common = commonCopy[data.locale];
 	$: pageCopy =
 		data.locale === 'fr'
 			? {
@@ -43,31 +88,58 @@
 						'Codes déchets, diagnostics, BSD, signatures, propositions de prix et changements de statut restent rattachés au dossier métier. Les APIs et notifications permettent aux partenaires de conserver leurs propres outils sans recréer une chaîne de ressaisie.',
 					faqLabel: 'Questions fréquentes'
 				}
-			: {
-					journeyLabel: 'Business flows covered',
-					multiCountryTitle: 'Multi-country, multisite journeys and routing',
-					multiCountryText:
-						'Country rules, precise location, the closest center by road and drop-off method guide each B2B or B2C journey.',
-					multiCountryResult: 'Country rules, routing and pricing combined in one journey.',
-					marketplaceTitle: 'Build and publish battery lots',
-					marketplaceText:
-						'Eligible batteries are grouped with a lot code, currency, photos and technical documents.',
-					marketplaceResult:
-						'The manager selects authorized partners and configures visibility rules.',
-					proofLabel: 'Work',
-					vehicleLink: 'See the vehicle platform',
-					batteryLink: 'See the battery platform',
-					recyclerLabel: 'Recycling operations',
-					recyclerTitle: 'Manage battery declarations, collections and treatment.',
-					recyclerText:
-						'A platform to qualify declarations, prepare packing lists, manage Trackdéchets records and follow reception and treatment.',
-					recyclerLink: 'See the recycler platform',
-					integrationLabel: 'Documents and systems',
-					integrationTitle: 'Information must follow the operation.',
-					integrationText:
-						'Waste codes, diagnostics, tracking forms, signatures, price proposals and status changes remain attached to the business record. APIs and notifications let partners keep their own tools without creating another re-entry chain.',
-					faqLabel: 'Frequently asked questions'
-				};
+			: data.locale === 'es'
+				? {
+						journeyLabel: 'Flujos empresariales cubiertos',
+						multiCountryTitle: 'Recorridos multinacionales, multisitio y routing',
+						multiCountryText:
+							'Las reglas de cada país, la ubicación exacta, el centro más cercano por carretera y el método de entrega orientan cada recorrido B2B o B2C.',
+						multiCountryResult:
+							'Reglas nacionales, routing y tarificación reunidos en un mismo recorrido.',
+						marketplaceTitle: 'Crear y publicar lotes de baterías',
+						marketplaceText:
+							'Las baterías aptas se agrupan con su código de lote, divisa, fotografías y documentos técnicos.',
+						marketplaceResult:
+							'El responsable selecciona a los socios autorizados y configura las reglas de visibilidad.',
+						proofLabel: 'Proyectos',
+						vehicleLink: 'Ver la plataforma de vehículos',
+						batteryLink: 'Ver la plataforma de baterías',
+						recyclerLabel: 'Operaciones de reciclaje',
+						recyclerTitle: 'Gestionar las declaraciones, recogidas y tratamientos de baterías.',
+						recyclerText:
+							'Una plataforma para clasificar las declaraciones, preparar las listas de embalaje, gestionar los BSD de Trackdéchets y seguir la recepción y el tratamiento.',
+						recyclerLink: 'Ver la plataforma del reciclador',
+						integrationLabel: 'Documentos y sistemas',
+						integrationTitle: 'La información debe acompañar a la operación.',
+						integrationText:
+							'Los códigos de residuos, diagnósticos, BSD, firmas, propuestas de precios y cambios de estado permanecen vinculados al expediente empresarial. Las API y las notificaciones permiten que los socios conserven sus propias herramientas sin crear otra cadena de introducción manual.',
+						faqLabel: 'Preguntas frecuentes'
+					}
+				: {
+						journeyLabel: 'Business flows covered',
+						multiCountryTitle: 'Multi-country, multisite journeys and routing',
+						multiCountryText:
+							'Country rules, precise location, the closest center by road and drop-off method guide each B2B or B2C journey.',
+						multiCountryResult: 'Country rules, routing and pricing combined in one journey.',
+						marketplaceTitle: 'Build and publish battery lots',
+						marketplaceText:
+							'Eligible batteries are grouped with a lot code, currency, photos and technical documents.',
+						marketplaceResult:
+							'The manager selects authorized partners and configures visibility rules.',
+						proofLabel: 'Work',
+						vehicleLink: 'See the vehicle platform',
+						batteryLink: 'See the battery platform',
+						recyclerLabel: 'Recycling operations',
+						recyclerTitle: 'Manage battery declarations, collections and treatment.',
+						recyclerText:
+							'A platform to qualify declarations, prepare packing lists, manage Trackdéchets records and follow reception and treatment.',
+						recyclerLink: 'See the recycler platform',
+						integrationLabel: 'Documents and systems',
+						integrationTitle: 'Information must follow the operation.',
+						integrationText:
+							'Waste codes, diagnostics, tracking forms, signatures, price proposals and status changes remain attached to the business record. APIs and notifications let partners keep their own tools without creating another re-entry chain.',
+						faqLabel: 'Frequently asked questions'
+					};
 	$: workflowItems = [
 		...content.dossiers[0].sections.map((section) => ({
 			...section,
@@ -78,7 +150,7 @@
 			navLabel: pageCopy.multiCountryTitle,
 			situation: pageCopy.multiCountryText,
 			result: pageCopy.multiCountryResult,
-			group: data.locale === 'fr' ? 'Déploiement multi-pays' : 'Multi-country delivery'
+			group: common.multiCountry
 		},
 		...content.dossiers[1].sections.map((section) => ({
 			...section,
@@ -89,12 +161,18 @@
 			navLabel: pageCopy.marketplaceTitle,
 			situation: pageCopy.marketplaceText,
 			result: pageCopy.marketplaceResult,
-			group: data.locale === 'fr' ? 'Marketplace batteries' : 'Battery marketplace'
+			group: common.marketplace
 		},
 		...content.dossiers[2].sections
 			.filter((section) => ['bsd', 'connexions'].includes(section.id))
 			.map((section) => ({ ...section, group: content.dossiers[2].label }))
 	];
+	$: imageAlt =
+		data.locale === 'fr'
+			? 'FDTI - IA, code et données'
+			: data.locale === 'es'
+				? 'FDTI - IA, código y datos'
+				: 'FDTI - AI, code and data';
 </script>
 
 <MetaTags
@@ -107,7 +185,7 @@
 		title: content.metaTitle,
 		description: content.metaDescription,
 		siteName: 'FDTI',
-		images: [{ url: absoluteImageUrl(SOCIAL_IMAGE_PATH), alt: 'FDTI - AI, code and data' }]
+		images: [{ url: absoluteImageUrl(SOCIAL_IMAGE_PATH), alt: imageAlt }]
 	}}
 />
 
@@ -121,13 +199,13 @@
 				{
 					'@type': 'ListItem',
 					position: 1,
-					name: data.locale === 'fr' ? 'Accueil' : 'Home',
+					name: common.home,
 					item: buildLocalizedUrl('/', data.locale)
 				},
 				{
 					'@type': 'ListItem',
 					position: 2,
-					name: data.locale === 'fr' ? 'Expertises' : 'Expertise',
+					name: common.expertise,
 					item: buildLocalizedUrl('/expertises', data.locale)
 				},
 				{
@@ -159,11 +237,7 @@
 <header class="ce-hero">
 	<div class="ce-shell ce-simple-hero">
 		<p class="ce-eyebrow">{content.label}</p>
-		<h1>
-			{data.locale === 'fr'
-				? 'Faire circuler les matières sans perdre l’information en route.'
-				: 'Keep materials moving without losing information along the way.'}
-		</h1>
+		<h1>{common.heroTitle}</h1>
 		<p class="ce-lead">{content.intro}</p>
 		<p class="ce-positioning">{content.positioning}</p>
 		<div class="ce-hero-actions">
@@ -224,7 +298,7 @@
 				<p class="ce-eyebrow">{content.dossiers[0].label}</p>
 				<h3>{content.dossiers[0].title}</h3>
 				<p>{content.dossiers[0].description}</p>
-				<a class="ce-link" href={`/${data.locale}/realisations/${vehicleSlug}`}
+				<a class="ce-link" href={`/${data.locale}/realisations/${workSlugs['2'][data.locale]}`}
 					>{pageCopy.vehicleLink}<span aria-hidden="true">↗</span></a
 				>
 			</article>
@@ -232,20 +306,15 @@
 				<p class="ce-eyebrow">{pageCopy.recyclerLabel}</p>
 				<h3>{pageCopy.recyclerTitle}</h3>
 				<p>{pageCopy.recyclerText}</p>
-				<a
-					class="ce-link"
-					href={`/${data.locale}/realisations/${
-						data.locale === 'fr'
-							? 'plateforme-operations-recyclage-batteries'
-							: 'battery-recycling-operations-platform'
-					}`}>{pageCopy.recyclerLink}<span aria-hidden="true">↗</span></a
+				<a class="ce-link" href={`/${data.locale}/realisations/${workSlugs['8'][data.locale]}`}
+					>{pageCopy.recyclerLink}<span aria-hidden="true">↗</span></a
 				>
 			</article>
 			<article>
 				<p class="ce-eyebrow">{content.dossiers[1].label}</p>
 				<h3>{content.dossiers[1].title}</h3>
 				<p>{content.dossiers[1].description}</p>
-				<a class="ce-link" href={`/${data.locale}/realisations/marketplace-batteries`}
+				<a class="ce-link" href={`/${data.locale}/realisations/${workSlugs['3'][data.locale]}`}
 					>{pageCopy.batteryLink}<span aria-hidden="true">↗</span></a
 				>
 			</article>

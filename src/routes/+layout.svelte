@@ -8,12 +8,12 @@
 	import { page } from '$app/stores';
 	import { afterNavigate, beforeNavigate, onNavigate } from '$app/navigation';
 	import {
-		buildAbsoluteUrl,
 		buildLocalizedUrl,
 		resolveLocaleFromPath,
 		stripLocaleFromPath,
 		type SeoAlternatePaths
 	} from '$lib/functions/seo';
+	import { SUPPORTED_LOCALES } from '$lib/data';
 
 	$: detectedLocale = resolveLocaleFromPath($page.url.pathname);
 	$: if ($locale !== detectedLocale) {
@@ -23,11 +23,11 @@
 	// Use page-provided paths when translated dynamic routes have different slugs.
 	$: currentPathWithoutLocale = stripLocaleFromPath($page.url.pathname);
 	$: alternatePaths = ($page.data as { alternatePaths?: SeoAlternatePaths }).alternatePaths;
-	$: frPath = alternatePaths?.fr || currentPathWithoutLocale;
-	$: enPath = alternatePaths?.en || currentPathWithoutLocale;
-	$: frUrl = buildLocalizedUrl(frPath, 'fr');
-	$: enUrl = buildLocalizedUrl(enPath, 'en');
-	$: xDefaultUrl = buildAbsoluteUrl(frPath);
+	$: alternateLinks = SUPPORTED_LOCALES.map((locale) => ({
+		locale,
+		href: buildLocalizedUrl(alternatePaths?.[locale] || currentPathWithoutLocale, locale)
+	}));
+	$: xDefaultUrl = buildLocalizedUrl(alternatePaths?.fr || currentPathWithoutLocale, 'fr');
 
 	let previousPopstateScrollBehavior = '';
 
@@ -65,8 +65,9 @@
 </script>
 
 <svelte:head>
-	<link rel="alternate" hreflang="fr" href={frUrl} />
-	<link rel="alternate" hreflang="en" href={enUrl} />
+	{#each alternateLinks as alternate}
+		<link rel="alternate" hreflang={alternate.locale} href={alternate.href} />
+	{/each}
 	<link rel="alternate" hreflang="x-default" href={xDefaultUrl} />
 </svelte:head>
 

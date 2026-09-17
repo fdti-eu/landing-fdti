@@ -1,5 +1,26 @@
-<script>
+<script lang="ts">
 	import { locale } from 'svelte-i18n';
+	import { isSupportedLocale, type Lang } from '$lib/data';
+
+	const labels: Record<Lang, { message: string; back: string; sadSmile: string }> = {
+		fr: {
+			message: "La page que vous cherchez n'existe pas",
+			back: "Retour à la page d'accueil",
+			sadSmile: 'visage triste'
+		},
+		en: {
+			message: 'The page you are looking for does not exist',
+			back: 'Back to home',
+			sadSmile: 'sad face'
+		},
+		es: {
+			message: 'La página que busca no existe',
+			back: 'Volver al inicio',
+			sadSmile: 'cara triste'
+		}
+	};
+	$: currentLocale = isSupportedLocale($locale) ? $locale : 'fr';
+	$: copy = labels[currentLocale];
 </script>
 
 <section class="relative py-16 md:py-24 overflow-hidden">
@@ -15,7 +36,7 @@
 		<div class="max-w-screen-mv mx-auto pt-10">
 			<div class="flex gap-5 items-center justify-center">
 				<h2 class="text-6xl sm:text-7xl text-center">Ooops...</h2>
-				<img src="/images/sad-smile.svg" alt="sad smile" title="sad smile" class="w-16" />
+				<img src="/images/sad-smile.svg" alt={copy.sadSmile} title={copy.sadSmile} class="w-16" />
 			</div>
 			<div class="flex justify-center my-2 relative h-4">
 				<span class="bg-yellow h-2 w-18 absolute top-1/2 -translate-y-1/2 z-10"></span>
@@ -23,17 +44,15 @@
 			</div>
 		</div>
 		<p class="text-2xl xl:text-3xl text-center pt-7 max-w-sm mx-auto">
-			{$locale === 'en'
-				? 'The page you are looking for does not exist'
-				: "La page que vous cherchez n'existe pas"}
+			{copy.message}
 		</p>
 
 		<div class="pt-4 flex justify-center">
 			<a
-				href="/"
+				href="/{currentLocale}"
 				type="submit"
 				class="inline-flex items-center justify-center px-8 py-2 border border-transparent text-base font-bold rounded-full text-white bg-darkGrey hover:bg-white hover:text-darkGrey hover:border-darkGrey transition-all ease-in-out duration-300 gap-4"
-				><span>{$locale === 'en' ? 'Back to home' : "Retour à la page d'accueil"}</span><svg
+				><span>{copy.back}</span><svg
 					class="w-4"
 					viewBox="0 0 13 12"
 					fill="none"

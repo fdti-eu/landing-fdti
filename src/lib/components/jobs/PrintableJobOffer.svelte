@@ -1,51 +1,76 @@
 <script lang="ts">
+	import type { Lang } from '$lib/data';
+	import { buildLocalizedUrl } from '$lib/functions/seo';
 	import type { JobOffer } from '$lib/jobs';
 
 	export let job: JobOffer;
-	export let locale: 'fr' | 'en';
+	export let locale: Lang;
 
-	$: copy =
-		locale === 'fr'
-			? {
-					roleEyebrow: 'Offre de stage',
-					company: 'FDTI Consulting',
-					summary: 'Résumé du poste',
-					intro: 'Contexte',
-					required: 'Compétences nécessaires',
-					nice: 'Compétences appréciées',
-					environment: 'Environnement de travail',
-					conditions: 'Conditions',
-					process: 'Processus de recrutement',
-					apply: 'Candidature',
-					applyText: 'Pour postuler, utilisez le formulaire en ligne :',
-					pageText: 'Offre en ligne :',
-					contract: 'Contrat',
-					location: 'Lieu',
-					experience: 'Expérience',
-					start: 'Début',
-					status: 'Statut'
-				}
-			: {
-					roleEyebrow: 'Internship role',
-					company: 'FDTI Consulting',
-					summary: 'Role summary',
-					intro: 'Context',
-					required: 'Required skills',
-					nice: 'Nice to have',
-					environment: 'Working environment',
-					conditions: 'Conditions',
-					process: 'Hiring process',
-					apply: 'Application',
-					applyText: 'To apply, use the online form:',
-					pageText: 'Online role:',
-					contract: 'Contract',
-					location: 'Location',
-					experience: 'Experience',
-					start: 'Start',
-					status: 'Status'
-				};
+	const copies = {
+		fr: {
+			roleEyebrow: 'Offre de stage',
+			company: 'FDTI Consulting',
+			summary: 'Résumé du poste',
+			intro: 'Contexte',
+			required: 'Compétences nécessaires',
+			nice: 'Compétences appréciées',
+			environment: 'Environnement de travail',
+			conditions: 'Conditions',
+			process: 'Processus de recrutement',
+			apply: 'Candidature',
+			applyText: 'Pour postuler, utilisez le formulaire en ligne :',
+			pageText: 'Offre en ligne :',
+			contract: 'Contrat',
+			location: 'Lieu',
+			experience: 'Expérience',
+			start: 'Début',
+			status: 'Statut',
+			metadata: 'Informations sur l’offre'
+		},
+		en: {
+			roleEyebrow: 'Internship role',
+			company: 'FDTI Consulting',
+			summary: 'Role summary',
+			intro: 'Context',
+			required: 'Required skills',
+			nice: 'Nice to have',
+			environment: 'Working environment',
+			conditions: 'Conditions',
+			process: 'Hiring process',
+			apply: 'Application',
+			applyText: 'To apply, use the online form:',
+			pageText: 'Online role:',
+			contract: 'Contract',
+			location: 'Location',
+			experience: 'Experience',
+			start: 'Start',
+			status: 'Status',
+			metadata: 'Job details'
+		},
+		es: {
+			roleEyebrow: 'Oferta de prácticas',
+			company: 'FDTI Consulting',
+			summary: 'Resumen del puesto',
+			intro: 'Contexto',
+			required: 'Competencias necesarias',
+			nice: 'Competencias valoradas',
+			environment: 'Entorno de trabajo',
+			conditions: 'Condiciones',
+			process: 'Proceso de selección',
+			apply: 'Candidatura',
+			applyText: 'Para presentar tu candidatura, utiliza el formulario en línea:',
+			pageText: 'Oferta en línea:',
+			contract: 'Contrato',
+			location: 'Lugar',
+			experience: 'Experiencia',
+			start: 'Inicio',
+			status: 'Estado',
+			metadata: 'Información sobre la oferta'
+		}
+	} satisfies Record<Lang, Record<string, string>>;
+	$: copy = copies[locale];
 
-	$: pageUrl = `https://www.fdti.eu/${locale}/offres-emploi/${job.slug}`;
+	$: pageUrl = buildLocalizedUrl(`/offres-emploi/${job.slug}`, locale);
 	$: displayPageUrl = pageUrl.replace('https://', '');
 	$: applicationUrl = job.tallyPublicUrl.split('?')[0];
 	$: metaItems = [
@@ -74,7 +99,7 @@
 			<p>{job.summary}</p>
 		</div>
 
-		<section class="print-job-meta" aria-label="Job metadata">
+		<section class="print-job-meta" aria-label={copy.metadata}>
 			{#each metaItems as item}
 				<div>
 					<span>{item.label}</span>

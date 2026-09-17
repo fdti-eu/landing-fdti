@@ -1,4 +1,8 @@
-export type Lang = 'fr' | 'en';
+export const SUPPORTED_LOCALES = ['fr', 'en', 'es'] as const;
+export type Lang = (typeof SUPPORTED_LOCALES)[number];
+
+export const isSupportedLocale = (locale: string | null | undefined): locale is Lang =>
+	SUPPORTED_LOCALES.includes(locale as Lang);
 
 // Import de type seulement pour l'inférence
 import type FrData from '../locales/fr.json';
@@ -12,7 +16,8 @@ export type UseCasesContent = LocaleData['GetUseCasesContent'];
 
 const loaders: Record<Lang, () => Promise<LocaleData>> = {
 	fr: () => import('../locales/fr.json').then((m) => m.default),
-	en: () => import('../locales/en.json').then((m) => m.default)
+	en: () => import('../locales/en.json').then((m) => m.default),
+	es: () => import('../locales/es.json').then((m) => m.default)
 };
 
 export async function getData(lang: Lang): Promise<LocaleData> {

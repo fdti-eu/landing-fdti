@@ -120,7 +120,7 @@ function updateTranslationFiles() {
 	console.log('\n📝 Mise à jour des fichiers de traduction...\n');
 
 	const localesDir = path.join(baseDir, 'src/locales');
-	const files = ['fr.json', 'en.json'];
+	const files = ['fr.json', 'en.json', 'es.json'];
 
 	for (const file of files) {
 		const filePath = path.join(localesDir, file);

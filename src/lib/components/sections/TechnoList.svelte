@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { locale } from 'svelte-i18n';
+	import { isSupportedLocale, type Lang } from '$lib/data';
 
 	export let title = '';
 	export let description = '';
@@ -7,6 +8,12 @@
 	export let isOpen = false;
 	export let onToggle: () => void;
 	$: panelId = `technology-${title.replace(/[^a-zA-Z0-9]/g, '-')}`;
+	const panelLabels: Record<Lang, string> = {
+		fr: 'Technologies et outils utilisés :',
+		en: 'Technologies and tools used:',
+		es: 'Tecnologías y herramientas utilizadas:'
+	};
+	$: currentLocale = isSupportedLocale($locale) ? $locale : 'fr';
 </script>
 
 <div class="tech-card" class:expanded={isOpen}>
@@ -29,10 +36,7 @@
 	</h3>
 	<p class="tech-description">{description}</p>
 	<div class="tech-panel" id={panelId} hidden={!isOpen}>
-		<p class="tech-panel-label">
-			{#if $locale === 'fr'}Technologies et outils utilisés&nbsp;:{:else}Technologies and tools
-				used:{/if}
-		</p>
+		<p class="tech-panel-label">{panelLabels[currentLocale]}</p>
 		<div class="techno-container"><slot /></div>
 	</div>
 </div>

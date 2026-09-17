@@ -82,5 +82,5 @@ Exemple :
 Pour ajouter de nouvelles images :
 
 1. Placer l'image dans le dossier approprié
-2. Mettre à jour les fichiers de traduction (`src/locales/fr.json` et `src/locales/en.json`)
+2. Mettre à jour les fichiers de traduction (`src/locales/fr.json`, `src/locales/en.json` et `src/locales/es.json`)
 3. Utiliser des formats optimisés (WebP de préférence pour les photos, SVG pour les logos)

@@ -1,6 +1,8 @@
 import enLocale from '$locales/en.json';
 import frLocale from '$locales/fr.json';
-import type { LocaleData } from '$lib/data';
+import esLocale from '$locales/es.json';
+import type { Lang, LocaleData } from '$lib/data';
+import { buildLocalizedUrl } from '$lib/functions/seo';
 
 function stripHtml(content?: string): string {
 	return (
@@ -17,7 +19,7 @@ function formatSection(title: string, content?: string): string {
 	return `\n## ${title}\n${cleanContent}\n`;
 }
 
-function buildLanguageSection(locale: string, data: LocaleData): string {
+function buildLanguageSection(locale: Lang, data: LocaleData): string {
 	const home = data.GetHomePageContent;
 	let output = `\n# ${locale.toUpperCase()}\n`;
 
@@ -90,9 +92,9 @@ function buildLanguageSection(locale: string, data: LocaleData): string {
 	const dna = data.GetDNAPageContent?.DNA_content;
 	const circular = data.CircularEconomy;
 	output += formatSection(circular.title, circular.intro);
-	output += `\nhttps://www.fdti.eu/${locale}/expertises/economie-circulaire\n`;
-	output += `\n# EXPERTISE\nhttps://www.fdti.eu/${locale}/expertises\n`;
-	output += `\n# FDTI\nhttps://www.fdti.eu/${locale}/fdti\n`;
+	output += `\n${buildLocalizedUrl('/expertises/economie-circulaire', locale)}\n`;
+	output += `\n# EXPERTISE\n${buildLocalizedUrl('/expertises', locale)}\n`;
+	output += `\n# FDTI\n${buildLocalizedUrl('/fdti', locale)}\n`;
 
 	if (dna) {
 		output += '\n# COMPANY VALUES (DNA)\n';
@@ -114,6 +116,7 @@ export function buildLlmsText() {
 		'# FDTI llms.txt',
 		'Content generated from the public locale JSON files used by fdti.eu.',
 		buildLanguageSection('fr', frLocale),
-		buildLanguageSection('en', enLocale)
+		buildLanguageSection('en', enLocale),
+		buildLanguageSection('es', esLocale)
 	].join('\n');
 }

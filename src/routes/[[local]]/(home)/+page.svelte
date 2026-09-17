@@ -83,7 +83,7 @@
 				locale={currentLocale}
 			/>
 			<ExpertisePreviewSection locale={currentLocale} />
-			<TechnologiesSection content={pageContent.technology_content} />
+			<TechnologiesSection content={pageContent.technology_content} locale={currentLocale} />
 			<ConfianceSection content={pageContent.trust_content} />
 		</div>
 		<ContactSection content={pageContent.contact_section} />

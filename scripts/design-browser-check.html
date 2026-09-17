@@ -63,6 +63,7 @@
 			><select id="route" aria-label="Page">
 				<option value="/fr">Accueil FR</option>
 				<option value="/en">Accueil EN</option>
+				<option value="/es">Accueil ES</option>
 				<option value="/fr/cas-d-usage">Cas clients</option>
 				<option value="/fr/cas-d-usage/automatisation-greffes">Cas détaillé</option>
 				<option value="/fr/adn-et-valeurs">ADN</option>
@@ -156,17 +157,20 @@
 				failures = 0;
 				report.textContent = 'En cours…';
 				try {
-					for (const language of ['fr', 'en']) {
+					const homeHeadings = {
+						fr: 'processus métiers',
+						en: 'business processes',
+						es: 'procesos empresariales'
+					};
+					const nextLanguage = { fr: 'en', en: 'es', es: 'fr' };
+					for (const language of ['fr', 'en', 'es']) {
 						await load('/' + language);
 						let doc = frame.contentDocument;
 						assert(
-							doc
-								.querySelector('h1')
-								.textContent.includes(
-									language === 'fr' ? 'processus métiers' : 'business processes'
-								),
+							doc.querySelector('h1').textContent.includes(homeHeadings[language]),
 							'Contenu accueil ' + language
 						);
+						assert(doc.documentElement.lang === language, 'Langue du document ' + language);
 						assert(
 							frame.contentWindow
 								.getComputedStyle(doc.querySelector('.fdti-site'))
@@ -235,26 +239,38 @@
 						await axe('accueil ' + language + ' desktop');
 						doc.querySelector('[aria-label="toggle language"]').click();
 						await pause();
-						doc
-							.querySelector(`.nav-locale button[value="${language === 'fr' ? 'en' : 'fr'}"]`)
-							.click();
+						const languageDestinations = [...doc.querySelectorAll('.nav-locale button[value]')].map(
+							(button) => button.value
+						);
+						assert(
+							languageDestinations.length === 3 &&
+								['fr', 'en', 'es'].every((code) => languageDestinations.includes(code)),
+							'Sélecteur avec trois destinations ' + language
+						);
+						doc.querySelector(`.nav-locale button[value="${nextLanguage[language]}"]`).click();
 						await pause(1000);
 						assert(
-							frame.contentWindow.location.pathname === '/' + (language === 'fr' ? 'en' : 'fr'),
+							frame.contentWindow.location.pathname === '/' + nextLanguage[language],
 							'Sélecteur de langue ' + language
 						);
 					}
 					for (const route of [
 						'/fr/adn-et-valeurs',
 						'/en/adn-et-valeurs',
+						'/es/adn-et-valeurs',
 						'/fr/cas-d-usage',
 						'/en/cas-d-usage',
+						'/es/cas-d-usage',
 						'/fr/cas-d-usage/automatisation-greffes',
 						'/en/cas-d-usage/automatisation-greffes',
+						'/es/cas-d-usage/automatisation-greffes',
 						'/fr/offres-emploi',
 						'/en/offres-emploi',
+						'/es/offres-emploi',
 						'/fr/confidentialite',
-						'/en/condition-utilisation'
+						'/en/condition-utilisation',
+						'/es/confidentialite',
+						'/es/condition-utilisation'
 					]) {
 						await load(route);
 						let doc = frame.contentDocument;

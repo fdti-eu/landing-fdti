@@ -23,6 +23,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v5
+        with:
+          fetch-depth: 2
 
       - name: Setup Node
         uses: actions/setup-node@v6
@@ -35,6 +37,8 @@ jobs:
 
       - name: Check
         run: npm run check
+        env:
+          GITHUB_EVENT_BEFORE: ${{ github.event.before }}
 
       - name: Build static site
         run: npm run build

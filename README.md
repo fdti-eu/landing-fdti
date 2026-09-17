@@ -10,6 +10,7 @@ Le contenu éditorial principal est stocké dans les fichiers JSON :
 
 - `src/locales/fr.json`
 - `src/locales/en.json`
+- `src/locales/es.json`
 
 Les pages, cas d’usage, métadonnées SEO, `sitemap.xml` et `llms.txt` sont générés à partir de ces fichiers pendant le build.
 

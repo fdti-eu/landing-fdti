@@ -10,6 +10,7 @@
 		SOCIAL_IMAGE_PATH
 	} from '$lib/functions/seo';
 	import type { PageData } from './$types';
+	import type { Lang } from '$lib/data';
 	import { afterNavigate } from '$app/navigation';
 	import { onDestroy } from 'svelte';
 
@@ -18,6 +19,12 @@
 	$: root = buildLocalizedPath('/expertises/economie-circulaire', data.locale);
 	$: canonical = buildLocalizedUrl(`/expertises/economie-circulaire/${dossier.slug}`, data.locale);
 	$: title = `${dossier.label} | FDTI`;
+	const homeLabels: Record<Lang, string> = { fr: 'Accueil', en: 'Home', es: 'Inicio' };
+	const imageAlts: Record<Lang, string> = {
+		fr: 'FDTI - IA, code et données',
+		en: 'FDTI - AI, code and data',
+		es: 'FDTI - IA, código y datos'
+	};
 	let activeSection = '';
 	let scrollFrame = 0;
 	function updateSection() {
@@ -50,7 +57,7 @@
 		title,
 		description: dossier.summary,
 		siteName: 'FDTI',
-		images: [{ url: absoluteImageUrl(SOCIAL_IMAGE_PATH), alt: 'FDTI - AI, code and data' }]
+		images: [{ url: absoluteImageUrl(SOCIAL_IMAGE_PATH), alt: imageAlts[data.locale] }]
 	}}
 />
 
@@ -64,7 +71,7 @@
 				{
 					'@type': 'ListItem',
 					position: 1,
-					name: data.locale === 'fr' ? 'Accueil' : 'Home',
+					name: homeLabels[data.locale],
 					item: buildLocalizedUrl('/', data.locale)
 				},
 				{

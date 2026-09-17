@@ -4,6 +4,7 @@
 	import Flag from '../Flag.svelte';
 	import { FLAGS } from '$lib/const';
 	import { goto, invalidate } from '$app/navigation';
+	import type { Lang } from '$lib/data';
 	import {
 		buildLocalizedPath,
 		stripLocaleFromPath,
@@ -16,7 +17,7 @@
 		isDropdownOpen = !isDropdownOpen;
 	}
 
-	async function handleChangeLocale(code: 'fr' | 'en') {
+	async function handleChangeLocale(code: Lang) {
 		$locale = code;
 		const alternatePaths = ($page.data as { alternatePaths?: SeoAlternatePaths }).alternatePaths;
 		const path = alternatePaths?.[code] || stripLocaleFromPath($page.url.pathname);

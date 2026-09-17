@@ -2,55 +2,83 @@
 	import { MetaTags } from 'svelte-meta-tags';
 	import LdTag from '$lib/components/json-ld/LDTag.svelte';
 	import { schema } from '$lib/components/json-ld/json-ld';
-	import { absoluteImageUrl, buildLocalizedUrl, SOCIAL_IMAGE_PATH } from '$lib/functions/seo';
+	import type { Lang } from '$lib/data';
+	import {
+		absoluteImageUrl,
+		buildLocalizedPath,
+		buildLocalizedUrl,
+		SOCIAL_IMAGE_PATH
+	} from '$lib/functions/seo';
 	import type { JobOffer } from '$lib/jobs';
 
-	export let data: { jobs: JobOffer[]; locale: 'fr' | 'en' };
+	export let data: { jobs: JobOffer[]; locale: Lang };
 
-	$: copy =
-		data.locale === 'fr'
-			? {
-					title: 'Offres de stage IA, code et data | FDTI',
-					description:
-						'Rejoignez FDTI en stage sur des missions IA, agents métier, applications, data et opérations projet.',
-					eyebrow: 'Recrutement',
-					h1: 'Stages IA, code et data chez FDTI',
-					hero: 'Nous accueillons régulièrement des stagiaires pour travailler sur des sujets IA, code et data directement liés aux opérations de nos clients et de nos équipes.',
-					formatTitle: 'Format',
-					formatText: 'Stages de 6 mois, avec encadrement par l’équipe FDTI.',
-					locationTitle: 'Lieu',
-					locationText: 'Modalités à définir selon le cadre du stage.',
-					startTitle: 'Démarrage',
-					startText: 'Entrées possibles tout au long de l’année selon les projets ouverts.',
-					openRoles: 'Postes ouverts',
-					offersTitle: 'Nos offres',
-					offersIntro:
-						'Ces stages s’adressent à des profils curieux, structurés et prêts à apprendre vite au contact de projets livrés en production.',
-					startLabel: 'Début',
-					statusLabel: 'Statut',
-					cta: 'Voir l’offre et candidater'
-				}
-			: {
-					title: 'AI, code and data internships | FDTI',
-					description:
-						'Join FDTI as an intern on AI, domain agents, applications, data and project operations.',
-					eyebrow: 'Hiring',
-					h1: 'AI, code and data internships at FDTI',
-					hero: 'We regularly welcome interns to work on AI, code and data topics directly connected to our clients’ and teams’ operations.',
-					formatTitle: 'Format',
-					formatText: '6-month internships, mentored by the FDTI team.',
-					locationTitle: 'Location',
-					locationText: 'Work setup to be defined according to the internship framework.',
-					startTitle: 'Start date',
-					startText: 'Start dates available year-round depending on active projects.',
-					openRoles: 'Open roles',
-					offersTitle: 'Our roles',
-					offersIntro:
-						'These internships are for curious, structured profiles ready to learn fast on projects delivered to production.',
-					startLabel: 'Start',
-					statusLabel: 'Status',
-					cta: 'View role and apply'
-				};
+	const copies = {
+		fr: {
+			title: 'Offres de stage IA, code et data | FDTI',
+			description:
+				'Rejoignez FDTI en stage sur des missions IA, agents métier, applications, data et opérations projet.',
+			eyebrow: 'Recrutement',
+			h1: 'Stages IA, code et data chez FDTI',
+			hero: 'Nous accueillons régulièrement des stagiaires pour travailler sur des sujets IA, code et data directement liés aux opérations de nos clients et de nos équipes.',
+			formatTitle: 'Format',
+			formatText: 'Stages de 6 mois, avec encadrement par l’équipe FDTI.',
+			locationTitle: 'Lieu',
+			locationText: 'Modalités à définir selon le cadre du stage.',
+			startTitle: 'Démarrage',
+			startText: 'Entrées possibles tout au long de l’année selon les projets ouverts.',
+			openRoles: 'Postes ouverts',
+			offersTitle: 'Nos offres',
+			offersIntro:
+				'Ces stages s’adressent à des profils curieux, structurés et prêts à apprendre vite au contact de projets livrés en production.',
+			startLabel: 'Début',
+			statusLabel: 'Statut',
+			cta: 'Voir l’offre et candidater'
+		},
+		en: {
+			title: 'AI, code and data internships | FDTI',
+			description:
+				'Join FDTI as an intern on AI, domain agents, applications, data and project operations.',
+			eyebrow: 'Hiring',
+			h1: 'AI, code and data internships at FDTI',
+			hero: 'We regularly welcome interns to work on AI, code and data topics directly connected to our clients’ and teams’ operations.',
+			formatTitle: 'Format',
+			formatText: '6-month internships, mentored by the FDTI team.',
+			locationTitle: 'Location',
+			locationText: 'Work setup to be defined according to the internship framework.',
+			startTitle: 'Start date',
+			startText: 'Start dates available year-round depending on active projects.',
+			openRoles: 'Open roles',
+			offersTitle: 'Our roles',
+			offersIntro:
+				'These internships are for curious, structured profiles ready to learn fast on projects delivered to production.',
+			startLabel: 'Start',
+			statusLabel: 'Status',
+			cta: 'View role and apply'
+		},
+		es: {
+			title: 'Prácticas de IA, código y datos | FDTI',
+			description:
+				'Únete a FDTI en prácticas para trabajar en IA, agentes especializados, aplicaciones, datos y operaciones de proyectos.',
+			eyebrow: 'Selección de personal',
+			h1: 'Prácticas de IA, código y datos en FDTI',
+			hero: 'Incorporamos regularmente a personas en prácticas para trabajar en temas de IA, código y datos directamente vinculados a las operaciones de nuestros clientes y equipos.',
+			formatTitle: 'Formato',
+			formatText: 'Prácticas de 6 meses, con tutorización por parte del equipo de FDTI.',
+			locationTitle: 'Lugar',
+			locationText: 'Modalidad por definir según el marco de las prácticas.',
+			startTitle: 'Incorporación',
+			startText: 'Incorporaciones posibles durante todo el año según los proyectos disponibles.',
+			openRoles: 'Puestos vacantes',
+			offersTitle: 'Nuestras ofertas',
+			offersIntro:
+				'Estas prácticas están dirigidas a perfiles curiosos, estructurados y dispuestos a aprender rápido participando en proyectos desplegados en producción.',
+			startLabel: 'Inicio',
+			statusLabel: 'Estado',
+			cta: 'Ver la oferta y presentar mi candidatura'
+		}
+	} satisfies Record<Lang, Record<string, string>>;
+	$: copy = copies[data.locale];
 	$: title = copy.title;
 	$: description = copy.description;
 	$: canonicalUrl = buildLocalizedUrl('/offres-emploi', data.locale);
@@ -139,7 +167,7 @@
 		<div class="grid lg:grid-cols-2 gap-6">
 			{#each data.jobs as job}
 				<a
-					href="/{data.locale}/offres-emploi/{job.slug}"
+					href={buildLocalizedPath(`/offres-emploi/${job.slug}`, data.locale)}
 					class="job-card group block rounded-3xl bg-white border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden focus:outline-none focus-visible:ring-4 focus-visible:ring-yellow/60"
 				>
 					<div class="p-6 md:p-8 space-y-6">

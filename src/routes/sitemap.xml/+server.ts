@@ -1,6 +1,6 @@
-import { getData, getUseCasesContent, type Lang } from '$lib/data';
+import { getData, getUseCasesContent, SUPPORTED_LOCALES, type Lang } from '$lib/data';
 import { buildLocalizedUrl, type SeoAlternatePaths } from '$lib/functions/seo';
-import { getJobOffers } from '$lib/jobs';
+import { getJobOffers, type JobOffer } from '$lib/jobs';
 
 type SitemapPage = {
 	path: string;
@@ -8,7 +8,7 @@ type SitemapPage = {
 	priority: string;
 };
 
-const locales: Lang[] = ['fr', 'en'];
+type UseCase = Awaited<ReturnType<typeof getUseCasesContent>>['use_case_list'][number];
 
 const staticPages: SitemapPage[] = [
 	{ path: '/', changefreq: 'weekly', priority: '1.00' },
@@ -21,13 +21,8 @@ const staticPages: SitemapPage[] = [
 	{ path: '/condition-utilisation', changefreq: 'monthly', priority: '0.60' }
 ];
 
-const getUseCases = async (locale: Lang) => {
-	const content = await getUseCasesContent(locale);
-	return (content.use_case_list ?? []).filter(
-		(useCase): useCase is typeof useCase & { id: string; slug: string } =>
-			Boolean(useCase.id && useCase.slug)
-	);
-};
+const buildSharedPaths = (path: string): SeoAlternatePaths =>
+	Object.fromEntries(SUPPORTED_LOCALES.map((locale) => [locale, path])) as SeoAlternatePaths;
 
 const buildUrlEntry = (
 	paths: SeoAlternatePaths,
@@ -35,77 +30,104 @@ const buildUrlEntry = (
 	changefreq: string,
 	priority: string
 ) => {
-	const frUrl = buildLocalizedUrl(paths.fr, 'fr');
-	const enUrl = buildLocalizedUrl(paths.en, 'en');
-	return `
-    <url>
-		<loc>${locale === 'fr' ? frUrl : enUrl}</loc>
-		<xhtml:link rel="alternate" hreflang="fr" href="${frUrl}" />
-		<xhtml:link rel="alternate" hreflang="en" href="${enUrl}" />
-		<xhtml:link rel="alternate" hreflang="x-default" href="${frUrl}" />
+	const localizedUrls = Object.fromEntries(
+		SUPPORTED_LOCALES.map((supportedLocale) => [
+			supportedLocale,
+			buildLocalizedUrl(paths[supportedLocale], supportedLocale)
+		])
+	) as Record<Lang, string>;
+
+	return `<url>
+		<loc>${localizedUrls[locale]}</loc>
+${SUPPORTED_LOCALES.map(
+	(locale) =>
+		`\t\t<xhtml:link rel="alternate" hreflang="${locale}" href="${localizedUrls[locale]}" />`
+).join('\n')}
+		<xhtml:link rel="alternate" hreflang="x-default" href="${localizedUrls.fr}" />
 		<changefreq>${changefreq}</changefreq>
-        <priority>${priority}</priority>
-    </url>`;
+		<priority>${priority}</priority>
+	</url>`;
 };
 
 export const prerender = true;
 
 export async function GET() {
-	const urls: string[] = [];
-
-	for (const locale of locales) {
-		for (const page of staticPages) {
-			urls.push(
-				buildUrlEntry({ fr: page.path, en: page.path }, locale, page.changefreq, page.priority)
-			);
+	const urls = new Map<string, string>();
+	const addLocalizedEntries = (paths: SeoAlternatePaths, changefreq: string, priority: string) => {
+		for (const locale of SUPPORTED_LOCALES) {
+			const location = buildLocalizedUrl(paths[locale], locale);
+			urls.set(location, buildUrlEntry(paths, locale, changefreq, priority));
 		}
-	}
-
-	const useCasesByLocale = {
-		fr: await getUseCases('fr'),
-		en: await getUseCases('en')
 	};
-	for (const locale of locales) {
-		for (const useCase of useCasesByLocale[locale]) {
-			const translated = useCasesByLocale[locale === 'fr' ? 'en' : 'fr'].find(
-				(item) => item.id === useCase.id
-			);
-			if (!translated) continue;
-			const paths = {
-				fr: `/realisations/${locale === 'fr' ? useCase.slug : translated.slug}`,
-				en: `/realisations/${locale === 'en' ? useCase.slug : translated.slug}`
-			};
-			urls.push(buildUrlEntry(paths, locale, 'monthly', '0.80'));
-		}
+
+	for (const page of staticPages) {
+		addLocalizedEntries(buildSharedPaths(page.path), page.changefreq, page.priority);
 	}
 
-	for (const locale of locales) {
-		urls.push(
-			buildUrlEntry({ fr: '/offres-emploi', en: '/offres-emploi' }, locale, 'weekly', '0.80')
+	const useCasesByLocale = Object.fromEntries(
+		await Promise.all(
+			SUPPORTED_LOCALES.map(async (locale) => {
+				const content = await getUseCasesContent(locale);
+				const useCases = (content.use_case_list ?? []).filter(
+					(useCase): useCase is UseCase & { id: string; slug: string } =>
+						Boolean(useCase.id && useCase.slug)
+				);
+				return [locale, useCases];
+			})
+		)
+	) as Record<Lang, Array<UseCase & { id: string; slug: string }>>;
+
+	for (const useCase of useCasesByLocale.fr) {
+		const localizedUseCases = SUPPORTED_LOCALES.map((locale) =>
+			useCasesByLocale[locale].find((candidate) => candidate.id === useCase.id)
 		);
-		for (const job of getJobOffers(locale)) {
-			urls.push(
-				buildUrlEntry(
-					{ fr: `/offres-emploi/${job.slug}`, en: `/offres-emploi/${job.slug}` },
-					locale,
-					'weekly',
-					'0.75'
-				)
-			);
-		}
+		if (localizedUseCases.some((candidate) => !candidate)) continue;
+		const paths = Object.fromEntries(
+			SUPPORTED_LOCALES.map((locale, index) => [
+				locale,
+				`/realisations/${localizedUseCases[index]!.slug}`
+			])
+		) as SeoAlternatePaths;
+		addLocalizedEntries(paths, 'monthly', '0.80');
 	}
 
-	for (const locale of locales) {
-		const content = (await getData(locale)).CircularEconomy;
-		for (const dossier of content.dossiers) {
-			const path = `/expertises/economie-circulaire/${dossier.slug}`;
-			urls.push(buildUrlEntry({ fr: path, en: path }, locale, 'monthly', '0.75'));
-		}
+	addLocalizedEntries(buildSharedPaths('/offres-emploi'), 'weekly', '0.80');
+	const jobsByLocale = Object.fromEntries(
+		SUPPORTED_LOCALES.map((locale) => [locale, getJobOffers(locale)])
+	) as Record<Lang, JobOffer[]>;
+	for (const job of jobsByLocale.fr) {
+		const paths = Object.fromEntries(
+			SUPPORTED_LOCALES.map((locale) => {
+				const localizedJob =
+					jobsByLocale[locale].find((candidate) => candidate.id === job.id) ?? job;
+				return [locale, `/offres-emploi/${localizedJob.slug}`];
+			})
+		) as SeoAlternatePaths;
+		addLocalizedEntries(paths, 'weekly', '0.75');
+	}
+
+	const circularEconomyByLocale = Object.fromEntries(
+		await Promise.all(
+			SUPPORTED_LOCALES.map(async (locale) => [locale, (await getData(locale)).CircularEconomy])
+		)
+	) as Record<Lang, Awaited<ReturnType<typeof getData>>['CircularEconomy']>;
+	for (const [index] of circularEconomyByLocale.fr.dossiers.entries()) {
+		const localizedDossiers = SUPPORTED_LOCALES.map(
+			(locale) => circularEconomyByLocale[locale].dossiers[index]
+		);
+		if (localizedDossiers.some((dossier) => !dossier?.slug)) continue;
+		const paths = Object.fromEntries(
+			SUPPORTED_LOCALES.map((locale, localeIndex) => [
+				locale,
+				`/expertises/economie-circulaire/${localizedDossiers[localeIndex]!.slug}`
+			])
+		) as SeoAlternatePaths;
+		addLocalizedEntries(paths, 'monthly', '0.75');
 	}
 
 	const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
-${urls.join('\n')}
+${[...urls.values()].join('\n')}
 </urlset>`;
 
 	return new Response(xml, {

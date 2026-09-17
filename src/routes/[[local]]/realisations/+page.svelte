@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { locale } from 'svelte-i18n';
 	import { getContext } from 'svelte';
 	import { tick } from 'svelte';
 	import type { Writable } from 'svelte/store';
@@ -54,46 +53,69 @@
 		  }
 		| undefined;
 
+	const defaultMetaTitles: Record<Lang, string> = {
+		fr: 'FDTI - Réalisations',
+		en: 'FDTI - Use Cases',
+		es: 'FDTI - Proyectos'
+	};
+	$: currentLocale = (data?.locale as Lang) ?? 'fr';
 	$: content = data?.content || null;
 	$: metaSource = content?.meta_tags?.page_tags?.[0];
 	$: metatags = {
 		url: '/realisations',
 		img: SOCIAL_IMAGE_PATH,
 		description: metaSource?.description || '',
-		title: metaSource?.title || 'FDTI - Use Cases'
+		title: metaSource?.title || defaultMetaTitles[currentLocale]
 	};
 
-	$: currentLocale = (data?.locale as Lang) ?? 'fr';
 	$: canonicalUrl = buildLocalizedUrl('/realisations', currentLocale);
 	$: ogImage = absoluteImageUrl(metatags.img);
 	$: twitterImage = absoluteImageUrl(SOCIAL_IMAGE_PATH);
 
 	let selectedSector: string | null = null;
 	let activeSlug: string | null = null;
-	$: sectorGroups =
-		currentLocale === 'fr'
-			? [
-					{ label: 'Industrie & circularité', categories: ['Aftermarket & recyclage'] },
-					{
-						label: 'Services publics & territoires',
-						categories: ['Justice & secteur public', 'Smart city & énergie']
-					},
-					{
-						label: 'Retail & connaissance client',
-						categories: ['Retail & électronique', 'ONG & engagement']
-					}
-				]
-			: [
-					{ label: 'Industry & circularity', categories: ['Aftermarket & recycling'] },
-					{
-						label: 'Public services & territories',
-						categories: ['Justice & public sector', 'Smart city & energy']
-					},
-					{
-						label: 'Retail & customer insight',
-						categories: ['Retail & consumer electronics', 'NGO & engagement']
-					}
-				];
+	const interfaceLabels: Record<
+		Lang,
+		{ filter: string; all: string; approach: string; impact: string }
+	> = {
+		fr: {
+			filter: 'Filtrer par secteur',
+			all: 'Toutes les réalisations',
+			approach: 'Approche',
+			impact: 'Impact'
+		},
+		en: {
+			filter: 'Filter by sector',
+			all: 'All work',
+			approach: 'Approach',
+			impact: 'Impact'
+		},
+		es: {
+			filter: 'Filtrar por sector',
+			all: 'Todos los proyectos',
+			approach: 'Enfoque',
+			impact: 'Impacto'
+		}
+	};
+	const sectorLabels: Record<Lang, [string, string, string]> = {
+		fr: [
+			'Industrie & circularité',
+			'Services publics & territoires',
+			'Retail & connaissance client'
+		],
+		en: ['Industry & circularity', 'Public services & territories', 'Retail & customer insight'],
+		es: [
+			'Industria y circularidad',
+			'Servicios públicos y territorios',
+			'Retail y conocimiento del cliente'
+		]
+	};
+	$: copy = interfaceLabels[currentLocale];
+	$: sectorGroups = [
+		{ label: sectorLabels[currentLocale][0], caseIds: ['2', '3', '8'] },
+		{ label: sectorLabels[currentLocale][1], caseIds: ['1', '4'] },
+		{ label: sectorLabels[currentLocale][2], caseIds: ['5', '6', '7'] }
+	];
 
 	beforeNavigate(({ to }) => {
 		if (!to?.route.id?.includes('/realisations/')) {
@@ -145,7 +167,7 @@
 		if (!selectedSector) return true;
 		return sectorGroups
 			.find((sector) => sector.label === selectedSector)
-			?.categories.includes(useCase.category || '');
+			?.caseIds.includes(useCase.id || '');
 	});
 </script>
 
@@ -202,12 +224,9 @@
 				<h1 class="text-2xl sm:text-3xl md:text-5xl font-bold">{content.title}</h1>
 			</div>
 
-			<div
-				class="sector-filter"
-				aria-label={$locale === 'fr' ? 'Filtrer par secteur' : 'Filter by sector'}
-			>
+			<div class="sector-filter" aria-label={copy.filter}>
 				<button class:active={selectedSector === null} on:click={() => (selectedSector = null)}>
-					{$locale === 'fr' ? 'Toutes les réalisations' : 'All work'}
+					{copy.all}
 				</button>
 				{#each sectorGroups as sector}
 					<button
@@ -228,7 +247,7 @@
 				{#each filteredUseCases as useCase (useCase.id)}
 					<div>
 						<a
-							href={`/${$locale}/realisations/${useCase.slug}`}
+							href={`/${currentLocale}/realisations/${useCase.slug}`}
 							on:click={(event) => handleCardClick(event, useCase.slug)}
 							class="use-case-card group block bg-white rounded-xl shadow-md hover:shadow-2xl hover:scale-[1.02] hover:border-yellow/50 border-2 border-transparent transition-all duration-300 cursor-pointer relative
 							{$highlightedUseCase === useCase.slug ? 'animate-highlight' : ''}"
@@ -375,7 +394,7 @@
 													<h3
 														class="text-xs font-bold text-darkGrey/70 uppercase tracking-wider mb-1"
 													>
-														Approche
+														{copy.approach}
 													</h3>
 													<p class="text-sm text-darkGrey/80 leading-relaxed">{useCase.approach}</p>
 												</div>
@@ -385,7 +404,7 @@
 													<h3
 														class="text-xs font-bold text-darkGrey/70 uppercase tracking-wider mb-1"
 													>
-														Impact
+														{copy.impact}
 													</h3>
 													<p class="text-sm text-darkGrey/80 leading-relaxed">{useCase.impact}</p>
 												</div>

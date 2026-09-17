@@ -1,6 +1,30 @@
 <script lang="ts">
 	import TechnoItem from './TechnoItem.svelte';
 	import TechnoList from './TechnoList.svelte';
+	import type { Lang } from '$lib/data';
+
+	export let locale: Lang = 'fr';
+	const labels: Record<Lang, { title: string; subtitle: string; documentation: string }> = {
+		fr: {
+			title: 'Technologies',
+			subtitle:
+				'Nous utilisons des outils modernes adaptés à chaque situation rencontrée lors du traitement de vos données',
+			documentation: 'Lien vers la documentation'
+		},
+		en: {
+			title: 'Technologies',
+			subtitle:
+				'We use modern tools suited to every situation encountered when processing your data',
+			documentation: 'Link to the documentation'
+		},
+		es: {
+			title: 'Tecnologías',
+			subtitle:
+				'Utilizamos herramientas modernas adaptadas a cada situación que surge al tratar sus datos',
+			documentation: 'Enlace a la documentación'
+		}
+	};
+	$: copy = labels[locale];
 
 	export let content: {
 		status?: string | null;
@@ -35,12 +59,11 @@
 		<div class="section-heading">
 			<div class="group">
 				<h2 class="text-3xl font-bold text-center md:text-4xl">
-					{content.title || 'Technologies'}
+					{content.title || copy.title}
 				</h2>
 			</div>
 			<h3 class="text-xl font-bold text-center sm:text-2xl md:text-3xl lg:text-4xl">
-				{content.subtitle ||
-					'Nous utilisons des outils modernes adaptés à chaque situation rencontrée lors du traitement de vos données'}
+				{content.subtitle || copy.subtitle}
 			</h3>
 		</div>
 		<article class="technologies-grid">
@@ -61,8 +84,8 @@
 								imgWidth={technology?.img?.width ?? DEFAULT_IMG_WIDTH}
 								imgHeight={technology?.img?.height ?? DEFAULT_IMG_HEIGHT}
 								ariaLabel={technology?.name
-									? `Link to ${technology.name} documentation.`
-									: 'Link to documentation.'}
+									? `${copy.documentation} de ${technology.name}.`
+									: `${copy.documentation}.`}
 								name={technology?.name}
 							/>
 						{/each}

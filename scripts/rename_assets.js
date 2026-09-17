@@ -6,8 +6,9 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const ROOT_DIR = path.resolve(__dirname, '..');
 const CMS_DIR = path.join(ROOT_DIR, 'static/images/cms');
-const EN_LOCALE_PATH = path.join(ROOT_DIR, 'src/locales/en.json');
-const FR_LOCALE_PATH = path.join(ROOT_DIR, 'src/locales/fr.json');
+const LOCALE_PATHS = ['en', 'fr', 'es'].map((locale) =>
+	path.join(ROOT_DIR, `src/locales/${locale}.json`)
+);
 const ASSET_MAP_PATH = path.join(ROOT_DIR, 'scripts/asset-map.json');
 
 const existingMap = fs.existsSync(ASSET_MAP_PATH)
@@ -15,8 +16,8 @@ const existingMap = fs.existsSync(ASSET_MAP_PATH)
 	: {};
 const assetMap = new Map(Object.entries(existingMap));
 
-const enLocale = JSON.parse(fs.readFileSync(EN_LOCALE_PATH, 'utf-8'));
-const frLocale = JSON.parse(fs.readFileSync(FR_LOCALE_PATH, 'utf-8'));
+const locales = LOCALE_PATHS.map((localePath) => JSON.parse(fs.readFileSync(localePath, 'utf-8')));
+const [enLocale] = locales;
 
 const usedNames = new Set(Object.values(existingMap));
 
@@ -140,8 +141,7 @@ function updateLocale(obj) {
 	}
 }
 
-updateLocale(enLocale);
-updateLocale(frLocale);
+locales.forEach(updateLocale);
 
 for (const [original, renamed] of assetMap.entries()) {
 	if (original === renamed) continue;
@@ -153,8 +153,9 @@ for (const [original, renamed] of assetMap.entries()) {
 	}
 }
 
-fs.writeFileSync(EN_LOCALE_PATH, JSON.stringify(enLocale, null, 2));
-fs.writeFileSync(FR_LOCALE_PATH, JSON.stringify(frLocale, null, 2));
+LOCALE_PATHS.forEach((localePath, index) => {
+	fs.writeFileSync(localePath, JSON.stringify(locales[index], null, 2));
+});
 fs.writeFileSync(ASSET_MAP_PATH, JSON.stringify(Object.fromEntries(assetMap), null, 2));
 
 console.log(`Renamed ${assetMap.size} assets and updated locale files.`);

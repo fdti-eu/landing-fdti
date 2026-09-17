@@ -1,5 +1,7 @@
 <script lang="ts">
-	export let locale: string = 'fr';
+	import type { Lang } from '$lib/data';
+
+	export let locale: Lang = 'fr';
 
 	$: content =
 		locale === 'fr'
@@ -23,26 +25,47 @@
 					],
 					all: 'Découvrir toutes nos expertises'
 				}
-			: {
-					label: 'Industry experience',
-					items: [
-						{
-							title: 'Circular economy',
-							text: 'Take-back, collection, batteries, end-of-life vehicles, EPR and multi-party networks.',
-							href: `/${locale}/expertises/economie-circulaire`,
-							link: 'Explore this expertise'
-						},
-						{
-							title: 'Document analysis',
-							text: 'Read, structure and route sensitive files without separating AI from the business process.'
-						},
-						{
-							title: 'Multi-party operations',
-							text: 'Portals, permissions, statuses and APIs that keep internal teams and partners on the same workflow.'
-						}
-					],
-					all: 'Explore all our expertise'
-				};
+			: locale === 'es'
+				? {
+						label: 'Experiencia sectorial',
+						items: [
+							{
+								title: 'Economía circular',
+								text: 'Recuperación, recogida, baterías, VFU, RAP y coordinación de redes con múltiples actores.',
+								href: `/${locale}/expertises/economie-circulaire`,
+								link: 'Explorar esta especialidad'
+							},
+							{
+								title: 'Análisis documental',
+								text: 'Leer, estructurar y hacer circular documentos sensibles sin separar la IA del proceso empresarial.'
+							},
+							{
+								title: 'Operaciones con múltiples actores',
+								text: 'Portales, permisos, estados y API para que los equipos internos y los socios trabajen sobre el mismo proceso.'
+							}
+						],
+						all: 'Descubrir todas nuestras especialidades'
+					}
+				: {
+						label: 'Industry experience',
+						items: [
+							{
+								title: 'Circular economy',
+								text: 'Take-back, collection, batteries, end-of-life vehicles, EPR and multi-party networks.',
+								href: `/${locale}/expertises/economie-circulaire`,
+								link: 'Explore this expertise'
+							},
+							{
+								title: 'Document analysis',
+								text: 'Read, structure and route sensitive files without separating AI from the business process.'
+							},
+							{
+								title: 'Multi-party operations',
+								text: 'Portals, permissions, statuses and APIs that keep internal teams and partners on the same workflow.'
+							}
+						],
+						all: 'Explore all our expertise'
+					};
 </script>
 
 <section class="expertise-preview-section">

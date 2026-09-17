@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { tick } from 'svelte';
 	import { goto } from '$app/navigation';
+	import type { Lang } from '$lib/data';
 
 	export let title: string | null | undefined;
 	export let subtitle: string | null | undefined;
@@ -17,7 +18,12 @@
 				tags?: string[];
 		  }[]
 		| null;
-	export let locale: string = 'fr';
+	export let locale: Lang = 'fr';
+	const allCasesLabels: Record<Lang, string> = {
+		fr: 'Voir tous les cas d’usage',
+		en: 'See all use cases',
+		es: 'Ver todos los casos de uso'
+	};
 
 	let activeSlug: string | null = null;
 
@@ -128,7 +134,7 @@
 
 		<div class="flex justify-center pt-4">
 			<a href={`/${locale}/realisations`} class="cases-all-link">
-				{locale === 'fr' ? 'Voir tous les cas d’usage' : 'See all use cases'}
+				{allCasesLabels[locale]}
 			</a>
 		</div>
 	</section>

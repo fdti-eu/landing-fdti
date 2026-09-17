@@ -1,20 +1,28 @@
 import { redirect } from '@sveltejs/kit';
-import { getUseCasesContent, type Lang } from '$lib/data';
+import { getUseCasesContent, SUPPORTED_LOCALES, type Lang } from '$lib/data';
+import { buildLocalizedPath } from '$lib/functions/seo';
 import type { PageLoad } from './$types';
 
 export const prerender = true;
 
 export async function entries() {
 	const entries: { local: Lang; slug: string }[] = [];
-	for (const local of ['fr', 'en'] as Lang[]) {
-		const content = await getUseCasesContent(local);
+	const slugs = new Set<string>();
+
+	for (const sourceLocale of SUPPORTED_LOCALES) {
+		const content = await getUseCasesContent(sourceLocale);
 		for (const useCase of content.use_case_list ?? []) {
-			if (useCase.slug) entries.push({ local, slug: useCase.slug });
+			if (useCase.slug) slugs.add(useCase.slug);
 		}
+	}
+
+	for (const local of SUPPORTED_LOCALES) {
+		for (const slug of slugs) entries.push({ local, slug });
 	}
 	return entries;
 }
 
 export const load: PageLoad = ({ params }) => {
-	throw redirect(308, `/${params.local || 'fr'}/realisations/${params.slug}`);
+	const locale = (params.local as Lang) || 'fr';
+	throw redirect(308, buildLocalizedPath(`/realisations/${params.slug}`, locale));
 };

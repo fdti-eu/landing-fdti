@@ -1,6 +1,23 @@
 <script lang="ts">
 	import LinkedinIcon from '$lib/components/LinkedinIcon.svelte';
 	import { locale } from 'svelte-i18n';
+	import { isSupportedLocale, type Lang } from '$lib/data';
+
+	const labels: Record<Lang, { jobs: string; privacy: string; terms: string }> = {
+		fr: {
+			jobs: 'Offres',
+			privacy: 'Politique de confidentialité',
+			terms: 'Conditions d’utilisation'
+		},
+		en: { jobs: 'Jobs', privacy: 'Privacy', terms: 'Terms of use' },
+		es: {
+			jobs: 'Empleo',
+			privacy: 'Política de privacidad',
+			terms: 'Condiciones de uso'
+		}
+	};
+	$: currentLocale = isSupportedLocale($locale) ? $locale : 'fr';
+	$: copy = labels[currentLocale];
 </script>
 
 <!-- footer -->
@@ -12,19 +29,19 @@
 			</div>
 			<div class="flex items-center gap-4 flex-wrap justify-center h-full">
 				<a
-					href="/{$locale}/offres-emploi"
+					href="/{currentLocale}/offres-emploi"
 					class="font-medium leading-none text-white hover:text-yellow transition-all ease-in-out duration-300"
-					>{$locale === 'fr' ? 'Offres' : 'Jobs'}</a
+					>{copy.jobs}</a
 				>
 				<a
-					href="/{$locale}/confidentialite"
+					href="/{currentLocale}/confidentialite"
 					class="font-medium leading-none text-white hover:text-yellow transition-all ease-in-out duration-300"
-					>{$locale === 'fr' ? 'Politique de confidentialité' : 'Privacy'}</a
+					>{copy.privacy}</a
 				>
 				<a
-					href="/{$locale}/condition-utilisation"
+					href="/{currentLocale}/condition-utilisation"
 					class="font-medium leading-none text-white hover:text-yellow transition-all ease-in-out duration-300 sm:pl-2"
-					>{$locale === 'fr' ? 'Conditions d’utilisation' : 'Terms of use'}</a
+					>{copy.terms}</a
 				>
 				<LinkedinIcon />
 			</div>
