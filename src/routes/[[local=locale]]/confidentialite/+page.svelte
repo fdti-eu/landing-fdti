@@ -45,6 +45,13 @@
 				'Utilizamos Umami, una solución open source autoalojada en nuestros servidores de OVH en Francia, para medir la audiencia de este sitio y mejorar su rendimiento. Este seguimiento no utiliza cookies, respeta la señal Do Not Track y no almacena direcciones IP sin anonimizar.',
 				'Los datos recopilados se limitan a las páginas consultadas, la procedencia, las características técnicas del navegador y del dispositivo, el rendimiento Web y las interacciones con los enlaces para concertar una cita. No se transmiten a terceros. FDTI los conserva sin una fecha de eliminación automática para estudiar las tendencias históricas del sitio.'
 			]
+		},
+		de: {
+			title: 'Reichweitenmessung',
+			paragraphs: [
+				'Wir verwenden Umami, eine quelloffene Lösung, die auf unseren OVH-Servern in Frankreich selbst gehostet wird, um die Nutzung dieser Website zu messen und ihre Leistung zu verbessern. Diese Messung verwendet keine Cookies, berücksichtigt das Do-Not-Track-Signal und speichert keine ungekürzten IP-Adressen.',
+				'Die erhobenen Daten beschränken sich auf aufgerufene Seiten, Herkunft, technische Merkmale von Browser und Gerät, Web-Performance sowie Interaktionen mit Links zur Terminvereinbarung. Sie werden nicht an Dritte weitergegeben. FDTI bewahrt sie ohne automatische Löschfrist auf, um langfristige Entwicklungen der Website auszuwerten.'
+			]
 		}
 	};
 	$: audience = audienceCopy[currentLocale];

@@ -11,7 +11,8 @@
 	const panelLabels: Record<Lang, string> = {
 		fr: 'Technologies et outils utilisés :',
 		en: 'Technologies and tools used:',
-		es: 'Tecnologías y herramientas utilizadas:'
+		es: 'Tecnologías y herramientas utilizadas:',
+		de: 'Eingesetzte Technologien und Werkzeuge:'
 	};
 	$: currentLocale = isSupportedLocale($locale) ? $locale : 'fr';
 </script>

@@ -70,24 +70,45 @@
 			batteries: 'Baterías de segunda vida',
 			recycling: 'Operaciones de reciclaje',
 			menu: 'Menú de navegación'
+		},
+		de: {
+			home: 'Startseite',
+			expertise: 'Kompetenzen',
+			allExpertise: 'Alle Kompetenzen',
+			circularEconomy: 'Kreislaufwirtschaft',
+			work: 'Referenzen',
+			allWork: 'Alle Referenzen',
+			courtAI: 'KI für Handelsgerichte',
+			vehicles: 'Altfahrzeuge',
+			batteries: 'Second-Life-Batterien',
+			recycling: 'Batterierecycling',
+			menu: 'Navigationsmenü'
 		}
 	};
 	const workSlugs: Record<'1' | '2' | '3' | '8', Record<Lang, string>> = {
 		'1': {
 			fr: 'automatisation-greffes',
 			en: 'automatisation-greffes',
-			es: 'automatizacion-secretarias-judiciales'
+			es: 'automatizacion-secretarias-judiciales',
+			de: 'automatisierung-handelsgerichte'
 		},
 		'2': {
 			fr: 'plateforme-economie-circulaire',
 			en: 'end-of-life-vehicle-platform',
-			es: 'plataforma-economia-circular'
+			es: 'plataforma-economia-circular',
+			de: 'plattform-fahrzeugruecknahme'
 		},
-		'3': { fr: 'marketplace-batteries', en: 'marketplace-batteries', es: 'marketplace-baterias' },
+		'3': {
+			fr: 'marketplace-batteries',
+			en: 'marketplace-batteries',
+			es: 'marketplace-baterias',
+			de: 'marktplatz-fuer-second-life-batterien'
+		},
 		'8': {
 			fr: 'plateforme-operations-recyclage-batteries',
 			en: 'battery-recycling-operations-platform',
-			es: 'plataforma-operaciones-reciclaje-baterias'
+			es: 'plataforma-operaciones-reciclaje-baterias',
+			de: 'betriebsplattform-batterierecycling'
 		}
 	};
 	$: currentLocale = isSupportedLocale($locale) ? $locale : 'fr';

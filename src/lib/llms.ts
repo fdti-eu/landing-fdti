@@ -1,6 +1,7 @@
 import enLocale from '$locales/en.json';
 import frLocale from '$locales/fr.json';
 import esLocale from '$locales/es.json';
+import deLocale from '$locales/de.json';
 import type { Lang, LocaleData } from '$lib/data';
 import { buildLocalizedUrl } from '$lib/functions/seo';
 
@@ -107,6 +108,7 @@ export function buildLlmsText() {
 		'Content generated from the public locale JSON files used by fdti.eu.',
 		buildLanguageSection('fr', frLocale),
 		buildLanguageSection('en', enLocale),
-		buildLanguageSection('es', esLocale)
+		buildLanguageSection('es', esLocale),
+		buildLanguageSection('de', deLocale)
 	].join('\n');
 }

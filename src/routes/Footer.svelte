@@ -4,17 +4,30 @@
 	import { isSupportedLocale, type Lang } from '$lib/data';
 	import { buildLocalizedPath } from '$lib/functions/seo';
 
-	const labels: Record<Lang, { jobs: string; privacy: string; terms: string }> = {
+	const labels: Record<Lang, { jobs: string; privacy: string; terms: string; linkedin: string }> = {
 		fr: {
 			jobs: 'Offres',
 			privacy: 'Politique de confidentialité',
-			terms: 'Conditions d’utilisation'
+			terms: 'Conditions d’utilisation',
+			linkedin: 'Page LinkedIn de FDTI'
 		},
-		en: { jobs: 'Jobs', privacy: 'Privacy', terms: 'Terms of use' },
+		en: {
+			jobs: 'Jobs',
+			privacy: 'Privacy',
+			terms: 'Terms of use',
+			linkedin: 'FDTI LinkedIn page'
+		},
 		es: {
 			jobs: 'Empleo',
 			privacy: 'Política de privacidad',
-			terms: 'Condiciones de uso'
+			terms: 'Condiciones de uso',
+			linkedin: 'Página de LinkedIn de FDTI'
+		},
+		de: {
+			jobs: 'Karriere',
+			privacy: 'Datenschutzerklärung',
+			terms: 'Nutzungsbedingungen',
+			linkedin: 'LinkedIn-Seite von FDTI'
 		}
 	};
 	$: currentLocale = isSupportedLocale($locale) ? $locale : 'fr';
@@ -44,7 +57,7 @@
 					class="font-medium leading-none text-white hover:text-yellow transition-all ease-in-out duration-300 sm:pl-2"
 					>{copy.terms}</a
 				>
-				<LinkedinIcon />
+				<LinkedinIcon ariaLabel={copy.linkedin} />
 			</div>
 		</div>
 	</div>

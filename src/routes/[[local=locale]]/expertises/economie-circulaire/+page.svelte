@@ -19,13 +19,20 @@
 		'2': {
 			fr: 'plateforme-economie-circulaire',
 			en: 'end-of-life-vehicle-platform',
-			es: 'plataforma-economia-circular'
+			es: 'plataforma-economia-circular',
+			de: 'plattform-fahrzeugruecknahme'
 		},
-		'3': { fr: 'marketplace-batteries', en: 'marketplace-batteries', es: 'marketplace-baterias' },
+		'3': {
+			fr: 'marketplace-batteries',
+			en: 'marketplace-batteries',
+			es: 'marketplace-baterias',
+			de: 'marktplatz-fuer-second-life-batterien'
+		},
 		'8': {
 			fr: 'plateforme-operations-recyclage-batteries',
 			en: 'battery-recycling-operations-platform',
-			es: 'plataforma-operaciones-reciclaje-baterias'
+			es: 'plataforma-operaciones-reciclaje-baterias',
+			de: 'betriebsplattform-batterierecycling'
 		}
 	};
 	const commonCopy: Record<
@@ -58,6 +65,13 @@
 			heroTitle: 'Hacer circular los materiales sin perder información por el camino.',
 			multiCountry: 'Despliegue multinacional',
 			marketplace: 'Marketplace de baterías'
+		},
+		de: {
+			home: 'Startseite',
+			expertise: 'Kompetenzen',
+			heroTitle: 'Materialien im Kreislauf halten, ohne Informationen zu verlieren.',
+			multiCountry: 'Länderübergreifende Einführung',
+			marketplace: 'Batteriemarktplatz'
 		}
 	};
 	$: common = commonCopy[data.locale];
@@ -115,31 +129,58 @@
 							'Los códigos de residuos, diagnósticos, BSD, firmas, propuestas de precios y cambios de estado permanecen vinculados al expediente empresarial. Las API y las notificaciones permiten que los socios conserven sus propias herramientas sin crear otra cadena de introducción manual.',
 						faqLabel: 'Preguntas frecuentes'
 					}
-				: {
-						journeyLabel: 'Business flows covered',
-						multiCountryTitle: 'Multi-country, multisite journeys and routing',
-						multiCountryText:
-							'Country rules, precise location, the closest center by road and drop-off method guide each B2B or B2C journey.',
-						multiCountryResult: 'Country rules, routing and pricing combined in one journey.',
-						marketplaceTitle: 'Build and publish battery lots',
-						marketplaceText:
-							'Eligible batteries are grouped with a lot code, currency, photos and technical documents.',
-						marketplaceResult:
-							'The manager selects authorized partners and configures visibility rules.',
-						proofLabel: 'Work',
-						vehicleLink: 'See the vehicle platform',
-						batteryLink: 'See the battery platform',
-						recyclerLabel: 'Recycling operations',
-						recyclerTitle: 'Manage battery declarations, collections and treatment.',
-						recyclerText:
-							'A platform to qualify declarations, prepare packing lists, manage Trackdéchets records and follow reception and treatment.',
-						recyclerLink: 'See the recycler platform',
-						integrationLabel: 'Documents and systems',
-						integrationTitle: 'Information must follow the operation.',
-						integrationText:
-							'Waste codes, diagnostics, tracking forms, signatures, price proposals and status changes remain attached to the business record. APIs and notifications let partners keep their own tools without creating another re-entry chain.',
-						faqLabel: 'Frequently asked questions'
-					};
+				: data.locale === 'de'
+					? {
+							journeyLabel: 'Abgedeckte Geschäftsabläufe',
+							multiCountryTitle: 'Länder- und standortübergreifende Abläufe mit Routing',
+							multiCountryText:
+								'Länderspezifische Regeln, der genaue Standort, das auf der Straße nächstgelegene Zentrum und die Art der Abgabe steuern den jeweiligen B2B- oder B2C-Ablauf.',
+							multiCountryResult:
+								'Länderregeln, Routing und Preisgestaltung in einem Ablauf vereint.',
+							marketplaceTitle: 'Batterielose zusammenstellen und veröffentlichen',
+							marketplaceText:
+								'Geeignete Batterien werden mit Loscode, Währung, Fotos und technischen Dokumenten gebündelt.',
+							marketplaceResult:
+								'Die verantwortliche Person wählt zugelassene Partner und legt die Sichtbarkeitsregeln des Loses fest.',
+							proofLabel: 'Referenzen',
+							vehicleLink: 'Altfahrzeugplattform ansehen',
+							batteryLink: 'Batterieplattform ansehen',
+							recyclerLabel: 'Recyclingprozesse',
+							recyclerTitle: 'Batteriemeldungen, Abholungen und Behandlungen steuern.',
+							recyclerText:
+								'Eine Plattform zur Qualifizierung von Meldungen, Vorbereitung von Packlisten, Verwaltung der Trackdéchets-Begleitscheine sowie Nachverfolgung von Eingang und Behandlung.',
+							recyclerLink: 'Recyclingplattform ansehen',
+							integrationLabel: 'Dokumente und Systeme',
+							integrationTitle: 'Informationen müssen den Vorgang begleiten.',
+							integrationText:
+								'Abfallschlüssel, Diagnosen, Begleitscheine, Unterschriften, Preisvorschläge und Statusänderungen bleiben mit dem Geschäftsvorgang verknüpft. APIs und Benachrichtigungen ermöglichen Partnern, ihre eigenen Werkzeuge weiterzuverwenden, ohne eine neue manuelle Erfassungskette aufzubauen.',
+							faqLabel: 'Häufig gestellte Fragen'
+						}
+					: {
+							journeyLabel: 'Business flows covered',
+							multiCountryTitle: 'Multi-country, multisite journeys and routing',
+							multiCountryText:
+								'Country rules, precise location, the closest center by road and drop-off method guide each B2B or B2C journey.',
+							multiCountryResult: 'Country rules, routing and pricing combined in one journey.',
+							marketplaceTitle: 'Build and publish battery lots',
+							marketplaceText:
+								'Eligible batteries are grouped with a lot code, currency, photos and technical documents.',
+							marketplaceResult:
+								'The manager selects authorized partners and configures visibility rules.',
+							proofLabel: 'Work',
+							vehicleLink: 'See the vehicle platform',
+							batteryLink: 'See the battery platform',
+							recyclerLabel: 'Recycling operations',
+							recyclerTitle: 'Manage battery declarations, collections and treatment.',
+							recyclerText:
+								'A platform to qualify declarations, prepare packing lists, manage Trackdéchets records and follow reception and treatment.',
+							recyclerLink: 'See the recycler platform',
+							integrationLabel: 'Documents and systems',
+							integrationTitle: 'Information must follow the operation.',
+							integrationText:
+								'Waste codes, diagnostics, tracking forms, signatures, price proposals and status changes remain attached to the business record. APIs and notifications let partners keep their own tools without creating another re-entry chain.',
+							faqLabel: 'Frequently asked questions'
+						};
 	$: workflowItems = [
 		...content.dossiers[0].sections.map((section) => ({
 			...section,
@@ -172,7 +213,9 @@
 			? 'FDTI - IA, code et données'
 			: data.locale === 'es'
 				? 'FDTI - IA, código y datos'
-				: 'FDTI - AI, code and data';
+				: data.locale === 'de'
+					? 'FDTI - KI, Code und Daten'
+					: 'FDTI - AI, code and data';
 </script>
 
 <MetaTags

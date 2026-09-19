@@ -8,6 +8,7 @@ const LOCALE_STORAGE_KEY = 'fdti_locale';
 register('en', () => import('$locales/en.json'));
 register('fr', () => import('$locales/fr.json'));
 register('es', () => import('$locales/es.json'));
+register('de', () => import('$locales/de.json'));
 
 const storedLocale = browser ? localStorage.getItem(LOCALE_STORAGE_KEY) : null;
 const browserLocale = browser ? window.navigator.language?.slice(0, 2).toLowerCase() : null;

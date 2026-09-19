@@ -554,6 +554,173 @@ const developerEs = {
 	]
 } satisfies Omit<JobOffer, 'tallyEmbedUrl' | 'tallyPublicUrl'>;
 
+const consultantDe = {
+	...consultantFr,
+	slug: 'praktikum-ki-berater-geschaeftsprozesse-projektsteuerung',
+	title: 'Praktikum KI-Beratung für Geschäftsprozesse und Projektsteuerung',
+	shortTitle: 'KI-Beratung für Geschäftsprozesse',
+	contractType: 'Praktikum',
+	location: 'Arbeitsmodalitäten nach Absprache',
+	experience: '0-2 Jahre',
+	startLabel: 'Einstieg ganzjährig möglich',
+	status: 'Stelle offen',
+	summary:
+		'Ein vielseitiges Praktikum, in dem Sie Projekte strukturieren, Kundengespräche vorbereiten und KI für Koordination, Spezifikation und Projektsteuerung einsetzen.',
+	intro: [
+		'FDTI ist ein Studio für KI, Softwareentwicklung und Daten. Wir entwickeln maßgeschneiderte digitale Lösungen: Fachanwendungen, APIs, spezialisierte KI-Agenten, Prozessautomatisierungen, Datenplattformen und interne Werkzeuge.',
+		'Unsere Projekte verbinden Technologie unmittelbar mit dem operativen Geschäft: Dokumente verarbeiten, Systeme verknüpfen, Daten strukturieren, Workflows automatisieren, Teams bei besseren Entscheidungen unterstützen und KI in tatsächlich genutzte Werkzeuge integrieren.',
+		'Diese Stelle richtet sich an ein vielseitiges Profil, das Geschäftsprozesse versteht, Informationen strukturiert, Kundengespräche vorbereitet, Entscheidungen nachverfolgt und KI nutzt, um Koordination, Spezifikation und Projektsteuerung zu beschleunigen.'
+	],
+	sections: [
+		{
+			title: 'Ihre Aufgaben',
+			items: [
+				'Operative Begleitung von Projekten in den Bereichen KI, Daten und Fachanwendungen.',
+				'Vorbereitung von Kundenterminen: Kontext, Agenda, offene Fragen und Gesprächsunterlagen.',
+				'Funktionale oder technische Spezifikationen gemeinsam mit dem Team prüfen, strukturieren und verbessern.',
+				'Besprechungsprotokolle, Kundenaustausch und Projektentscheidungen in umsetzbare Tickets überführen.',
+				'Release Notes, Projektsteckbriefe, Zusammenfassungen und Unterlagen zur Nachverfolgung erstellen.',
+				'KI-Agenten einsetzen, um Repositories zu analysieren, Änderungen zusammenzufassen, tägliche Reviews vorzubereiten oder kritische Punkte zu erkennen.',
+				'Kundenfeedback nachverfolgen, Anfragen qualifizieren und das Team bei der Priorisierung unterstützen.',
+				'Sich schrittweise in die fachlichen Regeln der Projekte einarbeiten und so Kunden, Produkt und technisches Team verbinden.',
+				'Interne FDTI-Methoden verbessern: Vorlagen, Notion-Workflows, Automatisierungen und Projektdokumentation.'
+			]
+		}
+	],
+	requiredSkills: [
+		'Sehr gute Fähigkeiten in der Analyse, Zusammenfassung und Strukturierung von Informationen.',
+		'Klare und präzise schriftliche Kommunikation.',
+		'Fließende Französischkenntnisse in Wort und Schrift für die Zusammenarbeit mit dem Team und den Projektbeteiligten.',
+		'Fähigkeit, professionelle Gespräche mit Kunden oder Projektteams zu führen.',
+		'Selbstständige, sorgfältige und gut organisierte Arbeitsweise.',
+		'Ausgeprägtes Interesse an KI für geschäftliche und operative Fragestellungen.',
+		'Fähigkeit, sich schnell in eine Branche, ein Produkt oder einen Kundenkontext einzuarbeiten.',
+		'Sicherer Umgang mit digitalen Werkzeugen und Fähigkeit, die eigene Arbeit nachvollziehbar zu dokumentieren.',
+		'Gute berufliche Englischkenntnisse sind je nach Projekt von Vorteil.'
+	],
+	niceToHaveSkills: [
+		'Erste Erfahrung im Projektmanagement, in der Beratung, im Produktmanagement, in der Business Analysis oder in der Projektassistenz.',
+		'Grundverständnis von APIs, Datenbanken, Webanwendungen oder Softwarearchitekturen.',
+		'Erfahrung mit Notion, Linear, Jira, GitHub, Google Workspace oder Projektmanagement-Werkzeugen.',
+		'Fortgeschrittene Nutzung von KI-Werkzeugen zum Zusammenfassen, Analysieren, Strukturieren oder Erstellen von Dokumenten.',
+		'Grundkenntnisse in SQL, Datenverarbeitung, Automatisierung oder No-Code.',
+		'Interesse an industriellen, regulatorischen, dokumentenbezogenen oder komplexen fachlichen Themen.'
+	],
+	environmentIntro:
+		'Sie arbeiten mit Entwicklerinnen und Entwicklern, Projektverantwortlichen und Fachansprechpartnern an konkreten Aufgaben.',
+	environment: [
+		'Spezialisierte KI-Agenten.',
+		'Fachanwendungen und Backoffices.',
+		'Interne Werkzeuge.',
+		'KI-gestützte Workflows.',
+		'Funktionale und technische Spezifikationen.',
+		'Projektdokumentation.',
+		'Kundenbetreuung.',
+		'Analyse von Geschäftsprozessen.',
+		'Automatisierungen mit Notion, GitHub, Google Workspace und internen Werkzeugen.'
+	],
+	conditions: [
+		'Sechsmonatiges Praktikum.',
+		'Einstieg je nach Studienplan und laufenden Projekten ganzjährig möglich.',
+		'Arbeitsmodalitäten werden passend zum Praktikumsrahmen, zu den Anforderungen der Hochschule und zu den laufenden Projekten festgelegt.',
+		'Vergütung nach dem geltenden französischen Rechtsrahmen für Praktika, abhängig von Profil und Kontext.',
+		'Betreuung durch das FDTI-Team.',
+		'Möglichkeit einer weiteren Zusammenarbeit, abhängig von Niveau, Kontext und verfügbaren Möglichkeiten.'
+	],
+	process: [
+		{
+			title: 'Erstes Gespräch',
+			items: [
+				'Wir lernen uns kennen, besprechen Ihre Erwartungen und prüfen, ob FDTI und die Stelle zu Ihnen passen.'
+			]
+		},
+		{
+			title: 'Gespräch zu einem Praxisfall',
+			items: ['Ein auf die Stelle abgestimmtes Gespräch über einen strukturierten operativen Fall.']
+		}
+	]
+} satisfies Omit<JobOffer, 'tallyEmbedUrl' | 'tallyPublicUrl'>;
+
+const developerDe = {
+	...developerFr,
+	slug: 'praktikum-ki-entwickler-fachagenten-anwendungen-daten',
+	title: 'Praktikum KI-Entwicklung - Fachagenten, Anwendungen und Daten',
+	shortTitle: 'KI-Entwicklung und Fachagenten',
+	contractType: 'Praktikum',
+	location: 'Arbeitsmodalitäten nach Absprache',
+	experience: '0-2 Jahre',
+	startLabel: 'Einstieg ganzjährig möglich',
+	status: 'Stelle offen',
+	summary:
+		'Ein technisches Praktikum zur Entwicklung spezialisierter KI-Agenten, Anwendungen, APIs und Datenworkflows für produktiv eingesetzte Projekte.',
+	intro: [
+		'FDTI ist ein Studio für KI, Softwareentwicklung und Daten. Wir entwickeln maßgeschneiderte digitale Lösungen: Fachanwendungen, APIs, spezialisierte KI-Agenten, Prozessautomatisierungen, Datenplattformen und interne Werkzeuge.',
+		'Unsere Projekte verbinden Technologie unmittelbar mit dem operativen Geschäft: Dokumente verarbeiten, Systeme verknüpfen, Daten strukturieren, Workflows automatisieren, Teams bei besseren Entscheidungen unterstützen und KI in tatsächlich genutzte Werkzeuge integrieren.',
+		'Zur Unterstützung unseres Wachstums suchen wir für ein sechsmonatiges Praktikum eine Person im Bereich KI- und Softwareentwicklung.'
+	],
+	sections: [
+		{
+			title: 'Ihre Aufgaben',
+			items: [
+				'An spezialisierten KI-Agenten mitarbeiten, die an Daten, APIs oder bestehende Werkzeuge angebunden sind.',
+				'Fachanwendungen, Backoffices, Dashboards oder interne Portale entwickeln.',
+				'Sichere APIs entwerfen und integrieren, um Datenbanken, SaaS-Lösungen, Dateien und interne Werkzeuge zu verbinden.',
+				'Unterstützte Workflows prototypisch umsetzen: Informationsextraktion, Zusammenfassung, Qualifizierung, Routing, Reporting und Warnmeldungen.',
+				'An Forschungs- und Entwicklungskomponenten rund um LLMs, Agenten, Harnesses, RAG, OCR, NLP, Audit und Monitoring arbeiten.',
+				'Zu internen FDTI-Werkzeugen beitragen, die Auslieferung, Projektsteuerung und Codequalität verbessern.',
+				'An Tests, Deployment, Monitoring und technischer Dokumentation mitwirken.',
+				'An Kundenprojekten arbeiten, die produktiv eingesetzt werden.'
+			]
+		}
+	],
+	requiredSkills: [
+		'Gute Programmierkenntnisse, belegt durch vorzeigbare Projekte.',
+		'Fähigkeit, bestehenden Code zu lesen und zu verstehen.',
+		'Verständnis von APIs, Datenbanken und modernen Webarchitekturen.',
+		'Regelmäßige Arbeit mit Git.',
+		'Fähigkeit, mit regelmäßiger Betreuung selbstständig zu arbeiten.',
+		'Klare schriftliche Kommunikation: nachvollziehbar erklären, was umgesetzt wurde, wo Hindernisse liegen und welche technischen Entscheidungen getroffen wurden.',
+		'Fließende Französischkenntnisse in Wort und Schrift für die Zusammenarbeit mit dem Team und den Projektbeteiligten.',
+		'Ausgeprägtes Interesse an KI für fachliche Probleme, nicht nur an Werkzeugen zur Textgenerierung.'
+	],
+	niceToHaveSkills: [
+		'Erfahrung mit TypeScript, SvelteKit, React oder Node.js.',
+		'Erfahrung mit Python, FastAPI oder Automatisierungsskripten.',
+		'Grundkenntnisse in SQL, PostgreSQL, SQLite, DuckDB oder Datenpipelines.',
+		'Erste Erfahrung mit LLMs, RAG, Agenten, OCR, NLP oder APIs von OpenAI/HuggingFace.',
+		'Kenntnisse in Docker, Linux, Cloud oder Deployment.',
+		'Erfahrung mit Notion, GitHub, Google Workspace oder internen Teamwerkzeugen.',
+		'Gute berufliche Englischkenntnisse.'
+	],
+	environmentIntro: 'Je nach Projekt arbeiten Sie unter anderem mit:',
+	environment: [
+		'TypeScript, SvelteKit, React, Node.js.',
+		'Python, FastAPI.',
+		'Rust, Axum.',
+		'PostgreSQL, SQLite, DuckDB, BigQuery, Snowflake.',
+		'REST-APIs, GraphQL, Keycloak, SaaS-Integrationen.',
+		'OpenAI, HuggingFace, LLMs, RAG, Agenten, OCR, NLP.',
+		'Docker, Cloud, private Infrastruktur, Monitoring.',
+		'Notion, GitHub, Google Workspace und interne FDTI-Werkzeuge.'
+	],
+	conditions: consultantDe.conditions,
+	process: [
+		{
+			title: 'Erstes Gespräch',
+			items: [
+				'Ein Videogespräch über Ihren bisherigen Weg, Ihre Verfügbarkeit, Ihr technisches Niveau und Ihre Erwartungen.'
+			]
+		},
+		{
+			title: 'Technisches Live-Interview',
+			items: [
+				'Ein technisches Videogespräch mit Bildschirmfreigabe. Im Mittelpunkt steht, wie Sie analysieren, recherchieren, KI einsetzen, Fehler beheben und kommunizieren.',
+				'Richtwert für die Dauer: 60 bis 90 Minuten.'
+			]
+		}
+	]
+} satisfies Omit<JobOffer, 'tallyEmbedUrl' | 'tallyPublicUrl'>;
+
 const withTallyUrls = (
 	locale: Lang,
 	job: Omit<JobOffer, 'tallyEmbedUrl' | 'tallyPublicUrl'>
@@ -565,7 +732,8 @@ const withTallyUrls = (
 export const jobOffersByLocale: Record<Lang, JobOffer[]> = {
 	fr: [consultantFr, developerFr].map((job) => withTallyUrls('fr', job)),
 	en: [consultantEn, developerEn].map((job) => withTallyUrls('en', job)),
-	es: [consultantEs, developerEs].map((job) => withTallyUrls('es', job))
+	es: [consultantEs, developerEs].map((job) => withTallyUrls('es', job)),
+	de: [consultantDe, developerDe].map((job) => withTallyUrls('de', job))
 };
 
 export const jobOffers = jobOffersByLocale.fr;

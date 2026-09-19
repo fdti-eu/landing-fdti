@@ -1,0 +1,1306 @@
+{
+	"CircularEconomy": {
+		"metaTitle": "Geschäftsanwendungen für die Kreislaufwirtschaft | FDTI",
+		"metaDescription": "FDTI entwickelt maßgeschneiderte Software für Fahrzeugrücknahme, Batteriesammlung, Dokumentenprozesse und den Datenaustausch mit Recyclingpartnern.",
+		"label": "Kreislaufwirtschaft",
+		"overview": "Überblick",
+		"topicNavigation": "Navigation zur Kreislaufwirtschaft",
+		"backToContents": "Zurück zum Inhalt",
+		"readGuide": "Lesen Sie den Leitfaden",
+		"title": "Von der Fahrzeugidentifizierung bis zur Abfallsammlung und -behandlung.",
+		"intro": "Wir entwickeln die Anwendungen, mit denen Hersteller und Recycler Rücknahmevorgänge verwalten: ein Fahrzeug identifizieren, eine Batterie bewerten, eine Abholung vorbereiten, einen Preis aushandeln, Dokumente erstellen und verfolgen.",
+		"positioning": "Maßgeschneiderte Software für Fachteams, ihre Sammelnetzwerke und ihre Partner.",
+		"contact": "Lassen Sie uns über einen konkreten Anwendungsfall sprechen",
+		"explore": "Entdecken Sie die Funktionen",
+		"proofNote": "Die vorgestellten Funktionen stammen aus mehreren Projekten, die für Automobilhersteller und Recyclingbetreiber entwickelt wurden. Sie veranschaulichen unsere Arbeit; Umfang und Regeln werden an jede Organisation angepasst.",
+		"exampleLabel": "Ein genauerer Blick auf eine Funktion",
+		"exampleNote": "Erläuternde Beispiele auf Grundlage entwickelter Funktionen. Es handelt sich nicht um Screenshots von Kundenanwendungen.",
+		"inputLabel": "Ausgangspunkt",
+		"actionLabel": "Was die Anwendung macht",
+		"outputLabel": "Ergebnis",
+		"exceptionsTitle": "Was passiert, wenn der Prozess nicht einfach ist?",
+		"caseLabel": "Vorgefundene Situation",
+		"behaviorLabel": "Im Workflow implementiertes Verhalten",
+		"examples": [
+			{
+				"label": "Nummernschild / VIN",
+				"cases": [
+					{
+						"when": "Spezifikationen werden zurückgegeben",
+						"then": "Sie werden in den Fahrzeugdatensatz übernommen."
+					},
+					{
+						"when": "Einige Pflichtfelder bleiben leer",
+						"then": "Das Formular fordert die fehlenden Informationen an."
+					},
+					{
+						"when": "Die Suche kann den Datensatz nicht abschließen",
+						"then": "Der Benutzer kann mit der manuellen Eingabe fortfahren."
+					}
+				],
+				"title": "Identifizieren Sie ein Fahrzeug, ohne alles erneut eingeben zu müssen",
+				"input": "Ein Zulassungsland und ein Kennzeichen oder eine VIN.",
+				"action": "Fragen Sie den Identifizierungsdienst ab, rufen Sie verfügbare Spezifikationen ab und fordern Sie nur die fehlenden Informationen an.",
+				"output": "Ein ausgefülltes Fahrzeugprotokoll. Die manuelle Eingabe bleibt verfügbar, wenn Daten nicht abgerufen werden können.",
+				"page": "fahrzeuge",
+				"anchor": "identification"
+			},
+			{
+				"label": "EWC-Code",
+				"cases": [
+					{
+						"when": "Die Deklaration hat bereits einen Code",
+						"then": "Dieser Code wird vorgeschlagen, wenn der Datensatz erneut geöffnet wird."
+					},
+					{
+						"when": "Der Batterietyp hat einen Referenzcode",
+						"then": "Er kann das Feld in der Meldung vorausfüllen."
+					},
+					{
+						"when": "Der Anmelder wählt einen anderen Code",
+						"then": "Der ausgewählte Code wird mit der Deklaration gespeichert."
+					}
+				],
+				"title": "Verknüpfen Sie den Abfallcode mit dem Batteriedatensatz",
+				"input": "Eine identifizierte Batterie und ihr Referenztyp.",
+				"action": "Den EWC-Code aus den Referenzdaten vorschlagen, seine Auswahl oder Korrektur ermöglichen und ihn mit der Meldung speichern.",
+				"output": "Der Datensatz enthält den Code und Änderungen können nachverfolgt werden. Die Klassifizierung liegt weiterhin in der Verantwortung der jeweiligen Geschäftsakteure.",
+				"page": "batterien",
+				"anchor": "identification"
+			},
+			{
+				"label": "Unterschriften zur Abfallverfolgung",
+				"cases": [
+					{
+						"when": "Der Produzent hat noch nicht unterschrieben",
+						"then": "Die Empfangsaktion weist auf die fehlende Unterschrift des Produzenten hin."
+					},
+					{
+						"when": "Der Produzent hat unterschrieben, der Sammler jedoch nicht",
+						"then": "Die Aktion zeigt an, dass die Unterschrift des Sammlers noch aussteht."
+					},
+					{
+						"when": "Beide Signaturen sind vorhanden",
+						"then": "Dieser Sperrgrund entfällt; die übrigen Bedingungen des Workflows gelten weiterhin."
+					}
+				],
+				"title": "Identifizieren Sie die fehlende Signatur",
+				"input": "Eine gesammelte Batterieerklärung mit einem verknüpften französischen Abfallverfolgungsformular (BSD).",
+				"action": "Lesen Sie den Status des Formulars und unterscheiden Sie eine ausstehende Signatur des Produzenten von einer ausstehenden Signatur des Sammlers.",
+				"output": "Der Benutzer sieht, warum die Empfangsaktion im konfigurierten Workflow blockiert ist und welcher Beteiligte handeln muss.",
+				"page": "dokumente-und-integrationen",
+				"anchor": "bsd"
+			}
+		],
+		"detailLink": "Sehen Sie, wie es funktioniert",
+		"dossiersLabel": "Was wir entwickelt haben",
+		"dossiersTitle": "Drei Themenfelder, die unsere Arbeit im Detail zeigen.",
+		"dossiersIntro": "Von den Feldern, die der Anmelder ausfüllt, bis hin zum Partneraustausch: In jedem Leitfaden werden die Daten, Regeln, Dokumente und Maßnahmen erläutert.",
+		"audienceLabel": "Ihr Ausgangspunkt",
+		"audienceTitle": "Welches Problem müssen Sie lösen?",
+		"audiences": [
+			{
+				"role": "Betrieb und Recycling",
+				"question": "Was hält uns davon ab, diese Abholung vorzubereiten?",
+				"answer": "Batteriedatensatz, Verpackung, ausgewählte Pakete, Abholer und Lieferort: Die Informationen werden vor der Erstellung der Packliste zusammengeführt.",
+				"page": "batterien",
+				"anchor": "collecte",
+				"link": "Eine Abholung vorbereiten"
+			},
+			{
+				"role": "Herstellerprogramm & Netzwerk",
+				"question": "Wie können Eigentümer und Dienstleister an denselben Datensätzen arbeiten?",
+				"answer": "Ein Deklarationsworkflow für das Netzwerk, Verwaltungsschnittstellen für interne Teams und Austausch mit Behandlungszentren. Die Zugangsregeln richten sich nach den Verantwortlichkeiten jeder Partei.",
+				"page": "fahrzeuge",
+				"anchor": "reseau",
+				"link": "Organisieren Sie ein Rücknahmenetzwerk"
+			},
+			{
+				"role": "Vertrieb & Einkauf",
+				"question": "Welcher Bearbeitungspreis und welche Logistikkosten wurden akzeptiert?",
+				"answer": "Angebote behalten ihre Preisbestandteile, Autor, Datum und Status. Ihre Historie zeigt die besprochenen und vereinbarten Bedingungen.",
+				"page": "batterien",
+				"anchor": "offres",
+				"link": "Preisvorschläge verwalten"
+			},
+			{
+				"role": "Qualitäts- und Abfallkonformität",
+				"question": "Enthält der Datensatz den richtigen Code, die richtigen Dokumente und erforderlichen Unterschriften?",
+				"answer": "EWC-Codes, Batteriediagnose, Dokumente und Abfallverfolgungsstatus werden innerhalb des Workflows verwaltet. Anwendungskontrollen machen erforderliche Elemente und unvollständige Schritte sichtbar.",
+				"page": "dokumente-und-integrationen",
+				"anchor": "classification",
+				"link": "Verknüpfen Sie Dokumente mit Vorgängen"
+			},
+			{
+				"role": "IT & Anwendungsverantwortliche",
+				"question": "Welche Informationen sollen mit bestehenden Systemen ausgetauscht werden?",
+				"answer": "Batteriedaten, Statusänderungen und angenommene Angebote können über APIs und Benachrichtigungen an Partnersysteme fließen. Die Integration wird für jedes Geschäftsobjekt und seine Zugriffsrechte definiert.",
+				"page": "dokumente-und-integrationen",
+				"anchor": "connexions",
+				"link": "Untersuchen Sie die Integrationen"
+			}
+		],
+		"scopeLabel": "Umfang rund um Ihren Betrieb",
+		"scopeTitle": "Ein gezieltes Modul oder eine vollständige Anwendung.",
+		"scopeItems": [
+			{
+				"title": "Erweitern Sie ein vorhandenes Tool",
+				"text": "Ihre Logistiksoftware funktioniert, aber die Meldungen kommen per E-Mail? Das Projekt kann sich auf das Sammeln der Informationen und deren Weitergabe an das System konzentrieren."
+			},
+			{
+				"title": "Überarbeiten Sie einen einschränkenden Arbeitsablauf",
+				"text": "Ihr Netzwerk nutzt bereits eine Anwendung? Wir prüfen die zu bewahrenden Daten, Regeln und Austausche, bevor wir den relevanten Teil erweitern oder ersetzen."
+			},
+			{
+				"title": "Erstellen Sie einen End-to-End-Service",
+				"text": "Sie richten eine neue Rücknahmeaktivität ein? Wir können das Netzwerkportal, die Verwaltungstools und den erforderlichen Austausch mit Partnern entwickeln."
+			}
+		],
+		"faqTitle": "Bevor Sie ein Projekt starten",
+		"faqs": [
+			{
+				"question": "Handelt es sich hierbei um ein Standard-Softwareprodukt?",
+				"answer": "Wir entwerfen und entwickeln maßgeschneiderte Anwendungen. Die Beispiele zeigen Funktionen, die wir bereits erstellt haben; gemeinsam legen wir fest, welche Ihren Bedürfnissen entsprechen, welche Regeln wir anpassen und welche Systeme wir anbinden."
+			},
+			{
+				"question": "Müssen wir unsere bestehenden Tools (ERP, Transport, MES, Abrechnung usw.) ersetzen?",
+				"answer": "Der erste Schritt besteht darin, festzustellen, was bereits abgedeckt ist. Ein Integrations- oder Ergänzungsmodul kann ausreichend sein. Wir prüfen die Austauschmöglichkeiten mit Ihren IT-Teams, bevor wir uns auf den Umfang einigen."
+			},
+			{
+				"question": "Gewährleistet die Anwendung die Einhaltung gesetzlicher Vorschriften?",
+				"answer": "Sie implementiert die für das Projekt definierten Kontrollen und den Dokumentenaustausch. Abfallklassifizierung, Transportvorschriften und geltende Pflichten müssen von den zuständigen Fachkräften validiert werden. Ein EWC-Code oder eine Trackdechets-Verbindung allein garantiert keine Konformität."
+			},
+			{
+				"question": "Arbeiten Sie nur mit Fahrzeugen und Batterien?",
+				"answer": "Dies sind die Branchen, die hier durch unsere Projekte veranschaulicht werden. Für eine weitere Aktivität untersuchen wir Gemeinsamkeiten und Unterschiede: Produkte oder Materialien, Stakeholder, Dokumente, Transaktionen und vorhandene Tools. Die Relevanz hängt von den zu unterstützenden Vorgängen ab."
+			},
+			{
+				"question": "Wo passt KI?",
+				"answer": "Wenn es darum geht, Dokumente zu lesen, Informationen zu extrahieren oder Bewertungen zu unterstützen, können wir eine KI-Komponente erkunden. Nicht alle Funktionen in diesen Leitfäden basieren auf KI: API-basierte Identifizierung, Eingaberegeln und Statusaustausch gehen bereits auf konkrete Bedürfnisse ein."
+			}
+		],
+		"ctaTitle": "Einen realen Prozess definieren",
+		"ctaText": "Zeigen Sie uns einen echten Ablauf, seine Teilnehmer und die bereits vorhandenen Tools.",
+		"ctaButton": "Sprechen Sie mit FDTI — 30 Minuten",
+		"back": "Alle Themen der Kreislaufwirtschaft",
+		"contents": "In diesem Ratgeber",
+		"situationLabel": "Die Geschäftslage",
+		"ruleLabel": "Das Detail, das zählt",
+		"resultLabel": "Was das Team bekommt",
+		"dataLabel": "Unterstützte Daten und Aktionen",
+		"relatedTitle": "Entdecken Sie die anderen Themen",
+		"dossiers": [
+			{
+				"slug": "fahrzeuge",
+				"navLabel": "Fahrzeuge",
+				"label": "Altfahrzeuge",
+				"title": "Fahrzeug identifizieren. Datensatz vervollständigen. Rücknahme organisieren.",
+				"summary": "Kennzeichen oder VIN, abgerufene Spezifikationen, Verwaltungsdokumente und Schnittstellen für das Rücknahmenetzwerk.",
+				"description": "Eine Privatperson oder eine Werkstatt meldet zunächst ein Fahrzeug an. Anschließend benötigen die Teams verlässliche Informationen, vorbereitete Dokumente und eine Anfrage, die sie an die zuständigen Akteure weiterleiten können. Dafür haben wir Funktionen entwickelt, die diese Schritte miteinander verbinden.",
+				"context": "Projektbeispiel: eine Fahrzeugrücknahmeplattform mit Abläufen für Privat- und Geschäftskunden, die an ein bestehendes Managementsystem angebunden ist.",
+				"terms": [
+					"Nummernschild / VIN",
+					"B2B- und B2C-Workflows",
+					"Elektronische Signatur"
+				],
+				"sections": [
+					{
+						"id": "identification",
+						"title": "Mit einem Kennzeichen oder einer VIN beginnen, nicht mit einem leeren Datensatz.",
+						"navLabel": "Kennzeichen- / VIN-Abfrage",
+						"situation": "Wenn Benutzer aufgefordert werden, Marke, Modell und Spezifikationen eines Fahrzeugs erneut einzugeben, werden Felder zum Ausfüllen und Korrekturen hinzugefügt, die später bearbeitet werden müssen.",
+						"actions": [
+							"Der Anmelder gibt das Land und die verfügbare Kennung an: ein Nummernschild oder VIN, die Fahrzeugidentifikationsnummer.",
+							"Die Anwendung fragt einen Identifikationsdienst ab und füllt den Datensatz mit den zurückgegebenen Spezifikationen.",
+							"Der Benutzer wird aufgefordert, Pflichtfelder auszufüllen, die leer bleiben. Wenn Daten nicht abgerufen werden können, ist eine manuelle Eingabe möglich."
+						],
+						"rule": "Die Identifizierungsmethode und die erforderlichen Felder variieren je nach Land. Bei der Integration wird nicht davon ausgegangen, dass jede Suche einen vollständigen Datensatz zurückgibt.",
+						"result": "Ein strukturierter Fahrzeugdatensatz mit abgerufenen verfügbaren Spezifikationen und ergänzten fehlenden Informationen.",
+						"data": [
+							"Registrierungsland",
+							"Nummernschild oder VIN",
+							"Marke und Modell",
+							"Spezifikationen und fehlende Felder"
+						]
+					},
+					{
+						"id": "dossier",
+						"title": "Den Verwaltungsdatensatz gemeinsam mit der Anfrage weiterführen.",
+						"navLabel": "Dokumente und Unterschriften",
+						"situation": "Ein Rücknahmeantrag ist nicht allein deshalb bearbeitungsbereit, weil das Fahrzeug identifiziert wurde. Er umfasst auch Angaben des Anmelders und Dokumente.",
+						"actions": [
+							"Der Workflow führt die für die Bearbeitung der Anfrage erforderlichen Informationen und Dokumente zusammen.",
+							"Das Team findet diese Angaben im Fahrzeugdatensatz statt in getrennten Kommunikationsverläufen.",
+							"Die Erstellung und elektronische Unterzeichnung von Übergabe- und Vernichtungsdokumenten ist für die jeweiligen französischen Betriebe in den Prozess integriert."
+						],
+						"rule": "Dokumentinhalt und Unterschriftsschritte hängen vom Land und Verfahren ab. Das Projekt verwendet die entsprechenden Dokumente und definiert die erwarteten Unterzeichner.",
+						"result": "Die Anfrage, die Belege und die Unterschriftenverfolgung sind mit dem jeweiligen Fahrzeug verknüpft.",
+						"data": [
+							"Informationen zum Anmelder",
+							"Belege",
+							"Übergabe-/Vernichtungsdokumente",
+							"Signaturverfolgung"
+						]
+					},
+					{
+						"id": "reseau",
+						"title": "Geben Sie dem Netzwerk ein gemeinsames Arbeitswerkzeug.",
+						"navLabel": "Rücknahmenetzwerk",
+						"situation": "Eigentümer, Werkstätten, Altfahrzeugbehandlungszentren und Programmteams agieren zu unterschiedlichen Zeiten und mit unterschiedlichen Verantwortlichkeiten.",
+						"actions": [
+							"Separate Workflows unterstützen individuelle und professionelle Anfragen.",
+							"Über Verwaltungsschnittstellen können Teams und Partner Fahrzeuge und Handhabungsschritte verfolgen.",
+							"Anbindungen an das bestehende System tauschen die benötigten Informationen zwischen Deklaration, Abholung und Nachverfolgung bis hin zur Demontage aus."
+						],
+						"rule": "Das öffentliche Portal und das professionelle Tool dienen unterschiedlichen Zwecken. Bildschirme und Zugriffsrechte müssen diese Trennung widerspiegeln.",
+						"result": "Verfolgung auf Fahrzeugebene und Schnittstellen, die für die Personen geeignet sind, die Vorgänge anmelden, abwickeln und verwalten.",
+						"data": [
+							"Meldung durch Privatpersonen / Gewerbetreibende",
+							"Werkstätten und Behandlungszentren",
+							"Handhabungsschritte",
+							"Datenaustausch mit dem bestehenden System"
+						]
+					}
+				]
+			},
+			{
+				"slug": "batterien",
+				"navLabel": "Batterien",
+				"label": "Batterien, Sammlung & Verwertung",
+				"title": "Eine zu behandelnde Batterie mit ihren Eigenschaften, Anforderungen und Rücknahmebedingungen.",
+				"summary": "EWC-Code, Zustand und Diagnose, Packlisten, Bearbeitungs- und Transportpreise, Empfangs- und Behandlungsverfolgung.",
+				"description": "Eine Batterie ist mehr als eine Referenz und eine Abholadresse. Ihre Art, Beschaffenheit, Unterlagen und vereinbarten Konditionen haben Einfluss auf die Handhabung. Wir haben die folgenden Module für Recycling- und Second-Life-Projekte entwickelt.",
+				"context": "Beispiele aus mehreren Anwendungen, die für einen Automobilhersteller und einen Batterierecycler entwickelt wurden. Die Module werden zusammen vorgestellt, um die von ihnen unterstützten Operationen zu erläutern.",
+				"terms": [
+					"EWC-Code",
+					"Zustand / Diagnose / ADR",
+					"Packlisten & Preisangebote"
+				],
+				"sections": [
+					{
+						"id": "identification",
+						"title": "Identifizieren Sie die Batterie und notieren Sie ihren Abfallcode.",
+						"navLabel": "Charakterisierung, EWC und UN-Codes",
+						"situation": "Die Referenzdaten umfassen Modell, VIN oder BIN, Zustand, Ladezustand, Gesundheitszustand, Abmessungen und Gewicht. Die Meldung ergänzt diese Merkmale um EWC- und UN-Codes, Nachweise und Fotos.",
+						"actions": [
+							"Die Deklaration verknüpft die Batterie mit ihrem Typ und Besitzerinformationen.",
+							"Der Workflow schlägt einen EWC-Code vor – aus der europäischen Abfallklassifizierung – unter Verwendung der vorhandenen Deklaration oder des Referenzbatterietyps.",
+							"Der Anmelder kann den Code auswählen oder korrigieren. Er wird im Datensatz gespeichert und Änderungen sind im Verlauf verfügbar."
+						],
+						"rule": "Vorab ausgefüllte Informationen stammen aus Referenzdaten. Sie ersetzen nicht die Validierung der Abfallklassifizierung durch die verantwortlichen Fachkräfte.",
+						"result": "Ein Datensatz, in dem die Batterie charakterisiert ist und der für Abholung, Transport und Rückverfolgbarkeit genutzt werden kann.",
+						"data": [
+							"Batteriereferenz und -typ",
+							"Eigentümer",
+							"Ausgewählter EWC-Code",
+							"Änderungsverlauf"
+						]
+					},
+					{
+						"id": "diagnostic",
+						"title": "Erfassen Sie den Batteriezustand vor der Abholung.",
+						"navLabel": "Diagnose und Zustand",
+						"situation": "Eine beschädigte Batterie erfordert eine andere Vorbereitung als eine Batterie in einem anderen Zustand. Stakeholder benötigen Diagnosen und relevante Dokumente, bevor sie die nächsten Schritte organisieren.",
+						"actions": [
+							"Der Anmelder erfasst den Batteriezustand und fügt die für den Arbeitsablauf erforderlichen Diagnose- und Checklistendokumente bei.",
+							"Die zum ausgewählten Zustand gehörenden ADR-Transportinformationen werden in der Oberfläche angezeigt.",
+							"Es werden allgemeine Fotos und je nach Anmelder und Lesbarkeit der Kennung ein Seriennummernfoto angefordert."
+						],
+						"rule": "Erforderliche Dokumente hängen vom Kontext ab. Transport- und Verpackungsvorschriften werden mit den zuständigen Fachkräften festgelegt; das Portal erschließt sie nicht aus einem Foto.",
+						"result": "Ein Datensatz, der den angegebenen Zustand sowie die für die Beurteilung der Handhabung erforderlichen Fotos und Dokumente zusammenführt.",
+						"data": [
+							"Batteriezustand",
+							"Diagnose und Checkliste",
+							"Fotos und Seriennummer",
+							"ADR-Informationen"
+						]
+					},
+					{
+						"id": "collecte",
+						"title": "Erstellen Sie eine konsistente Packliste.",
+						"navLabel": "Verpackung, Palettierung und Abholung",
+						"situation": "Möglicherweise sind mehrere Deklarationen und Pakete versandbereit. Wenn Sie sie auswählen, ohne den Abholer oder Lieferort zu berücksichtigen, kann eine Liste entstehen, die nicht für den beabsichtigten Vorgang geeignet ist.",
+						"actions": [
+							"Die Benutzer prüfen die Meldungen einschließlich Eigentümer, Abholer, Lieferort, Chemie, Verpackung und Status.",
+							"Sie wählen die Pakete aus, die in die Packliste aufgenommen werden sollen.",
+							"Im entwickelten Workflow verhindert die Auswahl das Mischen von Lieferstandorten oder Sammlern, die mit der aktuellen Gruppierung nicht kompatibel sind."
+						],
+						"rule": "Diese Gruppierungsprüfung ist eine explizite Geschäftsregel. Gemeinsam mit Ihnen definieren wir die Kriterien, die einen gemeinsamen Transport zulassen oder verhindern.",
+						"result": "Eine Packliste verknüpft mit Deklarationen, Verpackung, Palettierung und dem geplanten Transport.",
+						"data": [
+							"Deklarationen und Pakete",
+							"Sammler",
+							"Lieferort",
+							"Chemie, Verpackung und ADR"
+						]
+					},
+					{
+						"id": "offres",
+						"title": "Trennen Sie den Bearbeitungspreis von den Logistikkosten.",
+						"navLabel": "Angebote und Preise",
+						"situation": "Die Verhandlungen mit einem Anbieter können sowohl die Batterieverarbeitung als auch den Transport umfassen. Ein einzelner Betrag erfasst nicht die Bedingungen der Vereinbarung.",
+						"actions": [
+							"Ein Angebot umfasst Bearbeitungspreis, Logistikpreis, Währung und optional einen Kommentar.",
+							"Aufeinanderfolgende Vorschläge werden mit ihrem Autor, Datum und Annahme- oder Ablehnungsstatus gespeichert.",
+							"Angebotsvorgänge stehen Dienstleistern auch über eine API zur Verfügung. Benachrichtigungen können ihr System über die Erstellung oder Annahme eines Angebots informieren."
+						],
+						"rule": "In diesem Beispiel geht es um Preisverhandlungen für Batterien und Abholgruppen. Eine Handelsvereinbarung mit mehreren Kauf- und Weiterverkaufsverträgen würde eine spezifische Festlegung des Umfangs erfordern.",
+						"result": "Vorgeschlagene und vereinbarte Bedingungen bleiben im Datensatz verfügbar, ohne dass eine E-Mail-Kette nach der neuesten Vereinbarung durchsucht werden muss.",
+						"data": [
+							"Bearbeitungspreis",
+							"Logistikkosten und Währung",
+							"Autor und Datum des Vorschlags",
+							"Annahme/Ablehnung"
+						]
+					},
+					{
+						"id": "reception",
+						"title": "Sammeln, Empfangen und Behandeln verbinden.",
+						"navLabel": "Empfang und Behandlung",
+						"situation": "Eine als eingesammelt gemeldete Batterie muss dann entgegengenommen und bis zur Behandlung verfolgt werden. Der Dokumentstatus kann auch davon abhängen, welche Aktionen im Tool verfügbar sind.",
+						"actions": [
+							"Status unterscheiden zwischen abholbereiten, abgeholten, empfangenen und verarbeiteten Batterien.",
+							"In einem mit Trackdechets verbundenen Workflow erfasst der Empfang ein Datum und den Namen des Empfängers und aktualisiert dann das verknüpfte Abfallverfolgungsformular und die Deklaration.",
+							"Partner können über Statusänderungen benachrichtigt werden, um ihr eigenes Tracking zu aktualisieren."
+						],
+						"rule": "Physische und Dokumentenverfolgung sind miteinander verbunden, bleiben aber getrennt. Der Workflow zeigt den erreichten Stand und die noch erforderlichen Aktionen an.",
+						"result": "Eine Meldung, die nach dem Verlassen des Standorts des Eigentümers zusammen mit den zugehörigen Schritten und Dokumenten nachverfolgt wird.",
+						"data": [
+							"Batteriestatus",
+							"Empfangsdatum und Person",
+							"Gegebenenfalls verlinktes Abfallverfolgungsformular",
+							"Behandlungsstatus"
+						]
+					}
+				]
+			},
+			{
+				"slug": "dokumente-und-integrationen",
+				"navLabel": "Dokumente & APIs",
+				"label": "Dokumente und Integrationen",
+				"title": "Informationen und Dokumente mit den Vorgängen verknüpfen.",
+				"summary": "EWC, ADR, Trackdechets-Abfallverfolgung, Signaturen und API-Austausch: Was die Anwendungen verarbeiten und wie Ihre Systeme eingebunden werden.",
+				"description": "Operationen umfassen oft mehrere Anwendungen. Die Geschäftsunterlagen müssen nützliche Referenzen enthalten, Dokumentstadien verfolgen und Ereignisse an Partner senden. Hier finden Sie Integrationen und Steuerungen, die wir entwickelt haben.",
+				"context": "Beispiele aus Fahrzeug- und Batterieprojekten. Dokumentationspflichten und Integrationsfähigkeiten müssen für jedes beteiligte Land, jede Aktivität und jedes beteiligte System überprüft werden.",
+				"terms": [
+					"EWC & ADR",
+					"Trackdechets Abfallverfolgung",
+					"APIs & Benachrichtigungen"
+				],
+				"sections": [
+					{
+						"id": "classification",
+						"title": "EWC und ADR: getrennte Informationen, getrennte Zwecke.",
+						"navLabel": "EWC und ADR",
+						"situation": "Abfallklassifizierungscodes und Transportinformationen müssen an der richtigen Stelle erfasst werden. Die Gruppierung unter einem Compliance-Label erklärt nicht, was das Tool tatsächlich tut.",
+						"actions": [
+							"Der Code EWC ist mit der Deklaration verknüpft und kann vom Referenzbatterietyp vorgeschlagen werden.",
+							"Der Batteriezustand wird separat mit den erforderlichen Diagnosedokumenten erfasst.",
+							"Die Schnittstelle zeigt die für diese Bedingung definierten ADR-Informationen an. Teams definieren Eingaberegeln, unterstützende Dokumente und erforderliche Genehmigungen."
+						],
+						"rule": "Die Anwendung organisiert Daten und wendet definierte Regeln an. Ein EWC-Code wird nicht automatisch in eine Genehmigung für den Transport oder die Behandlung umgewandelt.",
+						"result": "Eindeutige, zugängliche Informationen, die qualifizierten Stakeholdern helfen, die Aufzeichnungen zu überprüfen.",
+						"data": [
+							"EWC-Abfallschlüssel",
+							"Zustand und Diagnose",
+							"ADR-Transportinformationen",
+							"Dokumente und Genehmigungen"
+						]
+					},
+					{
+						"id": "bsd",
+						"title": "Binden Sie das Abfallverfolgungsformular in die Deklarationsverfolgung ein.",
+						"navLabel": "BSD und Trackdechets",
+						"situation": "Bei den betreffenden Vorgängen in Frankreich hat der Abfallbegleitschein (BSD) eigene Status. Die Teams müssen wissen, ob er erstellt und unterzeichnet wurde und für den nächsten Schritt bereit ist.",
+						"actions": [
+							"Die Anwendung erstellt oder aktualisiert ein Formular über Trackdechets und speichert seine Kennung mit der Deklaration.",
+							"Sie prüft den Status und unterscheidet eine fehlende Unterschrift des Produzenten von einer fehlenden Unterschrift des Sammlers.",
+							"Der Workflow kann den Empfang von diesen Signaturen abhängig machen und dann Empfangs- und Behandlungsinformationen übertragen."
+						],
+						"rule": "Ein blockierter Schritt sollte erklären, warum und wer ihn beheben muss. Hierbei handelt es sich um eine Kontrolle im entwickelten Arbeitsablauf, nicht um eine allgemeingültige Rechtsregel.",
+						"result": "Formular und Meldung bleiben miteinander verknüpft; der Benutzer sieht den Dokumentstatus und die erforderlichen Aktionen.",
+						"data": [
+							"Kennung des Abfallverfolgungsformulars",
+							"Status und Unterschriften",
+							"Empfangsdatum und Person",
+							"Informationen zur Behandlung"
+						]
+					},
+					{
+						"id": "signature",
+						"title": "Verknüpfen Sie Signaturen mit dem richtigen Datensatz.",
+						"navLabel": "Elektronische Signaturen",
+						"situation": "Ein zur Unterschrift versandtes Dokument sollte mit dem Fahrzeug oder Vorgang verknüpft bleiben, durch den es erstellt wurde.",
+						"actions": [
+							"In den jeweiligen Fahrzeug-Workflows werden prozessintern Überführungs- und Vernichtungsdokumente generiert.",
+							"Der elektronische Signaturdienst DocuSign ist in den Workflow integriert.",
+							"Die Geschäftsakte bietet Zugriff auf die Dokumente und den Signaturfortschritt."
+						],
+						"rule": "Unterzeichner, Dokumente und Zeitpunkt der Unterschrift werden durch das Verfahren festgelegt. Das Projekt berücksichtigt auch unvollständige Schritte.",
+						"result": "Kontinuität zwischen der Anfrage, den vorbereiteten Dokumenten und der Unterschriftenverfolgung.",
+						"data": [
+							"Fahrzeugdatensatz",
+							"Generiertes Dokument",
+							"Erwartete Unterzeichner",
+							"Signaturstatus"
+						]
+					},
+					{
+						"id": "connexions",
+						"title": "Tauschen Sie Geschäftsobjekte aus, nicht nur Dateien.",
+						"navLabel": "APIs und Partnersysteme",
+						"situation": "Ein Anbieter kann den Betrieb bereits in seinem eigenen System verwalten. Die Verpflichtung, jede Änderung erneut in ein Portal einzugeben, bedeutet zusätzlichen Aufwand, anstatt ihn zu beseitigen.",
+						"actions": [
+							"Eine Dienstleister-API unterstützt unter anderem den Export und Import von Batteriedaten sowie Preisangebote.",
+							"Ausgehende Benachrichtigungen melden bestimmte Ereignisse: Eine Batterie wurde zugewiesen, ist abholbereit, wurde angenommen oder behandelt; ein Angebot wurde erstellt oder angenommen.",
+							"Der Zugriff ist authentifiziert und auf den Geltungsbereich des Partners beschränkt. Für die jeweiligen Vorgänge werden Schnittstellen und Austauschformate definiert."
+						],
+						"rule": "Eine Anbindung an Ihr ERP oder Ihre Logistiksoftware muss geprüft werden: verfügbare Daten, Austauschrichtung, Zugriffsrechte und Fehlerbehandlung. Wir setzen keinen universellen Konnektor voraus.",
+						"result": "Ein Partner kann die Nachverfolgung über sein System aktualisieren und für seinen Betrieb relevante Ereignisse empfangen.",
+						"data": [
+							"Batteriedaten",
+							"Preisvorschläge und Vereinbarungen",
+							"Statusereignisse",
+							"Identität und Umfang des Partners"
+						]
+					}
+				]
+			}
+		]
+	},
+	"GetHomePageContent": {
+		"hero_section": {
+			"subtitle": "Copiloten, Automatisierung und Geschäftsanwendungen integriert in Ihre vorhandenen Tools",
+			"description": "<p>Wir entwickeln Tools, die Ihre Daten, SaaS-Plattformen und internen Systeme verbinden, um Ihre Abläufe schneller, zuverlässiger und automatisierter zu machen. KI ist kein zusätzliches Gadget: Sie wird zu einem zentralen Baustein in Ihren täglichen Prozessen.</p>",
+			"btn_brochure": "Laden Sie unsere Broschüre herunter",
+			"btn_contact": "Bedarf in 30 Minuten klären",
+			"brochure_link": "https://docs.google.com/presentation/d/e/2PACX-1vTqoylpjD44uKvXaQVAsPAlGMXDLBP_cqpr7gnuj0S2qXDS07mXwww8rMfjU-nAeTyYgR6CRSICSj17/pub?start=false&loop=false&delayms=3000",
+			"title": "KI, Code und Daten für Ihre Geschäftsprozesse",
+			"status": "KI-Studio und Geschäftsautomatisierung"
+		},
+		"fdti_section": {
+			"subtitle": "Ihre Daten und Tools als Ausgangspunkt. Code und KI, wo sie wichtig sind. Abläufe laufen schneller, reibungsloser und zuverlässiger.",
+			"icon_1": {
+				"filename_disk": "from-data-to-insight.svg",
+				"url": "/images/cms/branding/from-data-to-insight.svg",
+				"id": "from-data-to-insight.svg"
+			},
+			"content_1": "<p><strong>Wir setzen bei der tatsächlichen Arbeit Ihrer Teams an</strong>: zu verarbeitende Dokumente, zu findende Informationen, vorzubereitende Entscheidungen, zu vereinfachende Abstimmungen und zu automatisierende Aufgaben.</p><ul><li><strong>Identifizieren</strong> der Schritte, in denen KI einen konkreten Mehrwert schafft</li><li><strong>Verbinden</strong> der richtigen Quellen: Datenbanken, SaaS, Dateien, APIs und interne Tools</li><li><strong>Konzipieren</strong> eines robusten, sicheren Systems, das im Alltag zuverlässig nutzbar ist</li></ul>",
+			"icon_2": {
+				"filename_disk": "from-data-to-insight-1.svg",
+				"url": "/images/cms/branding/from-data-to-insight-1.svg",
+				"id": "from-data-to-insight-1.svg"
+			},
+			"content_2": "<p><strong>Wir liefern die passende Lösungstiefe</strong>: einen Copiloten, einen unterstützten Workflow, eine API, ein Backoffice oder eine vollständige Geschäftsanwendung.</p><ul><li><strong>KI-Copiloten</strong>: Suche, Zusammenfassung, Entscheidungsunterstützung und Schreibassistenz</li><li><strong>Prozessautomatisierung</strong>: Dokumentenverarbeitung, Qualifizierung, Koordination, Warnmeldungen und Reporting</li><li><strong>Geschäftsanwendungen</strong>: Portale, Dashboards, Backoffices, sichere APIs und interne Tools</li></ul><p>Architektur, Sicherheit, Bereitstellung und Monitoring sind Teil des Produkts. Gemeinsam mit jedem Kunden definieren wir die passenden Zugriffe, das Hosting, die Datenflüsse und die Kontrollen.</p>",
+			"title": "Unser Ansatz"
+		},
+		"technology_content": {
+			"title": "Technologien",
+			"subtitle": "Vier bewährte, kombinierbare technische Bausteine, die wir entsprechend den Anforderungen jedes Projekts zusammenstellen.",
+			"technology_category_list": [
+				{
+					"title": "Web-Apps & APIs",
+					"description": "Geschäftsschnittstellen, Backoffices, Portale und robuste APIs zur sauberen Integration von Anwendungslogik und KI in Ihren bestehenden Stack.",
+					"order": "1",
+					"category_icon": {
+						"filename_disk": "web-apps.svg",
+						"url": "/images/cms/technologies/web-apps.svg",
+						"id": "web-apps.svg"
+					},
+					"technology_list": [
+						{
+							"id": "35",
+							"name": "TypeScript",
+							"img": {
+								"filename_disk": "typescript.webp",
+								"url": "/images/cms/technologies/typescript.webp",
+								"id": "typescript.webp",
+								"width": 96,
+								"height": 36
+							},
+							"url": "https://www.typescriptlang.org/"
+						},
+						{
+							"id": "36",
+							"name": "React",
+							"img": {
+								"filename_disk": "react.webp",
+								"url": "/images/cms/technologies/react.webp",
+								"id": "react.webp",
+								"width": 96,
+								"height": 36
+							},
+							"url": "https://react.dev/"
+						},
+						{
+							"id": "37",
+							"name": "Svelte",
+							"img": {
+								"filename_disk": "svelte.webp",
+								"url": "/images/cms/technologies/svelte.webp",
+								"id": "svelte.webp",
+								"width": 96,
+								"height": 36
+							},
+							"url": "https://svelte.dev/"
+						},
+						{
+							"id": "38",
+							"name": "REST API",
+							"img": {
+								"filename_disk": "rest-api.webp",
+								"url": "/images/cms/technologies/rest-api.webp",
+								"id": "rest-api.webp",
+								"width": 96,
+								"height": 36
+							},
+							"url": "https://restfulapi.net/"
+						},
+						{
+							"id": "39",
+							"name": "GraphQL",
+							"img": {
+								"filename_disk": "graphql.webp",
+								"url": "/images/cms/technologies/graphql.webp",
+								"id": "graphql.webp",
+								"width": 96,
+								"height": 36
+							},
+							"url": "https://graphql.org/"
+						}
+					]
+				},
+				{
+					"title": "Cloud und Infrastruktur",
+					"description": "Infrastruktur, Bereitstellung und Sicherheit für den Betrieb zuverlässiger, skalierbarer und gut integrierter Systeme.",
+					"order": "2",
+					"category_icon": {
+						"filename_disk": "cloud.svg",
+						"url": "/images/cms/technologies/cloud.svg",
+						"id": "cloud.svg"
+					},
+					"technology_list": [
+						{
+							"id": "12",
+							"name": "AWS",
+							"img": {
+								"filename_disk": "aws.webp",
+								"url": "/images/cms/technologies/aws.webp",
+								"id": "aws.webp",
+								"width": 180,
+								"height": 72
+							},
+							"url": "https://aws.amazon.com/fr/"
+						},
+						{
+							"id": "13",
+							"name": "Azure",
+							"img": {
+								"filename_disk": "azure.webp",
+								"url": "/images/cms/technologies/azure.webp",
+								"id": "azure.webp",
+								"width": 180,
+								"height": 72
+							},
+							"url": "https://azure.microsoft.com/fr-fr/"
+						},
+						{
+							"id": "14",
+							"name": "google cloud",
+							"img": {
+								"filename_disk": "google-cloud.webp",
+								"url": "/images/cms/technologies/google-cloud.webp",
+								"id": "google-cloud.webp",
+								"width": 180,
+								"height": 72
+							},
+							"url": "https://cloud.google.com/"
+						},
+						{
+							"id": "16",
+							"name": "docker",
+							"img": {
+								"filename_disk": "docker.webp",
+								"url": "/images/cms/technologies/docker.webp",
+								"id": "docker.webp",
+								"width": 180,
+								"height": 72
+							},
+							"url": "https://www.docker.com/"
+						},
+						{
+							"id": "15",
+							"name": "terraform",
+							"img": {
+								"filename_disk": "terraform.webp",
+								"url": "/images/cms/technologies/terraform.webp",
+								"id": "terraform.webp",
+								"width": 180,
+								"height": 72
+							},
+							"url": "https://www.terraform.io/"
+						}
+					]
+				},
+				{
+					"title": "Künstliche Intelligenz",
+					"description": "Copiloten, Geschäftsassistenten, Augmented Retrieval, Agenten und Workflow-Automatisierung auf Basis von Sprachmodellen.",
+					"order": "3",
+					"category_icon": {
+						"filename_disk": "ia-machine-learning.svg",
+						"url": "/images/cms/technologies/ia-machine-learning.svg",
+						"id": "ia-machine-learning.svg"
+					},
+					"technology_list": [
+						{
+							"id": "29",
+							"name": "Open AI",
+							"img": {
+								"filename_disk": "open-ai.webp",
+								"url": "/images/cms/technologies/open-ai.webp",
+								"id": "open-ai.webp",
+								"width": 180,
+								"height": 72
+							},
+							"url": "https://openai.com/"
+						},
+						{
+							"id": "11",
+							"name": "hugging face",
+							"img": {
+								"filename_disk": "hugging-face.webp",
+								"url": "/images/cms/technologies/hugging-face.webp",
+								"id": "hugging-face.webp",
+								"width": 180,
+								"height": 72
+							},
+							"url": "https://huggingface.co/"
+						},
+						{
+							"id": "6",
+							"name": "pytorch",
+							"img": {
+								"filename_disk": "pytorch.webp",
+								"url": "/images/cms/technologies/pytorch.webp",
+								"id": "pytorch.webp",
+								"width": 180,
+								"height": 72
+							},
+							"url": "https://pytorch.org/"
+						}
+					]
+				},
+				{
+					"title": "Daten",
+					"description": "Datenerfassung, Strukturierung, Modellierung und Bereitstellung: die erforderliche Grundlage für Arbeitsabläufe, Dashboards und nützliche KI-Systeme.",
+					"order": "4",
+					"category_icon": {
+						"filename_disk": "data-science.svg",
+						"url": "/images/cms/technologies/data-science.svg",
+						"id": "data-science.svg"
+					},
+					"technology_list": [
+						{
+							"id": "26",
+							"name": "Python",
+							"img": {
+								"filename_disk": "python.webp",
+								"url": "/images/cms/technologies/python.webp",
+								"id": "python.webp",
+								"width": 170,
+								"height": 64
+							},
+							"url": "https://www.python.org/"
+						},
+						{
+							"id": "30",
+							"name": "DuckDB",
+							"img": {
+								"filename_disk": "duckdb.webp",
+								"url": "/images/cms/technologies/duckdb.webp",
+								"id": "duckdb.webp",
+								"width": 170,
+								"height": 64
+							},
+							"url": "https://duckdb.org/"
+						},
+						{
+							"id": "32",
+							"name": "DBT",
+							"img": {
+								"filename_disk": "dbt.webp",
+								"url": "/images/cms/technologies/dbt.webp",
+								"id": "dbt.webp",
+								"width": 180,
+								"height": 72
+							},
+							"url": "https://www.getdbt.com/"
+						},
+						{
+							"id": "17",
+							"name": "Bigquery",
+							"img": {
+								"filename_disk": "bigquery.webp",
+								"url": "/images/cms/technologies/bigquery.webp",
+								"id": "bigquery.webp",
+								"width": 220,
+								"height": 88
+							},
+							"url": "https://cloud.google.com/bigquery/"
+						},
+						{
+							"id": "19",
+							"name": "Snowflake",
+							"img": {
+								"filename_disk": "snowflake.webp",
+								"url": "/images/cms/technologies/snowflake.webp",
+								"id": "snowflake.webp",
+								"width": 220,
+								"height": 88
+							},
+							"url": "https://www.snowflake.com/fr/"
+						},
+						{
+							"id": "31",
+							"name": "Airflow",
+							"img": {
+								"filename_disk": "airflow.webp",
+								"url": "/images/cms/technologies/airflow.webp",
+								"id": "airflow.webp",
+								"width": 180,
+								"height": 72
+							},
+							"url": "https://airflow.apache.org/"
+						}
+					]
+				}
+			]
+		},
+		"trust_content": {
+			"title": "Diese Unternehmen vertrauen uns",
+			"company_list": [
+				{
+					"name": "Samsung",
+					"img": {
+						"filename_disk": "samsung.webp",
+						"url": "/images/cms/companies/samsung.webp",
+						"id": "samsung.webp"
+					}
+				},
+				{
+					"name": "Cognac",
+					"img": {
+						"filename_disk": "cognac.webp",
+						"url": "/images/cms/companies/cognac.webp",
+						"id": "cognac.webp"
+					}
+				},
+				{
+					"name": "Mastercard",
+					"img": {
+						"filename_disk": "mastercard.webp",
+						"url": "/images/cms/companies/mastercard.webp",
+						"id": "mastercard.webp"
+					}
+				},
+				{
+					"name": "Euro-CRM",
+					"img": {
+						"filename_disk": "euro-crm.webp",
+						"url": "/images/cms/companies/euro-crm.webp",
+						"id": "euro-crm.webp"
+					}
+				},
+				{
+					"name": "Stellantis",
+					"img": {
+						"filename_disk": "stellantis.webp",
+						"url": "/images/cms/companies/stellantis.webp",
+						"id": "stellantis.webp"
+					}
+				},
+				{
+					"name": "Galloo",
+					"img": {
+						"filename_disk": "galloo.webp",
+						"url": "/images/cms/companies/galloo.webp",
+						"id": "galloo.webp"
+					}
+				},
+				{
+					"name": "Agence Française de Développement",
+					"img": {
+						"filename_disk": "agence-francaise-de-developpement.webp",
+						"url": "/images/cms/companies/agence-francaise-de-developpement.webp",
+						"id": "agence-francaise-de-developpement.webp"
+					}
+				},
+				{
+					"name": "SNAM",
+					"img": {
+						"filename_disk": "snam.webp",
+						"url": "/images/cms/companies/snam.webp",
+						"id": "snam.webp"
+					}
+				},
+				{
+					"name": "AIMVP",
+					"img": {
+						"filename_disk": "aimvp.webp",
+						"url": "/images/cms/companies/aimvp.webp",
+						"id": "aimvp.webp"
+					}
+				},
+				{
+					"name": "BlaBlaCar",
+					"img": {
+						"filename_disk": "blablacar.webp",
+						"url": "/images/cms/companies/blablacar.webp",
+						"id": "blablacar.webp"
+					}
+				},
+				{
+					"name": "Valorauto",
+					"img": {
+						"filename_disk": "valorauto.webp",
+						"url": "/images/cms/companies/valorauto.webp",
+						"id": "valorauto.webp"
+					}
+				},
+				{
+					"name": "The Vibe Agency",
+					"img": {
+						"filename_disk": "vibe.webp",
+						"url": "/images/cms/companies/vibe.webp",
+						"id": "vibe.webp"
+					}
+				},
+				{
+					"name": "Ford",
+					"img": {
+						"filename_disk": "ford.webp",
+						"url": "/images/cms/companies/ford.webp",
+						"id": "ford.webp"
+					}
+				}
+			]
+		},
+		"contact_section": {
+			"btn_contact": "Planen Sie ein Gespräch",
+			"subtitle": "Lassen Sie uns gemeinsam Ihr Projekt besprechen!",
+			"address": "8 place Roger Salengro, 31000 Toulouse, Frankreich",
+			"company": "FDTI Consulting",
+			"mail": "info@fdti.eu",
+			"title": "Kontakt"
+		},
+		"CII": {
+			"description": "<p>Von 2020 bis 2024 waren wir von der französischen Generaldirektion für Unternehmen für die französische Innovationssteuergutschrift (CII) anerkannt. Dadurch konnten berechtigte Kunden eine Steuergutschrift in Höhe von 20 % der bei uns angefallenen förderfähigen Ausgaben erhalten.</p>",
+			"image": {
+				"filename_disk": "image.png",
+				"url": "/images/cms/branding/image.png",
+				"id": "image.png"
+			}
+		},
+		"meta_tags": {
+			"page_tags": [
+				{
+					"title": "KI, Automatisierung und Fachsoftware | FDTI",
+					"description": "FDTI entwickelt KI-Copiloten, Prozessautomatisierungen und Fachanwendungen, die Daten, SaaS-Plattformen und interne Systeme verbinden.",
+					"url": "/",
+					"img": {
+						"filename_disk": "fdti-from-data-to-insights.svg",
+						"url": "/images/cms/branding/fdti-from-data-to-insights.svg",
+						"id": "fdti-from-data-to-insights.svg"
+					}
+				},
+				{
+					"title": "Anwendungsfälle | Daten-, KI- und Anwendungsprojekte – FDTI",
+					"description": "Reale Implementierungen: Gerichtsautomatisierung mit KI, Kreislaufwirtschaftsplattformen, Batteriemarktplätze, intelligente Stadtbeleuchtung, Social-Media-Analyse mit LLMs, Data Warehouses für den Einzelhandel und die Justiz.",
+					"url": "/realisations",
+					"img": {
+						"filename_disk": "fdti-from-data-to-insights.svg",
+						"url": "/images/cms/branding/fdti-from-data-to-insights.svg",
+						"id": "fdti-from-data-to-insights.svg"
+					}
+				}
+			]
+		}
+	},
+	"GetCGUContent": {
+		"meta_tags": {
+			"page_tags": [
+				{
+					"title": "Rechtliche Hinweise und Nutzungsbedingungen | FDTI",
+					"description": "Lesen Sie die Herausgeberdetails für fdti.eu und die Bestimmungen der Website zu geistigem Eigentum, personenbezogenen Daten und Haftung.",
+					"url": "/condition-utilisation",
+					"img": {
+						"filename_disk": "fdti-from-data-to-insights.svg",
+						"url": "/images/cms/branding/fdti-from-data-to-insights.svg",
+						"id": "fdti-from-data-to-insights.svg"
+					}
+				}
+			]
+		},
+		"CGU": {
+			"title": "Rechtliche Hinweise und Nutzungsbedingungen",
+			"content": "<div class=\"text-2xl lg:mx-72 mx-16 mt-14 text-grey1 font-semibold s-_nwK2CU3lMz9\">Websitebetreiber</div>\n<div class=\"text-sm lg:mx-72 mx-16 text-grey1 s-_nwK2CU3lMz9\">\n<p class=\"s-_nwK2CU3lMz9\">Die Website <strong>fdti.eu</strong> wird von <strong>FDTI Consulting</strong> herausgegeben, einer SARL mit einem Stammkapital von 2 000 €, eingetragen im Handels- und Gesellschaftsregister (RCS) Toulouse unter der Nr. 850 172 164.</p>\n<p class=\"s-_nwK2CU3lMz9\">Sitz: 8 place Roger Salengro, 31000 Toulouse.</p>\n<p class=\"s-_nwK2CU3lMz9\">E-Mail: <a href=\"mailto:info@fdti.eu\" class=\"text-blue-700\">info@fdti.eu</a></p>\n</div>\n<div class=\"text-2xl lg:mx-72 mx-16 mt-5 text-grey1 font-semibold s-_nwK2CU3lMz9\">Geistiges Eigentum</div>\n<div class=\"text-sm lg:mx-72 mx-16 text-grey1 s-_nwK2CU3lMz9\">\n<p class=\"s-_nwK2CU3lMz9\">Alle auf dieser Website enthaltenen Inhalte (Texte, Bilder, Logos) sind ausschließliches Eigentum von FDTI Consulting. Jede Vervielfältigung oder Nutzung ohne vorherige Genehmigung ist untersagt.</p>\n</div>\n<div class=\"text-2xl lg:mx-72 mx-16 mt-5 text-grey1 font-semibold s-_nwK2CU3lMz9\">Personenbezogene Daten</div>\n<div class=\"text-sm lg:mx-72 mx-16 text-grey1 s-_nwK2CU3lMz9\">\n<p class=\"s-_nwK2CU3lMz9\">Diese Website erhebt keine personenbezogenen Daten.</p>\n</div>\n<div class=\"text-2xl lg:mx-72 mx-16 mt-5 text-grey1 font-semibold s-_nwK2CU3lMz9\">Haftung</div>\n<div class=\"text-sm lg:mx-72 mx-16 text-grey1 mb-28 s-_nwK2CU3lMz9\">\n<p class=\"s-_nwK2CU3lMz9\">FDTI Consulting bemüht sich, auf dieser Website genaue Informationen bereitzustellen, kann jedoch nicht für Fehler oder Auslassungen haftbar gemacht werden. Die Nutzung der Website erfolgt auf Ihre alleinige Verantwortung.</p>\n</div>"
+		}
+	},
+	"GetPrivacyContent": {
+		"meta_tags": {
+			"page_tags": [
+				{
+					"title": "Datenschutzerklärung | FDTI",
+					"description": "Lesen Sie die erklärten Praktiken von FDTI für personenbezogene Daten und Zielgruppenmessung, einschließlich Hosting, Zugriff, Pseudonymisierung und Löschung.",
+					"url": "/confidentialite",
+					"img": {
+						"filename_disk": "fdti-from-data-to-insights.svg",
+						"url": "/images/cms/branding/fdti-from-data-to-insights.svg",
+						"id": "fdti-from-data-to-insights.svg"
+					}
+				}
+			]
+		},
+		"privacy": {
+			"title": "Datenschutzerklärung",
+			"content": "<main class=\"flex-1  s-7IPF32Wcq3s8\">\n<div>\n<div class=\"text-2xl lg:mx-72 mx-16 mt-14 text-grey1 font-semibold\">Rechtlicher Rahmen &ndash; Einhaltung der DSGVO und des französischen Rechts</div>\n<div class=\"text-sm lg:mx-72 mx-16 text-grey1\">\n<p>FDTI Consulting erklärt, personenbezogene Daten gemäß der Verordnung (EU) 2016/679 des Europäischen Parlaments und des Rates vom 27. April 2016 zum Schutz natürlicher Personen bei der Verarbeitung personenbezogener Daten und zum freien Datenverkehr (nachfolgend DSGVO) sowie gemäß dem französischen Gesetz Nr. 78-17 vom 6. Januar 1978 über Informatik, Dateien und Freiheitsrechte zu verarbeiten.</p>\n<br />\n<p>Am 25. Mai 2018 trat die Datenschutz-Grundverordnung in Kraft. Unternehmen, die Daten verarbeiten, müssen jederzeit einen bestmöglichen Datenschutz gewährleisten und dessen Einhaltung durch eine entsprechende Dokumentation nachweisen können.</p>\n<br />\n<p>Aufgrund ihrer Tätigkeit kann FDTI Consulting personenbezogene Daten verarbeiten, die von ihren Kunden erhoben und verarbeitet wurden. Die folgenden Bestimmungen definieren die internen Verarbeitungsregeln von FDTI Consulting und gewährleisten den Schutz personenbezogener Daten gemäß der DSGVO.</p>\n<br />\n<p>FDTI Consulting betrachtet den Schutz personenbezogener Daten in allen Tätigkeitsbereichen als grundlegend. Das Unternehmen ist bestrebt, sämtliche verarbeiteten Daten so früh wie möglich zu anonymisieren und eine Offenlegung außerhalb der maßgeblichen Rechtsrahmen zu verhindern.</p>\n</div>\n<div class=\"text-2xl lg:mx-72 mx-16 mt-5 text-grey1 font-semibold \">Governance</div>\n<div class=\"text-sm lg:mx-72 mx-16 text-grey1\">\n<p>Die von FDTI verarbeiteten Daten verlassen die Europäische Union nicht und unterliegen keiner Gerichtsbarkeit außerhalb der Europäischen Union.</p>\n<br />\n<p>Unser Hostinganbieter OVH France hat seinen Sitz in Frankreich und hostet unsere Dienste in Frankreich. Daher unterliegt er nicht dem Cloud Act.</p>\n</div>\n<div class=\"text-2xl lg:mx-72 mx-16 mt-5 text-grey1 font-semibold\">Verarbeitung personenbezogener Daten</div>\n<div class=\"text-sm lg:mx-72 mx-16 text-grey1 mb-28\">\n<p>Abgesehen von Sonderfällen benötigt FDTI Consulting für die Erfüllung seiner Aufgaben keine personenbezogenen Daten. FDTI Consulting bittet seine Kunden daher, keine personenbezogenen Daten zu übermitteln. Sollten unerwartet personenbezogene Daten eingehen, löscht FDTI Consulting diese unverzüglich und informiert den Absender.</p>\n<br />\n<p>Bestimmte personenbezogene Daten können zu Identifikationszwecken erforderlich sein. In diesem Fall fordert FDTI Consulting den Datenbereitsteller auf, diese Daten zu pseudonymisieren, und unterstützt ihn dabei.</p>\n<p>Verfügt der Absender in seiner Umgebung nicht über die technischen oder personellen Möglichkeiten für diese Pseudonymisierung, übernimmt FDTI Consulting sie. In diesem Fall erhält nur eine Person innerhalb von FDTI Consulting Zugriff auf die personenbezogenen Daten, um sie zu pseudonymisieren und anschließend ausschließlich in pseudonymisierter Form innerhalb von FDTI Consulting bereitzustellen.</p>\n<br />\n<p>Alle im Rahmen unserer Arbeit verwendeten personenbezogenen Daten werden somit in einem geschützten Bereich gespeichert und entsprechend der Einwilligung der betroffenen Personen verarbeitet. Nach Abschluss der für unsere Projekte erforderlichen Untersuchungen und Verarbeitungen werden diese Daten dauerhaft gelöscht.</p>\n</div>\n</div>\n</main>"
+		}
+	},
+	"GetUseCasesContent": {
+		"title": "Referenzen",
+		"subtitle": "Eingesetzte Systeme, spezifische Geschäftsprobleme und beobachtbare Ergebnisse",
+		"meta_tags": {
+			"page_tags": [
+				{
+					"title": "Daten-, KI- und Unternehmenssoftwareprojekte | FDTI",
+					"description": "Referenzen von FDTI: KI für Handelsgerichte, Plattformen für Kreislaufwirtschaft, Einzelhandelsdaten und die Steuerung öffentlicher Beleuchtung.",
+					"url": "/realisations",
+					"img": {
+						"filename_disk": "fdti-from-data-to-insights.svg",
+						"url": "/images/cms/branding/fdti-from-data-to-insights.svg",
+						"id": "fdti-from-data-to-insights.svg"
+					}
+				}
+			]
+		},
+		"use_case_list": [
+			{
+				"id": "1",
+				"category": "Justiz und öffentlicher Sektor",
+				"title": "KI-Plattform für Handelsgerichte",
+				"date": "2025",
+				"location": "Frankreich",
+				"challenge": "Ein Softwareanbieter für Gerichtsschreiber wollte KI direkt in seine Plattform einbetten, um die Bearbeitungszeit und Genauigkeit für bestimmte zeitaufwändige Gerichtsschreiberaufgaben zu optimieren.",
+				"approach": "Modulare Architektur nach KI-Anwendungsfällen mit maßgeschneiderten LLMs. Ein lokaler KI-Stack auf Basis von FastAPI ist vollständig über eine API in das vorhandene Werkzeug integriert und über eine sichere API auch für weitere Benutzer zugänglich. Hinzu kommt ein TypeScript-/SvelteKit-Portal.",
+				"impact": "Die KI-Voranalyse läuft parallel zu den Geschäftsabläufen: Rund 40 Milliarden Token werden pro Jahr in einem ersten Anwendungsfall verarbeitet, mit einer erheblichen Zeitersparnis bei gleichzeitiger Einhaltung der gerichtlichen Vertraulichkeitsanforderungen.",
+				"metrics": [
+					{
+						"label": "Verarbeitete Token / Jahr",
+						"value": "40 Md"
+					},
+					{
+						"label": "Eingesparte Zeit (Äquivalent)",
+						"value": "≈16 Personentage / Tag"
+					},
+					{
+						"label": "Gerichte ausgestattet",
+						"value": "48"
+					}
+				],
+				"tags": [
+					"LLM",
+					"FastAPI",
+					"Keycloak",
+					"TypeScript",
+					"SvelteKit",
+					"PostgreSQL"
+				],
+				"details": [
+					"Kritische Anwendungsfälle werden abgedeckt: Fallzusammenfassungen, Dossiervalidierung, automatisierte Extraktion sensibler Dokumente.",
+					"Bereitstellung im VPN des Kunden mit detailliertem Performance-Monitoring und vertraglich vereinbarten SLAs.",
+					"Self-Service-Portal zum Erstellen von API-Schlüsseln, Nachverfolgen der Nutzung und Analysieren von API-Aufrufen.",
+					"Re-Annotation-Schleifen zur Verbesserung von Modellen sowie vollständige Audit-Tools.",
+					"Aktivierungsplan mit Schulungen, Playbooks und engagiertem Support.",
+					"Das TypeScript-/SvelteKit-Frontend bietet eine reibungslose Benutzererfahrung, ohne die vorhandene Software zu beeinträchtigen."
+				],
+				"slug": "automatisierung-handelsgerichte"
+			},
+			{
+				"id": "2",
+				"category": "Aftermarket und Recycling",
+				"title": "Plattform für die Verwaltung von Altfahrzeugen",
+				"date": "2020-2025",
+				"location": "Europa",
+				"challenge": "Nach der Gründung von Valorauto, einem Joint Venture von Stellantis und Galloo, sollte die Kreislaufwirtschaftsplattform ihr bestehendes System modernisieren, um die Rücknahme von Altfahrzeugen (B2B und B2C) zu verwalten und jedes Fahrzeug von der Abholung beim Eigentümer bis zur Demontage nachzuverfolgen.",
+				"approach": "Entwicklung des Valorauto-Portals mit Oberflächen für Meldung, Verwaltung und Fahrzeugverfolgung für die verschiedenen Beteiligten. Geschäftsprozesse und Azure Functions APIs wurden in der Azure-Infrastruktur des Kunden (MSSQL-Datenbanken, Azure Service Bus) bereitgestellt, um einen bestehenden .NET-Stack für Eigentümer und Altfahrzeugzentren zu orchestrieren.",
+				"impact": "Durchgängige Rückverfolgbarkeit für den Kreislaufwirtschaftsbereich der Gruppe, mit einem Netzwerk von mehr als 5 000 Partnerunternehmen und Unterstützung der Herstellerpflichten im Rahmen der erweiterten Herstellerverantwortung (EPR).",
+				"metrics": [
+					{
+						"label": "Abgedeckte Länder",
+						"value": "5"
+					},
+					{
+						"label": "Partnernetzwerk",
+						"value": "+5 000"
+					},
+					{
+						"label": "Trustpilot Punktzahl",
+						"value": "4.7"
+					}
+				],
+				"links": [
+					{
+						"label": "Valorauto-Website",
+						"url": "https://www.valorauto.com/"
+					},
+					{
+						"label": "Valorauto Trustpilot Bewertungen",
+						"url": "https://www.trustpilot.com/review/valorauto.com"
+					}
+				],
+				"tags": [
+					"TypeScript",
+					"SvelteKit",
+					"Azure",
+					"Azure Functions",
+					"MSSQL",
+					".NET",
+					"Azure Service Bus"
+				],
+				"details": [
+					"End-to-End-Entwicklung der Plattform, Datenbanken und APIs.",
+					"Komplettes Deklarations-Workflow-Design für Händler, Reparaturzentren und Privatbesitzer.",
+					"Azure Functions APIs zur Anbindung der Logistik-, CRM- und Finanzsysteme der Gruppe.",
+					"API-Anbindung an das erweiterte Ökosystem der Kreislaufwirtschaft (Recycler, Eigentümer, Käufer und Umweltorganisationen).",
+					"Echtzeit-Abbildung von Materialflüssen und automatische Generierung regulatorischer Dokumente.",
+					"Multi-Marken-Management: lokale Regeln, Kataloge und Preise nach Ländern.",
+					"Azure Infrastruktur, die für regulatorische Spitzen und Audits ausgelegt ist.",
+					"Operative und regulatorische Dashboards, die die Flüsse B2B und B2C konsolidieren.",
+					"Personalisierte E-Mail-Benachrichtigungen für jeden Benutzer (Werkstätten, Händler, Privatbesitzer) bei jedem Arbeitsschritt."
+				],
+				"slug": "plattform-fahrzeugruecknahme"
+			},
+			{
+				"id": "3",
+				"category": "Aftermarket und Recycling",
+				"title": "Marktplatz für die Wiederverwendung von Batterien",
+				"date": "2024",
+				"location": "Europa",
+				"challenge": "Ein Automobilhersteller benötigte ein zentrales Tool, um die Sammlung, das Recycling und den Weiterverkauf seiner Batterien in Zusammenarbeit mit seinen Partnern und Käufern zu verwalten. Das Tool musste die vollständige Prozessrückverfolgbarkeit verwalten, um regulatorische Anforderungen im Zusammenhang mit der Strukturierung von EPR-Systemen (Extended Producer Responsibility) zu erfüllen.",
+				"approach": "Web-Marktplatz mit Anbindung an die ERP-Systeme der Partner, der als Logistik- und Vermittlungsplattform dient. Durchgängige Rückverfolgbarkeit, automatisierte Abläufe zu Käufern oder Recyclern sowie Preis- und Konditionsverhandlungen mit den Partnern sind integriert. Der gesamte Prozess kann über das Portal oder die API verwaltet werden.",
+				"impact": "Jeden Monat werden mehrere tausend Batterien von Hunderten von Eigentümern und Dienstleistern über die Plattform bearbeitet. Behörden erhalten eine zentrale Berichterstattung, die Kundenmitarbeiter eine Verwaltungsoberfläche. Die Lösung ist nahtlos in das bestehende Ökosystem integriert.",
+				"metrics": [
+					{
+						"label": "Batterien/Monat",
+						"value": "+8 k"
+					},
+					{
+						"label": "Angeschlossene Partner",
+						"value": "+300"
+					},
+					{
+						"label": "Abgedeckte Länder",
+						"value": "18"
+					}
+				],
+				"tags": [
+					"SvelteKit",
+					"FastAPI",
+					"PostgreSQL",
+					"Keycloak"
+				],
+				"details": [
+					"End-to-End-Plattformentwicklung, Datenbanken und APIs.",
+					"Vollständiger Deklarationsprozess für Altbatterien sowie automatische Logistikdokumente.",
+					"API-Integrationen mit Recyclern und Umweltorganisationen zur Nachverfolgung von Abholungen, Tests, Zertifikaten und Preisangeboten.",
+					"Arbeitsbereich für Käufer, um wiederverwendbare Batterien zu beschaffen und die Transaktion zu verwalten.",
+					"Bewertung der Qualität und Konformität der Partner sowie gemeinsam vereinbarte SLAs.",
+					"Regulatorische Berichterstattung mit einem Klick exportierbar.",
+					"Automatisierte E-Mail-Benachrichtigungen für Partner und Käufer über alle Abhol-, Test- und Wiederverkaufsschritte hinweg.",
+					"Identitätsföderation über Keycloak für Gruppeneinheiten und externe Partner."
+				],
+				"slug": "marktplatz-fuer-second-life-batterien"
+			},
+			{
+				"id": "8",
+				"category": "Aftermarket und Recycling",
+				"title": "Betriebsplattform für einen Batterierecycler",
+				"location": "Frankreich",
+				"challenge": "Ein Recycler benötigte ein zentrales System für Batteriemeldungen, Vorprüfung, Vorbereitung der Abholung, Begleitdokumente sowie Annahme und Behandlung.",
+				"approach": "Entwicklung einer Geschäftsanwendung, die Meldungen, Batteriereferenzdaten, Packlisten, Gruppierungsprüfungen, Trackdéchets-Nachweise und Annahmevorgänge verbindet.",
+				"impact": "Die Teams verfolgen jeden Vorgang von der Meldung bis zur Behandlung. Explizite Prüfungen berücksichtigen Sammler, Zielstandorte, Unterschriften und Dokumentstatus.",
+				"tags": [
+					"SvelteKit",
+					"FastAPI",
+					"PostgreSQL",
+					"Trackdéchets"
+				],
+				"details": [
+					"Deklarationsqualifizierung basierend auf Batteriechemie, Unterchemie und Typologie.",
+					"Packlisten verhindern, dass inkompatible Sammler oder Zielstandorte gemeinsam gruppiert werden.",
+					"Erstellung und Aktualisierung von Nachweisen über Trackdéchets mit Anzeige der erwarteten Unterschriften.",
+					"Annahme der Meldungen und Behandlungsschritte werden im selben Geschäftsvorgang nachverfolgt.",
+					"Oberflächen für interne Teams und Sammelpartner."
+				],
+				"slug": "betriebsplattform-batterierecycling"
+			},
+			{
+				"id": "4",
+				"category": "Intelligente Stadt und Energie",
+				"title": "Überwachung der öffentlichen Beleuchtung",
+				"date": "2024",
+				"location": "Frankreich",
+				"challenge": "Ein Kunde, der sich auf das öffentliche Beleuchtungsmanagement für Kommunen und deren Dienstleister spezialisiert hat, benötigte eine einzige Plattform, um die öffentliche Beleuchtung zu verwalten, Zeitpläne anzupassen, Anomalien zu erkennen und Wartungsarbeiten zu planen.",
+				"approach": "Entwicklung einer Webanwendung, die als Managementportal und Analyse-Dashboards dient. AWS S3 + DuckDB/Parquet Echtzeit-Stack, Shell/Cron-Pipelines, FastAPI Backend und TypeScript/SvelteKit Benutzeroberfläche.",
+				"impact": "Die Anwendung wird jeden Morgen von Netzwerkmanagern konsultiert. Verbrauchs- und Störungsmessungen werden dynamisch angepasst, wobei vorausschauende Wartung und Alarmierung in mehr als 40 Gebieten eingesetzt werden.",
+				"metrics": [
+					{
+						"label": "Messungen/Tag",
+						"value": ">100 M"
+					},
+					{
+						"label": "Gebiete",
+						"value": "+40"
+					}
+				],
+				"tags": [
+					"DuckDB",
+					"SvelteKit",
+					"PostgreSQL",
+					"FastAPI"
+				],
+				"details": [
+					"Kontinuierliche Erfassung der Beleuchtungszähler mit optimierter Speicherung in AWS S3 und Parquet.",
+					"Shell/Cron-Pipelines zum Aktualisieren des Caches.",
+					"DuckDB-Analysen liefern sofort KPIs über mehrere Jahre hinweg, mit dynamischen Visualisierungen zur Anzeige der Ergebnisse.",
+					"Mandatsverwaltungssystem für Dateneigentümer und -nutzer.",
+					"Alarm-Dashboards für Betreiber (Ausfälle, Verbrauch, Zeitplananomalien).",
+					"Offene REST API zur Anbindung der Systeme von Betreibern und Kommunen.",
+					"Mandantenverwaltung mit detaillierten Berechtigungen und Segmentierung pro Stadt."
+				],
+				"slug": "ueberwachung-strassenbeleuchtung"
+			},
+			{
+				"id": "5",
+				"category": "NGO & Engagement",
+				"title": "KI-Analyse von Social-Media-Kampagnen",
+				"date": "2023",
+				"location": "International",
+				"challenge": "Die NGO musste Umweltnarrative auf Facebook und Instagram vergleichen, um Kommunikationsinvestitionen zu steuern.",
+				"approach": "LLM-Methodik (ChatGPT und spezialisierte Prompts) zur Bewertung von Tonalität, Themen und Perspektiven. Die Ergebnisse wurden mit Facebook- und Instagram-KPIs nach Zielgruppentyp (Alter, Land, Interessen) korreliert und in vergleichenden Visualisierungen aufbereitet.",
+				"impact": "Budgetumverteilung pro Land/Plattform und ein internalisierter Analyserahmen.",
+				"metrics": [
+					{
+						"label": "Beiträge analysiert",
+						"value": "60 k"
+					},
+					{
+						"label": "Sprachen",
+						"value": "8"
+					},
+					{
+						"label": "Visualisierungen",
+						"value": "50+"
+					}
+				],
+				"tags": [
+					"LLM",
+					"OpenAI",
+					"NLP",
+					"TypeScript"
+				],
+				"details": [
+					"Spezifische Prompts zur Erfassung von Tonalität, Akteuren, Themen und Emotionen auf Facebook und Instagram.",
+					"Automatisierte Pipeline: soziale Daten → LLM → Bewertung von Themen/Tönen/Perspektiven pro Zielgruppentyp.",
+					"Kreuzanalyse mit Beitragsleistung, um vorrangige Themen zu empfehlen.",
+					"Dokumentierte Methodik, die von lokalen Teams reproduziert werden kann.",
+					"Enablement-Sitzungen zur Interpretation von Empfehlungen und zur Anpassung von Budgets."
+				],
+				"slug": "ki-analyse-social-media-kampagnen"
+			},
+			{
+				"id": "6",
+				"category": "Einzelhandel und Unterhaltungselektronik",
+				"title": "Datenhub & NLP",
+				"date": "2021-2023",
+				"location": "Global",
+				"challenge": "Kundenbewertungen eines führenden Elektronikunternehmens in Frankreich zentralisieren und ihre Analyse mit KI und Dashboards industrialisieren.",
+				"approach": "Pipelines zum Sammeln von Daten von verschiedenen Anbietern und Sammlungsmanagern über API Airflow→BigQuery, GCP Governance, NLP (HuggingFace, BERTopic, QA, LLM), Bereitstellung in Tableau Dashboards und interne Datenverteilung an andere betroffene Teams.",
+				"impact": "Der Kundenservice ruft klassifizierte Themen und eskalierte Warnmeldungen sofort ab und verfolgt Anfragen präziser. Das Produktteam erkennt und antizipiert Mängel sowie Logistikprobleme. Die Rechtsabteilung kann Rechtsstreitigkeiten frühzeitig erkennen.",
+				"metrics": [
+					{
+						"label": "Quellen integriert",
+						"value": "+25"
+					},
+					{
+						"label": "Bewertungen analysiert",
+						"value": "Ganz Frankreich"
+					}
+				],
+				"tags": [
+					"GCP",
+					"Airflow",
+					"NLP",
+					"LLM",
+					"Tableau",
+					"HuggingFace"
+				],
+				"details": [
+					"Multi-API-Sammlung (Mystery Shopping, CRM, soziale Netzwerke, Rezensionen), orchestriert von Airflow.",
+					"Cloud-Richtlinien: Teamsegmentierung, Datenlokalisierung, Sicherheit und Best Practices.",
+					"Analyse- und Klassifizierungspipeline mit LLMs.",
+					"NLP-Pipelines für Ähnlichkeit, Sentiment und Themen in mehreren Sprachen.",
+					"Design und Implementierung von Dashboards, die täglich vom Customer & Market insights-Team verwendet werden.",
+					"Dokumentation und Schulung für Daten-/Geschäftsteams.",
+					"Automatisierte Insight-Exporte an Marketing-Geschäftseinheiten und -Agenturen."
+				],
+				"slug": "datenhub-nlp"
+			},
+			{
+				"id": "7",
+				"category": "Einzelhandel und Unterhaltungselektronik",
+				"title": "Nahezu Echtzeit-Data Warehouse",
+				"date": "2020-2021",
+				"location": "Europa",
+				"challenge": "Im Rahmen einer ERP-Migration sollten 98 umfangreiche JSON-Geschäftsobjekte mit komplexen Strukturen (Filialen, Lager, Benutzer, Kassenbons, Bestände usw.) von Azure nach Snowflake migriert werden, um Qlik nahezu in Echtzeit zu versorgen.",
+				"approach": "Automatische Generierung Hunderter SQL- und Scala-Abfragen aus den Spezifikationen, um komplexe Objekte zu entflechten. Das System erzeugte und versorgt mehr als 150 Tabellen und Ansichten, die in Echtzeit aktualisiert werden. Datenaufnahme von ADLS nach Snowflake über Kafka/ADF und Orchestrierung über Streams und Tasks.",
+				"impact": "Minutengenaue Feeds für BI-Teams, die täglich Millionen von Dateien verarbeiten. Übergang zum neuen Analysesystem, gefolgt von der Abschaffung des alten Systems.",
+				"metrics": [
+					{
+						"label": "Geschäftsobjekte",
+						"value": "98"
+					},
+					{
+						"label": "Tabellen und Ansichten",
+						"value": "150+"
+					},
+					{
+						"label": "Latenz",
+						"value": "<1 min"
+					}
+				],
+				"tags": [
+					"Snowflake",
+					"Azure",
+					"Kafka",
+					"ADF",
+					"Qlik"
+				],
+				"details": [
+					"Automatische SQL-Generierung aus XML-Metadaten, um Bereitstellungen zu beschleunigen.",
+					"Delta-Updates orchestriert durch Snowflake Aufgaben mit dedizierter Überwachung.",
+					"Benutzerdefinierte Scala-Funktionen zum Denormalisieren verschachtelter JSON.",
+					"Coaching für Analysten zur Nutzung der neuen Echtzeit-Feeds.",
+					"Umgebungsmanagement über Snowflake API (Test / Pre-Prod / Prod)."
+				],
+				"slug": "data-warehouse-nahezu-echtzeit-einzelhandel"
+			}
+		],
+		"cta": {
+			"label": "Kritische Arbeit verdient mehr als generische Software.",
+			"button": "Definieren Sie einen ersten Bereich",
+			"link": "https://calendly.com/fdti/30min",
+			"description": "Beginnen Sie mit einem realen Fall, seinen Teilnehmern und seinen Daten, um den nächsten nützlichen Schritt zu identifizieren."
+		}
+	}
+}

@@ -22,6 +22,12 @@
 			subtitle:
 				'Utilizamos herramientas modernas adaptadas a cada situación que surge al tratar sus datos',
 			documentation: 'Enlace a la documentación'
+		},
+		de: {
+			title: 'Technologien',
+			subtitle:
+				'Wir setzen moderne Werkzeuge ein, die auf die jeweilige Aufgabe bei der Verarbeitung Ihrer Daten abgestimmt sind',
+			documentation: 'Link zur Dokumentation'
 		}
 	};
 	$: copy = labels[locale];
@@ -84,7 +90,7 @@
 								imgWidth={technology?.img?.width ?? DEFAULT_IMG_WIDTH}
 								imgHeight={technology?.img?.height ?? DEFAULT_IMG_HEIGHT}
 								ariaLabel={technology?.name
-									? `${copy.documentation} de ${technology.name}.`
+									? `${copy.documentation}: ${technology.name}.`
 									: `${copy.documentation}.`}
 								name={technology?.name}
 							/>

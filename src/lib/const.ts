@@ -25,5 +25,11 @@ export const FLAGS: IFlag[] = [
 		country: 'spain',
 		svg: '<g><path d="M0 85.333h512v341.334H0z" fill="#ffda44"></path><path d="M0 85.333h512v85.334H0zM0 341.333h512v85.334H0z" fill="#d80027"></path></g>',
 		box: 512
+	},
+	{
+		code: 'de',
+		country: 'germany',
+		svg: '<g><path d="M0 85.333h512v113.778H0z" fill="#000"></path><path d="M0 199.111h512v113.778H0z" fill="#d80027"></path><path d="M0 312.889h512v113.778H0z" fill="#ffda44"></path></g>',
+		box: 512
 	}
 ];

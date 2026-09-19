@@ -66,6 +66,26 @@
 			start: 'Inicio',
 			status: 'Estado',
 			metadata: 'Información sobre la oferta'
+		},
+		de: {
+			roleEyebrow: 'Praktikumsstelle',
+			company: 'FDTI Consulting',
+			summary: 'Kurzbeschreibung',
+			intro: 'Kontext',
+			required: 'Erforderliche Kenntnisse',
+			nice: 'Von Vorteil',
+			environment: 'Arbeitsumfeld',
+			conditions: 'Rahmenbedingungen',
+			process: 'Bewerbungsprozess',
+			apply: 'Bewerbung',
+			applyText: 'Nutzen Sie für Ihre Bewerbung das Online-Formular:',
+			pageText: 'Online-Stellenangebot:',
+			contract: 'Vertragsart',
+			location: 'Arbeitsort',
+			experience: 'Erfahrung',
+			start: 'Beginn',
+			status: 'Status',
+			metadata: 'Angaben zur Stelle'
 		}
 	} satisfies Record<Lang, Record<string, string>>;
 	$: copy = copies[locale];

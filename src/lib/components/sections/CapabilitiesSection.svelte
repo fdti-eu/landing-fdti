@@ -84,6 +84,30 @@
 					points: ['aplicaciones empresariales', 'bases de datos', 'API segura', 'integración']
 				}
 			]
+		},
+		de: {
+			title: 'Was wir entwickeln',
+			subtitle: 'Klare Kompetenzen und konkrete Umsetzungsformate für Ihre Teams.',
+			items: [
+				{
+					title: 'KI-Copiloten für Teams',
+					description:
+						'Informationssuche, Zusammenfassungen, Entscheidungshilfen, unterstütztes Schreiben und operative Unterstützung direkt in Ihren Werkzeugen.',
+					points: ['LLM', 'RAG', 'Agenten', 'Fachanwendungen']
+				},
+				{
+					title: 'Workflow-Automatisierung',
+					description:
+						'Dokumentenverarbeitung, Qualifizierung, Orchestrierung, Reporting, Warnmeldungen und Koordination zwischen Teams, Software und Daten.',
+					points: ['unterstützte Workflows', 'APIs', 'Geschäftsregeln', 'Automatisierung']
+				},
+				{
+					title: 'Fachanwendungen, Datenbanken und APIs',
+					description:
+						'Portale, Backoffices, Dashboards, Datenbanken, sichere APIs und interne Werkzeuge, die KI sauber in bestehende Systeme integrieren.',
+					points: ['Fachanwendungen', 'Datenbanken', 'sichere API', 'Integration']
+				}
+			]
 		}
 	};
 	$: copy = content[locale];

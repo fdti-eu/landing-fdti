@@ -4,7 +4,7 @@
 	import Flag from '../Flag.svelte';
 	import { FLAGS } from '$lib/const';
 	import { goto, invalidate } from '$app/navigation';
-	import type { Lang } from '$lib/data';
+	import { isSupportedLocale, type Lang } from '$lib/data';
 	import {
 		buildLocalizedPath,
 		stripLocaleFromPath,
@@ -12,6 +12,26 @@
 	} from '$lib/functions/seo';
 
 	let isDropdownOpen = false;
+	const labels: Record<Lang, { toggle: string; languages: Record<Lang, string> }> = {
+		fr: {
+			toggle: 'Changer de langue',
+			languages: { fr: 'Français', en: 'Anglais', es: 'Espagnol', de: 'Allemand' }
+		},
+		en: {
+			toggle: 'Change language',
+			languages: { fr: 'French', en: 'English', es: 'Spanish', de: 'German' }
+		},
+		es: {
+			toggle: 'Cambiar idioma',
+			languages: { fr: 'Francés', en: 'Inglés', es: 'Español', de: 'Alemán' }
+		},
+		de: {
+			toggle: 'Sprache ändern',
+			languages: { fr: 'Französisch', en: 'Englisch', es: 'Spanisch', de: 'Deutsch' }
+		}
+	};
+	$: currentLocale = isSupportedLocale($locale) ? $locale : 'fr';
+	$: copy = labels[currentLocale];
 
 	function toggleLanguageDropdown() {
 		isDropdownOpen = !isDropdownOpen;
@@ -30,7 +50,8 @@
 
 <div class="relative w-fit {$$props.class}">
 	<button
-		aria-label="toggle language"
+		aria-label={copy.toggle}
+		aria-expanded={isDropdownOpen}
 		class="flex justify-center items-center gap-2 text-white hover:text-yellow transition-colors duration-300"
 		on:click={toggleLanguageDropdown}
 	>
@@ -57,11 +78,12 @@
 				<li class="border-b border-darkGrey/10 last:border-none">
 					<button
 						value={code}
+						aria-label={copy.languages[code]}
 						class="flex items-center gap-3 px-3 py-2 w-full hover:bg-gray-50 transition-colors rounded-md"
 						on:click={() => handleChangeLocale(code)}
 					>
 						<Flag local={code} class="w-6 h-6 shadow-sm rounded-full object-cover" />
-						<span class="uppercase font-medium text-darkGrey text-sm">{code}</span>
+						<span class="font-medium text-darkGrey text-sm">{copy.languages[code]}</span>
 					</button>
 				</li>
 			{/each}

@@ -23,7 +23,8 @@
 	const allCasesLabels: Record<Lang, string> = {
 		fr: 'Voir tous les cas d’usage',
 		en: 'See all use cases',
-		es: 'Ver todos los casos de uso'
+		es: 'Ver todos los casos de uso',
+		de: 'Alle Referenzen ansehen'
 	};
 
 	let activeSlug: string | null = null;

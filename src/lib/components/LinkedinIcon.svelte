@@ -1,9 +1,13 @@
+<script lang="ts">
+	export let ariaLabel = 'LinkedIn page';
+</script>
+
 <a
 	href="https://www.linkedin.com/company/fdti-consulting/about/"
 	target="_blank"
 	rel="noreferrer"
 	class="px-2"
-	aria-label="Link to linkedin page"
+	aria-label={ariaLabel}
 >
 	<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#ffffff"
 		><path

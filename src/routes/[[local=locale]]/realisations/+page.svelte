@@ -61,7 +61,8 @@
 	const defaultMetaTitles: Record<Lang, string> = {
 		fr: 'FDTI - Réalisations',
 		en: 'FDTI - Use Cases',
-		es: 'FDTI - Proyectos'
+		es: 'FDTI - Proyectos',
+		de: 'FDTI - Referenzen'
 	};
 	$: currentLocale = (data?.locale as Lang) ?? 'fr';
 	$: content = data?.content || null;
@@ -100,6 +101,12 @@
 			all: 'Todos los proyectos',
 			approach: 'Enfoque',
 			impact: 'Impacto'
+		},
+		de: {
+			filter: 'Nach Branche filtern',
+			all: 'Alle Referenzen',
+			approach: 'Vorgehen',
+			impact: 'Wirkung'
 		}
 	};
 	const sectorLabels: Record<Lang, [string, string, string]> = {
@@ -113,6 +120,11 @@
 			'Industria y circularidad',
 			'Servicios públicos y territorios',
 			'Retail y conocimiento del cliente'
+		],
+		de: [
+			'Industrie und Kreislaufwirtschaft',
+			'Öffentliche Dienste und Kommunen',
+			'Handel und Kundenverständnis'
 		]
 	};
 	$: copy = interfaceLabels[currentLocale];

@@ -18,6 +18,11 @@
 			message: 'La página que busca no existe',
 			back: 'Volver al inicio',
 			sadSmile: 'cara triste'
+		},
+		de: {
+			message: 'Die gesuchte Seite existiert nicht',
+			back: 'Zurück zur Startseite',
+			sadSmile: 'trauriges Gesicht'
 		}
 	};
 	$: currentLocale = isSupportedLocale($locale) ? $locale : 'fr';

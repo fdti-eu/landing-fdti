@@ -19,11 +19,17 @@
 	$: root = buildLocalizedPath('/expertises/economie-circulaire', data.locale);
 	$: canonical = buildLocalizedUrl(`/expertises/economie-circulaire/${dossier.slug}`, data.locale);
 	$: title = `${dossier.label} | FDTI`;
-	const homeLabels: Record<Lang, string> = { fr: 'Accueil', en: 'Home', es: 'Inicio' };
+	const homeLabels: Record<Lang, string> = {
+		fr: 'Accueil',
+		en: 'Home',
+		es: 'Inicio',
+		de: 'Startseite'
+	};
 	const imageAlts: Record<Lang, string> = {
 		fr: 'FDTI - IA, code et données',
 		en: 'FDTI - AI, code and data',
-		es: 'FDTI - IA, código y datos'
+		es: 'FDTI - IA, código y datos',
+		de: 'FDTI - KI, Code und Daten'
 	};
 	let activeSection = '';
 	let scrollFrame = 0;

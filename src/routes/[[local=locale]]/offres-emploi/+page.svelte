@@ -76,6 +76,27 @@
 			startLabel: 'Inicio',
 			statusLabel: 'Estado',
 			cta: 'Ver la oferta y presentar mi candidatura'
+		},
+		de: {
+			title: 'Praktika in KI, Softwareentwicklung und Daten | FDTI',
+			description:
+				'Absolvieren Sie bei FDTI ein Praktikum in den Bereichen KI, Fachagenten, Anwendungen, Daten und Projektsteuerung.',
+			eyebrow: 'Karriere',
+			h1: 'Praktika in KI, Softwareentwicklung und Daten bei FDTI',
+			hero: 'Wir bieten regelmäßig Praktika zu KI-, Software- und Datenthemen an, die unmittelbar mit den Abläufen unserer Kunden und Teams verbunden sind.',
+			formatTitle: 'Format',
+			formatText: 'Sechsmonatige Praktika mit Betreuung durch das FDTI-Team.',
+			locationTitle: 'Arbeitsort',
+			locationText: 'Die Arbeitsmodalitäten werden passend zum Praktikumsrahmen festgelegt.',
+			startTitle: 'Start',
+			startText: 'Ein Einstieg ist je nach laufenden Projekten ganzjährig möglich.',
+			openRoles: 'Offene Stellen',
+			offersTitle: 'Unsere Angebote',
+			offersIntro:
+				'Diese Praktika richten sich an neugierige, strukturierte Menschen, die in produktiv eingesetzten Projekten schnell lernen möchten.',
+			startLabel: 'Beginn',
+			statusLabel: 'Status',
+			cta: 'Stelle ansehen und sich bewerben'
 		}
 	} satisfies Record<Lang, Record<string, string>>;
 	$: copy = copies[data.locale];

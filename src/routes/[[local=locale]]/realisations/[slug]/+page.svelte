@@ -116,6 +116,43 @@
 				description:
 					'A data warehouse moves 98 complex JSON objects from Azure to Snowflake and feeds over 150 tables and views with latency below one minute for BI teams.'
 			}
+		},
+		de: {
+			'1': {
+				description:
+					'Eine in die Software der Geschäftsstellen eingebettete KI-Plattform analysiert Akten im Kundennetzwerk vor und verarbeitet in 48 Gerichten rund 40 Milliarden Tokens pro Jahr.'
+			},
+			'2': {
+				description:
+					'Valorauto bündelt die B2B- und B2C-Rücknahme von Altfahrzeugen auf einer Plattform und verfolgt jedes Fahrzeug von der Meldung bis zur Demontage in 5 Ländern.'
+			},
+			'3': {
+				description:
+					'Ein Marktplatz koordiniert Sammlung, Recycling und Wiederverkauf von Batterien in 18 Ländern über Portal und API und bearbeitet monatlich mehr als 8.000 Batterien.'
+			},
+			'8': {
+				title: 'Managementsystem für Batterierecycling | FDTI',
+				description:
+					'Eine Fachanwendung verbindet Meldungen, Abholungen und Trackdéchets-Begleitscheine und verfolgt jeden Batterievorgang bis zu Eingang und Behandlung.'
+			},
+			'4': {
+				description:
+					'Eine Plattform überwacht täglich mehr als 100 Millionen Messwerte der Straßenbeleuchtung, erkennt Anomalien und unterstützt die Instandhaltung in über 40 Gebieten.'
+			},
+			'5': {
+				description:
+					'Eine LLM-gestützte Analyse vergleicht 60.000 Facebook- und Instagram-Beiträge in 8 Sprachen und verknüpft Narrative mit der Kampagnenleistung nach Zielgruppe.'
+			},
+			'6': {
+				title: 'Data Hub für Kundenbewertungen und NLP | FDTI',
+				description:
+					'Ein Data Hub bündelt mehr als 25 Quellen für Kundenbewertungen und analysiert sie mit NLP, um Kundenservice, Produktentwicklung und Rechtsabteilung mit klassifizierten Erkenntnissen zu unterstützen.'
+			},
+			'7': {
+				title: 'Retail Data Warehouse in nahezu Echtzeit | FDTI',
+				description:
+					'Ein Data Warehouse migriert 98 komplexe JSON-Geschäftsobjekte von Azure zu Snowflake und versorgt BI-Teams in weniger als einer Minute mit über 150 Tabellen und Views.'
+			}
 		}
 	};
 
@@ -142,14 +179,23 @@
 						back: 'Proyectos',
 						home: 'Inicio'
 					}
-				: {
-						context: 'Context',
-						approach: 'Approach',
-						impact: 'Impact',
-						delivered: 'What we delivered',
-						back: 'Work',
-						home: 'Home'
-					};
+				: currentLocale === 'de'
+					? {
+							context: 'Kontext',
+							approach: 'Vorgehen',
+							impact: 'Wirkung',
+							delivered: 'Unsere Leistungen',
+							back: 'Referenzen',
+							home: 'Startseite'
+						}
+					: {
+							context: 'Context',
+							approach: 'Approach',
+							impact: 'Impact',
+							delivered: 'What we delivered',
+							back: 'Work',
+							home: 'Home'
+						};
 
 	$: metatags = {
 		title: seo?.title ?? (useCase?.title ? `${useCase.title} | FDTI` : 'FDTI'),

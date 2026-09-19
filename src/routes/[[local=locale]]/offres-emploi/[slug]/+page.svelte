@@ -81,6 +81,28 @@
 			iframeTitle: 'Formulario de candidatura',
 			iframeLoading: 'Cargando el formulario…',
 			openForm: 'Abrir el formulario en una pestaña nueva'
+		},
+		de: {
+			back: 'Alle Stellenangebote',
+			home: 'Startseite',
+			eyebrow: 'Praktikumsstelle',
+			apply: 'Jetzt bewerben',
+			print: 'Drucken / PDF',
+			printSub: 'A4-Version',
+			introTitle: 'Werden Sie Teil unseres Teams',
+			skillsTitle: 'Gesuchte Kenntnisse und Erfahrungen',
+			requiredTitle: 'Erforderlich',
+			niceTitle: 'Von Vorteil',
+			environmentTitle: 'Arbeitsumfeld',
+			conditionsTitle: 'Rahmenbedingungen',
+			processTitle: 'Bewerbungsprozess',
+			applicationEyebrow: 'Bewerbung',
+			applicationTitle: 'Sich auf diese Stelle bewerben',
+			applicationText:
+				'Bitte geben Sie die angeforderten Informationen im Formular an. Falls das eingebettete Formular nicht korrekt angezeigt wird, können Sie es in einem neuen Tab öffnen.',
+			iframeTitle: 'Bewerbungsformular',
+			iframeLoading: 'Formular wird geladen…',
+			openForm: 'Formular in einem neuen Tab öffnen'
 		}
 	} satisfies Record<Lang, Record<string, string>>;
 	$: copy = copies[data.locale];

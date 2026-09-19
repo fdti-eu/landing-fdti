@@ -39,8 +39,7 @@
 						src="/images/analysts-working.svg"
 						width="512"
 						height="458"
-						alt="analyst working"
-						title="analyst working"
+						alt=""
 						fetchpriority="high"
 						loading="eager"
 					/>

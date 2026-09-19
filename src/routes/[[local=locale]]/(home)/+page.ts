@@ -28,6 +28,11 @@ export const load: PageLoad = async ({ params }) => {
 			title: 'Casos concretos',
 			subtitle:
 				'Una selección de proyectos ya desplegados en IA, aplicaciones empresariales y automatización de procesos.'
+		},
+		de: {
+			title: 'Praxisbeispiele',
+			subtitle:
+				'Ausgewählte, bereits produktiv eingesetzte Projekte in den Bereichen KI, Geschäftsanwendungen und Prozessautomatisierung.'
 		}
 	};
 

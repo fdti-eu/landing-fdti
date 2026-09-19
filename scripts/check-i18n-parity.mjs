@@ -6,7 +6,8 @@ const root = process.cwd();
 const frPath = 'src/locales/fr.json';
 const enPath = 'src/locales/en.json';
 const esPath = 'src/locales/es.json';
-const localePaths = [frPath, enPath, esPath];
+const dePath = 'src/locales/de.json';
+const localePaths = [frPath, enPath, esPath, dePath];
 
 const errors = [];
 const staleEnglishPhrases = [
@@ -138,6 +139,16 @@ function checkSpanishText(esData) {
 	});
 }
 
+function checkGermanText(deData) {
+	walkStrings(deData, (text, path) => {
+		for (const phrase of staleEnglishPhrases) {
+			if (text.includes(phrase)) {
+				errors.push(`${dePath} ${path}: stale English phrase still present (${phrase})`);
+			}
+		}
+	});
+}
+
 function truncate(text) {
 	return text.length > 120 ? `${text.slice(0, 117)}...` : text;
 }
@@ -171,6 +182,7 @@ function checkChangedLocaleFiles() {
 	const frChanged = changedFiles.has(frPath);
 	const enChanged = changedFiles.has(enPath);
 	const esChanged = changedFiles.has(esPath);
+	const deChanged = changedFiles.has(dePath);
 
 	if (frChanged && !enChanged) {
 		errors.push(
@@ -183,15 +195,23 @@ function checkChangedLocaleFiles() {
 			`${frPath} changed without ${esPath}. Update the Spanish locale in the same change.`
 		);
 	}
+
+	if (frChanged && !deChanged) {
+		errors.push(
+			`${frPath} changed without ${dePath}. Update the German locale in the same change.`
+		);
+	}
 }
 
 const frData = readJson(frPath);
 const enData = readJson(enPath);
 const esData = readJson(esPath);
+const deData = readJson(dePath);
 
 if (frData) {
 	if (enData) compareStructure(frData, enData, enPath);
 	if (esData) compareStructure(frData, esData, esPath);
+	if (deData) compareStructure(frData, deData, dePath);
 }
 
 if (enData) {
@@ -199,6 +219,7 @@ if (enData) {
 }
 
 if (esData) checkSpanishText(esData);
+if (deData) checkGermanText(deData);
 
 checkChangedLocaleFiles();
 
