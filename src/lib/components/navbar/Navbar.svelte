@@ -5,6 +5,7 @@
 	import Hamburger from './Hamburger.svelte';
 	import LocaleToggle from './LocaleToggle.svelte';
 	import { isSupportedLocale, type Lang } from '$lib/data';
+	import { buildLocalizedPath } from '$lib/functions/seo';
 
 	let isNavbarOpen = false;
 	let menuButton: HTMLButtonElement;
@@ -91,50 +92,63 @@
 	};
 	$: currentLocale = isSupportedLocale($locale) ? $locale : 'fr';
 	$: copy = labels[currentLocale];
+	const isPathActive = (path: string, pathname: string, locale: Lang, exact = false) => {
+		const canonicalPath = buildLocalizedPath(path, locale);
+		const activePaths =
+			locale === 'fr'
+				? [canonicalPath, `/fr${canonicalPath === '/' ? '' : canonicalPath}`]
+				: [canonicalPath];
+
+		return activePaths.some((activePath) =>
+			exact
+				? pathname === activePath
+				: pathname === activePath || pathname.startsWith(`${activePath}/`)
+		);
+	};
 	$: links = [
 		{
-			href: `/${currentLocale}`,
+			href: buildLocalizedPath('/', currentLocale),
 			label: copy.home,
-			active: $page.url.pathname === '/' || $page.url.pathname === `/${currentLocale}`
+			active: isPathActive('/', $page.url.pathname, currentLocale, true)
 		},
 		{
-			href: `/${currentLocale}/expertises`,
+			href: buildLocalizedPath('/expertises', currentLocale),
 			label: copy.expertise,
-			active: $page.url.pathname.includes('/expertises'),
+			active: isPathActive('/expertises', $page.url.pathname, currentLocale),
 			children: [
 				{
-					href: `/${currentLocale}/expertises`,
+					href: buildLocalizedPath('/expertises', currentLocale),
 					label: copy.allExpertise
 				},
 				{
-					href: `/${currentLocale}/expertises/economie-circulaire`,
+					href: buildLocalizedPath('/expertises/economie-circulaire', currentLocale),
 					label: copy.circularEconomy
 				}
 			]
 		},
 		{
-			href: `/${currentLocale}/realisations`,
+			href: buildLocalizedPath('/realisations', currentLocale),
 			label: copy.work,
-			active: $page.url.pathname.includes('/realisations'),
+			active: isPathActive('/realisations', $page.url.pathname, currentLocale),
 			children: [
 				{
-					href: `/${currentLocale}/realisations`,
+					href: buildLocalizedPath('/realisations', currentLocale),
 					label: copy.allWork
 				},
 				{
-					href: `/${currentLocale}/realisations/${workSlugs['1'][currentLocale]}`,
+					href: buildLocalizedPath(`/realisations/${workSlugs['1'][currentLocale]}`, currentLocale),
 					label: copy.courtAI
 				},
 				{
-					href: `/${currentLocale}/realisations/${workSlugs['2'][currentLocale]}`,
+					href: buildLocalizedPath(`/realisations/${workSlugs['2'][currentLocale]}`, currentLocale),
 					label: copy.vehicles
 				},
 				{
-					href: `/${currentLocale}/realisations/${workSlugs['3'][currentLocale]}`,
+					href: buildLocalizedPath(`/realisations/${workSlugs['3'][currentLocale]}`, currentLocale),
 					label: copy.batteries
 				},
 				{
-					href: `/${currentLocale}/realisations/${workSlugs['8'][currentLocale]}`,
+					href: buildLocalizedPath(`/realisations/${workSlugs['8'][currentLocale]}`, currentLocale),
 					label: copy.recycling
 				}
 			]
@@ -154,7 +168,7 @@
 <svelte:window on:keydown={closeOnEscape} />
 <nav class="fdti-nav" style="view-transition-name: navbar;">
 	<div class="nav-shell">
-		<a href="/{currentLocale}" class="nav-brand">
+		<a href={buildLocalizedPath('/', currentLocale)} class="nav-brand">
 			<figure>
 				<img
 					src="/images/fdti_vector_54px.svg"

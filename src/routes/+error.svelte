@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { locale } from 'svelte-i18n';
 	import { isSupportedLocale, type Lang } from '$lib/data';
+	import { buildLocalizedPath } from '$lib/functions/seo';
 
 	const labels: Record<Lang, { message: string; back: string; sadSmile: string }> = {
 		fr: {
@@ -49,7 +50,7 @@
 
 		<div class="pt-4 flex justify-center">
 			<a
-				href="/{currentLocale}"
+				href={buildLocalizedPath('/', currentLocale)}
 				type="submit"
 				class="inline-flex items-center justify-center px-8 py-2 border border-transparent text-base font-bold rounded-full text-white bg-darkGrey hover:bg-white hover:text-darkGrey hover:border-darkGrey transition-all ease-in-out duration-300 gap-4"
 				><span>{copy.back}</span><svg

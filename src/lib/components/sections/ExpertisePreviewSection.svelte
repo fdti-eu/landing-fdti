@@ -1,5 +1,6 @@
 <script lang="ts">
 	import type { Lang } from '$lib/data';
+	import { buildLocalizedPath } from '$lib/functions/seo';
 
 	export let locale: Lang = 'fr';
 
@@ -11,7 +12,7 @@
 						{
 							title: 'Économie circulaire',
 							text: 'Reprises, collecte, batteries, VHU, REP et coordination de réseaux multi-acteurs.',
-							href: `/${locale}/expertises/economie-circulaire`,
+							href: buildLocalizedPath('/expertises/economie-circulaire', locale),
 							link: 'Explorer cette expertise'
 						},
 						{
@@ -32,7 +33,7 @@
 							{
 								title: 'Economía circular',
 								text: 'Recuperación, recogida, baterías, VFU, RAP y coordinación de redes con múltiples actores.',
-								href: `/${locale}/expertises/economie-circulaire`,
+								href: buildLocalizedPath('/expertises/economie-circulaire', locale),
 								link: 'Explorar esta especialidad'
 							},
 							{
@@ -52,7 +53,7 @@
 							{
 								title: 'Circular economy',
 								text: 'Take-back, collection, batteries, end-of-life vehicles, EPR and multi-party networks.',
-								href: `/${locale}/expertises/economie-circulaire`,
+								href: buildLocalizedPath('/expertises/economie-circulaire', locale),
 								link: 'Explore this expertise'
 							},
 							{
@@ -90,5 +91,6 @@
 			{/if}
 		{/each}
 	</div>
-	<a class="editorial-text-link" href={`/${locale}/expertises`}>{content.all} →</a>
+	<a class="editorial-text-link" href={buildLocalizedPath('/expertises', locale)}>{content.all} →</a
+	>
 </section>

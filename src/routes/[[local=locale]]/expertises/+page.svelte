@@ -1,6 +1,11 @@
 <script lang="ts">
 	import { MetaTags } from 'svelte-meta-tags';
-	import { absoluteImageUrl, buildLocalizedUrl, SOCIAL_IMAGE_PATH } from '$lib/functions/seo';
+	import {
+		absoluteImageUrl,
+		buildLocalizedPath,
+		buildLocalizedUrl,
+		SOCIAL_IMAGE_PATH
+	} from '$lib/functions/seo';
 	import type { Lang } from '$lib/data';
 	import type { PageData } from './$types';
 
@@ -47,21 +52,21 @@
 							id: 'economie-circulaire',
 							title: 'Économie circulaire',
 							text: 'Reprises, batteries, VHU, collecte, documents réglementaires et réseaux de partenaires.',
-							href: `/${data.locale}/expertises/economie-circulaire`,
+							href: buildLocalizedPath('/expertises/economie-circulaire', data.locale),
 							link: 'Voir notre expertise économie circulaire'
 						},
 						{
 							id: 'documents-critiques',
 							title: 'Analyse documentaire',
 							text: 'Des pièces sensibles à lire, qualifier, rapprocher et restituer dans un processus contrôlé.',
-							href: `/${data.locale}/realisations/${courtCaseSlug}`,
+							href: buildLocalizedPath(`/realisations/${courtCaseSlug}`, data.locale),
 							link: 'Voir le cas des tribunaux de commerce'
 						},
 						{
 							id: 'operations-multi-acteurs',
 							title: 'Opérations multi-acteurs',
 							text: 'Des responsabilités, des droits et des systèmes différents à réunir autour d’un même dossier.',
-							href: `/${data.locale}/realisations`,
+							href: buildLocalizedPath('/realisations', data.locale),
 							link: 'Parcourir nos réalisations'
 						}
 					],
@@ -103,21 +108,21 @@
 								id: 'economie-circulaire',
 								title: 'Economía circular',
 								text: 'Recuperación, baterías, VFU, recogida, documentos normativos y redes de socios.',
-								href: `/${data.locale}/expertises/economie-circulaire`,
+								href: buildLocalizedPath('/expertises/economie-circulaire', data.locale),
 								link: 'Explorar nuestra especialidad en economía circular'
 							},
 							{
 								id: 'documents-critiques',
 								title: 'Análisis documental',
 								text: 'Documentos sensibles que deben leerse, clasificarse, conciliarse y devolverse mediante un proceso controlado.',
-								href: `/${data.locale}/realisations/${courtCaseSlug}`,
+								href: buildLocalizedPath(`/realisations/${courtCaseSlug}`, data.locale),
 								link: 'Ver el proyecto de los tribunales de comercio'
 							},
 							{
 								id: 'operations-multi-acteurs',
 								title: 'Operaciones con múltiples actores',
 								text: 'Responsabilidades, permisos y sistemas diferentes reunidos en torno a un mismo expediente empresarial.',
-								href: `/${data.locale}/realisations`,
+								href: buildLocalizedPath('/realisations', data.locale),
 								link: 'Explorar nuestros proyectos'
 							}
 						],
@@ -158,21 +163,21 @@
 								id: 'economie-circulaire',
 								title: 'Circular economy',
 								text: 'Take-back, batteries, end-of-life vehicles, collection, regulatory records and partner networks.',
-								href: `/${data.locale}/expertises/economie-circulaire`,
+								href: buildLocalizedPath('/expertises/economie-circulaire', data.locale),
 								link: 'Explore our circular-economy expertise'
 							},
 							{
 								id: 'documents-critiques',
 								title: 'Document analysis',
 								text: 'Sensitive files that must be read, qualified, reconciled and returned through a controlled process.',
-								href: `/${data.locale}/realisations/${courtCaseSlug}`,
+								href: buildLocalizedPath(`/realisations/${courtCaseSlug}`, data.locale),
 								link: 'See the commercial-court project'
 							},
 							{
 								id: 'operations-multi-acteurs',
 								title: 'Multi-party operations',
 								text: 'Different responsibilities, permissions and systems brought together around the same business record.',
-								href: `/${data.locale}/realisations`,
+								href: buildLocalizedPath('/realisations', data.locale),
 								link: 'Browse our work'
 							}
 						],

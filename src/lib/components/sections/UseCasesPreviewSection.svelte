@@ -2,6 +2,7 @@
 	import { tick } from 'svelte';
 	import { goto } from '$app/navigation';
 	import type { Lang } from '$lib/data';
+	import { buildLocalizedPath } from '$lib/functions/seo';
 
 	export let title: string | null | undefined;
 	export let subtitle: string | null | undefined;
@@ -72,7 +73,7 @@
 		<div class="cases-preview-grid">
 			{#each useCases as useCase, index}
 				<a
-					href={`/${locale}/realisations/${useCase.slug}?from=home`}
+					href={`${buildLocalizedPath(`/realisations/${useCase.slug}`, locale)}?from=home`}
 					on:click={(event) => handleCardClick(event, useCase.slug)}
 					class="case-preview-card group"
 				>
@@ -133,7 +134,7 @@
 		</div>
 
 		<div class="flex justify-center pt-4">
-			<a href={`/${locale}/realisations`} class="cases-all-link">
+			<a href={buildLocalizedPath('/realisations', locale)} class="cases-all-link">
 				{allCasesLabels[locale]}
 			</a>
 		</div>

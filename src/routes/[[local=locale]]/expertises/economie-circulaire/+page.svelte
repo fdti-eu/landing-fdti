@@ -298,7 +298,9 @@
 				<p class="ce-eyebrow">{content.dossiers[0].label}</p>
 				<h3>{content.dossiers[0].title}</h3>
 				<p>{content.dossiers[0].description}</p>
-				<a class="ce-link" href={`/${data.locale}/realisations/${workSlugs['2'][data.locale]}`}
+				<a
+					class="ce-link"
+					href={buildLocalizedPath(`/realisations/${workSlugs['2'][data.locale]}`, data.locale)}
 					>{pageCopy.vehicleLink}<span aria-hidden="true">↗</span></a
 				>
 			</article>
@@ -306,7 +308,9 @@
 				<p class="ce-eyebrow">{pageCopy.recyclerLabel}</p>
 				<h3>{pageCopy.recyclerTitle}</h3>
 				<p>{pageCopy.recyclerText}</p>
-				<a class="ce-link" href={`/${data.locale}/realisations/${workSlugs['8'][data.locale]}`}
+				<a
+					class="ce-link"
+					href={buildLocalizedPath(`/realisations/${workSlugs['8'][data.locale]}`, data.locale)}
 					>{pageCopy.recyclerLink}<span aria-hidden="true">↗</span></a
 				>
 			</article>
@@ -314,7 +318,9 @@
 				<p class="ce-eyebrow">{content.dossiers[1].label}</p>
 				<h3>{content.dossiers[1].title}</h3>
 				<p>{content.dossiers[1].description}</p>
-				<a class="ce-link" href={`/${data.locale}/realisations/${workSlugs['3'][data.locale]}`}
+				<a
+					class="ce-link"
+					href={buildLocalizedPath(`/realisations/${workSlugs['3'][data.locale]}`, data.locale)}
 					>{pageCopy.batteryLink}<span aria-hidden="true">↗</span></a
 				>
 			</article>

@@ -6,7 +6,12 @@
 	import LdTag from '$lib/components/json-ld/LDTag.svelte';
 	import { schema } from '$lib/components/json-ld/json-ld';
 	import type { Lang } from '$lib/data';
-	import { absoluteImageUrl, buildLocalizedUrl, SOCIAL_IMAGE_PATH } from '$lib/functions/seo';
+	import {
+		absoluteImageUrl,
+		buildLocalizedPath,
+		buildLocalizedUrl,
+		SOCIAL_IMAGE_PATH
+	} from '$lib/functions/seo';
 	import { beforeNavigate, afterNavigate, goto } from '$app/navigation';
 
 	// Récupérer le store du layout parent
@@ -247,7 +252,7 @@
 				{#each filteredUseCases as useCase (useCase.id)}
 					<div>
 						<a
-							href={`/${currentLocale}/realisations/${useCase.slug}`}
+							href={buildLocalizedPath(`/realisations/${useCase.slug}`, currentLocale)}
 							on:click={(event) => handleCardClick(event, useCase.slug)}
 							class="use-case-card group block bg-white rounded-xl shadow-md hover:shadow-2xl hover:scale-[1.02] hover:border-yellow/50 border-2 border-transparent transition-all duration-300 cursor-pointer relative
 							{$highlightedUseCase === useCase.slug ? 'animate-highlight' : ''}"

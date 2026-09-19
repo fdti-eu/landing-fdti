@@ -2,6 +2,7 @@
 	import LinkedinIcon from '$lib/components/LinkedinIcon.svelte';
 	import { locale } from 'svelte-i18n';
 	import { isSupportedLocale, type Lang } from '$lib/data';
+	import { buildLocalizedPath } from '$lib/functions/seo';
 
 	const labels: Record<Lang, { jobs: string; privacy: string; terms: string }> = {
 		fr: {
@@ -29,17 +30,17 @@
 			</div>
 			<div class="flex items-center gap-4 flex-wrap justify-center h-full">
 				<a
-					href="/{currentLocale}/offres-emploi"
+					href={buildLocalizedPath('/offres-emploi', currentLocale)}
 					class="font-medium leading-none text-white hover:text-yellow transition-all ease-in-out duration-300"
 					>{copy.jobs}</a
 				>
 				<a
-					href="/{currentLocale}/confidentialite"
+					href={buildLocalizedPath('/confidentialite', currentLocale)}
 					class="font-medium leading-none text-white hover:text-yellow transition-all ease-in-out duration-300"
 					>{copy.privacy}</a
 				>
 				<a
-					href="/{currentLocale}/condition-utilisation"
+					href={buildLocalizedPath('/condition-utilisation', currentLocale)}
 					class="font-medium leading-none text-white hover:text-yellow transition-all ease-in-out duration-300 sm:pl-2"
 					>{copy.terms}</a
 				>
