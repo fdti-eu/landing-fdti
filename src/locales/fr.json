@@ -642,7 +642,7 @@
 					"technology_list": [
 						{
 							"id": "29",
-							"name": "Open AI",
+							"name": "OpenAI",
 							"img": {
 								"filename_disk": "open-ai.webp",
 								"url": "/images/cms/technologies/open-ai.webp",

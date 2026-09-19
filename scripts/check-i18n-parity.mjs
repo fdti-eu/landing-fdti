@@ -114,9 +114,10 @@ function checkEnglishText(enData) {
 		/\b(votre|nous|avec|pour|données|métier|processus|équipe|équipes)\b/i
 	];
 	walkStrings(enData, (text, path) => {
+		const textWithoutFrenchBrands = text.replaceAll('Trackdéchets', '');
 		if (
 			!allowedFrenchTextPaths.has(path) &&
-			forbiddenPatterns.some((pattern) => pattern.test(text))
+			forbiddenPatterns.some((pattern) => pattern.test(textWithoutFrenchBrands))
 		) {
 			errors.push(`${enPath} ${path}: possible French text in English locale (${truncate(text)})`);
 		}

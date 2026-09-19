@@ -353,7 +353,8 @@
 											>
 												{#each useCase.metrics.slice(0, 2) as metric, index}
 													<div
-														class="text-left lg:text-right transition-all duration-300 {index >= 2
+														class="min-w-0 text-left lg:text-right transition-all duration-300 {index >=
+														2
 															? 'opacity-0 h-0 overflow-hidden group-hover:opacity-100 group-hover:h-auto group-hover:overflow-visible'
 															: ''}"
 														style={getViewTransitionStyle(
@@ -362,12 +363,10 @@
 															`metric-${index}`
 														)}
 													>
-														<p class="text-xs text-darkGrey/60 whitespace-nowrap">
+														<p class="text-xs text-darkGrey/60 leading-tight">
 															{metric?.label}
 														</p>
-														<p
-															class="text-sm sm:text-base font-bold text-darkGrey whitespace-nowrap"
-														>
+														<p class="text-sm sm:text-base font-bold text-darkGrey leading-tight">
 															{metric?.value}
 														</p>
 													</div>

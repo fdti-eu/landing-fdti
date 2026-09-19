@@ -229,9 +229,10 @@ const developerFr = {
 const consultantEn = {
 	...consultantFr,
 	title: 'Business AI Consultant Internship - Project Operations',
-	shortTitle: 'Business AI Consultant intern',
+	shortTitle: 'Business AI Consultant Intern',
 	contractType: 'Internship',
 	location: 'Work setup to be defined',
+	experience: '0-2 years',
 	startLabel: 'Start dates available year-round',
 	status: 'Active role',
 	summary:
@@ -249,9 +250,9 @@ const consultantEn = {
 				'Prepare client meetings: context, agenda, open questions, and discussion material.',
 				'Review, structure, and improve functional or technical specifications with the team.',
 				'Turn meeting notes, client exchanges, and project decisions into actionable tickets.',
-				'Produce release notes, framing notes, project summaries, and follow-up documents.',
-				'Use AI agents to analyze repositories, summarize changes, prepare daily reviews, or identify attention points.',
-				'Track client feedback, qualify requests, and help the team prioritize work.',
+				'Produce release notes, scoping briefs, project summaries, and project tracking documents.',
+				'Use AI agents to analyze repositories, summarize changes, prepare daily project reviews, or flag potential issues.',
+				'Track client feedback, clarify and assess requests, and help the team prioritize work.',
 				'Build enough understanding of each domain to connect client needs, product decisions, and technical execution.',
 				'Contribute to FDTI internal methods: templates, Notion workflows, automations, and project documentation.'
 			]
@@ -262,11 +263,11 @@ const consultantEn = {
 		'Clear and precise written communication.',
 		'Professional working proficiency in French, written and spoken, to work with the team and project stakeholders.',
 		'Ability to hold a professional conversation with clients or project teams.',
-		'Autonomy, rigor, and strong organizational habits.',
+		'Ability to work independently, with attention to detail and strong organizational skills.',
 		'Genuine interest in AI applied to business and operational problems.',
 		'Ability to quickly learn a domain, product, or client context.',
 		'Comfort with digital tools and clean documentation practices.',
-		'Professional English is appreciated depending on the project.'
+		'Professional English proficiency is a plus for some projects.'
 	],
 	niceToHaveSkills: [
 		'First experience in project management, consulting, product management, business analysis, or business operations.',
@@ -274,18 +275,18 @@ const consultantEn = {
 		'Experience with Notion, Linear, Jira, GitHub, Google Workspace, or project tracking tools.',
 		'Advanced use of AI tools to summarize, analyze, structure, or produce documents.',
 		'Basic SQL, data, automation, or no-code knowledge.',
-		'Interest in industrial, regulatory, documentary, or complex business domains.'
+		'Interest in industrial, regulatory, document-heavy, or otherwise complex business domains.'
 	],
 	environmentIntro:
 		'You will work with developers, project leads, and business stakeholders on concrete topics.',
 	environment: [
-		'Domain-specific AI agents.',
+		'AI agents tailored to specific business domains.',
 		'Business applications and back offices.',
 		'Internal tools.',
 		'AI-assisted workflows.',
 		'Functional and technical specifications.',
 		'Project documentation.',
-		'Client follow-up.',
+		'Client and project follow-up.',
 		'Business process analysis.',
 		'Notion, GitHub, Google Workspace, and internal automations.'
 	],
@@ -311,36 +312,37 @@ const consultantEn = {
 
 const developerEn = {
 	...developerFr,
-	title: 'AI Developer Internship - Domain Agents, Applications and Data',
-	shortTitle: 'AI Developer intern',
+	title: 'AI Developer Internship - Business AI Agents, Applications and Data',
+	shortTitle: 'AI Developer Intern',
 	contractType: 'Internship',
 	location: 'Work setup to be defined',
+	experience: '0-2 years',
 	startLabel: 'Start dates available year-round',
 	status: 'Active role',
 	summary:
-		'A technical internship to build domain-specific AI agents, applications, APIs, and data workflows connected to real production projects.',
+		'A technical internship building business-focused AI agents, applications, APIs, and data workflows for real-world projects running in production.',
 	intro: [
 		'FDTI is an AI, code, and data studio building tailored digital solutions: business applications, APIs, domain-specific AI agents, process automation, data platforms, and internal tools.',
 		'We work on projects where technology is directly connected to operations: processing documents, connecting systems, structuring data, automating workflows, helping teams make better decisions, and embedding AI into tools that are actually used.',
-		'We are looking for AI developer interns to contribute to projects involving agents, business applications, APIs, and data workflows.'
+		'We are looking for an AI development intern to contribute to projects involving agents, business applications, APIs, and data workflows.'
 	],
 	sections: [
 		{
 			title: 'What you will do',
 			items: [
-				'Contribute to domain-specific AI agents connected to data, APIs, or existing tools.',
+				'Contribute to AI agents tailored to specific business domains and connected to data, APIs, or existing tools.',
 				'Build business applications, back offices, dashboards, or internal portals.',
 				'Design and integrate secure APIs connecting databases, SaaS tools, files, and internal systems.',
 				'Prototype AI-assisted workflows: information extraction, summarization, qualification, routing, reporting, and alerting.',
 				'Work on R&D building blocks around LLMs, agents, harnesses, RAG, OCR, NLP, auditing, and monitoring.',
-				'Contribute to FDTI internal tools for delivery, project steering, and code quality.',
+				'Contribute to FDTI internal tools that improve delivery, project management, and code quality.',
 				'Participate in testing, deployment, monitoring, and technical documentation.',
 				'Work on client projects that are used in production.'
 			]
 		}
 	],
 	requiredSkills: [
-		'Solid coding practice, with demonstrable projects.',
+		'Solid coding skills, backed by projects you can demonstrate.',
 		'Ability to read and understand an existing codebase.',
 		'Understanding of APIs, databases, and modern web architectures.',
 		'Regular use of Git.',
@@ -380,8 +382,8 @@ const developerEn = {
 		{
 			title: 'Live technical interview',
 			items: [
-				'A screen-sharing technical discussion focused on how you reason, read a topic, search, use AI, debug, and communicate.',
-				'Indicative format: 60 to 90 minutes.'
+				'A screen-sharing technical discussion focused on how you reason, approach a problem, research solutions, use AI, debug, and communicate.',
+				'Typical duration: 60 to 90 minutes.'
 			]
 		}
 	]
@@ -390,15 +392,15 @@ const developerEn = {
 const consultantEs = {
 	...consultantFr,
 	slug: 'practicas-consultor-ia-negocio-operaciones-proyectos',
-	title: 'Prácticas de Consultoría de IA de negocio - Operaciones de proyectos',
-	shortTitle: 'Consultoría de IA de negocio',
+	title: 'Prácticas como consultor/a de IA para el negocio - Operaciones de proyectos',
+	shortTitle: 'Consultor/a de IA para el negocio',
 	contractType: 'Prácticas',
 	location: 'Modalidad por definir',
 	experience: '0-2 años',
 	startLabel: 'Incorporaciones posibles durante todo el año',
 	status: 'Oferta activa',
 	summary:
-		'Unas prácticas híbridas para estructurar proyectos, preparar las conversaciones con clientes y utilizar la IA como palanca de coordinación, especificación y gestión.',
+		'Unas prácticas híbridas para estructurar proyectos, preparar las conversaciones con clientes y utilizar la IA para agilizar la coordinación, la definición y la gestión.',
 	intro: [
 		'FDTI es un estudio de IA, código y datos especializado en diseñar soluciones digitales a medida: aplicaciones de negocio, API, agentes de IA especializados, automatización de procesos, plataformas de datos y herramientas internas.',
 		'Trabajamos en proyectos en los que la tecnología está directamente vinculada a las operaciones: procesar documentos, conectar sistemas, estructurar datos, automatizar flujos de trabajo, ayudar a los equipos a tomar mejores decisiones e integrar la IA en herramientas que se utilizan de verdad.',
@@ -412,9 +414,9 @@ const consultantEs = {
 				'Preparar reuniones con clientes: contexto, orden del día, puntos por aclarar y materiales de apoyo.',
 				'Revisar, estructurar y mejorar especificaciones funcionales o técnicas con la ayuda del equipo.',
 				'Convertir actas, conversaciones con clientes o decisiones de proyecto en tickets accionables.',
-				'Elaborar notas de versión, documentos de definición, resúmenes de proyecto y documentos de seguimiento.',
-				'Utilizar agentes de IA para analizar repositorios, resumir cambios, preparar revisiones diarias o identificar puntos de atención.',
-				'Hacer seguimiento de los comentarios de los clientes, calificar las solicitudes y ayudar al equipo a priorizar los temas.',
+				'Elaborar notas de versión, documentos de alcance, resúmenes de proyecto y documentos de seguimiento.',
+				'Utilizar agentes de IA para analizar repositorios, resumir cambios, preparar revisiones diarias o detectar posibles riesgos.',
+				'Hacer seguimiento de los comentarios de los clientes, evaluar y concretar sus solicitudes y ayudar al equipo a priorizar el trabajo.',
 				'Comprender progresivamente las reglas de negocio de los proyectos para conectar al cliente, el producto y el equipo técnico.',
 				'Participar en la mejora de los métodos internos de FDTI: plantillas, flujos de trabajo de Notion, automatizaciones y documentación de proyectos.'
 			]
@@ -448,7 +450,7 @@ const consultantEs = {
 		'Flujos de trabajo asistidos.',
 		'Especificaciones funcionales y técnicas.',
 		'Documentación de proyectos.',
-		'Seguimiento de clientes.',
+		'Seguimiento con clientes.',
 		'Análisis de procesos de negocio.',
 		'Automatizaciones de Notion, GitHub, Google Workspace o herramientas internas.'
 	],
@@ -477,19 +479,19 @@ const consultantEs = {
 const developerEs = {
 	...developerFr,
 	slug: 'practicas-desarrollador-ia-agentes-negocio-aplicaciones-datos',
-	title: 'Prácticas de Desarrollo/IA - Agentes de IA de negocio, aplicaciones y datos',
-	shortTitle: 'Desarrollo/IA de agentes de negocio',
+	title: 'Prácticas como desarrollador/a de IA - Agentes para el negocio, aplicaciones y datos',
+	shortTitle: 'Desarrollador/a de IA',
 	contractType: 'Prácticas',
 	location: 'Modalidad por definir',
 	experience: '0-2 años',
 	startLabel: 'Incorporaciones posibles durante todo el año',
 	status: 'Oferta activa',
 	summary:
-		'Unas prácticas técnicas para desarrollar agentes de IA especializados, aplicaciones, API y flujos de datos vinculados a proyectos utilizados en entornos reales.',
+		'Unas prácticas técnicas para desarrollar agentes de IA especializados, aplicaciones, API y flujos de datos para proyectos reales en producción.',
 	intro: [
 		'FDTI es un estudio de IA, código y datos especializado en diseñar soluciones digitales a medida: aplicaciones de negocio, API, agentes de IA especializados, automatización de procesos, plataformas de datos y herramientas internas.',
 		'Trabajamos en proyectos en los que la tecnología está directamente vinculada a las operaciones: procesar documentos, conectar sistemas, estructurar datos, automatizar flujos de trabajo, ayudar a los equipos a tomar mejores decisiones e integrar la IA en herramientas que se utilizan de verdad.',
-		'Para acompañar nuestro crecimiento, buscamos una persona en prácticas de Desarrollo/IA durante un periodo de 6 meses.'
+		'Para acompañar nuestro crecimiento, buscamos una persona en prácticas de desarrollo e IA durante un periodo de 6 meses.'
 	],
 	sections: [
 		{
@@ -498,11 +500,11 @@ const developerEs = {
 				'Participar en el desarrollo de agentes de IA especializados conectados a datos, API o herramientas existentes.',
 				'Desarrollar aplicaciones de negocio, back offices, paneles de control o portales internos.',
 				'Diseñar e integrar API seguras para conectar bases de datos, soluciones SaaS, archivos y herramientas internas.',
-				'Crear prototipos de flujos de trabajo asistidos: extracción de información, síntesis, calificación, enrutamiento, informes y alertas.',
+				'Crear prototipos de flujos de trabajo asistidos por IA: extracción de información, síntesis, clasificación, enrutamiento, informes y alertas.',
 				'Trabajar en componentes de I+D relacionados con LLM, agentes, harnesses, RAG, OCR, NLP, auditoría y monitorización.',
 				'Contribuir a las herramientas internas de FDTI para mejorar la entrega, la gestión de proyectos y la calidad del código.',
 				'Participar en las pruebas, el despliegue, la monitorización y la documentación técnica.',
-				'Intervenir en proyectos de clientes en producción.'
+				'Trabajar en proyectos de clientes que están en producción.'
 			]
 		}
 	],
@@ -511,7 +513,7 @@ const developerEs = {
 		'Capacidad para leer y comprender código existente.',
 		'Conocimientos de API, bases de datos y arquitecturas web modernas.',
 		'Uso habitual de Git.',
-		'Capacidad para trabajar con autonomía y seguimiento periódico.',
+		'Capacidad para trabajar de forma autónoma con orientación periódica.',
 		'Comunicación escrita clara: saber explicar qué se ha hecho, qué bloquea el avance y qué decisiones técnicas se han tomado.',
 		'Dominio profesional del francés, tanto escrito como oral, para trabajar con el equipo y las partes implicadas en los proyectos.',
 		'Interés real por la IA aplicada a problemas de negocio, más allá de las herramientas de generación de texto.'
@@ -547,7 +549,7 @@ const developerEs = {
 		{
 			title: 'Entrevista técnica en directo',
 			items: [
-				'Una entrevista técnica por videollamada y con pantalla compartida, centrada en tu razonamiento y en tu forma de abordar un tema, buscar información, utilizar la IA, depurar errores y comunicarte.',
+				'Una entrevista técnica por videollamada con pantalla compartida, centrada en tu razonamiento y en tu forma de abordar un problema, buscar información, utilizar la IA, depurar errores y comunicarte.',
 				'Duración orientativa: entre 60 y 90 minutos.'
 			]
 		}
@@ -579,7 +581,7 @@ const consultantDe = {
 				'Vorbereitung von Kundenterminen: Kontext, Agenda, offene Fragen und Gesprächsunterlagen.',
 				'Funktionale oder technische Spezifikationen gemeinsam mit dem Team prüfen, strukturieren und verbessern.',
 				'Besprechungsprotokolle, Kundenaustausch und Projektentscheidungen in umsetzbare Tickets überführen.',
-				'Release Notes, Projektsteckbriefe, Zusammenfassungen und Unterlagen zur Nachverfolgung erstellen.',
+				'Release Notes, Dokumente zur Projektabgrenzung, Projektzusammenfassungen und Statusberichte erstellen.',
 				'KI-Agenten einsetzen, um Repositories zu analysieren, Änderungen zusammenzufassen, tägliche Reviews vorzubereiten oder kritische Punkte zu erkennen.',
 				'Kundenfeedback nachverfolgen, Anfragen qualifizieren und das Team bei der Priorisierung unterstützen.',
 				'Sich schrittweise in die fachlichen Regeln der Projekte einarbeiten und so Kunden, Produkt und technisches Team verbinden.',
@@ -625,7 +627,7 @@ const consultantDe = {
 		'Arbeitsmodalitäten werden passend zum Praktikumsrahmen, zu den Anforderungen der Hochschule und zu den laufenden Projekten festgelegt.',
 		'Vergütung nach dem geltenden französischen Rechtsrahmen für Praktika, abhängig von Profil und Kontext.',
 		'Betreuung durch das FDTI-Team.',
-		'Möglichkeit einer weiteren Zusammenarbeit, abhängig von Niveau, Kontext und verfügbaren Möglichkeiten.'
+		'Bei entsprechender Leistung und passenden Möglichkeiten besteht die Option auf eine weitere Zusammenarbeit.'
 	],
 	process: [
 		{
@@ -665,9 +667,9 @@ const developerDe = {
 				'An spezialisierten KI-Agenten mitarbeiten, die an Daten, APIs oder bestehende Werkzeuge angebunden sind.',
 				'Fachanwendungen, Backoffices, Dashboards oder interne Portale entwickeln.',
 				'Sichere APIs entwerfen und integrieren, um Datenbanken, SaaS-Lösungen, Dateien und interne Werkzeuge zu verbinden.',
-				'Unterstützte Workflows prototypisch umsetzen: Informationsextraktion, Zusammenfassung, Qualifizierung, Routing, Reporting und Warnmeldungen.',
+				'KI-gestützte Workflows prototypisch umsetzen: Informationsextraktion, Zusammenfassung, Klassifizierung, Routing, Reporting und Warnmeldungen.',
 				'An Forschungs- und Entwicklungskomponenten rund um LLMs, Agenten, Harnesses, RAG, OCR, NLP, Audit und Monitoring arbeiten.',
-				'Zu internen FDTI-Werkzeugen beitragen, die Auslieferung, Projektsteuerung und Codequalität verbessern.',
+				'Zu internen FDTI-Werkzeugen beitragen, die Projektumsetzung, Projektsteuerung und Codequalität verbessern.',
 				'An Tests, Deployment, Monitoring und technischer Dokumentation mitwirken.',
 				'An Kundenprojekten arbeiten, die produktiv eingesetzt werden.'
 			]

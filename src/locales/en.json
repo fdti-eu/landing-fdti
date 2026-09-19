@@ -8,19 +8,19 @@
 		"backToContents": "Back to contents",
 		"readGuide": "Read the guide",
 		"title": "From vehicle identification to waste collection and treatment.",
-		"intro": "We develop the applications manufacturers and recyclers use to manage take-back operations: identify a vehicle, assess a battery, prepare a pickup, negotiate a price, generate and track documents.",
+		"intro": "We develop the applications manufacturers and recyclers use to manage take-back operations: identifying a vehicle, assessing a battery, preparing a pickup, negotiating a price, and generating and tracking documents.",
 		"positioning": "Custom software for business teams, collection networks and their partners.",
-		"contact": "Let’s discuss a real operation",
+		"contact": "Let’s discuss a real-world use case",
 		"explore": "Explore the features",
 		"proofNote": "The features presented come from several projects developed for automotive manufacturers and recycling operators. They illustrate our work; scope and rules are adapted to each organization.",
 		"exampleLabel": "A closer look at a feature",
-		"exampleNote": "Explanatory examples based on developed features. These are not screenshots of client applications.",
+		"exampleNote": "Explanatory examples based on features we have developed. These are not screenshots of client applications.",
 		"inputLabel": "Starting point",
 		"actionLabel": "What the application does",
 		"outputLabel": "Result",
 		"exceptionsTitle": "What happens when the process is not straightforward?",
-		"caseLabel": "Situation encountered",
-		"behaviorLabel": "Behavior implemented in the workflow",
+		"caseLabel": "Scenario",
+		"behaviorLabel": "Workflow behavior",
 		"examples": [
 			{
 				"label": "License plate / VIN",
@@ -66,11 +66,11 @@
 				"anchor": "identification"
 			},
 			{
-				"label": "Waste tracking signatures",
+				"label": "Waste tracking form signatures",
 				"cases": [
 					{
 						"when": "The producer has not signed yet",
-						"then": "The receiving action indicates the missing producer signature."
+						"then": "The receipt action indicates that the producer’s signature is missing."
 					},
 					{
 						"when": "The producer has signed, but the collector has not",
@@ -84,22 +84,22 @@
 				"title": "Identify the missing signature",
 				"input": "A collected battery declaration with a linked French waste tracking form (BSD).",
 				"action": "Read the form’s status and distinguish a pending producer signature from a pending collector signature.",
-				"output": "The user sees why the receiving action is blocked in the configured workflow and which stakeholder needs to act.",
+				"output": "The user sees why the receipt action is blocked in the configured workflow and which stakeholder needs to act.",
 				"page": "documents-et-integrations",
 				"anchor": "bsd"
 			}
 		],
 		"detailLink": "See how it works",
 		"dossiersLabel": "What we have developed",
-		"dossiersTitle": "Three ways to examine the work in detail.",
-		"dossiersIntro": "From fields completed by the declarant to partner exchanges: each guide explains the data, rules, documents and actions involved.",
+		"dossiersTitle": "Three ways to explore our work in detail.",
+		"dossiersIntro": "From fields completed by the declarant to partner integrations, each guide explains the data, rules, documents, and actions involved.",
 		"audienceLabel": "Your starting point",
-		"audienceTitle": "Which problem do you need to solve?",
+		"audienceTitle": "What problem do you need to solve?",
 		"audiences": [
 			{
 				"role": "Operations & recycling",
 				"question": "What is stopping us from preparing this pickup?",
-				"answer": "Battery record, packaging, selected packages, collector and delivery site: the information is brought together before creating the packing list.",
+				"answer": "Battery record, packaging, selected packages, collector, and delivery site: all the necessary information is brought together before the packing list is created.",
 				"page": "batteries",
 				"anchor": "collecte",
 				"link": "Prepare a collection"
@@ -107,31 +107,31 @@
 			{
 				"role": "Manufacturer program & network",
 				"question": "How can owners and service providers work on the same records?",
-				"answer": "A declaration workflow for the network, management interfaces for internal teams and exchanges with treatment centers. Access rules follow each party’s responsibilities.",
+				"answer": "A declaration workflow for the network, management interfaces for internal teams, and data exchanges with treatment facilities. Access rules reflect each party’s responsibilities.",
 				"page": "vehicules",
 				"anchor": "reseau",
 				"link": "Organize a take-back network"
 			},
 			{
-				"role": "Commercial & procurement",
-				"question": "Which processing price and logistics cost were accepted?",
-				"answer": "Proposals retain their price components, author, date and status. Their history shows the terms discussed and those agreed.",
+				"role": "Sales & procurement",
+				"question": "What treatment price and logistics cost were agreed?",
+				"answer": "Each proposal retains its price components, author, date, and status. The history shows both the terms discussed and those accepted.",
 				"page": "batteries",
 				"anchor": "offres",
 				"link": "Manage price proposals"
 			},
 			{
 				"role": "Quality & waste compliance",
-				"question": "Does the record contain the right code, documents and required signatures?",
-				"answer": "EWC codes, battery diagnostics, documents and waste tracking statuses are handled within the workflow. Application controls make required items and incomplete steps visible.",
+				"question": "Does the record contain the right code, documents, and required signatures?",
+				"answer": "EWC codes, battery diagnostics, documents, and waste tracking form statuses are handled within the workflow. Application controls highlight required items and incomplete steps.",
 				"page": "documents-et-integrations",
 				"anchor": "classification",
 				"link": "Connect documents to operations"
 			},
 			{
 				"role": "IT & application owners",
-				"question": "Which information should be exchanged with existing systems?",
-				"answer": "Battery data, status changes and accepted offers can flow to partner systems through APIs and notifications. Integration is defined for each business object and its access rights.",
+				"question": "What information should be exchanged with existing systems?",
+				"answer": "Battery data, status changes, and accepted offers can flow to partner systems through APIs and notifications. Each business object and its access rights are considered when defining the integration.",
 				"page": "documents-et-integrations",
 				"anchor": "connexions",
 				"link": "Examine the integrations"
@@ -142,42 +142,42 @@
 		"scopeItems": [
 			{
 				"title": "Extend an existing tool",
-				"text": "Your logistics software works, but declarations arrive by email? The project can focus on collecting the information and passing it to that system."
+				"text": "Does your logistics software work well, but declarations still arrive by email? The project can focus on collecting the information and passing it to that system."
 			},
 			{
-				"title": "Rework a limiting workflow",
-				"text": "Your network already uses an application? We examine the data, rules and exchanges to preserve before extending or replacing the relevant part."
+				"title": "Improve a workflow that has become limiting",
+				"text": "Does your network already use an application? We identify the data, rules, and integrations that must be preserved before extending or replacing the relevant component."
 			},
 			{
 				"title": "Build an end-to-end service",
-				"text": "You are setting up a new take-back activity? We can develop the network portal, administration tools and exchanges needed with partners."
+				"text": "Are you setting up a new take-back operation? We can develop the network portal, administration tools, and partner integrations you need."
 			}
 		],
 		"faqTitle": "Before starting a project",
 		"faqs": [
 			{
 				"question": "Is this an off-the-shelf software product?",
-				"answer": "We design and develop custom applications. The examples show features we have already built; together we define which ones meet your needs, which rules to adapt and which systems to connect."
+				"answer": "We design and develop custom applications. The examples show features we have already built; together, we define which ones meet your needs, which rules to adapt, and which systems to connect."
 			},
 			{
 				"question": "Do we have to replace our existing tools (ERP, transport, MES, billing, etc.)?",
-				"answer": "The first step is to establish what is already covered. An integration or complementary module may be enough. We check exchange capabilities with your IT teams before agreeing on scope."
+				"answer": "The first step is to determine what your existing tools already cover. An integration or complementary module may be enough. We review the integration options with your IT teams before agreeing on the scope."
 			},
 			{
 				"question": "Does the application guarantee regulatory compliance?",
-				"answer": "It implements the controls and document exchanges defined for the project. Waste classification, transport rules and applicable obligations must be validated by the responsible specialists. An EWC code or a Trackdechets connection alone does not guarantee compliance."
+				"answer": "It implements the controls and document exchanges defined for the project. Waste classification, transport rules, and applicable obligations must be validated by the responsible specialists. An EWC code or a Trackdéchets connection alone does not guarantee compliance."
 			},
 			{
 				"question": "Do you only work with vehicles and batteries?",
-				"answer": "These are the industries illustrated here by our projects. For another activity, we examine similarities and differences: products or materials, stakeholders, documents, transactions and existing tools. Relevance depends on the operations to support."
+				"answer": "These are the sectors illustrated by the projects shown here. For another activity, we examine the similarities and differences in products or materials, stakeholders, documents, transactions, and existing tools. The deciding factor is whether our experience applies to the operations you need to support."
 			},
 			{
 				"question": "Where does AI fit?",
-				"answer": "When a need involves reading documents, extracting information or supporting assessment, we can explore an AI component. Not all the features in these guides depend on AI: API-based identification, input rules and status exchanges already address concrete needs."
+				"answer": "When a need involves reading documents, extracting information, or assisting with assessments, we can explore an AI component. Not all the features in these guides depend on AI: API-based identification, input rules, and status exchanges already address concrete needs."
 			}
 		],
-		"ctaTitle": "Scope a real flow",
-		"ctaText": "Show us a real flow, its participants and the tools already in place.",
+		"ctaTitle": "Define the scope of a real workflow",
+		"ctaText": "Show us a real workflow, the people involved, and the tools already in place.",
 		"ctaButton": "Talk to FDTI — 30 minutes",
 		"back": "All circular economy topics",
 		"contents": "In this guide",
@@ -192,8 +192,8 @@
 				"navLabel": "Vehicles",
 				"label": "End-of-life vehicles",
 				"title": "Identify the vehicle. Complete the record. Organize take-back.",
-				"summary": "License plate or VIN, retrieved specifications, administrative documents and interfaces for the take-back network.",
-				"description": "An individual or a garage starts by declaring a vehicle. Behind that form, teams need reliable information, prepared documents and a request they can pass to the parties handling collection. Here are the functions we have developed to connect these steps.",
+				"summary": "License plate or VIN, retrieved specifications, administrative documents, and interfaces for the take-back network.",
+				"description": "An individual or a repair shop starts by declaring a vehicle. Beyond that form, teams need reliable information, prepared documents, and a request they can pass to the parties responsible for collection. Here are the features we have developed to connect these steps.",
 				"context": "Project example: a vehicle take-back platform with individual and professional workflows connected to an existing management system.",
 				"terms": ["License plate / VIN", "B2B & B2C workflows", "Electronic signature"],
 				"sections": [
@@ -201,14 +201,14 @@
 						"id": "identification",
 						"title": "Start with a plate or VIN, not an empty record.",
 						"navLabel": "License plate / VIN lookup",
-						"situation": "Asking users to reenter a vehicle’s make, model and specifications adds fields to complete and corrections to handle later.",
+						"situation": "Asking users to re-enter a vehicle’s make, model, and specifications means more fields to complete and more corrections to handle later.",
 						"actions": [
-							"The declarant provides the country and available identifier: a license plate or VIN, the vehicle identification number.",
+							"The declarant provides the registration country and the available identifier: a license plate or VIN, the vehicle identification number.",
 							"The application queries an identification service and populates the record with the returned specifications.",
-							"The user is asked to complete required fields that remain empty. Manual entry is available when data cannot be retrieved."
+							"The user is prompted to complete any required fields that remain empty. Manual entry is available when data cannot be retrieved."
 						],
 						"rule": "The identification method and required fields vary by country. The integration does not assume that every lookup returns a complete record.",
-						"result": "A structured vehicle record with available specifications retrieved and missing information completed.",
+						"result": "A structured vehicle record populated with the available specifications and completed with any missing information.",
 						"data": [
 							"Registration country",
 							"License plate or VIN",
@@ -218,16 +218,16 @@
 					},
 					{
 						"id": "dossier",
-						"title": "Move the administrative record forward with the request.",
+						"title": "Move the request and its administrative record forward together.",
 						"navLabel": "Documents and signatures",
-						"situation": "A take-back request is not ready to process simply because the vehicle has been identified. It also includes declarative information and documents.",
+						"situation": "A take-back request is not ready to process simply because the vehicle has been identified. It also includes declaration details and documents.",
 						"actions": [
 							"The workflow brings together the information and documents needed to handle the request.",
 							"The team finds these items in the vehicle record rather than in separate exchanges.",
-							"Generation and electronic signing of transfer and destruction documents are integrated into the process for the relevant French operations."
+							"The generation and electronic signing of transfer and destruction documents are integrated into the process for the relevant French operations."
 						],
 						"rule": "Document content and signature steps depend on the country and procedure. The project uses the applicable documents and defines the expected signatories.",
-						"result": "The request, supporting documents and signature tracking are linked to the relevant vehicle.",
+						"result": "The request, supporting documents, and signature tracking are linked to the relevant vehicle.",
 						"data": [
 							"Declarant information",
 							"Supporting documents",
@@ -239,17 +239,17 @@
 						"id": "reseau",
 						"title": "Give the network a shared operational tool.",
 						"navLabel": "Take-back network",
-						"situation": "Owners, garages, end-of-life vehicle treatment centers and program teams act at different times with different responsibilities.",
+						"situation": "Owners, repair shops, authorized treatment facilities, and program teams act at different times and have different responsibilities.",
 						"actions": [
 							"Separate workflows support individual and professional requests.",
-							"Management interfaces let teams and partners follow vehicles and handling steps.",
-							"Connections to the existing system exchange the information needed between declaration, collection and tracking through dismantling."
+							"Management interfaces let teams and partners track vehicles and handling steps.",
+							"Connections to the existing system carry the information needed from declaration and collection through dismantling and final tracking."
 						],
-						"rule": "The public portal and professional tool serve different uses. Screens and access rights need to reflect that separation.",
+						"rule": "The public portal and professional tool serve different purposes. Screens and access rights need to reflect that separation.",
 						"result": "Vehicle-level tracking and interfaces suited to the people declaring, handling and managing operations.",
 						"data": [
 							"Individual / professional declaration",
-							"Garages and treatment centers",
+							"Repair shops and treatment facilities",
 							"Handling steps",
 							"Existing-system exchanges"
 						]
@@ -260,35 +260,35 @@
 				"slug": "batteries",
 				"navLabel": "Batteries",
 				"label": "Batteries, collection & recovery",
-				"title": "A battery to handle, with its specifications, constraints and take-back terms.",
-				"summary": "EWC code, condition and diagnostics, packing lists, processing and transport prices, receiving and treatment tracking.",
-				"description": "A battery is more than a reference and a pickup address. Its type, condition, documents and agreed terms affect handling. We have developed the modules below across recycling and second-life projects.",
+				"title": "A battery to handle, along with its specifications, constraints, and take-back terms.",
+				"summary": "EWC code, condition and diagnostics, packing lists, treatment and transport prices, receipt, and treatment tracking.",
+				"description": "A battery is more than a reference and a pickup address. Its type, condition, documents, and agreed terms affect how it is handled. We have developed the modules below for recycling and second-life projects.",
 				"context": "Examples from several applications developed for an automotive manufacturer and a battery recycler. The modules are presented together to explain the operations they support.",
 				"terms": ["EWC code", "Condition / diagnostics / ADR", "Packing lists & price offers"],
 				"sections": [
 					{
 						"id": "identification",
 						"title": "Identify the battery and record its waste code.",
-						"navLabel": "Characterization, EWC and UN codes",
-						"situation": "The reference data combines model, VIN or BIN, condition, charge, health, dimensions and weight. The declaration completes these characteristics with EWC and UN codes, evidence and photos.",
+						"navLabel": "Characterization, EWC codes, and UN numbers",
+						"situation": "The reference data brings together the model, VIN or BIN, condition, charge, state of health, dimensions, and weight. The declaration supplements these characteristics with an EWC code, a UN number, supporting documents, and photos.",
 						"actions": [
-							"The declaration links the battery to its type and owner information.",
-							"The workflow suggests an EWC code — from the European waste classification — using the existing declaration or reference battery type.",
-							"The declarant can select or correct the code. It is saved in the record and changes are available in the history."
+							"The declaration links the battery to its type and holder information.",
+							"The workflow suggests an EWC (European Waste Catalogue) code using the existing declaration or reference battery type.",
+							"The declarant can select or correct the code. It is saved in the record, and any changes can be viewed in the history."
 						],
 						"rule": "Prefilled information comes from reference data. It does not replace validation of the waste classification by the responsible stakeholders.",
-						"result": "A battery characterized in a record ready for collection, transport and traceability.",
-						"data": ["Battery reference and type", "Owner", "Selected EWC code", "Change history"]
+						"result": "A fully characterized battery record ready for collection, transport, and traceability.",
+						"data": ["Battery reference and type", "Holder", "Selected EWC code", "Change history"]
 					},
 					{
 						"id": "diagnostic",
 						"title": "Capture battery condition before collection.",
 						"navLabel": "Diagnostics and condition",
-						"situation": "A damaged battery requires different preparation from a battery in another condition. Stakeholders need diagnostics and relevant documents before organizing the next steps.",
+						"situation": "A damaged battery requires different preparation than a battery in another condition. Stakeholders need diagnostic information and the relevant documents before organizing the next steps.",
 						"actions": [
 							"The declarant records battery condition and attaches the diagnostic and checklist documents required by the workflow.",
 							"ADR transport information associated with the selected condition is shown in the interface.",
-							"General photos and, depending on the declaring party and identifier readability, a serial-number photo are requested."
+							"Overview photos are requested, along with a serial-number photo when required based on the declarant and the readability of the identifier."
 						],
 						"rule": "Required documents depend on context. Transport and packaging rules are defined with the responsible specialists; the portal does not infer them from a photograph.",
 						"result": "A record bringing together declared condition, photos and documents needed to assess handling.",
@@ -303,13 +303,13 @@
 						"id": "collecte",
 						"title": "Build a consistent packing list.",
 						"navLabel": "Packing, palletization and collection",
-						"situation": "Several declarations and packages may be ready to leave. Selecting them without considering the collector or delivery site can produce a list that does not fit the intended operation.",
+						"situation": "Several declarations and packages may be ready for pickup. Selecting them without considering the collector or delivery site can produce a packing list that is unusable for the intended operation.",
 						"actions": [
-							"Users review declarations with their owner, collector, delivery site, chemistry, packaging and status.",
+							"Users review declarations with their owner, collector, delivery site, chemistry, packaging, and status.",
 							"They select the packages to include in the packing list.",
-							"In the developed workflow, selection prevents mixing delivery sites or collectors incompatible with the current grouping."
+							"In the workflow we developed, the selection controls prevent incompatible delivery sites or collectors from being included in the same group."
 						],
-						"rule": "This grouping check is an explicit business rule. For your organization, we define the criteria that permit or prevent a shared departure.",
+						"rule": "This grouping check is an explicit business rule. For your organization, we define the criteria that allow or prevent packages from being shipped together.",
 						"result": "A packing list linked to declarations, packaging, palletization and the planned transport.",
 						"data": [
 							"Declarations and packages",
@@ -320,18 +320,18 @@
 					},
 					{
 						"id": "offres",
-						"title": "Separate processing price from logistics cost.",
+						"title": "Separate the treatment price from the logistics cost.",
 						"navLabel": "Offers and prices",
-						"situation": "Negotiation with a provider may cover both battery processing and transport. A single amount does not capture the terms of the agreement.",
+						"situation": "Negotiations with a service provider may cover both battery treatment and transport. A single amount does not capture the terms of the agreement.",
 						"actions": [
-							"A proposal includes processing price, logistics price, currency and an optional comment.",
-							"Successive proposals are kept with their author, date and acceptance or refusal status.",
-							"Offer operations are also available to providers through an API. Notifications can inform their system when an offer is created or accepted."
+							"A proposal includes the treatment price, logistics cost, currency, and an optional comment.",
+							"Each successive proposal is retained with its author, date, and acceptance or rejection status.",
+							"Service providers can also manage proposals through an API. Notifications can inform their systems when a proposal is created or accepted."
 						],
-						"rule": "This example covers price negotiation for batteries and pickup groups. A trading arrangement involving multiple purchase and resale contracts would require specific scoping.",
+						"rule": "This example covers price negotiations for batteries and pickup groups. A trading arrangement involving multiple purchase and resale contracts would need to be scoped separately.",
 						"result": "Proposed and agreed terms remain available with the record, without searching an email chain for the latest agreement.",
 						"data": [
-							"Processing price",
+							"Treatment price",
 							"Logistics cost and currency",
 							"Proposal author and date",
 							"Acceptance / refusal"
@@ -339,19 +339,19 @@
 					},
 					{
 						"id": "reception",
-						"title": "Connect collection, receiving and treatment.",
-						"navLabel": "Receiving and treatment",
-						"situation": "A battery reported as collected must then be received and tracked through treatment. Document status may also condition which actions are available in the tool.",
+						"title": "Connect collection, receipt, and treatment.",
+						"navLabel": "Receipt and treatment",
+						"situation": "A battery reported as collected must then be received and tracked through treatment. Document status may also determine which actions are available in the application.",
 						"actions": [
-							"Statuses distinguish batteries ready for pickup, collected, received and processed.",
-							"In a workflow connected to Trackdechets, receiving records a date and receiver’s name, then updates the linked waste tracking form and declaration.",
+							"Statuses distinguish batteries that are ready for pickup, collected, received, or treated.",
+							"In a workflow connected to Trackdéchets, the receipt step records a date and the recipient’s name, then updates the linked waste tracking form and declaration.",
 							"Partners can be notified of status changes to update their own tracking."
 						],
-						"rule": "Physical and document tracking are linked but remain distinct. The workflow shows the stage reached and the actions still required.",
-						"result": "A declaration tracked after departure from the owner’s site, with associated steps and documents.",
+						"rule": "Physical and document tracking are linked but remain distinct. The workflow shows the current stage and any actions still required.",
+						"result": "A declaration tracked after departure from the holder’s site, with the associated steps and documents.",
 						"data": [
 							"Battery status",
-							"Receiving date and person",
+							"Receipt date and recipient",
 							"Linked waste tracking form, where applicable",
 							"Treatment status"
 						]
@@ -363,10 +363,10 @@
 				"navLabel": "Documents & APIs",
 				"label": "Documents & integrations",
 				"title": "Keep information and documents connected to operations.",
-				"summary": "EWC, ADR, Trackdechets waste tracking, signatures and API exchanges: what the applications handle and where your systems fit.",
-				"description": "Operations often involve several applications. The business record needs to retain useful references, track document stages and send events to partners. Here are integrations and controls we have developed.",
+				"summary": "EWC, ADR, Trackdéchets waste tracking forms, signatures, and API exchanges: what the applications handle and where your systems fit.",
+				"description": "Operations often involve several applications. The business record needs to retain useful references, track document stages, and send events to partners. Here are some of the integrations and controls we have developed.",
 				"context": "Examples from vehicle and battery projects. Document obligations and integration capabilities must be checked for each country, activity and system involved.",
-				"terms": ["EWC & ADR", "Trackdechets waste tracking", "APIs & notifications"],
+				"terms": ["EWC & ADR", "Trackdéchets waste tracking", "APIs & notifications"],
 				"sections": [
 					{
 						"id": "classification",
@@ -376,7 +376,7 @@
 						"actions": [
 							"The EWC code is linked to the declaration and can be suggested from the reference battery type.",
 							"Battery condition is recorded separately with the required diagnostic documents.",
-							"The interface displays the ADR information defined for that condition. Teams define input rules, supporting documents and required approvals."
+							"The interface displays the ADR information defined for that condition. Teams define input rules, supporting documents, and required approvals."
 						],
 						"rule": "The application organizes data and applies defined rules. It does not automatically turn an EWC code into authorization for transport or treatment.",
 						"result": "Distinct, accessible information that helps qualified stakeholders review the record.",
@@ -389,20 +389,20 @@
 					},
 					{
 						"id": "bsd",
-						"title": "Include the waste tracking form in declaration tracking.",
-						"navLabel": "BSD and Trackdechets",
+						"title": "Track the waste tracking form with the declaration.",
+						"navLabel": "BSD and Trackdéchets",
 						"situation": "For relevant French operations, the waste tracking form (BSD) has its own statuses. Teams need to know whether it is created, signed and ready for the next step.",
 						"actions": [
-							"The application creates or updates a form through Trackdechets and stores its identifier with the declaration.",
-							"It checks status and distinguishes a missing producer signature from a missing collector signature.",
-							"The workflow can condition receiving on these signatures, then transmit receiving and treatment information."
+							"The application creates or updates a BSD through Trackdéchets and stores its identifier with the declaration.",
+							"It checks the form’s status and distinguishes a missing producer signature from a missing collector signature.",
+							"The workflow can make receipt conditional on these signatures, then transmit receipt and treatment information."
 						],
 						"rule": "A blocked step should explain why and who needs to resolve it. This describes a control in the developed workflow, not a universal legal rule.",
 						"result": "The form and declaration remain linked; the user sees document status and required actions.",
 						"data": [
 							"Waste tracking form identifier",
 							"Status and signatures",
-							"Receiving date and person",
+							"Receipt date and recipient",
 							"Treatment information"
 						]
 					},
@@ -416,8 +416,8 @@
 							"The DocuSign electronic signature service is integrated into the workflow.",
 							"The business record provides access to the documents and signature progress."
 						],
-						"rule": "Signatories, documents and signature timing are defined by the procedure. The project also accounts for incomplete steps.",
-						"result": "Continuity between the request, prepared documents and signature tracking.",
+						"rule": "Signatories, documents, and signature timing are defined by the procedure. The project also accounts for incomplete steps.",
+						"result": "The request, prepared documents, and signature status remain connected.",
 						"data": [
 							"Vehicle record",
 							"Generated document",
@@ -431,11 +431,11 @@
 						"navLabel": "APIs and partner systems",
 						"situation": "A provider may already manage operations in its own system. Requiring every change to be entered again in a portal adds work instead of removing it.",
 						"actions": [
-							"A provider API supports operations including battery data exports and imports and price proposals.",
+							"A service provider API supports battery data imports and exports as well as price proposals.",
 							"Outgoing notifications report specific events: a battery assigned, ready for pickup, received or processed; an offer created or accepted.",
 							"Access is authenticated and limited to the partner’s scope. Interfaces and exchange formats are defined for the relevant operations."
 						],
-						"rule": "A connection to your ERP or logistics software needs assessment: available data, exchange direction, access rights and error handling. We do not assume a universal connector exists.",
+						"rule": "Integrating with your ERP or logistics software requires an assessment of the available data, direction of exchange, access rights, and error handling. We do not assume that a universal connector exists.",
 						"result": "A partner can update tracking from its system and receive events relevant to its operations.",
 						"data": [
 							"Battery data",
@@ -450,37 +450,37 @@
 	},
 	"GetHomePageContent": {
 		"hero_section": {
-			"subtitle": "Copilots, automation and business applications integrated into your existing tools",
-			"description": "<p>We build tools that connect your data, SaaS platforms and internal systems to make your operations faster, more reliable and more automated. AI is not an extra gadget: it becomes a central building block in your daily processes.</p>",
+			"subtitle": "Copilots, automation, and business applications integrated with your existing tools",
+			"description": "<p>We build tools that connect your data, SaaS platforms, and internal systems to make your operations faster, more reliable, and more automated. AI is not bolted on as an afterthought; it is designed into your day-to-day processes as a core capability.</p>",
 			"btn_brochure": "Download our brochure",
-			"btn_contact": "Diagnose your need in 30 min",
+			"btn_contact": "Assess your needs in 30 min",
 			"brochure_link": "https://docs.google.com/presentation/d/e/2PACX-1vTqoylpjD44uKvXaQVAsPAlGMXDLBP_cqpr7gnuj0S2qXDS07mXwww8rMfjU-nAeTyYgR6CRSICSj17/pub?start=false&loop=false&delayms=3000",
-			"title": "AI, code and data for your business processes",
+			"title": "AI, code, and data for your business processes",
 			"status": "AI studio & business automation"
 		},
 		"fdti_section": {
-			"subtitle": "Your data and tools as a starting point. Code and AI where they matter. Operations that run faster, smoother, and more reliably.",
+			"subtitle": "Your data and tools are the starting point. Code and AI where they matter. Operations that are more streamlined, reliable, and automated.",
 			"icon_1": {
 				"filename_disk": "from-data-to-insight.svg",
 				"url": "/images/cms/branding/from-data-to-insight.svg",
 				"id": "from-data-to-insight.svg"
 			},
-			"content_1": "<p><strong>We start from the real work your teams do</strong>: documents to process, information to retrieve, decisions to prepare, coordination to streamline, tasks to automate.</p><ul><li><strong>Identify</strong> the steps where AI creates a concrete gain</li><li><strong>Connect</strong> the right sources: databases, SaaS, files, APIs, internal tools</li><li><strong>Design</strong> a robust, secure system your teams can use every day</li></ul>",
+			"content_1": "<p><strong>We start with the work your teams actually do</strong>: processing documents, retrieving information, preparing decisions, streamlining coordination, and automating tasks.</p><ul><li><strong>Identify</strong> the steps where AI delivers tangible value</li><li><strong>Connect</strong> the right sources: databases, SaaS platforms, files, APIs, and internal tools</li><li><strong>Design</strong> a robust, secure system your teams can use every day</li></ul>",
 			"icon_2": {
 				"filename_disk": "from-data-to-insight-1.svg",
 				"url": "/images/cms/branding/from-data-to-insight-1.svg",
 				"id": "from-data-to-insight-1.svg"
 			},
-			"content_2": "<p><strong>We deliver the right level of solution</strong> for the need: a copilot, an assisted workflow, an API, a back office or a complete business application.</p><ul><li><strong>AI copilots</strong>: search, synthesis, decision support, assisted writing</li><li><strong>Process automation</strong>: document processing, qualification, coordination, alerting, reporting</li><li><strong>Business applications</strong>: portals, dashboards, back offices, secure APIs and internal tools</li></ul><p>Architecture, security, deployment and monitoring are part of the product. We define access, hosting, data flows and controls with each client according to their context.</p>",
+			"content_2": "<p><strong>We deliver the right type of solution</strong> for each need: a copilot, an assisted workflow, an API, an administration interface, or a complete business application.</p><ul><li><strong>AI copilots</strong>: search, summarization, decision support, assisted writing</li><li><strong>Process automation</strong>: document processing, assessment, coordination, alerts, reporting</li><li><strong>Business applications</strong>: portals, dashboards, administration interfaces, secure APIs, and internal tools</li></ul><p>Architecture, security, deployment, and monitoring are part of the product. We define access, hosting, data flows, and controls with each client based on their specific context.</p>",
 			"title": "Our approach"
 		},
 		"technology_content": {
 			"title": "Technologies",
-			"subtitle": "Four mastered and composable technical building blocks that we assemble according to each project's needs.",
+			"subtitle": "Four proven, composable technical building blocks that we assemble to meet each project's needs.",
 			"technology_category_list": [
 				{
 					"title": "Web apps & APIs",
-					"description": "Business interfaces, back offices, portals, and robust APIs to integrate application logic and AI cleanly into your existing stack.",
+					"description": "Business interfaces, administration tools, portals, and robust APIs that integrate application logic and AI cleanly into your existing stack.",
 					"order": "1",
 					"category_icon": {
 						"filename_disk": "web-apps.svg",
@@ -586,7 +586,7 @@
 						},
 						{
 							"id": "14",
-							"name": "google cloud",
+							"name": "Google Cloud",
 							"img": {
 								"filename_disk": "google-cloud.webp",
 								"url": "/images/cms/technologies/google-cloud.webp",
@@ -598,7 +598,7 @@
 						},
 						{
 							"id": "16",
-							"name": "docker",
+							"name": "Docker",
 							"img": {
 								"filename_disk": "docker.webp",
 								"url": "/images/cms/technologies/docker.webp",
@@ -610,7 +610,7 @@
 						},
 						{
 							"id": "15",
-							"name": "terraform",
+							"name": "Terraform",
 							"img": {
 								"filename_disk": "terraform.webp",
 								"url": "/images/cms/technologies/terraform.webp",
@@ -624,7 +624,7 @@
 				},
 				{
 					"title": "Artificial intelligence",
-					"description": "Copilots, business assistants, augmented retrieval, agents, and workflow automation powered by language models.",
+					"description": "Copilots, business assistants, AI-powered search, agents, and workflow automation powered by language models.",
 					"order": "3",
 					"category_icon": {
 						"filename_disk": "ia-machine-learning.svg",
@@ -634,7 +634,7 @@
 					"technology_list": [
 						{
 							"id": "29",
-							"name": "Open AI",
+							"name": "OpenAI",
 							"img": {
 								"filename_disk": "open-ai.webp",
 								"url": "/images/cms/technologies/open-ai.webp",
@@ -646,7 +646,7 @@
 						},
 						{
 							"id": "11",
-							"name": "hugging face",
+							"name": "Hugging Face",
 							"img": {
 								"filename_disk": "hugging-face.webp",
 								"url": "/images/cms/technologies/hugging-face.webp",
@@ -658,7 +658,7 @@
 						},
 						{
 							"id": "6",
-							"name": "pytorch",
+							"name": "PyTorch",
 							"img": {
 								"filename_disk": "pytorch.webp",
 								"url": "/images/cms/technologies/pytorch.webp",
@@ -672,7 +672,7 @@
 				},
 				{
 					"title": "Data",
-					"description": "Data collection, structuring, modeling, and delivery: the foundation required to power workflows, dashboards, and useful AI systems.",
+					"description": "Data collection, structuring, modeling, and distribution: the foundation required to power workflows, dashboards, and useful AI systems.",
 					"order": "4",
 					"category_icon": {
 						"filename_disk": "data-science.svg",
@@ -706,7 +706,7 @@
 						},
 						{
 							"id": "32",
-							"name": "DBT",
+							"name": "dbt",
 							"img": {
 								"filename_disk": "dbt.webp",
 								"url": "/images/cms/technologies/dbt.webp",
@@ -718,7 +718,7 @@
 						},
 						{
 							"id": "17",
-							"name": "Bigquery",
+							"name": "BigQuery",
 							"img": {
 								"filename_disk": "bigquery.webp",
 								"url": "/images/cms/technologies/bigquery.webp",
@@ -757,7 +757,7 @@
 			]
 		},
 		"trust_content": {
-			"title": "They trust us",
+			"title": "They trust us with critical work",
 			"company_list": [
 				{
 					"name": "Samsung",
@@ -866,15 +866,15 @@
 			]
 		},
 		"contact_section": {
-			"btn_contact": "Plan a conversation",
-			"subtitle": "Let's discuss your project together!",
+			"btn_contact": "Schedule a call",
+			"subtitle": "Let's discuss your project.",
 			"address": "8 place Roger Salengro, 31000 Toulouse, France",
 			"company": "FDTI Consulting",
 			"mail": "info@fdti.eu",
 			"title": "Contact"
 		},
 		"CII": {
-			"description": "<p>We have been approved for the French Innovation Tax Credit (CII) from 2020 to 2024 by the French Directorate General for Enterprise. This means eligible clients can obtain a tax credit covering 20% of qualifying expenses incurred with us.</p>",
+			"description": "<p>FDTI Consulting held French Innovation Tax Credit (CII) accreditation from 2020 through 2024, granted by the French Directorate General for Enterprise. Eligible clients may claim a tax credit equal to 20% of qualifying expenses incurred with us.</p>",
 			"image": {
 				"filename_disk": "image.png",
 				"url": "/images/cms/branding/image.png",
@@ -884,8 +884,8 @@
 		"meta_tags": {
 			"page_tags": [
 				{
-					"title": "AI, automation and business software studio | FDTI",
-					"description": "FDTI builds custom AI copilots, workflow automation and business applications that connect with your data, SaaS platforms and existing internal tools.",
+					"title": "AI, automation, and business software studio | FDTI",
+					"description": "FDTI builds custom AI copilots, workflow automation, and business applications that connect with your data, SaaS platforms, and existing internal tools.",
 					"url": "/",
 					"img": {
 						"filename_disk": "fdti-from-data-to-insights.svg",
@@ -894,8 +894,8 @@
 					}
 				},
 				{
-					"title": "Use Cases | Data, AI & Application Projects - FDTI",
-					"description": "Real-world implementations: court automation with AI, circular economy platforms, battery marketplaces, smart city lighting, social media analytics with LLMs, data warehouses for retail and justice sectors.",
+					"title": "Use Cases | Data, AI & Business Software Projects | FDTI",
+					"description": "Real-world projects: AI automation for court clerks, circular economy platforms, battery marketplaces, smart public lighting, LLM-based social media analysis, and data warehouses for retail and the justice sector.",
 					"url": "/realisations",
 					"img": {
 						"filename_disk": "fdti-from-data-to-insights.svg",
@@ -911,7 +911,7 @@
 			"page_tags": [
 				{
 					"title": "Legal notice and terms of use | FDTI",
-					"description": "Read the publisher details for fdti.eu and the site’s provisions on intellectual property, personal data and liability.",
+					"description": "Read the publisher details for fdti.eu and the site’s provisions on intellectual property, personal data, and liability.",
 					"url": "/condition-utilisation",
 					"img": {
 						"filename_disk": "fdti-from-data-to-insights.svg",
@@ -923,7 +923,7 @@
 		},
 		"CGU": {
 			"title": "Legal Notice and Terms of Use",
-			"content": "<div class=\"text-2xl lg:mx-72 mx-16 mt-14 text-grey1 font-semibold s-_nwK2CU3lMz9\">Site Publisher</div>\n<div class=\"text-sm lg:mx-72 mx-16 text-grey1 s-_nwK2CU3lMz9\">\n<p class=\"s-_nwK2CU3lMz9\">The website <strong>fdti.eu</strong> is published by <strong>FDTI Consulting</strong>, a SARL with a capital of €2,000, registered with the Toulouse RCS under number 850 172 164.</p>\n<p class=\"s-_nwK2CU3lMz9\">Headquarters: 8 place Roger Salengro, 31000 Toulouse.</p>\n<p class=\"s-_nwK2CU3lMz9\">Email: <a href=\"mailto:info@fdti.eu\" class=\"text-blue-700\">info@fdti.eu</a></p>\n</div>\n<div class=\"text-2xl lg:mx-72 mx-16 mt-5 text-grey1 font-semibold s-_nwK2CU3lMz9\">Intellectual Property</div>\n<div class=\"text-sm lg:mx-72 mx-16 text-grey1 s-_nwK2CU3lMz9\">\n<p class=\"s-_nwK2CU3lMz9\">All content (text, images, logos) on this site is the exclusive property of FDTI Consulting. Any reproduction or use without prior authorization is prohibited.</p>\n</div>\n<div class=\"text-2xl lg:mx-72 mx-16 mt-5 text-grey1 font-semibold s-_nwK2CU3lMz9\">Personal Data</div>\n<div class=\"text-sm lg:mx-72 mx-16 text-grey1 s-_nwK2CU3lMz9\">\n<p class=\"s-_nwK2CU3lMz9\">This website does not collect any personal data.</p>\n</div>\n<div class=\"text-2xl lg:mx-72 mx-16 mt-5 text-grey1 font-semibold s-_nwK2CU3lMz9\">Liability</div>\n<div class=\"text-sm lg:mx-72 mx-16 text-grey1 mb-28 s-_nwK2CU3lMz9\">\n<p class=\"s-_nwK2CU3lMz9\">FDTI Consulting strives to provide accurate information on this site but cannot be held liable for any errors or omissions. Use of the site is entirely at your own risk.</p>\n</div>"
+			"content": "<div class=\"text-2xl lg:mx-72 mx-16 mt-14 text-grey1 font-semibold s-_nwK2CU3lMz9\">Site Publisher</div>\n<div class=\"text-sm lg:mx-72 mx-16 text-grey1 s-_nwK2CU3lMz9\">\n<p class=\"s-_nwK2CU3lMz9\">The website <strong>fdti.eu</strong> is published by <strong>FDTI Consulting</strong>, a French limited liability company (SARL) with share capital of €2,000, registered with the Toulouse Trade and Companies Register (RCS) under number 850 172 164.</p>\n<p class=\"s-_nwK2CU3lMz9\">Registered office: 8 place Roger Salengro, 31000 Toulouse.</p>\n<p class=\"s-_nwK2CU3lMz9\">Email: <a href=\"mailto:info@fdti.eu\" class=\"text-blue-700\">info@fdti.eu</a></p>\n</div>\n<div class=\"text-2xl lg:mx-72 mx-16 mt-5 text-grey1 font-semibold s-_nwK2CU3lMz9\">Intellectual Property</div>\n<div class=\"text-sm lg:mx-72 mx-16 text-grey1 s-_nwK2CU3lMz9\">\n<p class=\"s-_nwK2CU3lMz9\">All content (text, images, and logos) on this site is the exclusive property of FDTI Consulting. Any reproduction or use without prior authorization is prohibited.</p>\n</div>\n<div class=\"text-2xl lg:mx-72 mx-16 mt-5 text-grey1 font-semibold s-_nwK2CU3lMz9\">Personal Data</div>\n<div class=\"text-sm lg:mx-72 mx-16 text-grey1 s-_nwK2CU3lMz9\">\n<p class=\"s-_nwK2CU3lMz9\">This website does not collect any personal data.</p>\n</div>\n<div class=\"text-2xl lg:mx-72 mx-16 mt-5 text-grey1 font-semibold s-_nwK2CU3lMz9\">Liability</div>\n<div class=\"text-sm lg:mx-72 mx-16 text-grey1 mb-28 s-_nwK2CU3lMz9\">\n<p class=\"s-_nwK2CU3lMz9\">FDTI Consulting strives to provide accurate information on this site but cannot be held liable for any errors or omissions. You use the site entirely at your own risk.</p>\n</div>"
 		}
 	},
 	"GetPrivacyContent": {
@@ -931,7 +931,7 @@
 			"page_tags": [
 				{
 					"title": "Privacy policy and personal data practices | FDTI",
-					"description": "Read FDTI’s stated practices for personal data and audience measurement, including hosting, access, pseudonymization and deletion.",
+					"description": "Read FDTI’s stated practices for personal data and audience measurement, including hosting, access, pseudonymization, and deletion.",
 					"url": "/confidentialite",
 					"img": {
 						"filename_disk": "fdti-from-data-to-insights.svg",
@@ -943,17 +943,17 @@
 		},
 		"privacy": {
 			"title": "Privacy Policy",
-			"content": "<div class=\"text-2xl lg:mx-72 mx-16 mt-14 text-grey1 font-semibold\">Legal framework &ndash; compliance with GDPR and French law</div>\n<div class=\"text-sm lg:mx-72 mx-16 text-grey1\">\n<p>FDTI Consulting declares that the company processes personal data in accordance with Regulation (EU) 2016/679 of the European Parliament and of the Council of April 27, 2016, relating to the protection of natural persons with regard to the processing of personal data and the free movement of such data (hereinafter referred to as the GDPR) and French law n&deg; 78-17 of January 6, 1978 relating to data processing, files and freedoms.</p>\n<br />\n<p>On May 25, 2018, the General Data Protection Regulations entered into force. Companies dealing with data must now ensure optimal data protection at all times and be able to demonstrate it by documenting their compliance.</p>\n<br />\n<p>In view of its activity, FDTI Consulting may need to process personal data collected and processed by its customers. The following elements are intended to define internal processing rules at FDTI Consulting and guarantee compliance with personal data in accordance with the GDPR.</p>\n<br />\n<p>In all of its activities, FDTI Consulting considers the protection of personal data to be fundamental and strives as soon as possible to anonymize all the data it processes and to ensure the non-disclosure of data outside the reference legal frameworks.</p>\n</div>\n<div class=\"text-2xl lg:mx-72 mx-16 mt-5 text-grey1 font-semibold \">Governance</div>\n<div class=\"text-sm lg:mx-72 mx-16 text-grey1\">\n<p>The data processed by FDTI never leaves the European Union and is not subject to any jurisdiction outside the European Union.</p>\n<br />\n<p>Our host OVH France is located in France and hosts our services in France. Therefore they are not subject to the Cloud Act</p>\n</div>\n<div class=\"text-2xl lg:mx-72 mx-16 mt-5 text-grey1 font-semibold\">Personal data processing process</div>\n<div class=\"text-sm lg:mx-72 mx-16 text-grey1 mb-28\">\n<p>Except in special cases, FDTI Consulting does not need personal data to carry out its missions. FDTI Consulting therefore asks its clients not to send it any personal data. In the event of unexpected receipt of personal data, FDTI Consulting will directly destroy this data and notify the sender.</p>\n<br />\n<p>Some personal data may be useful for identification purposes. In this case, FDTI Consulting will ask the data provider to pseudonymize this data. FDTI Consulting will support this pseudonymization.</p>\n<p>In the event that the sender hasn't the technical capacities or the human capacities to carry out this pseudonymization in his environment, FDTI Consulting will take care of it. Only one person within FDTI Consulting will therefore have access to this personal data, in order to pseudonymize it and distribute this pseudonymized data within FDTI Consulting.</p>\n<br />\n<p>All personal data used in the context of our work is thus stored in a secure space and respects the consent given by the persons concerned. All this data is then permanently deleted, following the studies and processing necessary for the conduct of our various projects.</p>\n</div>"
+			"content": "<div class=\"text-2xl lg:mx-72 mx-16 mt-14 text-grey1 font-semibold\">Legal framework &ndash; compliance with the GDPR and French law</div>\n<div class=\"text-sm lg:mx-72 mx-16 text-grey1\">\n<p>FDTI Consulting processes personal data in accordance with Regulation (EU) 2016/679 of the European Parliament and of the Council of April 27, 2016, on the protection of natural persons with regard to the processing of personal data and on the free movement of such data (hereinafter the GDPR), and with French Law No. 78-17 of January 6, 1978, on information technology, data files, and civil liberties.</p>\n<br />\n<p>The General Data Protection Regulation took effect on May 25, 2018. Organizations that process data must ensure the highest possible level of data protection at all times and be able to demonstrate their compliance through documentation.</p>\n<br />\n<p>Given the nature of its work, FDTI Consulting may need to process personal data collected and processed by its clients. The following provisions define FDTI Consulting's internal processing rules and are intended to ensure that personal data is handled in accordance with the GDPR.</p>\n<br />\n<p>FDTI Consulting considers the protection of personal data fundamental to all its activities. It seeks to anonymize all data it processes as early as possible and works to prevent its disclosure outside the applicable legal frameworks.</p>\n</div>\n<div class=\"text-2xl lg:mx-72 mx-16 mt-5 text-grey1 font-semibold \">Governance</div>\n<div class=\"text-sm lg:mx-72 mx-16 text-grey1\">\n<p>Data processed by FDTI never leaves the European Union and is not subject to any jurisdiction outside the European Union.</p>\n<br />\n<p>Our hosting provider, OVH France, is based in France and hosts our services in France. It is therefore not subject to the CLOUD Act.</p>\n</div>\n<div class=\"text-2xl lg:mx-72 mx-16 mt-5 text-grey1 font-semibold\">Personal data processing</div>\n<div class=\"text-sm lg:mx-72 mx-16 text-grey1 mb-28\">\n<p>Except in specific cases, FDTI Consulting does not need personal data to perform its services. FDTI Consulting therefore asks its clients not to send it personal data. If FDTI Consulting receives personal data unexpectedly, it will delete the data immediately and notify the sender.</p>\n<br />\n<p>Some personal data may be useful for identification purposes. In such cases, FDTI Consulting will ask the data provider to pseudonymize the data and will assist with the pseudonymization process.</p>\n<p>If the sender lacks the technical or human resources to perform this pseudonymization in its own environment, FDTI Consulting will handle it. Only one person within FDTI Consulting will have access to the personal data for the purpose of pseudonymizing it and sharing only the pseudonymized data within FDTI Consulting.</p>\n<br />\n<p>All personal data used in our work is stored securely and processed in accordance with the consent provided by the data subjects. The data is permanently deleted once the studies and processing required for our projects have been completed.</p>\n</div>"
 		}
 	},
 	"GetUseCasesContent": {
-		"title": "Work",
-		"subtitle": "Deployed systems, specific business problems and observable results",
+		"title": "Case Studies",
+		"subtitle": "Deployed systems, specific business problems, and observable results",
 		"meta_tags": {
 			"page_tags": [
 				{
-					"title": "Data, AI and business software projects | FDTI",
-					"description": "Explore systems deployed by FDTI, from AI for commercial courts and circular economy platforms to retail data and public lighting management.",
+					"title": "Data, AI, and business software projects | FDTI",
+					"description": "Explore systems deployed by FDTI, from AI for commercial courts and circular economy platforms to retail data and public lighting monitoring and modeling.",
 					"url": "/realisations",
 					"img": {
 						"filename_disk": "fdti-from-data-to-insights.svg",
@@ -970,17 +970,17 @@
 				"title": "AI platform for commercial courts",
 				"date": "2025",
 				"location": "France",
-				"challenge": "A software vendor for court clerks wanted to embed AI directly into its platform to optimize processing time and accuracy for specific time-consuming clerk tasks.",
-				"approach": "Modular architecture structured by AI use cases (tailored LLMs). On-prem FastAPI AI stack, fully integrated into the existing tool via API, but also accessible to other users via secure API. TypeScript/SvelteKit portal.",
-				"impact": "AI pre-analysis runs in parallel with business workflows: around 40 billion tokens processed per year on a first use case, with a significant time-saving equivalent while meeting judicial confidentiality requirements.",
+				"challenge": "A software vendor for commercial court clerks wanted to embed AI directly into its platform to improve the speed and accuracy of specific time-consuming clerical tasks.",
+				"approach": "A modular architecture organized around specialized AI use cases and tailored LLMs. An on-premises FastAPI AI stack is fully integrated with the existing platform through an API and is also available to other users through a secure API. The portal is built with TypeScript and SvelteKit.",
+				"impact": "AI pre-analysis runs in parallel with business workflows. The first use case processes around 40 billion tokens per year, delivering substantial time savings while meeting judicial confidentiality requirements.",
 				"metrics": [
 					{
-						"label": "Tokens processed / year",
+						"label": "Tokens processed per year",
 						"value": "40B"
 					},
 					{
-						"label": "Equivalent saved",
-						"value": "≈16 p.d / day"
+						"label": "Equivalent time saved per day",
+						"value": "≈16 person-days"
 					},
 					{
 						"label": "Courts equipped",
@@ -989,12 +989,12 @@
 				],
 				"tags": ["LLM", "FastAPI", "Keycloak", "TypeScript", "SvelteKit", "PostgreSQL"],
 				"details": [
-					"Critical use cases covered: case summaries, dossier validation, automated extraction of sensitive documents.",
+					"Critical use cases covered: case summaries, filing validation, and automated extraction from sensitive documents using LLMs and OCR.",
 					"Deployment inside the client's VPN with fine-grained monitoring and contractual SLAs.",
-					"Self-service portal to generate API keys, track usage and troubleshoot calls.",
+					"Self-service portal to generate API keys, track usage, and troubleshoot calls.",
 					"Re-annotation loops to improve models plus full audit tooling.",
-					"Enablement plan with trainings, playbooks and dedicated support.",
-					"TypeScript/SvelteKit front-end delivering a frictionless experience alongside legacy tools."
+					"Adoption program with training, operational guides, and dedicated support.",
+					"TypeScript/SvelteKit frontend delivering a frictionless experience alongside legacy tools."
 				],
 				"slug": "automatisation-greffes"
 			},
@@ -1004,9 +1004,9 @@
 				"title": "End-of-life vehicle management platform",
 				"date": "2020-2025",
 				"location": "Europe",
-				"challenge": "Following the creation of Valorauto, a joint venture between Stellantis and Galloo, the circular-economy platform needed to modernize its existing tool to manage end-of-life vehicle take-back processes (B2B and B2C) and track each vehicle journey from owner collection to vehicle dismantling.",
-				"approach": "Development of the Valorauto portal with declaration, administration and vehicle-tracking interfaces across the different stakeholders, business workflows and Azure Functions APIs deployed on the client Azure infrastructure (MSSQL databases, Azure Service Bus) to orchestrate an existing .NET stack connecting owners and ELV centers.",
-				"impact": "End-to-end traceability supporting the group circular-economy branch, with a network of more than 5,000 partner companies and a response to the manufacturer obligations related to Extended Producer Responsibility (EPR).",
+				"challenge": "Following the creation of Valorauto, a joint venture between Stellantis and Galloo, the circular economy platform needed to modernize its existing system to manage B2B and B2C take-back of end-of-life vehicles and track each vehicle from collection at the owner's location through dismantling.",
+				"approach": "Development of the Valorauto portal, with interfaces for declarations, administration, and vehicle tracking across stakeholders. Business workflows and Azure Functions APIs deployed on the client's Azure infrastructure (MSSQL databases and Azure Service Bus) orchestrate an existing .NET stack connecting owners and authorized treatment facilities.",
+				"impact": "End-to-end traceability for the group's circular economy business, supporting a network of more than 5,000 partner companies and helping the manufacturer meet its Extended Producer Responsibility (EPR) obligations.",
 				"metrics": [
 					{
 						"label": "Countries covered",
@@ -1014,7 +1014,7 @@
 					},
 					{
 						"label": "Partner network",
-						"value": "+5,000"
+						"value": "5,000+"
 					},
 					{
 						"label": "Trustpilot score",
@@ -1031,13 +1031,13 @@
 					"Azure Service Bus"
 				],
 				"details": [
-					"End-to-end development of the platform, databases and APIs.",
-					"Complete declaration workflow design for dealers, repair centers and private owners.",
-					"Azure Functions APIs connecting the group logistics, CRM and finance systems.",
-					"API interconnection with the wider circular-economy ecosystem (recyclers, owners, buyers, eco-organizations).",
+					"End-to-end development of the platform, databases, and APIs.",
+					"Complete declaration workflow design for dealers, repair shops, and private owners.",
+					"Azure Functions APIs connecting the group's logistics, CRM, and finance systems.",
+					"API integration with the wider circular economy ecosystem (recyclers, owners, buyers, and producer responsibility organizations).",
 					"Real-time mapping of material flows and automatic generation of regulatory documents.",
-					"Multi-brand management: local rules, catalogs and pricing by country.",
-					"Azure infrastructure sized for regulatory peaks and audits.",
+					"Multi-brand management: local rules, catalogs, and pricing by country.",
+					"Azure infrastructure sized to handle peaks in regulatory activity and audits.",
 					"Operational and regulatory dashboards consolidating B2B and B2C flows.",
 					"Personalized email notifications for every user (garages, dealers, private owners) at each workflow step."
 				],
@@ -1059,17 +1059,17 @@
 				"title": "Battery reuse marketplace",
 				"date": "2024",
 				"location": "Europe",
-				"challenge": "An automotive manufacturer needed a central tool to manage the collection, recycling and resale of its batteries, in collaboration with its partners and buyers. The tool had to manage complete process traceability to meet regulatory requirements related to the structuring of EPR (Extended Producer Responsibility) systems.",
-				"approach": "Web marketplace connected to partner ERPs, acting as a logistics and matchmaking platform. End-to-end traceability and automated flows to buyers or recyclers, price and terms negotiation with partners integrated in the app. The entire process can be managed from the portal or via the API.",
-				"impact": "Several thousand batteries redirected each month by hundreds of owners and service providers, with centralized reporting for authorities and administration interface for client employees. Seamless integration of the solution into the ecosystem.",
+				"challenge": "An automotive manufacturer needed a central tool to manage the collection, recycling, and resale of its batteries in collaboration with partners and buyers. The tool had to provide end-to-end process traceability to meet regulatory requirements as Extended Producer Responsibility (EPR) systems were being established.",
+				"approach": "A web marketplace connected to partner ERP systems that serves as both a logistics and matchmaking platform. It provides end-to-end traceability, automates flows to buyers or recyclers, and integrates price and terms negotiations with partners. The entire process can be managed through the portal or the API.",
+				"impact": "Several thousand batteries are routed each month by hundreds of owners and service providers, with centralized reporting for authorities and an administration interface for the client's employees. The solution integrates seamlessly with the existing ecosystem.",
 				"metrics": [
 					{
-						"label": "Batteries/month",
-						"value": "+8 k"
+						"label": "Batteries per month",
+						"value": "8K+"
 					},
 					{
 						"label": "Partners onboarded",
-						"value": "+300"
+						"value": "300+"
 					},
 					{
 						"label": "Countries covered",
@@ -1078,12 +1078,12 @@
 				],
 				"tags": ["SvelteKit", "FastAPI", "PostgreSQL", "Keycloak"],
 				"details": [
-					"End-to-end platform development, databases and APIs.",
-					"Full declaration process for end-of-life batteries plus automatic logistics documents.",
-					"API integrations with recyclers and eco-organizations to track pickups, tests and certificates, price offers.",
-					"Buyer workspace to source reusable batteries and manage the transaction.",
-					"Quality/compliance scoring with shared SLAs.",
-					"Regulatory reporting exportable in one click.",
+					"End-to-end development of the platform, databases, and APIs.",
+					"Complete declaration workflow for end-of-life batteries, including automated generation of logistics documents.",
+					"API integrations with recyclers and producer responsibility organizations to track pickups, tests, certificates, and price proposals.",
+					"Buyer workspace to source batteries suitable for reuse and manage the transaction.",
+					"Quality and compliance scoring with shared SLAs.",
+					"One-click regulatory reporting exports.",
 					"Automated email notifications for partners and buyers across pickup, testing and resale steps.",
 					"Identity federation through Keycloak for group entities and external partners."
 				],
@@ -1094,15 +1094,15 @@
 				"category": "Aftermarket & recycling",
 				"title": "Operations platform for a battery recycler",
 				"location": "France",
-				"challenge": "A recycler needed one tool for battery declarations, preliminary review, collection preparation, tracking records, reception and treatment steps.",
-				"approach": "Development of a business application connecting declarations, battery reference data, packing lists, grouping controls, Trackdechets records and reception actions.",
-				"impact": "Teams follow each file from declaration to treatment, with explicit controls over collectors, destination sites, signatures and document statuses.",
-				"tags": ["SvelteKit", "FastAPI", "PostgreSQL", "Trackdechets"],
+				"challenge": "A recycler needed a single tool for battery declarations, preliminary reviews, collection preparation, tracking documents, receipt, and treatment stages.",
+				"approach": "Development of a business application connecting declarations, battery reference data, packing lists, grouping controls, Trackdéchets waste tracking forms, and receipt actions.",
+				"impact": "Teams track each record from declaration through treatment, with explicit controls for collectors, destination sites, signatures, and document statuses.",
+				"tags": ["SvelteKit", "FastAPI", "PostgreSQL", "Trackdéchets"],
 				"details": [
-					"Declaration qualification based on battery chemistry, sub-chemistry and typology.",
+					"Assessment of declarations based on battery chemistry, sub-chemistry, and type.",
 					"Packing lists that prevent incompatible collectors or destination sites from being grouped together.",
-					"Trackdechets record creation and updates, with visibility into expected signatures.",
-					"Declaration reception and treatment stages followed in the same business record.",
+					"Creation and updating of Trackdéchets waste tracking forms, with visibility into required signatures.",
+					"Receipt of declarations and treatment stages tracked in the same business record.",
 					"Interfaces suited to internal teams and collection partners."
 				],
 				"slug": "battery-recycling-operations-platform"
@@ -1110,31 +1110,31 @@
 			{
 				"id": "4",
 				"category": "Smart city & energy",
-				"title": "Public lighting supervision",
+				"title": "Public lighting monitoring and modeling",
 				"date": "2024",
 				"location": "France",
-				"challenge": "A client specialized in public lighting management for municipalities and their service providers needed a single platform to manage public lighting, adjust schedules, detect anomalies and plan maintenance.",
-				"approach": "Development of a web application serving as a management portal and analysis dashboards. AWS S3 + DuckDB/Parquet real-time stack, Shell/Cron pipelines, FastAPI backend and TypeScript/SvelteKit UI.",
-				"impact": "The application is consulted every morning by network managers. Consumption and incident measurements are dynamically adjusted, with predictive maintenance and alerting deployed across more than 40 territories.",
+				"challenge": "A company specializing in public lighting management for municipalities and their service providers needed a single platform to manage public lighting, adjust schedules, detect anomalies, and plan maintenance.",
+				"approach": "Development of a web application that serves as a management portal and provides analytical dashboards. The real-time stack combines AWS S3, DuckDB, and Parquet, with Shell/Cron pipelines, a FastAPI backend, and a TypeScript/SvelteKit interface.",
+				"impact": "Network managers use the application every morning. Consumption and incident metrics update dynamically, with predictive maintenance and alerting deployed across more than 40 territories.",
 				"metrics": [
 					{
-						"label": "Measurements/day",
-						"value": ">100 M"
+						"label": "Measurements per day",
+						"value": "100M+"
 					},
 					{
 						"label": "Territories",
-						"value": "+40"
+						"value": "40+"
 					}
 				],
 				"tags": ["DuckDB", "SvelteKit", "PostgreSQL", "FastAPI"],
 				"details": [
-					"Continuous collection of lighting meters with optimized S3 + Parquet storage.",
+					"Continuous collection of lighting meter data with optimized S3 and Parquet storage.",
 					"Shell/Cron pipelines to refresh the cache.",
-					"DuckDB analytics delivering KPIs instantly over multi-year history, with dynamic visualizations to display results.",
-					"Mandate management system for data owners and users.",
+					"DuckDB analytics delivering KPIs instantly across years of historical data, with dynamic visualizations of the results.",
+					"Management of mandates associated with data owners and users.",
 					"Alert dashboards for operators (failures, consumption, schedule anomalies).",
-					"Open REST API to plug operator and city systems.",
-					"Multi-tenant management with granular permissions and per-city segmentation."
+					"Open REST API for connecting service provider and municipal systems.",
+					"Multi-tenant management with granular permissions and segmentation by operator."
 				],
 				"slug": "supervision-eclairage-public"
 			},
@@ -1144,13 +1144,13 @@
 				"title": "AI analysis of social media campaigns",
 				"date": "2023",
 				"location": "International",
-				"challenge": "The NGO needed to compare environmental narratives on Facebook and Instagram to guide communications investments.",
-				"approach": "LLM methodology (ChatGPT + tailored prompts) scoring tone/topics/perspectives, correlated with Facebook/Instagram KPIs by audience type (age, country, interests) and yielding comparative visuals.",
-				"impact": "Budget reallocation per country/platform and an internalized analysis framework.",
+				"challenge": "The NGO needed to compare environmental narratives on Facebook and Instagram to guide its communications spending.",
+				"approach": "An LLM-based methodology uses ChatGPT and tailored prompts to score tone, topics, and perspectives. The results are correlated with Facebook and Instagram KPIs by audience type (age, country, and interests) and presented in comparative visualizations.",
+				"impact": "Budgets were reallocated by country and platform, and the analysis framework was adopted internally.",
 				"metrics": [
 					{
 						"label": "Posts analyzed",
-						"value": "60 k"
+						"value": "60K"
 					},
 					{
 						"label": "Languages",
@@ -1163,11 +1163,11 @@
 				],
 				"tags": ["LLM", "OpenAI", "NLP", "TypeScript"],
 				"details": [
-					"Prompts capturing tone, actors, topics and emotions on Facebook/Instagram.",
-					"Automated pipeline: social data → LLM → scoring of topics/tones/perspectives per audience type.",
-					"Cross-analysis with post performance to recommend priority themes.",
+					"Prompts capturing tone, stakeholders, topics, and emotions on Facebook and Instagram.",
+					"Automated pipeline: social media data → LLM → scoring of topics, tones, and perspectives by audience type.",
+					"Correlation with post performance to recommend priority themes.",
 					"Documented methodology replicable by local teams.",
-					"Enablement sessions to interpret recommendations and adjust budgets."
+					"Training sessions to help teams interpret recommendations and adjust budgets."
 				],
 				"slug": "analyse-generative-campagnes"
 			},
@@ -1177,28 +1177,28 @@
 				"title": "Data hub & NLP",
 				"date": "2021-2023",
 				"location": "Global",
-				"challenge": "Centralize customer review flows from an electronics leader in France and industrialize their analysis with AI and dashboards.",
-				"approach": "Pipelines to collect data from various providers and collection managers via API Airflow→BigQuery, GCP governance, NLP (HuggingFace, BERTopic, QA, LLM), delivery in Tableau dashboards and internal data distribution to other concerned teams.",
-				"impact": "Customer service instantly retrieves classified topics, escalated alerts and tracks requests more precisely. The product team identifies and anticipates defects and logistics issues. The legal team anticipates litigation.",
+				"challenge": "A leading consumer electronics company in France needed to centralize customer review data and scale its analysis using AI and dashboards.",
+				"approach": "Airflow-to-BigQuery pipelines collect data via APIs from multiple providers and collection systems, supported by GCP governance and NLP models (Hugging Face, BERTopic, QA, and LLMs). Results are delivered through Tableau dashboards and distributed internally to the relevant teams.",
+				"impact": "Customer service can instantly find classified topics and escalated alerts while tracking requests more accurately. The product team identifies and anticipates defects and logistics issues, while the legal team can better anticipate disputes.",
 				"metrics": [
 					{
 						"label": "Sources integrated",
-						"value": "+25"
+						"value": "25+"
 					},
 					{
 						"label": "Reviews analyzed",
-						"value": "All of France"
+						"value": "Nationwide in France"
 					}
 				],
 				"tags": ["GCP", "Airflow", "NLP", "LLM", "Tableau", "HuggingFace"],
 				"details": [
-					"Multi-API collection (mystery shopping, CRM, social, reviews) orchestrated by Airflow.",
-					"Cloud policies: team segmentation, data localization, security and best practices.",
+					"Data collection from multiple APIs (mystery shopping, CRM, social media, and reviews), orchestrated by Airflow.",
+					"Cloud policies covering team segmentation, data localization, security, and best practices.",
 					"Analysis and classification pipeline with LLMs.",
-					"NLP pipelines for similarity, sentiment and topics across multiple languages.",
+					"NLP pipelines for similarity, sentiment, and topic analysis across multiple languages.",
 					"Design and implementation of dashboards used daily by the Customer & Market insights team.",
-					"Documentation and training for data/business teams.",
-					"Automated insight exports to marketing BUs and agencies."
+					"Documentation and training for data and business teams.",
+					"Automated insight exports to marketing business units and agencies."
 				],
 				"slug": "data-hub-nlp"
 			},
@@ -1208,9 +1208,9 @@
 				"title": "Near real-time data warehouse",
 				"date": "2020-2021",
 				"location": "Europe",
-				"challenge": "As part of an ERP migration, migrate 98 high-volume JSON business objects with complex structures (shops, warehouses, users, receipts, stocks...) from Azure to Snowflake to feed Qlik in near real-time.",
-				"approach": "Automatic generation of hundreds of SQL and Scala queries from specifications to denest complex objects. The system produced and feeds 150+ tables and views updated in real-time. ADLS→Snowflake ingestion via Kafka/ADF and orchestration via streams and tasks.",
-				"impact": "Minute-level feeds for BI teams processing millions of files per day. Transition to the new analysis system followed by deprecation of the legacy one.",
+				"challenge": "As part of an ERP migration, the client needed to move 98 high-volume, complex JSON business objects (stores, warehouses, users, receipts, inventory, and more) from Azure to Snowflake to feed Qlik in near real time.",
+				"approach": "Hundreds of SQL and Scala queries were generated automatically from specifications to flatten complex objects. The system creates and feeds more than 150 tables and views updated in real time. Data is ingested from ADLS into Snowflake through Kafka and ADF, with orchestration handled by streams and tasks.",
+				"impact": "BI teams receive minute-by-minute data feeds while the system processes millions of files each day. The organization transitioned to the new analytics system and then deprecated the legacy platform.",
 				"metrics": [
 					{
 						"label": "Business objects",
@@ -1228,7 +1228,7 @@
 				"tags": ["Snowflake", "Azure", "Kafka", "ADF", "Qlik"],
 				"details": [
 					"Automatic SQL generation from XML metadata to speed up deployments.",
-					"Delta updates orchestrated by Snowflake Tasks with dedicated monitoring.",
+					"Incremental updates orchestrated by Snowflake Tasks with dedicated monitoring.",
 					"Custom Scala functions to denormalize nested JSON.",
 					"Coaching for analysts to leverage the new real-time feeds.",
 					"Environment management via Snowflake API (test / pre-prod / prod)."
@@ -1238,9 +1238,9 @@
 		],
 		"cta": {
 			"label": "Critical work deserves more than generic software.",
-			"button": "Define a first scope",
+			"button": "Define an initial scope",
 			"link": "https://calendly.com/fdti/30min",
-			"description": "Start from a real case, its participants and its data to identify the next useful step."
+			"description": "Start with a real use case, the stakeholders involved, and the available data to identify the next useful step."
 		}
 	}
 }
