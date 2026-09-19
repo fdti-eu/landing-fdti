@@ -86,6 +86,26 @@
 			start: 'Beginn',
 			status: 'Status',
 			metadata: 'Angaben zur Stelle'
+		},
+		it: {
+			roleEyebrow: 'Offerta di stage',
+			company: 'FDTI Consulting',
+			summary: 'Sintesi della posizione',
+			intro: 'Contesto',
+			required: 'Competenze richieste',
+			nice: 'Competenze apprezzate',
+			environment: 'Ambiente di lavoro',
+			conditions: 'Condizioni',
+			process: 'Processo di selezione',
+			apply: 'Candidatura',
+			applyText: 'Per candidarti, utilizza il modulo online:',
+			pageText: 'Offerta online:',
+			contract: 'Contratto',
+			location: 'Sede',
+			experience: 'Esperienza',
+			start: 'Inizio',
+			status: 'Stato',
+			metadata: 'Informazioni sulla posizione'
 		}
 	} satisfies Record<Lang, Record<string, string>>;
 	$: copy = copies[locale];

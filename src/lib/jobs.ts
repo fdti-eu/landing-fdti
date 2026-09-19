@@ -723,6 +723,171 @@ const developerDe = {
 	]
 } satisfies Omit<JobOffer, 'tallyEmbedUrl' | 'tallyPublicUrl'>;
 
+const consultantIt = {
+	...consultantFr,
+	slug: 'stage-consulente-ia-business-operazioni-progetti',
+	title: 'Stage in consulenza IA per il business e gestione operativa dei progetti',
+	shortTitle: 'Consulente IA per il business',
+	contractType: 'Stage',
+	location: 'Modalità da definire',
+	experience: '0-2 anni',
+	startLabel: 'Inserimenti possibili tutto l’anno',
+	status: 'Posizione aperta',
+	summary:
+		'Uno stage ibrido per strutturare i progetti, preparare gli incontri con i clienti e usare l’IA come leva per coordinamento, specifiche e gestione operativa.',
+	intro: [
+		'FDTI è uno studio di IA, codice e dati specializzato nella progettazione di soluzioni digitali su misura: applicazioni aziendali, API, agenti IA verticali, automazione dei processi, piattaforme dati e strumenti interni.',
+		'Lavoriamo su progetti in cui la tecnologia è direttamente collegata alle operazioni: elaborare documenti, connettere sistemi, strutturare dati, automatizzare workflow, aiutare i team a prendere decisioni migliori e integrare l’IA in strumenti realmente utilizzati.',
+		'La posizione è pensata per un profilo ibrido, capace di comprendere un progetto aziendale, strutturare le informazioni, preparare gli incontri con il cliente, seguire le decisioni e usare l’IA per accelerare coordinamento, specifiche e gestione del progetto.'
+	],
+	sections: [
+		{
+			title: 'Le tue attività',
+			items: [
+				'Contribuire alla gestione operativa di progetti di IA, dati e applicazioni aziendali.',
+				'Preparare gli incontri con i clienti: contesto, ordine del giorno, punti da chiarire e materiali di discussione.',
+				'Rivedere, strutturare e migliorare specifiche funzionali o tecniche con il supporto del team.',
+				'Trasformare verbali, scambi con i clienti e decisioni di progetto in ticket utilizzabili.',
+				'Produrre note di rilascio, documenti di definizione dell’ambito, sintesi e strumenti di monitoraggio del progetto.',
+				'Usare agenti IA per analizzare repository, riassumere modifiche, preparare revisioni quotidiane o individuare punti di attenzione.',
+				'Seguire i feedback dei clienti, qualificare le richieste e aiutare il team a definire le priorità.',
+				'Comprendere progressivamente le logiche di business dei progetti per collegare cliente, prodotto e team tecnico.',
+				'Contribuire al miglioramento dei metodi interni FDTI: modelli, workflow Notion, automazioni e documentazione di progetto.'
+			]
+		}
+	],
+	requiredSkills: [
+		'Ottime capacità di analisi, sintesi e strutturazione delle informazioni.',
+		'Comunicazione scritta chiara e precisa.',
+		'Ottima conoscenza professionale del francese, scritto e parlato, per lavorare con il team e gli interlocutori di progetto.',
+		'Capacità di condurre uno scambio professionale con un cliente o un team di progetto.',
+		'Autonomia, precisione e capacità organizzative.',
+		'Interesse concreto per l’IA applicata a problemi aziendali e operativi.',
+		'Capacità di apprendere rapidamente un settore, un prodotto o il contesto di un cliente.',
+		'Dimestichezza con gli strumenti digitali e capacità di documentare il proprio lavoro in modo ordinato.',
+		'Una buona conoscenza professionale dell’inglese è apprezzata per alcuni progetti.'
+	],
+	niceToHaveSkills: [
+		'Prima esperienza in gestione di progetto, consulenza, product management, business analysis o supporto alla direzione di progetto.',
+		'Conoscenza di base di API, database, applicazioni web o architetture software.',
+		'Esperienza con Notion, Linear, Jira, GitHub, Google Workspace o strumenti di monitoraggio dei progetti.',
+		'Uso avanzato di strumenti di IA per riassumere, analizzare, strutturare o produrre documenti.',
+		'Nozioni di SQL, dati, automazione o no-code.',
+		'Interesse per temi industriali, normativi, documentali o per ambiti aziendali complessi.'
+	],
+	environmentIntro:
+		'Lavorerai con sviluppatori, responsabili di progetto e interlocutori aziendali su attività concrete.',
+	environment: [
+		'Agenti IA verticali.',
+		'Applicazioni aziendali e back office.',
+		'Strumenti interni.',
+		'Workflow assistiti.',
+		'Specifiche funzionali e tecniche.',
+		'Documentazione di progetto.',
+		'Monitoraggio di clienti e progetti.',
+		'Analisi dei processi aziendali.',
+		'Automazioni con Notion, GitHub, Google Workspace e strumenti interni.'
+	],
+	conditions: [
+		'Stage di 6 mesi.',
+		'Inserimenti possibili tutto l’anno, in base al calendario accademico e ai progetti in corso.',
+		'Modalità di lavoro da definire in base al quadro dello stage, ai requisiti dell’istituto e ai progetti in corso.',
+		'Indennità conforme alla normativa francese applicabile agli stage, da precisare in base al profilo e al contesto.',
+		'Affiancamento da parte del team FDTI.',
+		'Possibilità di proseguire la collaborazione in base al livello, al contesto e alle opportunità.'
+	],
+	process: [
+		{
+			title: 'Primo colloquio',
+			items: ['Conoscerci, comprendere le tue aspettative e verificare la compatibilità con FDTI.']
+		},
+		{
+			title: 'Colloquio su un caso concreto',
+			items: ['Un confronto adatto al ruolo, incentrato su un caso operativo strutturato.']
+		}
+	]
+} satisfies Omit<JobOffer, 'tallyEmbedUrl' | 'tallyPublicUrl'>;
+
+const developerIt = {
+	...developerFr,
+	slug: 'stage-sviluppatore-ia-agenti-applicazioni-dati',
+	title: 'Stage per sviluppatore IA - Agenti aziendali, applicazioni e dati',
+	shortTitle: 'Sviluppatore IA',
+	contractType: 'Stage',
+	location: 'Modalità da definire',
+	experience: '0-2 anni',
+	startLabel: 'Inserimenti possibili tutto l’anno',
+	status: 'Posizione aperta',
+	summary:
+		'Uno stage tecnico per sviluppare agenti IA verticali, applicazioni, API e flussi di dati destinati a progetti reali in produzione.',
+	intro: [
+		'FDTI è uno studio di IA, codice e dati specializzato nella progettazione di soluzioni digitali su misura: applicazioni aziendali, API, agenti IA verticali, automazione dei processi, piattaforme dati e strumenti interni.',
+		'Lavoriamo su progetti in cui la tecnologia è direttamente collegata alle operazioni: elaborare documenti, connettere sistemi, strutturare dati, automatizzare workflow, aiutare i team a prendere decisioni migliori e integrare l’IA in strumenti realmente utilizzati.',
+		'Per accompagnare la nostra crescita cerchiamo una persona in stage nell’ambito dello sviluppo software e dell’IA per un periodo di 6 mesi.'
+	],
+	sections: [
+		{
+			title: 'Le tue attività',
+			items: [
+				'Contribuire allo sviluppo di agenti IA verticali collegati a dati, API o strumenti esistenti.',
+				'Sviluppare applicazioni aziendali, back office, dashboard o portali interni.',
+				'Progettare e integrare API sicure per collegare database, SaaS, file e strumenti interni.',
+				'Prototipare workflow assistiti dall’IA: estrazione di informazioni, sintesi, qualificazione, routing, reporting e avvisi.',
+				'Lavorare su componenti di ricerca e sviluppo relativi a LLM, agenti, harness, RAG, OCR, NLP, audit e monitoraggio.',
+				'Contribuire agli strumenti interni FDTI per migliorare la realizzazione dei progetti, la loro gestione e la qualità del codice.',
+				'Partecipare a test, messa in produzione, monitoraggio e documentazione tecnica.',
+				'Lavorare su progetti dei clienti utilizzati in produzione.'
+			]
+		}
+	],
+	requiredSkills: [
+		'Buone competenze di programmazione, dimostrate da progetti concreti.',
+		'Capacità di leggere e comprendere una codebase esistente.',
+		'Conoscenza di API, database e moderne architetture web.',
+		'Uso regolare di Git.',
+		'Capacità di lavorare in autonomia con un affiancamento periodico.',
+		'Comunicazione scritta chiara: saper spiegare cosa è stato fatto, cosa blocca il lavoro e quali scelte tecniche sono state prese.',
+		'Ottima conoscenza professionale del francese, scritto e parlato, per lavorare con il team e gli interlocutori di progetto.',
+		'Interesse concreto per l’IA applicata a problemi aziendali, non limitato agli strumenti di generazione del testo.'
+	],
+	niceToHaveSkills: [
+		'Esperienza con TypeScript, SvelteKit, React o Node.js.',
+		'Esperienza con Python, FastAPI o script di automazione.',
+		'Nozioni di SQL, PostgreSQL, SQLite, DuckDB o pipeline di dati.',
+		'Prima esperienza con LLM, RAG, agenti, OCR, NLP o API di OpenAI e Hugging Face.',
+		'Conoscenze di Docker, Linux, cloud o messa in produzione.',
+		'Esperienza con Notion, GitHub, Google Workspace o strumenti interni del team.',
+		'Buona conoscenza professionale dell’inglese.'
+	],
+	environmentIntro: 'A seconda del progetto potrai lavorare con:',
+	environment: [
+		'TypeScript, SvelteKit, React, Node.js.',
+		'Python, FastAPI.',
+		'Rust, Axum.',
+		'PostgreSQL, SQLite, DuckDB, BigQuery, Snowflake.',
+		'API REST, GraphQL, Keycloak e integrazioni SaaS.',
+		'OpenAI, HuggingFace, LLM, RAG, agenti, OCR e NLP.',
+		'Docker, cloud, infrastruttura privata e monitoraggio.',
+		'Notion, GitHub, Google Workspace e strumenti interni FDTI.'
+	],
+	conditions: consultantIt.conditions,
+	process: [
+		{
+			title: 'Primo colloquio',
+			items: [
+				'Una videochiamata per conoscere il tuo percorso, la disponibilità, il livello tecnico e le aspettative.'
+			]
+		},
+		{
+			title: 'Colloquio tecnico dal vivo',
+			items: [
+				'Un colloquio tecnico in videochiamata con condivisione dello schermo, incentrato sul tuo ragionamento e sul modo in cui affronti un problema, cerchi informazioni, usi l’IA, esegui il debug e comunichi.',
+				'Durata indicativa: da 60 a 90 minuti.'
+			]
+		}
+	]
+} satisfies Omit<JobOffer, 'tallyEmbedUrl' | 'tallyPublicUrl'>;
+
 const withTallyUrls = (
 	locale: Lang,
 	job: Omit<JobOffer, 'tallyEmbedUrl' | 'tallyPublicUrl'>
@@ -735,7 +900,8 @@ export const jobOffersByLocale: Record<Lang, JobOffer[]> = {
 	fr: [consultantFr, developerFr].map((job) => withTallyUrls('fr', job)),
 	en: [consultantEn, developerEn].map((job) => withTallyUrls('en', job)),
 	es: [consultantEs, developerEs].map((job) => withTallyUrls('es', job)),
-	de: [consultantDe, developerDe].map((job) => withTallyUrls('de', job))
+	de: [consultantDe, developerDe].map((job) => withTallyUrls('de', job)),
+	it: [consultantIt, developerIt].map((job) => withTallyUrls('it', job))
 };
 
 export const jobOffers = jobOffersByLocale.fr;

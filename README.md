@@ -12,8 +12,9 @@ Le contenu éditorial principal est stocké dans les fichiers JSON :
 - `src/locales/en.json`
 - `src/locales/es.json`
 - `src/locales/de.json`
+- `src/locales/it.json`
 
-Le français est servi sous `/`, l’anglais sous `/en`, l’espagnol sous `/es` et l’allemand sous `/de`. Les pages, cas d’usage, métadonnées SEO, `sitemap.xml` et `llms.txt` sont générés à partir de ces fichiers pendant le build.
+Le français est servi sous `/`, l’anglais sous `/en`, l’espagnol sous `/es`, l’allemand sous `/de` et l’italien sous `/it`. Les pages, cas d’usage, métadonnées SEO, `sitemap.xml` et `llms.txt` sont générés à partir de ces fichiers pendant le build.
 
 ## Développement local
 

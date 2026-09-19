@@ -6,7 +6,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const ROOT_DIR = path.resolve(__dirname, '..');
 const CMS_DIR = path.join(ROOT_DIR, 'static/images/cms');
-const LOCALE_PATHS = ['en', 'fr', 'es', 'de'].map((locale) =>
+const LOCALE_PATHS = ['en', 'fr', 'es', 'de', 'it'].map((locale) =>
 	path.join(ROOT_DIR, `src/locales/${locale}.json`)
 );
 const ASSET_MAP_PATH = path.join(ROOT_DIR, 'scripts/asset-map.json');

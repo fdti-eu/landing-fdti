@@ -97,6 +97,27 @@
 			startLabel: 'Beginn',
 			statusLabel: 'Status',
 			cta: 'Stelle ansehen und sich bewerben'
+		},
+		it: {
+			title: 'Stage in IA, codice e dati | FDTI',
+			description:
+				'Unisciti a FDTI per uno stage su IA, agenti verticali, applicazioni, dati e gestione operativa dei progetti.',
+			eyebrow: 'Lavora con noi',
+			h1: 'Stage in IA, codice e dati presso FDTI',
+			hero: 'Accogliamo regolarmente persone in stage per lavorare su temi di IA, codice e dati direttamente collegati alle operazioni dei nostri clienti e dei nostri team.',
+			formatTitle: 'Formato',
+			formatText: 'Stage di 6 mesi, con affiancamento da parte del team FDTI.',
+			locationTitle: 'Sede',
+			locationText: 'Modalità da definire in base al quadro dello stage.',
+			startTitle: 'Inizio',
+			startText: 'Inserimenti possibili tutto l’anno in base ai progetti aperti.',
+			openRoles: 'Posizioni aperte',
+			offersTitle: 'Le nostre offerte',
+			offersIntro:
+				'Gli stage sono rivolti a profili curiosi, strutturati e pronti a imparare rapidamente lavorando su progetti in produzione.',
+			startLabel: 'Inizio',
+			statusLabel: 'Stato',
+			cta: 'Vedi l’offerta e candidati'
 		}
 	} satisfies Record<Lang, Record<string, string>>;
 	$: copy = copies[data.locale];

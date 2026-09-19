@@ -12,7 +12,8 @@
 		fr: 'Technologies et outils utilisés :',
 		en: 'Technologies and tools used:',
 		es: 'Tecnologías y herramientas utilizadas:',
-		de: 'Eingesetzte Technologien und Werkzeuge:'
+		de: 'Eingesetzte Technologien und Werkzeuge:',
+		it: 'Tecnologie e strumenti utilizzati:'
 	};
 	$: currentLocale = isSupportedLocale($locale) ? $locale : 'fr';
 </script>

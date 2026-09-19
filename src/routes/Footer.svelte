@@ -28,6 +28,12 @@
 			privacy: 'Datenschutzerklärung',
 			terms: 'Nutzungsbedingungen',
 			linkedin: 'LinkedIn-Seite von FDTI'
+		},
+		it: {
+			jobs: 'Lavora con noi',
+			privacy: 'Informativa sulla privacy',
+			terms: 'Condizioni d’uso',
+			linkedin: 'Pagina LinkedIn di FDTI'
 		}
 	};
 	$: currentLocale = isSupportedLocale($locale) ? $locale : 'fr';

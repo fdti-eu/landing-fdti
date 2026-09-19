@@ -23,6 +23,11 @@
 			message: 'Die gesuchte Seite existiert nicht',
 			back: 'Zurück zur Startseite',
 			sadSmile: 'trauriges Gesicht'
+		},
+		it: {
+			message: 'La pagina che stai cercando non esiste',
+			back: 'Tornate alla home page',
+			sadSmile: 'viso triste'
 		}
 	};
 	$: currentLocale = isSupportedLocale($locale) ? $locale : 'fr';

@@ -15,19 +15,29 @@
 	const labels: Record<Lang, { toggle: string; languages: Record<Lang, string> }> = {
 		fr: {
 			toggle: 'Changer de langue',
-			languages: { fr: 'Français', en: 'Anglais', es: 'Espagnol', de: 'Allemand' }
+			languages: { fr: 'Français', en: 'Anglais', es: 'Espagnol', de: 'Allemand', it: 'Italien' }
 		},
 		en: {
 			toggle: 'Change language',
-			languages: { fr: 'French', en: 'English', es: 'Spanish', de: 'German' }
+			languages: { fr: 'French', en: 'English', es: 'Spanish', de: 'German', it: 'Italian' }
 		},
 		es: {
 			toggle: 'Cambiar idioma',
-			languages: { fr: 'Francés', en: 'Inglés', es: 'Español', de: 'Alemán' }
+			languages: { fr: 'Francés', en: 'Inglés', es: 'Español', de: 'Alemán', it: 'Italiano' }
 		},
 		de: {
 			toggle: 'Sprache ändern',
-			languages: { fr: 'Französisch', en: 'Englisch', es: 'Spanisch', de: 'Deutsch' }
+			languages: {
+				fr: 'Französisch',
+				en: 'Englisch',
+				es: 'Spanisch',
+				de: 'Deutsch',
+				it: 'Italienisch'
+			}
+		},
+		it: {
+			toggle: 'Cambia lingua',
+			languages: { fr: 'Francese', en: 'Inglese', es: 'Spagnolo', de: 'Tedesco', it: 'Italiano' }
 		}
 	};
 	$: currentLocale = isSupportedLocale($locale) ? $locale : 'fr';

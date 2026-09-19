@@ -2,6 +2,7 @@ import enLocale from '$locales/en.json';
 import frLocale from '$locales/fr.json';
 import esLocale from '$locales/es.json';
 import deLocale from '$locales/de.json';
+import itLocale from '$locales/it.json';
 import type { Lang, LocaleData } from '$lib/data';
 import { buildLocalizedUrl } from '$lib/functions/seo';
 
@@ -109,6 +110,7 @@ export function buildLlmsText() {
 		buildLanguageSection('fr', frLocale),
 		buildLanguageSection('en', enLocale),
 		buildLanguageSection('es', esLocale),
-		buildLanguageSection('de', deLocale)
+		buildLanguageSection('de', deLocale),
+		buildLanguageSection('it', itLocale)
 	].join('\n');
 }

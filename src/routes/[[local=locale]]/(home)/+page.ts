@@ -33,6 +33,11 @@ export const load: PageLoad = async ({ params }) => {
 			title: 'Praxisbeispiele',
 			subtitle:
 				'Ausgewählte, bereits produktiv eingesetzte Projekte in den Bereichen KI, Geschäftsanwendungen und Prozessautomatisierung.'
+		},
+		it: {
+			title: 'Casi concreti',
+			subtitle:
+				'Una selezione di progetti già operativi in ambito IA, applicazioni aziendali e automazione dei processi.'
 		}
 	};
 

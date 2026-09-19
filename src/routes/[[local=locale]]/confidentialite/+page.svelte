@@ -52,6 +52,13 @@
 				'Wir verwenden Umami, eine quelloffene Lösung, die auf unseren OVH-Servern in Frankreich selbst gehostet wird, um die Nutzung dieser Website zu messen und ihre Leistung zu verbessern. Diese Messung verwendet keine Cookies, berücksichtigt das Do-Not-Track-Signal und speichert keine ungekürzten IP-Adressen.',
 				'Die erhobenen Daten beschränken sich auf aufgerufene Seiten, Herkunft, technische Merkmale von Browser und Gerät, Web-Performance sowie Interaktionen mit Links zur Terminvereinbarung. Sie werden nicht an Dritte weitergegeben. FDTI bewahrt sie ohne automatische Löschfrist auf, um langfristige Entwicklungen der Website auszuwerten.'
 			]
+		},
+		it: {
+			title: 'Analisi del traffico',
+			paragraphs: [
+				'Utilizziamo Umami, una soluzione open source ospitata sui nostri server OVH in Francia, per analizzare il traffico del sito e migliorarne le prestazioni. Il monitoraggio non utilizza cookie, rispetta il segnale Do Not Track e non memorizza indirizzi IP completi.',
+				'I dati raccolti si limitano alle pagine consultate, alla provenienza, alle caratteristiche tecniche del browser e del dispositivo, alle prestazioni Web e alle interazioni con i link per fissare un appuntamento. Non vengono trasmessi a terzi. FDTI li conserva senza cancellazione automatica per analizzare l’andamento del sito nel tempo.'
+			]
 		}
 	};
 	$: audience = audienceCopy[currentLocale];

@@ -62,7 +62,8 @@
 		fr: 'FDTI - Réalisations',
 		en: 'FDTI - Use Cases',
 		es: 'FDTI - Proyectos',
-		de: 'FDTI - Referenzen'
+		de: 'FDTI - Referenzen',
+		it: 'FDTI - Progetti'
 	};
 	$: currentLocale = (data?.locale as Lang) ?? 'fr';
 	$: content = data?.content || null;
@@ -107,6 +108,12 @@
 			all: 'Alle Referenzen',
 			approach: 'Vorgehen',
 			impact: 'Wirkung'
+		},
+		it: {
+			filter: 'Filtra per settore',
+			all: 'Tutti i progetti',
+			approach: 'Approccio',
+			impact: 'Impatto'
 		}
 	};
 	const sectorLabels: Record<Lang, [string, string, string]> = {
@@ -125,6 +132,11 @@
 			'Industrie und Kreislaufwirtschaft',
 			'Öffentliche Dienste und Kommunen',
 			'Handel und Kundenverständnis'
+		],
+		it: [
+			'Industria ed economia circolare',
+			'Servizi pubblici e territori',
+			'Retail e conoscenza del cliente'
 		]
 	};
 	$: copy = interfaceLabels[currentLocale];

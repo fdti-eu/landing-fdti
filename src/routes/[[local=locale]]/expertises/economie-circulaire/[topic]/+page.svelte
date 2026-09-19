@@ -23,13 +23,15 @@
 		fr: 'Accueil',
 		en: 'Home',
 		es: 'Inicio',
-		de: 'Startseite'
+		de: 'Startseite',
+		it: 'Pagina iniziale'
 	};
 	const imageAlts: Record<Lang, string> = {
 		fr: 'FDTI - IA, code et données',
 		en: 'FDTI - AI, code and data',
 		es: 'FDTI - IA, código y datos',
-		de: 'FDTI - KI, Code und Daten'
+		de: 'FDTI - KI, Code und Daten',
+		it: 'FDTI - IA, codice e dati'
 	};
 	let activeSection = '';
 	let scrollFrame = 0;

@@ -153,6 +153,43 @@
 				description:
 					'Ein Data Warehouse migriert 98 komplexe JSON-Geschäftsobjekte von Azure zu Snowflake und versorgt BI-Teams in weniger als einer Minute mit über 150 Tabellen und Views.'
 			}
+		},
+		it: {
+			'1': {
+				description:
+					'Una piattaforma di IA integrata nel software delle cancellerie dei tribunali di commercio francesi preanalizza i fascicoli nella VPN del cliente, elaborando circa 40 miliardi di token all’anno in 48 tribunali.'
+			},
+			'2': {
+				description:
+					'Valorauto riunisce in un’unica piattaforma il ritiro B2B e B2C dei veicoli fuori uso, seguendo ogni veicolo dalla dichiarazione alla demolizione in cinque paesi.'
+			},
+			'3': {
+				description:
+					'Un marketplace coordina raccolta, riciclo e rivendita delle batterie in 18 paesi tramite portale e API, indirizzando oltre 8.000 batterie al mese.'
+			},
+			'8': {
+				title: 'Piattaforma operativa per il riciclo delle batterie | FDTI',
+				description:
+					'Un’applicazione aziendale collega dichiarazioni, raccolte e BSD tramite Trackdéchets per i flussi francesi, seguendo ogni pratica fino alla ricezione e al trattamento.'
+			},
+			'4': {
+				description:
+					'Una piattaforma monitora oltre 100 milioni di misurazioni dell’illuminazione pubblica al giorno, rileva le anomalie e supporta la manutenzione in più di 40 territori.'
+			},
+			'5': {
+				description:
+					'Un’analisi basata su LLM confronta 60.000 post Facebook e Instagram in otto lingue e collega le narrative alle prestazioni delle campagne per pubblico.'
+			},
+			'6': {
+				title: 'Data hub delle recensioni clienti e NLP | FDTI',
+				description:
+					'Un data hub centralizza oltre 25 fonti di recensioni e le analizza con NLP per supportare i team di assistenza clienti, prodotto e legale.'
+			},
+			'7': {
+				title: 'Data warehouse retail quasi in tempo reale | FDTI',
+				description:
+					'Un data warehouse migra 98 oggetti JSON complessi da Azure a Snowflake e alimenta oltre 150 tabelle e viste in meno di un minuto per i team BI.'
+			}
 		}
 	};
 
@@ -188,14 +225,23 @@
 							back: 'Referenzen',
 							home: 'Startseite'
 						}
-					: {
-							context: 'Context',
-							approach: 'Approach',
-							impact: 'Impact',
-							delivered: 'What we delivered',
-							back: 'Work',
-							home: 'Home'
-						};
+					: currentLocale === 'it'
+						? {
+								context: 'Contesto',
+								approach: 'Approccio',
+								impact: 'Impatto',
+								delivered: 'Cosa abbiamo realizzato',
+								back: 'Progetti',
+								home: 'Pagina iniziale'
+							}
+						: {
+								context: 'Context',
+								approach: 'Approach',
+								impact: 'Impact',
+								delivered: 'What we delivered',
+								back: 'Work',
+								home: 'Home'
+							};
 
 	$: metatags = {
 		title: seo?.title ?? (useCase?.title ? `${useCase.title} | FDTI` : 'FDTI'),

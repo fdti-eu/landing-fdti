@@ -103,6 +103,28 @@
 			iframeTitle: 'Bewerbungsformular',
 			iframeLoading: 'Formular wird geladen…',
 			openForm: 'Formular in einem neuen Tab öffnen'
+		},
+		it: {
+			back: 'Tutte le offerte',
+			home: 'Home page',
+			eyebrow: 'Offerta di stage',
+			apply: 'Candidati',
+			print: 'Stampa / PDF',
+			printSub: 'Versione A4',
+			introTitle: 'Entra nel nostro team',
+			skillsTitle: 'Competenze ed esperienze ricercate',
+			requiredTitle: 'Requisiti',
+			niceTitle: 'Competenze apprezzate',
+			environmentTitle: 'Ambiente di lavoro',
+			conditionsTitle: 'Condizioni',
+			processTitle: 'Processo di selezione',
+			applicationEyebrow: 'Candidatura',
+			applicationTitle: 'Candidati per questa posizione',
+			applicationText:
+				'Inserisci nel modulo le informazioni richieste. Se il modulo integrato non viene visualizzato correttamente, puoi aprirlo in una nuova scheda.',
+			iframeTitle: 'Modulo di candidatura',
+			iframeLoading: 'Caricamento del modulo…',
+			openForm: 'Apri il modulo in una nuova scheda'
 		}
 	} satisfies Record<Lang, Record<string, string>>;
 	$: copy = copies[data.locale];

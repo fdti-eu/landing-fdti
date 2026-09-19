@@ -28,6 +28,12 @@
 			subtitle:
 				'Wir setzen moderne Werkzeuge ein, die auf die jeweilige Aufgabe bei der Verarbeitung Ihrer Daten abgestimmt sind',
 			documentation: 'Link zur Dokumentation'
+		},
+		it: {
+			title: 'Tecnologie',
+			subtitle:
+				'Utilizziamo strumenti moderni, scelti in base alle esigenze specifiche di elaborazione dei vostri dati',
+			documentation: 'Link alla documentazione'
 		}
 	};
 	$: copy = labels[locale];

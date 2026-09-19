@@ -24,7 +24,8 @@
 		fr: 'Voir tous les cas d’usage',
 		en: 'See all use cases',
 		es: 'Ver todos los casos de uso',
-		de: 'Alle Referenzen ansehen'
+		de: 'Alle Referenzen ansehen',
+		it: 'Vedete tutti i progetti'
 	};
 
 	let activeSlug: string | null = null;

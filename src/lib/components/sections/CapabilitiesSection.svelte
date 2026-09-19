@@ -108,6 +108,30 @@
 					points: ['Fachanwendungen', 'Datenbanken', 'sichere API', 'Integration']
 				}
 			]
+		},
+		it: {
+			title: 'Cosa realizziamo',
+			subtitle: 'Competenze chiare e modalità di intervento concrete per i vostri team.',
+			items: [
+				{
+					title: 'Copiloti IA per i team',
+					description:
+						'Ricerca di informazioni, sintesi, supporto alle decisioni, scrittura assistita e aiuto operativo integrati nei vostri strumenti.',
+					points: ['LLM', 'RAG', 'agenti', 'interfacce aziendali']
+				},
+				{
+					title: 'Automazione dei workflow',
+					description:
+						'Elaborazione documentale, qualificazione, orchestrazione, reporting, avvisi e coordinamento tra team, software e dati.',
+					points: ['workflow assistiti', 'API', 'regole aziendali', 'automazione']
+				},
+				{
+					title: 'Applicazioni, database e API aziendali',
+					description:
+						'Portali, back office, dashboard, database, API sicure e strumenti interni progettati per integrare correttamente l’IA nei sistemi esistenti.',
+					points: ['applicazioni aziendali', 'database', 'API sicure', 'integrazione']
+				}
+			]
 		}
 	};
 	$: copy = content[locale];
