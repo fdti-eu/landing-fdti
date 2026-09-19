@@ -6,7 +6,7 @@ import type { PageLoad } from './$types';
 export const prerender = true;
 
 export async function entries() {
-	const entries: { local: Lang; slug: string }[] = [];
+	const entries: { local: Lang | undefined; slug: string }[] = [];
 	const slugs = new Set<string>();
 
 	for (const sourceLocale of SUPPORTED_LOCALES) {
@@ -19,6 +19,7 @@ export async function entries() {
 	for (const local of SUPPORTED_LOCALES) {
 		for (const slug of slugs) entries.push({ local, slug });
 	}
+	for (const slug of slugs) entries.push({ local: undefined, slug });
 	return entries;
 }
 
