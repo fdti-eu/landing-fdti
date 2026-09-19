@@ -15,9 +15,9 @@
 	$: content =
 		data.locale === 'fr'
 			? {
-					metaTitle: 'Expertises en applications métier, data et IA | FDTI',
+					metaTitle: 'Applications métier, automatisation, data et IA | FDTI',
 					metaDescription:
-						'FDTI conçoit des applications métier, des automatisations et des systèmes IA intégrés aux opérations et aux outils existants.',
+						'FDTI conçoit des applications métier, des automatisations, des systèmes IA et des intégrations sur mesure, connectés à vos outils et opérations.',
 					label: 'Expertises',
 					title: 'Une capacité technique large. Des points d’entrée concrets.',
 					intro:
@@ -126,9 +126,9 @@
 						ctaButton: 'Definir un primer alcance'
 					}
 				: {
-						metaTitle: 'Business software, data and AI expertise | FDTI',
+						metaTitle: 'Business software, automation, data and AI | FDTI',
 						metaDescription:
-							'FDTI designs business applications, automations and AI systems integrated into operations and existing software.',
+							'FDTI designs custom business applications, automation, AI systems and integrations that connect with your existing software and operations.',
 						label: 'Expertise',
 						title: 'Broad technical capabilities. Concrete starting points.',
 						intro:

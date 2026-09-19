@@ -43,10 +43,86 @@
 				locale?: Lang;
 		  }
 		| undefined;
+	type UseCaseSeo = { title?: string; description: string };
+	const useCaseSeo: Partial<Record<Lang, Record<string, UseCaseSeo>>> = {
+		fr: {
+			'1': {
+				description:
+					'Une plateforme IA reliée aux outils des greffiers préanalyse les dossiers dans le VPN client : environ 40 milliards de tokens traités par an dans 48 tribunaux.'
+			},
+			'2': {
+				description:
+					'Valorauto centralise la reprise B2B et B2C des véhicules en fin de vie, de la déclaration à la démolition, pour un réseau de plus de 5 000 partenaires.'
+			},
+			'3': {
+				description:
+					'Une marketplace web centralise collecte, recyclage et revente de batteries dans 18 pays, avec plus de 8 000 batteries redirigées chaque mois.'
+			},
+			'8': {
+				title: 'Plateforme d’opérations de recyclage de batteries | FDTI',
+				description:
+					'Une application métier relie déclarations, collectes et BSD Trackdéchets pour suivre chaque dossier de batterie jusqu’à sa réception et son traitement.'
+			},
+			'4': {
+				description:
+					'Une plateforme supervise plus de 100 millions de mesures d’éclairage public par jour, détecte les anomalies et équipe plus de 40 territoires.'
+			},
+			'5': {
+				description:
+					'Une analyse par LLM compare 60 000 publications Facebook et Instagram en 8 langues, puis croise les narratifs avec leurs performances par audience.'
+			},
+			'6': {
+				title: 'Data hub d’avis clients & NLP | FDTI',
+				description:
+					'Un data hub centralise plus de 25 sources d’avis clients et les analyse par NLP pour aider les équipes service client, produit et juridique.'
+			},
+			'7': {
+				title: 'Data warehouse retail en quasi-temps réel | FDTI',
+				description:
+					'Un data warehouse migre 98 objets JSON d’Azure vers Snowflake et alimente plus de 150 tables et vues en moins d’une minute pour les équipes BI.'
+			}
+		},
+		en: {
+			'1': {
+				description:
+					'An AI platform embedded in court clerks’ software pre-analyzes case files inside the client VPN, processing around 40 billion tokens a year across 48 courts.'
+			},
+			'2': {
+				description:
+					'Valorauto brings B2B and B2C end-of-life vehicle take-back into one platform, tracking each vehicle from declaration to dismantling across 5 countries.'
+			},
+			'3': {
+				description:
+					'A marketplace coordinates battery collection, recycling and resale across 18 countries via a portal and API, redirecting more than 8,000 batteries each month.'
+			},
+			'8': {
+				description:
+					'A business application links declarations, collections and Trackdechets records, tracking each battery file through reception and treatment.'
+			},
+			'4': {
+				description:
+					'A platform monitors over 100 million public-lighting measurements a day, detects anomalies and supports maintenance across more than 40 territories.'
+			},
+			'5': {
+				description:
+					'An LLM-based analysis compares 60,000 Facebook and Instagram posts in 8 languages, linking narratives to campaign performance by audience to guide spending.'
+			},
+			'6': {
+				title: 'Customer review data hub & NLP | FDTI',
+				description:
+					'A data hub consolidates over 25 customer-review sources and applies NLP to support customer service, product and legal teams with classified insights.'
+			},
+			'7': {
+				description:
+					'A data warehouse moves 98 complex JSON objects from Azure to Snowflake and feeds over 150 tables and views with latency below one minute for BI teams.'
+			}
+		}
+	};
 
 	$: content = data?.content || null;
 	$: useCase = data?.useCase || null;
 	$: currentLocale = data?.locale || 'fr';
+	$: seo = useCase?.id ? useCaseSeo[currentLocale]?.[useCase.id] : undefined;
 	$: labels =
 		currentLocale === 'fr'
 			? {
@@ -75,10 +151,9 @@
 						home: 'Home'
 					};
 
-	// Meta-tags dynamiques pour chaque cas d'usage
 	$: metatags = {
-		title: useCase?.title ? `${useCase.title} | FDTI` : 'FDTI',
-		description: useCase?.challenge || useCase?.impact || '',
+		title: seo?.title ?? (useCase?.title ? `${useCase.title} | FDTI` : 'FDTI'),
+		description: seo?.description || useCase?.challenge || useCase?.impact || '',
 		url: useCase?.slug ? `/realisations/${useCase.slug}` : '/realisations',
 		img: SOCIAL_IMAGE_PATH
 	};

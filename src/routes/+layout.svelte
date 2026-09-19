@@ -2,7 +2,7 @@
 	import '../app.css';
 	import '$lib/styles/design.css';
 	import '$lib/i18n';
-	import { isLoading, locale } from 'svelte-i18n';
+	import { locale } from 'svelte-i18n';
 	import Footer from './Footer.svelte';
 	import Navbar from '$lib/components/navbar/Navbar.svelte';
 	import { page } from '$app/stores';
@@ -71,12 +71,10 @@
 	<link rel="alternate" hreflang="x-default" href={xDefaultUrl} />
 </svelte:head>
 
-{#if !$isLoading}
-	<div class="fdti-site min-h-screen flex flex-col font-quattrocento">
-		<Navbar />
-		<main class="flex-1">
-			<slot />
-		</main>
-		<Footer />
-	</div>
-{/if}
+<div class="fdti-site min-h-screen flex flex-col font-quattrocento">
+	<Navbar />
+	<main class="flex-1">
+		<slot />
+	</main>
+	<Footer />
+</div>

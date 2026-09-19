@@ -15,8 +15,6 @@ const staticPages: SitemapPage[] = [
 	{ path: '/expertises', changefreq: 'weekly', priority: '0.95' },
 	{ path: '/realisations', changefreq: 'weekly', priority: '0.95' },
 	{ path: '/expertises/economie-circulaire', changefreq: 'monthly', priority: '0.90' },
-	{ path: '/adn-et-valeurs', changefreq: 'monthly', priority: '0.75' },
-	{ path: '/fdti', changefreq: 'monthly', priority: '0.85' },
 	{ path: '/confidentialite', changefreq: 'monthly', priority: '0.60' },
 	{ path: '/condition-utilisation', changefreq: 'monthly', priority: '0.60' }
 ];

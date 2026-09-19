@@ -5,7 +5,7 @@ import type { PageLoad } from './$types';
 export const prerender = true;
 
 export function entries() {
-	return SUPPORTED_LOCALES.map((local) => ({ local }));
+	return [{ local: undefined }, ...SUPPORTED_LOCALES.map((local) => ({ local }))];
 }
 
 export const load: PageLoad = async ({ params }) => {

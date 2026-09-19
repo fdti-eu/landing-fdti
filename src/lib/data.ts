@@ -10,7 +10,6 @@ export type LocaleData = typeof FrData;
 
 export type HomePageContent = LocaleData['GetHomePageContent'];
 export type CGUContent = LocaleData['GetCGUContent'];
-export type DNAContent = LocaleData['GetDNAPageContent'];
 export type PrivacyContent = LocaleData['GetPrivacyContent'];
 export type UseCasesContent = LocaleData['GetUseCasesContent'];
 
@@ -33,11 +32,6 @@ export async function getHomePageContent(lang: Lang): Promise<HomePageContent> {
 export async function getCGUContent(lang: Lang): Promise<CGUContent> {
 	const data = await getData(lang);
 	return data.GetCGUContent;
-}
-
-export async function getDNAPageContent(lang: Lang): Promise<DNAContent> {
-	const data = await getData(lang);
-	return data.GetDNAPageContent;
 }
 
 export async function getPrivacyContent(lang: Lang): Promise<PrivacyContent> {

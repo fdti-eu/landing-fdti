@@ -138,11 +138,6 @@
 					label: copy.recycling
 				}
 			]
-		},
-		{
-			href: `/${currentLocale}/fdti`,
-			label: 'FDTI',
-			active: $page.url.pathname.includes('/fdti') || $page.url.pathname.includes('/adn-et-valeurs')
 		}
 	];
 	function closeOnEscape(event: KeyboardEvent) {

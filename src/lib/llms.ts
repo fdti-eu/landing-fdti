@@ -89,20 +89,10 @@ function buildLanguageSection(locale: Lang, data: LocaleData): string {
 			.join('\n');
 	}
 
-	const dna = data.GetDNAPageContent?.DNA_content;
 	const circular = data.CircularEconomy;
 	output += formatSection(circular.title, circular.intro);
 	output += `\n${buildLocalizedUrl('/expertises/economie-circulaire', locale)}\n`;
 	output += `\n# EXPERTISE\n${buildLocalizedUrl('/expertises', locale)}\n`;
-	output += `\n# FDTI\n${buildLocalizedUrl('/fdti', locale)}\n`;
-
-	if (dna) {
-		output += '\n# COMPANY VALUES (DNA)\n';
-		output += `${stripHtml(dna.description)}\n`;
-		if (dna.card_list) {
-			output += dna.card_list.map((v) => `- ${v.title}: ${stripHtml(v.description)}`).join('\n');
-		}
-	}
 
 	if (home?.contact_section) {
 		output += `\n# CONTACT\nEmail: ${home.contact_section.mail}\nAddress: ${home.contact_section.address}\n`;

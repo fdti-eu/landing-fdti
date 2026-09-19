@@ -1,11 +1,11 @@
-import { getDNAPageContent, SUPPORTED_LOCALES, type Lang } from '$lib/data';
+import { getCGUContent, SUPPORTED_LOCALES, type Lang } from '$lib/data';
 import { buildSeoAlternatePaths } from '$lib/functions/seo';
 import type { PageLoad } from './$types';
 
 export const prerender = true;
 
 export function entries() {
-	return SUPPORTED_LOCALES.map((local) => ({ local }));
+	return [{ local: undefined }, ...SUPPORTED_LOCALES.map((local) => ({ local }))];
 }
 
 export const load: PageLoad = async ({ params }) => {
@@ -13,7 +13,7 @@ export const load: PageLoad = async ({ params }) => {
 
 	return {
 		initialLocale: locale,
-		initialContent: await getDNAPageContent(locale),
-		alternatePaths: buildSeoAlternatePaths('/adn-et-valeurs')
+		initialContent: await getCGUContent(locale),
+		alternatePaths: buildSeoAlternatePaths('/condition-utilisation')
 	};
 };
