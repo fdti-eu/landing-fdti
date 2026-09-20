@@ -9,7 +9,7 @@
 		"readGuide": "Lire le dossier",
 		"title": "Du véhicule identifié au déchet pris en charge.",
 		"intro": "Nous développons les applications qui permettent aux industriels et aux recycleurs de gérer leurs reprises : identifier un véhicule, qualifier une batterie, préparer un enlèvement, négocier un prix, générer et suivre les documents.",
-		"positioning": "Logiciels sur mesure pour les équipes métier, leurs réseaux de collecte et leurs partenaires.",
+		"positioning": "Constructeurs automobiles, garages, détenteurs de batteries, collecteurs et recycleurs : des outils pour déclarer, organiser et suivre chaque reprise.",
 		"contact": "Parlons d’un cas concret",
 		"explore": "Explorer les fonctionnalités",
 		"proofNote": "Les fonctionnalités présentées sont issues de plusieurs projets développés pour des constructeurs automobiles et des opérateurs du recyclage. Elles illustrent notre travail ; le périmètre et les règles sont adaptés à chaque organisation.",
@@ -203,8 +203,8 @@
 					{
 						"id": "identification",
 						"title": "Partir d’une plaque ou d’un VIN, pas d’une fiche vide.",
-						"navLabel": "Identification par plaque / VIN",
-						"situation": "Faire ressaisir la marque, le modèle et les caractéristiques d’un véhicule multiplie les champs à remplir et les corrections à traiter ensuite.",
+						"navLabel": "Enrichissement véhicule par plaque / VIN",
+						"situation": "Enrichir une fiche véhicule à partir d’une plaque ou d’un VIN : récupération de la marque, du modèle et des caractéristiques disponibles auprès d’un service d’identification.",
 						"actions": [
 							"Le déclarant indique le pays et le type d’identifiant disponible : immatriculation ou VIN, le numéro d’identification du véhicule.",
 							"L’application interroge un service d’identification et reprend les caractéristiques retournées dans la fiche.",
@@ -223,7 +223,7 @@
 						"id": "dossier",
 						"title": "Faire avancer le dossier administratif avec la demande.",
 						"navLabel": "Dossier et signatures",
-						"situation": "Une demande de reprise n’est pas prête à être traitée simplement parce que le véhicule a été identifié. Elle comporte aussi des informations déclaratives et des documents.",
+						"situation": "Le parcours rassemble les pièces du déclarant, génère les documents de cession et de destruction prévus pour les opérations françaises et les transmet aux signataires.",
 						"actions": [
 							"Le parcours rassemble les informations et pièces nécessaires au traitement de la demande.",
 							"L’équipe retrouve les éléments dans le dossier du véhicule, plutôt que dans des échanges séparés.",
@@ -242,7 +242,7 @@
 						"id": "reseau",
 						"title": "Donner au réseau un outil de travail commun.",
 						"navLabel": "Réseau de reprise",
-						"situation": "Le propriétaire, le garage, le centre VHU et les équipes de pilotage n’interviennent pas au même moment et n’ont pas les mêmes responsabilités.",
+						"situation": "Des interfaces distinctes permettent aux particuliers et aux garages de déclarer les véhicules, aux centres VHU de suivre les prises en charge et aux équipes de pilotage de consulter l’avancement du réseau.",
 						"actions": [
 							"Des parcours distincts accueillent les demandes des particuliers et des professionnels.",
 							"Les interfaces de gestion permettent aux équipes et aux partenaires de suivre les véhicules et les étapes de prise en charge.",
@@ -272,8 +272,8 @@
 					{
 						"id": "identification",
 						"title": "Identifier la batterie et renseigner son code déchet.",
-						"navLabel": "Caractérisation, EWC et ONU",
-						"situation": "Le référentiel réunit modèle, VIN ou BIN, état, charge, santé, dimensions et poids. La déclaration complète ces caractéristiques avec les codes EWC et ONU, les justificatifs et les photos.",
+						"navLabel": "Identification batterie, VIN / BIN et référentiel",
+						"situation": "La déclaration réunit les identifiants VIN ou BIN et les caractéristiques du référentiel : modèle, dimensions et poids. Le détenteur complète l’état, la charge, la santé, les codes EWC et ONU, les justificatifs et les photos.",
 						"actions": [
 							"La déclaration associe la batterie à son type et aux informations du détenteur.",
 							"Le parcours propose un code EWC — le code de la nomenclature européenne des déchets — à partir de la déclaration existante ou du type de batterie de référence.",
@@ -292,7 +292,7 @@
 						"id": "diagnostic",
 						"title": "Faire remonter l’état de la batterie avant l’enlèvement.",
 						"navLabel": "Diagnostic et état",
-						"situation": "Une batterie endommagée ne se prépare pas comme une batterie dans un autre état. Les intervenants ont besoin du diagnostic et des pièces pertinentes avant d’organiser la suite.",
+						"situation": "Le déclarant renseigne l’état de la batterie et joint diagnostic, photos et liste de contrôle. L’interface présente les informations de transport ADR associées à l’état sélectionné.",
 						"actions": [
 							"Le déclarant renseigne l’état de la batterie et joint les documents de diagnostic et de contrôle prévus dans le parcours.",
 							"Les informations de transport ADR associées à l’état sélectionné sont présentées dans l’interface.",
@@ -311,7 +311,7 @@
 						"id": "collecte",
 						"title": "Constituer une liste de colisage cohérente.",
 						"navLabel": "Colisage, palettisation et collecte",
-						"situation": "Plusieurs déclarations et plusieurs colis peuvent être prêts à partir. Les sélectionner sans tenir compte du collecteur ou du site de livraison crée une liste inutilisable pour l’opération prévue.",
+						"situation": "L’utilisateur regroupe les colis de plusieurs déclarations dans une liste de colisage. L’application contrôle la compatibilité du collecteur et du site destinataire pour préparer le départ commun.",
 						"actions": [
 							"L’utilisateur consulte les déclarations avec leur propriétaire, collecteur, site de livraison, chimie, conditionnement et statut.",
 							"Il sélectionne les colis à inclure dans la liste de colisage, aussi appelée packing list.",
@@ -330,7 +330,7 @@
 						"id": "offres",
 						"title": "Distinguer le prix de traitement du coût logistique.",
 						"navLabel": "Offres et prix",
-						"situation": "La discussion avec un prestataire peut porter à la fois sur le traitement de la batterie et sur son transport. Un montant isolé ne permet pas de retrouver les conditions de l’accord.",
+						"situation": "Les prestataires proposent séparément un prix de traitement et un prix logistique, avec une devise et un commentaire. Chaque offre est conservée avec son auteur, sa date et son acceptation ou son refus.",
 						"actions": [
 							"Une proposition comporte le prix de traitement, le prix logistique, la devise et un commentaire éventuel.",
 							"Les propositions successives sont conservées avec leur auteur, leur date et leur statut d’acceptation ou de refus.",
@@ -349,7 +349,7 @@
 						"id": "reception",
 						"title": "Relier collecte, réception et traitement.",
 						"navLabel": "Réception et traitement",
-						"situation": "Une batterie annoncée comme collectée doit ensuite être réceptionnée et suivie jusqu’au traitement. L’état documentaire peut aussi conditionner les actions autorisées dans l’outil.",
+						"situation": "L’application suit les étapes prête à enlever, collectée, reçue et traitée. La réception enregistre la date et l’intervenant ; les échanges avec Trackdéchets mettent à jour le BSD dans les parcours concernés.",
 						"actions": [
 							"Les statuts distinguent notamment les batteries prêtes à enlever, collectées, reçues et traitées.",
 							"Sur un parcours connecté à Trackdéchets, la réception renseigne une date et le nom de la personne qui reçoit, puis met à jour le BSD associé et la déclaration.",
@@ -399,7 +399,7 @@
 						"id": "bsd",
 						"title": "Intégrer le BSD dans le suivi de la déclaration.",
 						"navLabel": "BSD et Trackdéchets",
-						"situation": "Dans les opérations françaises concernées, le bordereau de suivi des déchets possède ses propres statuts. Les équipes doivent savoir s’il est créé, signé et prêt pour l’étape suivante.",
+						"situation": "L’application crée et met à jour les bordereaux de suivi des déchets via Trackdéchets, suit les signatures du producteur et du collecteur, puis transmet les informations de réception et de traitement.",
 						"actions": [
 							"L’application crée ou met à jour un BSD via Trackdéchets et conserve son identifiant avec la déclaration.",
 							"Elle consulte son statut et distingue notamment une signature du producteur manquante d’une signature du collecteur manquante.",
@@ -437,7 +437,7 @@
 						"id": "connexions",
 						"title": "Échanger des objets métier, pas seulement des fichiers.",
 						"navLabel": "API et systèmes partenaires",
-						"situation": "Un prestataire peut déjà gérer ses opérations dans son propre système. Lui demander de ressaisir chaque changement dans un portail ajoute une tâche au lieu de la supprimer.",
+						"situation": "Les API et notifications échangent les données batterie, les offres de prix et les changements de statut avec les systèmes des prestataires. Les imports et exports complètent ces échanges selon les outils en place.",
 						"actions": [
 							"Une API prestataire permet notamment d’exporter ou d’importer des données batteries et de gérer des propositions de prix.",
 							"Des notifications sortantes signalent des événements précis : batterie attribuée, prête à enlever, reçue ou traitée ; offre créée ou acceptée.",

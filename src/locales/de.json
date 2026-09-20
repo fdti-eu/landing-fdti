@@ -9,7 +9,7 @@
 		"readGuide": "Leitfaden lesen",
 		"title": "Vom identifizierten Fahrzeug bis zum übernommenen Abfall.",
 		"intro": "Wir entwickeln Anwendungen, mit denen Hersteller und Recycler ihre Rücknahmen steuern: Fahrzeuge identifizieren, Batterien einstufen, Abholungen vorbereiten, Preise verhandeln sowie Dokumente erstellen und nachverfolgen.",
-		"positioning": "Maßgeschneiderte Software für Fachteams, ihre Sammelnetzwerke und ihre Partner.",
+		"positioning": "Automobilhersteller, Werkstätten, Batteriehalter, Sammler und Recycler: Werkzeuge, um jede Rücknahme zu melden, zu organisieren und nachzuverfolgen.",
 		"contact": "Lassen Sie uns über einen konkreten Anwendungsfall sprechen",
 		"explore": "Funktionen entdecken",
 		"proofNote": "Die vorgestellten Funktionen stammen aus mehreren Projekten, die für Automobilhersteller und Recyclingbetreiber entwickelt wurden. Sie veranschaulichen unsere Arbeit; Umfang und Regeln werden an jede Organisation angepasst.",
@@ -203,8 +203,8 @@
 					{
 						"id": "identification",
 						"title": "Mit einem Kennzeichen oder einer VIN beginnen, nicht mit einem leeren Datensatz.",
-						"navLabel": "Kennzeichen- / VIN-Abfrage",
-						"situation": "Müssen Marke, Modell und Merkmale eines Fahrzeugs erneut eingegeben werden, entstehen zusätzliche Eingabefelder und späterer Korrekturaufwand.",
+						"navLabel": "Fahrzeugdaten ergänzen per Kennzeichen / VIN",
+						"situation": "Eine Fahrzeugakte anhand des Kennzeichens oder der VIN ergänzen: verfügbare Angaben zu Marke, Modell und Fahrzeugeigenschaften von einem Identifizierungsdienst abrufen.",
 						"actions": [
 							"Der Anmelder gibt das Land und die verfügbare Kennung an: Kennzeichen oder VIN, die Fahrzeugidentifikationsnummer.",
 							"Die Anwendung fragt einen Identifikationsdienst ab und übernimmt die zurückgegebenen Fahrzeugdaten in die Akte.",
@@ -223,7 +223,7 @@
 						"id": "dossier",
 						"title": "Die Verwaltungsakte zusammen mit der Anfrage weiterführen.",
 						"navLabel": "Dokumente und Unterschriften",
-						"situation": "Ein Rücknahmeantrag ist nicht allein deshalb bearbeitungsbereit, weil das Fahrzeug identifiziert wurde. Er umfasst auch Angaben des Anmelders und Dokumente.",
+						"situation": "Der Ablauf sammelt die Unterlagen des Anmelders, erstellt die für französische Vorgänge vorgesehenen Übergabe- und Vernichtungsdokumente und übermittelt sie an die Unterzeichnenden.",
 						"actions": [
 							"Der Ablauf führt die für die Bearbeitung der Anfrage erforderlichen Informationen und Dokumente zusammen.",
 							"Das Team findet diese Angaben im Fahrzeugdatensatz statt in getrennten Kommunikationsverläufen.",
@@ -242,7 +242,7 @@
 						"id": "reseau",
 						"title": "Dem Netzwerk ein gemeinsames Arbeitswerkzeug geben.",
 						"navLabel": "Rücknahmenetzwerk",
-						"situation": "Eigentümer, Werkstätten, Altfahrzeugbehandlungszentren und Programmteams agieren zu unterschiedlichen Zeiten und mit unterschiedlichen Verantwortlichkeiten.",
+						"situation": "Getrennte Oberflächen ermöglichen Privatpersonen und Werkstätten die Fahrzeugmeldung, Altfahrzeugbehandlungszentren die Verfolgung der Übernahmen und Programmteams den Überblick über den Fortschritt im Netzwerk.",
 						"actions": [
 							"Getrennte Abläufe nehmen Anfragen von Privatpersonen und Unternehmen auf.",
 							"Über Verwaltungsschnittstellen können Teams und Partner Fahrzeuge und Handhabungsschritte verfolgen.",
@@ -272,8 +272,8 @@
 					{
 						"id": "identification",
 						"title": "Die Batterie identifizieren und ihren Abfallschlüssel erfassen.",
-						"navLabel": "Charakterisierung, EWC und UN-Codes",
-						"situation": "Die Referenzdaten umfassen Modell, VIN oder BIN, Zustand, Ladezustand, Gesundheitszustand, Abmessungen und Gewicht. Die Meldung ergänzt diese Merkmale um EWC- und UN-Codes, Nachweise und Fotos.",
+						"navLabel": "Batterieidentifikation, VIN / BIN und Stammdaten",
+						"situation": "Die Meldung verbindet VIN- oder BIN-Kennungen mit den Stammdaten zu Modell, Abmessungen und Gewicht. Der Halter ergänzt Zustand, Ladezustand, Gesundheitszustand, EWC- und UN-Codes, Nachweise und Fotos.",
 						"actions": [
 							"Die Meldung verknüpft die Batterie mit ihrem Typ und den Angaben des Besitzers.",
 							"Ausgehend von der bestehenden Meldung oder dem hinterlegten Batterietyp schlägt der Ablauf einen EWC-Code aus dem Europäischen Abfallverzeichnis vor.",
@@ -292,7 +292,7 @@
 						"id": "diagnostic",
 						"title": "Den Batteriezustand vor der Abholung erfassen.",
 						"navLabel": "Diagnose und Zustand",
-						"situation": "Eine beschädigte Batterie wird anders vorbereitet als eine Batterie in anderem Zustand. Die Beteiligten benötigen Diagnose und relevante Unterlagen, bevor sie die nächsten Schritte organisieren.",
+						"situation": "Der Anmelder erfasst den Batteriezustand und fügt Diagnose, Fotos und Checkliste hinzu. Die Oberfläche zeigt die dem ausgewählten Zustand zugeordneten ADR-Transportinformationen.",
 						"actions": [
 							"Der Anmelder erfasst den Batteriezustand und fügt die für den Arbeitsablauf erforderlichen Diagnose- und Checklistendokumente bei.",
 							"Die zum ausgewählten Zustand gehörenden ADR-Transportinformationen werden in der Oberfläche angezeigt.",
@@ -311,7 +311,7 @@
 						"id": "collecte",
 						"title": "Eine schlüssige Packliste erstellen.",
 						"navLabel": "Verpackung, Palettierung und Abholung",
-						"situation": "Mehrere Meldungen und Packstücke können gleichzeitig versandbereit sein. Werden sie ohne Berücksichtigung des Sammlers oder Zielstandorts ausgewählt, ist die Packliste für den geplanten Vorgang unbrauchbar.",
+						"situation": "Der Nutzer fasst Packstücke aus mehreren Meldungen in einer Packliste zusammen. Die Anwendung prüft, ob Sammler und Zielstandort für den gemeinsamen Versand zusammenpassen.",
 						"actions": [
 							"Die Benutzer prüfen die Meldungen mit Besitzer, Sammler, Zielstandort, Chemie, Verpackung und Status.",
 							"Sie wählen die Pakete aus, die in die Packliste aufgenommen werden sollen.",
@@ -330,7 +330,7 @@
 						"id": "offres",
 						"title": "Behandlungspreis und Logistikkosten getrennt ausweisen.",
 						"navLabel": "Angebote und Preise",
-						"situation": "Die Verhandlungen mit einem Anbieter können sowohl die Batterieverarbeitung als auch den Transport umfassen. Ein einzelner Betrag erfasst nicht die Bedingungen der Vereinbarung.",
+						"situation": "Dienstleister bieten getrennte Behandlungs- und Logistikpreise mit Währung und Kommentar an. Jedes Angebot bleibt mit Verfasser, Datum sowie Annahme oder Ablehnung gespeichert.",
 						"actions": [
 							"Ein Angebot enthält den Behandlungspreis, die Logistikkosten, die Währung und gegebenenfalls einen Kommentar.",
 							"Aufeinanderfolgende Vorschläge werden mit ihrem Autor, Datum und Annahme- oder Ablehnungsstatus gespeichert.",
@@ -349,7 +349,7 @@
 						"id": "reception",
 						"title": "Abholung, Annahme und Behandlung miteinander verknüpfen.",
 						"navLabel": "Annahme und Behandlung",
-						"situation": "Eine als abgeholt gemeldete Batterie muss anschließend angenommen und bis zur Behandlung nachverfolgt werden. Der Dokumentstatus kann außerdem bestimmen, welche Aktionen in der Anwendung zulässig sind.",
+						"situation": "Die Anwendung verfolgt die Stufen abholbereit, abgeholt, eingegangen und behandelt. Bei der Annahme werden Datum und verantwortliche Person erfasst; Trackdéchets-Schnittstellen aktualisieren den BSD in den betreffenden Abläufen.",
 						"actions": [
 							"Die Status unterscheiden insbesondere zwischen abholbereiten, abgeholten, angenommenen und behandelten Batterien.",
 							"In einem an Trackdéchets angebundenen Ablauf werden bei der Annahme Datum und Name der empfangenden Person erfasst; anschließend werden der verknüpfte BSD und die Meldung aktualisiert.",
@@ -399,7 +399,7 @@
 						"id": "bsd",
 						"title": "Den BSD in die Nachverfolgung der Meldung einbinden.",
 						"navLabel": "BSD und Trackdéchets",
-						"situation": "Bei den betreffenden Vorgängen in Frankreich hat der Abfallbegleitschein (BSD) eigene Status. Die Teams müssen wissen, ob er erstellt und unterzeichnet wurde und für den nächsten Schritt bereit ist.",
+						"situation": "Die Anwendung erstellt und aktualisiert Abfallbegleitscheine über Trackdéchets, verfolgt die Unterschriften von Erzeuger und Sammler und übermittelt anschließend Informationen zu Eingang und Behandlung.",
 						"actions": [
 							"Die Anwendung erstellt oder aktualisiert einen BSD über Trackdéchets und speichert seine Kennung zusammen mit der Meldung.",
 							"Sie prüft den Status und unterscheidet eine fehlende Unterschrift des Erzeugers von einer fehlenden Unterschrift des Sammlers.",
@@ -437,7 +437,7 @@
 						"id": "connexions",
 						"title": "Fachobjekte austauschen, nicht nur Dateien.",
 						"navLabel": "APIs und Partnersysteme",
-						"situation": "Ein Anbieter kann den Betrieb bereits in seinem eigenen System verwalten. Die Verpflichtung, jede Änderung erneut in ein Portal einzugeben, bedeutet zusätzlichen Aufwand, anstatt ihn zu beseitigen.",
+						"situation": "APIs und Benachrichtigungen tauschen Batteriedaten, Preisangebote und Statusänderungen mit den Systemen der Dienstleister aus. Importe und Exporte ergänzen den Austausch entsprechend den vorhandenen Werkzeugen.",
 						"actions": [
 							"Eine Dienstleister-API unterstützt unter anderem den Export und Import von Batteriedaten sowie Preisangebote.",
 							"Ausgehende Benachrichtigungen melden bestimmte Ereignisse: Eine Batterie wurde zugewiesen, ist abholbereit, wurde angenommen oder behandelt; ein Angebot wurde erstellt oder angenommen.",

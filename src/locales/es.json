@@ -9,7 +9,7 @@
 		"readGuide": "Leer el dosier",
 		"title": "Desde la identificación del vehículo hasta la gestión del residuo.",
 		"intro": "Desarrollamos las aplicaciones que permiten a fabricantes y recicladores gestionar sus operaciones de recuperación: identificar un vehículo, evaluar una batería, preparar una recogida, negociar un precio y generar y seguir los documentos.",
-		"positioning": "Software a medida para los equipos operativos, sus redes de recogida y sus socios.",
+		"positioning": "Fabricantes de automóviles, talleres, poseedores de baterías, recolectores y recicladores: herramientas para declarar, organizar y seguir cada recuperación.",
 		"contact": "Hablemos de un caso concreto",
 		"explore": "Explorar las funcionalidades",
 		"proofNote": "Las funcionalidades presentadas proceden de varios proyectos desarrollados para fabricantes de automóviles y operadores de reciclaje. Ilustran nuestro trabajo; el alcance y las reglas se adaptan a cada organización.",
@@ -203,8 +203,8 @@
 					{
 						"id": "identification",
 						"title": "Partir de una matrícula o un VIN, no de una ficha vacía.",
-						"navLabel": "Identificación por matrícula / VIN",
-						"situation": "Pedir que se vuelvan a introducir la marca, el modelo y las características de un vehículo multiplica los campos que deben cumplimentarse y las correcciones posteriores.",
+						"navLabel": "Enriquecimiento de datos por matrícula / VIN",
+						"situation": "Enriquecer una ficha de vehículo a partir de una matrícula o un VIN: recuperar la marca, el modelo y las características disponibles de un servicio de identificación.",
 						"actions": [
 							"El declarante indica el país y el tipo de identificador disponible: matrícula o VIN, el número de identificación del vehículo.",
 							"La aplicación consulta un servicio de identificación e incorpora a la ficha las características obtenidas.",
@@ -223,7 +223,7 @@
 						"id": "dossier",
 						"title": "Hacer avanzar el expediente administrativo junto con la solicitud.",
 						"navLabel": "Expediente y firmas",
-						"situation": "Una solicitud de recuperación no está lista para tramitarse solo porque se haya identificado el vehículo. También incluye información declarativa y documentos.",
+						"situation": "El recorrido reúne los documentos del declarante, genera los documentos de cesión y destrucción previstos para las operaciones francesas y los envía a los firmantes.",
 						"actions": [
 							"El proceso reúne la información y los documentos necesarios para tramitar la solicitud.",
 							"El equipo encuentra estos elementos en el expediente del vehículo, en lugar de buscarlos en intercambios separados.",
@@ -242,7 +242,7 @@
 						"id": "reseau",
 						"title": "Proporcionar a la red una herramienta de trabajo común.",
 						"navLabel": "Red de recuperación",
-						"situation": "El propietario, el taller, el centro de tratamiento de VFU y los equipos de gestión intervienen en momentos distintos y no tienen las mismas responsabilidades.",
+						"situation": "Interfaces diferenciadas permiten a particulares y talleres declarar vehículos, a los centros de tratamiento de VFU seguir las recepciones y a los equipos de gestión consultar el avance de la red.",
 						"actions": [
 							"Procesos diferenciados gestionan las solicitudes de particulares y profesionales.",
 							"Las interfaces de gestión permiten a los equipos y socios seguir los vehículos y las etapas de su gestión.",
@@ -276,8 +276,8 @@
 					{
 						"id": "identification",
 						"title": "Identificar la batería e indicar su código de residuo.",
-						"navLabel": "Caracterización, LER y ONU",
-						"situation": "El catálogo de referencia reúne el modelo, VIN o BIN, estado, carga, salud, dimensiones y peso. La declaración completa estas características con los códigos LER (EWC) y ONU, los justificantes y las fotografías.",
+						"navLabel": "Identificación de baterías, VIN / BIN y catálogo",
+						"situation": "La declaración reúne los identificadores VIN o BIN y las características del catálogo: modelo, dimensiones y peso. El poseedor completa el estado, la carga, la salud, los códigos LER y ONU, los justificantes y las fotografías.",
 						"actions": [
 							"La declaración vincula la batería con su tipo y con la información del poseedor.",
 							"El proceso propone un código LER (EWC), correspondiente a la Lista Europea de Residuos, a partir de la declaración existente o del tipo de batería de referencia.",
@@ -296,7 +296,7 @@
 						"id": "diagnostic",
 						"title": "Registrar el estado de la batería antes de la recogida.",
 						"navLabel": "Diagnóstico y estado",
-						"situation": "Una batería dañada no se prepara igual que una batería en otro estado. Las partes implicadas necesitan el diagnóstico y los documentos pertinentes antes de organizar los siguientes pasos.",
+						"situation": "El declarante registra el estado de la batería y adjunta diagnóstico, fotografías y lista de control. La interfaz muestra la información de transporte ADR asociada al estado seleccionado.",
 						"actions": [
 							"El declarante indica el estado de la batería y adjunta los documentos de diagnóstico y control previstos en el proceso.",
 							"La información de transporte ADR asociada al estado seleccionado se muestra en la interfaz.",
@@ -315,7 +315,7 @@
 						"id": "collecte",
 						"title": "Crear una lista de bultos coherente.",
 						"navLabel": "Embalaje, paletización y recogida",
-						"situation": "Varias declaraciones y varios bultos pueden estar listos para salir. Seleccionarlos sin tener en cuenta al recolector o al centro de entrega genera una lista inadecuada para la operación prevista.",
+						"situation": "El usuario agrupa los bultos de varias declaraciones en una lista de embalaje. La aplicación comprueba la compatibilidad del recolector y del destino para preparar una salida conjunta.",
 						"actions": [
 							"El usuario consulta las declaraciones con su propietario, recolector, centro de entrega, composición química, embalaje y estado.",
 							"Selecciona los bultos que se incluirán en la lista de bultos.",
@@ -334,7 +334,7 @@
 						"id": "offres",
 						"title": "Distinguir el precio de tratamiento del coste logístico.",
 						"navLabel": "Ofertas y precios",
-						"situation": "La negociación con un proveedor puede abarcar tanto el tratamiento de la batería como su transporte. Un importe aislado no permite recuperar las condiciones del acuerdo.",
+						"situation": "Los proveedores proponen por separado los precios de tratamiento y logística, con divisa y comentario. Cada oferta conserva su autor, fecha y aceptación o rechazo.",
 						"actions": [
 							"Una propuesta incluye el precio de tratamiento, el precio logístico, la divisa y un comentario opcional.",
 							"Las propuestas sucesivas se conservan con su autor, fecha y estado de aceptación o rechazo.",
@@ -353,7 +353,7 @@
 						"id": "reception",
 						"title": "Conectar recogida, recepción y tratamiento.",
 						"navLabel": "Recepción y tratamiento",
-						"situation": "Una batería declarada como recogida debe recibirse después y seguirse hasta su tratamiento. El estado documental también puede condicionar las acciones autorizadas en la herramienta.",
+						"situation": "La aplicación sigue las etapas de lista para recoger, recogida, recibida y tratada. La recepción registra la fecha y el interviniente; los intercambios con Trackdéchets actualizan el BSD en los recorridos correspondientes.",
 						"actions": [
 							"Los estados distinguen, entre otras, las baterías listas para recoger, recogidas, recibidas y tratadas.",
 							"En un proceso conectado con Trackdéchets, la recepción registra una fecha y el nombre de la persona que recibe, y después actualiza el BSD asociado y la declaración.",
@@ -403,7 +403,7 @@
 						"id": "bsd",
 						"title": "Integrar el BSD en el seguimiento de la declaración.",
 						"navLabel": "BSD y Trackdéchets",
-						"situation": "En las operaciones francesas correspondientes, el documento de seguimiento de residuos tiene sus propios estados. Los equipos deben saber si está creado, firmado y listo para la etapa siguiente.",
+						"situation": "La aplicación crea y actualiza los documentos de seguimiento de residuos mediante Trackdéchets, sigue las firmas del productor y del recolector y transmite la información de recepción y tratamiento.",
 						"actions": [
 							"La aplicación crea o actualiza un BSD mediante Trackdéchets y conserva su identificador junto con la declaración.",
 							"Consulta su estado y distingue, entre otros casos, si falta la firma del productor o la del recolector.",
@@ -441,7 +441,7 @@
 						"id": "connexions",
 						"title": "Intercambiar objetos de negocio, no solo archivos.",
 						"navLabel": "API y sistemas de socios",
-						"situation": "Un proveedor puede gestionar ya sus operaciones en su propio sistema. Pedirle que vuelva a introducir cada cambio en un portal añade trabajo en lugar de eliminarlo.",
+						"situation": "Las API y las notificaciones intercambian datos de baterías, ofertas de precios y cambios de estado con los sistemas de los proveedores. Las importaciones y exportaciones completan estos intercambios según las herramientas existentes.",
 						"actions": [
 							"Una API para proveedores permite, entre otras operaciones, exportar o importar datos de baterías y gestionar propuestas de precios.",
 							"Las notificaciones salientes informan de eventos concretos: batería asignada, lista para recoger, recibida o tratada; oferta creada o aceptada.",

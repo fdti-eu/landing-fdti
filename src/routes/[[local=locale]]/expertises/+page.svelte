@@ -6,19 +6,10 @@
 		buildLocalizedUrl,
 		SOCIAL_IMAGE_PATH
 	} from '$lib/functions/seo';
-	import type { Lang } from '$lib/data';
 	import type { PageData } from './$types';
 
 	export let data: PageData;
 
-	const courtCaseSlugs: Record<Lang, string> = {
-		fr: 'automatisation-greffes',
-		en: 'automatisation-greffes',
-		es: 'automatizacion-secretarias-judiciales',
-		de: 'automatisierung-handelsgerichte',
-		it: 'automazione-cancellerie-tribunali'
-	};
-	$: courtCaseSlug = courtCaseSlugs[data.locale];
 	$: content =
 		data.locale === 'fr'
 			? {
@@ -61,8 +52,8 @@
 							id: 'documents-critiques',
 							title: 'Analyse documentaire',
 							text: 'Des pièces sensibles à lire, qualifier, rapprocher et restituer dans un processus contrôlé.',
-							href: buildLocalizedPath(`/realisations/${courtCaseSlug}`, data.locale),
-							link: 'Voir le cas des tribunaux de commerce'
+							href: buildLocalizedPath('/expertises/analyse-documentaire', data.locale),
+							link: 'Voir notre expertise analyse documentaire'
 						},
 						{
 							id: 'operations-multi-acteurs',
@@ -117,8 +108,8 @@
 								id: 'documents-critiques',
 								title: 'Análisis documental',
 								text: 'Documentos sensibles que deben leerse, clasificarse, conciliarse y devolverse mediante un proceso controlado.',
-								href: buildLocalizedPath(`/realisations/${courtCaseSlug}`, data.locale),
-								link: 'Ver el proyecto de los tribunales de comercio'
+								href: buildLocalizedPath('/expertises/analyse-documentaire', data.locale),
+								link: 'Explorar nuestra especialidad en análisis documental'
 							},
 							{
 								id: 'operations-multi-acteurs',
@@ -173,8 +164,8 @@
 									id: 'documents-critiques',
 									title: 'Dokumentenanalyse',
 									text: 'Sensible Dokumente, die in einem kontrollierten Prozess gelesen, klassifiziert, abgeglichen und bereitgestellt werden müssen.',
-									href: buildLocalizedPath(`/realisations/${courtCaseSlug}`, data.locale),
-									link: 'Das Projekt für Handelsgerichte ansehen'
+									href: buildLocalizedPath('/expertises/analyse-documentaire', data.locale),
+									link: 'Unsere Kompetenz in der Dokumentenanalyse entdecken'
 								},
 								{
 									id: 'operations-multi-acteurs',
@@ -229,8 +220,8 @@
 										id: 'documents-critiques',
 										title: 'Analisi documentale',
 										text: 'Documenti sensibili da leggere, qualificare, confrontare e restituire attraverso un processo controllato.',
-										href: buildLocalizedPath(`/realisations/${courtCaseSlug}`, data.locale),
-										link: 'Vedete il progetto per i tribunali di commercio francesi'
+										href: buildLocalizedPath('/expertises/analyse-documentaire', data.locale),
+										link: 'Scoprite la nostra competenza in analisi documentale'
 									},
 									{
 										id: 'operations-multi-acteurs',
@@ -284,8 +275,8 @@
 										id: 'documents-critiques',
 										title: 'Document analysis',
 										text: 'Sensitive files that must be read, qualified, reconciled and returned through a controlled process.',
-										href: buildLocalizedPath(`/realisations/${courtCaseSlug}`, data.locale),
-										link: 'See the commercial-court project'
+										href: buildLocalizedPath('/expertises/analyse-documentaire', data.locale),
+										link: 'Explore our document-analysis expertise'
 									},
 									{
 										id: 'operations-multi-acteurs',

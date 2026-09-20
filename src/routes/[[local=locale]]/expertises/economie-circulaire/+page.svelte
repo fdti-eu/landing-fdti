@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { MetaTags } from 'svelte-meta-tags';
-	import CircularContact from '$lib/components/CircularContact.svelte';
+	import ExpertiseHub, { type ExpertiseHubContent } from '$lib/components/ExpertiseHub.svelte';
 	import LdTag from '$lib/components/json-ld/LDTag.svelte';
 	import { schema } from '$lib/components/json-ld/json-ld';
 	import {
@@ -88,7 +88,7 @@
 	$: pageCopy =
 		data.locale === 'fr'
 			? {
-					journeyLabel: 'Flux métier couverts',
+					journeyLabel: 'Flux métiers couverts',
 					multiCountryTitle: 'Parcours multi-pays, multisite et routing',
 					multiCountryText:
 						'Les règles pays, la localisation exacte, le centre le plus proche par route et le mode de dépôt orientent le parcours B2B ou B2C.',
@@ -245,6 +245,59 @@
 			.filter((section) => ['bsd', 'connexions'].includes(section.id))
 			.map((section) => ({ ...section, group: content.dossiers[2].label }))
 	];
+	$: proofLink = {
+		fr: 'Découvrir le projet',
+		en: 'Explore the project',
+		es: 'Descubrir el proyecto',
+		de: 'Projekt entdecken',
+		it: 'Scoprite il progetto'
+	}[data.locale];
+	let hub: ExpertiseHubContent;
+	$: hub = {
+		...content,
+		title: common.heroTitle,
+		journeyLabel: pageCopy.journeyLabel,
+		workflows: workflowItems.map((item) => ({
+			group: item.group,
+			title: item.navLabel,
+			text: item.situation,
+			result: item.result
+		})),
+		dossiers: content.dossiers.map((item) => ({
+			...item,
+			href: buildLocalizedPath(`/expertises/economie-circulaire/${item.slug}`, data.locale)
+		})),
+		proofLabel: pageCopy.proofLabel,
+		proofs: [
+			{
+				label: content.dossiers[0].label,
+				title: content.dossiers[0].title,
+				text: content.dossiers[0].description,
+				href: buildLocalizedPath(`/realisations/${workSlugs['2'][data.locale]}`, data.locale),
+				link: proofLink
+			},
+			{
+				label: pageCopy.recyclerLabel,
+				title: pageCopy.recyclerTitle,
+				text: pageCopy.recyclerText,
+				href: buildLocalizedPath(`/realisations/${workSlugs['8'][data.locale]}`, data.locale),
+				link: proofLink
+			},
+			{
+				label: content.dossiers[1].label,
+				title: content.dossiers[1].title,
+				text: content.dossiers[1].description,
+				href: buildLocalizedPath(`/realisations/${workSlugs['3'][data.locale]}`, data.locale),
+				link: proofLink
+			}
+		],
+		integration: {
+			label: pageCopy.integrationLabel,
+			title: pageCopy.integrationTitle,
+			text: pageCopy.integrationText
+		},
+		faqLabel: pageCopy.faqLabel
+	};
 	$: imageAlt =
 		data.locale === 'fr'
 			? 'FDTI - IA, code et données'
@@ -316,138 +369,4 @@
 	/>
 </svelte:head>
 
-<header class="ce-hero">
-	<div class="ce-shell ce-simple-hero">
-		<p class="ce-eyebrow">{content.label}</p>
-		<h1>{common.heroTitle}</h1>
-		<p class="ce-lead">{content.intro}</p>
-		<p class="ce-positioning">{content.positioning}</p>
-		<div class="ce-hero-actions">
-			<a class="ce-button" href="#flux">{content.explore}<span aria-hidden="true">↓</span></a>
-			<a
-				class="ce-link"
-				href="https://calendly.com/fdti/30min"
-				data-umami-event="calendly_click"
-				data-umami-event-placement="circular_hero"
-				>{content.contact}<span aria-hidden="true">↗</span></a
-			>
-		</div>
-	</div>
-</header>
-
-<section id="flux" class="ce-section ce-journey">
-	<div class="ce-shell">
-		<p class="ce-eyebrow ce-section-label">{pageCopy.journeyLabel}</p>
-		<div class="ce-journey-grid">
-			{#each workflowItems as workflow, index}
-				<article>
-					<span aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
-					<p class="ce-eyebrow">{workflow.group}</p>
-					<h3>{workflow.navLabel}</h3>
-					<p>{workflow.situation}</p>
-					<strong>{workflow.result}</strong>
-				</article>
-			{/each}
-		</div>
-	</div>
-</section>
-
-<section class="ce-section ce-related">
-	<div class="ce-shell">
-		<p class="ce-eyebrow ce-section-label">{content.dossiersLabel}</p>
-		<h2>{content.dossiersTitle}</h2>
-		<p>{content.dossiersIntro}</p>
-		<div class="ce-related-grid">
-			{#each content.dossiers as dossier}
-				<a
-					href={buildLocalizedPath(`/expertises/economie-circulaire/${dossier.slug}`, data.locale)}
-				>
-					<span class="ce-eyebrow">{dossier.label}</span>
-					<h3>{dossier.title}</h3>
-					<p>{dossier.summary}</p>
-					<span class="ce-link">{content.detailLink}<span aria-hidden="true">↗</span></span>
-				</a>
-			{/each}
-		</div>
-	</div>
-</section>
-
-<section class="ce-section ce-proofs">
-	<div class="ce-shell">
-		<p class="ce-eyebrow ce-section-label">{pageCopy.proofLabel}</p>
-		<div class="ce-proof-grid">
-			<article>
-				<p class="ce-eyebrow">{content.dossiers[0].label}</p>
-				<h3>{content.dossiers[0].title}</h3>
-				<p>{content.dossiers[0].description}</p>
-				<a
-					class="ce-link"
-					href={buildLocalizedPath(`/realisations/${workSlugs['2'][data.locale]}`, data.locale)}
-					>{pageCopy.vehicleLink}<span aria-hidden="true">↗</span></a
-				>
-			</article>
-			<article>
-				<p class="ce-eyebrow">{pageCopy.recyclerLabel}</p>
-				<h3>{pageCopy.recyclerTitle}</h3>
-				<p>{pageCopy.recyclerText}</p>
-				<a
-					class="ce-link"
-					href={buildLocalizedPath(`/realisations/${workSlugs['8'][data.locale]}`, data.locale)}
-					>{pageCopy.recyclerLink}<span aria-hidden="true">↗</span></a
-				>
-			</article>
-			<article>
-				<p class="ce-eyebrow">{content.dossiers[1].label}</p>
-				<h3>{content.dossiers[1].title}</h3>
-				<p>{content.dossiers[1].description}</p>
-				<a
-					class="ce-link"
-					href={buildLocalizedPath(`/realisations/${workSlugs['3'][data.locale]}`, data.locale)}
-					>{pageCopy.batteryLink}<span aria-hidden="true">↗</span></a
-				>
-			</article>
-		</div>
-		<p class="ce-proof-note">{content.proofNote}</p>
-	</div>
-</section>
-
-<section class="ce-section ce-integrations">
-	<div class="ce-shell ce-heading-grid">
-		<div>
-			<p class="ce-eyebrow">{pageCopy.integrationLabel}</p>
-			<h2>{pageCopy.integrationTitle}</h2>
-		</div>
-		<p>{pageCopy.integrationText}</p>
-	</div>
-</section>
-
-<section class="ce-section ce-scope">
-	<div class="ce-shell">
-		<h2>{content.scopeTitle}</h2>
-		<div class="ce-scope-grid">
-			{#each content.scopeItems as item, index}
-				<div>
-					<span class="ce-index-number" aria-hidden="true">0{index + 1}</span>
-					<h3>{item.title}</h3>
-					<p>{item.text}</p>
-				</div>
-			{/each}
-		</div>
-	</div>
-</section>
-
-<section class="ce-section ce-faq">
-	<div class="ce-shell ce-heading-grid">
-		<p class="ce-eyebrow">{pageCopy.faqLabel}</p>
-		<div>
-			{#each content.faqs.slice(0, 3) as faq}
-				<article class="ce-faq-essential">
-					<h3>{faq.question}</h3>
-					<p>{faq.answer}</p>
-				</article>
-			{/each}
-		</div>
-	</div>
-</section>
-
-<CircularContact {content} />
+<ExpertiseHub content={hub} eventPrefix="circular" />

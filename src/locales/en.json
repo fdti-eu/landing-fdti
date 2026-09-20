@@ -9,7 +9,7 @@
 		"readGuide": "Read the guide",
 		"title": "From vehicle identification to waste collection and treatment.",
 		"intro": "We develop the applications manufacturers and recyclers use to manage take-back operations: identifying a vehicle, assessing a battery, preparing a pickup, negotiating a price, and generating and tracking documents.",
-		"positioning": "Custom software for business teams, collection networks and their partners.",
+		"positioning": "Automakers, repair shops, battery holders, collectors, and recyclers: tools to declare, organize, and track each take-back.",
 		"contact": "Let’s discuss a real-world use case",
 		"explore": "Explore the features",
 		"proofNote": "The features presented come from several projects developed for automotive manufacturers and recycling operators. They illustrate our work; scope and rules are adapted to each organization.",
@@ -200,8 +200,8 @@
 					{
 						"id": "identification",
 						"title": "Start with a plate or VIN, not an empty record.",
-						"navLabel": "License plate / VIN lookup",
-						"situation": "Asking users to re-enter a vehicle’s make, model, and specifications means more fields to complete and more corrections to handle later.",
+						"navLabel": "Vehicle data enrichment by plate / VIN",
+						"situation": "Enrich a vehicle record from a license plate or VIN: retrieve the available make, model, and specifications from an identification service.",
 						"actions": [
 							"The declarant provides the registration country and the available identifier: a license plate or VIN, the vehicle identification number.",
 							"The application queries an identification service and populates the record with the returned specifications.",
@@ -220,7 +220,7 @@
 						"id": "dossier",
 						"title": "Move the request and its administrative record forward together.",
 						"navLabel": "Documents and signatures",
-						"situation": "A take-back request is not ready to process simply because the vehicle has been identified. It also includes declaration details and documents.",
+						"situation": "The workflow collects the declarant’s documents, generates the transfer and destruction documents required for the French operations covered, and sends them to the signers.",
 						"actions": [
 							"The workflow brings together the information and documents needed to handle the request.",
 							"The team finds these items in the vehicle record rather than in separate exchanges.",
@@ -239,7 +239,7 @@
 						"id": "reseau",
 						"title": "Give the network a shared operational tool.",
 						"navLabel": "Take-back network",
-						"situation": "Owners, repair shops, authorized treatment facilities, and program teams act at different times and have different responsibilities.",
+						"situation": "Separate interfaces let individuals and repair shops declare vehicles, authorized treatment facilities track handovers, and program teams monitor network progress.",
 						"actions": [
 							"Separate workflows support individual and professional requests.",
 							"Management interfaces let teams and partners track vehicles and handling steps.",
@@ -269,8 +269,8 @@
 					{
 						"id": "identification",
 						"title": "Identify the battery and record its waste code.",
-						"navLabel": "Characterization, EWC codes, and UN numbers",
-						"situation": "The reference data brings together the model, VIN or BIN, condition, charge, state of health, dimensions, and weight. The declaration supplements these characteristics with an EWC code, a UN number, supporting documents, and photos.",
+						"navLabel": "Battery identification, VIN / BIN and reference data",
+						"situation": "The declaration combines VIN or BIN identifiers with reference characteristics: model, dimensions, and weight. The holder adds condition, charge, state of health, EWC and UN codes, supporting documents, and photos.",
 						"actions": [
 							"The declaration links the battery to its type and holder information.",
 							"The workflow suggests an EWC (European Waste Catalogue) code using the existing declaration or reference battery type.",
@@ -284,7 +284,7 @@
 						"id": "diagnostic",
 						"title": "Capture battery condition before collection.",
 						"navLabel": "Diagnostics and condition",
-						"situation": "A damaged battery requires different preparation than a battery in another condition. Stakeholders need diagnostic information and the relevant documents before organizing the next steps.",
+						"situation": "The declarant records the battery’s condition and attaches diagnostics, photos, and a checklist. The interface displays the ADR transport information associated with the selected condition.",
 						"actions": [
 							"The declarant records battery condition and attaches the diagnostic and checklist documents required by the workflow.",
 							"ADR transport information associated with the selected condition is shown in the interface.",
@@ -303,7 +303,7 @@
 						"id": "collecte",
 						"title": "Build a consistent packing list.",
 						"navLabel": "Packing, palletization and collection",
-						"situation": "Several declarations and packages may be ready for pickup. Selecting them without considering the collector or delivery site can produce a packing list that is unusable for the intended operation.",
+						"situation": "The user groups packages from several declarations into a packing list. The application checks collector and destination-site compatibility to prepare a shared shipment.",
 						"actions": [
 							"Users review declarations with their owner, collector, delivery site, chemistry, packaging, and status.",
 							"They select the packages to include in the packing list.",
@@ -322,7 +322,7 @@
 						"id": "offres",
 						"title": "Separate the treatment price from the logistics cost.",
 						"navLabel": "Offers and prices",
-						"situation": "Negotiations with a service provider may cover both battery treatment and transport. A single amount does not capture the terms of the agreement.",
+						"situation": "Providers propose separate treatment and logistics prices, with a currency and comment. Each offer is retained with its author, date, and acceptance or rejection.",
 						"actions": [
 							"A proposal includes the treatment price, logistics cost, currency, and an optional comment.",
 							"Each successive proposal is retained with its author, date, and acceptance or rejection status.",
@@ -341,7 +341,7 @@
 						"id": "reception",
 						"title": "Connect collection, receipt, and treatment.",
 						"navLabel": "Receipt and treatment",
-						"situation": "A battery reported as collected must then be received and tracked through treatment. Document status may also determine which actions are available in the application.",
+						"situation": "The application tracks ready-for-pickup, collected, received, and treated stages. Receipt records the date and operator; Trackdéchets exchanges update the waste tracking form in the relevant workflows.",
 						"actions": [
 							"Statuses distinguish batteries that are ready for pickup, collected, received, or treated.",
 							"In a workflow connected to Trackdéchets, the receipt step records a date and the recipient’s name, then updates the linked waste tracking form and declaration.",
@@ -391,7 +391,7 @@
 						"id": "bsd",
 						"title": "Track the waste tracking form with the declaration.",
 						"navLabel": "BSD and Trackdéchets",
-						"situation": "For relevant French operations, the waste tracking form (BSD) has its own statuses. Teams need to know whether it is created, signed and ready for the next step.",
+						"situation": "The application creates and updates waste tracking forms through Trackdéchets, monitors producer and collector signatures, and then transmits receipt and treatment information.",
 						"actions": [
 							"The application creates or updates a BSD through Trackdéchets and stores its identifier with the declaration.",
 							"It checks the form’s status and distinguishes a missing producer signature from a missing collector signature.",
@@ -429,7 +429,7 @@
 						"id": "connexions",
 						"title": "Exchange business objects, not just files.",
 						"navLabel": "APIs and partner systems",
-						"situation": "A provider may already manage operations in its own system. Requiring every change to be entered again in a portal adds work instead of removing it.",
+						"situation": "APIs and notifications exchange battery data, price offers, and status changes with providers’ systems. Imports and exports complement these exchanges according to the tools in place.",
 						"actions": [
 							"A service provider API supports battery data imports and exports as well as price proposals.",
 							"Outgoing notifications report specific events: a battery assigned, ready for pickup, received or processed; an offer created or accepted.",

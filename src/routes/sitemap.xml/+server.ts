@@ -15,6 +15,7 @@ const staticPages: SitemapPage[] = [
 	{ path: '/expertises', changefreq: 'weekly', priority: '0.95' },
 	{ path: '/realisations', changefreq: 'weekly', priority: '0.95' },
 	{ path: '/expertises/economie-circulaire', changefreq: 'monthly', priority: '0.90' },
+	{ path: '/expertises/analyse-documentaire', changefreq: 'monthly', priority: '0.90' },
 	{ path: '/confidentialite', changefreq: 'monthly', priority: '0.60' },
 	{ path: '/condition-utilisation', changefreq: 'monthly', priority: '0.60' }
 ];
@@ -118,6 +119,25 @@ export async function GET() {
 			SUPPORTED_LOCALES.map((locale, localeIndex) => [
 				locale,
 				`/expertises/economie-circulaire/${localizedDossiers[localeIndex]!.slug}`
+			])
+		) as SeoAlternatePaths;
+		addLocalizedEntries(paths, 'monthly', '0.75');
+	}
+
+	const documentAnalysisByLocale = Object.fromEntries(
+		await Promise.all(
+			SUPPORTED_LOCALES.map(async (locale) => [locale, (await getData(locale)).DocumentAnalysis])
+		)
+	) as Record<Lang, Awaited<ReturnType<typeof getData>>['DocumentAnalysis']>;
+	for (const [index] of documentAnalysisByLocale.fr.guides.entries()) {
+		const localizedGuides = SUPPORTED_LOCALES.map(
+			(locale) => documentAnalysisByLocale[locale].guides[index]
+		);
+		if (localizedGuides.some((guide) => !guide?.slug)) continue;
+		const paths = Object.fromEntries(
+			SUPPORTED_LOCALES.map((locale, localeIndex) => [
+				locale,
+				`/expertises/analyse-documentaire/${localizedGuides[localeIndex]!.slug}`
 			])
 		) as SeoAlternatePaths;
 		addLocalizedEntries(paths, 'monthly', '0.75');

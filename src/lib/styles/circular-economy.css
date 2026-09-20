@@ -739,6 +739,10 @@
 .circular .ce-simple-hero .ce-lead {
 	max-width: 850px;
 }
+/* Reserve the same two-line positioning slot on every expertise hub. */
+.circular .ce-hub-hero .ce-positioning {
+	min-height: 3.3em;
+}
 .circular .ce-journey {
 	background: #f5f4ee;
 }
@@ -805,20 +809,32 @@
 	grid-template-columns: repeat(3, minmax(0, 1fr));
 	gap: 30px;
 }
-.circular .ce-proof-grid article {
+.circular .ce-proof-grid > a {
 	display: flex;
 	flex-direction: column;
 	padding: 32px;
 	border-top: 3px solid var(--ce-ink);
 	background: #f5f4ee;
 }
-.circular .ce-proof-grid article > p:not(.ce-eyebrow) {
+.circular .ce-proof-grid > a > p:not(.ce-eyebrow) {
 	margin: 20px 0 28px;
 	color: var(--ce-muted);
 }
 .circular .ce-proof-grid .ce-link {
 	align-self: flex-start;
 	margin-top: auto;
+}
+.circular .ce-clickable-card {
+	transition:
+		transform 160ms ease,
+		box-shadow 160ms ease,
+		border-color 160ms ease;
+}
+.circular .ce-clickable-card:hover,
+.circular .ce-clickable-card:focus-visible {
+	transform: translateY(-4px);
+	border-top-color: #aa7620;
+	box-shadow: 0 8px 24px #1d202410;
 }
 .circular .ce-integrations {
 	background: #f5f4ee;
@@ -1013,5 +1029,12 @@
 @media (prefers-reduced-motion: reduce) {
 	.circular .ce-button {
 		transition: none;
+	}
+	.circular .ce-clickable-card {
+		transition: none;
+	}
+	.circular .ce-clickable-card:hover,
+	.circular .ce-clickable-card:focus-visible {
+		transform: none;
 	}
 }

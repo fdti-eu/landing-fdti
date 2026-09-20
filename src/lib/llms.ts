@@ -3,6 +3,11 @@ import frLocale from '$locales/fr.json';
 import esLocale from '$locales/es.json';
 import deLocale from '$locales/de.json';
 import itLocale from '$locales/it.json';
+import enDocumentAnalysis from '$locales/document-analysis/en.json';
+import frDocumentAnalysis from '$locales/document-analysis/fr.json';
+import esDocumentAnalysis from '$locales/document-analysis/es.json';
+import deDocumentAnalysis from '$locales/document-analysis/de.json';
+import itDocumentAnalysis from '$locales/document-analysis/it.json';
 import type { Lang, LocaleData } from '$lib/data';
 import { buildLocalizedUrl } from '$lib/functions/seo';
 
@@ -94,6 +99,15 @@ function buildLanguageSection(locale: Lang, data: LocaleData): string {
 	const circular = data.CircularEconomy;
 	output += formatSection(circular.title, circular.intro);
 	output += `\n${buildLocalizedUrl('/expertises/economie-circulaire', locale)}\n`;
+
+	const documentAnalysis = data.DocumentAnalysis;
+	output += formatSection(documentAnalysis.title, documentAnalysis.intro);
+	output += `\n${buildLocalizedUrl('/expertises/analyse-documentaire', locale)}\n`;
+	for (const guide of documentAnalysis.guides) {
+		output += formatSection(guide.title, guide.summary);
+		output += `\n${buildLocalizedUrl(`/expertises/analyse-documentaire/${guide.slug}`, locale)}\n`;
+	}
+
 	output += `\n# EXPERTISE\n${buildLocalizedUrl('/expertises', locale)}\n`;
 
 	if (home?.contact_section) {
@@ -104,13 +118,19 @@ function buildLanguageSection(locale: Lang, data: LocaleData): string {
 }
 
 export function buildLlmsText() {
+	const frData = { ...frLocale, DocumentAnalysis: frDocumentAnalysis };
+	const enData = { ...enLocale, DocumentAnalysis: enDocumentAnalysis };
+	const esData = { ...esLocale, DocumentAnalysis: esDocumentAnalysis };
+	const deData = { ...deLocale, DocumentAnalysis: deDocumentAnalysis };
+	const itData = { ...itLocale, DocumentAnalysis: itDocumentAnalysis };
+
 	return [
 		'# FDTI llms.txt',
 		'Content generated from the public locale JSON files used by fdti.eu.',
-		buildLanguageSection('fr', frLocale),
-		buildLanguageSection('en', enLocale),
-		buildLanguageSection('es', esLocale),
-		buildLanguageSection('de', deLocale),
-		buildLanguageSection('it', itLocale)
+		buildLanguageSection('fr', frData),
+		buildLanguageSection('en', enData),
+		buildLanguageSection('es', esData),
+		buildLanguageSection('de', deData),
+		buildLanguageSection('it', itData)
 	].join('\n');
 }

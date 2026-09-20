@@ -6,7 +6,9 @@ export const isSupportedLocale = (locale: string | null | undefined): locale is 
 
 // Import de type seulement pour l'inférence
 import type FrData from '../locales/fr.json';
-export type LocaleData = typeof FrData;
+import type DocumentAnalysisFrData from '../locales/document-analysis/fr.json';
+export type DocumentAnalysisContent = typeof DocumentAnalysisFrData;
+export type LocaleData = typeof FrData & { DocumentAnalysis: DocumentAnalysisContent };
 
 export type HomePageContent = LocaleData['GetHomePageContent'];
 export type CGUContent = LocaleData['GetCGUContent'];
@@ -14,11 +16,26 @@ export type PrivacyContent = LocaleData['GetPrivacyContent'];
 export type UseCasesContent = LocaleData['GetUseCasesContent'];
 
 const loaders: Record<Lang, () => Promise<LocaleData>> = {
-	fr: () => import('../locales/fr.json').then((m) => m.default),
-	en: () => import('../locales/en.json').then((m) => m.default),
-	es: () => import('../locales/es.json').then((m) => m.default),
-	de: () => import('../locales/de.json').then((m) => m.default),
-	it: () => import('../locales/it.json').then((m) => m.default)
+	fr: async () => ({
+		...(await import('../locales/fr.json')).default,
+		DocumentAnalysis: (await import('../locales/document-analysis/fr.json')).default
+	}),
+	en: async () => ({
+		...(await import('../locales/en.json')).default,
+		DocumentAnalysis: (await import('../locales/document-analysis/en.json')).default
+	}),
+	es: async () => ({
+		...(await import('../locales/es.json')).default,
+		DocumentAnalysis: (await import('../locales/document-analysis/es.json')).default
+	}),
+	de: async () => ({
+		...(await import('../locales/de.json')).default,
+		DocumentAnalysis: (await import('../locales/document-analysis/de.json')).default
+	}),
+	it: async () => ({
+		...(await import('../locales/it.json')).default,
+		DocumentAnalysis: (await import('../locales/document-analysis/it.json')).default
+	})
 };
 
 export async function getData(lang: Lang): Promise<LocaleData> {

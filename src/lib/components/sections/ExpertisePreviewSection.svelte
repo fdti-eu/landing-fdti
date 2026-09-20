@@ -17,7 +17,9 @@
 						},
 						{
 							title: 'Analyse documentaire',
-							text: 'Lire, structurer et faire circuler des pièces sensibles sans détacher l’IA du processus métier.'
+							text: 'Lire, structurer et faire circuler des pièces sensibles sans détacher l’IA du processus métier.',
+							href: buildLocalizedPath('/expertises/analyse-documentaire', locale),
+							link: 'Explorer cette expertise'
 						},
 						{
 							title: 'Opérations multi-acteurs',
@@ -38,7 +40,9 @@
 							},
 							{
 								title: 'Análisis documental',
-								text: 'Leer, estructurar y hacer circular documentos sensibles sin separar la IA del proceso empresarial.'
+								text: 'Leer, estructurar y hacer circular documentos sensibles sin separar la IA del proceso empresarial.',
+								href: buildLocalizedPath('/expertises/analyse-documentaire', locale),
+								link: 'Explorar esta especialidad'
 							},
 							{
 								title: 'Operaciones con múltiples actores',
@@ -59,7 +63,9 @@
 								},
 								{
 									title: 'Dokumentenanalyse',
-									text: 'Sensible Dokumente lesen, strukturieren und weiterleiten, ohne die KI vom Geschäftsprozess zu trennen.'
+									text: 'Sensible Dokumente lesen, strukturieren und weiterleiten, ohne die KI vom Geschäftsprozess zu trennen.',
+									href: buildLocalizedPath('/expertises/analyse-documentaire', locale),
+									link: 'Diese Kompetenz entdecken'
 								},
 								{
 									title: 'Prozesse mit mehreren Akteuren',
@@ -80,7 +86,9 @@
 									},
 									{
 										title: 'Analisi documentale',
-										text: 'Leggere, strutturare e far circolare documenti sensibili senza separare l’IA dal processo aziendale.'
+										text: 'Leggere, strutturare e far circolare documenti sensibili senza separare l’IA dal processo aziendale.',
+										href: buildLocalizedPath('/expertises/analyse-documentaire', locale),
+										link: 'Esplorate questa competenza'
 									},
 									{
 										title: 'Operazioni con più soggetti',
@@ -100,7 +108,9 @@
 									},
 									{
 										title: 'Document analysis',
-										text: 'Read, structure and route sensitive files without separating AI from the business process.'
+										text: 'Read, structure and route sensitive files without separating AI from the business process.',
+										href: buildLocalizedPath('/expertises/analyse-documentaire', locale),
+										link: 'Explore this expertise'
 									},
 									{
 										title: 'Multi-party operations',

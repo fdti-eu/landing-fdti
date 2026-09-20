@@ -9,7 +9,7 @@
 		"readGuide": "Leggete l'approfondimento",
 		"title": "Dal veicolo identificato al rifiuto preso in carico.",
 		"intro": "Sviluppiamo le applicazioni che consentono a industrie e riciclatori di gestire i ritiri: identificare un veicolo, qualificare una batteria, preparare un prelievo, negoziare un prezzo, generare e monitorare i documenti.",
-		"positioning": "Software su misura per i team operativi, le loro reti di raccolta e i loro partner.",
+		"positioning": "Costruttori automobilistici, officine, detentori di batterie, operatori della raccolta e riciclatori: strumenti per dichiarare, organizzare e seguire ogni ritiro.",
 		"contact": "Parliamo di un caso concreto",
 		"explore": "Esplorate le funzionalità",
 		"proofNote": "Le funzionalità presentate provengono da diversi progetti sviluppati per costruttori automobilistici e operatori del riciclo. Illustrano il nostro lavoro; l'ambito e le regole vengono adattati a ogni organizzazione.",
@@ -203,8 +203,8 @@
 					{
 						"id": "identification",
 						"title": "Partire da una targa o da un VIN, non da una scheda vuota.",
-						"navLabel": "Identificazione tramite targa / VIN",
-						"situation": "Chiedere di reinserire marca, modello e caratteristiche di un veicolo moltiplica i campi da compilare e le correzioni successive.",
+						"navLabel": "Arricchimento dei dati tramite targa / VIN",
+						"situation": "Arricchire una scheda veicolo a partire da una targa o un VIN: recuperare marca, modello e caratteristiche disponibili da un servizio di identificazione.",
 						"actions": [
 							"Il dichiarante indica il paese e il tipo di identificativo disponibile: targa o VIN, il numero di identificazione del veicolo.",
 							"L'applicazione interroga un servizio di identificazione e riporta nella scheda le caratteristiche ottenute.",
@@ -223,7 +223,7 @@
 						"id": "dossier",
 						"title": "Far avanzare la pratica amministrativa insieme alla richiesta.",
 						"navLabel": "Pratica e firme",
-						"situation": "Una richiesta di ritiro non è pronta per essere gestita solo perché il veicolo è stato identificato. Comprende anche informazioni dichiarative e documenti.",
+						"situation": "Il percorso raccoglie i documenti del dichiarante, genera i documenti di cessione e distruzione previsti per le operazioni francesi e li trasmette ai firmatari.",
 						"actions": [
 							"Il flusso riunisce le informazioni e i documenti necessari per gestire la richiesta.",
 							"Il team ritrova questi elementi nella pratica del veicolo, anziché in scambi separati.",
@@ -242,7 +242,7 @@
 						"id": "reseau",
 						"title": "Offrire alla rete uno strumento di lavoro condiviso.",
 						"navLabel": "Rete di ritiro",
-						"situation": "Il proprietario, l'officina, il centro per veicoli fuori uso e i team di coordinamento intervengono in momenti diversi e hanno responsabilità differenti.",
+						"situation": "Interfacce distinte consentono a privati e officine di dichiarare i veicoli, ai centri per veicoli fuori uso di seguire le prese in carico e ai team di coordinamento di consultare l’avanzamento della rete.",
 						"actions": [
 							"Percorsi distinti raccolgono le richieste di privati e professionisti.",
 							"Le interfacce di gestione consentono a team e partner di monitorare i veicoli e le fasi di presa in carico.",
@@ -272,8 +272,8 @@
 					{
 						"id": "identification",
 						"title": "Identificare la batteria e indicarne il codice del rifiuto.",
-						"navLabel": "Caratterizzazione, EER e ONU",
-						"situation": "Il catalogo di riferimento riunisce modello, VIN o BIN, stato, carica, stato di salute, dimensioni e peso. La dichiarazione completa queste caratteristiche con i codici EER e ONU, i giustificativi e le fotografie.",
+						"navLabel": "Identificazione batterie, VIN / BIN e catalogo",
+						"situation": "La dichiarazione riunisce gli identificativi VIN o BIN e le caratteristiche del catalogo: modello, dimensioni e peso. Il detentore completa stato, carica, stato di salute, codici EER e ONU, giustificativi e fotografie.",
 						"actions": [
 							"La dichiarazione associa la batteria al relativo tipo e alle informazioni del detentore.",
 							"Il flusso propone un codice EER (Elenco europeo dei rifiuti), indicato anche con l'acronimo inglese EWC, a partire dalla dichiarazione esistente o dal tipo di batteria di riferimento.",
@@ -292,7 +292,7 @@
 						"id": "diagnostic",
 						"title": "Rilevare lo stato della batteria prima del prelievo.",
 						"navLabel": "Diagnosi e stato",
-						"situation": "Una batteria danneggiata richiede una preparazione diversa da una batteria in altro stato. Gli operatori hanno bisogno della diagnosi e dei documenti pertinenti prima di organizzare le fasi successive.",
+						"situation": "Il dichiarante registra lo stato della batteria e allega diagnosi, fotografie e lista di controllo. L’interfaccia mostra le informazioni di trasporto ADR associate allo stato selezionato.",
 						"actions": [
 							"Il dichiarante indica lo stato della batteria e allega i documenti di diagnosi e controllo previsti dal flusso.",
 							"Le informazioni di trasporto ADR associate allo stato selezionato vengono mostrate nell'interfaccia.",
@@ -311,7 +311,7 @@
 						"id": "collecte",
 						"title": "Creare una lista dei colli coerente.",
 						"navLabel": "Imballaggio, pallettizzazione e raccolta",
-						"situation": "Più dichiarazioni e più colli possono essere pronti per la partenza. Selezionarli senza considerare l'operatore della raccolta o il sito di consegna genera una lista inutilizzabile per l'operazione prevista.",
+						"situation": "L’utente raggruppa i colli di più dichiarazioni in una lista di imballaggio. L’applicazione verifica la compatibilità dell’operatore della raccolta e del sito di destinazione per preparare una partenza comune.",
 						"actions": [
 							"L'utente consulta le dichiarazioni con detentore, operatore della raccolta, sito di consegna, chimica, imballaggio e stato.",
 							"Seleziona i colli da includere nella lista dei colli, o packing list.",
@@ -330,7 +330,7 @@
 						"id": "offres",
 						"title": "Distinguere il prezzo di trattamento dal costo logistico.",
 						"navLabel": "Offerte e prezzi",
-						"situation": "La negoziazione con un fornitore può riguardare sia il trattamento della batteria sia il trasporto. Un importo isolato non consente di ricostruire le condizioni dell'accordo.",
+						"situation": "I fornitori propongono separatamente prezzi di trattamento e logistica, con valuta e commento. Ogni offerta conserva autore, data e stato di accettazione o rifiuto.",
 						"actions": [
 							"Una proposta comprende il prezzo di trattamento, il costo logistico, la valuta e un eventuale commento.",
 							"Le proposte successive vengono conservate con autore, data e stato di accettazione o rifiuto.",
@@ -349,7 +349,7 @@
 						"id": "reception",
 						"title": "Collegare raccolta, ricezione e trattamento.",
 						"navLabel": "Ricezione e trattamento",
-						"situation": "Una batteria indicata come raccolta deve poi essere ricevuta e monitorata fino al trattamento. Anche lo stato documentale può condizionare le azioni consentite nello strumento.",
+						"situation": "L’applicazione segue le fasi pronta per il ritiro, raccolta, ricevuta e trattata. La ricezione registra data e operatore; gli scambi con Trackdéchets aggiornano il BSD nei percorsi interessati.",
 						"actions": [
 							"Gli stati distinguono in particolare le batterie pronte per il prelievo, raccolte, ricevute e trattate.",
 							"In un flusso francese collegato a Trackdéchets, la ricezione registra una data e il nome della persona che riceve, quindi aggiorna il BSD associato e la dichiarazione.",
@@ -399,7 +399,7 @@
 						"id": "bsd",
 						"title": "Integrare il BSD nel monitoraggio della dichiarazione.",
 						"navLabel": "BSD e Trackdéchets, flussi francesi",
-						"situation": "Nelle operazioni francesi interessate, il bordereau de suivi des déchets (BSD), documento francese di tracciabilità dei rifiuti, ha stati propri. I team devono sapere se è stato creato, firmato ed è pronto per la fase successiva.",
+						"situation": "L’applicazione crea e aggiorna i documenti francesi di tracciabilità dei rifiuti (BSD) tramite Trackdéchets, segue le firme del produttore e dell’operatore della raccolta e trasmette le informazioni di ricezione e trattamento.",
 						"actions": [
 							"L'applicazione crea o aggiorna un BSD tramite la piattaforma francese Trackdéchets e ne conserva l'identificativo con la dichiarazione.",
 							"Ne consulta lo stato e distingue, in particolare, la firma mancante del produttore da quella dell'operatore della raccolta.",
@@ -437,7 +437,7 @@
 						"id": "connexions",
 						"title": "Scambiare oggetti aziendali, non solo file.",
 						"navLabel": "API e sistemi dei partner",
-						"situation": "Un fornitore può già gestire le operazioni nel proprio sistema. Chiedergli di reinserire ogni modifica in un portale aggiunge un'attività anziché eliminarla.",
+						"situation": "API e notifiche scambiano dati delle batterie, offerte di prezzo e cambi di stato con i sistemi dei fornitori. Importazioni ed esportazioni completano gli scambi in base agli strumenti esistenti.",
 						"actions": [
 							"Un'API per i fornitori consente, tra l'altro, di esportare o importare dati sulle batterie e gestire proposte di prezzo.",
 							"Le notifiche in uscita segnalano eventi precisi: batteria assegnata, pronta per il prelievo, ricevuta o trattata; offerta creata o accettata.",

@@ -8,7 +8,23 @@ const enPath = 'src/locales/en.json';
 const esPath = 'src/locales/es.json';
 const dePath = 'src/locales/de.json';
 const itPath = 'src/locales/it.json';
-const localePaths = [frPath, enPath, esPath, dePath, itPath];
+const documentFrPath = 'src/locales/document-analysis/fr.json';
+const documentEnPath = 'src/locales/document-analysis/en.json';
+const documentEsPath = 'src/locales/document-analysis/es.json';
+const documentDePath = 'src/locales/document-analysis/de.json';
+const documentItPath = 'src/locales/document-analysis/it.json';
+const localePaths = [
+	frPath,
+	enPath,
+	esPath,
+	dePath,
+	itPath,
+	documentFrPath,
+	documentEnPath,
+	documentEsPath,
+	documentDePath,
+	documentItPath
+];
 
 const errors = [];
 const staleEnglishPhrases = [
@@ -191,11 +207,11 @@ function gitDiffNames(args) {
 
 function checkChangedLocaleFiles() {
 	const changedFiles = new Set(getChangedFiles());
-	const frChanged = changedFiles.has(frPath);
-	const enChanged = changedFiles.has(enPath);
-	const esChanged = changedFiles.has(esPath);
-	const deChanged = changedFiles.has(dePath);
-	const itChanged = changedFiles.has(itPath);
+	const frChanged = changedFiles.has(frPath) || changedFiles.has(documentFrPath);
+	const enChanged = changedFiles.has(enPath) || changedFiles.has(documentEnPath);
+	const esChanged = changedFiles.has(esPath) || changedFiles.has(documentEsPath);
+	const deChanged = changedFiles.has(dePath) || changedFiles.has(documentDePath);
+	const itChanged = changedFiles.has(itPath) || changedFiles.has(documentItPath);
 
 	if (frChanged && !enChanged) {
 		errors.push(
@@ -227,6 +243,11 @@ const enData = readJson(enPath);
 const esData = readJson(esPath);
 const deData = readJson(dePath);
 const itData = readJson(itPath);
+const documentFrData = readJson(documentFrPath);
+const documentEnData = readJson(documentEnPath);
+const documentEsData = readJson(documentEsPath);
+const documentDeData = readJson(documentDePath);
+const documentItData = readJson(documentItPath);
 
 if (frData) {
 	if (enData) compareStructure(frData, enData, enPath);
@@ -235,8 +256,22 @@ if (frData) {
 	if (itData) compareStructure(frData, itData, itPath);
 }
 
+if (documentFrData) {
+	if (documentEnData)
+		compareStructure(documentFrData, documentEnData, documentEnPath, '$.DocumentAnalysis');
+	if (documentEsData)
+		compareStructure(documentFrData, documentEsData, documentEsPath, '$.DocumentAnalysis');
+	if (documentDeData)
+		compareStructure(documentFrData, documentDeData, documentDePath, '$.DocumentAnalysis');
+	if (documentItData)
+		compareStructure(documentFrData, documentItData, documentItPath, '$.DocumentAnalysis');
+}
+
 if (enData) {
 	checkEnglishText(enData);
+}
+if (documentEnData) {
+	checkEnglishText(documentEnData);
 }
 
 if (esData) checkSpanishText(esData);
