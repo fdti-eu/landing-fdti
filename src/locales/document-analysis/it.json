@@ -1,0 +1,203 @@
+{
+	"metaTitle": "Analisi documentale: estrazione, sintesi e validazione | FDTI",
+	"metaDescription": "FDTI sviluppa workflow di analisi documentale su misura: estrazione dati, sintesi con fonti, controlli aziendali e validazione umana integrati nel sistema informativo.",
+	"label": "Analisi documentale",
+	"title": "Estrarre, analizzare e controllare i vostri documenti aziendali.",
+	"intro": "Preparare la lettura di una pratica giudiziaria, controllare i documenti di un deposito di bilancio, qualificare un documento tecnico: sviluppiamo i trattamenti e le interfacce che collegano i vostri documenti alla successiva azione aziendale.",
+	"positioning": "Software su misura per estrarre, confrontare e sintetizzare informazioni, con fonti consultabili e passaggi di validazione definiti con i vostri team.",
+	"overview": "Panoramica",
+	"navigation": "Navigazione analisi documentale",
+	"home": "Pagina iniziale",
+	"expertises": "Competenze",
+	"contact": "Parliamo di un caso concreto",
+	"explore": "Esplorare le funzionalità",
+	"contents": "Indice",
+	"relatedTitle": "Altri dossier di analisi documentale",
+	"detailLink": "Vedere il funzionamento",
+	"dossiersLabel": "Cosa abbiamo sviluppato",
+	"scopeTitle": "Definire un primo flusso verificabile.",
+	"ctaText": "Mostrateci un flusso reale, i soggetti coinvolti e gli strumenti in uso.",
+	"ctaButton": "Parlate con FDTI — 30 minuti",
+	"backToContents": "Tornare all’indice",
+	"dossiersIntro": "Dai documenti ricevuti alla sintesi, ai controlli e alla firma: scoprite le informazioni estratte, i trattamenti e gli scambi con le applicazioni aziendali.",
+	"evidenceTitle": "Una piattaforma di IA per i tribunali di commercio.",
+	"evidenceText": "Abbiamo sviluppato trattamenti di estrazione di documenti giudiziari e controllo dei depositi di bilancio. I controlli riguardano in particolare documenti incompleti, coerenza delle informazioni aziendali e livelli di riservatezza. La sintesi rende leggibili le incoerenze identificate per la persona che esamina la pratica.",
+	"evidenceNote": "Le funzionalità presentate derivano dai nostri progetti di analisi documentale, ricerca tecnica e gestione delle pratiche. Illustrano il nostro lavoro; documenti, regole e integrazioni sono adattati a ogni organizzazione.",
+	"proofs": [
+		{
+			"label": "Tribunali di commercio",
+			"title": "Analizzare documenti e controllare depositi di bilancio.",
+			"text": "Una piattaforma di IA per estrarre il contenuto di documenti giudiziari, controllare documenti contabili e restituire le incoerenze identificate nella pratica.",
+			"href": "/realisations/automazione-cancellerie-tribunali"
+		},
+		{
+			"label": "Ricerca tecnica",
+			"title": "Qualificare brevetti a partire dal loro contenuto.",
+			"text": "Un prototipo di ricerca in PDF che prepara una qualificazione per tema con riferimenti di pagina, per orientare la lettura degli esperti.",
+			"href": "/expertises/analyse-documentaire/conoscenza-e-monitoraggio#brevetti"
+		},
+		{
+			"label": "Firma elettronica",
+			"title": "Generare e far firmare i documenti di un ritiro.",
+			"text": "Un percorso integrato che prepara certificati di cessione e distruzione, li trasmette ai firmatari e collega il monitoraggio delle firme al veicolo.",
+			"href": "/realisations/piattaforma-veicoli-fuori-uso"
+		}
+	],
+	"integration": {
+		"label": "Documenti e sistemi",
+		"title": "Il risultato deve raggiungere la pratica aziendale.",
+		"text": "Campi estratti, controlli, correzioni e stati: definiamo gli scambi con le applicazioni esistenti. Diritti di accesso, riprese dopo errore e destinazione dei dati fanno parte dell’ambito da definire con la vostra IT."
+	},
+	"scopeItems": [
+		{
+			"title": "Completare uno strumento esistente",
+			"text": "La vostra applicazione gestisce già le pratiche? Possiamo aggiungere estrazione documenti, un controllo documentale o una sintesi, poi trasmetterle il risultato."
+		},
+		{
+			"title": "Riprendere un trattamento documentale",
+			"text": "Avete già uno strumento di analisi? Esaminiamo formati, regole e restituzioni da conservare, poi i passaggi da evolvere."
+		},
+		{
+			"title": "Costruire un percorso completo",
+			"text": "State creando un nuovo servizio? Possiamo collegare deposito documenti, trattamenti, revisione dei team e scambi con applicazioni partner."
+		}
+	],
+	"inputLabel": "Situazione iniziale",
+	"operationLabel": "Trattamento e restituzione",
+	"limitLabel": "Punto di controllo",
+	"exampleLabel": "Esempio esplicativo, senza documento cliente",
+	"stepsTitle": "Sei operazioni diverse, sei responsabilità da precisare.",
+	"steps": [
+		{
+			"title": "Estrarre il testo",
+			"text": "Recuperare il livello testuale di un PDF quando esiste. Conservare il legame con il documento e segnalare le pagine senza contenuto utilizzabile."
+		},
+		{
+			"title": "Riconoscere una scansione con OCR",
+			"text": "Trasformare l’immagine di una pagina in testo utilizzabile. Una data o un importo letto male resta un errore possibile anche se il documento è stato trattato."
+		},
+		{
+			"title": "Classificare",
+			"text": "Associare un documento o una fonte alle categorie aziendali. Definire le categorie, i casi multipli e il trattamento dei documenti non classificabili."
+		},
+		{
+			"title": "Sintetizzare",
+			"text": "Condensare le informazioni utili e consentire di tornare ai passaggi che le sostengono. Un riferimento generato deve essere verificato nella fonte."
+		},
+		{
+			"title": "Assistere una decisione",
+			"text": "Mettere in relazione informazioni e regole per far emergere uno scostamento o preparare una proposta. Il risultato dipende dal perimetro documentale e dalle regole scelte."
+		},
+		{
+			"title": "Validare umanamente",
+			"text": "Consentire alla persona responsabile di confermare, correggere o respingere il risultato prima del passaggio successivo. L’IA non sostituisce questa responsabilità."
+		}
+	],
+	"guides": [
+		{
+			"slug": "pratiche-e-controlli",
+			"label": "Pratiche e controlli",
+			"title": "Preparare l’esame di una pratica e rendere visibili le incoerenze.",
+			"summary": "Documenti giudiziari, bilanci, pezzi mancanti e coerenza della riservatezza: organizzare il lavoro di verifica.",
+			"metaTitle": "Pratiche giudiziarie e controlli documentali | FDTI",
+			"metaDescription": "Estrazione di documenti giudiziari e controlli di depositi di bilancio: FDTI sviluppa trattamenti documentali che preparano la verifica aziendale.",
+			"sections": [
+				{
+					"id": "pre-analisi",
+					"title": "Pre-analizzare una pratica giudiziaria",
+					"status": "Tribunali di commercio",
+					"input": "Il trattamento estrae il contenuto dei PDF di una pratica giudiziaria e lo trasmette all’analisi per preparare la lettura delle persone incaricate di esaminarla.",
+					"result": "Il contenuto dei documenti è preparato per l’analisi della pratica.",
+					"operation": "L’estrazione recupera il contenuto dei documenti e l’analisi prepara il loro esame. Il percorso deve permettere di tornare ai documenti e riprendere quelli il cui trattamento non è riuscito.",
+					"limit": "La qualità dell’analisi dipende dai documenti forniti e dalla loro leggibilità. I documenti non utilizzabili devono essere ripresi; la conclusione giuridica resta di competenza della persona qualificata.",
+					"example": "Un PDF non fornisce testo utilizzabile: il percorso da prevedere segnala il documento da riprendere, invece di presentare una sintesi vuota come analisi completa."
+				},
+				{
+					"id": "bilanci-annuali",
+					"title": "Controllare i documenti di un deposito di bilancio",
+					"status": "Tribunali di commercio",
+					"input": "L’applicazione esamina bilanci, conti economici e dichiarazioni di riservatezza. Controlla i documenti attesi, le informazioni aziendali e la loro coerenza nella pratica.",
+					"result": "Documenti incompleti e incoerenze sono restituiti per verifica.",
+					"operation": "I controlli sviluppati rilevano in particolare bilanci o conti economici incompleti e incoerenze di riservatezza. La restituzione espone i punti identificati e un commento di sintesi per orientare la verifica.",
+					"limit": "Ogni controllo dipende da una regola aziendale e dal tipo di documento. Rilevare una firma, leggere una data o confrontare informazioni non costituisce certificazione della validità giuridica del deposito.",
+					"example": "La riservatezza richiesta e i documenti presenti non concordano: la sintesi evidenzia questa incoerenza per permetterne la risoluzione prima della fase successiva."
+				}
+			]
+		},
+		{
+			"slug": "conoscenza-e-monitoraggio",
+			"label": "Conoscenza e monitoraggio",
+			"title": "Qualificare una fonte, ritrovare il suo supporto e organizzare un corpus.",
+			"summary": "Ricerca di passaggi, qualificazione per tema e riassunti di fonti regolatorie per preparare la lettura degli esperti.",
+			"metaTitle": "Analisi di documenti tecnici e monitoraggio documentale | FDTI",
+			"metaDescription": "Qualificazione di brevetti, riassunti regolatori e tassonomie aziendali: scoprite i prototipi e gli approcci documentali di FDTI e i loro limiti.",
+			"sections": [
+				{
+					"id": "brevetti",
+					"title": "Qualificare un brevetto o un documento tecnico",
+					"status": "Prototipo di qualificazione brevetti",
+					"input": "Il trattamento ricerca i passaggi di un brevetto collegati a una domanda o a un tema, poi prepara una qualificazione accompagnata da riferimenti di pagina.",
+					"result": "L’esperto dispone di una prima qualificazione e delle pagine da consultare.",
+					"operation": "Il prototipo estrae il testo, cerca passaggi vicini alla domanda e richiede una risposta con riferimenti di pagina. L’obiettivo è preparare una qualificazione che l’esperto può confrontare con il documento.",
+					"limit": "Passaggi e riferimenti sono verificati dall’esperto prima di mantenere la qualificazione. Questo lavoro prepara un’analisi brevettuale; non costituisce un parere sulla libertà di sfruttamento.",
+					"example": "La risposta propone che un brevetto sia pertinente per un tema: l’esperto rilegge i passaggi citati e ne verifica la portata prima di conservare questa qualificazione."
+				},
+				{
+					"id": "monitoraggio",
+					"title": "Preparare un monitoraggio e classificare le fonti secondo il business",
+					"status": "Monitoraggio regolatorio, progetto interno",
+					"input": "Il trattamento prepara titoli leggibili e riassunti a partire da pubblicazioni regolatorie. La classificazione per attività o tema si definisce secondo le categorie del vostro business.",
+					"result": "Fonti riassunte per il lavoro di monitoraggio, con una classificazione adattata al vostro corpus.",
+					"operation": "Il nostro progetto interno di monitoraggio regolatorio comprende un trattamento che produce un titolo leggibile e un riassunto a partire dal titolo ufficiale e da un estratto di contenuto. Per il vostro corpus possiamo definire le categorie aziendali e la restituzione attesa: tema, attività interessata, fonte da rileggere.",
+					"limit": "Il riassunto riguarda il contenuto fornito al trattamento. Il perimetro delle fonti, le categorie e la validazione delle interpretazioni regolatorie sono definiti con i team che seguono il monitoraggio.",
+					"example": "Una pubblicazione riguarda più attività: il percorso da progettare permette più categorie o una revisione manuale, invece di forzare una classificazione unica."
+				}
+			]
+		},
+		{
+			"slug": "estrazione-e-integrazione",
+			"label": "Documenti e integrazione",
+			"title": "Collegare documenti, firme e pratica aziendale.",
+			"summary": "Generazione di documenti, firma elettronica, monitoraggio degli stati e scambi con applicazioni esistenti.",
+			"metaTitle": "Firma elettronica e integrazione documentale nel SI | FDTI",
+			"metaDescription": "FDTI integra i documenti nelle applicazioni aziendali: generazione, firma elettronica, dati estratti, monitoraggio degli stati e scambi API.",
+			"sections": [
+				{
+					"id": "firma-elettronica",
+					"title": "Generare documenti e seguire la loro firma elettronica",
+					"status": "Ritiro veicoli, firma elettronica",
+					"input": "L’applicazione prepara i documenti a partire dalla pratica, li trasmette ai firmatari tramite un servizio di firma elettronica e recupera gli eventi di firma.",
+					"result": "Documenti, firmatari e avanzamento restano collegati alla stessa pratica.",
+					"operation": "In un percorso di ritiro veicoli, i certificati di cessione e distruzione sono generati dalle informazioni del veicolo e del proprietario. Sono inviati al servizio di firma; i ritorni aggiornano il monitoraggio associato al veicolo.",
+					"limit": "Il percorso di firma si configura secondo documenti, firmatari e paese. Si distingue dal rilevamento visivo di una firma in un PDF e non implica lo stesso livello di firma elettronica per tutti i progetti.",
+					"example": "Il proprietario firma i documenti di ritiro: il ritorno del servizio di firma aggiorna la sua fase nella pratica, mentre la firma del centro di trattamento resta seguita separatamente."
+				},
+				{
+					"id": "sistema-informativo",
+					"title": "Integrare i risultati nel sistema informativo",
+					"status": "API e applicazioni aziendali",
+					"input": "Le API collegano deposito dei documenti, campi estratti, risultati di controllo e stati alle applicazioni esistenti. Le interfacce permettono ai team di consultare e validare i risultati nel loro percorso.",
+					"result": "Un’integrazione definita intorno ai vostri oggetti aziendali, accessi e passaggi di validazione.",
+					"operation": "Definiamo gli oggetti scambiati — documento, campi estratti, risultato di controllo, correzione e stato — poi le API e le interfacce necessarie. Identità, registro dei trattamenti, monitoraggio dei consumi e regole di ripresa fanno parte di questo perimetro.",
+					"limit": "Integrazioni e hosting sono definiti progetto per progetto. Un’API installata nella rete cliente non significa che tutti i trattamenti OCR o IA siano eseguiti lì. Destinatari dei dati e conservazione devono essere esplicitati.",
+					"example": "Un trattamento fallisce dopo la ricezione di un documento: l’integrazione da progettare conserva lo stato della pratica e permette una ripresa identificata, senza creare una seconda pratica né nascondere l’errore."
+				}
+			]
+		}
+	],
+	"scopeText": "Portate una famiglia di documenti, l’output atteso, gli strumenti coinvolti e la persona che oggi valida. Precisiamo insieme cosa sarà estratto, le fonti da mostrare, le regole di controllo, i casi da respingere e il passaggio verso il vostro sistema aziendale. Gli esempi sensibili sono condivisi solo nel quadro concordato per il progetto.",
+	"faqs": [
+		{
+			"question": "Come valutare la qualità sui nostri documenti?",
+			"answer": "Costituire un campione rappresentativo, includendo scansioni difficili, documenti mancanti e contraddizioni. Verificare separatamente campi estratti, classificazione, supporto delle sintesi sulle fonti ed eccezioni. I criteri di accettazione si definiscono con le persone che validano le pratiche."
+		},
+		{
+			"question": "I documenti possono restare nel nostro ambiente?",
+			"answer": "Il perimetro di hosting si definisce con la vostra IT. Occorre distinguere storage, applicazione, OCR e chiamate ai modelli, precisando per ciascuno dati trasmessi, accessi e conservazione. Non presumiamo che una VPN basti a mantenere tutti i trattamenti presso di voi."
+		},
+		{
+			"question": "L’IA può validare da sola una pratica?",
+			"answer": "Distinguiamo un’informazione estratta, un controllo secondo una regola e una decisione aziendale. Il livello di automazione dipende dalle conseguenze di un errore e dai criteri concordati. Per i passaggi che richiedono responsabilità umana, l’interfaccia deve permettere di verificare, correggere e validare prima di proseguire."
+		}
+	]
+}

@@ -1,0 +1,203 @@
+{
+	"metaTitle": "Analyse documentaire : extraction, synthèse et validation | FDTI",
+	"metaDescription": "FDTI développe des workflows d’analyse documentaire sur mesure : extraction de données, synthèses sourcées, contrôles métier et validation humaine intégrés au SI.",
+	"label": "Analyse documentaire",
+	"title": "Extraire, analyser et contrôler vos documents métier.",
+	"intro": "Préparer la lecture d’un dossier judiciaire, contrôler les pièces d’un dépôt de comptes, qualifier un document technique : nous développons les traitements et les interfaces qui relient vos documents à la prochaine action métier.",
+	"positioning": "Des logiciels sur mesure pour extraire, rapprocher et synthétiser l’information, avec des sources consultables et des étapes de validation définies avec vos équipes.",
+	"overview": "Vue d’ensemble",
+	"navigation": "Navigation analyse documentaire",
+	"home": "Accueil",
+	"expertises": "Expertises",
+	"contact": "Parlons d’un cas concret",
+	"explore": "Explorer les fonctionnalités",
+	"contents": "Sommaire",
+	"relatedTitle": "Autres dossiers d’analyse documentaire",
+	"detailLink": "Voir le fonctionnement",
+	"dossiersLabel": "Ce que nous avons développé",
+	"scopeTitle": "Définir un premier flux vérifiable.",
+	"ctaText": "Montrez-nous un flux réel, ses acteurs et les outils en place.",
+	"ctaButton": "Échanger avec FDTI — 30 minutes",
+	"backToContents": "Revenir au sommaire",
+	"dossiersIntro": "Des pièces reçues jusqu’à la synthèse, aux contrôles et à la signature : découvrez les informations extraites, les traitements et les échanges avec les applications métier.",
+	"evidenceTitle": "Une plateforme d’IA pour les tribunaux de commerce.",
+	"evidenceText": "Nous avons développé des traitements d’extraction de documents judiciaires et de contrôle des dépôts de comptes annuels. Les contrôles portent notamment sur les pièces incomplètes, la cohérence des informations d’entreprise et les niveaux de confidentialité. La synthèse rend les incohérences identifiées lisibles pour la personne qui examine le dossier.",
+	"evidenceNote": "Les fonctionnalités présentées sont issues de nos projets d’analyse documentaire, de recherche technique et de gestion des dossiers. Elles illustrent notre travail ; les documents, les règles et les intégrations sont adaptés à chaque organisation.",
+	"proofs": [
+		{
+			"label": "Tribunaux de commerce",
+			"title": "Analyser les pièces et contrôler les dépôts de comptes.",
+			"text": "Une plateforme d’IA pour extraire le contenu de documents judiciaires, contrôler les pièces comptables et restituer les incohérences identifiées dans le dossier.",
+			"href": "/realisations/automatisation-greffes"
+		},
+		{
+			"label": "Recherche technique",
+			"title": "Qualifier des brevets à partir de leur contenu.",
+			"text": "Un prototype de recherche dans des PDF qui prépare une qualification par thème avec des références de pages, pour orienter la lecture des experts.",
+			"href": "/expertises/analyse-documentaire/connaissance-et-veille#brevets"
+		},
+		{
+			"label": "Signature électronique",
+			"title": "Générer et faire signer les documents d’une reprise.",
+			"text": "Un parcours intégré qui prépare les certificats de cession et de destruction, les transmet aux signataires et rattache le suivi des signatures au véhicule.",
+			"href": "/realisations/plateforme-economie-circulaire"
+		}
+	],
+	"integration": {
+		"label": "Documents et systèmes",
+		"title": "Le résultat doit rejoindre le dossier métier.",
+		"text": "Champs extraits, contrôles, corrections et statuts : nous définissons les échanges avec vos applications existantes. Les droits d’accès, les reprises après erreur et la destination des données font partie du périmètre à cadrer avec votre DSI."
+	},
+	"scopeItems": [
+		{
+			"title": "Compléter un outil existant",
+			"text": "Votre application gère déjà les dossiers ? Nous pouvons y ajouter l’extraction des pièces, un contrôle documentaire ou une synthèse, puis lui transmettre le résultat."
+		},
+		{
+			"title": "Reprendre un traitement documentaire",
+			"text": "Vous disposez déjà d’un outil d’analyse ? Nous examinons les formats, les règles et les restitutions à conserver, puis les étapes à faire évoluer."
+		},
+		{
+			"title": "Construire un parcours complet",
+			"text": "Vous créez un nouveau service ? Nous pouvons relier dépôt de documents, traitements, revue par les équipes et échanges avec les applications partenaires."
+		}
+	],
+	"inputLabel": "Situation de départ",
+	"operationLabel": "Traitement et restitution",
+	"limitLabel": "Point de contrôle",
+	"exampleLabel": "Exemple explicatif — sans document client",
+	"stepsTitle": "Six opérations différentes, six responsabilités à préciser.",
+	"steps": [
+		{
+			"title": "Extraire le texte",
+			"text": "Récupérer la couche texte d’un PDF lorsqu’elle existe. Conserver le lien avec le document et signaler les pages sans contenu exploitable."
+		},
+		{
+			"title": "Reconnaître un scan par OCR",
+			"text": "Transformer l’image d’une page en texte exploitable. Une date ou un montant mal lu reste une erreur possible, même si le document a été traité."
+		},
+		{
+			"title": "Classer",
+			"text": "Associer une pièce ou une source aux catégories du métier. Définir les catégories, les cas multiples et le traitement des documents non classables."
+		},
+		{
+			"title": "Synthétiser",
+			"text": "Condenser l’information utile et permettre de revenir aux passages qui la soutiennent. Une référence générée doit être vérifiée dans la source."
+		},
+		{
+			"title": "Assister une décision",
+			"text": "Rapprocher les informations et les règles pour faire ressortir un écart ou préparer une proposition. Le résultat dépend du périmètre documentaire et des règles retenues."
+		},
+		{
+			"title": "Valider humainement",
+			"text": "Permettre à la personne responsable de confirmer, corriger ou rejeter le résultat avant l’étape métier suivante. L’IA ne se substitue pas à cette responsabilité."
+		}
+	],
+	"guides": [
+		{
+			"slug": "dossiers-et-controles",
+			"label": "Dossiers et contrôles",
+			"title": "Préparer l’examen d’un dossier et rendre les incohérences visibles.",
+			"summary": "Documents judiciaires, comptes annuels, pièces manquantes et cohérence de confidentialité : organiser le travail de vérification.",
+			"metaTitle": "Dossiers judiciaires et contrôles documentaires | FDTI",
+			"metaDescription": "Extraction de pièces judiciaires et contrôles de dépôts de comptes : FDTI développe des traitements documentaires qui préparent la vérification métier.",
+			"sections": [
+				{
+					"id": "pre-analyse",
+					"title": "Pré-analyser un dossier judiciaire",
+					"status": "Tribunaux de commerce",
+					"input": "Le traitement extrait le contenu des pièces PDF d’un dossier judiciaire et le transmet à l’analyse pour préparer la lecture des personnes chargées de l’examiner.",
+					"result": "Le contenu des pièces est préparé pour l’analyse du dossier.",
+					"operation": "L’extraction récupère le contenu des pièces et l’analyse prépare leur examen. Le parcours doit permettre de revenir aux documents et de reprendre les pièces dont le traitement n’a pas abouti.",
+					"limit": "La qualité de l’analyse dépend des pièces fournies et de leur lisibilité. Les documents non exploitables doivent être repris ; la conclusion juridique reste du ressort de la personne compétente.",
+					"example": "Un PDF ne fournit pas de texte exploitable : le parcours à prévoir signale la pièce à reprendre, au lieu de présenter une synthèse vide comme une analyse complète."
+				},
+				{
+					"id": "comptes-annuels",
+					"title": "Contrôler les pièces d’un dépôt de comptes annuels",
+					"status": "Tribunaux de commerce",
+					"input": "L’application examine les bilans, comptes de résultat et déclarations de confidentialité. Elle contrôle les pièces attendues, les informations d’entreprise et leur cohérence dans le dossier.",
+					"result": "Les pièces incomplètes et les incohérences sont restituées pour vérification.",
+					"operation": "Les contrôles développés détectent notamment des bilans ou comptes de résultat incomplets et des incohérences de confidentialité. La restitution expose les points identifiés et un commentaire de synthèse pour orienter la vérification.",
+					"limit": "Chaque contrôle dépend d’une règle métier et du type de pièce. Détecter une signature, lire une date ou comparer des informations ne constitue pas une certification de validité juridique du dépôt.",
+					"example": "La confidentialité demandée et les pièces présentes ne concordent pas : la synthèse met en évidence cette incohérence pour permettre sa résolution avant la suite du traitement."
+				}
+			]
+		},
+		{
+			"slug": "connaissance-et-veille",
+			"label": "Connaissance et veille",
+			"title": "Qualifier une source, retrouver son appui et organiser un corpus.",
+			"summary": "Recherche de passages, qualification par thème et résumés de sources réglementaires pour préparer la lecture des experts.",
+			"metaTitle": "Analyse de documents techniques et veille documentaire | FDTI",
+			"metaDescription": "Qualification de brevets, résumés réglementaires et taxonomies métier : découvrez les prototypes et approches documentaires de FDTI et leurs limites.",
+			"sections": [
+				{
+					"id": "brevets",
+					"title": "Qualifier un brevet ou un document technique",
+					"status": "Prototype de qualification de brevets",
+					"input": "Le traitement recherche les passages d’un brevet en lien avec une question ou un thème, puis prépare une qualification accompagnée de références de pages.",
+					"result": "L’expert dispose d’une première qualification et des pages à consulter.",
+					"operation": "Le prototype développé extrait le texte, recherche des passages proches de la question et demande une réponse accompagnée de références de pages. L’objectif est de préparer une qualification que l’expert peut confronter au document.",
+					"limit": "Les passages et les références sont vérifiés par l’expert avant de retenir la qualification. Ce travail prépare une analyse de brevet ; il ne constitue pas un avis sur la liberté d’exploitation.",
+					"example": "La réponse propose qu’un brevet soit pertinent pour un thème : l’expert relit les passages cités et vérifie leur portée avant de retenir cette qualification."
+				},
+				{
+					"id": "veille",
+					"title": "Préparer une veille et classer les sources selon le métier",
+					"status": "Veille réglementaire — projet interne",
+					"input": "Le traitement prépare des titres lisibles et des résumés à partir de publications réglementaires. Le classement par activité ou par thème se définit selon les catégories de votre métier.",
+					"result": "Des sources résumées pour le travail de veille, avec un classement à adapter à votre corpus.",
+					"operation": "Notre projet interne de veille réglementaire comprend un traitement qui produit un titre lisible et un résumé à partir du titre officiel et d’un extrait de contenu. Pour votre corpus, nous pouvons cadrer les catégories métier et la restitution attendue : thème, activité concernée, source à relire.",
+					"limit": "Le résumé porte sur le contenu fourni au traitement. Le périmètre des sources, les catégories et la validation des interprétations réglementaires sont définis avec les équipes qui assurent la veille.",
+					"example": "Une publication concerne plusieurs activités : le parcours à concevoir permet plusieurs catégories ou une revue manuelle, plutôt que de forcer un classement unique."
+				}
+			]
+		},
+		{
+			"slug": "extraction-et-integration",
+			"label": "Documents et intégration",
+			"title": "Relier les documents, les signatures et le dossier métier.",
+			"summary": "Génération de documents, signature électronique, suivi des statuts et échanges avec les applications existantes.",
+			"metaTitle": "Signature électronique et intégration documentaire au SI | FDTI",
+			"metaDescription": "FDTI intègre les documents aux applications métier : génération, signature électronique, données extraites, suivi des statuts et échanges par API.",
+			"sections": [
+				{
+					"id": "signature-electronique",
+					"title": "Générer les documents et suivre leur signature électronique",
+					"status": "Reprise de véhicules — signature électronique",
+					"input": "L’application prépare les documents à partir du dossier, les transmet aux signataires via un service de signature électronique et récupère les événements de signature.",
+					"result": "Les documents, les signataires et l’avancement restent rattachés au même dossier.",
+					"operation": "Dans un parcours de reprise de véhicules, les certificats de cession et de destruction sont générés à partir des informations du véhicule et de son propriétaire. Ils sont envoyés au service de signature ; les retours mettent à jour le suivi associé au véhicule.",
+					"limit": "Le parcours de signature se configure selon les documents, les signataires et le pays. Il se distingue de la détection visuelle d’une signature dans un PDF et n’implique pas le même niveau de signature électronique pour tous les projets.",
+					"example": "Le propriétaire signe les documents de reprise : le retour du service de signature met à jour son étape dans le dossier, tandis que la signature du centre de traitement reste suivie séparément."
+				},
+				{
+					"id": "systeme-information",
+					"title": "Intégrer les résultats au système d’information",
+					"status": "API et applications métier",
+					"input": "Les API relient le dépôt des documents, les champs extraits, les résultats de contrôle et les statuts aux applications existantes. Les interfaces permettent aux équipes de consulter et de valider les résultats dans leur parcours.",
+					"result": "Une intégration définie autour de vos objets métier, de vos accès et de vos étapes de validation.",
+					"operation": "Nous cadrons les objets échangés — document, champs extraits, résultat de contrôle, correction et statut — puis les API et interfaces nécessaires. Identités, journal des traitements, suivi de consommation et règles de reprise font partie de ce périmètre.",
+					"limit": "Les intégrations et l’hébergement sont définis projet par projet. Une API installée dans le réseau client ne signifie pas que tous les traitements OCR ou IA y sont exécutés. Les destinataires des données et la conservation doivent être explicités.",
+					"example": "Un traitement échoue après réception d’une pièce : l’intégration à concevoir conserve l’état du dossier et permet une reprise identifiée, sans créer un second dossier ni masquer l’échec."
+				}
+			]
+		}
+	],
+	"scopeText": "Apportez une famille de documents, la sortie attendue, les outils concernés et la personne qui valide aujourd’hui. Nous précisons ensemble ce qui sera extrait, les sources à afficher, les règles de contrôle, les cas à rejeter et le passage vers votre système métier. Les exemples sensibles sont partagés uniquement dans le cadre convenu pour le projet.",
+	"faqs": [
+		{
+			"question": "Comment évaluer la qualité sur nos documents ?",
+			"answer": "Constituer un échantillon représentatif, incluant les scans difficiles, les pièces manquantes et les contradictions. Vérifier séparément les champs extraits, le classement, l’appui des synthèses sur les sources et les exceptions. Les critères d’acceptation se définissent avec les personnes qui valident les dossiers."
+		},
+		{
+			"question": "Les documents peuvent-ils rester dans notre environnement ?",
+			"answer": "Le périmètre d’hébergement se définit avec votre DSI. Il faut distinguer le stockage, l’application, l’OCR et les appels aux modèles, puis préciser pour chacun les données transmises, les accès et la conservation. Nous ne présumons pas qu’un VPN suffit à garder tous les traitements chez vous."
+		},
+		{
+			"question": "L’IA peut-elle valider seule un dossier ?",
+			"answer": "Nous distinguons une information extraite, un contrôle selon une règle et une décision métier. Le niveau d’automatisation dépend des conséquences d’une erreur et des critères convenus. Pour les étapes qui requièrent une responsabilité humaine, l’interface doit permettre de vérifier, corriger et valider avant de poursuivre."
+		}
+	]
+}

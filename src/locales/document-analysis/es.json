@@ -1,0 +1,203 @@
+{
+	"metaTitle": "Análisis documental: extracción, síntesis y validación | FDTI",
+	"metaDescription": "FDTI desarrolla flujos de análisis documental a medida: extracción de datos, síntesis con fuentes, controles de negocio y validación humana integrados en el SI.",
+	"label": "Análisis documental",
+	"title": "Extraer, analizar y controlar sus documentos empresariales.",
+	"intro": "Preparar la lectura de un expediente judicial, controlar las piezas de un depósito de cuentas, calificar un documento técnico: desarrollamos los tratamientos y las interfaces que conectan sus documentos con la siguiente acción empresarial.",
+	"positioning": "Software a medida para extraer, conciliar y sintetizar información, con fuentes consultables y etapas de validación definidas con sus equipos.",
+	"overview": "Vista general",
+	"navigation": "Navegación de análisis documental",
+	"home": "Inicio",
+	"expertises": "Especialidades",
+	"contact": "Hablemos de un caso concreto",
+	"explore": "Explorar las funcionalidades",
+	"contents": "Índice",
+	"relatedTitle": "Otros expedientes de análisis documental",
+	"detailLink": "Ver el funcionamiento",
+	"dossiersLabel": "Lo que hemos desarrollado",
+	"scopeTitle": "Definir un primer flujo verificable.",
+	"ctaText": "Muéstrenos un flujo real, sus participantes y las herramientas existentes.",
+	"ctaButton": "Hable con FDTI — 30 minutos",
+	"backToContents": "Volver al índice",
+	"dossiersIntro": "Desde las piezas recibidas hasta la síntesis, los controles y la firma: vea la información extraída, los tratamientos y los intercambios con las aplicaciones de negocio.",
+	"evidenceTitle": "Una plataforma de IA para tribunales de comercio.",
+	"evidenceText": "Hemos desarrollado tratamientos de extracción de documentos judiciales y control de depósitos de cuentas anuales. Los controles cubren piezas incompletas, coherencia de la información de empresa y niveles de confidencialidad. La síntesis hace legibles las incoherencias identificadas para la persona que revisa el expediente.",
+	"evidenceNote": "Las funcionalidades presentadas proceden de nuestros proyectos de análisis documental, investigación técnica y gestión de expedientes. Ilustran nuestro trabajo; documentos, reglas e integraciones se adaptan a cada organización.",
+	"proofs": [
+		{
+			"label": "Tribunales de comercio",
+			"title": "Analizar piezas y controlar depósitos de cuentas.",
+			"text": "Una plataforma de IA para extraer el contenido de documentos judiciales, controlar piezas contables y restituir las incoherencias identificadas en el expediente.",
+			"href": "/realisations/automatizacion-secretarias-judiciales"
+		},
+		{
+			"label": "Investigación técnica",
+			"title": "Calificar patentes a partir de su contenido.",
+			"text": "Un prototipo de búsqueda en PDF que prepara una calificación por tema con referencias de páginas, para orientar la lectura de expertos.",
+			"href": "/expertises/analyse-documentaire/conocimiento-y-vigilancia#patentes"
+		},
+		{
+			"label": "Firma electrónica",
+			"title": "Generar y hacer firmar los documentos de una recuperación.",
+			"text": "Un recorrido integrado que prepara certificados de cesión y destrucción, los transmite a los firmantes y vincula el seguimiento de firmas al vehículo.",
+			"href": "/realisations/plataforma-economia-circular"
+		}
+	],
+	"integration": {
+		"label": "Documentos y sistemas",
+		"title": "El resultado debe llegar al expediente empresarial.",
+		"text": "Campos extraídos, controles, correcciones y estados: definimos los intercambios con sus aplicaciones existentes. Derechos de acceso, reanudación tras errores y destino de los datos forman parte del alcance a definir con su DSI."
+	},
+	"scopeItems": [
+		{
+			"title": "Completar una herramienta existente",
+			"text": "¿Su aplicación ya gestiona expedientes? Podemos añadir extracción de piezas, un control documental o una síntesis, y transmitirle el resultado."
+		},
+		{
+			"title": "Retomar un tratamiento documental",
+			"text": "¿Ya dispone de una herramienta de análisis? Revisamos formatos, reglas y restituciones a conservar, y después las etapas a evolucionar."
+		},
+		{
+			"title": "Construir un recorrido completo",
+			"text": "¿Crea un nuevo servicio? Podemos conectar depósito de documentos, tratamientos, revisión por equipos e intercambios con aplicaciones asociadas."
+		}
+	],
+	"inputLabel": "Situación de partida",
+	"operationLabel": "Tratamiento y restitución",
+	"limitLabel": "Punto de control",
+	"exampleLabel": "Ejemplo explicativo, sin documento de cliente",
+	"stepsTitle": "Seis operaciones distintas, seis responsabilidades que precisar.",
+	"steps": [
+		{
+			"title": "Extraer el texto",
+			"text": "Recuperar la capa de texto de un PDF cuando existe. Mantener el vínculo con el documento y señalar las páginas sin contenido explotable."
+		},
+		{
+			"title": "Reconocer un escaneo con OCR",
+			"text": "Transformar la imagen de una página en texto explotable. Una fecha o un importe mal leído sigue siendo un error posible aunque el documento haya sido tratado."
+		},
+		{
+			"title": "Clasificar",
+			"text": "Asociar una pieza o fuente a las categorías del negocio. Definir las categorías, los casos múltiples y el tratamiento de documentos no clasificables."
+		},
+		{
+			"title": "Sintetizar",
+			"text": "Condensar la información útil y permitir volver a los pasajes que la respaldan. Una referencia generada debe verificarse en la fuente."
+		},
+		{
+			"title": "Asistir una decisión",
+			"text": "Cruzar información y reglas para hacer visible una desviación o preparar una propuesta. El resultado depende del perímetro documental y de las reglas retenidas."
+		},
+		{
+			"title": "Validar humanamente",
+			"text": "Permitir que la persona responsable confirme, corrija o rechace el resultado antes de la siguiente etapa. La IA no sustituye esta responsabilidad."
+		}
+	],
+	"guides": [
+		{
+			"slug": "expedientes-y-controles",
+			"label": "Expedientes y controles",
+			"title": "Preparar el examen de un expediente y hacer visibles las incoherencias.",
+			"summary": "Documentos judiciales, cuentas anuales, piezas faltantes y coherencia de confidencialidad: organizar el trabajo de verificación.",
+			"metaTitle": "Expedientes judiciales y controles documentales | FDTI",
+			"metaDescription": "Extracción de piezas judiciales y controles de depósitos de cuentas: FDTI desarrolla tratamientos documentales que preparan la verificación de negocio.",
+			"sections": [
+				{
+					"id": "pre-analisis",
+					"title": "Preanalizar un expediente judicial",
+					"status": "Tribunales de comercio",
+					"input": "El tratamiento extrae el contenido de las piezas PDF de un expediente judicial y lo transmite al análisis para preparar la lectura de las personas encargadas de revisarlo.",
+					"result": "El contenido de las piezas queda preparado para el análisis del expediente.",
+					"operation": "La extracción recupera el contenido de las piezas y el análisis prepara su examen. El recorrido debe permitir volver a los documentos y reintentar las piezas cuyo tratamiento no terminó.",
+					"limit": "La calidad del análisis depende de las piezas aportadas y de su legibilidad. Los documentos no explotables deben retomarse; la conclusión jurídica sigue correspondiendo a la persona competente.",
+					"example": "Un PDF no proporciona texto explotable: el recorrido previsto señala la pieza que debe retomarse, en lugar de presentar una síntesis vacía como análisis completo."
+				},
+				{
+					"id": "cuentas-anuales",
+					"title": "Controlar las piezas de un depósito de cuentas anuales",
+					"status": "Tribunales de comercio",
+					"input": "La aplicación examina balances, cuentas de resultados y declaraciones de confidencialidad. Controla las piezas esperadas, la información de empresa y su coherencia en el expediente.",
+					"result": "Las piezas incompletas y las incoherencias se restituyen para verificación.",
+					"operation": "Los controles desarrollados detectan, entre otros casos, balances o cuentas de resultados incompletos e incoherencias de confidencialidad. La restitución expone los puntos identificados y un comentario de síntesis para orientar la verificación.",
+					"limit": "Cada control depende de una regla de negocio y del tipo de pieza. Detectar una firma, leer una fecha o comparar información no certifica la validez jurídica del depósito.",
+					"example": "La confidencialidad solicitada y las piezas presentes no concuerdan: la síntesis evidencia la incoherencia para resolverla antes de continuar el tratamiento."
+				}
+			]
+		},
+		{
+			"slug": "conocimiento-y-vigilancia",
+			"label": "Conocimiento y vigilancia",
+			"title": "Calificar una fuente, encontrar su apoyo y organizar un corpus.",
+			"summary": "Búsqueda de pasajes, calificación por tema y resúmenes de fuentes regulatorias para preparar la lectura de expertos.",
+			"metaTitle": "Análisis de documentos técnicos y vigilancia documental | FDTI",
+			"metaDescription": "Calificación de patentes, resúmenes regulatorios y taxonomías de negocio: descubra los prototipos y enfoques documentales de FDTI y sus límites.",
+			"sections": [
+				{
+					"id": "patentes",
+					"title": "Calificar una patente o un documento técnico",
+					"status": "Prototipo de calificación de patentes",
+					"input": "El tratamiento busca los pasajes de una patente relacionados con una pregunta o un tema, y prepara una calificación acompañada de referencias de páginas.",
+					"result": "El experto dispone de una primera calificación y de las páginas a consultar.",
+					"operation": "El prototipo extrae el texto, busca pasajes cercanos a la pregunta y solicita una respuesta con referencias de páginas. El objetivo es preparar una calificación que el experto pueda confrontar con el documento.",
+					"limit": "Los pasajes y referencias son verificados por el experto antes de retener la calificación. Este trabajo prepara un análisis de patente; no constituye una opinión sobre libertad de explotación.",
+					"example": "La respuesta propone que una patente es pertinente para un tema: el experto relee los pasajes citados y verifica su alcance antes de retener esta calificación."
+				},
+				{
+					"id": "vigilancia",
+					"title": "Preparar una vigilancia y clasificar fuentes según el negocio",
+					"status": "Vigilancia regulatoria, proyecto interno",
+					"input": "El tratamiento prepara títulos legibles y resúmenes a partir de publicaciones regulatorias. La clasificación por actividad o tema se define según las categorías de su negocio.",
+					"result": "Fuentes resumidas para el trabajo de vigilancia, con una clasificación adaptada a su corpus.",
+					"operation": "Nuestro proyecto interno de vigilancia regulatoria incluye un tratamiento que produce un título legible y un resumen a partir del título oficial y un extracto de contenido. Para su corpus, podemos definir categorías de negocio y la restitución esperada: tema, actividad afectada, fuente a releer.",
+					"limit": "El resumen se basa en el contenido suministrado al tratamiento. El perímetro de fuentes, las categorías y la validación de interpretaciones regulatorias se definen con los equipos responsables de la vigilancia.",
+					"example": "Una publicación afecta a varias actividades: el recorrido a diseñar permite varias categorías o una revisión manual, en lugar de forzar una clasificación única."
+				}
+			]
+		},
+		{
+			"slug": "extraccion-e-integracion",
+			"label": "Documentos e integración",
+			"title": "Conectar documentos, firmas y expediente empresarial.",
+			"summary": "Generación de documentos, firma electrónica, seguimiento de estados e intercambios con aplicaciones existentes.",
+			"metaTitle": "Firma electrónica e integración documental en el SI | FDTI",
+			"metaDescription": "FDTI integra documentos en aplicaciones de negocio: generación, firma electrónica, datos extraídos, seguimiento de estados e intercambios API.",
+			"sections": [
+				{
+					"id": "firma-electronica",
+					"title": "Generar documentos y seguir su firma electrónica",
+					"status": "Recuperación de vehículos, firma electrónica",
+					"input": "La aplicación prepara los documentos a partir del expediente, los transmite a los firmantes mediante un servicio de firma electrónica y recupera los eventos de firma.",
+					"result": "Los documentos, los firmantes y el avance permanecen vinculados al mismo expediente.",
+					"operation": "En un recorrido de recuperación de vehículos, los certificados de cesión y destrucción se generan a partir de la información del vehículo y de su propietario. Se envían al servicio de firma; los retornos actualizan el seguimiento asociado al vehículo.",
+					"limit": "El recorrido de firma se configura según documentos, firmantes y país. Se distingue de la detección visual de una firma en un PDF y no implica el mismo nivel de firma electrónica para todos los proyectos.",
+					"example": "El propietario firma los documentos de recuperación: el retorno del servicio de firma actualiza su etapa en el expediente, mientras la firma del centro de tratamiento se sigue por separado."
+				},
+				{
+					"id": "sistema-informacion",
+					"title": "Integrar los resultados en el sistema de información",
+					"status": "API y aplicaciones de negocio",
+					"input": "Las API conectan el depósito de documentos, los campos extraídos, los resultados de control y los estados con aplicaciones existentes. Las interfaces permiten a los equipos consultar y validar los resultados en su recorrido.",
+					"result": "Una integración definida alrededor de sus objetos de negocio, accesos y etapas de validación.",
+					"operation": "Definimos los objetos intercambiados — documento, campos extraídos, resultado de control, corrección y estado — y después las API e interfaces necesarias. Identidades, registro de tratamientos, seguimiento de consumo y reglas de reanudación forman parte de este perímetro.",
+					"limit": "Integraciones y alojamiento se definen proyecto por proyecto. Una API instalada en la red del cliente no significa que todos los tratamientos OCR o IA se ejecuten allí. Destinatarios de datos y conservación deben explicitarse.",
+					"example": "Un tratamiento falla tras recibir una pieza: la integración a diseñar conserva el estado del expediente y permite una reanudación identificada, sin crear un segundo expediente ni ocultar el fallo."
+				}
+			]
+		}
+	],
+	"scopeText": "Aporte una familia de documentos, la salida esperada, las herramientas implicadas y la persona que hoy valida. Precisamos juntos qué se extraerá, las fuentes a mostrar, las reglas de control, los casos a rechazar y el paso hacia su sistema de negocio. Los ejemplos sensibles se comparten únicamente dentro del marco acordado para el proyecto.",
+	"faqs": [
+		{
+			"question": "¿Cómo evaluar la calidad en nuestros documentos?",
+			"answer": "Constituir una muestra representativa, con escaneos difíciles, piezas faltantes y contradicciones. Verificar por separado campos extraídos, clasificación, apoyo de las síntesis en las fuentes y excepciones. Los criterios de aceptación se definen con las personas que validan expedientes."
+		},
+		{
+			"question": "¿Pueden los documentos permanecer en nuestro entorno?",
+			"answer": "El perímetro de alojamiento se define con su DSI. Hay que distinguir almacenamiento, aplicación, OCR y llamadas a modelos, y precisar para cada uno datos transmitidos, accesos y conservación. No presumimos que una VPN baste para mantener todos los tratamientos en su entorno."
+		},
+		{
+			"question": "¿Puede la IA validar sola un expediente?",
+			"answer": "Distinguimos información extraída, control según una regla y decisión de negocio. El nivel de automatización depende de las consecuencias de un error y de los criterios acordados. Para etapas que requieren responsabilidad humana, la interfaz debe permitir verificar, corregir y validar antes de continuar."
+		}
+	]
+}

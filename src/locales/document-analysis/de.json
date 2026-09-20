@@ -1,0 +1,203 @@
+{
+	"metaTitle": "Dokumentenanalyse: Extraktion, Zusammenfassung und Validierung | FDTI",
+	"metaDescription": "FDTI entwickelt maßgeschneiderte Workflows zur Dokumentenanalyse: Datenextraktion, quellenbasierte Zusammenfassungen, fachliche Prüfungen und menschliche Validierung in Ihrem Informationssystem.",
+	"label": "Dokumentenanalyse",
+	"title": "Geschäftsdokumente extrahieren, analysieren und kontrollieren.",
+	"intro": "Die Prüfung einer Gerichtsakte vorbereiten, Unterlagen eines Jahresabschlusses kontrollieren, ein technisches Dokument qualifizieren: Wir entwickeln die Verarbeitung und die Oberflächen, die Ihre Dokumente mit dem nächsten fachlichen Schritt verbinden.",
+	"positioning": "Maßgeschneiderte Software zum Extrahieren, Abgleichen und Zusammenfassen von Informationen, mit nachvollziehbaren Quellen und Validierungsschritten, die mit Ihren Teams definiert werden.",
+	"overview": "Übersicht",
+	"navigation": "Navigation Dokumentenanalyse",
+	"home": "Startseite",
+	"expertises": "Kompetenzen",
+	"contact": "Lassen Sie uns einen konkreten Fall besprechen",
+	"explore": "Funktionen entdecken",
+	"contents": "Inhalt",
+	"relatedTitle": "Weitere Dossiers zur Dokumentenanalyse",
+	"detailLink": "Funktionsweise ansehen",
+	"dossiersLabel": "Was wir entwickelt haben",
+	"scopeTitle": "Einen ersten prüfbaren Ablauf definieren.",
+	"ctaText": "Zeigen Sie uns einen realen Ablauf, die beteiligten Akteure und die vorhandenen Systeme.",
+	"ctaButton": "Sprechen Sie mit FDTI — 30 Minuten",
+	"backToContents": "Zurück zum Inhalt",
+	"dossiersIntro": "Von eingehenden Dokumenten bis zu Zusammenfassung, Prüfungen und Signatur: Sehen Sie, welche Informationen extrahiert werden, wie sie verarbeitet werden und wie die Fachanwendungen angebunden sind.",
+	"evidenceTitle": "Eine KI-Plattform für Handelsgerichte.",
+	"evidenceText": "Wir haben Verfahren zur Extraktion gerichtlicher Dokumente und zur Prüfung von Jahresabschluss-Einreichungen entwickelt. Die Prüfungen betreffen unter anderem unvollständige Unterlagen, Konsistenz von Unternehmensinformationen und Vertraulichkeitsstufen. Die Zusammenfassung macht erkannte Unstimmigkeiten für die prüfende Person lesbar.",
+	"evidenceNote": "Die dargestellten Funktionen stammen aus unseren Projekten zur Dokumentenanalyse, technischen Recherche und Aktenverwaltung. Sie illustrieren unsere Arbeit; Dokumente, Regeln und Integrationen werden an jede Organisation angepasst.",
+	"proofs": [
+		{
+			"label": "Handelsgerichte",
+			"title": "Unterlagen analysieren und Jahresabschluss-Einreichungen prüfen.",
+			"text": "Eine KI-Plattform zum Extrahieren gerichtlicher Dokumente, Prüfen buchhalterischer Unterlagen und Darstellen erkannter Unstimmigkeiten in der Akte.",
+			"href": "/realisations/automatisierung-handelsgerichte"
+		},
+		{
+			"label": "Technische Recherche",
+			"title": "Patente anhand ihres Inhalts qualifizieren.",
+			"text": "Ein PDF-Suchprototyp, der eine thematische Qualifikation mit Seitenverweisen vorbereitet, um die Prüfung durch Fachleute zu orientieren.",
+			"href": "/expertises/analyse-documentaire/wissen-und-monitoring#patente"
+		},
+		{
+			"label": "Elektronische Signatur",
+			"title": "Dokumente einer Rücknahme erzeugen und signieren lassen.",
+			"text": "Ein integrierter Ablauf, der Übergabe- und Vernichtungsbescheinigungen vorbereitet, an Unterzeichner sendet und die Signaturverfolgung am Fahrzeug hält.",
+			"href": "/realisations/plattform-fahrzeugruecknahme"
+		}
+	],
+	"integration": {
+		"label": "Dokumente und Systeme",
+		"title": "Das Ergebnis muss in die Fachakte gelangen.",
+		"text": "Extrahierte Felder, Prüfungen, Korrekturen und Status: Wir definieren die Übergaben an Ihre bestehenden Anwendungen. Zugriffsrechte, Wiederaufnahme nach Fehlern und Ziel der Daten gehören zum Umfang, der mit Ihrer IT geklärt wird."
+	},
+	"scopeItems": [
+		{
+			"title": "Ein bestehendes Werkzeug ergänzen",
+			"text": "Verwaltet Ihre Anwendung bereits Akten? Wir können Dokumentextraktion, eine dokumentarische Prüfung oder eine Zusammenfassung hinzufügen und das Ergebnis zurückspielen."
+		},
+		{
+			"title": "Eine Dokumentverarbeitung übernehmen",
+			"text": "Sie haben bereits ein Analysewerkzeug? Wir prüfen Formate, Regeln und Ausgaben, die erhalten bleiben sollen, und danach die Schritte, die weiterentwickelt werden."
+		},
+		{
+			"title": "Einen vollständigen Ablauf bauen",
+			"text": "Sie schaffen einen neuen Service? Wir können Dokumentupload, Verarbeitung, Prüfung durch Teams und Austausch mit Partneranwendungen verbinden."
+		}
+	],
+	"inputLabel": "Ausgangssituation",
+	"operationLabel": "Verarbeitung und Ausgabe",
+	"limitLabel": "Kontrollpunkt",
+	"exampleLabel": "Erläuterndes Beispiel ohne Kundendokument",
+	"stepsTitle": "Sechs verschiedene Vorgänge, sechs zu klärende Verantwortlichkeiten.",
+	"steps": [
+		{
+			"title": "Text extrahieren",
+			"text": "Die Textebene eines PDFs abrufen, wenn sie vorhanden ist. Die Verbindung zum Dokument erhalten und Seiten ohne nutzbaren Inhalt kennzeichnen."
+		},
+		{
+			"title": "Scan per OCR erkennen",
+			"text": "Das Bild einer Seite in nutzbaren Text umwandeln. Ein falsch gelesenes Datum oder ein Betrag bleibt möglich, auch wenn das Dokument verarbeitet wurde."
+		},
+		{
+			"title": "Klassifizieren",
+			"text": "Ein Dokument oder eine Quelle fachlichen Kategorien zuordnen. Kategorien, Mehrfachfälle und den Umgang mit nicht klassifizierbaren Dokumenten definieren."
+		},
+		{
+			"title": "Zusammenfassen",
+			"text": "Nützliche Informationen verdichten und die Rückkehr zu den stützenden Passagen ermöglichen. Ein erzeugter Verweis muss in der Quelle geprüft werden."
+		},
+		{
+			"title": "Eine Entscheidung unterstützen",
+			"text": "Informationen und Regeln abgleichen, um eine Abweichung sichtbar zu machen oder einen Vorschlag vorzubereiten. Das Ergebnis hängt vom Dokumentumfang und den gewählten Regeln ab."
+		},
+		{
+			"title": "Menschlich validieren",
+			"text": "Der verantwortlichen Person ermöglichen, das Ergebnis vor dem nächsten fachlichen Schritt zu bestätigen, zu korrigieren oder abzulehnen. KI ersetzt diese Verantwortung nicht."
+		}
+	],
+	"guides": [
+		{
+			"slug": "akten-und-pruefungen",
+			"label": "Akten und Prüfungen",
+			"title": "Die Prüfung einer Akte vorbereiten und Unstimmigkeiten sichtbar machen.",
+			"summary": "Gerichtsdokumente, Jahresabschlüsse, fehlende Unterlagen und Vertraulichkeitskonsistenz: Prüfungsarbeit organisieren.",
+			"metaTitle": "Gerichtsakten und Dokumentprüfungen | FDTI",
+			"metaDescription": "Extraktion gerichtlicher Unterlagen und Prüfungen von Jahresabschluss-Einreichungen: FDTI entwickelt Dokumentverarbeitung, die fachliche Prüfung vorbereitet.",
+			"sections": [
+				{
+					"id": "voranalyse",
+					"title": "Eine Gerichtsakte voranalysieren",
+					"status": "Handelsgerichte",
+					"input": "Die Verarbeitung extrahiert den Inhalt der PDF-Unterlagen einer Gerichtsakte und übergibt ihn an die Analyse, um die Prüfung durch die zuständigen Personen vorzubereiten.",
+					"result": "Der Inhalt der Unterlagen wird für die Aktenanalyse vorbereitet.",
+					"operation": "Die Extraktion ruft den Inhalt der Unterlagen ab, und die Analyse bereitet deren Prüfung vor. Der Ablauf muss die Rückkehr zu den Dokumenten und die Wiederaufnahme von Unterlagen ermöglichen, deren Verarbeitung nicht abgeschlossen wurde.",
+					"limit": "Die Qualität der Analyse hängt von den bereitgestellten Unterlagen und ihrer Lesbarkeit ab. Nicht nutzbare Dokumente müssen wiederaufgenommen werden; die rechtliche Schlussfolgerung bleibt Aufgabe der zuständigen Person.",
+					"example": "Ein PDF liefert keinen nutzbaren Text: Der vorzusehende Ablauf kennzeichnet die zu wiederholende Unterlage, statt eine leere Zusammenfassung als vollständige Analyse darzustellen."
+				},
+				{
+					"id": "jahresabschluesse",
+					"title": "Unterlagen einer Jahresabschluss-Einreichung prüfen",
+					"status": "Handelsgerichte",
+					"input": "Die Anwendung prüft Bilanzen, Gewinn- und Verlustrechnungen sowie Vertraulichkeitserklärungen. Sie kontrolliert erwartete Unterlagen, Unternehmensinformationen und deren Konsistenz in der Akte.",
+					"result": "Unvollständige Unterlagen und Unstimmigkeiten werden zur Prüfung zurückgegeben.",
+					"operation": "Die entwickelten Prüfungen erkennen unter anderem unvollständige Bilanzen oder Gewinn- und Verlustrechnungen sowie Vertraulichkeitsinkonsistenzen. Die Ausgabe zeigt die identifizierten Punkte und einen zusammenfassenden Kommentar zur Orientierung der Prüfung.",
+					"limit": "Jede Prüfung hängt von einer Geschäftsregel und dem Dokumenttyp ab. Eine Signatur zu erkennen, ein Datum zu lesen oder Informationen zu vergleichen, ist keine Zertifizierung der rechtlichen Gültigkeit der Einreichung.",
+					"example": "Die beantragte Vertraulichkeit und die vorhandenen Unterlagen stimmen nicht überein: Die Zusammenfassung macht diese Unstimmigkeit sichtbar, damit sie vor dem weiteren Ablauf gelöst werden kann."
+				}
+			]
+		},
+		{
+			"slug": "wissen-und-monitoring",
+			"label": "Wissen und Monitoring",
+			"title": "Eine Quelle qualifizieren, ihre Grundlage finden und ein Korpus organisieren.",
+			"summary": "Suche nach Passagen, thematische Qualifikation und Zusammenfassungen regulatorischer Quellen zur Vorbereitung fachlicher Lektüre.",
+			"metaTitle": "Analyse technischer Dokumente und Dokumentenmonitoring | FDTI",
+			"metaDescription": "Patentqualifikation, regulatorische Zusammenfassungen und Fachtaxonomien: Entdecken Sie FDTIs dokumentarische Ansätze und Prototypen mit ihren Grenzen.",
+			"sections": [
+				{
+					"id": "patente",
+					"title": "Ein Patent oder technisches Dokument qualifizieren",
+					"status": "Prototyp zur Patentqualifikation",
+					"input": "Die Verarbeitung sucht in einem Patent nach Passagen, die mit einer Frage oder einem Thema zusammenhängen, und bereitet eine Qualifikation mit Seitenverweisen vor.",
+					"result": "Die Fachperson erhält eine erste Qualifikation und die zu prüfenden Seiten.",
+					"operation": "Der Prototyp extrahiert Text, sucht nach zur Frage passenden Passagen und fordert eine Antwort mit Seitenverweisen an. Ziel ist es, eine Qualifikation vorzubereiten, die die Fachperson mit dem Dokument abgleichen kann.",
+					"limit": "Passagen und Verweise werden von der Fachperson geprüft, bevor die Qualifikation übernommen wird. Diese Arbeit bereitet eine Patentanalyse vor; sie ist kein Freedom-to-Operate-Gutachten.",
+					"example": "Die Antwort schlägt vor, dass ein Patent für ein Thema relevant ist: Die Fachperson liest die zitierten Passagen erneut und prüft ihre Tragweite, bevor diese Qualifikation übernommen wird."
+				},
+				{
+					"id": "monitoring",
+					"title": "Monitoring vorbereiten und Quellen fachlich klassifizieren",
+					"status": "Regulatorisches Monitoring, internes Projekt",
+					"input": "Die Verarbeitung erzeugt lesbare Titel und Zusammenfassungen aus regulatorischen Veröffentlichungen. Die Klassifizierung nach Aktivität oder Thema wird gemäß Ihren Fachkategorien definiert.",
+					"result": "Zusammengefasste Quellen für die Monitoring-Arbeit, mit einer an Ihr Korpus angepassten Klassifizierung.",
+					"operation": "Unser internes Projekt zum regulatorischen Monitoring umfasst eine Verarbeitung, die aus dem offiziellen Titel und einem Inhaltsauszug einen lesbaren Titel und eine Zusammenfassung erzeugt. Für Ihr Korpus können wir die Fachkategorien und die erwartete Ausgabe klären: Thema, betroffene Aktivität, erneut zu lesende Quelle.",
+					"limit": "Die Zusammenfassung bezieht sich auf den der Verarbeitung gelieferten Inhalt. Quellenumfang, Kategorien und Validierung regulatorischer Interpretationen werden mit den für das Monitoring zuständigen Teams definiert.",
+					"example": "Eine Veröffentlichung betrifft mehrere Aktivitäten: Der zu entwerfende Ablauf erlaubt mehrere Kategorien oder eine manuelle Prüfung, statt eine einzige Klassifizierung zu erzwingen."
+				}
+			]
+		},
+		{
+			"slug": "extraktion-und-integration",
+			"label": "Dokumente und Integration",
+			"title": "Dokumente, Signaturen und Fachakte verbinden.",
+			"summary": "Dokumenterzeugung, elektronische Signatur, Statusverfolgung und Austausch mit bestehenden Anwendungen.",
+			"metaTitle": "Elektronische Signatur und Dokumentintegration in Informationssysteme | FDTI",
+			"metaDescription": "FDTI integriert Dokumente in Fachanwendungen: Erzeugung, elektronische Signatur, extrahierte Daten, Statusverfolgung und API-Austausch.",
+			"sections": [
+				{
+					"id": "elektronische-signatur",
+					"title": "Dokumente erzeugen und ihre elektronische Signatur verfolgen",
+					"status": "Fahrzeugrücknahme, elektronische Signatur",
+					"input": "Die Anwendung bereitet Dokumente aus der Akte vor, übermittelt sie über einen elektronischen Signaturdienst an Unterzeichner und ruft Signaturereignisse ab.",
+					"result": "Dokumente, Unterzeichner und Fortschritt bleiben mit derselben Akte verbunden.",
+					"operation": "In einem Fahrzeugrücknahme-Ablauf werden Übergabe- und Vernichtungsbescheinigungen aus Fahrzeug- und Halterinformationen erzeugt. Sie werden an den Signaturdienst gesendet; Rückmeldungen aktualisieren die am Fahrzeug geführte Nachverfolgung.",
+					"limit": "Der Signaturablauf wird nach Dokumenten, Unterzeichnern und Land konfiguriert. Er unterscheidet sich von der visuellen Erkennung einer Signatur in einem PDF und impliziert nicht für alle Projekte dasselbe Niveau elektronischer Signatur.",
+					"example": "Der Halter signiert die Rücknahmedokumente: Die Rückmeldung des Signaturdienstes aktualisiert seinen Schritt in der Akte, während die Signatur des Behandlungszentrums separat verfolgt wird."
+				},
+				{
+					"id": "informationssystem",
+					"title": "Ergebnisse in das Informationssystem integrieren",
+					"status": "APIs und Fachanwendungen",
+					"input": "APIs verbinden Dokumentupload, extrahierte Felder, Prüfergebnisse und Status mit bestehenden Anwendungen. Oberflächen ermöglichen Teams, Ergebnisse in ihrem Ablauf zu prüfen und zu validieren.",
+					"result": "Eine Integration, die um Ihre Fachobjekte, Zugriffe und Validierungsschritte definiert ist.",
+					"operation": "Wir klären die ausgetauschten Objekte – Dokument, extrahierte Felder, Prüfergebnis, Korrektur und Status – und anschließend die erforderlichen APIs und Oberflächen. Identitäten, Verarbeitungsprotokolle, Verbrauchsverfolgung und Wiederaufnahmeregeln gehören zu diesem Umfang.",
+					"limit": "Integrationen und Hosting werden projektweise definiert. Eine im Kundennetz installierte API bedeutet nicht, dass alle OCR- oder KI-Verarbeitungen dort ausgeführt werden. Datenempfänger und Aufbewahrung müssen ausdrücklich festgelegt werden.",
+					"example": "Eine Verarbeitung schlägt nach Eingang einer Unterlage fehl: Die zu entwerfende Integration behält den Aktenstatus bei und ermöglicht eine identifizierte Wiederaufnahme, ohne eine zweite Akte zu erstellen oder den Fehler zu verbergen."
+				}
+			]
+		}
+	],
+	"scopeText": "Bringen Sie eine Dokumentenfamilie, das erwartete Ergebnis, die beteiligten Werkzeuge und die Person mit, die heute validiert. Gemeinsam präzisieren wir, was extrahiert wird, welche Quellen angezeigt werden, welche Prüfregeln gelten, welche Fälle zurückzuweisen sind und wie die Übergabe an Ihr Fachsystem erfolgt. Sensible Beispiele werden nur im vereinbarten Projektrahmen geteilt.",
+	"faqs": [
+		{
+			"question": "Wie bewerten wir die Qualität auf unseren Dokumenten?",
+			"answer": "Stellen Sie eine repräsentative Stichprobe zusammen, einschließlich schwieriger Scans, fehlender Unterlagen und Widersprüche. Prüfen Sie extrahierte Felder, Klassifizierung, quellenbasierte Zusammenfassungen und Ausnahmen getrennt. Akzeptanzkriterien werden mit den Personen definiert, die Akten validieren."
+		},
+		{
+			"question": "Können die Dokumente in unserer Umgebung bleiben?",
+			"answer": "Der Hosting-Umfang wird mit Ihrer IT definiert. Speicher, Anwendung, OCR und Modellaufrufe müssen unterschieden werden; für jeden Teil sind übermittelte Daten, Zugriffe und Aufbewahrung zu klären. Wir setzen nicht voraus, dass ein VPN genügt, um alle Verarbeitungen bei Ihnen zu halten."
+		},
+		{
+			"question": "Kann KI eine Akte allein validieren?",
+			"answer": "Wir unterscheiden extrahierte Information, regelbasierte Prüfung und fachliche Entscheidung. Der Automatisierungsgrad hängt von den Folgen eines Fehlers und den vereinbarten Kriterien ab. Für Schritte mit menschlicher Verantwortung muss die Oberfläche Prüfung, Korrektur und Validierung vor dem Fortfahren ermöglichen."
+		}
+	]
+}

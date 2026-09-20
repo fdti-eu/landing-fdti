@@ -1,0 +1,203 @@
+{
+	"metaTitle": "Document analysis: extraction, synthesis and validation | FDTI",
+	"metaDescription": "FDTI builds custom document-analysis workflows: data extraction, sourced summaries, business checks and human validation integrated with your systems.",
+	"label": "Document analysis",
+	"title": "Extract, analyze and control your business documents.",
+	"intro": "Prepare the review of a legal case file, check the documents in an annual-accounts filing, qualify a technical document: we build the processing and interfaces that connect your documents to the next business action.",
+	"positioning": "Custom software to extract, cross-check and summarize information, with source references and validation steps defined with your teams.",
+	"overview": "Overview",
+	"navigation": "Document-analysis navigation",
+	"home": "Home",
+	"expertises": "Expertise",
+	"contact": "Let's discuss a concrete case",
+	"explore": "Explore the capabilities",
+	"contents": "Contents",
+	"relatedTitle": "Other document-analysis guides",
+	"detailLink": "See how it works",
+	"dossiersLabel": "What we have built",
+	"scopeTitle": "Define a first verifiable flow.",
+	"ctaText": "Show us a real workflow, the people involved, and the tools already in place.",
+	"ctaButton": "Talk to FDTI — 30 minutes",
+	"backToContents": "Back to contents",
+	"dossiersIntro": "From received documents to summaries, checks and signatures: see what information is extracted, how it is processed and how it connects to business applications.",
+	"evidenceTitle": "An AI platform for commercial courts.",
+	"evidenceText": "We developed document-extraction and annual-accounts filing checks. The checks cover incomplete documents, company-information consistency and confidentiality levels. The summary makes identified inconsistencies readable for the person reviewing the file.",
+	"evidenceNote": "The capabilities presented come from our document-analysis, technical-research and case-management projects. They illustrate our work; documents, rules and integrations are adapted to each organization.",
+	"proofs": [
+		{
+			"label": "Commercial courts",
+			"title": "Analyze documents and check annual-account filings.",
+			"text": "An AI platform to extract the content of legal documents, check accounting documents and surface identified inconsistencies in the file.",
+			"href": "/realisations/automatisation-greffes"
+		},
+		{
+			"label": "Technical research",
+			"title": "Qualify patents from their content.",
+			"text": "A PDF-search prototype that prepares thematic qualification with page references, to guide expert review.",
+			"href": "/expertises/analyse-documentaire/knowledge-and-monitoring#patents"
+		},
+		{
+			"label": "Electronic signature",
+			"title": "Generate and route takeover documents for signature.",
+			"text": "An integrated journey that prepares transfer and destruction certificates, sends them to signers and attaches signature tracking to the vehicle.",
+			"href": "/realisations/end-of-life-vehicle-platform"
+		}
+	],
+	"integration": {
+		"label": "Documents and systems",
+		"title": "The result must reach the business file.",
+		"text": "Extracted fields, checks, corrections and statuses: we define the exchanges with your existing applications. Access rights, recovery after errors and data destination are part of the scope to frame with your IT team."
+	},
+	"scopeItems": [
+		{
+			"title": "Complete an existing tool",
+			"text": "Your application already manages cases? We can add document extraction, a documentary check or a summary, then send the result back to it."
+		},
+		{
+			"title": "Take over a document process",
+			"text": "You already have an analysis tool? We review the formats, rules and outputs to preserve, then the steps to evolve."
+		},
+		{
+			"title": "Build a complete journey",
+			"text": "You are creating a new service? We can connect document upload, processing, team review and exchanges with partner applications."
+		}
+	],
+	"inputLabel": "Starting point",
+	"operationLabel": "Processing and output",
+	"limitLabel": "Control point",
+	"exampleLabel": "Explanatory example, no client document",
+	"stepsTitle": "Six different operations, six responsibilities to clarify.",
+	"steps": [
+		{
+			"title": "Extract text",
+			"text": "Retrieve the text layer from a PDF when it exists. Keep the link to the document and flag pages with no usable content."
+		},
+		{
+			"title": "Recognize a scan with OCR",
+			"text": "Turn a page image into usable text. A misread date or amount remains possible even when the document was processed."
+		},
+		{
+			"title": "Classify",
+			"text": "Map a document or source to business categories. Define the categories, multiple cases and how unclassifiable documents are handled."
+		},
+		{
+			"title": "Summarize",
+			"text": "Condense useful information and allow users to return to the passages supporting it. Generated references must be checked against the source."
+		},
+		{
+			"title": "Assist a decision",
+			"text": "Cross-check information and rules to surface a discrepancy or prepare a proposal. The result depends on the document scope and rules retained."
+		},
+		{
+			"title": "Validate humanly",
+			"text": "Let the responsible person confirm, correct or reject the result before the next business step. AI does not replace that responsibility."
+		}
+	],
+	"guides": [
+		{
+			"slug": "case-files-and-controls",
+			"label": "Files and checks",
+			"title": "Prepare file review and make inconsistencies visible.",
+			"summary": "Legal documents, annual accounts, missing pieces and confidentiality consistency: organize verification work.",
+			"metaTitle": "Legal files and document checks | FDTI",
+			"metaDescription": "Extraction of legal documents and annual-account filing checks: FDTI builds document processing that prepares business verification.",
+			"sections": [
+				{
+					"id": "pre-analysis",
+					"title": "Pre-analyze a legal case file",
+					"status": "Commercial courts",
+					"input": "The processing extracts the content of PDF documents in a legal case file and sends it to analysis to prepare the review by the people in charge.",
+					"result": "The content of the documents is prepared for case analysis.",
+					"operation": "Extraction retrieves the content of the documents and analysis prepares their review. The journey must allow users to return to the documents and retry pieces whose processing failed.",
+					"limit": "Analysis quality depends on the documents provided and their readability. Unusable documents must be handled again; the legal conclusion remains the responsibility of the competent person.",
+					"example": "A PDF provides no usable text: the journey to design flags the document for recovery instead of presenting an empty summary as complete analysis."
+				},
+				{
+					"id": "annual-accounts",
+					"title": "Check the documents in an annual-accounts filing",
+					"status": "Commercial courts",
+					"input": "The application examines balance sheets, income statements and confidentiality declarations. It checks expected documents, company information and consistency across the file.",
+					"result": "Incomplete documents and inconsistencies are returned for verification.",
+					"operation": "The checks detect, among other cases, incomplete balance sheets or income statements and confidentiality inconsistencies. The output exposes the identified points and a summary comment to guide verification.",
+					"limit": "Each check depends on a business rule and document type. Detecting a signature, reading a date or comparing information is not a certification of the filing's legal validity.",
+					"example": "The requested confidentiality and the documents present do not match: the summary highlights this inconsistency so it can be resolved before the next processing step."
+				}
+			]
+		},
+		{
+			"slug": "knowledge-and-monitoring",
+			"label": "Knowledge and monitoring",
+			"title": "Qualify a source, find its support and organize a corpus.",
+			"summary": "Passage search, thematic qualification and summaries of regulatory sources to prepare expert review.",
+			"metaTitle": "Technical-document analysis and document monitoring | FDTI",
+			"metaDescription": "Patent qualification, regulatory summaries and business taxonomies: discover FDTI's document approaches and prototypes, with their limits.",
+			"sections": [
+				{
+					"id": "patents",
+					"title": "Qualify a patent or technical document",
+					"status": "Patent-qualification prototype",
+					"input": "The processing searches patent passages related to a question or theme, then prepares a qualification with page references.",
+					"result": "The expert gets a first qualification and the pages to review.",
+					"operation": "The prototype extracts text, searches for passages close to the question and asks for an answer with page references. The goal is to prepare a qualification the expert can compare with the document.",
+					"limit": "Passages and references are verified by the expert before retaining the qualification. This prepares patent analysis; it is not a freedom-to-operate opinion.",
+					"example": "The answer suggests that a patent is relevant to a theme: the expert rereads the cited passages and checks their scope before retaining that qualification."
+				},
+				{
+					"id": "monitoring",
+					"title": "Prepare monitoring and classify sources by business topic",
+					"status": "Regulatory monitoring, internal project",
+					"input": "The processing prepares readable titles and summaries from regulatory publications. Classification by activity or theme is defined according to your business categories.",
+					"result": "Summarized sources for monitoring work, with classification adapted to your corpus.",
+					"operation": "Our internal regulatory-monitoring project includes processing that produces a readable title and summary from the official title and a content excerpt. For your corpus, we can frame business categories and the expected output: theme, activity concerned, source to reread.",
+					"limit": "The summary covers the content supplied to the processing. Source scope, categories and validation of regulatory interpretations are defined with the teams that own monitoring.",
+					"example": "A publication concerns several activities: the journey to design allows multiple categories or manual review, rather than forcing a single classification."
+				}
+			]
+		},
+		{
+			"slug": "extraction-and-integration",
+			"label": "Documents and integration",
+			"title": "Connect documents, signatures and the business file.",
+			"summary": "Document generation, electronic signature, status tracking and exchanges with existing applications.",
+			"metaTitle": "Electronic signature and document integration with business systems | FDTI",
+			"metaDescription": "FDTI integrates documents into business applications: generation, electronic signature, extracted data, status tracking and API exchanges.",
+			"sections": [
+				{
+					"id": "electronic-signature",
+					"title": "Generate documents and track their electronic signature",
+					"status": "Vehicle takeover, electronic signature",
+					"input": "The application prepares documents from the file, sends them to signers through an electronic-signature service and retrieves signature events.",
+					"result": "Documents, signers and progress remain attached to the same file.",
+					"operation": "In a vehicle-takeover journey, transfer and destruction certificates are generated from vehicle and owner information. They are sent to the signature service; returns update the tracking attached to the vehicle.",
+					"limit": "The signature journey is configured according to documents, signers and country. It is distinct from visually detecting a signature in a PDF and does not imply the same electronic-signature level for all projects.",
+					"example": "The owner signs the takeover documents: the signature-service return updates their step in the file, while the treatment center's signature remains tracked separately."
+				},
+				{
+					"id": "information-system",
+					"title": "Integrate results into the information system",
+					"status": "APIs and business applications",
+					"input": "APIs connect document upload, extracted fields, check results and statuses to existing applications. Interfaces let teams review and validate results in their journey.",
+					"result": "An integration defined around your business objects, access rights and validation steps.",
+					"operation": "We frame the exchanged objects: document, extracted fields, check result, correction and status, then the APIs and interfaces required. Identities, processing logs, consumption tracking and recovery rules are part of this scope.",
+					"limit": "Integrations and hosting are defined project by project. An API installed in a client network does not mean all OCR or AI processing runs there. Data recipients and retention must be made explicit.",
+					"example": "A processing step fails after a document is received: the integration to design keeps the file state and allows identified recovery, without creating a second file or hiding the failure."
+				}
+			]
+		}
+	],
+	"scopeText": "Bring a document family, the expected output, the tools involved and the person who validates it today. Together we clarify what will be extracted, which sources to display, the control rules, cases to reject and the handover to your business system. Sensitive examples are shared only within the agreed project framework.",
+	"faqs": [
+		{
+			"question": "How do we assess quality on our documents?",
+			"answer": "Build a representative sample, including difficult scans, missing documents and contradictions. Check extracted fields, classification, source-backed summaries and exceptions separately. Acceptance criteria are defined with the people who validate the files."
+		},
+		{
+			"question": "Can documents remain in our environment?",
+			"answer": "Hosting scope is defined with your IT team. Storage, application, OCR and model calls must be distinguished, with data transmitted, access rights and retention clarified for each. We do not assume a VPN is enough to keep all processing at your premises."
+		},
+		{
+			"question": "Can AI validate a file by itself?",
+			"answer": "We distinguish extracted information, a rule-based check and a business decision. The automation level depends on the consequences of an error and the criteria agreed. For steps requiring human responsibility, the interface must allow users to verify, correct and validate before moving on."
+		}
+	]
+}
