@@ -369,4 +369,8 @@
 	/>
 </svelte:head>
 
-<ExpertiseHub content={hub} eventPrefix="circular" />
+<ExpertiseHub
+	content={hub}
+	eventPrefix="circular"
+	hubTransitionName="expertise-hub-circular"
+/>

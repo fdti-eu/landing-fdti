@@ -159,4 +159,8 @@
 	/>
 </svelte:head>
 
-<ExpertiseHub content={hub} eventPrefix="document_analysis" />
+<ExpertiseHub
+	content={hub}
+	eventPrefix="document_analysis"
+	hubTransitionName="expertise-hub-document-analysis"
+/>

@@ -11,13 +11,45 @@ import itDocumentAnalysis from '$locales/document-analysis/it.json';
 import type { Lang, LocaleData } from '$lib/data';
 import { buildLocalizedUrl } from '$lib/functions/seo';
 
+const htmlEntities: Record<string, string> = {
+	amp: '&',
+	apos: "'",
+	quot: '"',
+	lt: '<',
+	gt: '>',
+	nbsp: ' ',
+	ndash: '–',
+	rdquo: '”',
+	lsquo: '‘',
+	rsquo: '’',
+	deg: '°',
+	aacute: 'á',
+	agrave: 'à',
+	ccedil: 'ç',
+	eacute: 'é',
+	ecirc: 'ê',
+	egrave: 'è',
+	iacute: 'í',
+	oacute: 'ó',
+	ocirc: 'ô',
+	ograve: 'ò',
+	uacute: 'ú',
+	ugrave: 'ù'
+};
+
+function decodeHtmlEntities(content: string): string {
+	return content.replace(/&(#(?:x[\da-f]+|\d+)|[a-z][a-z\d]+);/gi, (entity, code: string) => {
+		if (code.startsWith('#x')) return String.fromCodePoint(Number.parseInt(code.slice(2), 16));
+		if (code.startsWith('#')) return String.fromCodePoint(Number.parseInt(code.slice(1), 10));
+		return htmlEntities[code.toLowerCase()] ?? entity;
+	});
+}
+
 function stripHtml(content?: string): string {
-	return (
-		content
-			?.replace(/<[^>]*>/g, ' ')
-			.replace(/\s+/g, ' ')
-			.trim() || ''
-	);
+	if (!content) return '';
+	return decodeHtmlEntities(content.replace(/<[^>]*>/g, ' '))
+		.replace(/\s+/g, ' ')
+		.trim();
 }
 
 function formatSection(title: string, content?: string): string {
@@ -77,7 +109,8 @@ function buildLanguageSection(locale: Lang, data: LocaleData): string {
 		output += useCases.use_case_list
 			.map((uc) => {
 				let ucText = `\n## ${uc.title} (${uc.category})\n`;
-				ucText += `Context: ${uc.location} | ${uc.date}\n`;
+				const context = [uc.location, uc.date].filter(Boolean).join(' | ');
+				if (context) ucText += `Context: ${context}\n`;
 				ucText += `Challenge: ${uc.challenge}\n`;
 				ucText += `Approach: ${uc.approach}\n`;
 				ucText += `Impact: ${uc.impact}\n`;

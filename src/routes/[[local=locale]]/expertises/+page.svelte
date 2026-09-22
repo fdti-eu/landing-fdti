@@ -301,6 +301,11 @@
 					: data.locale === 'it'
 						? 'FDTI - IA, codice e dati'
 						: 'FDTI - AI, code and data';
+	const expertiseTransitionName = (id: string) => {
+		if (id === 'economie-circulaire') return 'expertise-hub-circular';
+		if (id === 'documents-critiques') return 'expertise-hub-document-analysis';
+		return 'none';
+	};
 </script>
 
 <MetaTags
@@ -344,7 +349,7 @@
 				{#each content.fields as item, index}
 					<a id={item.id} href={item.href}>
 						<span>0{index + 1}</span>
-						<h3>{item.title}</h3>
+						<h3 style={`view-transition-name: ${expertiseTransitionName(item.id)};`}>{item.title}</h3>
 						<p>{item.text}</p>
 						<strong>{item.link} ↗</strong>
 					</a>

@@ -19,6 +19,8 @@
 	$: root = buildLocalizedPath('/expertises/economie-circulaire', data.locale);
 	$: canonical = buildLocalizedUrl(`/expertises/economie-circulaire/${dossier.slug}`, data.locale);
 	$: title = `${dossier.label} | FDTI`;
+	$: dossierIndex = content.dossiers.findIndex((item) => item.slug === dossier.slug);
+	$: dossierTransitionPrefix = `expertise-circular-dossier-${dossierIndex}`;
 	const homeLabels: Record<Lang, string> = {
 		fr: 'Accueil',
 		en: 'Home',
@@ -102,8 +104,10 @@
 <header class="ce-hero ce-detail-hero">
 	<div class="ce-shell">
 		<a class="ce-back" href={root}><span aria-hidden="true">←</span> {content.back}</a>
-		<p class="ce-eyebrow">{dossier.label}</p>
-		<h1>{dossier.title}</h1>
+		<p class="ce-eyebrow" style={`view-transition-name: ${dossierTransitionPrefix}-label;`}>
+			{dossier.label}
+		</p>
+		<h1 style={`view-transition-name: ${dossierTransitionPrefix}-title;`}>{dossier.title}</h1>
 		<p class="ce-lead">{dossier.description}</p>
 		<ul class="ce-terms">
 			{#each dossier.terms as term}<li>{term}</li>{/each}

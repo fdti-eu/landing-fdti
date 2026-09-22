@@ -29,11 +29,13 @@
 	import CircularContact from './CircularContact.svelte';
 	export let content: ExpertiseHubContent;
 	export let eventPrefix: string;
+	export let hubTransitionName: string;
+	$: dossierTransitionPrefix = `expertise-${eventPrefix}-dossier`;
 </script>
 
 <header class="ce-hero ce-hub-hero">
 	<div class="ce-shell ce-simple-hero">
-		<p class="ce-eyebrow">{content.label}</p>
+		<p class="ce-eyebrow" style={`view-transition-name: ${hubTransitionName};`}>{content.label}</p>
 		<h1>{content.title}</h1>
 		<p class="ce-lead">{content.intro}</p>
 		<p class="ce-positioning">{content.positioning}</p>
@@ -74,8 +76,16 @@
 		<div class="ce-related-grid">
 			{#each content.dossiers as dossier, index}
 				<a class="ce-clickable-card" href={dossier.href} aria-labelledby={`guide-${index}`}
-					><span class="ce-eyebrow">{dossier.label}</span>
-					<h3 id={`guide-${index}`}>{dossier.title}</h3>
+					><span
+						class="ce-eyebrow"
+						style={`view-transition-name: ${dossierTransitionPrefix}-${index}-label;`}
+						>{dossier.label}</span
+					>
+					<h3
+						id={`guide-${index}`}
+						style={`view-transition-name: ${dossierTransitionPrefix}-${index}-title;`}
+						>{dossier.title}</h3
+					>
 					<p>{dossier.summary}</p>
 					<span class="ce-link">{content.detailLink}<span aria-hidden="true">↗</span></span></a
 				>

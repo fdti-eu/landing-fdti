@@ -19,6 +19,8 @@
 	$: root = buildLocalizedPath('/expertises/analyse-documentaire', data.locale);
 	$: canonical = buildLocalizedUrl(`/expertises/analyse-documentaire/${guide.slug}`, data.locale);
 	$: title = `${guide.label} | FDTI`;
+	$: guideIndex = content.guides.findIndex((item) => item.slug === guide.slug);
+	$: guideTransitionPrefix = `expertise-document_analysis-dossier-${guideIndex}`;
 	const labels: Record<
 		Lang,
 		{
@@ -135,8 +137,10 @@
 <header class="ce-hero ce-detail-hero">
 	<div class="ce-shell">
 		<a class="ce-back" href={root}><span aria-hidden="true">←</span> {content.label}</a>
-		<p class="ce-eyebrow">{guide.label}</p>
-		<h1>{guide.title}</h1>
+		<p class="ce-eyebrow" style={`view-transition-name: ${guideTransitionPrefix}-label;`}>
+			{guide.label}
+		</p>
+		<h1 style={`view-transition-name: ${guideTransitionPrefix}-title;`}>{guide.title}</h1>
 		<p class="ce-lead">{guide.summary}</p>
 	</div>
 </header>
