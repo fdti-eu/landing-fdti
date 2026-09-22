@@ -23,6 +23,7 @@
 			expertise: string;
 			allExpertise: string;
 			circularEconomy: string;
+			documentAnalysis: string;
 			work: string;
 			allWork: string;
 			courtAI: string;
@@ -37,6 +38,7 @@
 			expertise: 'Expertises',
 			allExpertise: 'Toutes les expertises',
 			circularEconomy: 'Économie circulaire',
+			documentAnalysis: 'Analyse documentaire',
 			work: 'Réalisations',
 			allWork: 'Toutes les réalisations',
 			courtAI: 'IA pour la justice',
@@ -50,6 +52,7 @@
 			expertise: 'Expertise',
 			allExpertise: 'All expertise',
 			circularEconomy: 'Circular economy',
+			documentAnalysis: 'Document analysis',
 			work: 'Work',
 			allWork: 'All work',
 			courtAI: 'AI for commercial courts',
@@ -63,6 +66,7 @@
 			expertise: 'Especialidades',
 			allExpertise: 'Todas las especialidades',
 			circularEconomy: 'Economía circular',
+			documentAnalysis: 'Análisis documental',
 			work: 'Proyectos',
 			allWork: 'Todos los proyectos',
 			courtAI: 'IA para la justicia',
@@ -76,6 +80,7 @@
 			expertise: 'Kompetenzen',
 			allExpertise: 'Alle Kompetenzen',
 			circularEconomy: 'Kreislaufwirtschaft',
+			documentAnalysis: 'Dokumentenanalyse',
 			work: 'Referenzen',
 			allWork: 'Alle Referenzen',
 			courtAI: 'KI für Handelsgerichte',
@@ -89,6 +94,7 @@
 			expertise: 'Competenze',
 			allExpertise: 'Tutte le competenze',
 			circularEconomy: 'Economia circolare',
+			documentAnalysis: 'Analisi documentale',
 			work: 'Progetti',
 			allWork: 'Tutti i progetti',
 			courtAI: 'IA per la giustizia',
@@ -161,6 +167,10 @@
 				{
 					href: buildLocalizedPath('/expertises/economie-circulaire', currentLocale),
 					label: copy.circularEconomy
+				},
+				{
+					href: buildLocalizedPath('/expertises/analyse-documentaire', currentLocale),
+					label: copy.documentAnalysis
 				}
 			]
 		},
