@@ -12,8 +12,8 @@
 		</div>
 		<a
 			class="ce-button"
-			href="https://calendly.com/fdti/30min"
-			data-umami-event="calendly_click"
+			href="#contact"
+			data-umami-event="contact_open"
 			data-umami-event-placement={eventPlacement}
 		>
 			{content.ctaButton}<span aria-hidden="true">↗</span>

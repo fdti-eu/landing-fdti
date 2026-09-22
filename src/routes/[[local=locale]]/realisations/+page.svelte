@@ -470,9 +470,9 @@
 						</div>
 						{#if content.cta.link}
 							<a
-								href={content.cta.link}
-								target="_blank"
-								rel="noreferrer"
+								href="#contact"
+								data-umami-event="contact_open"
+								data-umami-event-placement="realisations_contact"
 								class="relative z-10 inline-flex w-full md:w-auto items-center justify-center px-10 py-4 rounded-full bg-yellow text-darkGrey font-semibold text-center tracking-wide border border-yellow/50 hover:bg-yellow/80 transition-colors"
 							>
 								{content.cta.button}

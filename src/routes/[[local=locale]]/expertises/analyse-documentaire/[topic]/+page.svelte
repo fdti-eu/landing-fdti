@@ -164,8 +164,8 @@
 			</nav>
 			<a
 				class="ce-link"
-				href="https://calendly.com/fdti/30min"
-				data-umami-event="calendly_click"
+				href="#contact"
+				data-umami-event="contact_open"
 				data-umami-event-placement="document_analysis_topic_toc"
 				>{content.contact}<span aria-hidden="true">↗</span></a
 			>

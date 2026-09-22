@@ -4,7 +4,6 @@
 	import CapabilitiesSection from '$lib/components/sections/CapabilitiesSection.svelte';
 	import TechnologiesSection from '$lib/components/sections/TechnologiesSection.svelte';
 	import ConfianceSection from '$lib/components/sections/ConfianceSection.svelte';
-	import ContactSection from '$lib/components/sections/ContactSection.svelte';
 	import UseCasesPreviewSection from '$lib/components/sections/UseCasesPreviewSection.svelte';
 	import ExpertisePreviewSection from '$lib/components/sections/ExpertisePreviewSection.svelte';
 	import { MetaTags } from 'svelte-meta-tags';
@@ -86,6 +85,5 @@
 			<TechnologiesSection content={pageContent.technology_content} locale={currentLocale} />
 			<ConfianceSection content={pageContent.trust_content} />
 		</div>
-		<ContactSection content={pageContent.contact_section} />
 	{/if}
 </div>

@@ -14,6 +14,7 @@
 		type SeoAlternatePaths
 	} from '$lib/functions/seo';
 	import { SUPPORTED_LOCALES } from '$lib/data';
+	import ContactPanel from '$lib/components/ContactPanel.svelte';
 
 	$: detectedLocale = resolveLocaleFromPath($page.url.pathname);
 	$: if ($locale !== detectedLocale) {
@@ -75,6 +76,7 @@
 	<Navbar />
 	<main class="flex-1">
 		<slot />
+		<ContactPanel />
 	</main>
 	<Footer />
 </div>

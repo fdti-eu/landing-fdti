@@ -144,7 +144,7 @@ function buildLanguageSection(locale: Lang, data: LocaleData): string {
 	output += `\n# EXPERTISE\n${buildLocalizedUrl('/expertises', locale)}\n`;
 
 	if (home?.contact_section) {
-		output += `\n# CONTACT\nEmail: ${home.contact_section.mail}\nAddress: ${home.contact_section.address}\n`;
+		output += `\n# CONTACT\nEmail: ${home.contact_section.mail}\nCallback requests: use any contact call-to-action on the website; only an email address or phone number is required.\nAddress: ${home.contact_section.address}\n`;
 	}
 
 	return output;

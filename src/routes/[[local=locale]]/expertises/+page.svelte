@@ -349,7 +349,9 @@
 				{#each content.fields as item, index}
 					<a id={item.id} href={item.href}>
 						<span>0{index + 1}</span>
-						<h3 style={`view-transition-name: ${expertiseTransitionName(item.id)};`}>{item.title}</h3>
+						<h3 style={`view-transition-name: ${expertiseTransitionName(item.id)};`}>
+							{item.title}
+						</h3>
 						<p>{item.text}</p>
 						<strong>{item.link} ↗</strong>
 					</a>
@@ -361,8 +363,8 @@
 		<div class="editorial-shell">
 			<p class="editorial-cta-copy">{content.ctaText}</p>
 			<a
-				href="https://calendly.com/fdti/30min"
-				data-umami-event="calendly_click"
+				href="#contact"
+				data-umami-event="contact_open"
 				data-umami-event-placement="expertises_contact">{content.ctaButton} ↗</a
 			>
 		</div>

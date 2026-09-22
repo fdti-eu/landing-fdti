@@ -43,8 +43,8 @@
 			<a class="ce-button" href="#flux">{content.explore}<span aria-hidden="true">↓</span></a>
 			<a
 				class="ce-link"
-				href="https://calendly.com/fdti/30min"
-				data-umami-event="calendly_click"
+				href="#contact"
+				data-umami-event="contact_open"
 				data-umami-event-placement={`${eventPrefix}_hero`}
 				>{content.contact}<span aria-hidden="true">↗</span></a
 			>
@@ -84,8 +84,9 @@
 					<h3
 						id={`guide-${index}`}
 						style={`view-transition-name: ${dossierTransitionPrefix}-${index}-title;`}
-						>{dossier.title}</h3
 					>
+						{dossier.title}
+					</h3>
 					<p>{dossier.summary}</p>
 					<span class="ce-link">{content.detailLink}<span aria-hidden="true">↗</span></span></a
 				>
