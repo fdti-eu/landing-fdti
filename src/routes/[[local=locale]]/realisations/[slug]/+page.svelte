@@ -56,7 +56,7 @@
 			},
 			'3': {
 				description:
-					'En moyenne, environ 400 batteries en fin de vie sont enregistrées chaque mois sur la plateforme ELB.'
+					'Une marketplace web centralise collecte, recyclage et revente de batteries dans 18 pays, avec 500 batteries redirigées chaque mois.'
 			},
 			'8': {
 				title: 'Plateforme d’opérations de recyclage de batteries | FDTI',
@@ -93,7 +93,7 @@
 			},
 			'3': {
 				description:
-					'On average, around 400 end-of-life batteries are registered on the ELB platform each month.'
+					'A marketplace coordinates battery collection, recycling and resale across 18 countries via a portal and API, redirecting 500 batteries each month.'
 			},
 			'8': {
 				description:
@@ -117,12 +117,6 @@
 					'A data warehouse moves 98 complex JSON objects from Azure to Snowflake and feeds over 150 tables and views with latency below one minute for BI teams.'
 			}
 		},
-		es: {
-			'3': {
-				description:
-					'De media, se registran alrededor de 400 baterías al final de su vida útil al mes en la plataforma ELB.'
-			}
-		},
 		de: {
 			'1': {
 				description:
@@ -134,7 +128,7 @@
 			},
 			'3': {
 				description:
-					'Im Durchschnitt werden auf der ELB-Plattform monatlich rund 400 Altbatterien registriert.'
+					'Ein Marktplatz koordiniert Sammlung, Recycling und Wiederverkauf von Batterien in 18 Ländern über Portal und API und bearbeitet monatlich 500 Batterien.'
 			},
 			'8': {
 				title: 'Managementsystem für Batterierecycling | FDTI',
@@ -171,7 +165,7 @@
 			},
 			'3': {
 				description:
-					'In media, sulla piattaforma ELB vengono registrate circa 400 batterie a fine vita al mese.'
+					'Un marketplace coordina raccolta, riciclo e rivendita delle batterie in 18 paesi tramite portale e API, indirizzando 500 batterie al mese.'
 			},
 			'8': {
 				title: 'Piattaforma operativa per il riciclo delle batterie | FDTI',

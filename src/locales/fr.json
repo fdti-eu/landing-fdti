@@ -1069,11 +1069,11 @@
 				"location": "Europe",
 				"challenge": "Un constructeur automobile avait besoin d'un outil central pour piloter la collecte, le recyclage et la revente de ses batteries, en lien avec ses partenaires et acheteurs. L'outil devait gérer la traçabilité complète du processus pour répondre à des contraintes réglementaires liées à la structuration des filières REP (Responsabilité Élargie du Producteur).",
 				"approach": "Marketplace web connectée aux ERP partenaires, agissant comme plateforme de logistique et de mise en relation. Tracabilité de bout en bout et flux automatisés vers les acheteurs ou les recycleurs, négociation de prix et de conditions avec les partenaires intégrés dans l'app. Tout le processus peut être géré depuis le portail ou par l'API.",
-				"impact": "En moyenne, environ 400 batteries en fin de vie sont enregistrées chaque mois sur la plateforme ELB. Des centaines de propriétaires et prestataires de service l'utilisent, avec un reporting centralisé pour les autorités et une interface d'administration pour les employés du client. La solution s'intègre dans l'écosystème existant.",
+				"impact": "500 batteries redirigées chaque mois par des centaines de propriétaires et prestataires de service, avec reporting centralisé pour les autorités et interface d'administration pour les employés du client. Intégration de la solution dans l'écosystème.",
 				"metrics": [
 					{
-						"label": "Batteries enregistrées/mois",
-						"value": "≈400"
+						"label": "Batteries/mois",
+						"value": "500"
 					},
 					{
 						"label": "Partenaires connectés",

@@ -1061,11 +1061,11 @@
 				"location": "Europe",
 				"challenge": "An automotive manufacturer needed a central tool to manage the collection, recycling, and resale of its batteries in collaboration with partners and buyers. The tool had to provide end-to-end process traceability to meet regulatory requirements as Extended Producer Responsibility (EPR) systems were being established.",
 				"approach": "A web marketplace connected to partner ERP systems that serves as both a logistics and matchmaking platform. It provides end-to-end traceability, automates flows to buyers or recyclers, and integrates price and terms negotiations with partners. The entire process can be managed through the portal or the API.",
-				"impact": "On average, around 400 end-of-life batteries are registered on the ELB platform each month. Hundreds of owners and service providers use it, with centralized reporting for authorities and an administration interface for the client's employees. The solution integrates seamlessly with the existing ecosystem.",
+				"impact": "500 batteries are routed each month by hundreds of owners and service providers, with centralized reporting for authorities and an administration interface for the client's employees. The solution integrates seamlessly with the existing ecosystem.",
 				"metrics": [
 					{
-						"label": "Batteries registered per month",
-						"value": "≈400"
+						"label": "Batteries per month",
+						"value": "500"
 					},
 					{
 						"label": "Partners onboarded",

@@ -1069,11 +1069,11 @@
 				"location": "Europa",
 				"challenge": "Ein Automobilhersteller benötigte ein zentrales System, um Sammlung, Recycling und Weiterverkauf seiner Batterien gemeinsam mit Partnern und Käufern zu steuern. Es musste den gesamten Prozess rückverfolgbar machen und regulatorische Anforderungen beim Aufbau von Systemen der erweiterten Herstellerverantwortung (EPR) erfüllen.",
 				"approach": "Web-Marktplatz mit Anbindung an die ERP-Systeme der Partner, der als Logistik- und Vermittlungsplattform dient. Durchgängige Rückverfolgbarkeit, automatisierte Abläufe zu Käufern oder Recyclern sowie Preis- und Konditionsverhandlungen mit den Partnern sind integriert. Der gesamte Prozess kann über das Portal oder die API verwaltet werden.",
-				"impact": "Im Durchschnitt werden auf der ELB-Plattform monatlich rund 400 Altbatterien registriert. Hunderte von Eigentümern und Dienstleistern nutzen sie. Behörden erhalten eine zentrale Berichterstattung, die Kundenmitarbeiter eine Verwaltungsoberfläche. Die Lösung ist nahtlos in das bestehende Ökosystem integriert.",
+				"impact": "Jeden Monat werden 500 Batterien von Hunderten von Eigentümern und Dienstleistern über die Plattform geeigneten Wiederverwendungs- oder Recyclingwegen zugeführt. Behörden erhalten eine zentrale Berichterstattung, die Kundenmitarbeiter eine Verwaltungsoberfläche. Die Lösung ist nahtlos in das bestehende Ökosystem integriert.",
 				"metrics": [
 					{
-						"label": "Registrierte Batterien/Monat",
-						"value": "≈400"
+						"label": "Batterien/Monat",
+						"value": "500"
 					},
 					{
 						"label": "Angeschlossene Partner",
