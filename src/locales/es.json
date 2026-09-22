@@ -1052,9 +1052,9 @@
 				"location": "Europa",
 				"challenge": "Un fabricante de automóviles necesitaba una herramienta central para gestionar la recogida, el reciclaje y la reventa de sus baterías, en colaboración con sus socios y compradores. La herramienta debía gestionar la trazabilidad completa del proceso para responder a las exigencias normativas relacionadas con la estructuración de los sistemas de RAP (Responsabilidad Ampliada del Productor).",
 				"approach": "Marketplace web conectado a los ERP de los socios, que funciona como plataforma logística y de intermediación. Trazabilidad de principio a fin y flujos automatizados hacia compradores o recicladores, con la negociación de precios y condiciones con los socios integrada en la aplicación. Todo el proceso puede gestionarse desde el portal o mediante la API.",
-				"impact": "Varios miles de baterías redirigidas cada mes por cientos de propietarios y proveedores de servicios, con informes centralizados para las autoridades y una interfaz de administración para los empleados del cliente. Integración de la solución en el ecosistema.",
+				"impact": "De media, se registran alrededor de 400 baterías al final de su vida útil al mes en la plataforma ELB. Cientos de propietarios y proveedores de servicios la utilizan, con informes centralizados para las autoridades y una interfaz de administración para los empleados del cliente. La solución se integra en el ecosistema existente.",
 				"metrics": [
-					{ "label": "Baterías/mes", "value": "+8 k" },
+					{ "label": "Baterías registradas/mes", "value": "≈400" },
 					{ "label": "Socios conectados", "value": "+300" },
 					{ "label": "Países cubiertos", "value": "18" }
 				],
