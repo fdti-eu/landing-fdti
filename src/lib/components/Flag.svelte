@@ -9,9 +9,9 @@
 {#key displayedFlag}
 	<svg
 		class={$$props.class}
-		width="100%"
-		height="100%"
-		viewBox="0 0 {displayedFlag?.box} {displayedFlag?.box}"
+		viewBox="0 85.333 512 341.334"
+		preserveAspectRatio="xMidYMid slice"
+		aria-hidden="true"
 	>
 		{@html displayedFlag?.svg}
 	</svg>
