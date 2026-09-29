@@ -48,7 +48,7 @@
 		fr: {
 			'1': {
 				description:
-					'Une plateforme IA reliée aux outils des greffiers préanalyse les dossiers dans le VPN client : environ 40 milliards de tokens traités par an dans 48 tribunaux.'
+					'Une plateforme IA reliée aux outils des greffiers préanalyse environ 400 000 dossiers par an dans le VPN client, pour 48 tribunaux.'
 			},
 			'2': {
 				description:
@@ -85,7 +85,7 @@
 		en: {
 			'1': {
 				description:
-					'An AI platform embedded in court clerks’ software pre-analyzes case files inside the client VPN, processing around 40 billion tokens a year across 48 courts.'
+					'An AI platform embedded in court clerks’ software pre-analyzes around 400,000 case files a year inside the client VPN across 48 courts.'
 			},
 			'2': {
 				description:
@@ -120,7 +120,7 @@
 		de: {
 			'1': {
 				description:
-					'Eine in die Software der Geschäftsstellen eingebettete KI-Plattform analysiert Akten im Kundennetzwerk vor und verarbeitet in 48 Gerichten rund 40 Milliarden Tokens pro Jahr.'
+					'Eine in die Software der Geschäftsstellen eingebettete KI-Plattform analysiert im Kundennetzwerk rund 400.000 Akten pro Jahr für 48 Gerichte vor.'
 			},
 			'2': {
 				description:
@@ -157,7 +157,7 @@
 		it: {
 			'1': {
 				description:
-					'Una piattaforma di IA integrata nel software delle cancellerie dei tribunali di commercio francesi preanalizza i fascicoli nella VPN del cliente, elaborando circa 40 miliardi di token all’anno in 48 tribunali.'
+					'Una piattaforma di IA integrata nel software delle cancellerie dei tribunali di commercio francesi preanalizza circa 400.000 pratiche all’anno nella VPN del cliente per 48 tribunali.'
 			},
 			'2': {
 				description:
