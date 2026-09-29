@@ -233,21 +233,11 @@
 	.hero-status {
 		display: flex;
 		align-items: center;
-		gap: 12px;
 		color: var(--color-yellow);
 		text-transform: uppercase;
 		letter-spacing: 0.13em;
 		font-size: 12px;
 		margin-bottom: 27px;
-	}
-	.hero-status::before {
-		content: '';
-		width: 6px;
-		height: 6px;
-		background: var(--color-yellow);
-		border-radius: 50%;
-		flex-shrink: 0;
-		box-shadow: 0 0 0 5px color-mix(in srgb, var(--color-yellow) 9%, transparent);
 	}
 	.hero-copy h1 {
 		font-size: clamp(44px, 4.95vw, 76px);
