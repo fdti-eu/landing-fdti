@@ -193,7 +193,7 @@
 		},
 		{
 			"question": "I documenti possono restare nel nostro ambiente?",
-			"answer": "Il perimetro di hosting si definisce con la vostra IT. Occorre distinguere storage, applicazione, OCR e chiamate ai modelli, precisando per ciascuno dati trasmessi, accessi e conservazione. Non presumiamo che una VPN basti a mantenere tutti i trattamenti presso di voi."
+			"answer": "Per il vostro progetto, il perimetro di hosting si definisce con il vostro reparto IT e secondo i requisiti di legge applicabili, in particolare in Francia o nell’Unione europea. Occorre distinguere storage, applicazione, OCR e chiamate ai modelli, precisando per ciascuno dati trasmessi, accessi e conservazione. Non presumiamo che una VPN basti a mantenere tutti i trattamenti presso di voi. L’informativa sulla privacy di questo sito descrive i trattamenti propri di FDTI; non determina l’architettura del vostro progetto."
 		},
 		{
 			"question": "L’IA può validare da sola una pratica?",

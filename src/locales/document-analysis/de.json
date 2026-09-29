@@ -193,7 +193,7 @@
 		},
 		{
 			"question": "Können die Dokumente in unserer Umgebung bleiben?",
-			"answer": "Der Hosting-Umfang wird mit Ihrer IT definiert. Speicher, Anwendung, OCR und Modellaufrufe müssen unterschieden werden; für jeden Teil sind übermittelte Daten, Zugriffe und Aufbewahrung zu klären. Wir setzen nicht voraus, dass ein VPN genügt, um alle Verarbeitungen bei Ihnen zu halten."
+			"answer": "Für Ihr Projekt wird der Hosting-Umfang mit Ihrer IT und nach den geltenden rechtlichen Anforderungen festgelegt, insbesondere in Frankreich oder der Europäischen Union. Speicher, Anwendung, OCR und Modellaufrufe müssen unterschieden werden; für jeden Teil sind übermittelte Daten, Zugriffe und Aufbewahrung zu klären. Wir setzen nicht voraus, dass ein VPN genügt, um alle Verarbeitungen bei Ihnen zu halten. Die Datenschutzerklärung dieser Website beschreibt die eigenen Verarbeitungen von FDTI; sie legt nicht die Architektur Ihres Projekts fest."
 		},
 		{
 			"question": "Kann KI eine Akte allein validieren?",

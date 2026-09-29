@@ -193,7 +193,7 @@
 		},
 		{
 			"question": "Les documents peuvent-ils rester dans notre environnement ?",
-			"answer": "Le périmètre d’hébergement se définit avec votre DSI. Il faut distinguer le stockage, l’application, l’OCR et les appels aux modèles, puis préciser pour chacun les données transmises, les accès et la conservation. Nous ne présumons pas qu’un VPN suffit à garder tous les traitements chez vous."
+			"answer": "Pour votre projet, le périmètre d’hébergement se définit avec votre DSI et les exigences légales applicables, notamment en France ou dans l’Union européenne. Il faut distinguer le stockage, l’application, l’OCR et les appels aux modèles, puis préciser pour chacun les données transmises, les accès et la conservation. Nous ne présumons pas qu’un VPN suffit à garder tous les traitements chez vous. La politique de confidentialité de ce site décrit les traitements propres à FDTI ; elle n’impose pas l’architecture de vos projets."
 		},
 		{
 			"question": "L’IA peut-elle valider seule un dossier ?",

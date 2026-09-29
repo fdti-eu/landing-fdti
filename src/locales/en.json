@@ -896,7 +896,7 @@
 			"title": "Contact"
 		},
 		"CII": {
-			"description": "<p>FDTI Consulting held French Innovation Tax Credit (CII) accreditation from 2020 through 2024, granted by the French Directorate General for Enterprise. Eligible clients may claim a tax credit equal to 20% of qualifying expenses incurred with us.</p>",
+			"description": "<p>FDTI Consulting held French Innovation Tax Credit (CII) accreditation from 2020 through 2024. This accreditation has expired; a new application could be made for eligible future projects.</p>",
 			"image": {
 				"filename_disk": "image.png",
 				"url": "/images/cms/branding/image.png",
@@ -1040,7 +1040,7 @@
 					},
 					{
 						"label": "Trustpilot score",
-						"value": "4.7"
+						"value": "4.8"
 					}
 				],
 				"tags": [

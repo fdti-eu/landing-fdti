@@ -1031,7 +1031,7 @@
 				"metrics": [
 					{ "label": "Paesi coperti", "value": "5" },
 					{ "label": "Rete di partner", "value": "+5 000" },
-					{ "label": "Punteggio Trustpilot", "value": "4.7" }
+					{ "label": "Punteggio Trustpilot", "value": "4,8" }
 				],
 				"links": [
 					{ "label": "Sito Valorauto", "url": "https://www.valorauto.com/" },

@@ -193,7 +193,7 @@
 		},
 		{
 			"question": "Can documents remain in our environment?",
-			"answer": "Hosting scope is defined with your IT team. Storage, application, OCR and model calls must be distinguished, with data transmitted, access rights and retention clarified for each. We do not assume a VPN is enough to keep all processing at your premises."
+			"answer": "For your project, hosting scope is defined with your IT team and the applicable legal requirements, including those in France or the European Union. Storage, application, OCR and model calls must be distinguished, with data transmitted, access rights and retention clarified for each. We do not assume a VPN is enough to keep all processing at your premises. This website's privacy policy describes FDTI's own processing; it does not dictate the architecture of your project."
 		},
 		{
 			"question": "Can AI validate a file by itself?",

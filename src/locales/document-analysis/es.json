@@ -193,7 +193,7 @@
 		},
 		{
 			"question": "¿Pueden los documentos permanecer en nuestro entorno?",
-			"answer": "El perímetro de alojamiento se define con su DSI. Hay que distinguir almacenamiento, aplicación, OCR y llamadas a modelos, y precisar para cada uno datos transmitidos, accesos y conservación. No presumimos que una VPN baste para mantener todos los tratamientos en su entorno."
+			"answer": "Para su proyecto, el perímetro de alojamiento se define con su DSI y los requisitos legales aplicables, en particular en Francia o en la Unión Europea. Hay que distinguir almacenamiento, aplicación, OCR y llamadas a modelos, y precisar para cada uno datos transmitidos, accesos y conservación. No presumimos que una VPN baste para mantener todos los tratamientos en su entorno. La política de privacidad de este sitio describe los tratamientos propios de FDTI; no determina la arquitectura de su proyecto."
 		},
 		{
 			"question": "¿Puede la IA validar sola un expediente?",

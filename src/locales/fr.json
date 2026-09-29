@@ -904,7 +904,7 @@
 			"title": "Contact"
 		},
 		"CII": {
-			"description": "<p>Nous sommes agr&eacute;&eacute;s Cr&eacute;dit d&rsquo;Imp&ocirc;t Innovation (CII) depuis 2020 et jusqu'en 2024 par la Direction G&eacute;n&eacute;rale des entreprises. Cela implique que vous pouvez obtenir un cr&eacute;dit d'imp&ocirc;t sur 20% des d&eacute;penses engag&eacute;es avec nous.</p>",
+			"description": "<p>FDTI Consulting a b&eacute;n&eacute;fici&eacute; de l'agr&eacute;ment Cr&eacute;dit d&rsquo;Imp&ocirc;t Innovation (CII) de 2020 &agrave; 2024. Cet agr&eacute;ment est arriv&eacute; &agrave; son terme ; un nouvel agr&eacute;ment pourrait &ecirc;tre demand&eacute; pour de futurs projets &eacute;ligibles.</p>",
 			"image": {
 				"filename_disk": "image.png",
 				"url": "/images/cms/branding/image.png",
@@ -1048,7 +1048,7 @@
 					},
 					{
 						"label": "Score Trustpilot",
-						"value": "4.7"
+						"value": "4,8"
 					}
 				],
 				"links": [
