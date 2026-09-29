@@ -1006,9 +1006,9 @@
 				"location": "Francia",
 				"challenge": "Un editor de software para el personal de los registros judiciales quería integrar funcionalidades de IA directamente en su plataforma para mejorar el tiempo de ejecución y la precisión de determinadas tareas laboriosas.",
 				"approach": "Arquitectura modular estructurada por casos de uso de IA (LLM especializados). API de inteligencia artificial alojada en los servidores del cliente (FastAPI), plenamente integrada en la herramienta existente y también accesible para otros usuarios mediante una API segura. Portal TypeScript/SvelteKit.",
-				"impact": "Preanálisis mediante IA ejecutado en paralelo a los flujos de negocio: alrededor de 40 mil millones de tokens procesados al año en un primer caso de uso, con un ahorro de tiempo equivalente significativo y respetando los requisitos de confidencialidad del sector judicial.",
+				"impact": "Preanálisis mediante IA ejecutado en paralelo a los flujos de negocio: alrededor de 400 000 expedientes procesados al año en un primer caso de uso, con un ahorro de tiempo equivalente significativo y respetando los requisitos de confidencialidad del sector judicial.",
 				"metrics": [
-					{ "label": "Tokens procesados / año", "value": "40 mil millones" },
+					{ "label": "Expedientes procesados / año", "value": "400 000" },
 					{ "label": "Ahorro equivalente", "value": "≈16 días-persona/día" },
 					{ "label": "Tribunales equipados", "value": "48" }
 				],

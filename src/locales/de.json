@@ -1002,11 +1002,11 @@
 				"location": "Frankreich",
 				"challenge": "Ein Softwareanbieter für die Geschäftsstellen von Handelsgerichten wollte KI-Funktionen direkt in seine Plattform integrieren, um bestimmte zeitaufwendige Aufgaben schneller und präziser zu bearbeiten.",
 				"approach": "Modulare Architektur nach KI-Anwendungsfällen mit spezialisierten LLMs. Eine auf den Servern des Kunden gehostete KI-API auf Basis von FastAPI ist vollständig in die bestehende Fachsoftware integriert und steht weiteren Benutzern über eine abgesicherte API zur Verfügung. Hinzu kommt ein TypeScript-/SvelteKit-Portal.",
-				"impact": "Die KI-Voranalyse läuft parallel zu den Geschäftsabläufen: Rund 40 Milliarden Token werden pro Jahr in einem ersten Anwendungsfall verarbeitet, mit einer erheblichen Zeitersparnis bei gleichzeitiger Einhaltung der gerichtlichen Vertraulichkeitsanforderungen.",
+				"impact": "Die KI-Voranalyse läuft parallel zu den Geschäftsabläufen: Rund 400.000 Akten werden pro Jahr in einem ersten Anwendungsfall verarbeitet, mit einer erheblichen Zeitersparnis bei gleichzeitiger Einhaltung der gerichtlichen Vertraulichkeitsanforderungen.",
 				"metrics": [
 					{
-						"label": "Verarbeitete Token / Jahr",
-						"value": "40 Mrd."
+						"label": "Verarbeitete Akten / Jahr",
+						"value": "400.000"
 					},
 					{
 						"label": "Eingesparte Zeit (Äquivalent)",

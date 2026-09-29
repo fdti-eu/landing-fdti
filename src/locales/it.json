@@ -1002,9 +1002,9 @@
 				"location": "Francia",
 				"challenge": "Un editore di software per le cancellerie dei tribunali di commercio francesi desiderava integrare funzionalità di IA direttamente nella propria piattaforma, per migliorare velocità e precisione di alcune attività lunghe e ripetitive.",
 				"approach": "Architettura modulare strutturata per casi d'uso di IA, con LLM specializzati. API di intelligenza artificiale ospitata sui server del cliente (FastAPI), perfettamente integrata nello strumento esistente e accessibile anche ad altri utenti tramite API sicura. Portale TypeScript/SvelteKit.",
-				"impact": "Preanalisi IA eseguita in parallelo ai flussi aziendali: circa 40 miliardi di token elaborati all'anno per un primo caso d'uso, con un significativo risparmio di tempo e nel rispetto dei requisiti di riservatezza del settore giudiziario.",
+				"impact": "Preanalisi IA eseguita in parallelo ai flussi aziendali: circa 400.000 pratiche elaborate all'anno per un primo caso d'uso, con un significativo risparmio di tempo e nel rispetto dei requisiti di riservatezza del settore giudiziario.",
 				"metrics": [
-					{ "label": "Token elaborati / anno", "value": "40 mld" },
+					{ "label": "Pratiche elaborate / anno", "value": "400.000" },
 					{ "label": "Tempo risparmiato", "value": "≈16 giorni-persona/giorno" },
 					{ "label": "Tribunali serviti", "value": "48" }
 				],

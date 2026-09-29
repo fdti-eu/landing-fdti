@@ -994,11 +994,11 @@
 				"location": "France",
 				"challenge": "A software vendor for commercial court clerks wanted to embed AI directly into its platform to improve the speed and accuracy of specific time-consuming clerical tasks.",
 				"approach": "A modular architecture organized around specialized AI use cases and tailored LLMs. An on-premises FastAPI AI stack is fully integrated with the existing platform through an API and is also available to other users through a secure API. The portal is built with TypeScript and SvelteKit.",
-				"impact": "AI pre-analysis runs in parallel with business workflows. The first use case processes around 40 billion tokens per year, delivering substantial time savings while meeting judicial confidentiality requirements.",
+				"impact": "AI pre-analysis runs in parallel with business workflows. The first use case processes around 400,000 case files per year, delivering substantial time savings while meeting judicial confidentiality requirements.",
 				"metrics": [
 					{
-						"label": "Tokens processed per year",
-						"value": "40B"
+						"label": "Case files processed per year",
+						"value": "400,000"
 					},
 					{
 						"label": "Equivalent time saved per day",
