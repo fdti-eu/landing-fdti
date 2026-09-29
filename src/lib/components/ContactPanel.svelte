@@ -240,7 +240,8 @@
 <style>
 	#contact.contact-section {
 		scroll-margin-top: -24px;
-		min-height: calc(100svh - 88px);
+		/* Leave room for the footer when navigating to #contact. */
+		min-height: calc(100svh - 172px);
 		background: #f5f4ee;
 		padding: 0;
 		color: var(--color-dark-grey, #1d2024);
@@ -448,9 +449,16 @@
 		border: 0;
 	}
 
+	@media (max-width: 900px) {
+		#contact.contact-section {
+			min-height: calc(100svh - 164px);
+		}
+	}
+
 	@media (max-width: 760px) {
 		#contact.contact-section {
 			scroll-margin-top: -35px;
+			min-height: calc(100svh - 236px);
 		}
 
 		.contact-shell {
