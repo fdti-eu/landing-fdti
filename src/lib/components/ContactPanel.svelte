@@ -1,9 +1,15 @@
 <script lang="ts">
 	import { onMount, tick } from 'svelte';
 	import { page } from '$app/stores';
-	import { _, locale } from 'svelte-i18n';
 	import { resolveContactEndpoint } from '$lib/contact';
-	import { isSupportedLocale } from '$lib/data';
+	import { resolveLocaleFromPath } from '$lib/functions/seo';
+	import { contact_panel as frContact } from '$locales/fr.json';
+	import { contact_panel as enContact } from '$locales/en.json';
+	import { contact_panel as esContact } from '$locales/es.json';
+	import { contact_panel as deContact } from '$locales/de.json';
+	import { contact_panel as itContact } from '$locales/it.json';
+
+	const contactCopy = { fr: frContact, en: enContact, es: esContact, de: deContact, it: itContact };
 
 	type SubmissionState = 'idle' | 'pending' | 'success' | 'error';
 
@@ -20,8 +26,9 @@
 	let emailCopied = false;
 	let pagePath = '/';
 
-	$: currentLocale = isSupportedLocale($locale) ? $locale : 'fr';
 	$: pagePath = $page.url.pathname;
+	$: currentLocale = resolveLocaleFromPath(pagePath);
+	$: copy = contactCopy[currentLocale];
 
 	function track(event: string) {
 		if (typeof window === 'undefined') return;
@@ -50,7 +57,7 @@
 		const normalizedContact = contact.trim();
 		fieldError = '';
 		if (!isValidContact(normalizedContact)) {
-			fieldError = $_('contact_panel.validation');
+			fieldError = copy.validation;
 			contactInput.focus();
 			return;
 		}
@@ -131,19 +138,19 @@
 	<div class="contact-shell">
 		<header class="contact-heading">
 			<p class="contact-eyebrow">FDTI / Contact</p>
-			<h2 id="contact-title">{$_('contact_panel.title')}</h2>
-			<p>{$_('contact_panel.promise')}</p>
+			<h2 id="contact-title">{copy.title}</h2>
+			<p>{copy.promise}</p>
 		</header>
 
 		<div class="contact-grid">
 			<div class="contact-email">
-				<h3>{$_('contact_panel.write_title')}</h3>
+				<h3>{copy.write_title}</h3>
 				<button
 					class:copied={emailCopied}
 					class="contact-email-copy"
 					type="button"
 					on:click={copyEmail}
-					aria-label={`${emailCopied ? $_('contact_panel.copied') : $_('contact_panel.copy_email')} info@fdti.eu`}
+					aria-label={`${emailCopied ? copy.copied : copy.copy_email} info@fdti.eu`}
 				>
 					<span>info@fdti.eu</span>
 					{#if emailCopied}
@@ -154,7 +161,7 @@
 						>
 					{/if}
 					<span class="contact-sr-only" aria-live="polite">
-						{emailCopied ? $_('contact_panel.copied') : ''}
+						{emailCopied ? copy.copied : ''}
 					</span>
 				</button>
 				<noscript>
@@ -169,14 +176,14 @@
 			</div>
 
 			<div class="contact-callback">
-				<h3>{$_('contact_panel.callback_title')}</h3>
+				<h3>{copy.callback_title}</h3>
 				{#if state === 'success'}
 					<p bind:this={successMessage} class="contact-success" role="status" tabindex="-1">
-						{$_('contact_panel.success')}
+						{copy.success}
 					</p>
 				{:else}
 					<form method="post" action="/contact" on:submit|preventDefault={submit} novalidate>
-						<label for="contact-value">{$_('contact_panel.contact_label')}</label>
+						<label for="contact-value">{copy.contact_label}</label>
 						<input
 							bind:this={contactInput}
 							bind:value={contact}
@@ -188,13 +195,13 @@
 							disabled={state === 'pending'}
 							autocomplete="email"
 							maxlength="254"
-							placeholder={$_('contact_panel.contact_placeholder')}
+							placeholder={copy.contact_placeholder}
 							aria-invalid={fieldError ? 'true' : undefined}
 							aria-describedby={fieldError ? 'contact-value-error' : undefined}
 						/>
 						{#if fieldError}<p id="contact-value-error" class="contact-error">{fieldError}</p>{/if}
 
-						<label for="contact-note">{$_('contact_panel.note_label')}</label>
+						<label for="contact-note">{copy.note_label}</label>
 						<textarea
 							bind:value={note}
 							on:input={resetRequestId}
@@ -225,10 +232,10 @@
 							data-umami-event="contact_callback_submit"
 							data-umami-event-placement="contact_section"
 						>
-							{state === 'pending' ? $_('contact_panel.pending') : $_('contact_panel.submit')}
+							{state === 'pending' ? copy.pending : copy.submit}
 						</button>
 						<div class="contact-status" aria-live="polite" aria-atomic="true">
-							{#if state === 'error'}<p class="contact-error">{$_('contact_panel.error')}</p>{/if}
+							{#if state === 'error'}<p class="contact-error">{copy.error}</p>{/if}
 						</div>
 					</form>
 				{/if}
