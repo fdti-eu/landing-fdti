@@ -1029,6 +1029,24 @@
 				"slug": "automatisierung-handelsgerichte"
 			},
 			{
+				"id": "9",
+				"category": "Justiz und öffentlicher Sektor",
+				"title": "Plattform für einen komplexen Rechtsstreit",
+				"challenge": "In einem kollektiven Rechtsstreit tauchen Tausende Menschen in Gerichtsentscheidungen und Dateien verschiedener Parteien auf. Die Aufgabe: Daten mit KI-Unterstützung extrahieren und Personen quellenübergreifend automatisch zuordnen, bevor Entschädigungsberechnungen vorbereitet werden.",
+				"approach": "Eine maßgeschneiderte Plattform in der Umgebung des Kunden begleitet dieselben Personen von der Berufung bis zum Urteil, trotz wechselnder Dateiversionen von Anwälten, Beklagtenseite, Sachverständigen und Richtern. KI extrahiert Daten aus PDF-Entscheidungen; beim Import werden relevante Spalten je Tabelle erkannt und Personen quellenübergreifend zugeordnet. Gutachterbewertungen fließen in Berechnungen zu Schäden, Kosten, Vorauszahlungen und Währungen ein. Teams prüfen unsichere Fälle und Korrekturen; Originaldaten und erfasste Entscheidungen bleiben einsehbar.",
+				"impact": "Für jede Person finden Teams Quellen, medizinische Bewertungen, Stellungnahmen, ursprüngliche und berücksichtigte Werte sowie Berechnungs- und Korrekturdetails. Sie können Akten prüfen und Tabellen für das Urteil vorbereiten, ohne eine vorbereitende Berechnung mit einer richterlichen Entscheidung zu verwechseln.",
+				"metrics": [{ "label": "Betroffene Personen", "value": "20.000" }],
+				"tags": ["KI", "OCR", "Python", "FastAPI", "SQLite"],
+				"details": [
+					"PDF-Entscheidungen strukturiert erfassen und Anwaltstabellen importieren, deren Spalten, Bezeichnungen und Versionen sich zwischen Einreichungen ändern.",
+					"Personen zwischen Entscheidungen und Anwaltsdateien zuordnen; Namensänderungen, Namensgleichheiten und unsichere Fälle gesondert prüfen.",
+					"Gutachterliche Bewertungen, Beobachtungen der Parteien und für Berechnungen berücksichtigte Werte getrennt halten.",
+					"In der Anwendung erfasste Korrekturen und Bestätigungen historisieren und Ausgangswerte sowie dokumentierte Gründe erhalten.",
+					"Berechnungen und Daten für Tabellen in Word-Urteilen unter menschlicher Aufsicht vorbereiten."
+				],
+				"slug": "entschaedigungsakten"
+			},
+			{
 				"id": "2",
 				"category": "Aftermarket und Recycling",
 				"title": "Plattform für die Verwaltung von Altfahrzeugen",

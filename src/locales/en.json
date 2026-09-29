@@ -1021,6 +1021,24 @@
 				"slug": "automatisation-greffes"
 			},
 			{
+				"id": "9",
+				"category": "Justice & public sector",
+				"title": "Case-management platform for collective litigation",
+				"challenge": "In collective litigation, thousands of people appear across court rulings and files submitted by different parties. The challenge is to extract that data with AI assistance, then match people automatically across sources before preparing compensation calculations.",
+				"approach": "A tailored platform deployed in the client’s environment follows the same people from appeal through judgment, despite versions exchanged by lawyers, the defence, experts and judges. AI extracts data from PDF rulings; imports identify relevant columns in each spreadsheet and match people across sources. Expert assessments feed calculations covering damages, expenses, provisional payments and currencies. Teams review uncertain cases and corrections; source data and recorded decisions remain available.",
+				"impact": "For each person, teams can find the sources, medical assessments, observations, original and retained figures, and the details of calculations and corrections. They can review case files and prepare tables for the judgment without mistaking a working calculation for a judicial decision.",
+				"metrics": [{ "label": "People involved", "value": "20,000" }],
+				"tags": ["AI", "OCR", "Python", "FastAPI", "SQLite"],
+				"details": [
+					"Structure PDF rulings and import lawyers’ spreadsheets whose columns, labels and versions change from one submission to the next.",
+					"Match people across rulings and lawyers’ files, reviewing name changes, namesakes and uncertain cases.",
+					"Keep expert assessments, the parties’ observations and the values used for calculations distinct.",
+					"Retain a history of corrections and validations entered in the tool, together with original values and recorded reasons.",
+					"Prepare calculations and the data needed for tables in Word judgments, under human supervision."
+				],
+				"slug": "compensation-case-files"
+			},
+			{
 				"id": "2",
 				"category": "Aftermarket & recycling",
 				"title": "End-of-life vehicle management platform",

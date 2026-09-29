@@ -142,7 +142,7 @@
 	$: copy = interfaceLabels[currentLocale];
 	$: sectorGroups = [
 		{ label: sectorLabels[currentLocale][0], caseIds: ['2', '3', '8'] },
-		{ label: sectorLabels[currentLocale][1], caseIds: ['1', '4'] },
+		{ label: sectorLabels[currentLocale][1], caseIds: ['1', '4', '9'] },
 		{ label: sectorLabels[currentLocale][2], caseIds: ['5', '6', '7'] }
 	];
 

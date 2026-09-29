@@ -1024,6 +1024,24 @@
 				"slug": "automatizacion-secretarias-judiciales"
 			},
 			{
+				"id": "9",
+				"category": "Justicia y sector público",
+				"title": "Plataforma de gestión de un litigio colectivo",
+				"challenge": "En un litigio colectivo, miles de personas aparecen en resoluciones judiciales y archivos enviados por distintas partes. El reto es extraer esos datos con ayuda de la IA y vincular automáticamente a las personas entre fuentes antes de preparar los cálculos de indemnización.",
+				"approach": "Una plataforma a medida alojada en el entorno del cliente sigue a las mismas personas desde la apelación hasta la sentencia, pese a las versiones intercambiadas por abogados, defensa, peritos y jueces. La IA extrae datos de resoluciones PDF; la importación identifica las columnas útiles de cada hoja y vincula a las personas entre fuentes. Las evaluaciones periciales alimentan cálculos de daños, gastos, provisiones y divisas. Los equipos revisan los casos dudosos y las correcciones; se conservan los datos originales y las decisiones registradas.",
+				"impact": "Para cada persona, los equipos encuentran las fuentes, evaluaciones médicas, observaciones, valores originales y retenidos, y el detalle de cálculos y correcciones. Pueden revisar expedientes y preparar las tablas para la sentencia sin confundir un cálculo preparatorio con una decisión judicial.",
+				"metrics": [{ "label": "Personas afectadas", "value": "20 000" }],
+				"tags": ["IA", "OCR", "Python", "FastAPI", "SQLite"],
+				"details": [
+					"Estructuración de resoluciones PDF e importación de hojas de cálculo de abogados cuyas columnas, nombres y versiones varían entre envíos.",
+					"Vinculación de personas entre resoluciones y archivos de abogados, con revisión de homónimos, cambios de apellido y casos dudosos.",
+					"Distinción entre evaluaciones periciales, observaciones de las partes y valores aplicados a los cálculos.",
+					"Historial de correcciones y validaciones registradas en la herramienta, conservando los valores originales y los motivos anotados.",
+					"Preparación de los cálculos y datos necesarios para las tablas de los fallos en Word, bajo supervisión humana."
+				],
+				"slug": "expedientes-indemnizacion"
+			},
+			{
 				"id": "2",
 				"category": "Posventa y reciclaje",
 				"title": "Plataforma de gestión de vehículos fuera de uso",

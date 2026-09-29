@@ -63,6 +63,10 @@
 				description:
 					'Une application métier relie déclarations, collectes et BSD Trackdéchets pour suivre chaque dossier de batterie jusqu’à sa réception et son traitement.'
 			},
+			'9': {
+				description:
+					'Une plateforme sur mesure réunit décisions judiciaires et fichiers hétérogènes pour suivre les dossiers d’indemnisation et leurs corrections.'
+			},
 			'4': {
 				description:
 					'Une plateforme supervise plus de 100 millions de mesures d’éclairage public par jour, détecte les anomalies et équipe plus de 40 territoires.'
@@ -99,6 +103,10 @@
 				description:
 					'A business application links declarations, collections and Trackdechets records, tracking each battery file through reception and treatment.'
 			},
+			'9': {
+				description:
+					'A tailored platform brings together court decisions and changing file formats to track compensation cases, corrections and human decisions.'
+			},
 			'4': {
 				description:
 					'A platform monitors over 100 million public-lighting measurements a day, detects anomalies and supports maintenance across more than 40 territories.'
@@ -115,6 +123,12 @@
 			'7': {
 				description:
 					'A data warehouse moves 98 complex JSON objects from Azure to Snowflake and feeds over 150 tables and views with latency below one minute for BI teams.'
+			}
+		},
+		es: {
+			'9': {
+				description:
+					'Una plataforma a medida reúne resoluciones judiciales y archivos de formatos cambiantes para seguir expedientes de indemnización y sus correcciones.'
 			}
 		},
 		de: {
@@ -134,6 +148,10 @@
 				title: 'Managementsystem für Batterierecycling | FDTI',
 				description:
 					'Eine Fachanwendung verbindet Meldungen, Abholungen und Trackdéchets-Begleitscheine und verfolgt jeden Batterievorgang bis zu Eingang und Behandlung.'
+			},
+			'9': {
+				description:
+					'Eine maßgeschneiderte Plattform verbindet Gerichtsentscheidungen und wechselnde Dateiformate, um Entschädigungsfälle und Korrekturen nachvollziehbar zu machen.'
 			},
 			'4': {
 				description:
@@ -171,6 +189,10 @@
 				title: 'Piattaforma operativa per il riciclo delle batterie | FDTI',
 				description:
 					'Un’applicazione aziendale collega dichiarazioni, raccolte e BSD tramite Trackdéchets per i flussi francesi, seguendo ogni pratica fino alla ricezione e al trattamento.'
+			},
+			'9': {
+				description:
+					'Una piattaforma su misura riunisce decisioni giudiziarie e file di formati diversi per seguire pratiche di risarcimento e relative correzioni.'
 			},
 			'4': {
 				description:

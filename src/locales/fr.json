@@ -1029,6 +1029,24 @@
 				"slug": "automatisation-greffes"
 			},
 			{
+				"id": "9",
+				"category": "Justice & secteur public",
+				"title": "Plateforme de gestion d’un contentieux collectif",
+				"challenge": "Dans un contentieux collectif, des milliers de personnes apparaissent dans des décisions judiciaires et des fichiers transmis par différentes parties. L’enjeu : extraire ces données avec l’aide de l’IA, puis rapprocher automatiquement les personnes entre sources avant de préparer les calculs d’indemnisation.",
+				"approach": "Une plateforme sur mesure, hébergée chez le client, suit les mêmes personnes de l’appel au jugement malgré les versions échangées par avocats, défense, experts et juges. L’IA extrait les données des décisions PDF ; l’import repère les colonnes utiles dans chaque classeur et rapproche les personnes entre les sources. Les évaluations d’expertise alimentent les calculs de préjudices, frais, provisions et devises. Les cas incertains et les corrections sont revus par les équipes ; données d’origine et arbitrages saisis restent consultables.",
+				"impact": "Les équipes retrouvent, pour chaque personne, les sources, les évaluations médicales, les observations, les valeurs initiales et retenues ainsi que le détail des calculs et des corrections. Elles peuvent contrôler les dossiers et préparer les tableaux destinés au jugement, sans confondre calcul préparatoire et décision judiciaire.",
+				"metrics": [{ "label": "Personnes concernées", "value": "20 000" }],
+				"tags": ["IA", "OCR", "Python", "FastAPI", "SQLite"],
+				"details": [
+					"Lecture structurée des décisions PDF et import de classeurs d’avocats dont les colonnes, intitulés et versions évoluent d’un envoi à l’autre.",
+					"Rapprochement des personnes entre décisions et fichiers d’avocats, avec vérification des homonymes, changements de nom et cas incertains.",
+					"Distinction entre données d’expertise, observations des parties et valeurs retenues pour les calculs.",
+					"Historique des corrections et validations saisies dans l’outil, avec conservation des valeurs d’origine et des motifs renseignés.",
+					"Préparation des calculs et des données nécessaires aux tableaux à intégrer dans les jugements Word, sous contrôle humain."
+				],
+				"slug": "dossiers-indemnisation"
+			},
+			{
 				"id": "2",
 				"category": "Aftermarket & recyclage",
 				"title": "Plateforme de gestion des véhicules en fin de vie",

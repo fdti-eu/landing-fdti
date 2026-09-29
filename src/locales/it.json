@@ -1020,6 +1020,24 @@
 				"slug": "automazione-cancellerie-tribunali"
 			},
 			{
+				"id": "9",
+				"category": "Giustizia e settore pubblico",
+				"title": "Piattaforma per un contenzioso collettivo",
+				"challenge": "In un contenzioso collettivo, migliaia di persone compaiono in decisioni giudiziarie e file inviati da parti diverse. La sfida è estrarre i dati con l’aiuto dell’IA e collegare automaticamente le persone tra le fonti prima di preparare i calcoli di risarcimento.",
+				"approach": "Una piattaforma su misura ospitata nell’ambiente del cliente segue le stesse persone dall’appello alla sentenza, nonostante le diverse versioni scambiate da avvocati, difesa, periti e giudici. L’IA estrae i dati dalle decisioni PDF; l’importazione individua le colonne utili in ogni foglio e collega le persone tra le fonti. Le valutazioni peritali alimentano i calcoli di danni, spese, acconti e valute. I team verificano i casi incerti e le correzioni; dati originali e decisioni registrate restano consultabili.",
+				"impact": "Per ogni persona, i team ritrovano fonti, valutazioni mediche, osservazioni, valori originali e adottati, oltre ai dettagli dei calcoli e delle correzioni. Possono verificare le pratiche e preparare le tabelle per la sentenza senza confondere un calcolo preparatorio con una decisione giudiziaria.",
+				"metrics": [{ "label": "Persone coinvolte", "value": "20.000" }],
+				"tags": ["IA", "OCR", "Python", "FastAPI", "SQLite"],
+				"details": [
+					"Strutturare decisioni PDF e importare fogli di calcolo degli avvocati le cui colonne, intestazioni e versioni cambiano tra gli invii.",
+					"Collegare le persone tra decisioni e file degli avvocati, verificando omonimie, cambi di cognome e casi incerti.",
+					"Distinguere valutazioni peritali, osservazioni delle parti e valori utilizzati nei calcoli.",
+					"Storicizzare correzioni e convalide registrate nell’applicazione, conservando valori originali e motivi documentati.",
+					"Preparare calcoli e dati per le tabelle da inserire nelle sentenze Word, sotto controllo umano."
+				],
+				"slug": "pratiche-risarcimento"
+			},
+			{
 				"id": "2",
 				"category": "Aftermarket e riciclo",
 				"title": "Piattaforma di gestione dei veicoli fuori uso",
