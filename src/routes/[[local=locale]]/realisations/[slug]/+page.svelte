@@ -41,6 +41,8 @@
 					details?: string[];
 				} | null;
 				locale?: Lang;
+				relatedGuides?: { href: string; label: string; summary: string }[];
+				relatedGuidesLabel?: string;
 		  }
 		| undefined;
 	type UseCaseSeo = { title?: string; description: string };
@@ -624,6 +626,28 @@
 						{/each}
 					</ul>
 				</div>
+			{/if}
+
+			{#if data?.relatedGuides?.length}
+				<section
+					aria-labelledby="related-guides-title"
+					class="bg-white rounded-2xl shadow-md p-4 sm:p-6 md:p-8 space-y-4"
+				>
+					<h2 id="related-guides-title" class="text-lg sm:text-xl font-bold text-darkGrey">
+						{data.relatedGuidesLabel}
+					</h2>
+					<div class="grid gap-4 sm:grid-cols-2">
+						{#each data.relatedGuides as guide}
+							<a
+								href={guide.href}
+								class="block rounded-xl border border-slate-200 px-4 py-3 text-darkGrey hover:border-yellow hover:shadow-md transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-darkGrey"
+							>
+								<span class="block font-semibold">{guide.label}</span>
+								<span class="block mt-2 text-sm leading-relaxed">{guide.summary}</span>
+							</a>
+						{/each}
+					</div>
+				</section>
 			{/if}
 
 			{#if content?.cta}

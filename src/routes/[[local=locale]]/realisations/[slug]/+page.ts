@@ -1,9 +1,16 @@
 import { error, redirect } from '@sveltejs/kit';
-import { getUseCasesContent, SUPPORTED_LOCALES, type Lang } from '$lib/data';
+import { getData, getUseCasesContent, SUPPORTED_LOCALES, type Lang } from '$lib/data';
 import { buildLocalizedPath, type SeoAlternatePaths } from '$lib/functions/seo';
 import type { PageLoad } from './$types';
 
 export const prerender = true;
+
+const relatedTopics: Record<string, { document?: string[]; circular?: string[] }> = {
+	'1': { document: ['dossiers-et-controles'] },
+	'2': { circular: ['vehicules'] },
+	'3': { circular: ['batteries', 'documents-et-integrations'] },
+	'8': { circular: ['batteries', 'documents-et-integrations'] }
+};
 
 export async function entries() {
 	const entries: { local?: Lang; slug: string }[] = [];
@@ -31,7 +38,8 @@ export async function entries() {
 export const load: PageLoad = async ({ params, depends }) => {
 	depends('app:locale');
 	const local = (params.local as Lang) || 'fr';
-	const content = await getUseCasesContent(local);
+	const localizedData = await getData(local);
+	const content = localizedData.GetUseCasesContent;
 	let useCase = content?.use_case_list?.find((item) => item?.slug === params.slug) || null;
 
 	if (!useCase) {
@@ -63,10 +71,44 @@ export const load: PageLoad = async ({ params, depends }) => {
 		)
 	) as SeoAlternatePaths;
 
+	const topics = relatedTopics[useCase.id];
+	const relatedGuides: { href: string; label: string; summary: string }[] = [];
+	if (topics) {
+		const sourceData = local === 'fr' ? localizedData : await getData('fr');
+		const collections = [
+			{
+				slugs: topics.document ?? [],
+				source: sourceData.DocumentAnalysis.guides,
+				localized: localizedData.DocumentAnalysis.guides,
+				root: '/expertises/analyse-documentaire'
+			},
+			{
+				slugs: topics.circular ?? [],
+				source: sourceData.CircularEconomy.dossiers,
+				localized: localizedData.CircularEconomy.dossiers,
+				root: '/expertises/economie-circulaire'
+			}
+		];
+		for (const collection of collections) {
+			for (const slug of collection.slugs) {
+				const index = collection.source.findIndex((guide) => guide.slug === slug);
+				const guide = collection.localized[index];
+				if (!guide) throw error(500, `Missing ${local} related guide for ${slug}`);
+				relatedGuides.push({
+					href: buildLocalizedPath(`${collection.root}/${guide.slug}`, local),
+					label: guide.label,
+					summary: guide.summary
+				});
+			}
+		}
+	}
+
 	return {
 		content,
 		useCase,
 		locale: local,
-		alternatePaths
+		alternatePaths,
+		relatedGuides,
+		relatedGuidesLabel: localizedData.CircularEconomy.explore
 	};
 };

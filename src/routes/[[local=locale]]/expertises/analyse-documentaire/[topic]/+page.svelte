@@ -18,7 +18,8 @@
 	$: ({ content, guide } = data);
 	$: root = buildLocalizedPath('/expertises/analyse-documentaire', data.locale);
 	$: canonical = buildLocalizedUrl(`/expertises/analyse-documentaire/${guide.slug}`, data.locale);
-	$: title = `${guide.label} | FDTI`;
+	$: title = guide.metaTitle;
+	$: description = guide.metaDescription;
 	$: guideIndex = content.guides.findIndex((item) => item.slug === guide.slug);
 	$: guideTransitionPrefix = `expertise-document_analysis-dossier-${guideIndex}`;
 	const labels: Record<
@@ -92,13 +93,13 @@
 
 <MetaTags
 	{title}
-	description={guide.summary}
+	{description}
 	{canonical}
 	openGraph={{
 		type: 'website',
 		url: canonical,
 		title,
-		description: guide.summary,
+		description,
 		siteName: 'FDTI',
 		images: [{ url: absoluteImageUrl(SOCIAL_IMAGE_PATH), alt: copy.imageAlt }]
 	}}
@@ -108,7 +109,7 @@
 	<LdTag
 		schema={schema('BreadcrumbList', {
 			name: title,
-			description: guide.summary,
+			description,
 			url: canonical,
 			itemListElement: [
 				{
