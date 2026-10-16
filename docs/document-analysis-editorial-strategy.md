@@ -1,5 +1,29 @@
 # Document analysis: audience, evidence and editorial decisions
 
+## Acquisition pilot: document analysis
+
+- Status: prepared, not sent or scheduled. Use existing public pages; no paid ads.
+- Audience: operations and IT owners handling recurring document checks and manual re-entry.
+- Offer: scope one document family, one expected output, and one human validation step.
+- Landing page: `https://www.fdti.eu/expertises/analyse-documentaire`.
+- Existing supporting case: `https://www.fdti.eu/realisations/automatisation-greffes`.
+- Campaign: `document_analysis_pilot_2026`. Keep source and medium separate from target-account names.
+- LinkedIn link: `https://www.fdti.eu/expertises/analyse-documentaire?utm_source=linkedin&utm_medium=organic_social&utm_campaign=document_analysis_pilot_2026&utm_content=workflow_post`.
+- One-to-one email link: `https://www.fdti.eu/expertises/analyse-documentaire?utm_source=email&utm_medium=one_to_one&utm_campaign=document_analysis_pilot_2026&utm_content=case_followup`.
+- Presentation link: `https://www.fdti.eu/expertises/analyse-documentaire?utm_source=presentation&utm_medium=presentation&utm_campaign=document_analysis_pilot_2026&utm_content=closing_slide`.
+- Never put contact names, email addresses, identifiers, or confidential customer references in UTM parameters. Do not tag internal navigation.
+- Review after two complete weeks of actual distribution: campaign visitors, landing-page activity, contact events, distinct contact requests, and manually qualified opportunities. No traffic or sales target is inferred from the current small sample.
+- Contact attribution is first-touch for the current document lifetime. It survives client-side navigation, but resets on a reload or a new tab. It uses no new cookie, browser storage, or visitor identifier and honors Do Not Track and the site's analytics opt-out. A missing attribution is unknown, not proof of direct acquisition.
+- Publication and sending require approval of the exact final content, account and audience. The pilot does not authorize outreach or scheduling by itself.
+
+Proposed LinkedIn copy (draft only):
+
+> Vos équipes relisent les mêmes types de documents et ressaisissent les mêmes informations ? Avant de parler de chatbot, le sujet est souvent plus concret : extraire les bons champs, rendre les incohérences visibles et préparer une vérification humaine. Chez FDTI, nous construisons ces parcours dans les outils métier existants. Pour cadrer un premier cas, partons d’une famille de documents, du résultat attendu et de la personne qui valide. Voici quelques exemples : https://www.fdti.eu/expertises/analyse-documentaire?utm_source=linkedin&utm_medium=organic_social&utm_campaign=document_analysis_pilot_2026&utm_content=workflow_post
+
+Proposed one-to-one email copy (draft only):
+
+> Bonjour, si vos équipes passent du temps à relire des dossiers ou à ressaisir des informations issues de documents, nous pouvons partir d’un cas précis : une famille de documents, une sortie exploitable et une validation humaine. Cette page présente notre approche et un exemple de réalisation : https://www.fdti.eu/expertises/analyse-documentaire?utm_source=email&utm_medium=one_to_one&utm_campaign=document_analysis_pilot_2026&utm_content=case_followup — Est-ce un sujet chez vous aujourd’hui ?
+
 ## Objective and publication boundaries
 
 French is the editorial source of truth. Build custom workflows that turn sensitive documents into structured information, source-linked summaries and review steps inside business tools. The product is not a generic PDF chatbot.

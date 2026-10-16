@@ -2,6 +2,7 @@
 	import { onMount, tick } from 'svelte';
 	import { page } from '$app/stores';
 	import { resolveContactEndpoint } from '$lib/contact';
+	import { acquisitionProperties, contactPage } from '$lib/acquisition';
 	import { resolveLocaleFromPath } from '$lib/functions/seo';
 	import { contact_panel as frContact } from '$locales/fr.json';
 	import { contact_panel as enContact } from '$locales/en.json';
@@ -34,7 +35,12 @@
 		if (typeof window === 'undefined') return;
 		const umami = (window as Window & { umami?: { track: (name: string, data?: object) => void } })
 			.umami;
-		umami?.track(event, { placement: 'contact_section', locale: currentLocale, path: pagePath });
+		umami?.track(event, {
+			...acquisitionProperties(),
+			placement: 'contact_section',
+			locale: currentLocale,
+			path: pagePath
+		});
 	}
 
 	function isValidContact(value: string) {
@@ -76,7 +82,7 @@
 					contact: normalizedContact,
 					note: note.trim(),
 					website,
-					page: pagePath,
+					page: contactPage(pagePath),
 					locale: currentLocale,
 					request_id: requestId
 				})

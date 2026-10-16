@@ -15,6 +15,7 @@
 	} from '$lib/functions/seo';
 	import { SUPPORTED_LOCALES } from '$lib/data';
 	import ContactPanel from '$lib/components/ContactPanel.svelte';
+	import { captureAcquisition } from '$lib/acquisition';
 
 	$: detectedLocale = resolveLocaleFromPath($page.url.pathname);
 	$: if ($locale !== detectedLocale) {
@@ -41,6 +42,7 @@
 	});
 
 	afterNavigate(({ type }) => {
+		captureAcquisition(new URL(window.location.href));
 		if (type !== 'popstate') return;
 
 		requestAnimationFrame(() => {
