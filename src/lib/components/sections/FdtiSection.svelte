@@ -29,6 +29,8 @@
 				<img
 					src={content.icon_1?.url || '/images/charge.svg'}
 					alt=""
+					loading="lazy"
+					decoding="async"
 					height="50"
 					width="50"
 				/>
@@ -42,6 +44,8 @@
 				<img
 					src={content.icon_2?.url || '/images/charge.svg'}
 					alt=""
+					loading="lazy"
+					decoding="async"
 					height="50"
 					width="50"
 				/>

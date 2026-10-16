@@ -37,6 +37,8 @@
 									src={company?.img?.url || '/logo.webp'}
 									alt={company?.name || 'Company logo'}
 									title={company?.name || 'Company logo'}
+									loading="lazy"
+									decoding="async"
 									class="logo-img {['Mastercard', 'Galloo', 'SNAM'].includes(company?.name || '')
 										? 'logo-small'
 										: ''} object-contain"
@@ -54,6 +56,8 @@
 									src={company?.img?.url || '/logo.webp'}
 									alt={company?.name || 'Company logo'}
 									title={company?.name || 'Company logo'}
+									loading="lazy"
+									decoding="async"
 									class="logo-img {['Mastercard', 'Galloo', 'SNAM'].includes(company?.name || '')
 										? 'logo-small'
 										: ''} object-contain"
@@ -71,6 +75,8 @@
 						src={cii?.image?.url || '/logo.webp'}
 						alt="CII"
 						title="CII"
+						loading="lazy"
+						decoding="async"
 						width="150"
 						height="100"
 					/>

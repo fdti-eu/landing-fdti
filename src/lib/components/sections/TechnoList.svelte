@@ -22,7 +22,15 @@
 	<h3>
 		<button class="tech-toggle" on:click={onToggle} aria-expanded={isOpen} aria-controls={panelId}>
 			<span class="tech-icon"
-				>{#if iconLink}<img src={iconLink} width="64" height="64" alt={title} {title} />{/if}</span
+				>{#if iconLink}<img
+						src={iconLink}
+						width="64"
+						height="64"
+						alt={title}
+						{title}
+						loading="lazy"
+						decoding="async"
+					/>{/if}</span
 			>
 			<span>{title}</span>
 			<svg
