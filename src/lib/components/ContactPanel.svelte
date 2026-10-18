@@ -24,6 +24,7 @@
 	let submissionController: AbortController | null = null;
 	let copyResetTimer: number | null = null;
 	let emailCopied = false;
+	let hydrated = false;
 	let pagePath = '/';
 
 	$: pagePath = $page.url.pathname;
@@ -127,6 +128,7 @@
 	}
 
 	onMount(() => {
+		hydrated = true;
 		return () => {
 			submissionController?.abort();
 			if (copyResetTimer !== null) window.clearTimeout(copyResetTimer);
@@ -149,6 +151,7 @@
 					class:copied={emailCopied}
 					class="contact-email-copy"
 					type="button"
+					disabled={!hydrated}
 					on:click={copyEmail}
 					aria-label={`${emailCopied ? copy.copied : copy.copy_email} info@fdti.eu`}
 				>
@@ -164,15 +167,7 @@
 						{emailCopied ? copy.copied : ''}
 					</span>
 				</button>
-				<noscript>
-					<style>
-						.contact-email-copy,
-						.contact-callback {
-							display: none !important;
-						}
-					</style>
-					<a href="mailto:info@fdti.eu">info@fdti.eu</a>
-				</noscript>
+				<a class="contact-email-fallback" href="mailto:info@fdti.eu">info@fdti.eu</a>
 			</div>
 
 			<div class="contact-callback">
@@ -192,7 +187,7 @@
 							name="contact"
 							type="text"
 							required
-							disabled={state === 'pending'}
+							disabled={!hydrated || state === 'pending'}
 							autocomplete="email"
 							maxlength="254"
 							placeholder={copy.contact_placeholder}
@@ -209,7 +204,7 @@
 							name="note"
 							rows="2"
 							maxlength="1000"
-							disabled={state === 'pending'}
+							disabled={!hydrated || state === 'pending'}
 						></textarea>
 
 						<div class="contact-honeypot" aria-hidden="true">
@@ -219,7 +214,7 @@
 								id="contact-website"
 								name="website"
 								type="text"
-								disabled={state === 'pending'}
+								disabled={!hydrated || state === 'pending'}
 								tabindex="-1"
 								autocomplete="off"
 							/>
@@ -228,7 +223,7 @@
 						<button
 							class="contact-submit"
 							type="submit"
-							disabled={state === 'pending'}
+							disabled={!hydrated || state === 'pending'}
 							data-umami-event="contact_callback_submit"
 							data-umami-event-placement="contact_section"
 						>
@@ -245,6 +240,22 @@
 </section>
 
 <style>
+	/* Keep contact usable before hydration, including when JavaScript fails to load. */
+	:global(html:not([data-fdti-hydrated])) .contact-email-copy,
+	:global(html:not([data-fdti-hydrated])) .contact-callback,
+	:global(html[data-fdti-hydrated]) .contact-email-fallback {
+		display: none;
+	}
+
+	.contact-email-fallback {
+		display: inline-block;
+		margin-top: 0.65rem;
+		font-size: clamp(1rem, 1.6vw, 1.15rem);
+		font-weight: 700;
+		text-decoration: underline;
+		text-underline-offset: 0.2em;
+	}
+
 	#contact.contact-section {
 		scroll-margin-top: -24px;
 		/* Leave room for the footer when navigating to #contact. */

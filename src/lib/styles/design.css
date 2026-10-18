@@ -43,6 +43,11 @@
 		scroll-margin-top: 30px;
 	}
 	/* A stable masthead, rather than a navigation bar disappearing mid-scroll. */
+	html:not([data-fdti-hydrated]) .nav-menu-button,
+	html:not([data-fdti-hydrated]) .nav-locale {
+		display: none;
+	}
+
 	.fdti-nav {
 		position: fixed;
 		inset: 0 0 auto;
@@ -1732,6 +1737,22 @@
 			display: flex;
 			flex-direction: column;
 			align-items: stretch;
+		}
+		/* Native links remain available when the interactive mobile menu cannot start. */
+		html:not([data-fdti-hydrated]) .nav-brand > span,
+		html:not([data-fdti-hydrated]) .nav-submenu {
+			display: none;
+		}
+		html:not([data-fdti-hydrated]) .nav-links {
+			display: flex;
+			position: static;
+			gap: 12px;
+			margin-left: auto;
+			padding: 0;
+			border: 0;
+		}
+		html:not([data-fdti-hydrated]) .nav-links a {
+			font-size: 12px;
 		}
 		.nav-links a {
 			font-size: 19px;

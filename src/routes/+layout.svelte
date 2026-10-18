@@ -41,6 +41,7 @@
 	});
 
 	afterNavigate(({ type }) => {
+		document.documentElement.dataset.fdtiHydrated = 'true';
 		if (type !== 'popstate') return;
 
 		requestAnimationFrame(() => {

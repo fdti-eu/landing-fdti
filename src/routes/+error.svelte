@@ -1,52 +1,67 @@
 <script lang="ts">
 	import { locale } from 'svelte-i18n';
+	import { page } from '$app/stores';
 	import { isSupportedLocale, type Lang } from '$lib/data';
 	import { buildLocalizedPath } from '$lib/functions/seo';
 
-	const labels: Record<Lang, { message: string; back: string; sadSmile: string }> = {
+	const labels: Record<
+		Lang,
+		{ message: string; unavailable: string; reload: string; back: string; sadSmile: string }
+	> = {
 		fr: {
 			message: "La page que vous cherchez n'existe pas",
+			unavailable: 'Un problème technique empêche l’affichage de cette page.',
+			reload: 'Recharger la page',
 			back: "Retour à la page d'accueil",
 			sadSmile: 'visage triste'
 		},
 		en: {
 			message: 'The page you are looking for does not exist',
+			unavailable: 'A technical problem is preventing this page from being displayed.',
+			reload: 'Reload the page',
 			back: 'Back to home',
 			sadSmile: 'sad face'
 		},
 		es: {
 			message: 'La página que busca no existe',
+			unavailable: 'Un problema técnico impide mostrar esta página.',
+			reload: 'Volver a cargar la página',
 			back: 'Volver al inicio',
 			sadSmile: 'cara triste'
 		},
 		de: {
 			message: 'Die gesuchte Seite existiert nicht',
+			unavailable: 'Ein technisches Problem verhindert die Anzeige dieser Seite.',
+			reload: 'Seite neu laden',
 			back: 'Zurück zur Startseite',
 			sadSmile: 'trauriges Gesicht'
 		},
 		it: {
 			message: 'La pagina che stai cercando non esiste',
+			unavailable: 'Un problema tecnico impedisce la visualizzazione di questa pagina.',
+			reload: 'Ricarica la pagina',
 			back: 'Tornate alla home page',
 			sadSmile: 'viso triste'
 		}
 	};
 	$: currentLocale = isSupportedLocale($locale) ? $locale : 'fr';
 	$: copy = labels[currentLocale];
+	$: isNotFound = $page.status === 404;
 </script>
 
 <section class="relative py-16 md:py-24 overflow-hidden">
 	<div class="max-w-screen-wrap mx-auto px-3 wrap:px-5">
-		<div class="flex flex-col gap-10">
-			<div
-				class="w-40 h-40 rounded-full bg-yellow/40 flex justify-center items-center mx-auto border-4 border-white p-5"
-			>
-				<img src="/images/icon-404.svg" class="" alt="404" title="404" />
-			</div>
-		</div>
+		{#if isNotFound}<div class="flex flex-col gap-10">
+				<div
+					class="w-40 h-40 rounded-full bg-yellow/40 flex justify-center items-center mx-auto border-4 border-white p-5"
+				>
+					<img src="/images/icon-404.svg" class="" alt="404" title="404" />
+				</div>
+			</div>{/if}
 
 		<div class="max-w-screen-mv mx-auto pt-10">
 			<div class="flex gap-5 items-center justify-center">
-				<h2 class="text-6xl sm:text-7xl text-center">Ooops...</h2>
+				<h2 class="text-6xl sm:text-7xl text-center">{isNotFound ? 'Ooops...' : $page.status}</h2>
 				<img src="/images/sad-smile.svg" alt={copy.sadSmile} title={copy.sadSmile} class="w-16" />
 			</div>
 			<div class="flex justify-center my-2 relative h-4">
@@ -55,8 +70,15 @@
 			</div>
 		</div>
 		<p class="text-2xl xl:text-3xl text-center pt-7 max-w-sm mx-auto">
-			{copy.message}
+			{isNotFound ? copy.message : copy.unavailable}
 		</p>
+		{#if !isNotFound}
+			<div class="pt-4 flex justify-center">
+				<a href={$page.url.pathname + $page.url.search} data-sveltekit-reload class="underline">
+					{copy.reload}
+				</a>
+			</div>
+		{/if}
 
 		<div class="pt-4 flex justify-center">
 			<a

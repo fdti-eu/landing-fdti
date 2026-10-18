@@ -6,6 +6,10 @@ const config = {
 	preprocess: vitePreprocess(),
 
 	kit: {
+		output: {
+			// The client init hook verifies these modules before hydration can replace the HTML.
+			preloadStrategy: 'modulepreload'
+		},
 		serviceWorker: {
 			register: false
 		},
