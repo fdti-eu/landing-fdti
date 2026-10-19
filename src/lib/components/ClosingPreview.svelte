@@ -1,20 +1,37 @@
 <script lang="ts">
 	import { onDestroy, tick } from 'svelte';
+	import { dev } from '$app/environment';
+	import {
+		createContactRequestId,
+		resolveContactEndpoint,
+		resolveNewsletterEndpoint
+	} from '$lib/contact';
 
 	let email = '';
 	let message = '';
 	let newsletter = false;
 	let submitted = false;
+	let pending = false;
+	let error = '';
+	let requestId = '';
+	let contactAccepted = false;
+	let newsletterAccepted = false;
+	let website = '';
+	let controller: AbortController | undefined;
 	let copied = false;
 	let copyError = false;
 	let copyTimer: ReturnType<typeof setTimeout> | undefined;
 	let result: HTMLDivElement;
 	$: hasMessage = message.trim().length > 0;
-	$: submitLabel = hasMessage
-		? 'Envoyer mon message'
-		: newsletter
-			? 'M’inscrire'
-			: 'Être recontacté';
+	$: submitLabel = pending
+		? 'Envoi en cours…'
+		: contactAccepted && newsletter && !newsletterAccepted
+			? 'Réessayer l’inscription'
+			: hasMessage
+				? 'Envoyer mon message'
+				: newsletter
+					? 'M’inscrire'
+					: 'Être recontacté';
 
 	async function copyEmail() {
 		copyError = false;
@@ -43,14 +60,73 @@
 		}
 	}
 
-	async function previewSubmission(event: SubmitEvent) {
-		event.preventDefault();
-		submitted = true;
-		await tick();
-		result.focus();
+	function resetSubmission() {
+		requestId = '';
+		contactAccepted = false;
+		newsletterAccepted = false;
+		error = '';
 	}
 
-	onDestroy(() => clearTimeout(copyTimer));
+	async function post(endpoint: string, payload: object) {
+		controller = new AbortController();
+		const timeout = setTimeout(() => controller?.abort(), 15000);
+		try {
+			const response = await fetch(endpoint, {
+				method: 'POST',
+				headers: { 'Content-Type': 'application/json' },
+				body: JSON.stringify(payload),
+				signal: controller.signal
+			});
+			if (!response.ok) throw new Error('Request unavailable');
+		} finally {
+			clearTimeout(timeout);
+		}
+	}
+
+	async function submit(event: SubmitEvent) {
+		event.preventDefault();
+		if (pending) return;
+		pending = true;
+		error = '';
+		try {
+			if ((hasMessage || !newsletter) && !contactAccepted) {
+				requestId ||= createContactRequestId();
+				await post(resolveContactEndpoint(window.location.hostname), {
+					contact: email.trim(),
+					note: message.trim(),
+					website,
+					page: window.location.pathname,
+					locale: 'fr',
+					request_id: requestId
+				});
+				contactAccepted = true;
+			}
+			if (newsletter && !newsletterAccepted) {
+				await post(resolveNewsletterEndpoint(window.location.hostname, 'subscribe'), {
+					email: email.trim(),
+					consent: true,
+					consent_version: 'newsletter-fdti-2026-10-19',
+					locale: 'fr',
+					website
+				});
+				newsletterAccepted = true;
+			}
+			submitted = true;
+			await tick();
+			result.focus();
+		} catch {
+			error = contactAccepted
+				? 'Votre demande de contact est reçue, mais l’inscription à la newsletter n’a pas pu être finalisée. Vous pouvez réessayer sans renvoyer votre message.'
+				: 'Le service est momentanément indisponible. Réessayez plus tard ou copiez notre adresse email.';
+		} finally {
+			pending = false;
+		}
+	}
+
+	onDestroy(() => {
+		clearTimeout(copyTimer);
+		controller?.abort();
+	});
 </script>
 
 <section id="contact" class="contact-preview" aria-labelledby="closing-title">
@@ -88,28 +164,37 @@
 		<div class="contact-form-panel">
 			{#if submitted}
 				<div bind:this={result} class="preview-result" role="status" tabindex="-1">
-					<h3>Aperçu de votre demande</h3>
-					{#if hasMessage}<p>Message à FDTI depuis <strong>{email}</strong>.</p>
-					{:else if !newsletter}<p>Demande de contact à <strong>{email}</strong>.</p>{/if}
-					{#if newsletter}<p>
-							Inscription à la <strong>newsletter FDTI</strong> pour {email}, après confirmation de
-							l’adresse.
+					<h3>C’est noté.</h3>
+					{#if contactAccepted}<p>
+							Votre demande a bien été reçue. Nous vous répondrons à <strong>{email}</strong>.
 						</p>{/if}
-					<p class="preview-note">
-						Maquette locale : aucune donnée enregistrée, aucun message ni email envoyé.
-					</p>
-					<button type="button" class="back-button" onclick={() => (submitted = false)}
-						>Revenir au formulaire</button
+					{#if newsletterAccepted}<p>
+							Consultez votre boîte mail pour confirmer votre inscription à la <strong
+								>newsletter FDTI</strong
+							> si elle n’est pas déjà active.
+						</p>{/if}
+					{#if dev}<p class="preview-note">
+							Environnement local : emails capturés, aucune diffusion externe.
+						</p>{/if}
+					<button
+						type="button"
+						class="back-button"
+						onclick={() => {
+							submitted = false;
+							resetSubmission();
+						}}>Revenir au formulaire</button
 					>
 				</div>
 			{:else}
-				<form onsubmit={previewSubmission}>
+				<form onsubmit={submit} aria-busy={pending}>
 					<label for="closing-email">Votre adresse email</label>
 					<input
 						id="closing-email"
 						name="email"
 						type="email"
 						bind:value={email}
+						oninput={resetSubmission}
+						disabled={pending}
 						required
 						autocomplete="email"
 						maxlength="254"
@@ -122,6 +207,8 @@
 						id="closing-message"
 						name="message"
 						bind:value={message}
+						oninput={resetSubmission}
+						disabled={pending}
 						rows="2"
 						maxlength="1000"
 						placeholder="Parlez-nous de votre projet…"
@@ -132,6 +219,11 @@
 							name="newsletter"
 							type="checkbox"
 							bind:checked={newsletter}
+							onchange={() => {
+								newsletterAccepted = false;
+								error = '';
+							}}
+							disabled={pending}
 						/>
 						<span
 							><strong>Recevoir la newsletter FDTI</strong><span class="newsletter-description"
@@ -142,14 +234,23 @@
 					<div class="form-bottom">
 						<p class="privacy">
 							{newsletter
-								? 'Inscription à confirmer par email. Désinscription en un clic.'
+								? 'Inscription à confirmer par email. Désinscription à tout moment.'
 								: 'Vos coordonnées servent uniquement à vous répondre.'}
 							<a href="/confidentialite">Confidentialité</a>
 						</p>
-						<button type="submit" class="submit-button"
+						<button type="submit" class="submit-button" disabled={pending}
 							>{submitLabel}<span aria-hidden="true">→</span></button
 						>
 					</div>
+					<div class="honeypot" aria-hidden="true">
+						<label for="closing-website">Website</label><input
+							id="closing-website"
+							bind:value={website}
+							tabindex="-1"
+							autocomplete="off"
+						/>
+					</div>
+					{#if error}<p class="form-error" role="alert">{error}</p>{/if}
 				</form>
 			{/if}
 		</div>
@@ -157,6 +258,23 @@
 </section>
 
 <style>
+	.honeypot {
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		overflow: hidden;
+		clip-path: inset(50%);
+	}
+	.form-error {
+		color: #a21b1b;
+		font-size: 13px;
+		line-height: 1.6;
+		margin-top: 15px;
+	}
+	.submit-button:disabled {
+		opacity: 0.6;
+		cursor: wait;
+	}
 	.contact-preview {
 		background: #f5f4ee;
 		color: #1d2024;

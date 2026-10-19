@@ -79,7 +79,9 @@
 	<Navbar />
 	<main class="flex-1">
 		<slot />
-		{#if dev && detectedLocale === 'fr'}
+		{#if currentPathWithoutLocale.startsWith('/newsletter/')}
+			<!-- Subscription actions do not need another contact form. -->
+		{:else if dev && detectedLocale === 'fr'}
 			<ClosingPreview />
 		{:else}
 			<ContactPanel />
