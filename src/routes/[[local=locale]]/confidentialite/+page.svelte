@@ -107,7 +107,7 @@
 		fr: {
 			title: 'Newsletter FDTI',
 			paragraphs: [
-				'L’inscription est facultative et distincte d’une demande de contact. Elle repose sur votre consentement, exprimé en cochant la case dédiée puis en confirmant votre adresse par email. Le lien de confirmation est valable 48 heures. Une adresse non confirmée n’est pas ajoutée à la liste de diffusion.',
+				'L’inscription est facultative et distincte d’une demande de contact. Elle repose sur votre consentement, exprimé en cochant la case dédiée et en envoyant le formulaire. Votre inscription est alors active immédiatement, sans email de confirmation.',
 				'FDTI conserve votre adresse email, la langue, les préférences de réception et les dates et états nécessaires à la gestion de l’abonnement et du consentement. Ces informations sont accessibles aux personnes habilitées de FDTI et à ses prestataires techniques ; Resend assure l’envoi des emails pour notre compte.',
 				'Vous pouvez retirer votre consentement et quitter la liste de diffusion à tout moment par le lien de désinscription figurant dans les newsletters. Vous pouvez également exercer vos droits ou demander l’effacement de vos données en écrivant à info@fdti.eu. Une demande de contact ne vaut jamais inscription à la newsletter.'
 			]
@@ -115,7 +115,7 @@
 		en: {
 			title: 'FDTI newsletter',
 			paragraphs: [
-				'Subscribing is optional and separate from a contact request. It relies on your consent, expressed by selecting the dedicated checkbox and confirming your email address. The confirmation link is valid for 48 hours. Unconfirmed addresses are not added to the mailing list.',
+				'Subscribing is optional and separate from a contact request. It relies on your consent, expressed by selecting the dedicated checkbox and submitting the form. Your subscription is active immediately, without a confirmation email.',
 				'FDTI stores your email address, language, delivery preferences and the dates and states needed to manage your subscription and consent. Authorized FDTI personnel and technical providers can access this information; Resend sends emails on our behalf.',
 				'You may withdraw consent and leave the mailing list at any time using the unsubscribe link in each newsletter. You may also exercise your rights or request erasure by emailing info@fdti.eu. A contact request never constitutes a newsletter subscription.'
 			]
@@ -123,7 +123,7 @@
 		es: {
 			title: 'Newsletter FDTI',
 			paragraphs: [
-				'La suscripción es opcional e independiente de una solicitud de contacto. Se basa en su consentimiento, expresado al marcar la casilla correspondiente y confirmar su dirección por email. El enlace de confirmación es válido durante 48 horas. Las direcciones no confirmadas no se añaden a la lista de envío.',
+				'La suscripción es opcional e independiente de una solicitud de contacto. Se basa en su consentimiento, expresado al marcar la casilla correspondiente y enviar el formulario. La suscripción se activa inmediatamente, sin email de confirmación.',
 				'FDTI conserva su dirección de email, idioma, preferencias de recepción y las fechas y estados necesarios para gestionar su suscripción y consentimiento. El personal autorizado de FDTI y sus proveedores técnicos pueden acceder a estos datos; Resend envía los emails por cuenta nuestra.',
 				'Puede retirar su consentimiento y salir de la lista en cualquier momento mediante el enlace de baja de cada newsletter. También puede ejercer sus derechos o solicitar la supresión escribiendo a info@fdti.eu. Una solicitud de contacto nunca constituye una suscripción a la newsletter.'
 			]
@@ -131,7 +131,7 @@
 		de: {
 			title: 'FDTI-Newsletter',
 			paragraphs: [
-				'Das Abonnement ist freiwillig und unabhängig von einer Kontaktanfrage. Grundlage ist Ihre Einwilligung durch Auswahl des entsprechenden Kontrollkästchens und Bestätigung Ihrer E-Mail-Adresse. Der Bestätigungslink ist 48 Stunden gültig. Unbestätigte Adressen werden nicht in den Verteiler aufgenommen.',
+				'Das Abonnement ist freiwillig und unabhängig von einer Kontaktanfrage. Grundlage ist Ihre Einwilligung durch Auswahl des entsprechenden Kontrollkästchens und Absenden des Formulars. Ihr Abonnement ist sofort aktiv, ohne Bestätigungs-E-Mail.',
 				'FDTI speichert Ihre E-Mail-Adresse, Sprache, Empfangseinstellungen sowie die zur Verwaltung des Abonnements und der Einwilligung erforderlichen Zeitpunkte und Statusangaben. Berechtigte FDTI-Mitarbeiter und technische Dienstleister können auf diese Daten zugreifen; Resend versendet E-Mails in unserem Auftrag.',
 				'Sie können Ihre Einwilligung jederzeit über den Abmeldelink im Newsletter widerrufen. Ihre Rechte einschließlich Löschung können Sie unter info@fdti.eu geltend machen. Eine Kontaktanfrage stellt niemals ein Newsletter-Abonnement dar.'
 			]
@@ -139,7 +139,7 @@
 		it: {
 			title: 'Newsletter FDTI',
 			paragraphs: [
-				'L’iscrizione è facoltativa e distinta da una richiesta di contatto. Si basa sul consenso espresso selezionando la casella dedicata e confermando l’indirizzo email. Il link di conferma è valido per 48 ore. Gli indirizzi non confermati non vengono aggiunti alla lista di invio.',
+				'L’iscrizione è facoltativa e distinta da una richiesta di contatto. Si basa sul consenso espresso selezionando la casella dedicata e inviando il modulo. L’iscrizione è subito attiva, senza email di conferma.',
 				'FDTI conserva indirizzo email, lingua, preferenze di ricezione e le date e gli stati necessari per gestire iscrizione e consenso. I dati sono accessibili al personale autorizzato di FDTI e ai fornitori tecnici; Resend invia le email per nostro conto.',
 				'È possibile ritirare il consenso e lasciare la lista in qualsiasi momento tramite il link di disiscrizione presente nelle newsletter. È inoltre possibile esercitare i propri diritti o chiedere la cancellazione scrivendo a info@fdti.eu. Una richiesta di contatto non costituisce mai un’iscrizione alla newsletter.'
 			]

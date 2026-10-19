@@ -1,5 +1,5 @@
 <script lang="ts">
-	import NewsletterAction from '$lib/components/NewsletterAction.svelte';
+	import NewsletterUnsubscribe from '$lib/components/NewsletterUnsubscribe.svelte';
 </script>
 
-<NewsletterAction action="unsubscribe" />
+<NewsletterUnsubscribe />

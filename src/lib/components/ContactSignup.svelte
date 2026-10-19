@@ -109,7 +109,7 @@
 				await post(resolveNewsletterEndpoint(window.location.hostname, 'subscribe'), {
 					email: email.trim(),
 					consent: true,
-					consent_version: 'newsletter-fdti-2026-10-19',
+					consent_version: 'newsletter-fdti-single-opt-in-2026-10-19',
 					locale: 'fr',
 					website
 				});
@@ -173,9 +173,7 @@
 							Votre demande a bien été reçue. Nous vous répondrons à <strong>{email}</strong>.
 						</p>{/if}
 					{#if newsletterAccepted}<p>
-							Consultez votre boîte mail pour confirmer votre inscription à la <strong
-								>newsletter FDTI</strong
-							> si elle n’est pas déjà active.
+							Vous êtes inscrit à la <strong>newsletter FDTI</strong>.
 						</p>{/if}
 					{#if dev}<p class="preview-note">
 							Environnement local : emails capturés, aucune diffusion externe.
@@ -238,7 +236,7 @@
 					<div class="form-bottom">
 						<p class="privacy">
 							{newsletter
-								? 'Inscription à confirmer par email. Désinscription à tout moment.'
+								? 'Inscription immédiate. Désinscription à tout moment.'
 								: 'Vos coordonnées servent uniquement à vous répondre.'}
 							<a href="/confidentialite">Confidentialité</a>
 						</p>

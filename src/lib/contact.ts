@@ -7,10 +7,7 @@ export function resolveContactEndpoint(hostname: string) {
 		: '/contact';
 }
 
-export function resolveNewsletterEndpoint(
-	hostname: string,
-	action: 'subscribe' | 'confirm' | 'unsubscribe'
-) {
+export function resolveNewsletterEndpoint(hostname: string, action: 'subscribe' | 'unsubscribe') {
 	return resolveContactEndpoint(hostname).replace(/\/contact$/, `/newsletter/${action}`);
 }
 
