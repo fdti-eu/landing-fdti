@@ -15,6 +15,8 @@
 	} from '$lib/functions/seo';
 	import { SUPPORTED_LOCALES } from '$lib/data';
 	import ContactPanel from '$lib/components/ContactPanel.svelte';
+	import NewsletterPreview from '$lib/components/NewsletterPreview.svelte';
+	import { dev } from '$app/environment';
 
 	$: detectedLocale = resolveLocaleFromPath($page.url.pathname);
 	$: if ($locale !== detectedLocale) {
@@ -78,6 +80,9 @@
 	<main class="flex-1">
 		<slot />
 		<ContactPanel />
+		{#if dev && detectedLocale === 'fr'}
+			<NewsletterPreview />
+		{/if}
 	</main>
 	<Footer />
 </div>
