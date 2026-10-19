@@ -15,8 +15,7 @@
 	} from '$lib/functions/seo';
 	import { SUPPORTED_LOCALES } from '$lib/data';
 	import ContactPanel from '$lib/components/ContactPanel.svelte';
-	import ClosingPreview from '$lib/components/ClosingPreview.svelte';
-	import { dev } from '$app/environment';
+	import ContactSignup from '$lib/components/ContactSignup.svelte';
 
 	$: detectedLocale = resolveLocaleFromPath($page.url.pathname);
 	$: if ($locale !== detectedLocale) {
@@ -69,10 +68,12 @@
 </script>
 
 <svelte:head>
-	{#each alternateLinks as alternate}
-		<link rel="alternate" hreflang={alternate.locale} href={alternate.href} />
-	{/each}
-	<link rel="alternate" hreflang="x-default" href={xDefaultUrl} />
+	{#if !currentPathWithoutLocale.startsWith('/newsletter/')}
+		{#each alternateLinks as alternate}
+			<link rel="alternate" hreflang={alternate.locale} href={alternate.href} />
+		{/each}
+		<link rel="alternate" hreflang="x-default" href={xDefaultUrl} />
+	{/if}
 </svelte:head>
 
 <div class="fdti-site min-h-screen flex flex-col font-quattrocento">
@@ -81,8 +82,8 @@
 		<slot />
 		{#if currentPathWithoutLocale.startsWith('/newsletter/')}
 			<!-- Subscription actions do not need another contact form. -->
-		{:else if dev && detectedLocale === 'fr'}
-			<ClosingPreview />
+		{:else if detectedLocale === 'fr'}
+			<ContactSignup />
 		{:else}
 			<ContactPanel />
 		{/if}

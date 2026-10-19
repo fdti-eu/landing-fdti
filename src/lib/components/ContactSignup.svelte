@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { onDestroy, tick } from 'svelte';
+	import { onMount, onDestroy, tick } from 'svelte';
 	import { dev } from '$app/environment';
 	import {
 		createContactRequestId,
@@ -12,6 +12,7 @@
 	let newsletter = false;
 	let submitted = false;
 	let pending = false;
+	let hydrated = false;
 	let error = '';
 	let requestId = '';
 	let contactAccepted = false;
@@ -32,6 +33,9 @@
 				: newsletter
 					? 'M’inscrire'
 					: 'Être recontacté';
+	onMount(() => {
+		hydrated = true;
+	});
 
 	async function copyEmail() {
 		copyError = false;
@@ -186,7 +190,7 @@
 					>
 				</div>
 			{:else}
-				<form onsubmit={submit} aria-busy={pending}>
+				<form method="post" action="/contact" onsubmit={submit} aria-busy={pending}>
 					<label for="closing-email">Votre adresse email</label>
 					<input
 						id="closing-email"
@@ -194,7 +198,7 @@
 						type="email"
 						bind:value={email}
 						oninput={resetSubmission}
-						disabled={pending}
+						disabled={!hydrated || pending}
 						required
 						autocomplete="email"
 						maxlength="254"
@@ -208,7 +212,7 @@
 						name="message"
 						bind:value={message}
 						oninput={resetSubmission}
-						disabled={pending}
+						disabled={!hydrated || pending}
 						rows="2"
 						maxlength="1000"
 						placeholder="Parlez-nous de votre projet…"
@@ -223,7 +227,7 @@
 								newsletterAccepted = false;
 								error = '';
 							}}
-							disabled={pending}
+							disabled={!hydrated || pending}
 						/>
 						<span
 							><strong>Recevoir la newsletter FDTI</strong><span class="newsletter-description"
@@ -238,7 +242,7 @@
 								: 'Vos coordonnées servent uniquement à vous répondre.'}
 							<a href="/confidentialite">Confidentialité</a>
 						</p>
-						<button type="submit" class="submit-button" disabled={pending}
+						<button type="submit" class="submit-button" disabled={!hydrated || pending}
 							>{submitLabel}<span aria-hidden="true">→</span></button
 						>
 					</div>
@@ -254,6 +258,12 @@
 				</form>
 			{/if}
 		</div>
+		<noscript
+			><p>
+				Pour nous contacter, sélectionnez l’adresse info@fdti.eu et copiez-la dans votre messagerie.
+				L’inscription à la newsletter nécessite JavaScript.
+			</p></noscript
+		>
 	</div>
 </section>
 
