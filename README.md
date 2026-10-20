@@ -16,6 +16,10 @@ Le contenu éditorial principal est stocké dans les fichiers JSON :
 
 Le français est servi sous `/`, l’anglais sous `/en`, l’espagnol sous `/es`, l’allemand sous `/de` et l’italien sous `/it`. Les pages, cas d’usage, métadonnées SEO, `sitemap.xml` et `llms.txt` sont générés à partir de ces fichiers pendant le build.
 
+Le sitemap de référence déclaré dans `robots.txt` est `https://www.fdti.eu/sitemap-control.xml`, déjà accepté par Google. Il réutilise le générateur de `sitemap.xml` à chaque build, avec les URL canoniques et leurs variantes linguistiques ; ce n’est pas une copie statique à maintenir manuellement. `sitemap.xml` reste disponible et produit le même contenu.
+
+L’ajout au sitemap facilite la découverte des pages, sans garantir leur indexation. Laisser Google les explorer normalement et réserver les demandes manuelles d’indexation aux exceptions, plutôt que les répéter pour chaque page.
+
 ## Développement local
 
 ```bash
