@@ -25,6 +25,7 @@
 			circularEconomy: string;
 			documentAnalysis: string;
 			work: string;
+			jobs: string;
 			allWork: string;
 			courtAI: string;
 			vehicles: string;
@@ -40,6 +41,7 @@
 			circularEconomy: 'Économie circulaire',
 			documentAnalysis: 'Analyse documentaire',
 			work: 'Réalisations',
+			jobs: 'Nous rejoindre',
 			allWork: 'Toutes les réalisations',
 			courtAI: 'IA pour la justice',
 			vehicles: 'Véhicules en fin de vie',
@@ -54,6 +56,7 @@
 			circularEconomy: 'Circular economy',
 			documentAnalysis: 'Document analysis',
 			work: 'Work',
+			jobs: 'Join us',
 			allWork: 'All work',
 			courtAI: 'AI for commercial courts',
 			vehicles: 'End-of-life vehicles',
@@ -68,6 +71,7 @@
 			circularEconomy: 'Economía circular',
 			documentAnalysis: 'Análisis documental',
 			work: 'Proyectos',
+			jobs: 'Únete al equipo',
 			allWork: 'Todos los proyectos',
 			courtAI: 'IA para la justicia',
 			vehicles: 'Vehículos fuera de uso',
@@ -82,6 +86,7 @@
 			circularEconomy: 'Kreislaufwirtschaft',
 			documentAnalysis: 'Dokumentenanalyse',
 			work: 'Referenzen',
+			jobs: 'Karriere',
 			allWork: 'Alle Referenzen',
 			courtAI: 'KI für Handelsgerichte',
 			vehicles: 'Altfahrzeuge',
@@ -96,6 +101,7 @@
 			circularEconomy: 'Economia circolare',
 			documentAnalysis: 'Analisi documentale',
 			work: 'Progetti',
+			jobs: 'Lavora con noi',
 			allWork: 'Tutti i progetti',
 			courtAI: 'IA per la giustizia',
 			vehicles: 'Veicoli fuori uso',
@@ -200,6 +206,11 @@
 					label: copy.recycling
 				}
 			]
+		},
+		{
+			href: buildLocalizedPath('/offres-emploi', currentLocale),
+			label: copy.jobs,
+			active: isPathActive('/offres-emploi', $page.url.pathname, currentLocale)
 		}
 	];
 	function closeOnEscape(event: KeyboardEvent) {
