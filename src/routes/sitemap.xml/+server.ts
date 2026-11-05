@@ -1,6 +1,7 @@
 import { getData, getUseCasesContent, SUPPORTED_LOCALES, type Lang } from '$lib/data';
 import { buildLocalizedUrl, type SeoAlternatePaths } from '$lib/functions/seo';
 import { getJobOffers, type JobOffer } from '$lib/jobs';
+import { offerPaths } from '$lib/expertise-offers';
 
 type SitemapPage = {
 	path: string;
@@ -11,6 +12,7 @@ type SitemapPage = {
 type UseCase = Awaited<ReturnType<typeof getUseCasesContent>>['use_case_list'][number];
 
 const staticPages: SitemapPage[] = [
+	...Object.values(offerPaths).map((path) => ({ path, changefreq: 'monthly', priority: '0.90' })),
 	{ path: '/', changefreq: 'weekly', priority: '1.00' },
 	{ path: '/expertises', changefreq: 'weekly', priority: '0.95' },
 	{ path: '/realisations', changefreq: 'weekly', priority: '0.95' },

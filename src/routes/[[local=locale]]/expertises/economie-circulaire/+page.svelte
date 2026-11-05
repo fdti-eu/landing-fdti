@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { MetaTags } from 'svelte-meta-tags';
+	import { expertiseOffers, offerPaths } from '$lib/expertise-offers';
 	import ExpertiseHub, { type ExpertiseHubContent } from '$lib/components/ExpertiseHub.svelte';
 	import LdTag from '$lib/components/json-ld/LDTag.svelte';
 	import { schema } from '$lib/components/json-ld/json-ld';
@@ -263,10 +264,18 @@
 			text: item.situation,
 			result: item.result
 		})),
-		dossiers: content.dossiers.map((item) => ({
-			...item,
-			href: buildLocalizedPath(`/expertises/economie-circulaire/${item.slug}`, data.locale)
-		})),
+		dossiers: [
+			...content.dossiers.map((item) => ({
+				...item,
+				href: buildLocalizedPath(`/expertises/economie-circulaire/${item.slug}`, data.locale)
+			})),
+			{
+				label: expertiseOffers[data.locale].packaging.label,
+				title: expertiseOffers[data.locale].packaging.title,
+				summary: expertiseOffers[data.locale].packaging.description,
+				href: buildLocalizedPath(offerPaths.packaging, data.locale)
+			}
+		],
 		proofLabel: pageCopy.proofLabel,
 		proofs: [
 			{
@@ -369,8 +378,4 @@
 	/>
 </svelte:head>
 
-<ExpertiseHub
-	content={hub}
-	eventPrefix="circular"
-	hubTransitionName="expertise-hub-circular"
-/>
+<ExpertiseHub content={hub} eventPrefix="circular" hubTransitionName="expertise-hub-circular" />

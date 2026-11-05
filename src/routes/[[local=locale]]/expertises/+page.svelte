@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { MetaTags } from 'svelte-meta-tags';
+	import { expertiseOffers, offerPaths } from '$lib/expertise-offers';
 	import {
 		absoluteImageUrl,
 		buildLocalizedPath,
@@ -346,9 +347,18 @@
 		<div class="editorial-shell">
 			<p class="editorial-kicker editorial-section-label">{content.fieldLabel}</p>
 			<div class="editorial-field-list">
+				{#each Object.entries(offerPaths) as [key, path], index}
+					{@const offer = expertiseOffers[data.locale][key as keyof typeof offerPaths]}
+					<a href={buildLocalizedPath(path, data.locale)}>
+						<span>0{index + 1}</span>
+						<h3>{offer.label}</h3>
+						<p>{offer.description}</p>
+						<strong>{offer.cta} ↗</strong>
+					</a>
+				{/each}
 				{#each content.fields as item, index}
 					<a id={item.id} href={item.href}>
-						<span>0{index + 1}</span>
+						<span>0{index + 3}</span>
 						<h3 style={`view-transition-name: ${expertiseTransitionName(item.id)};`}>
 							{item.title}
 						</h3>

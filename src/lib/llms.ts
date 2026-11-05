@@ -10,6 +10,7 @@ import deDocumentAnalysis from '$locales/document-analysis/de.json';
 import itDocumentAnalysis from '$locales/document-analysis/it.json';
 import type { Lang, LocaleData } from '$lib/data';
 import { buildLocalizedUrl } from '$lib/functions/seo';
+import { expertiseOffers, offerPaths } from '$lib/expertise-offers';
 
 const htmlEntities: Record<string, string> = {
 	amp: '&',
@@ -61,6 +62,14 @@ function formatSection(title: string, content?: string): string {
 function buildLanguageSection(locale: Lang, data: LocaleData): string {
 	const home = data.GetHomePageContent;
 	let output = `\n# ${locale.toUpperCase()}\n`;
+	for (const key of Object.keys(offerPaths) as Array<keyof typeof offerPaths>) {
+		const offer = expertiseOffers[locale][key];
+		output += `\n## ${offer.label}\n${buildLocalizedUrl(offerPaths[key], locale)}\n${offer.description}\n`;
+		for (const item of [...offer.useCases, ...offer.steps]) {
+			output += `\n### ${item.title}\n${item.text}\n`;
+		}
+		output += `\n${offer.boundary}\n`;
+	}
 
 	if (home) {
 		const meta = home.meta_tags?.page_tags?.[0];

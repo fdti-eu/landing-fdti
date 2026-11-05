@@ -625,4 +625,14 @@
 		<changefreq>monthly</changefreq>
 		<priority>0.75</priority>
 	</url>
+<url><loc>https://www.fdti.eu/expertises/workflows-agentiques</loc><changefreq>monthly</changefreq><priority>0.90</priority></url>
+<url><loc>https://www.fdti.eu/en/expertises/workflows-agentiques</loc><changefreq>monthly</changefreq><priority>0.90</priority></url>
+<url><loc>https://www.fdti.eu/es/expertises/workflows-agentiques</loc><changefreq>monthly</changefreq><priority>0.90</priority></url>
+<url><loc>https://www.fdti.eu/de/expertises/workflows-agentiques</loc><changefreq>monthly</changefreq><priority>0.90</priority></url>
+<url><loc>https://www.fdti.eu/it/expertises/workflows-agentiques</loc><changefreq>monthly</changefreq><priority>0.90</priority></url>
+<url><loc>https://www.fdti.eu/expertises/economie-circulaire/rep-emballages</loc><changefreq>monthly</changefreq><priority>0.90</priority></url>
+<url><loc>https://www.fdti.eu/en/expertises/economie-circulaire/rep-emballages</loc><changefreq>monthly</changefreq><priority>0.90</priority></url>
+<url><loc>https://www.fdti.eu/es/expertises/economie-circulaire/rep-emballages</loc><changefreq>monthly</changefreq><priority>0.90</priority></url>
+<url><loc>https://www.fdti.eu/de/expertises/economie-circulaire/rep-emballages</loc><changefreq>monthly</changefreq><priority>0.90</priority></url>
+<url><loc>https://www.fdti.eu/it/expertises/economie-circulaire/rep-emballages</loc><changefreq>monthly</changefreq><priority>0.90</priority></url>
 </urlset>
