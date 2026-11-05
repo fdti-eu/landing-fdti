@@ -73,11 +73,11 @@ export const expertiseOffers: Record<Lang, Record<OfferKey, ExpertiseOffer>> = {
 		},
 		packaging: {
 			label: 'Économie circulaire · REP emballages',
-			title: 'Des données packaging fiables, du fournisseur à la déclaration.',
+			title: 'Des logiciels métier pour la filière emballages.',
 			description:
-				'FDTI développe des outils métier pour structurer vos données emballages, préparer vos déclarations REP et suivre les flux de réemploi et de recyclage.',
+				'FDTI développe vos logiciels sur mesure pour fiabiliser les données emballages, outiller les processus REP et connecter les acteurs de la filière.',
 			audience:
-				'Pour les metteurs sur le marché, distributeurs, équipes packaging et opérateurs qui doivent réunir des données dispersées entre fournisseurs, ERP, fichiers et partenaires.',
+				'Pour les metteurs sur le marché, fabricants d’emballages, éco-organismes et opérateurs de réemploi, de collecte ou de recyclage.',
 			useCasesTitle: 'Relier les données aux opérations',
 			useCases: [
 				{
@@ -85,8 +85,8 @@ export const expertiseOffers: Record<Lang, Record<OfferKey, ExpertiseOffer>> = {
 					text: 'Relier chaque produit à ses composants d’emballage, matériaux, masses et justificatifs. Organiser la collecte fournisseur, les contrôles d’unité et la validation des données manquantes.'
 				},
 				{
-					title: 'Préparer les déclarations REP',
-					text: 'Rapprocher les mises sur le marché des données packaging par période et périmètre. Appliquer les règles validées par vos référents, expliquer les écarts et produire les exports attendus pour revue avant déclaration.'
+					title: 'Outiller les processus REP',
+					text: 'Organiser les campagnes de déclaration, les validations et les corrections. Rapprocher les mises sur le marché des données packaging et conserver les règles et justificatifs utilisés.'
 				},
 				{
 					title: 'Suivre les boucles de réemploi et de recyclage',
@@ -114,9 +114,9 @@ export const expertiseOffers: Record<Lang, Record<OfferKey, ExpertiseOffer>> = {
 			],
 			boundary:
 				'Notre expérience en économie circulaire porte notamment sur les véhicules et les batteries. Nous proposons d’adapter ce savoir-faire logiciel aux emballages. Le périmètre réglementaire et les déclarations restent validés par vos responsables compétents ; le logiciel ne constitue pas une certification de conformité.',
-			cta: 'Parler de vos données emballages',
+			cta: 'Explorer nos solutions pour les emballages',
 			ctaText:
-				'Un fichier packaging, un exemple de restitution attendue et vos principales difficultés suffisent pour commencer à cadrer un outil utile.',
+				'Partons d’un processus métier, de vos outils et des échanges entre vos partenaires pour définir un premier périmètre concret.',
 			back: 'Notre expertise économie circulaire'
 		}
 	},

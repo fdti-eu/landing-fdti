@@ -1,10 +1,12 @@
 <script lang="ts">
 	import { MetaTags } from 'svelte-meta-tags';
+	import LdTag from '$lib/components/json-ld/LDTag.svelte';
+	import { schema } from '$lib/components/json-ld/json-ld';
 	import { absoluteImageUrl, SOCIAL_IMAGE_PATH } from '$lib/functions/seo';
 
-	const title = 'Données emballages : fournisseurs, référentiels et REP | FDTI';
+	const title = 'Logiciels sur mesure pour les emballages et la REP | FDTI';
 	const description =
-		'Reliez fiches fournisseurs, composants d’emballage, références produits et mises sur le marché pour préparer des données REP vérifiables dans vos outils existants.';
+		'Producteurs, fabricants et éco-organismes : FDTI développe vos logiciels métier pour fiabiliser les données emballages, outiller la REP et relier vos partenaires.';
 	const canonical = 'https://www.fdti.eu/expertises/economie-circulaire/rep-emballages';
 	const problems = [
 		{
@@ -86,59 +88,116 @@
 	}}
 />
 
+<svelte:head>
+	<LdTag
+		schema={schema('BreadcrumbList', {
+			name: title,
+			description,
+			url: canonical,
+			itemListElement: [
+				{ '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://www.fdti.eu' },
+				{
+					'@type': 'ListItem',
+					position: 2,
+					name: 'Expertises',
+					item: 'https://www.fdti.eu/expertises'
+				},
+				{
+					'@type': 'ListItem',
+					position: 3,
+					name: 'Économie circulaire',
+					item: 'https://www.fdti.eu/expertises/economie-circulaire'
+				},
+				{
+					'@type': 'ListItem',
+					position: 4,
+					name: 'Logiciels métier pour les emballages',
+					item: canonical
+				}
+			]
+		})}
+	/>
+</svelte:head>
+
 <div class="editorial-page packaging-page">
 	<header class="editorial-hero">
 		<div class="editorial-shell">
 			<a class="back" href="/expertises/economie-circulaire">← Économie circulaire</a>
-			<p class="editorial-kicker">Données emballages · REP · PPWR</p>
-			<h1>
-				Vos ventes sont dans l’ERP. Les caractéristiques de vos emballages, chez vos fournisseurs.
-			</h1>
+			<p class="editorial-kicker">Emballages · Économie circulaire · REP</p>
+			<h1>Des logiciels métier pour la filière emballages.</h1>
 			<p>
-				Entre les deux, vos équipes rapprochent des références, cherchent des poids et retraitent
-				des fichiers. FDTI construit les outils qui relient ces informations pour préparer des
-				données emballages exploitables, vérifiables et adaptées à vos destinataires.
+				Fiabilisez vos données packaging, simplifiez vos processus de responsabilité élargie du
+				producteur (REP) et connectez vos partenaires. FDTI conçoit des applications sur mesure pour
+				les producteurs, fabricants d’emballages et éco-organismes, intégrées à leurs outils
+				existants.
 			</p>
 			<a
 				class="text-link"
 				href="#contact"
 				data-umami-event="contact_open"
-				data-umami-event-placement="packaging_hero">Examiner un de vos flux de données ↗</a
+				data-umami-event-placement="packaging_hero">Parlons de vos opérations emballages ↗</a
 			>
 		</div>
 	</header>
 
 	<nav class="section-nav editorial-shell" aria-label="Sommaire de la page emballages">
-		<a href="#difficultes">Les difficultés terrain</a>
+		<a href="#besoins">Vos besoins métier</a>
 		<a href="#acteurs">Votre rôle dans la filière</a>
-		<a href="#exemple">Un exemple détaillé</a>
-		<a href="#solution">Ce que nous construisons</a>
 		<a href="#experience">Nos réalisations</a>
+		<a href="#difficultes">Les données packaging</a>
+		<a href="#exemple">Un exemple détaillé</a>
+		<a href="#solution">Notre mise en œuvre</a>
 	</nav>
 
-	<section id="difficultes" class="editorial-section editorial-shell">
-		<p class="editorial-kicker">Avant la déclaration</p>
-		<h2>Le sujet n’est pas seulement de connecter deux logiciels.</h2>
-		<p class="intro">
-			Un portail de déclaration peut déjà fonctionner correctement alors que la préparation des
-			données mobilise encore les achats, le packaging, la RSE et l’IT. Le travail se situe souvent
-			en amont : obtenir la donnée, savoir à quoi elle correspond et pouvoir la justifier.
-		</p>
-		<div class="cards">
-			{#each problems as problem}<article>
-					<h3>{problem.title}</h3>
-					<p>{problem.text}</p>
-				</article>{/each}
+	<section id="besoins" class="editorial-section editorial-shell">
+		<p class="editorial-kicker">Du référentiel emballages aux échanges avec vos partenaires</p>
+		<h2>Trois besoins métier, des outils adaptés à votre organisation.</h2>
+		<div class="cards three-columns">
+			<article>
+				<h3>Gérer les données emballages</h3>
+				<p>
+					Réunir fiches fournisseurs, nomenclatures, matériaux, poids et justificatifs. Relier les
+					composants aux produits et suivre les changements de conditionnement.
+				</p>
+				<p class="result">
+					Référentiel packaging, collecte documentaire, contrôle qualité des données.
+				</p>
+			</article>
+			<article>
+				<h3>Outiller les processus REP</h3>
+				<p>
+					Organiser les campagnes de déclaration, les validations et les corrections. Préparer les
+					quantités et catégories attendues, puis rendre les calculs et leurs sources consultables.
+				</p>
+				<p class="result">
+					Portail déclarant, workflow de contrôle, restitutions et suivi des écarts.
+				</p>
+			</article>
+			<article>
+				<h3>Connecter les acteurs de la filière</h3>
+				<p>
+					Relier ERP, PLM, PIM et portails partenaires. Faire circuler les informations entre
+					achats, packaging, RSE, fournisseurs et éco-organismes avec des droits adaptés à chacun.
+				</p>
+				<p class="result">
+					Connecteurs, espaces partenaires, échanges de données et suivi des demandes.
+				</p>
+			</article>
 		</div>
+		<p class="source-note">
+			Emballages ménagers, commerciaux ou industriels, à usage unique ou réemployables : le
+			périmètre, les acteurs et les règles sont définis pour votre activité. Vos équipes packaging,
+			achats, qualité, RSE et IT participent au cadrage.
+		</p>
 	</section>
 
 	<section id="acteurs" class="editorial-section tint">
 		<div class="editorial-shell">
-			<p class="editorial-kicker">Deux points d’entrée</p>
-			<h2>Le même flux de données. Des responsabilités différentes.</h2>
+			<p class="editorial-kicker">Votre rôle dans la filière</p>
+			<h2>Des outils pour ceux qui produisent, déclarent et exploitent les données.</h2>
 			<div class="cards">
 				<article>
-					<h3>Producteur, importateur ou distributeur</h3>
+					<h3>Marque, metteur sur le marché ou distributeur</h3>
 					<p>
 						Vos équipes doivent relier ce qui est commercialisé à ce qui l’emballe : données
 						produits, conditionnements, fournisseurs et volumes par marché.
@@ -171,6 +230,76 @@
 						défini.
 					</p>
 				</article>
+				<article>
+					<h3>Fabricant ou fournisseur d’emballages</h3>
+					<p>
+						Vos clients demandent des caractéristiques et justificatifs dans des formats différents.
+						Vos données techniques doivent suivre les références vendues et leurs évolutions.
+					</p>
+					<ul>
+						<li>Structurer les fiches techniques et les versions de vos références.</li>
+						<li>Relier matériaux, composants et documents justificatifs.</li>
+						<li>Suivre les demandes clients et les informations à compléter.</li>
+						<li>Partager les données autorisées dans les formats convenus.</li>
+					</ul>
+					<p class="result">
+						Un point de départ : une famille d’emballages et les demandes récurrentes de vos
+						clients.
+					</p>
+				</article>
+				<article>
+					<h3>Opérateur de réemploi, de collecte ou de recyclage</h3>
+					<p>
+						Vos équipes suivent des flux physiques avec des partenaires, des sites et des documents
+						différents. L’enjeu est de partager une information exploitable sur les opérations.
+					</p>
+					<ul>
+						<li>Organiser les demandes, enlèvements, retours et réceptions.</li>
+						<li>Rapprocher quantités annoncées, reçues et justificatifs disponibles.</li>
+						<li>Suivre les statuts et les exceptions par site ou partenaire.</li>
+						<li>Restituer les données attendues par vos donneurs d’ordre.</li>
+					</ul>
+					<p class="result">
+						Un point de départ : un flux opérationnel et les échanges qui restent dispersés entre
+						fichiers et emails.
+					</p>
+				</article>
+			</div>
+		</div>
+	</section>
+
+	<section id="experience" class="editorial-section editorial-shell">
+		<p class="editorial-kicker">Des compétences déjà mises en production</p>
+		<h2>Nos réalisations en économie circulaire et en traitement documentaire.</h2>
+		<p class="intro">
+			FDTI développe les applications, intégrations et workflows qui font fonctionner des opérations
+			multi-acteurs. Nos projets dans l’automobile, les batteries et le traitement documentaire
+			montrent ce savoir-faire ; les référentiels et règles de la filière emballages sont cadrés
+			avec vos équipes.
+		</p>
+		<div class="cards three-columns">
+			{#each evidence as item}<article>
+					<h3>{item.title}</h3>
+					<p>{item.text}</p>
+					<a class="text-link" href={item.href}>{item.label} ↗</a>
+				</article>{/each}
+		</div>
+	</section>
+
+	<section id="difficultes" class="editorial-section tint">
+		<div class="editorial-shell">
+			<p class="editorial-kicker">Zoom sur un enjeu transversal</p>
+			<h2>Fiabiliser les données packaging, de la fiche fournisseur à leur utilisation.</h2>
+			<p class="intro">
+				Déclaration REP, écoconception ou échange avec un client : les équipes ont besoin de
+				caractéristiques fiables et reliées à la bonne référence. Les difficultés commencent souvent
+				avant l’import dans le logiciel destinataire.
+			</p>
+			<div class="cards">
+				{#each problems as problem}<article>
+						<h3>{problem.title}</h3>
+						<p>{problem.text}</p>
+					</article>{/each}
 			</div>
 		</div>
 	</section>
@@ -250,8 +379,8 @@
 
 	<section id="solution" class="editorial-section tint">
 		<div class="editorial-shell">
-			<p class="editorial-kicker">L’intervention FDTI</p>
-			<h2>Une chaîne de préparation intégrée à votre existant.</h2>
+			<p class="editorial-kicker">Du besoin métier à l’application</p>
+			<h2>Comment nous construisons votre gestion des données emballages.</h2>
 			<p class="intro">
 				Nous développons les composants utiles autour de vos ERP, PLM, PIM, portails et outils de
 				déclaration. Le périmètre peut commencer par la collecte fournisseur, le rapprochement des
@@ -321,38 +450,19 @@
 		</p>
 	</section>
 
-	<section id="experience" class="editorial-section tint">
-		<div class="editorial-shell">
-			<p class="editorial-kicker">Des compétences déjà mises en production</p>
-			<h2>Intégration, documents et opérations multi-acteurs.</h2>
-			<p class="intro">
-				Nos réalisations dans l’automobile, les batteries et le traitement documentaire apportent
-				des compétences directement mobilisables. Le modèle de données emballages, ses volumes et
-				ses règles doivent être construits avec vos équipes métier.
-			</p>
-			<div class="cards proofs">
-				{#each evidence as item}<article>
-						<h3>{item.title}</h3>
-						<p>{item.text}</p>
-						<a class="text-link" href={item.href}>{item.label} ↗</a>
-					</article>{/each}
-			</div>
-		</div>
-	</section>
-
 	<section class="editorial-section editorial-shell">
 		<p class="editorial-kicker">Commencer sur un flux réel</p>
-		<h2>Une gamme, des sources, une restitution attendue.</h2>
+		<h2>Un processus métier, vos outils et un résultat attendu.</h2>
 		<p class="intro">
-			Pour un premier cadrage, réunissons un export de références et de volumes, quelques fiches
-			fournisseurs, le fichier ou référentiel attendu en sortie et les personnes qui préparent les
-			données aujourd’hui.
+			Collecte fournisseur, déclaration adhérent, partage de données techniques ou suivi d’une
+			opération : partons d’un parcours que vos équipes connaissent. Quelques exemples de fichiers,
+			documents et échanges permettent d’identifier les étapes à outiller et les systèmes à relier.
 		</p>
 		<div class="cards">
 			<article>
 				<h3>Ce que nous définissons ensemble</h3>
 				<ul>
-					<li>Le périmètre produit, pays, entité et période.</li>
+					<li>Les acteurs, responsabilités et périmètres concernés.</li>
 					<li>Les données disponibles et celles à obtenir.</li>
 					<li>Les correspondances et contrôles prioritaires.</li>
 					<li>Les interfaces réellement accessibles.</li>
@@ -362,11 +472,11 @@
 			<article>
 				<h3>Ce que nous mesurons</h3>
 				<ul>
-					<li>Le temps de préparation sur le flux retenu.</li>
-					<li>Les références reliées à une fiche exploitable.</li>
+					<li>Le temps de traitement sur le processus retenu.</li>
+					<li>Les ressaisies et échanges manuels nécessaires.</li>
 					<li>Les données manquantes et anomalies non résolues.</li>
-					<li>Les correspondances nécessitant un arbitrage humain.</li>
-					<li>La capacité à retrouver la source d’un résultat.</li>
+					<li>Les dossiers ou références qui nécessitent un arbitrage.</li>
+					<li>La capacité à retrouver les données et justificatifs d’une opération.</li>
 				</ul>
 			</article>
 		</div>
@@ -437,7 +547,8 @@
 	<section class="editorial-cta">
 		<div class="editorial-shell">
 			<p class="editorial-cta-copy">
-				Montrez-nous le fichier que vos équipes retraitent à chaque déclaration.
+				Quel processus emballages vous oblige encore à jongler entre outils, fichiers et partenaires
+				?
 			</p>
 			<a
 				href="#contact"
@@ -498,6 +609,9 @@
 		display: grid;
 		grid-template-columns: repeat(2, minmax(0, 1fr));
 		gap: 2rem 3rem;
+	}
+	.three-columns {
+		grid-template-columns: repeat(3, minmax(0, 1fr));
 	}
 	.cards article {
 		border-top: 1px solid #bbb8b2;
