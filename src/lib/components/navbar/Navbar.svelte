@@ -6,6 +6,7 @@
 	import LocaleToggle from './LocaleToggle.svelte';
 	import { isSupportedLocale, type Lang } from '$lib/data';
 	import { buildLocalizedPath } from '$lib/functions/seo';
+	import { navigationCopy, sectorPaths } from '$lib/navigation';
 
 	let isNavbarOpen = false;
 	let menuButton: HTMLButtonElement;
@@ -13,6 +14,7 @@
 		href: string;
 		label: string;
 		active: boolean;
+		cta?: boolean;
 		children?: { href: string; label: string }[];
 	};
 	let links: NavLink[];
@@ -110,38 +112,9 @@
 			menu: 'Menu di navigazione'
 		}
 	};
-	const workSlugs: Record<'1' | '2' | '3' | '8', Record<Lang, string>> = {
-		'1': {
-			fr: 'automatisation-greffes',
-			en: 'automatisation-greffes',
-			es: 'automatizacion-secretarias-judiciales',
-			de: 'automatisierung-handelsgerichte',
-			it: 'automazione-cancellerie-tribunali'
-		},
-		'2': {
-			fr: 'plateforme-economie-circulaire',
-			en: 'end-of-life-vehicle-platform',
-			es: 'plataforma-economia-circular',
-			de: 'plattform-fahrzeugruecknahme',
-			it: 'piattaforma-veicoli-fuori-uso'
-		},
-		'3': {
-			fr: 'marketplace-batteries',
-			en: 'marketplace-batteries',
-			es: 'marketplace-baterias',
-			de: 'marktplatz-fuer-second-life-batterien',
-			it: 'marketplace-batterie-seconda-vita'
-		},
-		'8': {
-			fr: 'plateforme-operations-recyclage-batteries',
-			en: 'battery-recycling-operations-platform',
-			es: 'plataforma-operaciones-reciclaje-baterias',
-			de: 'betriebsplattform-batterierecycling',
-			it: 'piattaforma-riciclo-batterie'
-		}
-	};
 	$: currentLocale = isSupportedLocale($locale) ? $locale : 'fr';
 	$: copy = labels[currentLocale];
+	$: navigation = navigationCopy[currentLocale];
 	const isPathActive = (path: string, pathname: string, locale: Lang, exact = false) => {
 		const canonicalPath = buildLocalizedPath(path, locale);
 		const activePaths =
@@ -157,60 +130,67 @@
 	};
 	$: links = [
 		{
-			href: buildLocalizedPath('/', currentLocale),
-			label: copy.home,
-			active: isPathActive('/', $page.url.pathname, currentLocale, true)
-		},
-		{
 			href: buildLocalizedPath('/expertises', currentLocale),
-			label: copy.expertise,
-			active: isPathActive('/expertises', $page.url.pathname, currentLocale),
+			label: navigation.solutions,
+			active:
+				isPathActive('/expertises', $page.url.pathname, currentLocale) &&
+				!isPathActive('/expertises/economie-circulaire', $page.url.pathname, currentLocale),
 			children: [
 				{
 					href: buildLocalizedPath('/expertises', currentLocale),
-					label: copy.allExpertise
-				},
-				{
-					href: buildLocalizedPath('/expertises/economie-circulaire', currentLocale),
-					label: copy.circularEconomy
+					label: navigation.allSolutions
 				},
 				{
 					href: buildLocalizedPath('/expertises/analyse-documentaire', currentLocale),
-					label: copy.documentAnalysis
+					label: navigation.documents
+				},
+				{
+					href: buildLocalizedPath('/expertises/workflows-agentiques', currentLocale),
+					label: navigation.agents
+				}
+			]
+		},
+		{
+			href: buildLocalizedPath('/expertises/economie-circulaire', currentLocale),
+			label: navigation.sectors,
+			active: isPathActive('/expertises/economie-circulaire', $page.url.pathname, currentLocale),
+			children: [
+				{
+					href: buildLocalizedPath('/expertises/economie-circulaire', currentLocale),
+					label: navigation.circular
+				},
+				{
+					href: buildLocalizedPath(
+						`/expertises/economie-circulaire/${sectorPaths[currentLocale].vehicles}`,
+						currentLocale
+					),
+					label: navigation.vehicles
+				},
+				{
+					href: buildLocalizedPath(
+						`/expertises/economie-circulaire/${sectorPaths[currentLocale].batteries}`,
+						currentLocale
+					),
+					label: navigation.batteries
+				},
+				{
+					href: buildLocalizedPath('/expertises/economie-circulaire/rep-emballages', currentLocale),
+					label: navigation.packaging
 				}
 			]
 		},
 		{
 			href: buildLocalizedPath('/realisations', currentLocale),
-			label: copy.work,
-			active: isPathActive('/realisations', $page.url.pathname, currentLocale),
-			children: [
-				{
-					href: buildLocalizedPath('/realisations', currentLocale),
-					label: copy.allWork
-				},
-				{
-					href: buildLocalizedPath(`/realisations/${workSlugs['1'][currentLocale]}`, currentLocale),
-					label: copy.courtAI
-				},
-				{
-					href: buildLocalizedPath(`/realisations/${workSlugs['2'][currentLocale]}`, currentLocale),
-					label: copy.vehicles
-				},
-				{
-					href: buildLocalizedPath(`/realisations/${workSlugs['3'][currentLocale]}`, currentLocale),
-					label: copy.batteries
-				},
-				{
-					href: buildLocalizedPath(`/realisations/${workSlugs['8'][currentLocale]}`, currentLocale),
-					label: copy.recycling
-				}
-			]
+			label: navigation.work,
+			active: isPathActive('/realisations', $page.url.pathname, currentLocale)
 		},
 		{
-			href: buildLocalizedPath('/offres-emploi', currentLocale),
-			label: copy.jobs,
-			active: isPathActive('/offres-emploi', $page.url.pathname, currentLocale)
+			href: $page.url.pathname.startsWith('/newsletter/')
+				? `${buildLocalizedPath('/', currentLocale)}#contact`
+				: '#contact',
+			label: navigation.contact,
+			active: false,
+			cta: true
 		}
 	];
 	function closeOnEscape(event: KeyboardEvent) {
@@ -244,6 +224,9 @@
 					<a
 						href={link.href}
 						class:active={link.active}
+						class:nav-contact={link.cta}
+						data-umami-event={link.cta ? 'contact_open' : undefined}
+						data-umami-event-placement={link.cta ? 'navigation' : undefined}
 						aria-current={link.active ? 'page' : undefined}
 						on:click={() => (isNavbarOpen = false)}>{link.label}</a
 					>

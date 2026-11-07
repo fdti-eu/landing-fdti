@@ -126,6 +126,19 @@
 	.nav-links > li {
 		position: relative;
 	}
+	.nav-links a.nav-contact {
+		background: var(--color-yellow);
+		color: var(--color-dark-grey);
+		font-weight: 600;
+		border-radius: 4px;
+	}
+	.nav-links a.nav-contact:hover {
+		background: #f4d45b;
+		color: var(--color-dark-grey);
+	}
+	.nav-links a.nav-contact::after {
+		display: none;
+	}
 	.nav-submenu {
 		position: absolute;
 		top: calc(100% + 13px);

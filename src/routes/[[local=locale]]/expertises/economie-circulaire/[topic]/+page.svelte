@@ -13,6 +13,8 @@
 	import type { Lang } from '$lib/data';
 	import { afterNavigate } from '$app/navigation';
 	import { onDestroy } from 'svelte';
+	import { navigationCopy } from '$lib/navigation';
+	import { expertiseOffers, offerPaths } from '$lib/expertise-offers';
 
 	export let data: PageData;
 	$: ({ content, dossier } = data);
@@ -104,6 +106,9 @@
 <header class="ce-hero ce-detail-hero">
 	<div class="ce-shell">
 		<a class="ce-back" href={root}><span aria-hidden="true">←</span> {content.back}</a>
+		{#if dossierIndex === 2}
+			<p class="ce-eyebrow">{navigationCopy[data.locale].resources}</p>
+		{/if}
 		<p class="ce-eyebrow" style={`view-transition-name: ${dossierTransitionPrefix}-label;`}>
 			{dossier.label}
 		</p>
@@ -180,9 +185,9 @@
 
 <section class="ce-section ce-related">
 	<div class="ce-shell">
-		<h2>{content.relatedTitle}</h2>
+		<h2>{navigationCopy[data.locale].sectors}</h2>
 		<div class="ce-related-grid">
-			{#each content.dossiers.filter((item) => item.slug !== dossier.slug) as item}
+			{#each content.dossiers.slice(0, 2).filter((item) => item.slug !== dossier.slug) as item}
 				<a href={`${root}/${item.slug}`}
 					><span class="ce-eyebrow">{item.label}</span>
 					<h3>{item.title}</h3>
@@ -190,7 +195,24 @@
 					<span class="ce-link">{content.detailLink}<span aria-hidden="true">↗</span></span></a
 				>
 			{/each}
+			<a href={buildLocalizedPath(offerPaths.packaging, data.locale)}>
+				<span class="ce-eyebrow">{navigationCopy[data.locale].packaging}</span>
+				<h3>{expertiseOffers[data.locale].packaging.title}</h3>
+				<p>{expertiseOffers[data.locale].packaging.description}</p>
+				<span class="ce-link">{content.detailLink}<span aria-hidden="true">↗</span></span>
+			</a>
 		</div>
 	</div>
 </section>
+{#if dossierIndex !== 2}
+	<section class="ce-section ce-related">
+		<div class="ce-shell">
+			<h2>{navigationCopy[data.locale].resources}</h2>
+			<p>{navigationCopy[data.locale].resourceIntro}</p>
+			<a class="ce-link" href={`${root}/${content.dossiers[2].slug}`}
+				>{content.dossiers[2].label} ↗</a
+			>
+		</div>
+	</section>
+{/if}
 <CircularContact {content} />

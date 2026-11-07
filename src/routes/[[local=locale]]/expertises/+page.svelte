@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { MetaTags } from 'svelte-meta-tags';
 	import { expertiseOffers, offerPaths } from '$lib/expertise-offers';
+	import { navigationCopy } from '$lib/navigation';
 	import {
 		absoluteImageUrl,
 		buildLocalizedPath,
@@ -326,7 +327,7 @@
 <div class="editorial-page">
 	<header class="editorial-hero">
 		<div class="editorial-shell">
-			<p class="editorial-kicker">{content.label}</p>
+			<p class="editorial-kicker">{navigationCopy[data.locale].solutions}</p>
 			<h1>{content.title}</h1>
 			<p>{content.intro}</p>
 		</div>
@@ -345,20 +346,13 @@
 	</section>
 	<section class="editorial-section editorial-fields">
 		<div class="editorial-shell">
-			<p class="editorial-kicker editorial-section-label">{content.fieldLabel}</p>
+			<h2 class="editorial-kicker editorial-section-label">
+				{navigationCopy[data.locale].allSolutions}
+			</h2>
 			<div class="editorial-field-list">
-				{#each Object.entries(offerPaths) as [key, path], index}
-					{@const offer = expertiseOffers[data.locale][key as keyof typeof offerPaths]}
-					<a href={buildLocalizedPath(path, data.locale)}>
-						<span>0{index + 1}</span>
-						<h3>{offer.label}</h3>
-						<p>{offer.description}</p>
-						<strong>{offer.cta} ↗</strong>
-					</a>
-				{/each}
-				{#each content.fields as item, index}
+				{#each content.fields.filter((item) => item.id === 'documents-critiques') as item}
 					<a id={item.id} href={item.href}>
-						<span>0{index + 3}</span>
+						<span>01</span>
 						<h3 style={`view-transition-name: ${expertiseTransitionName(item.id)};`}>
 							{item.title}
 						</h3>
@@ -366,7 +360,27 @@
 						<strong>{item.link} ↗</strong>
 					</a>
 				{/each}
+				<a href={buildLocalizedPath(offerPaths.agentic, data.locale)}>
+					<span>02</span>
+					<h3>{navigationCopy[data.locale].agents}</h3>
+					<p>{expertiseOffers[data.locale].agentic.description}</p>
+					<strong>{expertiseOffers[data.locale].agentic.cta} ↗</strong>
+				</a>
 			</div>
+		</div>
+	</section>
+	<section class="editorial-section editorial-shell">
+		<h2>{navigationCopy[data.locale].sectors}</h2>
+		<p>{navigationCopy[data.locale].sectorIntro}</p>
+		<div class="editorial-field-list">
+			{#each content.fields.filter((item) => item.id === 'economie-circulaire') as item}
+				<a href={item.href}>
+					<span>01</span>
+					<h3 style={`view-transition-name: ${expertiseTransitionName(item.id)};`}>{item.title}</h3>
+					<p>{item.text}</p>
+					<strong>{navigationCopy[data.locale].sectorLink} ↗</strong>
+				</a>
+			{/each}
 		</div>
 	</section>
 	<section class="editorial-cta">

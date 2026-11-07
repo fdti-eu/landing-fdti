@@ -99,19 +99,13 @@
 				{
 					'@type': 'ListItem',
 					position: 2,
-					name: 'Expertises',
-					item: 'https://www.fdti.eu/expertises'
-				},
-				{
-					'@type': 'ListItem',
-					position: 3,
 					name: 'Économie circulaire',
 					item: 'https://www.fdti.eu/expertises/economie-circulaire'
 				},
 				{
 					'@type': 'ListItem',
-					position: 4,
-					name: 'Logiciels métier pour les emballages',
+					position: 3,
+					name: 'Emballages',
 					item: canonical
 				}
 			]
@@ -312,6 +306,7 @@
 			fournisseurs fournissent le pot et sa fermeture. Voici le parcours d’une donnée, avant tout
 			classement dans un barème déclaratif.
 		</p>
+		<!-- svelte-ignore a11y_no_noninteractive_tabindex (Keyboard users must be able to scroll the wide table.) -->
 		<div class="table-scroll" role="region" aria-label="Données sources de l’exemple" tabindex="0">
 			<table>
 				<caption>Ce que les équipes ont au départ</caption>

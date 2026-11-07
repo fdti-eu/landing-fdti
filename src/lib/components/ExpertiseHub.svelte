@@ -10,7 +10,18 @@
 		workflows: { group: string; title: string; text: string; result: string }[];
 		dossiersLabel: string;
 		dossiersIntro: string;
-		dossiers: { label: string; title: string; summary: string; href: string }[];
+		dossiers: {
+			label: string;
+			title: string;
+			summary: string;
+			href: string;
+			transitionIndex?: number;
+		}[];
+		resources?: {
+			label: string;
+			intro: string;
+			items: { label: string; title: string; summary: string; href: string }[];
+		};
 		detailLink: string;
 		proofLabel: string;
 		proofs: { label: string; title: string; text: string; href: string; link: string }[];
@@ -52,6 +63,32 @@
 	</div>
 </header>
 
+<section class="ce-section ce-related">
+	<div class="ce-shell">
+		<h2 class="ce-eyebrow ce-section-label">{content.dossiersLabel}</h2>
+		<p>{content.dossiersIntro}</p>
+		<div class="ce-related-grid">
+			{#each content.dossiers as dossier, index}
+				<a class="ce-clickable-card" href={dossier.href} aria-labelledby={`guide-${index}`}
+					><span
+						class="ce-eyebrow"
+						style={`view-transition-name: ${dossierTransitionPrefix}-${dossier.transitionIndex ?? index}-label;`}
+						>{dossier.label}</span
+					>
+					<h3
+						id={`guide-${index}`}
+						style={`view-transition-name: ${dossierTransitionPrefix}-${dossier.transitionIndex ?? index}-title;`}
+					>
+						{dossier.title}
+					</h3>
+					<p>{dossier.summary}</p>
+					<span class="ce-link">{content.detailLink}<span aria-hidden="true">↗</span></span></a
+				>
+			{/each}
+		</div>
+	</div>
+</section>
+
 <section id="flux" class="ce-section ce-journey">
 	<div class="ce-shell">
 		<h2 class="ce-eyebrow ce-section-label">{content.journeyLabel}</h2>
@@ -64,32 +101,6 @@
 					<p>{workflow.text}</p>
 					<strong>{workflow.result}</strong>
 				</article>
-			{/each}
-		</div>
-	</div>
-</section>
-
-<section class="ce-section ce-related">
-	<div class="ce-shell">
-		<h2 class="ce-eyebrow ce-section-label">{content.dossiersLabel}</h2>
-		<p>{content.dossiersIntro}</p>
-		<div class="ce-related-grid">
-			{#each content.dossiers as dossier, index}
-				<a class="ce-clickable-card" href={dossier.href} aria-labelledby={`guide-${index}`}
-					><span
-						class="ce-eyebrow"
-						style={`view-transition-name: ${dossierTransitionPrefix}-${index}-label;`}
-						>{dossier.label}</span
-					>
-					<h3
-						id={`guide-${index}`}
-						style={`view-transition-name: ${dossierTransitionPrefix}-${index}-title;`}
-					>
-						{dossier.title}
-					</h3>
-					<p>{dossier.summary}</p>
-					<span class="ce-link">{content.detailLink}<span aria-hidden="true">↗</span></span></a
-				>
 			{/each}
 		</div>
 	</div>
@@ -111,6 +122,25 @@
 		<p class="ce-proof-note">{content.proofNote}</p>
 	</div>
 </section>
+
+{#if content.resources}
+	<section class="ce-section ce-related">
+		<div class="ce-shell">
+			<h2 class="ce-eyebrow ce-section-label">{content.resources.label}</h2>
+			<p>{content.resources.intro}</p>
+			<div class="ce-related-grid">
+				{#each content.resources.items as resource}
+					<a class="ce-clickable-card" href={resource.href}>
+						<span class="ce-eyebrow">{resource.label}</span>
+						<h3>{resource.title}</h3>
+						<p>{resource.summary}</p>
+						<span class="ce-link">{content.detailLink}<span aria-hidden="true">↗</span></span>
+					</a>
+				{/each}
+			</div>
+		</div>
+	</section>
+{/if}
 
 <section class="ce-section ce-integrations">
 	<div class="ce-shell ce-heading-grid">

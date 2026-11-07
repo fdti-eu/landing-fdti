@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { MetaTags } from 'svelte-meta-tags';
 	import { expertiseOffers, offerPaths } from '$lib/expertise-offers';
+	import { navigationCopy } from '$lib/navigation';
 	import ExpertiseHub, { type ExpertiseHubContent } from '$lib/components/ExpertiseHub.svelte';
 	import LdTag from '$lib/components/json-ld/LDTag.svelte';
 	import { schema } from '$lib/components/json-ld/json-ld';
@@ -258,6 +259,8 @@
 		...content,
 		title: common.heroTitle,
 		journeyLabel: pageCopy.journeyLabel,
+		dossiersLabel: navigationCopy[data.locale].sectors,
+		dossiersIntro: navigationCopy[data.locale].sectorIntro,
 		workflows: workflowItems.map((item) => ({
 			group: item.group,
 			title: item.navLabel,
@@ -265,17 +268,26 @@
 			result: item.result
 		})),
 		dossiers: [
-			...content.dossiers.map((item) => ({
+			...content.dossiers.slice(0, 2).map((item) => ({
 				...item,
 				href: buildLocalizedPath(`/expertises/economie-circulaire/${item.slug}`, data.locale)
 			})),
 			{
-				label: expertiseOffers[data.locale].packaging.label,
+				label: navigationCopy[data.locale].packaging,
+				transitionIndex: 3,
 				title: expertiseOffers[data.locale].packaging.title,
 				summary: expertiseOffers[data.locale].packaging.description,
 				href: buildLocalizedPath(offerPaths.packaging, data.locale)
 			}
 		],
+		resources: {
+			label: navigationCopy[data.locale].resources,
+			intro: navigationCopy[data.locale].resourceIntro,
+			items: content.dossiers.slice(2).map((item) => ({
+				...item,
+				href: buildLocalizedPath(`/expertises/economie-circulaire/${item.slug}`, data.locale)
+			}))
+		},
 		proofLabel: pageCopy.proofLabel,
 		proofs: [
 			{

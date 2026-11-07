@@ -72,7 +72,7 @@ export const expertiseOffers: Record<Lang, Record<OfferKey, ExpertiseOffer>> = {
 			back: 'Toutes nos expertises'
 		},
 		packaging: {
-			label: 'Économie circulaire · REP emballages',
+			label: 'Emballages',
 			title: 'Des logiciels métier pour la filière emballages.',
 			description:
 				'FDTI développe vos logiciels sur mesure pour fiabiliser les données emballages, outiller les processus REP et connecter les acteurs de la filière.',
@@ -170,7 +170,7 @@ export const expertiseOffers: Record<Lang, Record<OfferKey, ExpertiseOffer>> = {
 			back: 'All our expertise'
 		},
 		packaging: {
-			label: 'Circular economy · Packaging EPR',
+			label: 'Packaging',
 			title: 'Reliable packaging data, from supplier to declaration.',
 			description:
 				'FDTI builds business tools to structure packaging data, prepare extended producer responsibility (EPR) declarations and track reuse and recycling flows.',
@@ -268,7 +268,7 @@ export const expertiseOffers: Record<Lang, Record<OfferKey, ExpertiseOffer>> = {
 			back: 'Todas nuestras especialidades'
 		},
 		packaging: {
-			label: 'Economía circular · RAP de envases',
+			label: 'Envases',
 			title: 'Datos fiables de envases, del proveedor a la declaración.',
 			description:
 				'FDTI desarrolla herramientas para estructurar datos de envases, preparar declaraciones de responsabilidad ampliada del productor (RAP) y seguir flujos de reutilización y reciclaje.',
@@ -366,7 +366,7 @@ export const expertiseOffers: Record<Lang, Record<OfferKey, ExpertiseOffer>> = {
 			back: 'Alle Kompetenzen'
 		},
 		packaging: {
-			label: 'Kreislaufwirtschaft · Verpackungs-EPR',
+			label: 'Verpackungen',
 			title: 'Verlässliche Verpackungsdaten, vom Lieferanten bis zur Meldung.',
 			description:
 				'FDTI entwickelt Software zur Strukturierung von Verpackungsdaten, Vorbereitung von Meldungen zur erweiterten Herstellerverantwortung (EPR) und Verfolgung von Mehrweg- und Recyclingströmen.',
@@ -464,7 +464,7 @@ export const expertiseOffers: Record<Lang, Record<OfferKey, ExpertiseOffer>> = {
 			back: 'Tutte le competenze'
 		},
 		packaging: {
-			label: 'Economia circolare · EPR imballaggi',
+			label: 'Imballaggi',
 			title: 'Dati affidabili sugli imballaggi, dal fornitore alla dichiarazione.',
 			description:
 				'FDTI sviluppa strumenti per strutturare i dati sugli imballaggi, preparare le dichiarazioni di responsabilità estesa del produttore (EPR) e seguire riutilizzo e riciclo.',
