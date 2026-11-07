@@ -11,6 +11,8 @@ import itDocumentAnalysis from '$locales/document-analysis/it.json';
 import type { Lang, LocaleData } from '$lib/data';
 import { buildLocalizedUrl } from '$lib/functions/seo';
 import { expertiseOffers, offerPaths } from '$lib/expertise-offers';
+import { navigationCopy, solutionIds, solutionLabels } from '$lib/navigation';
+import { solutionsContent } from '$lib/solutions';
 
 const htmlEntities: Record<string, string> = {
 	amp: '&',
@@ -150,7 +152,13 @@ function buildLanguageSection(locale: Lang, data: LocaleData): string {
 		output += `\n${buildLocalizedUrl(`/expertises/analyse-documentaire/${guide.slug}`, locale)}\n`;
 	}
 
-	output += `\n# EXPERTISE\n${buildLocalizedUrl('/expertises', locale)}\n`;
+	output += `\n# ${navigationCopy[locale].solutions}\n${buildLocalizedUrl('/expertises', locale)}\n`;
+	for (const id of solutionIds) {
+		const family = solutionsContent[locale].families[id];
+		output += formatSection(solutionLabels[locale][id], family.need);
+		output += family.deliverables.map((item) => `- ${item}`).join('\n');
+		output += `\n${family.evidence}\n${buildLocalizedUrl('/expertises', locale)}#${id}\n`;
+	}
 
 	if (home?.contact_section) {
 		output += `\n# CONTACT\nEmail: ${home.contact_section.mail}\nCallback requests: use any contact call-to-action on the website; only an email address or phone number is required.\nAddress: ${home.contact_section.address}\n`;

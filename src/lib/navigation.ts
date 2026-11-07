@@ -1,5 +1,58 @@
 import type { Lang } from '$lib/data';
 
+export const solutionIds = [
+	'applications-web',
+	'api-integrations',
+	'data-pilotage',
+	'ia-documents',
+	'automatisation-agents',
+	'infrastructure-exploitation'
+] as const;
+export type SolutionId = (typeof solutionIds)[number];
+
+export const solutionLabels: Record<Lang, Record<SolutionId, string>> = {
+	fr: {
+		'applications-web': 'Applications web & logiciels métier',
+		'api-integrations': 'API & intégrations',
+		'data-pilotage': 'Data & pilotage',
+		'ia-documents': 'IA & traitement documentaire',
+		'automatisation-agents': 'Automatisation & agents IA',
+		'infrastructure-exploitation': 'Infrastructure & exploitation'
+	},
+	en: {
+		'applications-web': 'Web applications & business software',
+		'api-integrations': 'APIs & integrations',
+		'data-pilotage': 'Data & analytics',
+		'ia-documents': 'AI & document processing',
+		'automatisation-agents': 'Automation & AI agents',
+		'infrastructure-exploitation': 'Infrastructure & operations'
+	},
+	es: {
+		'applications-web': 'Aplicaciones web y software empresarial',
+		'api-integrations': 'API e integraciones',
+		'data-pilotage': 'Datos y analítica',
+		'ia-documents': 'IA y procesamiento documental',
+		'automatisation-agents': 'Automatización y agentes de IA',
+		'infrastructure-exploitation': 'Infraestructura y operaciones'
+	},
+	de: {
+		'applications-web': 'Webanwendungen & Fachsoftware',
+		'api-integrations': 'APIs & Integrationen',
+		'data-pilotage': 'Daten & Analytik',
+		'ia-documents': 'KI & Dokumentenverarbeitung',
+		'automatisation-agents': 'Automatisierung & KI-Agenten',
+		'infrastructure-exploitation': 'Infrastruktur & Betrieb'
+	},
+	it: {
+		'applications-web': 'Applicazioni web e software aziendale',
+		'api-integrations': 'API e integrazioni',
+		'data-pilotage': 'Dati e analisi',
+		'ia-documents': 'IA ed elaborazione documentale',
+		'automatisation-agents': 'Automazione e agenti IA',
+		'infrastructure-exploitation': 'Infrastruttura e gestione operativa'
+	}
+};
+
 export const sectorPaths: Record<Lang, { vehicles: string; batteries: string }> = {
 	fr: { vehicles: 'vehicules', batteries: 'batteries' },
 	en: { vehicles: 'vehicules', batteries: 'batteries' },

@@ -6,7 +6,7 @@
 	import LocaleToggle from './LocaleToggle.svelte';
 	import { isSupportedLocale, type Lang } from '$lib/data';
 	import { buildLocalizedPath } from '$lib/functions/seo';
-	import { navigationCopy, sectorPaths } from '$lib/navigation';
+	import { navigationCopy, sectorPaths, solutionIds, solutionLabels } from '$lib/navigation';
 
 	let isNavbarOpen = false;
 	let menuButton: HTMLButtonElement;
@@ -18,102 +18,14 @@
 		children?: { href: string; label: string }[];
 	};
 	let links: NavLink[];
-	const labels: Record<
-		Lang,
-		{
-			home: string;
-			expertise: string;
-			allExpertise: string;
-			circularEconomy: string;
-			documentAnalysis: string;
-			work: string;
-			jobs: string;
-			allWork: string;
-			courtAI: string;
-			vehicles: string;
-			batteries: string;
-			recycling: string;
-			menu: string;
-		}
-	> = {
-		fr: {
-			home: "Page d'accueil",
-			expertise: 'Expertises',
-			allExpertise: 'Toutes les expertises',
-			circularEconomy: 'Économie circulaire',
-			documentAnalysis: 'Analyse documentaire',
-			work: 'Réalisations',
-			jobs: 'Nous rejoindre',
-			allWork: 'Toutes les réalisations',
-			courtAI: 'IA pour la justice',
-			vehicles: 'Véhicules en fin de vie',
-			batteries: 'Batteries seconde vie',
-			recycling: 'Opérations de recyclage',
-			menu: 'Menu de navigation'
-		},
-		en: {
-			home: 'Home',
-			expertise: 'Expertise',
-			allExpertise: 'All expertise',
-			circularEconomy: 'Circular economy',
-			documentAnalysis: 'Document analysis',
-			work: 'Work',
-			jobs: 'Join us',
-			allWork: 'All work',
-			courtAI: 'AI for commercial courts',
-			vehicles: 'End-of-life vehicles',
-			batteries: 'Second-life batteries',
-			recycling: 'Recycling operations',
-			menu: 'Navigation menu'
-		},
-		es: {
-			home: 'Inicio',
-			expertise: 'Especialidades',
-			allExpertise: 'Todas las especialidades',
-			circularEconomy: 'Economía circular',
-			documentAnalysis: 'Análisis documental',
-			work: 'Proyectos',
-			jobs: 'Únete al equipo',
-			allWork: 'Todos los proyectos',
-			courtAI: 'IA para la justicia',
-			vehicles: 'Vehículos fuera de uso',
-			batteries: 'Baterías de segunda vida',
-			recycling: 'Operaciones de reciclaje',
-			menu: 'Menú de navegación'
-		},
-		de: {
-			home: 'Startseite',
-			expertise: 'Kompetenzen',
-			allExpertise: 'Alle Kompetenzen',
-			circularEconomy: 'Kreislaufwirtschaft',
-			documentAnalysis: 'Dokumentenanalyse',
-			work: 'Referenzen',
-			jobs: 'Karriere',
-			allWork: 'Alle Referenzen',
-			courtAI: 'KI für Handelsgerichte',
-			vehicles: 'Altfahrzeuge',
-			batteries: 'Second-Life-Batterien',
-			recycling: 'Batterierecycling',
-			menu: 'Navigationsmenü'
-		},
-		it: {
-			home: 'Home page',
-			expertise: 'Competenze',
-			allExpertise: 'Tutte le competenze',
-			circularEconomy: 'Economia circolare',
-			documentAnalysis: 'Analisi documentale',
-			work: 'Progetti',
-			jobs: 'Lavora con noi',
-			allWork: 'Tutti i progetti',
-			courtAI: 'IA per la giustizia',
-			vehicles: 'Veicoli fuori uso',
-			batteries: 'Batterie di seconda vita',
-			recycling: 'Operazioni di riciclo',
-			menu: 'Menu di navigazione'
-		}
+	const menuLabels: Record<Lang, string> = {
+		fr: 'Menu de navigation',
+		en: 'Navigation menu',
+		es: 'Menú de navegación',
+		de: 'Navigationsmenü',
+		it: 'Menu di navigazione'
 	};
 	$: currentLocale = isSupportedLocale($locale) ? $locale : 'fr';
-	$: copy = labels[currentLocale];
 	$: navigation = navigationCopy[currentLocale];
 	const isPathActive = (path: string, pathname: string, locale: Lang, exact = false) => {
 		const canonicalPath = buildLocalizedPath(path, locale);
@@ -140,14 +52,10 @@
 					href: buildLocalizedPath('/expertises', currentLocale),
 					label: navigation.allSolutions
 				},
-				{
-					href: buildLocalizedPath('/expertises/analyse-documentaire', currentLocale),
-					label: navigation.documents
-				},
-				{
-					href: buildLocalizedPath('/expertises/workflows-agentiques', currentLocale),
-					label: navigation.agents
-				}
+				...solutionIds.map((id) => ({
+					href: `${buildLocalizedPath('/expertises', currentLocale)}#${id}`,
+					label: solutionLabels[currentLocale][id]
+				}))
 			]
 		},
 		{
@@ -246,7 +154,7 @@
 			bind:this={menuButton}
 			class="nav-menu-button"
 			on:click={() => (isNavbarOpen = !isNavbarOpen)}
-			aria-label={copy.menu}
+			aria-label={menuLabels[currentLocale]}
 			aria-expanded={isNavbarOpen}
 			aria-controls="fdti-navigation"><Hamburger isOpen={isNavbarOpen} /></button
 		>
