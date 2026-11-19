@@ -1022,20 +1022,21 @@
 			{
 				"id": "10",
 				"slug": "ocr-fascicoli-veicoli",
-				"title": "Associare i documenti al veicolo corretto con l’OCR",
+				"title": "Archiviare un lotto di documenti nei fascicoli dei veicoli corretti",
 				"category": "Aftermarket e riciclo",
-				"challenge": "Gli operatori devono archiviare i documenti di ogni veicolo fuori uso. Un errore di fascicolo potrebbe renderli visibili a persone estranee alla pratica.",
-				"approach": "Nel flusso previsto, l’operatore carica uno o più file. L’OCR distingue la carta di circolazione francese, il modulo CERFA di dichiarazione di acquisto e la ricevuta SIV della dichiarazione di acquisto dell’officina. Legge il numero di telaio (VIN) per proporre un fascicolo.",
+				"challenge": "Un’addetta amministrativa riceve e scansiona i documenti dei veicoli fuori uso. Per ciascun documento apre la scheda del veicolo, avvia il caricamento, seleziona il file sul computer, sceglie il tipo di documento e conferma. Poi ricomincia. Con centinaia di documenti al giorno e migliaia al mese, non è solo la scansione a richiedere tempo: anche quando i file sono già digitalizzati, occorre cercare il fascicolo e classificare ogni documento.",
+				"approach": "Il flusso previsto inverte l’ordine. Oggi l’addetta parte dal veicolo per aggiungere un documento. Con il nuovo processo partirebbe dai documenti e il software proporrebbe i veicoli corrispondenti. Potrebbe caricare un lotto senza ordinarlo prima. Per ogni file il sistema riconoscerebbe il tipo di documento, leggerebbe il numero di telaio (VIN) e cercherebbe il fascicolo. La decisione finale resterebbe all’addetta, senza dover ripetere ogni ricerca da zero.",
 				"tags": [
 					"OCR",
 					"VIN"
 				],
 				"details": [
-					"La ricerca considera solo i fascicoli autorizzati con una corrispondenza esatta del VIN.",
-					"L’operatore verifica documento, tipo, VIN e fascicolo. Anche in presenza di una sola corrispondenza, il documento diventa visibile nel fascicolo solo dopo la conferma.",
-					"Documenti illeggibili, VIN incerti, corrispondenze multiple e duplicati restano in revisione manuale. I documenti esistenti non vengono sostituiti automaticamente."
+					"Caricare il lotto. Una carta di circolazione francese, un modulo CERFA di dichiarazione d’acquisto e una ricevuta SIV possono essere caricati insieme, anche se riguardano veicoli diversi.",
+					"Distinguere documenti simili. La dichiarazione d’acquisto e la ricevuta che ne attesta la registrazione riguardano la stessa pratica, ma si archiviano sotto tipi diversi. Il software propone la categoria appropriata per ciascun documento.",
+					"Trovare il veicolo senza ricopiare il VIN. L’OCR legge il numero sul documento. Il software cerca una corrispondenza esatta tra i fascicoli accessibili e mostra il documento, il tipo proposto, il VIN letto e il fascicolo suggerito.",
+					"Verificare prima di rendere visibile il documento. L’addetta conferma l’associazione anche quando la corrispondenza è unica. Numeri illeggibili, corrispondenze multiple e possibili duplicati passano alla revisione manuale. Nessun documento esistente viene sovrascritto."
 				],
-				"expectedOutcome": "L’obiettivo è evitare errori di archiviazione lasciando all’operatore la decisione di rendere il documento visibile nel fascicolo."
+				"expectedOutcome": "Il personale amministrativo potrebbe dedicare meno tempo ad aprire fascicoli e archiviare i file uno alla volta, e più tempo a verificare i documenti e gestire le eccezioni. L’officina o il centro di demolizione autorizzato potrebbe consultare il documento convalidato nel fascicolo e nella categoria corretti. Se il ritiro del veicolo è in attesa del giustificativo, la squadra potrebbe procedere alla fase successiva."
 			},
 			{
 				"id": "9",

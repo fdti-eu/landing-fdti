@@ -1026,20 +1026,21 @@
 			{
 				"id": "10",
 				"slug": "ocr-expedientes-vehiculos",
-				"title": "Asignar documentos al vehículo correcto mediante OCR",
+				"title": "Clasificar un lote de documentos en los expedientes de vehículo correctos",
 				"category": "Posventa y reciclaje",
-				"challenge": "Un operador debe archivar la documentación de cada vehículo al final de su vida útil. Un error de expediente podría exponer el documento a personas ajenas.",
-				"approach": "En el flujo previsto, el operador carga uno o varios archivos. El OCR distingue el permiso de circulación francés, el formulario CERFA de declaración de compra y el justificante SIV de la declaración de compra del taller. Lee el número de bastidor (VIN) para proponer un expediente.",
+				"challenge": "Una gestora administrativa recibe y escanea documentos de vehículos al final de su vida útil. Para cada documento, abre la ficha del vehículo, inicia la carga, selecciona el archivo en su equipo, elige el tipo de documento y confirma. Después repite la operación. Con cientos de documentos al día y miles al mes, el escaneo es solo una parte del trabajo: incluso con los archivos ya digitalizados, hay que buscar el expediente y clasificar cada pieza.",
+				"approach": "El flujo previsto invierte el orden. Hoy la gestora parte del vehículo para añadir un documento. Con el nuevo proceso partiría de los documentos y el programa propondría los vehículos correspondientes. Podría cargar un lote sin clasificarlo antes. Para cada archivo, el sistema identificaría el tipo de documento, leería el número de bastidor (VIN) y buscaría el expediente. La decisión final seguiría en manos de la gestora, sin repetir cada búsqueda desde cero.",
 				"tags": [
 					"OCR",
 					"VIN"
 				],
 				"details": [
-					"Solo se buscan coincidencias exactas del VIN en los expedientes autorizados.",
-					"El operador comprueba el documento, su tipo, el VIN y el expediente. Incluso una coincidencia única requiere confirmación antes de que el documento sea visible en el expediente.",
-					"Las piezas ilegibles, los VIN dudosos, las coincidencias múltiples y los duplicados pasan a revisión manual. No se sustituyen documentos automáticamente."
+					"Cargar el lote. Un permiso de circulación francés, un formulario CERFA de declaración de compra y un justificante SIV pueden cargarse juntos, aunque correspondan a vehículos distintos.",
+					"Distinguir documentos similares. La declaración de compra y el justificante de su registro corresponden al mismo trámite, pero se archivan bajo tipos diferentes. El programa propone la categoría de cada documento.",
+					"Encontrar el vehículo sin copiar el VIN. El OCR lee el número en el documento. El sistema busca una coincidencia exacta entre los expedientes autorizados y muestra el documento, el tipo propuesto, el VIN leído y el expediente candidato.",
+					"Verificar antes de dar acceso. La gestora confirma la asociación incluso si solo hay una coincidencia. Si el número es ilegible, hay varias coincidencias o parece haber un duplicado, revisa el caso manualmente. No se sobrescribe ningún documento."
 				],
-				"expectedOutcome": "El objetivo es evitar errores de archivo sin que el operador pierda el control sobre los documentos visibles en el expediente."
+				"expectedOutcome": "El equipo administrativo podría dedicar menos tiempo a abrir expedientes y archivar documentos uno a uno, y más a verificarlos y resolver excepciones. El taller o centro autorizado de tratamiento podría consultar el justificante validado en el expediente y la categoría correctos. Si la retirada está pendiente de ese justificante, el equipo podría dar el siguiente paso."
 			},
 			{
 				"id": "9",

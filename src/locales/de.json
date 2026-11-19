@@ -1031,20 +1031,21 @@
 			{
 				"id": "10",
 				"slug": "ocr-fahrzeugakten",
-				"title": "Dokumente per OCR der richtigen Fahrzeugakte zuordnen",
+				"title": "Gemischte Dokumentenstapel den richtigen Fahrzeugakten zuordnen",
 				"category": "Aftermarket und Recycling",
-				"challenge": "Mitarbeitende müssen Unterlagen zu jedem Altfahrzeug ablegen. Bei einer falschen Zuordnung könnten Unbeteiligte Einsicht erhalten.",
-				"approach": "Im vorgesehenen Ablauf lädt die zuständige Person eine oder mehrere Dateien hoch. Die OCR unterscheidet die französische Zulassungsbescheinigung, das CERFA-Formular zur Kaufmeldung und den SIV-Beleg für die Kaufmeldung der Werkstatt. Anhand der Fahrzeugidentifikationsnummer (FIN) schlägt das System eine Akte vor.",
+				"challenge": "Eine Sachbearbeiterin nimmt Unterlagen zu Altfahrzeugen entgegen und scannt sie. Für jedes Dokument öffnet sie die Fahrzeugakte, startet den Upload, wählt die lokale Datei und den Dokumenttyp aus und bestätigt die Ablage. Dann beginnt sie von vorn. Bei Hunderten von Belegen täglich und Tausenden im Monat kostet nicht nur das Scannen Zeit: Auch bereits digitalisierte Unterlagen muss sie einzeln zuordnen und ablegen.",
+				"approach": "Der geplante Ablauf kehrt die Reihenfolge um. Heute sucht die Sachbearbeiterin zuerst das Fahrzeug, um ein Dokument hinzuzufügen. Künftig würde sie einen unsortierten Stapel hochladen, und die Software würde die passenden Fahrzeuge vorschlagen. Für jede Datei würde sie den Dokumenttyp erkennen, die Fahrzeugidentifikationsnummer (FIN) lesen und die Akte suchen. Die Entscheidung bliebe bei der Sachbearbeiterin, ohne dass sie jede Suche selbst wiederholen müsste.",
 				"tags": [
 					"OCR",
 					"VIN"
 				],
 				"details": [
-					"Die Suche berücksichtigt nur zugängliche Akten mit exakt übereinstimmender FIN.",
-					"Die zuständige Person prüft Beleg, Dokumenttyp, FIN und Akte. Auch bei einem eindeutigen Treffer wird der Beleg erst nach ihrer Bestätigung in der Akte sichtbar.",
-					"Unleserliche Unterlagen, unsichere Nummern, mehrere Treffer und Duplikate werden manuell geprüft. Vorhandene Dokumente werden nicht automatisch ersetzt."
+					"Stapel hochladen. Eine französische Zulassungsbescheinigung, eine CERFA-Kaufmeldung und ein SIV-Registrierungsbeleg können gemeinsam eingereicht werden, selbst wenn sie unterschiedliche Fahrzeuge betreffen.",
+					"Ähnliche Belege unterscheiden. Die Kaufmeldung und die Bestätigung ihrer Registrierung gehören zum selben Vorgang, werden aber unter unterschiedlichen Dokumenttypen abgelegt. Die Software schlägt für jeden Beleg den passenden Typ vor.",
+					"Fahrzeug finden, ohne die FIN abzutippen. Die OCR liest die Nummer aus dem Dokument. Die Software sucht unter den zugänglichen Akten nach einer exakten Übereinstimmung und zeigt Beleg, vorgeschlagenen Typ, gelesene FIN und Fahrzeugakte an.",
+					"Vor der Freigabe prüfen. Auch bei nur einem Treffer bestätigt die Sachbearbeiterin die Zuordnung. Unleserliche Nummern, mehrere Treffer oder mögliche Dubletten prüft sie manuell. Bestehende Dokumente werden nicht überschrieben."
 				],
-				"expectedOutcome": "Ziel ist es, Ablagefehler zu vermeiden. Die Freigabe eines Belegs für die Fahrzeugakte bleibt in der Hand der zuständigen Person."
+				"expectedOutcome": "Das Verwaltungsteam könnte die Zeit für das Öffnen einzelner Akten und die Ablage stärker für die Prüfung von Belegen und Sonderfällen nutzen. Die berechtigte Werkstatt oder der Demontagebetrieb könnte den bestätigten Beleg in der richtigen Akte unter dem passenden Typ einsehen. Wartet eine Fahrzeugrücknahme auf diesen Nachweis, könnte das Team den nächsten Schritt einleiten."
 			},
 			{
 				"id": "9",
