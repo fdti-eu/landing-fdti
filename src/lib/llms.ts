@@ -13,6 +13,7 @@ import { buildLocalizedUrl } from '$lib/functions/seo';
 import { expertiseOffers, offerPaths } from '$lib/expertise-offers';
 import { navigationCopy, solutionIds, solutionLabels } from '$lib/navigation';
 import { solutionsContent } from '$lib/solutions';
+import { solutionPagePath, solutionPages } from '$lib/solution-pages';
 
 const htmlEntities: Record<string, string> = {
 	amp: '&',
@@ -158,6 +159,26 @@ function buildLanguageSection(locale: Lang, data: LocaleData): string {
 		output += formatSection(solutionLabels[locale][id], family.need);
 		output += family.deliverables.map((item) => `- ${item}`).join('\n');
 		output += `\n${family.evidence}\n${buildLocalizedUrl('/expertises', locale)}#${id}\n`;
+	}
+
+	const familyPages = solutionPages[locale];
+	if (familyPages) {
+		for (const id of solutionIds) {
+			const page = familyPages.pages[id];
+			output += `\n## ${solutionLabels[locale][id]}\n${buildLocalizedUrl(solutionPagePath(id), locale)}\n${page.lead}\n`;
+			for (const situation of page.situations) {
+				output += `\n### ${situation.title}\n${situation.text}\n`;
+			}
+			output += `\n### ${familyPages.optionsTitle}\n${page.optionsIntro}\n`;
+			for (const option of page.options) {
+				output += `- ${option.title}. ${familyPages.whenLabel} : ${option.when} ${familyPages.impactLabel} : ${option.impact}\n`;
+			}
+			output += `\n### ${familyPages.deliverablesTitle}\n${page.deliverables.map((item) => `- ${item}`).join('\n')}\n`;
+		}
+		output += `\n## ${familyPages.practicesTitle}\n`;
+		for (const practice of familyPages.practices) {
+			output += `- ${practice.title} : ${practice.text}\n`;
+		}
 	}
 
 	if (home?.contact_section) {

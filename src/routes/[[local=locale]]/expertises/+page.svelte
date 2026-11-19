@@ -3,6 +3,7 @@
 	import { navigationCopy, solutionIds, solutionLabels } from '$lib/navigation';
 	import { solutionProofIds, solutionsContent } from '$lib/solutions';
 	import { offerPaths } from '$lib/expertise-offers';
+	import { solutionPagePath, solutionPages } from '$lib/solution-pages';
 	import {
 		absoluteImageUrl,
 		buildLocalizedPath,
@@ -15,6 +16,7 @@
 	$: content = solutionsContent[data.locale];
 	$: labels = solutionLabels[data.locale];
 	$: navigation = navigationCopy[data.locale];
+	$: familyPages = solutionPages[data.locale];
 	$: canonical = buildLocalizedUrl('/expertises', data.locale);
 	$: title = content.metaTitle;
 </script>
@@ -76,7 +78,11 @@
 						{/each}
 					</ul>
 				</div>
-				{#if id === 'ia-documents'}
+				{#if familyPages}
+					<a class="detail-link" href={buildLocalizedPath(solutionPagePath(id), data.locale)}
+						>{familyPages.pageLink} : {labels[id]} <span aria-hidden="true">→</span></a
+					>
+				{:else if id === 'ia-documents'}
 					<a
 						class="detail-link"
 						href={buildLocalizedPath('/expertises/analyse-documentaire', data.locale)}

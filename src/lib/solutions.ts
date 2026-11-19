@@ -34,7 +34,7 @@ export const solutionsContent: Record<Lang, SolutionsContent> = {
 		description:
 			'Applications web, API, data, IA, automatisation et infrastructure : FDTI conçoit et exploite des logiciels sur mesure, dans le cloud ou sur vos serveurs.',
 		intro:
-			'Un outil à créer, des systèmes à connecter, des données à exploiter ou un processus à automatiser : nous assemblons les compétences utiles autour de vos opérations et de votre existant.',
+			'Vous connaissez votre métier. Nous confrontons vos besoins aux possibilités techniques pour construire une réponse adaptée : un outil à créer, des systèmes à connecter, des données à exploiter ou un processus à automatiser.',
 		needs: 'Votre besoin',
 		deliverables: 'Ce que nous construisons',
 		evidence: 'Réalisations associées',
@@ -115,7 +115,7 @@ export const solutionsContent: Record<Lang, SolutionsContent> = {
 		description:
 			'Web applications, APIs, data, AI, automation and infrastructure: FDTI builds and operates custom software in the cloud or on your servers.',
 		intro:
-			'Build a tool, connect systems, use your data or automate a process: we combine the capabilities your operations need with the systems you already have.',
+			'You know your business. We weigh your needs against what is technically possible to build a response that fits: a tool to create, systems to connect, data to use or a process to automate.',
 		needs: 'Your need',
 		deliverables: 'What we build',
 		evidence: 'Related projects',
@@ -194,7 +194,7 @@ export const solutionsContent: Record<Lang, SolutionsContent> = {
 		description:
 			'Aplicaciones web, API, datos, IA, automatización e infraestructura: FDTI desarrolla y opera software a medida en la nube o en sus servidores.',
 		intro:
-			'Crear una herramienta, conectar sistemas, aprovechar los datos o automatizar un proceso: combinamos las capacidades necesarias con sus herramientas existentes.',
+			'Usted conoce su negocio. Contrastamos sus necesidades con las posibilidades técnicas para construir una respuesta adecuada: crear una herramienta, conectar sistemas, aprovechar los datos o automatizar un proceso.',
 		needs: 'Su necesidad',
 		deliverables: 'Lo que construimos',
 		evidence: 'Proyectos relacionados',
@@ -276,7 +276,7 @@ export const solutionsContent: Record<Lang, SolutionsContent> = {
 		description:
 			'Webanwendungen, APIs, Daten, KI, Automatisierung und Infrastruktur: FDTI entwickelt und betreibt individuelle Software in der Cloud oder auf Ihren Servern.',
 		intro:
-			'Ein Werkzeug entwickeln, Systeme verbinden, Daten nutzen oder Prozesse automatisieren: Wir kombinieren die benötigten Fähigkeiten mit Ihren bestehenden Systemen.',
+			'Sie kennen Ihr Geschäft. Wir gleichen Ihre Anforderungen mit den technischen Möglichkeiten ab und entwickeln daraus eine passende Lösung: ein Werkzeug entwickeln, Systeme verbinden, Daten nutzen oder Prozesse automatisieren.',
 		needs: 'Ihr Bedarf',
 		deliverables: 'Was wir entwickeln',
 		evidence: 'Passende Referenzen',
@@ -356,7 +356,7 @@ export const solutionsContent: Record<Lang, SolutionsContent> = {
 		description:
 			'Applicazioni web, API, dati, IA, automazione e infrastruttura: FDTI sviluppa e gestisce software su misura nel cloud o sui vostri server.',
 		intro:
-			'Creare uno strumento, collegare sistemi, utilizzare i dati o automatizzare un processo: combiniamo le competenze necessarie con gli strumenti già presenti.',
+			'Conoscete il vostro mestiere. Confrontiamo le vostre esigenze con le possibilità tecniche per costruire una risposta adatta: creare uno strumento, collegare sistemi, utilizzare i dati o automatizzare un processo.',
 		needs: 'La vostra esigenza',
 		deliverables: 'Cosa realizziamo',
 		evidence: 'Progetti correlati',

@@ -2,6 +2,8 @@ import { getData, getUseCasesContent, SUPPORTED_LOCALES, type Lang } from '$lib/
 import { buildLocalizedUrl, type SeoAlternatePaths } from '$lib/functions/seo';
 import { getJobOffers, type JobOffer } from '$lib/jobs';
 import { offerPaths } from '$lib/expertise-offers';
+import { solutionIds } from '$lib/navigation';
+import { solutionPageLocales, solutionPagePath } from '$lib/solution-pages';
 
 type SitemapPage = {
 	path: string;
@@ -143,6 +145,29 @@ export async function GET() {
 			])
 		) as SeoAlternatePaths;
 		addLocalizedEntries(paths, 'monthly', '0.75');
+	}
+
+	// Family pages are listed only for the locales in which they are published.
+	for (const id of solutionIds) {
+		const path = solutionPagePath(id);
+		const alternates = solutionPageLocales
+			.map(
+				(locale) =>
+					`\t\t<xhtml:link rel="alternate" hreflang="${locale}" href="${buildLocalizedUrl(path, locale)}" />`
+			)
+			.join('\n');
+		for (const locale of solutionPageLocales) {
+			const location = buildLocalizedUrl(path, locale);
+			urls.set(
+				location,
+				`<url>
+		<loc>${location}</loc>
+${alternates}
+		<changefreq>monthly</changefreq>
+		<priority>0.90</priority>
+	</url>`
+			);
+		}
 	}
 
 	const xml = `<?xml version="1.0" encoding="UTF-8"?>

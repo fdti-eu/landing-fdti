@@ -7,6 +7,7 @@
 	import { isSupportedLocale, type Lang } from '$lib/data';
 	import { buildLocalizedPath } from '$lib/functions/seo';
 	import { navigationCopy, sectorPaths, solutionIds, solutionLabels } from '$lib/navigation';
+	import { solutionHref } from '$lib/solution-pages';
 
 	let isNavbarOpen = false;
 	let menuButton: HTMLButtonElement;
@@ -53,7 +54,7 @@
 					label: navigation.allSolutions
 				},
 				...solutionIds.map((id) => ({
-					href: `${buildLocalizedPath('/expertises', currentLocale)}#${id}`,
+					href: buildLocalizedPath(solutionHref(id, currentLocale), currentLocale),
 					label: solutionLabels[currentLocale][id]
 				}))
 			]
