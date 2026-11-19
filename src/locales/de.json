@@ -1035,6 +1035,20 @@
 				"category": "Aftermarket und Recycling",
 				"challenge": "Eine Sachbearbeiterin nimmt Unterlagen zu Altfahrzeugen entgegen und scannt sie. Für jedes Dokument öffnet sie die Fahrzeugakte, startet den Upload, wählt die lokale Datei und den Dokumenttyp aus und bestätigt die Ablage. Dann beginnt sie von vorn. Bei Hunderten von Belegen täglich und Tausenden im Monat kostet nicht nur das Scannen Zeit: Auch bereits digitalisierte Unterlagen muss sie einzeln zuordnen und ablegen.",
 				"approach": "Der geplante Ablauf kehrt die Reihenfolge um. Heute sucht die Sachbearbeiterin zuerst das Fahrzeug, um ein Dokument hinzuzufügen. Künftig würde sie einen unsortierten Stapel hochladen, und die Software würde die passenden Fahrzeuge vorschlagen. Für jede Datei würde sie den Dokumenttyp erkennen, die Fahrzeugidentifikationsnummer (FIN) lesen und die Akte suchen. Die Entscheidung bliebe bei der Sachbearbeiterin, ohne dass sie jede Suche selbst wiederholen müsste.",
+				"metrics": [
+					{
+						"label": "Belegeingang pro Tag",
+						"value": "Hunderte"
+					},
+					{
+						"label": "Belegeingang pro Monat",
+						"value": "Tausende"
+					},
+					{
+						"label": "Vorgesehene Dokumenttypen",
+						"value": "3"
+					}
+				],
 				"tags": [
 					"OCR",
 					"VIN"

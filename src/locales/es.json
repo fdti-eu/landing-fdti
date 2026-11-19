@@ -1030,6 +1030,20 @@
 				"category": "Posventa y reciclaje",
 				"challenge": "Una gestora administrativa recibe y escanea documentos de vehículos al final de su vida útil. Para cada documento, abre la ficha del vehículo, inicia la carga, selecciona el archivo en su equipo, elige el tipo de documento y confirma. Después repite la operación. Con cientos de documentos al día y miles al mes, el escaneo es solo una parte del trabajo: incluso con los archivos ya digitalizados, hay que buscar el expediente y clasificar cada pieza.",
 				"approach": "El flujo previsto invierte el orden. Hoy la gestora parte del vehículo para añadir un documento. Con el nuevo proceso partiría de los documentos y el programa propondría los vehículos correspondientes. Podría cargar un lote sin clasificarlo antes. Para cada archivo, el sistema identificaría el tipo de documento, leería el número de bastidor (VIN) y buscaría el expediente. La decisión final seguiría en manos de la gestora, sin repetir cada búsqueda desde cero.",
+				"metrics": [
+					{
+						"label": "Documentos recibidos al día",
+						"value": "Cientos"
+					},
+					{
+						"label": "Documentos recibidos al mes",
+						"value": "Miles"
+					},
+					{
+						"label": "Tipos de documentos previstos",
+						"value": "3"
+					}
+				],
 				"tags": [
 					"OCR",
 					"VIN"

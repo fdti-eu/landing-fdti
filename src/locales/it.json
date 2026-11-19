@@ -1026,6 +1026,20 @@
 				"category": "Aftermarket e riciclo",
 				"challenge": "Un’addetta amministrativa riceve e scansiona i documenti dei veicoli fuori uso. Per ciascun documento apre la scheda del veicolo, avvia il caricamento, seleziona il file sul computer, sceglie il tipo di documento e conferma. Poi ricomincia. Con centinaia di documenti al giorno e migliaia al mese, non è solo la scansione a richiedere tempo: anche quando i file sono già digitalizzati, occorre cercare il fascicolo e classificare ogni documento.",
 				"approach": "Il flusso previsto inverte l’ordine. Oggi l’addetta parte dal veicolo per aggiungere un documento. Con il nuovo processo partirebbe dai documenti e il software proporrebbe i veicoli corrispondenti. Potrebbe caricare un lotto senza ordinarlo prima. Per ogni file il sistema riconoscerebbe il tipo di documento, leggerebbe il numero di telaio (VIN) e cercherebbe il fascicolo. La decisione finale resterebbe all’addetta, senza dover ripetere ogni ricerca da zero.",
+				"metrics": [
+					{
+						"label": "Documenti ricevuti al giorno",
+						"value": "Centinaia"
+					},
+					{
+						"label": "Documenti ricevuti al mese",
+						"value": "Migliaia"
+					},
+					{
+						"label": "Tipi di documento previsti",
+						"value": "3"
+					}
+				],
 				"tags": [
 					"OCR",
 					"VIN"

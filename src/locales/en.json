@@ -1027,6 +1027,20 @@
 				"category": "Aftermarket & recycling",
 				"challenge": "An administrator receives and scans paperwork for end-of-life vehicles. For each document, she opens the vehicle record, starts an upload, selects the file on her computer, chooses the document type and confirms. Then she starts again. With hundreds of documents a day and thousands a month, scanning is only part of the work. Even when everything is already scanned, every file still needs to be matched and filed.",
 				"approach": "The proposed workflow reverses the sequence. Today the administrator starts with a vehicle and adds a document. Instead, she would start with the documents and the software would suggest the vehicles. She could upload an unsorted batch in one go. For each file, the software would identify the document type, read the vehicle identification number (VIN) and look up the record. She would still make the final decision without having to start each search from scratch.",
+				"metrics": [
+					{
+						"label": "Documents received per day",
+						"value": "Hundreds"
+					},
+					{
+						"label": "Documents received per month",
+						"value": "Thousands"
+					},
+					{
+						"label": "Document types in scope",
+						"value": "3"
+					}
+				],
 				"tags": [
 					"OCR",
 					"VIN"

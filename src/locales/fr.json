@@ -1035,6 +1035,20 @@
 				"category": "Aftermarket & recyclage",
 				"challenge": "Une gestionnaire administrative reçoit et scanne les pièces de véhicules hors d’usage. Pour chaque document, elle ouvre la fiche du véhicule, lance l’ajout d’une pièce, sélectionne le fichier sur son poste, choisit le type de document et valide. Puis elle recommence pour la pièce suivante. À raison de centaines de pièces par jour et de milliers par mois, ce n’est pas le scan seul qui prend du temps : c’est toute la séquence de recherche et de classement qui se répète, même quand toutes les pièces sont déjà numérisées.",
 				"approach": "Le parcours prévu inverse l’ordre du travail. Aujourd’hui, la gestionnaire part du véhicule pour y ajouter un document. Demain, elle part des documents et le logiciel lui propose les véhicules correspondants. Elle dépose un lot de fichiers sans les trier au préalable. Pour chaque pièce, le logiciel reconnaît le type de document, lit le numéro d’identification du véhicule (VIN) et recherche le dossier. La gestionnaire garde la décision finale, sans avoir à refaire elle-même toute la recherche.",
+				"metrics": [
+					{
+						"label": "Pièces reçues par jour",
+						"value": "Des centaines"
+					},
+					{
+						"label": "Pièces reçues par mois",
+						"value": "Des milliers"
+					},
+					{
+						"label": "Types de documents prévus",
+						"value": "3"
+					}
+				],
 				"tags": [
 					"OCR",
 					"VIN"
