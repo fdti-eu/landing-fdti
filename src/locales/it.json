@@ -1028,8 +1028,19 @@
 				"approach": "Il flusso previsto inverte l’ordine. Oggi l’addetta parte dal veicolo per aggiungere un documento. Con il nuovo processo partirebbe dai documenti e il software proporrebbe i veicoli corrispondenti. Potrebbe caricare un lotto senza ordinarlo prima. Per ogni file il sistema riconoscerebbe il tipo di documento, leggerebbe il numero di telaio (VIN) e cercherebbe il fascicolo. La decisione finale resterebbe all’addetta, senza dover ripetere ogni ricerca da zero.",
 				"metrics": [
 					{
-						"label": "Scenario: 3.000 documenti/mese × 1 minuto netto risparmiato per documento",
-						"value": "≈ 7 giornate-persona/mese (7 h/giorno)"
+						"label": "Capacità liberata",
+						"value": "≈ 7 giorni/mese",
+						"note": "Scenario: 3.000 documenti/mese × 1 minuto netto risparmiato, con giornate di 7 ore."
+					},
+					{
+						"label": "Valore del tempo liberato",
+						"value": "2.000 €/mese",
+						"note": "Simulazione a 40 €/h: 50 ore per altre attività, non una riduzione accertata dei costi."
+					},
+					{
+						"label": "Budget di pareggio",
+						"value": "≤ 12.000 €",
+						"note": "A questo ritmo per 6 mesi: costo totale massimo, gestione inclusa, coperto dal valore del tempo liberato."
 					}
 				],
 				"tags": [

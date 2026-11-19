@@ -1037,8 +1037,19 @@
 				"approach": "Der geplante Ablauf kehrt die Reihenfolge um. Heute sucht die Sachbearbeiterin zuerst das Fahrzeug, um ein Dokument hinzuzufügen. Künftig würde sie einen unsortierten Stapel hochladen, und die Software würde die passenden Fahrzeuge vorschlagen. Für jede Datei würde sie den Dokumenttyp erkennen, die Fahrzeugidentifikationsnummer (FIN) lesen und die Akte suchen. Die Entscheidung bliebe bei der Sachbearbeiterin, ohne dass sie jede Suche selbst wiederholen müsste.",
 				"metrics": [
 					{
-						"label": "Szenario: 3.000 Belege/Monat × 1 Minute Nettozeitgewinn je Beleg",
-						"value": "≈ 7 Personentage/Monat (7 Std./Tag)"
+						"label": "Freie Kapazität",
+						"value": "≈ 7 Tage/Monat",
+						"note": "Szenario: 3.000 Belege/Monat × 1 Minute Nettozeitgewinn, bei 7 Stunden je Arbeitstag."
+					},
+					{
+						"label": "Wert der Arbeitszeit",
+						"value": "2.000 €/Monat",
+						"note": "Bei angenommenen 40 €/Std.: 50 Stunden für andere Aufgaben, keine nachgewiesene Kostensenkung."
+					},
+					{
+						"label": "Budgetschwelle",
+						"value": "≤ 12.000 €",
+						"note": "Bei gleicher Auslastung über 6 Monate: maximale Gesamtkosten einschließlich Betrieb, die der Zeitgewinn decken würde."
 					}
 				],
 				"tags": [

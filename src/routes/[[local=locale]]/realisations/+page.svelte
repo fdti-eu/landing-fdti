@@ -1,4 +1,5 @@
 <script lang="ts">
+	import CaseIndicators from '$lib/components/CaseIndicators.svelte';
 	import { getContext } from 'svelte';
 	import { tick } from 'svelte';
 	import type { Writable } from 'svelte/store';
@@ -42,7 +43,7 @@
 						challenge?: string | null;
 						approach?: string | null;
 						impact?: string | null;
-						metrics?: { label?: string | null; value?: string | null }[];
+						metrics?: { label?: string | null; value?: string | null; note?: string | null }[];
 						links?: { label?: string | null; url?: string | null }[];
 						tags?: string[];
 						details?: string[];
@@ -359,7 +360,9 @@
 									<div
 										class="flex flex-row lg:flex-col xl:flex-row gap-4 items-start lg:items-end xl:items-start"
 									>
-										{#if useCase.metrics?.length}
+										{#if useCase.metrics?.[0]?.note}
+			<CaseIndicators compact metrics={useCase.metrics.slice(0, 2)} />
+		{:else if useCase.metrics?.length}
 											<div
 												class="case-index-metrics grid grid-cols-2 gap-x-4 gap-y-2 w-full lg:w-auto"
 											>

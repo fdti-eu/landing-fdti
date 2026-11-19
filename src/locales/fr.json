@@ -1037,8 +1037,19 @@
 				"approach": "Le parcours prévu inverse l’ordre du travail. Aujourd’hui, la gestionnaire part du véhicule pour y ajouter un document. Demain, elle part des documents et le logiciel lui propose les véhicules correspondants. Elle dépose un lot de fichiers sans les trier au préalable. Pour chaque pièce, le logiciel reconnaît le type de document, lit le numéro d’identification du véhicule (VIN) et recherche le dossier. La gestionnaire garde la décision finale, sans avoir à refaire elle-même toute la recherche.",
 				"metrics": [
 					{
-						"label": "Scénario : 3 000 pièces/mois × 1 min nette gagnée par pièce",
-						"value": "≈ 7 jours-personnes/mois (7 h/jour)"
+						"label": "Capacité libérée",
+						"value": "≈ 7 j/mois",
+						"note": "Scénario : 3 000 pièces/mois × 1 minute nette gagnée, sur une base de 7 h/jour."
+					},
+					{
+						"label": "Valeur du temps libéré",
+						"value": "2 000 €/mois",
+						"note": "Simulation à 40 €/h : 50 heures réaffectées, pas une baisse de charges constatée."
+					},
+					{
+						"label": "Budget au point d’équilibre",
+						"value": "≤ 12 000 €",
+						"note": "Sur 6 mois au même rythme : plafond de coût total, fonctionnement inclus, pour équilibrer la valeur du temps."
 					}
 				],
 				"tags": [

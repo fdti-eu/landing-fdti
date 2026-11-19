@@ -1,4 +1,5 @@
 <script lang="ts">
+	import CaseIndicators from '$lib/components/CaseIndicators.svelte';
 	import { MetaTags } from 'svelte-meta-tags';
 	import LdTag from '$lib/components/json-ld/LDTag.svelte';
 	import { schema } from '$lib/components/json-ld/json-ld';
@@ -36,7 +37,7 @@
 					approach?: string | null;
 					impact?: string | null;
 					expectedOutcome?: string | null;
-					metrics?: { label?: string | null; value?: string | null }[];
+					metrics?: { label?: string | null; value?: string | null; note?: string | null }[];
 					links?: { label?: string | null; url?: string | null }[];
 					tags?: string[];
 					details?: string[];
@@ -496,7 +497,9 @@
 		></div>
 
 		<div class="max-w-5xl mx-auto px-4 space-y-8 w-full relative z-10">
-			<!-- Carte principale réorganisée -->
+			{#if useCase.metrics?.[0]?.note}
+				<CaseIndicators metrics={useCase.metrics} />
+			{/if}
 			<div
 				class="case-narrative bg-white rounded-2xl shadow-xl shadow-slate-200/50 p-6 sm:p-8 md:p-10 border border-slate-100"
 			>
@@ -562,7 +565,7 @@
 
 					<!-- Droite : Métriques et tags - Stack vertical sur mobile, sidebar sur desktop -->
 					<div class="case-sidebar flex flex-col gap-4 sm:gap-6 w-full lg:w-[280px] lg:shrink-0">
-						{#if useCase.metrics?.length}
+						{#if useCase.metrics?.length && !useCase.metrics[0]?.note}
 							<div class="space-y-3 sm:space-y-4">
 								{#each useCase.metrics as metric, index}
 									<div

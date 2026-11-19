@@ -1032,8 +1032,19 @@
 				"approach": "El flujo previsto invierte el orden. Hoy la gestora parte del vehículo para añadir un documento. Con el nuevo proceso partiría de los documentos y el programa propondría los vehículos correspondientes. Podría cargar un lote sin clasificarlo antes. Para cada archivo, el sistema identificaría el tipo de documento, leería el número de bastidor (VIN) y buscaría el expediente. La decisión final seguiría en manos de la gestora, sin repetir cada búsqueda desde cero.",
 				"metrics": [
 					{
-						"label": "Escenario: 3.000 documentos/mes × 1 minuto neto ahorrado por documento",
-						"value": "≈ 7 jornadas/mes (7 h/jornada)"
+						"label": "Capacidad liberada",
+						"value": "≈ 7 días/mes",
+						"note": "Escenario: 3.000 documentos/mes × 1 minuto neto ahorrado, con jornadas de 7 horas."
+					},
+					{
+						"label": "Valor del tiempo liberado",
+						"value": "2.000 €/mes",
+						"note": "Simulación a 40 €/h: 50 horas para otras tareas, no una reducción de gastos constatada."
+					},
+					{
+						"label": "Presupuesto de equilibrio",
+						"value": "≤ 12.000 €",
+						"note": "A ese ritmo durante 6 meses: coste total máximo, con explotación incluida, cubierto por el valor del tiempo."
 					}
 				],
 				"tags": [

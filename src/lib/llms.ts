@@ -129,7 +129,7 @@ function buildLanguageSection(locale: Lang, data: LocaleData): string {
 				else if (uc.impact) ucText += `Impact: ${uc.impact}\n`;
 
 				if (uc.metrics) {
-					ucText += `Key Metrics: ${uc.metrics.map((m) => `${m.label}: ${m.value}`).join(', ')}\n`;
+					ucText += `Key Metrics: ${uc.metrics.map((m) => `${m.label}: ${m.value}${'note' in m ? ` (${m.note})` : ''}`).join(', ')}\n`;
 				}
 				if (uc.tags) {
 					ucText += `Stack: ${uc.tags.join(', ')}\n`;
