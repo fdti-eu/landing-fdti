@@ -1028,16 +1028,8 @@
 				"approach": "Il flusso previsto inverte l’ordine. Oggi l’addetta parte dal veicolo per aggiungere un documento. Con il nuovo processo partirebbe dai documenti e il software proporrebbe i veicoli corrispondenti. Potrebbe caricare un lotto senza ordinarlo prima. Per ogni file il sistema riconoscerebbe il tipo di documento, leggerebbe il numero di telaio (VIN) e cercherebbe il fascicolo. La decisione finale resterebbe all’addetta, senza dover ripetere ogni ricerca da zero.",
 				"metrics": [
 					{
-						"label": "Documenti ricevuti al giorno",
-						"value": "Centinaia"
-					},
-					{
-						"label": "Documenti ricevuti al mese",
-						"value": "Migliaia"
-					},
-					{
-						"label": "Tipi di documento previsti",
-						"value": "3"
+						"label": "Scenario: 3.000 documenti/mese × 1 minuto netto risparmiato per documento",
+						"value": "≈ 7 giornate-persona/mese (7 h/giorno)"
 					}
 				],
 				"tags": [
@@ -1050,7 +1042,7 @@
 					"Trovare il veicolo senza ricopiare il VIN. L’OCR legge il numero sul documento. Il software cerca una corrispondenza esatta tra i fascicoli accessibili e mostra il documento, il tipo proposto, il VIN letto e il fascicolo suggerito.",
 					"Verificare prima di rendere visibile il documento. L’addetta conferma l’associazione anche quando la corrispondenza è unica. Numeri illeggibili, corrispondenze multiple e possibili duplicati passano alla revisione manuale. Nessun documento esistente viene sovrascritto."
 				],
-				"expectedOutcome": "Il personale amministrativo potrebbe dedicare meno tempo ad aprire fascicoli e archiviare i file uno alla volta, e più tempo a verificare i documenti e gestire le eccezioni. L’officina o il centro di demolizione autorizzato potrebbe consultare il documento convalidato nel fascicolo e nella categoria corretti. Se il ritiro del veicolo è in attesa del giustificativo, la squadra potrebbe procedere alla fase successiva."
+				"expectedOutcome": "Il personale amministrativo potrebbe dedicare meno tempo ad aprire fascicoli e archiviare i file uno alla volta, e più tempo a verificare i documenti e gestire le eccezioni. L’officina o il centro di demolizione autorizzato potrebbe consultare il documento convalidato nel fascicolo e nella categoria corretti. Se il ritiro del veicolo è in attesa del giustificativo, la squadra potrebbe procedere alla fase successiva. Per verificare lo scenario, occorre confrontare il tempo medio di lavoro per documento prima e dopo, includendo la convalida e le eccezioni. Il risparmio effettivo non è ancora stato misurato."
 			},
 			{
 				"id": "9",

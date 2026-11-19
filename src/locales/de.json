@@ -1037,16 +1037,8 @@
 				"approach": "Der geplante Ablauf kehrt die Reihenfolge um. Heute sucht die Sachbearbeiterin zuerst das Fahrzeug, um ein Dokument hinzuzufügen. Künftig würde sie einen unsortierten Stapel hochladen, und die Software würde die passenden Fahrzeuge vorschlagen. Für jede Datei würde sie den Dokumenttyp erkennen, die Fahrzeugidentifikationsnummer (FIN) lesen und die Akte suchen. Die Entscheidung bliebe bei der Sachbearbeiterin, ohne dass sie jede Suche selbst wiederholen müsste.",
 				"metrics": [
 					{
-						"label": "Belegeingang pro Tag",
-						"value": "Hunderte"
-					},
-					{
-						"label": "Belegeingang pro Monat",
-						"value": "Tausende"
-					},
-					{
-						"label": "Vorgesehene Dokumenttypen",
-						"value": "3"
+						"label": "Szenario: 3.000 Belege/Monat × 1 Minute Nettozeitgewinn je Beleg",
+						"value": "≈ 7 Personentage/Monat (7 Std./Tag)"
 					}
 				],
 				"tags": [
@@ -1059,7 +1051,7 @@
 					"Fahrzeug finden, ohne die FIN abzutippen. Die OCR liest die Nummer aus dem Dokument. Die Software sucht unter den zugänglichen Akten nach einer exakten Übereinstimmung und zeigt Beleg, vorgeschlagenen Typ, gelesene FIN und Fahrzeugakte an.",
 					"Vor der Freigabe prüfen. Auch bei nur einem Treffer bestätigt die Sachbearbeiterin die Zuordnung. Unleserliche Nummern, mehrere Treffer oder mögliche Dubletten prüft sie manuell. Bestehende Dokumente werden nicht überschrieben."
 				],
-				"expectedOutcome": "Das Verwaltungsteam könnte die Zeit für das Öffnen einzelner Akten und die Ablage stärker für die Prüfung von Belegen und Sonderfällen nutzen. Die berechtigte Werkstatt oder der Demontagebetrieb könnte den bestätigten Beleg in der richtigen Akte unter dem passenden Typ einsehen. Wartet eine Fahrzeugrücknahme auf diesen Nachweis, könnte das Team den nächsten Schritt einleiten."
+				"expectedOutcome": "Das Verwaltungsteam könnte die Zeit für das Öffnen einzelner Akten und die Ablage stärker für die Prüfung von Belegen und Sonderfällen nutzen. Die berechtigte Werkstatt oder der Demontagebetrieb könnte den bestätigten Beleg in der richtigen Akte unter dem passenden Typ einsehen. Wartet eine Fahrzeugrücknahme auf diesen Nachweis, könnte das Team den nächsten Schritt einleiten. Zur Überprüfung wird die durchschnittliche Arbeitszeit je Beleg vor und nach der Umstellung verglichen, einschließlich Freigaben und Sonderfällen. Die tatsächliche Zeitersparnis wurde noch nicht gemessen."
 			},
 			{
 				"id": "9",

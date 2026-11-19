@@ -35,6 +35,14 @@ Chaque fiche suit le même ordre :
 
 Avant livraison, relire la fiche et ses renvois en contexte, vérifier les cinq langues et lancer `npm run check` puis `npm run build`. Le contrôle éditorial détecte des identifiants connus ; il ne remplace pas la relecture des nouveaux noms, visuels et liens.
 
+#### KPI des réalisations
+
+Avant de retenir un chiffre, répondre à la question de l’acheteur : **qu’est-ce que cette solution change pour mes équipes, mon budget, mon activité ou mon risque ?** Privilégier le temps net rendu aux équipes (heures ou jours-personnes), le délai d’un processus, le coût par dossier, les reprises évitées ou un résultat métier pertinent pour le décideur. Ne pas confondre capacité libérée et économie budgétaire effective.
+
+Un volume de pièces, de pays, de formats, de tables ou de fonctionnalités situe le projet. Seul, il reste dans le contexte ou le périmètre ; ne pas en faire un KPI pour remplir une carte. Ne pas compter deux fois le même indicateur.
+
+Pour un résultat observé, vérifier la source, la période, le périmètre et, si l’on annonce un gain, le point de comparaison. Pour un projet non mesuré, préférer l’absence de chiffre à un gain inventé. Un scénario de décision est possible si ses hypothèses et sa nature conditionnelle restent visibles **sur la carte elle-même**, y compris sur l’index. Préciser la durée d’une journée si l’on convertit des heures en jours-personnes. Ne pas publier le prix d’un contrat client pour illustrer un ROI.
+
 ## Développement local
 
 ```bash

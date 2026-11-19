@@ -1037,16 +1037,8 @@
 				"approach": "Le parcours prévu inverse l’ordre du travail. Aujourd’hui, la gestionnaire part du véhicule pour y ajouter un document. Demain, elle part des documents et le logiciel lui propose les véhicules correspondants. Elle dépose un lot de fichiers sans les trier au préalable. Pour chaque pièce, le logiciel reconnaît le type de document, lit le numéro d’identification du véhicule (VIN) et recherche le dossier. La gestionnaire garde la décision finale, sans avoir à refaire elle-même toute la recherche.",
 				"metrics": [
 					{
-						"label": "Pièces reçues par jour",
-						"value": "Des centaines"
-					},
-					{
-						"label": "Pièces reçues par mois",
-						"value": "Des milliers"
-					},
-					{
-						"label": "Types de documents prévus",
-						"value": "3"
+						"label": "Scénario : 3 000 pièces/mois × 1 min nette gagnée par pièce",
+						"value": "≈ 7 jours-personnes/mois (7 h/jour)"
 					}
 				],
 				"tags": [
@@ -1059,7 +1051,7 @@
 					"Retrouver le véhicule sans recopier le VIN. L’OCR lit le numéro sur le document. Le logiciel cherche une correspondance exacte parmi les dossiers auxquels la gestionnaire a accès et lui présente la pièce, le type reconnu, le VIN lu et le dossier proposé.",
 					"Vérifier avant de rendre la pièce visible. La gestionnaire confirme le rattachement, même si un seul véhicule correspond. Si le numéro est illisible, si plusieurs dossiers correspondent ou si la pièce semble déjà présente, elle reprend le cas manuellement. Aucun document existant n’est écrasé."
 				],
-				"expectedOutcome": "Pour l’équipe administrative, le temps consacré à ouvrir les fiches et à classer les fichiers un par un peut être réaffecté à la vérification des pièces et au traitement des exceptions. Pour le garage ou le centre VHU habilité, la pièce validée devient consultable dans le bon dossier, sous le bon type. Et lorsqu’une reprise attend ce justificatif, l’équipe peut passer à l’étape suivante."
+				"expectedOutcome": "Pour l’équipe administrative, le temps consacré à ouvrir les fiches et à classer les fichiers un par un peut être réaffecté à la vérification des pièces et au traitement des exceptions. Pour le garage ou le centre VHU habilité, la pièce validée devient consultable dans le bon dossier, sous le bon type. Et lorsqu’une reprise attend ce justificatif, l’équipe peut passer à l’étape suivante. Pour vérifier ce scénario, comparer le temps de travail moyen par pièce avant et après, en incluant la validation et les exceptions. Le gain réel n’a pas encore été mesuré."
 			},
 			{
 				"id": "9",

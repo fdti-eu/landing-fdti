@@ -1032,16 +1032,8 @@
 				"approach": "El flujo previsto invierte el orden. Hoy la gestora parte del vehículo para añadir un documento. Con el nuevo proceso partiría de los documentos y el programa propondría los vehículos correspondientes. Podría cargar un lote sin clasificarlo antes. Para cada archivo, el sistema identificaría el tipo de documento, leería el número de bastidor (VIN) y buscaría el expediente. La decisión final seguiría en manos de la gestora, sin repetir cada búsqueda desde cero.",
 				"metrics": [
 					{
-						"label": "Documentos recibidos al día",
-						"value": "Cientos"
-					},
-					{
-						"label": "Documentos recibidos al mes",
-						"value": "Miles"
-					},
-					{
-						"label": "Tipos de documentos previstos",
-						"value": "3"
+						"label": "Escenario: 3.000 documentos/mes × 1 minuto neto ahorrado por documento",
+						"value": "≈ 7 jornadas/mes (7 h/jornada)"
 					}
 				],
 				"tags": [
@@ -1054,7 +1046,7 @@
 					"Encontrar el vehículo sin copiar el VIN. El OCR lee el número en el documento. El sistema busca una coincidencia exacta entre los expedientes autorizados y muestra el documento, el tipo propuesto, el VIN leído y el expediente candidato.",
 					"Verificar antes de dar acceso. La gestora confirma la asociación incluso si solo hay una coincidencia. Si el número es ilegible, hay varias coincidencias o parece haber un duplicado, revisa el caso manualmente. No se sobrescribe ningún documento."
 				],
-				"expectedOutcome": "El equipo administrativo podría dedicar menos tiempo a abrir expedientes y archivar documentos uno a uno, y más a verificarlos y resolver excepciones. El taller o centro autorizado de tratamiento podría consultar el justificante validado en el expediente y la categoría correctos. Si la retirada está pendiente de ese justificante, el equipo podría dar el siguiente paso."
+				"expectedOutcome": "El equipo administrativo podría dedicar menos tiempo a abrir expedientes y archivar documentos uno a uno, y más a verificarlos y resolver excepciones. El taller o centro autorizado de tratamiento podría consultar el justificante validado en el expediente y la categoría correctos. Si la retirada está pendiente de ese justificante, el equipo podría dar el siguiente paso. Para verificar el escenario, se comparará el tiempo medio de trabajo por documento antes y después, incluidas la validación y las excepciones. El ahorro real aún no se ha medido."
 			},
 			{
 				"id": "9",
