@@ -1031,7 +1031,7 @@
 					{
 						"label": "Capacity freed up",
 						"value": "≈ 7 days/month",
-						"note": "Scenario: 3,000 documents/month × 1 net minute saved, assuming 7-hour days."
+						"note": "3,000 documents received each month. Saving one net minute per document would free up 50 hours a month (7-hour days)."
 					},
 					{
 						"label": "Value of staff time",
@@ -1054,7 +1054,7 @@
 					"Find the vehicle without retyping the VIN. OCR reads the number from the document. The software looks for an exact match among the records the administrator can access, then shows the document, its suggested type, the VIN it read and the proposed record.",
 					"Review before sharing. Even a unique match requires confirmation. An unreadable number, multiple matches or a possible duplicate goes to manual review. No existing document is overwritten."
 				],
-				"expectedOutcome": "The administrative team could spend less time opening records and filing documents individually, and more time checking documents and handling exceptions. An authorized garage or dismantling centre could find the approved document under the correct type in the right record. If a vehicle collection is waiting on that document, the team could move on to the next step. To validate this scenario, compare average staff time per document before and after, including review and exceptions. Actual savings have not yet been measured."
+				"expectedOutcome": "The administrative team could spend less time opening records and filing documents individually, and more time checking documents and handling exceptions. An authorized garage or dismantling centre could find the approved document under the correct type in the right record. If a vehicle collection is waiting on that document, the team could move on to the next step. To measure the time saved, compare average staff time per document before and after, including review and exceptions. Actual savings have not yet been measured."
 			},
 			{
 				"id": "9",

@@ -1039,7 +1039,7 @@
 					{
 						"label": "Capacité libérée",
 						"value": "≈ 7 j/mois",
-						"note": "Scénario : 3 000 pièces/mois × 1 minute nette gagnée, sur une base de 7 h/jour."
+						"note": "3 000 pièces reçues par mois. Avec 1 minute nette gagnée par pièce, cela représenterait 50 heures par mois (journées de 7 h)."
 					},
 					{
 						"label": "Valeur du temps libéré",
@@ -1062,7 +1062,7 @@
 					"Retrouver le véhicule sans recopier le VIN. L’OCR lit le numéro sur le document. Le logiciel cherche une correspondance exacte parmi les dossiers auxquels la gestionnaire a accès et lui présente la pièce, le type reconnu, le VIN lu et le dossier proposé.",
 					"Vérifier avant de rendre la pièce visible. La gestionnaire confirme le rattachement, même si un seul véhicule correspond. Si le numéro est illisible, si plusieurs dossiers correspondent ou si la pièce semble déjà présente, elle reprend le cas manuellement. Aucun document existant n’est écrasé."
 				],
-				"expectedOutcome": "Pour l’équipe administrative, le temps consacré à ouvrir les fiches et à classer les fichiers un par un peut être réaffecté à la vérification des pièces et au traitement des exceptions. Pour le garage ou le centre VHU habilité, la pièce validée devient consultable dans le bon dossier, sous le bon type. Et lorsqu’une reprise attend ce justificatif, l’équipe peut passer à l’étape suivante. Pour vérifier ce scénario, comparer le temps de travail moyen par pièce avant et après, en incluant la validation et les exceptions. Le gain réel n’a pas encore été mesuré."
+				"expectedOutcome": "Pour l’équipe administrative, le temps consacré à ouvrir les fiches et à classer les fichiers un par un peut être réaffecté à la vérification des pièces et au traitement des exceptions. Pour le garage ou le centre VHU habilité, la pièce validée devient consultable dans le bon dossier, sous le bon type. Et lorsqu’une reprise attend ce justificatif, l’équipe peut passer à l’étape suivante. Pour mesurer le gain, comparer le temps de travail moyen par pièce avant et après, en incluant la validation et les exceptions. Le gain réel n’a pas encore été mesuré."
 			},
 			{
 				"id": "9",

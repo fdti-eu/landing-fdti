@@ -1034,7 +1034,7 @@
 					{
 						"label": "Capacidad liberada",
 						"value": "≈ 7 días/mes",
-						"note": "Escenario: 3.000 documentos/mes × 1 minuto neto ahorrado, con jornadas de 7 horas."
+						"note": "Se reciben 3.000 documentos al mes. Ahorrar un minuto neto por documento liberaría 50 horas al mes (jornadas de 7 horas)."
 					},
 					{
 						"label": "Valor del tiempo liberado",
@@ -1057,7 +1057,7 @@
 					"Encontrar el vehículo sin copiar el VIN. El OCR lee el número en el documento. El sistema busca una coincidencia exacta entre los expedientes autorizados y muestra el documento, el tipo propuesto, el VIN leído y el expediente candidato.",
 					"Verificar antes de dar acceso. La gestora confirma la asociación incluso si solo hay una coincidencia. Si el número es ilegible, hay varias coincidencias o parece haber un duplicado, revisa el caso manualmente. No se sobrescribe ningún documento."
 				],
-				"expectedOutcome": "El equipo administrativo podría dedicar menos tiempo a abrir expedientes y archivar documentos uno a uno, y más a verificarlos y resolver excepciones. El taller o centro autorizado de tratamiento podría consultar el justificante validado en el expediente y la categoría correctos. Si la retirada está pendiente de ese justificante, el equipo podría dar el siguiente paso. Para verificar el escenario, se comparará el tiempo medio de trabajo por documento antes y después, incluidas la validación y las excepciones. El ahorro real aún no se ha medido."
+				"expectedOutcome": "El equipo administrativo podría dedicar menos tiempo a abrir expedientes y archivar documentos uno a uno, y más a verificarlos y resolver excepciones. El taller o centro autorizado de tratamiento podría consultar el justificante validado en el expediente y la categoría correctos. Si la retirada está pendiente de ese justificante, el equipo podría dar el siguiente paso. Para medir el ahorro de tiempo, se comparará el tiempo medio de trabajo por documento antes y después, incluidas la validación y las excepciones. El ahorro real aún no se ha medido."
 			},
 			{
 				"id": "9",

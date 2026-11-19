@@ -497,9 +497,6 @@
 		></div>
 
 		<div class="max-w-5xl mx-auto px-4 space-y-8 w-full relative z-10">
-			{#if useCase.metrics?.[0]?.note}
-				<CaseIndicators metrics={useCase.metrics} />
-			{/if}
 			<div
 				class="case-narrative bg-white rounded-2xl shadow-xl shadow-slate-200/50 p-6 sm:p-8 md:p-10 border border-slate-100"
 			>
@@ -565,7 +562,9 @@
 
 					<!-- Droite : Métriques et tags - Stack vertical sur mobile, sidebar sur desktop -->
 					<div class="case-sidebar flex flex-col gap-4 sm:gap-6 w-full lg:w-[280px] lg:shrink-0">
-						{#if useCase.metrics?.length && !useCase.metrics[0]?.note}
+						{#if useCase.metrics?.[0]?.note}
+							<CaseIndicators metrics={useCase.metrics} />
+						{:else if useCase.metrics?.length}
 							<div class="space-y-3 sm:space-y-4">
 								{#each useCase.metrics as metric, index}
 									<div
