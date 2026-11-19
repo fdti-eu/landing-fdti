@@ -14,7 +14,7 @@
 	$: content = expertiseOffers[locale][offer];
 	$: canonical = buildLocalizedUrl(offerPaths[offer], locale);
 	$: title = `${content.label} | FDTI`;
-	$: parentPath = offer === 'packaging' ? '/expertises/economie-circulaire' : '/expertises';
+	const parentPath = '/expertises/economie-circulaire';
 </script>
 
 <MetaTags

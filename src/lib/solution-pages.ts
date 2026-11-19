@@ -6,6 +6,15 @@ type TitledText = { title: string; text: string };
 type SolutionOption = { title: string; when: string; impact: string };
 type SolutionProof = { projectId: string; text: string };
 
+// The document family is served by the existing document analysis page.
+const sharedPagePaths: Partial<Record<SolutionId, string>> = {
+	'ia-documents': '/expertises/analyse-documentaire'
+};
+export type SolutionPageId = Exclude<SolutionId, 'ia-documents'>;
+export const solutionPageIds = solutionIds.filter(
+	(id): id is SolutionPageId => !sharedPagePaths[id]
+);
+
 export type SolutionPage = {
 	metaTitle: string;
 	metaDescription: string;
@@ -17,7 +26,8 @@ export type SolutionPage = {
 	deliverables: string[];
 	proofs: SolutionProof[];
 	proofNote?: string;
-	related?: 'documents' | 'agents';
+	examples?: { title: string; intro: string; items: TitledText[] };
+	method?: { title: string; steps: TitledText[]; note: string };
 };
 
 export type SolutionPagesContent = {
@@ -30,11 +40,12 @@ export type SolutionPagesContent = {
 	proofsTitle: string;
 	practicesTitle: string;
 	practices: TitledText[];
-	relatedLabel: string;
 	otherFamiliesTitle: string;
 	pageLink: string;
 	ctaText: string;
-	pages: Record<SolutionId, SolutionPage>;
+	pages: Record<SolutionPageId, SolutionPage>;
+	// Sections added to the existing document analysis page, which serves this family.
+	documents: Pick<SolutionPage, 'optionsIntro' | 'options'>;
 };
 
 // A locale gets its family pages, menu links and sitemap entries as soon as its
@@ -67,11 +78,34 @@ export const solutionPages: Partial<Record<Lang, SolutionPagesContent>> = {
 				text: 'Maintenance, résolution des incidents, évolutions et documentation font partie de la prestation. L’équipe s’organise pour assurer le suivi toute l’année, périodes de congés comprises ; les horaires de support et les délais d’intervention sont fixés au contrat.'
 			}
 		],
-		relatedLabel: 'Approfondir',
 		otherFamiliesTitle: 'Les autres familles de solutions',
 		pageLink: 'Voir la page',
 		ctaText:
 			'Décrivez-nous la situation de départ, les outils en place et ce que vous attendez. Nous vous dirons ce qui mérite d’être développé, ce qui peut être adapté et par où commencer.',
+		documents: {
+			optionsIntro:
+				'L’IA n’est pas la réponse à chaque document. Nous choisissons les outils en fonction du problème, de votre existant et de ce que vos équipes devront maintenir.',
+			options: [
+				{
+					title: 'Des règles et des modèles de documents',
+					when: 'Les documents ont un format stable et les informations se trouvent toujours au même endroit.',
+					impact:
+						'Un résultat prévisible et peu coûteux à faire fonctionner. Il faut l’adapter dès qu’un format change.'
+				},
+				{
+					title: 'Une extraction par IA avec validation humaine',
+					when: 'Les formats varient, le texte est libre ou les pièces arrivent scannées.',
+					impact:
+						'La qualité s’évalue sur vos propres dossiers. Il faut prévoir la revue des cas incertains et suivre le coût d’usage des modèles.'
+				},
+				{
+					title: 'Un traitement hébergé sur vos serveurs',
+					when: 'Les documents sont confidentiels et ne doivent pas sortir de votre infrastructure.',
+					impact:
+						'Du matériel et une exploitation à anticiper, avec un choix de modèles plus restreint. Vos données restent chez vous.'
+				}
+			]
+		},
 		pages: {
 			'applications-web': {
 				metaTitle: 'Applications web & logiciels métier sur mesure | FDTI',
@@ -265,71 +299,10 @@ export const solutionPages: Partial<Record<Lang, SolutionPagesContent>> = {
 					}
 				]
 			},
-			'ia-documents': {
-				metaTitle: 'IA & traitement documentaire | FDTI',
-				metaDescription:
-					'Extraction, classification, rapprochement et recherche dans vos documents : FDTI met en place un traitement documentaire par IA avec sources affichées et contrôle humain.',
-				title: 'Exploiter l’information contenue dans vos documents.',
-				lead: 'Contrats, décisions, dossiers, bordereaux, fichiers transmis par des tiers : nous mettons en place l’extraction, le rapprochement et la recherche dans vos documents, avec les sources affichées et un contrôle humain là où l’erreur coûte cher.',
-				situations: [
-					{
-						title: 'Des dossiers lus et ressaisis à la main',
-						text: 'Des équipes qualifiées passent des heures à lire des pièces pour en recopier quelques informations dans un outil.'
-					},
-					{
-						title: 'Des documents à rapprocher entre eux',
-						text: 'La même personne, le même lot ou le même contrat apparaît dans plusieurs fichiers, sous des formes différentes, et il faut les réconcilier.'
-					},
-					{
-						title: 'Un fonds documentaire difficile à interroger',
-						text: 'La réponse existe quelque part dans des milliers de pages, mais la retrouver suppose de savoir où chercher.'
-					}
-				],
-				optionsIntro:
-					'L’IA n’est pas la réponse à chaque document. Nous choisissons les outils en fonction du problème, de votre existant et de ce que vos équipes devront maintenir.',
-				options: [
-					{
-						title: 'Des règles et des modèles de documents',
-						when: 'Les documents ont un format stable et les informations se trouvent toujours au même endroit.',
-						impact:
-							'Un résultat prévisible et peu coûteux à faire fonctionner. Il faut l’adapter dès qu’un format change.'
-					},
-					{
-						title: 'Une extraction par IA avec validation humaine',
-						when: 'Les formats varient, le texte est libre ou les pièces arrivent scannées.',
-						impact:
-							'La qualité s’évalue sur vos propres dossiers. Il faut prévoir la revue des cas incertains et suivre le coût d’usage des modèles.'
-					},
-					{
-						title: 'Un traitement hébergé sur vos serveurs',
-						when: 'Les documents sont confidentiels et ne doivent pas sortir de votre infrastructure.',
-						impact:
-							'Du matériel et une exploitation à anticiper, avec un choix de modèles plus restreint. Vos données restent chez vous.'
-					}
-				],
-				deliverables: [
-					'Extraction, classification et rapprochement de documents.',
-					'Recherche dans un corpus et réponses accompagnées de leurs sources.',
-					'Interfaces de revue : cas incertains, corrections et valeurs d’origine conservées.',
-					'Évaluation de la qualité sur vos dossiers avant généralisation.',
-					'Intégration à vos logiciels par API, dans le cloud ou sur vos serveurs.'
-				],
-				proofs: [
-					{
-						projectId: '1',
-						text: 'Une API d’IA hébergée sur les serveurs d’un éditeur de logiciels pour greffes pré-analyse les dossiers des tribunaux de commerce : résumés de procédures, validation de liasses et extraction de pièces.'
-					},
-					{
-						projectId: '9',
-						text: 'Dans un contentieux collectif, l’IA extrait les données des décisions PDF et rapproche les personnes entre décisions et fichiers d’avocats ; les cas incertains sont revus par les équipes.'
-					}
-				],
-				related: 'documents'
-			},
 			'automatisation-agents': {
 				metaTitle: 'Automatisation de processus & agents IA | FDTI',
 				metaDescription:
-					'Workflows, règles métier, notifications et agents IA : FDTI automatise les étapes répétitives de vos processus, avec traçabilité et validation humaine des actions engageantes.',
+					'Workflows automatisés, règles métier et workflows agentiques : FDTI automatise les étapes répétitives de vos processus, avec traçabilité et validation humaine des actions engageantes.',
 				title: 'Automatiser un processus sans perdre le contrôle des décisions.',
 				lead: 'Relances, contrôles, transferts d’un outil à l’autre : nous automatisons les étapes qui peuvent l’être, avec des règles lorsqu’elles suffisent et des agents IA lorsque le contenu varie. Les actions engageantes restent soumises à validation.',
 				situations: [
@@ -390,7 +363,47 @@ export const solutionPages: Partial<Record<Lang, SolutionPagesContent>> = {
 				],
 				proofNote:
 					'Ces réalisations portent sur l’automatisation de processus et de traitements documentaires. Le recours à des agents IA se décide selon les étapes à traiter.',
-				related: 'agents'
+				examples: {
+					title: 'Ce qu’un agent IA peut prendre en charge',
+					intro:
+						'Pour les équipes opérations, support et métiers dont les dossiers passent encore par plusieurs outils, documents et validations manuelles.',
+					items: [
+						{
+							title: 'Qualifier une demande entrante',
+							text: 'Lire un email et ses pièces jointes, identifier le client et le sujet, rechercher les éléments du dossier puis préparer son affectation dans le CRM. Les demandes ambiguës sont transmises à l’équipe.'
+						},
+						{
+							title: 'Préparer un dossier complet',
+							text: 'Extraire les informations utiles, les rapprocher des données métier, signaler les pièces manquantes et proposer une synthèse avec ses sources. Un responsable contrôle les points sensibles.'
+						},
+						{
+							title: 'Orchestrer les actions entre outils',
+							text: 'Proposer une mise à jour, préparer une réponse ou déclencher une étape autorisée dans vos applications. Les actions engageantes restent soumises à une validation explicite.'
+						}
+					]
+				},
+				method: {
+					title: 'Du premier cas d’usage à un fonctionnement suivi',
+					steps: [
+						{
+							title: 'Cadrer le périmètre',
+							text: 'Choisir un flux fréquent, observer son fonctionnement actuel et définir le résultat attendu : temps de traitement, qualité, taux de reprise humaine et coût par dossier.'
+						},
+						{
+							title: 'Relier les outils et les règles',
+							text: 'Connecter les API et les sources autorisées. Garder les règles déterministes là où elles suffisent ; utiliser l’IA pour interpréter les contenus et traiter les variations.'
+						},
+						{
+							title: 'Évaluer sur vos dossiers',
+							text: 'Tester des cas représentatifs, y compris les documents incomplets et les erreurs d’outil. Vérifier les réponses, les droits d’accès et les étapes qui doivent demander une validation.'
+						},
+						{
+							title: 'Déployer et suivre',
+							text: 'Mettre en place journalisation, limites de coût, alertes, reprise sur erreur et retour au traitement manuel. Suivre les résultats avec les équipes puis élargir le périmètre utile.'
+						}
+					],
+					note: 'Le niveau d’autonomie se décide action par action. Les exemples ci-dessus illustrent des usages à cadrer, pas une promesse de fonctionnement sans supervision ni de gain chiffré.'
+				}
 			},
 			'infrastructure-exploitation': {
 				metaTitle: 'Infrastructure & exploitation : cloud, serveurs dédiés, on-premise | FDTI',
@@ -464,13 +477,13 @@ export const solutionPageLocales = SUPPORTED_LOCALES.filter((locale) => solution
 
 export const hasSolutionPages = (locale: Lang) => Boolean(solutionPages[locale]);
 
-export const solutionPagePath = (id: SolutionId) => `/expertises/${id}`;
+export const solutionPagePath = (id: SolutionId) => sharedPagePaths[id] ?? `/expertises/${id}`;
 
 // Locales without translated family pages fall back to the solutions hub.
 export const solutionHref = (id: SolutionId, locale: Lang) =>
-	hasSolutionPages(locale) ? solutionPagePath(id) : `/expertises#${id}`;
+	sharedPagePaths[id] ?? (hasSolutionPages(locale) ? solutionPagePath(id) : `/expertises#${id}`);
 
-export const buildSolutionAlternatePaths = (id: SolutionId): SeoAlternatePaths =>
+export const buildSolutionAlternatePaths = (id: SolutionPageId): SeoAlternatePaths =>
 	Object.fromEntries(
 		SUPPORTED_LOCALES.map((locale) => [
 			locale,
@@ -478,5 +491,5 @@ export const buildSolutionAlternatePaths = (id: SolutionId): SeoAlternatePaths =
 		])
 	) as SeoAlternatePaths;
 
-export const isSolutionId = (value: string): value is SolutionId =>
-	(solutionIds as readonly string[]).includes(value);
+export const isSolutionPageId = (value: string): value is SolutionPageId =>
+	(solutionPageIds as readonly string[]).includes(value);

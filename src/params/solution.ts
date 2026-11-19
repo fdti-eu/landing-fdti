@@ -1,3 +1,3 @@
-import { isSolutionId } from '$lib/solution-pages';
+import { isSolutionPageId } from '$lib/solution-pages';
 
-export const match = (param: string) => isSolutionId(param);
+export const match = (param: string) => isSolutionPageId(param);

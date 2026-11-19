@@ -2,7 +2,6 @@
 	import { MetaTags } from 'svelte-meta-tags';
 	import { navigationCopy, solutionIds, solutionLabels } from '$lib/navigation';
 	import { solutionProofIds, solutionsContent } from '$lib/solutions';
-	import { offerPaths } from '$lib/expertise-offers';
 	import { solutionPagePath, solutionPages } from '$lib/solution-pages';
 	import {
 		absoluteImageUrl,
@@ -87,10 +86,6 @@
 						class="detail-link"
 						href={buildLocalizedPath('/expertises/analyse-documentaire', data.locale)}
 						>{content.more} : {navigation.documents} <span aria-hidden="true">↗</span></a
-					>
-				{:else if id === 'automatisation-agents'}
-					<a class="detail-link" href={buildLocalizedPath(offerPaths.agentic, data.locale)}
-						>{content.more} : {navigation.agents} <span aria-hidden="true">↗</span></a
 					>
 				{/if}
 			</section>

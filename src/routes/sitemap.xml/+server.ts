@@ -2,8 +2,7 @@ import { getData, getUseCasesContent, SUPPORTED_LOCALES, type Lang } from '$lib/
 import { buildLocalizedUrl, type SeoAlternatePaths } from '$lib/functions/seo';
 import { getJobOffers, type JobOffer } from '$lib/jobs';
 import { offerPaths } from '$lib/expertise-offers';
-import { solutionIds } from '$lib/navigation';
-import { solutionPageLocales, solutionPagePath } from '$lib/solution-pages';
+import { solutionPageIds, solutionPageLocales, solutionPagePath } from '$lib/solution-pages';
 
 type SitemapPage = {
 	path: string;
@@ -148,7 +147,7 @@ export async function GET() {
 	}
 
 	// Family pages are listed only for the locales in which they are published.
-	for (const id of solutionIds) {
+	for (const id of solutionPageIds) {
 		const path = solutionPagePath(id);
 		const alternates = solutionPageLocales
 			.map(

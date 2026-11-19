@@ -1,7 +1,6 @@
 import type { Lang } from '$lib/data';
 
 export const offerPaths = {
-	agentic: '/expertises/workflows-agentiques',
 	packaging: '/expertises/economie-circulaire/rep-emballages'
 } as const;
 
@@ -23,54 +22,6 @@ export type ExpertiseOffer = {
 
 export const expertiseOffers: Record<Lang, Record<OfferKey, ExpertiseOffer>> = {
 	fr: {
-		agentic: {
-			label: 'Workflows agentiques',
-			title: 'Des agents IA qui font avancer vos opérations.',
-			description:
-				'FDTI conçoit et met en place des workflows agentiques connectés à vos outils : analyser une demande, réunir les informations, préparer une action et la faire valider au bon moment.',
-			audience:
-				'Pour les équipes opérations, support et métiers dont les dossiers passent encore par plusieurs outils, documents et validations manuelles.',
-			useCasesTitle: 'Partir d’une opération réelle',
-			useCases: [
-				{
-					title: 'Qualifier une demande entrante',
-					text: 'Lire un email et ses pièces jointes, identifier le client et le sujet, rechercher les éléments du dossier puis préparer son affectation dans le CRM. Les demandes ambiguës sont transmises à l’équipe.'
-				},
-				{
-					title: 'Préparer un dossier complet',
-					text: 'Extraire les informations utiles, les rapprocher des données métier, signaler les pièces manquantes et proposer une synthèse avec ses sources. Un responsable contrôle les points sensibles.'
-				},
-				{
-					title: 'Orchestrer les actions entre outils',
-					text: 'Proposer une mise à jour, préparer une réponse ou déclencher une étape autorisée dans vos applications. Les actions engageantes restent soumises à une validation explicite.'
-				}
-			],
-			approachTitle: 'Du premier cas d’usage à un fonctionnement suivi',
-			steps: [
-				{
-					title: 'Cadrer le périmètre',
-					text: 'Choisir un flux fréquent, observer son fonctionnement actuel et définir le résultat attendu : temps de traitement, qualité, taux de reprise humaine et coût par dossier.'
-				},
-				{
-					title: 'Relier les outils et les règles',
-					text: 'Connecter les API et les sources autorisées. Garder les règles déterministes là où elles suffisent ; utiliser l’IA pour interpréter les contenus et traiter les variations.'
-				},
-				{
-					title: 'Évaluer sur vos dossiers',
-					text: 'Tester des cas représentatifs, y compris les documents incomplets et les erreurs d’outil. Vérifier les réponses, les droits d’accès et les étapes qui doivent demander une validation.'
-				},
-				{
-					title: 'Déployer et suivre',
-					text: 'Mettre en place journalisation, limites de coût, alertes, reprise sur erreur et retour au traitement manuel. Suivre les résultats avec les équipes puis élargir le périmètre utile.'
-				}
-			],
-			boundary:
-				'Le niveau d’autonomie se décide action par action. Les exemples ci-dessus illustrent des usages à cadrer, pas une promesse de fonctionnement sans supervision ni de gain chiffré.',
-			cta: 'Cadrer un premier workflow',
-			ctaText:
-				'Apportez un exemple de dossier, les outils utilisés et l’étape qui prend le plus de temps. Nous définissons ensemble un premier périmètre mesurable.',
-			back: 'Toutes nos expertises'
-		},
 		packaging: {
 			label: 'Emballages',
 			title: 'Des logiciels métier pour la filière emballages.',
@@ -121,54 +72,6 @@ export const expertiseOffers: Record<Lang, Record<OfferKey, ExpertiseOffer>> = {
 		}
 	},
 	en: {
-		agentic: {
-			label: 'Agentic workflows',
-			title: 'AI agents that move your operations forward.',
-			description:
-				'FDTI designs and implements agentic workflows connected to your tools: analyze requests, gather information, prepare actions and route them for approval.',
-			audience:
-				'For operations, support and business teams handling cases across multiple tools, documents and manual approvals.',
-			useCasesTitle: 'Start with a real operation',
-			useCases: [
-				{
-					title: 'Qualify incoming requests',
-					text: 'Read emails and attachments, identify the customer, retrieve case information and prepare CRM routing. Send ambiguous requests to the team.'
-				},
-				{
-					title: 'Prepare a complete case',
-					text: 'Extract information, reconcile it with business data and flag missing documents. Provide a summary with sources for review.'
-				},
-				{
-					title: 'Coordinate actions across tools',
-					text: 'Propose updates, draft replies and trigger authorized steps. Actions with significant consequences require explicit approval.'
-				}
-			],
-			approachTitle: 'From the first use case to monitored operations',
-			steps: [
-				{
-					title: 'Define the scope',
-					text: 'Select a recurring workflow and establish a baseline: processing time, quality, human intervention and cost per case.'
-				},
-				{
-					title: 'Connect tools and rules',
-					text: 'Integrate authorized APIs and sources. Keep deterministic rules where they suffice; use AI to interpret content and handle variation.'
-				},
-				{
-					title: 'Evaluate real cases',
-					text: 'Include incomplete documents and tool failures. Check outputs, access rights and approval requirements.'
-				},
-				{
-					title: 'Deploy and monitor',
-					text: 'Add logs, cost limits, alerts, error recovery and a manual fallback. Review results with users before expanding the scope.'
-				}
-			],
-			boundary:
-				'Autonomy is defined action by action. These are illustrative use cases to scope, not promises of unsupervised operation or quantified savings.',
-			cta: 'Scope a first workflow',
-			ctaText:
-				'Bring a sample case, your current tools and the most time-consuming step. Together we define a measurable first scope.',
-			back: 'All our expertise'
-		},
 		packaging: {
 			label: 'Packaging',
 			title: 'Reliable packaging data, from supplier to declaration.',
@@ -219,54 +122,6 @@ export const expertiseOffers: Record<Lang, Record<OfferKey, ExpertiseOffer>> = {
 		}
 	},
 	es: {
-		agentic: {
-			label: 'Flujos de trabajo con agentes de IA',
-			title: 'Agentes de IA que hacen avanzar sus operaciones.',
-			description:
-				'FDTI diseña e implementa flujos con agentes de IA conectados a sus herramientas para analizar solicitudes, reunir información y preparar acciones sujetas a aprobación.',
-			audience:
-				'Para equipos de operaciones, soporte y negocio que gestionan expedientes entre varias herramientas, documentos y validaciones manuales.',
-			useCasesTitle: 'Partir de una operación real',
-			useCases: [
-				{
-					title: 'Clasificar solicitudes',
-					text: 'Leer correos y adjuntos, identificar al cliente y preparar la asignación en el CRM. Derivar los casos ambiguos al equipo.'
-				},
-				{
-					title: 'Preparar un expediente completo',
-					text: 'Extraer información, contrastarla con los datos de negocio y detectar documentos pendientes. Proponer un resumen con fuentes para su revisión.'
-				},
-				{
-					title: 'Coordinar herramientas',
-					text: 'Proponer actualizaciones, preparar respuestas y ejecutar pasos autorizados. Las acciones relevantes requieren aprobación explícita.'
-				}
-			],
-			approachTitle: 'Del primer caso de uso a la operación supervisada',
-			steps: [
-				{
-					title: 'Definir el alcance',
-					text: 'Elegir un flujo recurrente y medir tiempo de tratamiento, calidad, intervención humana y coste por expediente.'
-				},
-				{
-					title: 'Conectar herramientas y reglas',
-					text: 'Integrar API y fuentes autorizadas. Mantener reglas deterministas donde basten y emplear IA para interpretar contenido variable.'
-				},
-				{
-					title: 'Evaluar casos reales',
-					text: 'Incluir documentos incompletos y fallos de herramientas. Verificar resultados, permisos y aprobaciones.'
-				},
-				{
-					title: 'Desplegar y supervisar',
-					text: 'Incorporar registros, límites de coste, alertas, recuperación de errores y tratamiento manual alternativo antes de ampliar el alcance.'
-				}
-			],
-			boundary:
-				'La autonomía se define por acción. Estos ejemplos son casos que deben concretarse, no promesas de funcionamiento sin supervisión ni de ahorros cuantificados.',
-			cta: 'Definir un primer flujo',
-			ctaText:
-				'Comparta un expediente de ejemplo, sus herramientas y la etapa que más tiempo consume para definir un alcance medible.',
-			back: 'Todas nuestras especialidades'
-		},
 		packaging: {
 			label: 'Envases',
 			title: 'Datos fiables de envases, del proveedor a la declaración.',
@@ -317,54 +172,6 @@ export const expertiseOffers: Record<Lang, Record<OfferKey, ExpertiseOffer>> = {
 		}
 	},
 	de: {
-		agentic: {
-			label: 'Agentische Workflows',
-			title: 'KI-Agenten, die Ihre Abläufe voranbringen.',
-			description:
-				'FDTI entwickelt und implementiert agentische Workflows: Anfragen analysieren, Informationen zusammenführen und Aktionen in Ihren bestehenden Werkzeugen zur Freigabe vorbereiten.',
-			audience:
-				'Für Betriebs-, Support- und Fachteams, die Vorgänge über mehrere Systeme, Dokumente und manuelle Freigaben bearbeiten.',
-			useCasesTitle: 'Mit einem konkreten Vorgang beginnen',
-			useCases: [
-				{
-					title: 'Anfragen einordnen',
-					text: 'E-Mails und Anhänge lesen, Kunden erkennen und die CRM-Zuordnung vorbereiten. Unklare Anfragen an das Team weitergeben.'
-				},
-				{
-					title: 'Vorgänge vervollständigen',
-					text: 'Informationen extrahieren, mit Geschäftsdaten abgleichen und fehlende Dokumente markieren. Eine Zusammenfassung mit Quellen zur Prüfung bereitstellen.'
-				},
-				{
-					title: 'Systemübergreifend handeln',
-					text: 'Änderungen vorschlagen, Antworten vorbereiten und erlaubte Schritte ausführen. Folgenreiche Aktionen erfordern eine ausdrückliche Freigabe.'
-				}
-			],
-			approachTitle: 'Vom ersten Anwendungsfall zum überwachten Betrieb',
-			steps: [
-				{
-					title: 'Umfang festlegen',
-					text: 'Einen wiederkehrenden Ablauf auswählen und Bearbeitungszeit, Qualität, menschliche Eingriffe sowie Kosten pro Vorgang erfassen.'
-				},
-				{
-					title: 'Systeme und Regeln verbinden',
-					text: 'Autorisierte APIs und Quellen anbinden. Feste Regeln beibehalten, wo sie ausreichen; KI für variable Inhalte einsetzen.'
-				},
-				{
-					title: 'Reale Fälle bewerten',
-					text: 'Unvollständige Dokumente und Systemfehler einbeziehen. Ergebnisse, Zugriffsrechte und Freigaben prüfen.'
-				},
-				{
-					title: 'Einführen und überwachen',
-					text: 'Protokolle, Kostenlimits, Warnungen, Fehlerbehandlung und manuelle Rückfallwege einrichten. Ergebnisse vor einer Ausweitung mit den Teams bewerten.'
-				}
-			],
-			boundary:
-				'Autonomie wird je Aktion festgelegt. Die Beispiele sind abzustimmende Anwendungsfälle, keine Zusagen für unbeaufsichtigten Betrieb oder bezifferte Einsparungen.',
-			cta: 'Einen ersten Workflow abstecken',
-			ctaText:
-				'Bringen Sie einen Beispielfall, Ihre Werkzeuge und den zeitaufwendigsten Schritt mit. Gemeinsam definieren wir einen messbaren Umfang.',
-			back: 'Alle Kompetenzen'
-		},
 		packaging: {
 			label: 'Verpackungen',
 			title: 'Verlässliche Verpackungsdaten, vom Lieferanten bis zur Meldung.',
@@ -415,54 +222,6 @@ export const expertiseOffers: Record<Lang, Record<OfferKey, ExpertiseOffer>> = {
 		}
 	},
 	it: {
-		agentic: {
-			label: 'Workflow agentici',
-			title: 'Agenti IA che fanno avanzare le vostre operazioni.',
-			description:
-				'FDTI progetta e implementa workflow agentici collegati ai vostri strumenti: analizzare richieste, raccogliere informazioni e preparare azioni da approvare.',
-			audience:
-				'Per team operativi, assistenza e funzioni aziendali che gestiscono pratiche tra più strumenti, documenti e approvazioni manuali.',
-			useCasesTitle: 'Partire da un’operazione reale',
-			useCases: [
-				{
-					title: 'Classificare le richieste',
-					text: 'Leggere email e allegati, identificare il cliente e preparare l’assegnazione nel CRM. Inoltrare i casi ambigui al team.'
-				},
-				{
-					title: 'Preparare una pratica completa',
-					text: 'Estrarre informazioni, confrontarle con i dati aziendali e segnalare documenti mancanti. Proporre una sintesi con fonti da verificare.'
-				},
-				{
-					title: 'Coordinare gli strumenti',
-					text: 'Proporre aggiornamenti, preparare risposte ed eseguire passaggi autorizzati. Le azioni rilevanti richiedono approvazione esplicita.'
-				}
-			],
-			approachTitle: 'Dal primo caso d’uso alle operazioni monitorate',
-			steps: [
-				{
-					title: 'Definire il perimetro',
-					text: 'Scegliere un flusso ricorrente e misurare tempi, qualità, interventi umani e costo per pratica.'
-				},
-				{
-					title: 'Collegare strumenti e regole',
-					text: 'Integrare API e fonti autorizzate. Mantenere regole deterministiche dove bastano e usare l’IA per interpretare contenuti variabili.'
-				},
-				{
-					title: 'Valutare casi reali',
-					text: 'Includere documenti incompleti ed errori degli strumenti. Verificare risultati, permessi e approvazioni.'
-				},
-				{
-					title: 'Distribuire e monitorare',
-					text: 'Predisporre registri, limiti di costo, avvisi, recupero degli errori e ritorno al trattamento manuale. Valutare i risultati prima di ampliare il perimetro.'
-				}
-			],
-			boundary:
-				'L’autonomia si definisce per singola azione. Gli esempi sono casi da approfondire, non promesse di funzionamento senza supervisione o di risparmi quantificati.',
-			cta: 'Definire un primo workflow',
-			ctaText:
-				'Partiamo da una pratica di esempio, dagli strumenti utilizzati e dalla fase più lenta per definire un perimetro misurabile.',
-			back: 'Tutte le competenze'
-		},
 		packaging: {
 			label: 'Imballaggi',
 			title: 'Dati affidabili sugli imballaggi, dal fornitore alla dichiarazione.',

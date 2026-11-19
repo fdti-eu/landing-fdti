@@ -165,6 +165,8 @@
 	</div>
 </section>
 
+<slot name="before-faq" />
+
 <section class="ce-section ce-faq">
 	<div class="ce-shell ce-heading-grid">
 		<h2 class="ce-eyebrow">{content.faqLabel}</h2>
@@ -176,5 +178,7 @@
 		</div>
 	</div>
 </section>
+
+<slot name="before-contact" />
 
 <CircularContact {content} eventPlacement={`${eventPrefix}_contact`} />

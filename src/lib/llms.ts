@@ -13,7 +13,7 @@ import { buildLocalizedUrl } from '$lib/functions/seo';
 import { expertiseOffers, offerPaths } from '$lib/expertise-offers';
 import { navigationCopy, solutionIds, solutionLabels } from '$lib/navigation';
 import { solutionsContent } from '$lib/solutions';
-import { solutionPagePath, solutionPages } from '$lib/solution-pages';
+import { solutionPageIds, solutionPagePath, solutionPages } from '$lib/solution-pages';
 
 const htmlEntities: Record<string, string> = {
 	amp: '&',
@@ -163,7 +163,7 @@ function buildLanguageSection(locale: Lang, data: LocaleData): string {
 
 	const familyPages = solutionPages[locale];
 	if (familyPages) {
-		for (const id of solutionIds) {
+		for (const id of solutionPageIds) {
 			const page = familyPages.pages[id];
 			output += `\n## ${solutionLabels[locale][id]}\n${buildLocalizedUrl(solutionPagePath(id), locale)}\n${page.lead}\n`;
 			for (const situation of page.situations) {
@@ -173,7 +173,15 @@ function buildLanguageSection(locale: Lang, data: LocaleData): string {
 			for (const option of page.options) {
 				output += `- ${option.title}. ${familyPages.whenLabel} : ${option.when} ${familyPages.impactLabel} : ${option.impact}\n`;
 			}
+			for (const item of [...(page.examples?.items ?? []), ...(page.method?.steps ?? [])]) {
+				output += `\n### ${item.title}\n${item.text}\n`;
+			}
+			if (page.method) output += `\n${page.method.note}\n`;
 			output += `\n### ${familyPages.deliverablesTitle}\n${page.deliverables.map((item) => `- ${item}`).join('\n')}\n`;
+		}
+		output += `\n## ${solutionLabels[locale]['ia-documents']}\n${buildLocalizedUrl(solutionPagePath('ia-documents'), locale)}\n${familyPages.documents.optionsIntro}\n`;
+		for (const option of familyPages.documents.options) {
+			output += `- ${option.title}. ${familyPages.whenLabel} : ${option.when} ${familyPages.impactLabel} : ${option.impact}\n`;
 		}
 		output += `\n## ${familyPages.practicesTitle}\n`;
 		for (const practice of familyPages.practices) {

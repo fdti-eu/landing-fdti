@@ -69,7 +69,6 @@ export const navigationCopy: Record<
 		sectors: string;
 		circular: string;
 		documents: string;
-		agents: string;
 		vehicles: string;
 		batteries: string;
 		packaging: string;
@@ -87,7 +86,6 @@ export const navigationCopy: Record<
 		sectors: 'Filières',
 		circular: 'Économie circulaire',
 		documents: 'Analyse documentaire',
-		agents: 'Workflows agentiques',
 		vehicles: 'Véhicules en fin de vie',
 		batteries: 'Batteries',
 		packaging: 'Emballages',
@@ -105,7 +103,6 @@ export const navigationCopy: Record<
 		sectors: 'Sectors',
 		circular: 'Circular economy',
 		documents: 'Document analysis',
-		agents: 'Agentic workflows',
 		vehicles: 'End-of-life vehicles',
 		batteries: 'Batteries',
 		packaging: 'Packaging',
@@ -122,7 +119,6 @@ export const navigationCopy: Record<
 		sectors: 'Sectores',
 		circular: 'Economía circular',
 		documents: 'Análisis documental',
-		agents: 'Flujos de trabajo agénticos',
 		vehicles: 'Vehículos fuera de uso',
 		batteries: 'Baterías',
 		packaging: 'Envases',
@@ -139,7 +135,6 @@ export const navigationCopy: Record<
 		sectors: 'Branchen',
 		circular: 'Kreislaufwirtschaft',
 		documents: 'Dokumentenanalyse',
-		agents: 'Agentische Workflows',
 		vehicles: 'Altfahrzeuge',
 		batteries: 'Batterien',
 		packaging: 'Verpackungen',
@@ -157,7 +152,6 @@ export const navigationCopy: Record<
 		sectors: 'Settori',
 		circular: 'Economia circolare',
 		documents: 'Analisi documentale',
-		agents: 'Workflow agentici',
 		vehicles: 'Veicoli fuori uso',
 		batteries: 'Batterie',
 		packaging: 'Imballaggi',
