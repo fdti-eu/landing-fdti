@@ -35,6 +35,8 @@ Chaque fiche suit le même ordre :
 
 Avant livraison, relire la fiche et ses renvois en contexte, vérifier les cinq langues et lancer `npm run check` puis `npm run build`. Le contrôle éditorial détecte des identifiants connus ; il ne remplace pas la relecture des nouveaux noms, visuels et liens.
 
+**Méthode de rédaction et de revue.** Commencer par les sources et la fiche existante, puis prendre un dossier représentatif. Qui le reçoit ? Quels gestes cette personne répète-t-elle aujourd’hui ? Quel passage montrerait-on en démo ? Qui peut agir ensuite, et sur quelle information ? Poser uniquement les questions encore ouvertes. Raconter l’avant et l’après dans le vocabulaire de l’équipe ; réserver les choix techniques à ceux qui expliquent une décision métier. Soumettre le texte français et les hypothèses à l’opérateur avant de décliner la version validée dans les autres langues. La [fiche OCR](src/locales/fr.json) (`ocr-dossiers-vhu`) illustre la méthode ; ses chiffres ne sont pas des valeurs par défaut.
+
 #### KPI des réalisations
 
 Avant de retenir un chiffre, répondre à la question de l’acheteur : **qu’est-ce que cette solution change pour mes équipes, mon budget, mon activité ou mon risque ?** Privilégier le temps net rendu aux équipes (heures ou jours-personnes), le délai d’un processus, le coût par dossier, les reprises évitées ou un résultat métier pertinent pour le décideur. Ne pas confondre capacité libérée et économie budgétaire effective.
@@ -42,6 +44,10 @@ Avant de retenir un chiffre, répondre à la question de l’acheteur : **qu’e
 Un volume de pièces, de pays, de formats, de tables ou de fonctionnalités situe le projet. Seul, il reste dans le contexte ou le périmètre ; ne pas en faire un KPI pour remplir une carte. Ne pas compter deux fois le même indicateur.
 
 Pour un résultat observé, vérifier la source, la période, le périmètre et, si l’on annonce un gain, le point de comparaison. Pour un projet non mesuré, préférer l’absence de chiffre à un gain inventé. Un scénario de décision est possible si ses hypothèses et sa nature conditionnelle restent visibles **sur la carte elle-même**, y compris sur l’index. Préciser la durée d’une journée si l’on convertit des heures en jours-personnes. Ne pas publier le prix d’un contrat client pour illustrer un ROI.
+
+Distinguer dans la même note la donnée réelle (« 3 000 pièces reçues par mois ») du paramètre à vérifier (« si chaque pièce demande une minute de moins »). Présenter plusieurs repères complémentaires quand les sources le permettent : capacité rendue, valeur de cette capacité au coût horaire retenu, budget maximal à l’équilibre sur une durée donnée. Ces lectures d’un même gain ne s’additionnent pas. Pour un autre projet, délai de décision, qualité ou risque peuvent être plus pertinents ; ne pas imposer trois chiffres à tout prix.
+
+**Présentation de référence :** utiliser `CaseIndicators.svelte` avec `metrics[].label`, `value` et `note`. Sur la fiche, empiler les indicateurs dans la colonne de droite sur ordinateur ; sur mobile, les placer dans le flux sans défilement horizontal. Afficher un libellé bref, une valeur lisible avec unité et horizon, puis sa base de calcul. Sur l’index, utiliser la variante compacte sans couper la note. Vérifier le rendu réel sur les deux tailles.
 
 ## Développement local
 
