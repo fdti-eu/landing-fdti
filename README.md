@@ -20,6 +20,21 @@ Le sitemap de référence déclaré dans `robots.txt` est `https://www.fdti.eu/s
 
 L’ajout au sitemap facilite la découverte des pages, sans garantir leur indexation. Laisser Google les explorer normalement et réserver les demandes manuelles d’indexation aux exceptions, plutôt que les répéter pour chaque page.
 
+### Réalisations
+
+Une réalisation raconte un travail métier, jamais l’identité du client. Désigner l’acteur par son rôle (« un recycleur de batteries », « les équipes chargées de la reprise des véhicules »). Écarter noms de sociétés et de partenaires identifiants, marques applicatives propres au client, logos, domaines et liens vers ses sites ou ses avis. Une technologie publique ou un service tiers peut être nommé si cela explique le travail. Les références institutionnelles de l’accueil sont distinctes : ne pas associer leurs logos aux fiches.
+
+Cette règle vaut pour la fiche, son URL, les cartes et liens entrants, les métadonnées, les données structurées, les exports et toutes les langues. Garder les sources commerciales et les correspondances client/projet hors du contenu publié.
+
+Chaque fiche suit le même ordre :
+
+1. **Situation de départ** (`challenge`) : qui effectue quelle tâche, avec quelle difficulté ou quel risque ?
+2. **Solution** (`approach`) : que change la réponse de FDTI dans cet outil ou ce processus ? Employer le futur ou préciser « prévu » si le projet n’est pas livré.
+3. **Parcours métier** (`details`) : décrire les opérations concrètes dans leur ordre utile, de l’entrée à la sortie ; préciser les exceptions et la décision humaine lorsqu’elles comptent.
+4. **Résultat** : décrire un usage ou un effet établi (`impact`), ou, pour un projet commandé, un objectif explicitement **attendu** (`expectedOutcome`). Ne pas transformer une estimation en gain mesuré. Chiffres, dates et technologies sont facultatifs ; ne les ajouter que s’ils sont étayés et utiles.
+
+Avant livraison, relire la fiche et ses renvois en contexte, vérifier les cinq langues et lancer `npm run check` puis `npm run build`. Le contrôle éditorial détecte des identifiants connus ; il ne remplace pas la relecture des nouveaux noms, visuels et liens.
+
 ## Développement local
 
 ```bash

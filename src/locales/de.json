@@ -1030,21 +1030,21 @@
 			},
 			{
 				"id": "10",
-				"slug": "valorauto-ocr-fahrzeugakten",
-				"title": "Valorauto: Dokumente per OCR der richtigen Fahrzeugakte zuordnen",
+				"slug": "ocr-fahrzeugakten",
+				"title": "Dokumente per OCR der richtigen Fahrzeugakte zuordnen",
 				"category": "Aftermarket und Recycling",
-				"challenge": "Bei Valorauto müssen Mitarbeitende Unterlagen zu jedem Altfahrzeug ablegen. Bei einer falschen Zuordnung könnten Unbeteiligte Einsicht erhalten.",
-				"approach": "Im vorgesehenen CarInput-Ablauf lädt die zuständige Person eine oder mehrere Dateien hoch. Die OCR unterscheidet die französische Zulassungsbescheinigung, das CERFA-Formular zur Kaufmeldung und den SIV-Beleg für die Kaufmeldung der Werkstatt. Anhand der Fahrzeugidentifikationsnummer (FIN) schlägt das System eine Akte vor.",
+				"challenge": "Mitarbeitende müssen Unterlagen zu jedem Altfahrzeug ablegen. Bei einer falschen Zuordnung könnten Unbeteiligte Einsicht erhalten.",
+				"approach": "Im vorgesehenen Ablauf lädt die zuständige Person eine oder mehrere Dateien hoch. Die OCR unterscheidet die französische Zulassungsbescheinigung, das CERFA-Formular zur Kaufmeldung und den SIV-Beleg für die Kaufmeldung der Werkstatt. Anhand der Fahrzeugidentifikationsnummer (FIN) schlägt das System eine Akte vor.",
 				"tags": [
 					"OCR",
-					"VIN",
-					"CarInput"
+					"VIN"
 				],
 				"details": [
 					"Die Suche berücksichtigt nur zugängliche Akten mit exakt übereinstimmender FIN.",
 					"Die zuständige Person prüft Beleg, Dokumenttyp, FIN und Akte. Auch bei einem eindeutigen Treffer wird der Beleg erst nach ihrer Bestätigung in der Akte sichtbar.",
 					"Unleserliche Unterlagen, unsichere Nummern, mehrere Treffer und Duplikate werden manuell geprüft. Vorhandene Dokumente werden nicht automatisch ersetzt."
-				]
+				],
+				"expectedOutcome": "Ziel ist es, Ablagefehler zu vermeiden. Die Freigabe eines Belegs für die Fahrzeugakte bleibt in der Hand der zuständigen Person."
 			},
 			{
 				"id": "9",
@@ -1070,8 +1070,8 @@
 				"title": "Plattform für die Verwaltung von Altfahrzeugen",
 				"date": "2020-2025",
 				"location": "Europa",
-				"challenge": "Nach der Gründung von Valorauto, einem Joint Venture von Stellantis und Galloo, sollte die Kreislaufwirtschaftsplattform ihr bestehendes System modernisieren, um die Rücknahme von Altfahrzeugen (B2B und B2C) zu verwalten und jedes Fahrzeug von der Abholung beim Eigentümer bis zur Demontage nachzuverfolgen.",
-				"approach": "Entwicklung des Valorauto-Portals mit Oberflächen für Meldung, Verwaltung und Fahrzeugverfolgung für die verschiedenen Beteiligten. Geschäftsprozesse und Azure Functions APIs wurden in der Azure-Infrastruktur des Kunden (MSSQL-Datenbanken, Azure Service Bus) bereitgestellt, um einen bestehenden .NET-Stack für Eigentümer und Altfahrzeugzentren zu orchestrieren.",
+				"challenge": "Ein Unternehmen der Fahrzeugverwertung wollte seine B2B- und B2C-Rücknahme modernisieren und Fahrzeuge von der Abholung bis zur Demontage verfolgen.",
+				"approach": "Entwicklung des Portals mit Oberflächen für Meldung, Verwaltung und Fahrzeugverfolgung für die verschiedenen Beteiligten. Geschäftsprozesse und Azure Functions APIs wurden in der Azure-Infrastruktur des Kunden (MSSQL-Datenbanken, Azure Service Bus) bereitgestellt, um einen bestehenden .NET-Stack für Eigentümer und Altfahrzeugzentren zu orchestrieren.",
 				"impact": "Durchgängige Rückverfolgbarkeit für den Kreislaufwirtschaftsbereich der Gruppe, mit einem Netzwerk von mehr als 5 000 Partnerunternehmen und Unterstützung der Herstellerpflichten im Rahmen der erweiterten Herstellerverantwortung (EPR).",
 				"metrics": [
 					{
@@ -1081,20 +1081,6 @@
 					{
 						"label": "Partnernetzwerk",
 						"value": "+5 000"
-					},
-					{
-						"label": "Trustpilot-Bewertung",
-						"value": "4,8"
-					}
-				],
-				"links": [
-					{
-						"label": "Valorauto-Website",
-						"url": "https://www.valorauto.com/"
-					},
-					{
-						"label": "Valorauto Trustpilot Bewertungen",
-						"url": "https://www.trustpilot.com/review/valorauto.com"
 					}
 				],
 				"tags": [

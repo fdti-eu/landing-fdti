@@ -43,10 +43,10 @@
 			"href": "/realisations/plateforme-economie-circulaire"
 		},
 		{
-			"label": "Valorauto",
-			"title": "Projet Valorauto : classement des pièces par OCR",
+			"label": "Recyclage automobile",
+			"title": "Classement des pièces par OCR",
 			"text": "Le parcours prévu associe lecture du VIN et confirmation par l’opérateur avant le rattachement à un dossier véhicule.",
-			"href": "/realisations/valorauto-ocr-dossiers-vhu"
+			"href": "/realisations/ocr-dossiers-vhu"
 		}
 	],
 	"integration": {

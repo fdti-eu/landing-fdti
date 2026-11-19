@@ -65,7 +65,7 @@ export const solutionsContent: Record<Lang, SolutionsContent> = {
 					'Synchronisation, échanges événementiels et suivi des erreurs.'
 				],
 				evidence:
-					'Une marketplace connectée aux ERP et des processus Valorauto orchestrés via API et messagerie Azure.'
+					'Une marketplace connectée aux ERP et des flux de reprise de véhicules orchestrés via API et messagerie Azure.'
 			},
 			'data-pilotage': {
 				need: 'Vos données sont dispersées et vos équipes passent plus de temps à les préparer qu’à les utiliser.',
@@ -105,7 +105,7 @@ export const solutionsContent: Record<Lang, SolutionsContent> = {
 					'Supervision, sauvegardes, mises à jour et procédures de reprise.'
 				],
 				evidence:
-					'Des applications sur Azure chez Valorauto et une API IA déployée sur les serveurs du client dans le secteur judiciaire.'
+					'Des applications sur Azure pour la reprise de véhicules et une API IA déployée sur les serveurs du client dans le secteur judiciaire.'
 			}
 		}
 	},
@@ -145,7 +145,7 @@ export const solutionsContent: Record<Lang, SolutionsContent> = {
 					'Synchronization, event-driven exchanges and error tracking.'
 				],
 				evidence:
-					'An ERP-connected marketplace and Valorauto processes orchestrated through APIs and Azure messaging.'
+					'An ERP-connected marketplace and vehicle take-back workflows orchestrated through APIs and Azure messaging.'
 			},
 			'data-pilotage': {
 				need: 'Your data is scattered and your teams spend more time preparing it than using it.',
@@ -184,7 +184,7 @@ export const solutionsContent: Record<Lang, SolutionsContent> = {
 					'Monitoring, backups, updates and recovery procedures.'
 				],
 				evidence:
-					'Applications on Azure for Valorauto and a judicial AI API deployed on the client’s servers.'
+					'Applications on Azure for a vehicle take-back platform and a judicial AI API deployed on the client’s servers.'
 			}
 		}
 	},
@@ -226,7 +226,7 @@ export const solutionsContent: Record<Lang, SolutionsContent> = {
 					'Sincronización, intercambios por eventos y seguimiento de errores.'
 				],
 				evidence:
-					'Un marketplace conectado a ERP y procesos Valorauto orquestados mediante API y mensajería Azure.'
+					'Un marketplace conectado a ERP y procesos de retirada de vehículos orquestados mediante API y mensajería Azure.'
 			},
 			'data-pilotage': {
 				need: 'Los datos están dispersos y sus equipos dedican más tiempo a prepararlos que a utilizarlos.',
@@ -266,7 +266,7 @@ export const solutionsContent: Record<Lang, SolutionsContent> = {
 					'Supervisión, copias de seguridad, actualizaciones y recuperación.'
 				],
 				evidence:
-					'Aplicaciones en Azure para Valorauto y una API de IA judicial alojada en servidores del cliente.'
+					'Aplicaciones en Azure para la retirada de vehículos y una API de IA judicial alojada en servidores del cliente.'
 			}
 		}
 	},
@@ -306,7 +306,7 @@ export const solutionsContent: Record<Lang, SolutionsContent> = {
 					'Synchronisierung, ereignisbasierter Austausch und Fehlerüberwachung.'
 				],
 				evidence:
-					'Ein ERP-verbundener Marktplatz und Valorauto-Prozesse mit APIs und Azure Messaging.'
+					'Ein ERP-verbundener Marktplatz und Fahrzeugrücknahmeprozesse mit APIs und Azure Messaging.'
 			},
 			'data-pilotage': {
 				need: 'Ihre Daten sind verteilt und ihre Aufbereitung kostet mehr Zeit als ihre Nutzung.',
@@ -346,7 +346,7 @@ export const solutionsContent: Record<Lang, SolutionsContent> = {
 					'Überwachung, Backups, Updates und Wiederherstellungsverfahren.'
 				],
 				evidence:
-					'Azure-Anwendungen für Valorauto und eine KI-API für die Justiz auf Kundenservern.'
+					'Azure-Anwendungen für die Fahrzeugrücknahme und eine KI-API für die Justiz auf Kundenservern.'
 			}
 		}
 	},
@@ -386,7 +386,7 @@ export const solutionsContent: Record<Lang, SolutionsContent> = {
 					'Sincronizzazione, scambi a eventi e monitoraggio degli errori.'
 				],
 				evidence:
-					'Un marketplace collegato agli ERP e processi Valorauto orchestrati tramite API e messaggistica Azure.'
+					'Un marketplace collegato agli ERP e processi di ritiro dei veicoli orchestrati tramite API e messaggistica Azure.'
 			},
 			'data-pilotage': {
 				need: 'I dati sono dispersi e i team dedicano più tempo a prepararli che a utilizzarli.',
@@ -426,7 +426,7 @@ export const solutionsContent: Record<Lang, SolutionsContent> = {
 					'Monitoraggio, backup, aggiornamenti e procedure di ripristino.'
 				],
 				evidence:
-					'Applicazioni Azure per Valorauto e un’API IA giudiziaria distribuita sui server del cliente.'
+					'Applicazioni Azure per il ritiro dei veicoli e un’API IA giudiziaria distribuita sui server del cliente.'
 			}
 		}
 	}

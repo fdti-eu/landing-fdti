@@ -43,10 +43,10 @@
 			"href": "/realisations/piattaforma-veicoli-fuori-uso"
 		},
 		{
-			"label": "Valorauto",
-			"title": "Progetto Valorauto: classificare i documenti tramite OCR",
+			"label": "Riciclo dei veicoli",
+			"title": "Classificare i documenti tramite OCR",
 			"text": "Il flusso previsto combina la lettura del VIN con la conferma dell’operatore prima di associare il documento al fascicolo del veicolo.",
-			"href": "/realisations/valorauto-ocr-fascicoli-veicoli"
+			"href": "/realisations/ocr-fascicoli-veicoli"
 		}
 	],
 	"integration": {

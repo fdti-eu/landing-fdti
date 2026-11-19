@@ -55,9 +55,9 @@
 	const evidence = [
 		{
 			title: 'Relier un réseau d’acteurs indépendants',
-			text: 'Pour Valorauto, FDTI a développé des parcours de déclaration et de suivi de véhicules, des interfaces partenaires et des échanges avec les systèmes existants.',
+			text: 'Dans la filière automobile, FDTI a développé des parcours de déclaration et de suivi de véhicules, des interfaces partenaires et des échanges avec les systèmes existants.',
 			href: '/realisations/plateforme-economie-circulaire',
-			label: 'Voir le projet Valorauto'
+			label: 'Voir le parcours de reprise des véhicules'
 		},
 		{
 			title: 'Faire vivre les règles dans les opérations',

@@ -1022,21 +1022,21 @@
 			},
 			{
 				"id": "10",
-				"slug": "valorauto-ocr-vehicle-records",
-				"title": "Valorauto: matching documents to vehicle records with OCR",
+				"slug": "ocr-vehicle-records",
+				"title": "Matching documents to vehicle records with OCR",
 				"category": "Aftermarket & recycling",
-				"challenge": "Valorauto operators need to file documents for each end-of-life vehicle. Filing a document against the wrong vehicle could expose it to the wrong people.",
-				"approach": "In the proposed CarInput workflow, an operator uploads one or more files. OCR distinguishes a French registration certificate, a CERFA purchase declaration and the garage’s SIV purchase declaration receipt. It reads the vehicle identification number (VIN) to suggest a record.",
+				"challenge": "Operators need to file documents for each end-of-life vehicle. Filing a document against the wrong vehicle could expose it to the wrong people.",
+				"approach": "In the proposed workflow, an operator uploads one or more files. OCR distinguishes a French registration certificate, a CERFA purchase declaration and the garage’s SIV purchase declaration receipt. It reads the vehicle identification number (VIN) to suggest a record.",
 				"tags": [
 					"OCR",
-					"VIN",
-					"CarInput"
+					"VIN"
 				],
 				"details": [
 					"The search is restricted to accessible records with an exact VIN match.",
 					"The operator checks the document, its type, the VIN and the suggested record. Even a unique match requires confirmation before the document becomes visible in the record.",
 					"Unreadable documents, uncertain VINs, multiple matches and duplicates remain in manual review. Existing documents are never replaced automatically."
-				]
+				],
+				"expectedOutcome": "The aim is to reduce filing errors while keeping the operator responsible for releasing documents to the vehicle record."
 			},
 			{
 				"id": "9",
@@ -1062,8 +1062,8 @@
 				"title": "End-of-life vehicle management platform",
 				"date": "2020-2025",
 				"location": "Europe",
-				"challenge": "Following the creation of Valorauto, a joint venture between Stellantis and Galloo, the circular economy platform needed to modernize its existing system to manage B2B and B2C take-back of end-of-life vehicles and track each vehicle from collection at the owner's location through dismantling.",
-				"approach": "Development of the Valorauto portal, with interfaces for declarations, administration, and vehicle tracking across stakeholders. Business workflows and Azure Functions APIs deployed on the client's Azure infrastructure (MSSQL databases and Azure Service Bus) orchestrate an existing .NET stack connecting owners and authorized treatment facilities.",
+				"challenge": "An automotive recycling operator needed to modernize its B2B and B2C vehicle take-back system and track vehicles from collection to dismantling.",
+				"approach": "Development of the portal, with interfaces for declarations, administration, and vehicle tracking across stakeholders. Business workflows and Azure Functions APIs deployed on the client's Azure infrastructure (MSSQL databases and Azure Service Bus) orchestrate an existing .NET stack connecting owners and authorized treatment facilities.",
 				"impact": "End-to-end traceability for the group's circular economy business, supporting a network of more than 5,000 partner companies and helping the manufacturer meet its Extended Producer Responsibility (EPR) obligations.",
 				"metrics": [
 					{
@@ -1073,10 +1073,6 @@
 					{
 						"label": "Partner network",
 						"value": "5,000+"
-					},
-					{
-						"label": "Trustpilot score",
-						"value": "4.8"
 					}
 				],
 				"tags": [
@@ -1099,17 +1095,7 @@
 					"Operational and regulatory dashboards consolidating B2B and B2C flows.",
 					"Personalized email notifications for every user (garages, dealers, private owners) at each workflow step."
 				],
-				"slug": "end-of-life-vehicle-platform",
-				"links": [
-					{
-						"label": "Valorauto website",
-						"url": "https://www.valorauto.com/"
-					},
-					{
-						"label": "Valorauto Trustpilot reviews",
-						"url": "https://www.trustpilot.com/review/valorauto.com"
-					}
-				]
+				"slug": "end-of-life-vehicle-platform"
 			},
 			{
 				"id": "3",

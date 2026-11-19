@@ -249,6 +249,46 @@ const documentEsData = readJson(documentEsPath);
 const documentDeData = readJson(documentDePath);
 const documentItData = readJson(documentItPath);
 
+// Client references on the corporate homepage must not identify a case study.
+const clientNames = [
+	...(frData?.GetHomePageContent?.trust_content?.company_list ?? []).map(({ name }) => name),
+	'CarInput'
+];
+const identifiers = clientNames.map(
+	(name) =>
+		new RegExp(
+			`(?<![\\p{L}\\p{N}])${name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}(?![\\p{L}\\p{N}])`,
+			'iu'
+		)
+);
+for (const [locale, data, documents] of [
+	['fr', frData, documentFrData],
+	['en', enData, documentEnData],
+	['es', esData, documentEsData],
+	['de', deData, documentDeData],
+	['it', itData, documentItData]
+]) {
+	for (const item of data?.GetUseCasesContent?.use_case_list ?? []) {
+		const at = `${locale} case ${item.id}`;
+		if (identifiers.some((pattern) => pattern.test(JSON.stringify(item)))) {
+			errors.push(`${at}: client identifier in a case study`);
+		}
+		if (
+			!item.challenge?.trim() ||
+			!item.approach?.trim() ||
+			!item.details?.length ||
+			Boolean(item.impact?.trim()) === Boolean(item.expectedOutcome?.trim())
+		) {
+			errors.push(
+				`${at}: provide a situation, solution, workflow and exactly one observed or expected outcome`
+			);
+		}
+	}
+	if (identifiers.some((pattern) => pattern.test(JSON.stringify(documents?.proofs ?? [])))) {
+		errors.push(`${locale}: client identifier in document-analysis project cards`);
+	}
+}
+
 if (frData) {
 	if (enData) compareStructure(frData, enData, enPath);
 	if (esData) compareStructure(frData, esData, esPath);

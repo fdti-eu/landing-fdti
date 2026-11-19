@@ -43,10 +43,10 @@
 			"href": "/realisations/plataforma-economia-circular"
 		},
 		{
-			"label": "Valorauto",
-			"title": "Proyecto Valorauto: clasificación documental mediante OCR",
+			"label": "Reciclaje de vehículos",
+			"title": "Clasificación documental mediante OCR",
 			"text": "El flujo previsto combina la lectura del VIN con la confirmación del operador antes de adjuntar la pieza al expediente del vehículo.",
-			"href": "/realisations/valorauto-ocr-expedientes-vehiculos"
+			"href": "/realisations/ocr-expedientes-vehiculos"
 		}
 	],
 	"integration": {

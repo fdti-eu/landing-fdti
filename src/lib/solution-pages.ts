@@ -159,7 +159,7 @@ export const solutionPages: Partial<Record<Lang, SolutionPagesContent>> = {
 				proofs: [
 					{
 						projectId: '2',
-						text: 'Le portail Valorauto suit les véhicules en fin de vie de la reprise chez le propriétaire jusqu’à la démolition, entre particuliers, concessionnaires, garages et centres VHU.'
+						text: 'Le portail de reprise suit les véhicules en fin de vie de la reprise chez le propriétaire jusqu’à la démolition, entre particuliers, concessionnaires, garages et centres VHU.'
 					},
 					{
 						projectId: '8',
@@ -227,7 +227,7 @@ export const solutionPages: Partial<Record<Lang, SolutionPagesContent>> = {
 					},
 					{
 						projectId: '2',
-						text: 'Chez Valorauto, des API et une messagerie Azure relient le portail aux systèmes logistiques, CRM et finance du groupe, ainsi qu’aux recycleurs et aux éco-organismes.'
+						text: 'Sur une plateforme de reprise de véhicules, des API et une messagerie Azure relient le portail aux systèmes logistiques, CRM et finance du groupe, ainsi qu’aux recycleurs et aux éco-organismes.'
 					},
 					{
 						projectId: '1',
@@ -457,7 +457,7 @@ export const solutionPages: Partial<Record<Lang, SolutionPagesContent>> = {
 				proofs: [
 					{
 						projectId: '2',
-						text: 'Les applications et les API de Valorauto fonctionnent sur l’infrastructure Azure du client.'
+						text: 'Les applications et les API de reprise de véhicules fonctionnent sur l’infrastructure Azure du client.'
 					},
 					{
 						projectId: '1',

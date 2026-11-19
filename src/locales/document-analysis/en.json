@@ -43,10 +43,10 @@
 			"href": "/realisations/end-of-life-vehicle-platform"
 		},
 		{
-			"label": "Valorauto",
-			"title": "Valorauto project: filing documents with OCR",
+			"label": "Automotive recycling",
+			"title": "Filing documents with OCR",
 			"text": "The proposed workflow combines reading the VIN with operator confirmation before attaching a document to a vehicle record.",
-			"href": "/realisations/valorauto-ocr-vehicle-records"
+			"href": "/realisations/ocr-vehicle-records"
 		}
 	],
 	"integration": {

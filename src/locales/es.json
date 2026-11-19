@@ -1025,21 +1025,21 @@
 			},
 			{
 				"id": "10",
-				"slug": "valorauto-ocr-expedientes-vehiculos",
-				"title": "Valorauto: asignar documentos al vehículo correcto mediante OCR",
+				"slug": "ocr-expedientes-vehiculos",
+				"title": "Asignar documentos al vehículo correcto mediante OCR",
 				"category": "Posventa y reciclaje",
-				"challenge": "En Valorauto, un operador debe archivar la documentación de cada vehículo al final de su vida útil. Un error de expediente podría exponer el documento a personas ajenas.",
-				"approach": "En el flujo previsto en CarInput, el operador carga uno o varios archivos. El OCR distingue el permiso de circulación francés, el formulario CERFA de declaración de compra y el justificante SIV de la declaración de compra del taller. Lee el número de bastidor (VIN) para proponer un expediente.",
+				"challenge": "Un operador debe archivar la documentación de cada vehículo al final de su vida útil. Un error de expediente podría exponer el documento a personas ajenas.",
+				"approach": "En el flujo previsto, el operador carga uno o varios archivos. El OCR distingue el permiso de circulación francés, el formulario CERFA de declaración de compra y el justificante SIV de la declaración de compra del taller. Lee el número de bastidor (VIN) para proponer un expediente.",
 				"tags": [
 					"OCR",
-					"VIN",
-					"CarInput"
+					"VIN"
 				],
 				"details": [
 					"Solo se buscan coincidencias exactas del VIN en los expedientes autorizados.",
 					"El operador comprueba el documento, su tipo, el VIN y el expediente. Incluso una coincidencia única requiere confirmación antes de que el documento sea visible en el expediente.",
 					"Las piezas ilegibles, los VIN dudosos, las coincidencias múltiples y los duplicados pasan a revisión manual. No se sustituyen documentos automáticamente."
-				]
+				],
+				"expectedOutcome": "El objetivo es evitar errores de archivo sin que el operador pierda el control sobre los documentos visibles en el expediente."
 			},
 			{
 				"id": "9",
@@ -1065,19 +1065,17 @@
 				"title": "Plataforma de gestión de vehículos fuera de uso",
 				"date": "2020-2025",
 				"location": "Europa",
-				"challenge": "Tras la creación de Valorauto, una empresa conjunta de Stellantis y Galloo, una plataforma de economía circular debía modernizar su herramienta existente para gestionar la recuperación de vehículos fuera de uso (B2B y B2C) y seguir su recorrido desde la recogida en las instalaciones del propietario hasta el desguace del vehículo.",
-				"approach": "Desarrollo del portal Valorauto con interfaces de declaración, administración y seguimiento de vehículos entre las distintas partes, procesos de negocio y API Azure Functions desplegadas en la infraestructura Azure del cliente (bases MSSQL, Azure Service Bus) para orquestar un sistema .NET existente que conecta propietarios y centros de VFU.",
+				"challenge": "Un operador de reciclaje de vehículos necesitaba modernizar la gestión de las retiradas B2B y B2C y seguir cada vehículo desde la recogida hasta el desguace.",
+				"approach": "Desarrollo del portal con interfaces de declaración, administración y seguimiento de vehículos entre las distintas partes, procesos de negocio y API Azure Functions desplegadas en la infraestructura Azure del cliente (bases MSSQL, Azure Service Bus) para orquestar un sistema .NET existente que conecta propietarios y centros de VFU.",
 				"impact": "Trazabilidad de principio a fin al servicio de la división de economía circular del grupo, con una red de más de 5 000 empresas asociadas y una respuesta a las obligaciones del fabricante relacionadas con la Responsabilidad Ampliada del Productor (RAP).",
 				"metrics": [
-					{ "label": "Países cubiertos", "value": "5" },
-					{ "label": "Red de socios", "value": "+5 000" },
-					{ "label": "Puntuación en Trustpilot", "value": "4,8" }
-				],
-				"links": [
-					{ "label": "Sitio web de Valorauto", "url": "https://www.valorauto.com/" },
 					{
-						"label": "Opiniones de Valorauto en Trustpilot",
-						"url": "https://www.trustpilot.com/review/valorauto.com"
+						"label": "Países cubiertos",
+						"value": "5"
+					},
+					{
+						"label": "Red de socios",
+						"value": "+5 000"
 					}
 				],
 				"tags": [

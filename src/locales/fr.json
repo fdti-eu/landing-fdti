@@ -1030,21 +1030,21 @@
 			},
 			{
 				"id": "10",
-				"slug": "valorauto-ocr-dossiers-vhu",
-				"title": "Valorauto : rattacher les documents au bon véhicule par OCR",
+				"slug": "ocr-dossiers-vhu",
+				"title": "Rattacher les documents au bon véhicule par OCR",
 				"category": "Aftermarket & recyclage",
-				"challenge": "Chez Valorauto, un opérateur doit classer les pièces reçues pour chaque véhicule hors d’usage. Une erreur de dossier peut rendre un document visible aux mauvais interlocuteurs.",
-				"approach": "Le parcours prévu dans CarInput commence par le dépôt d’un ou plusieurs fichiers. L’OCR distingue la carte grise française, le formulaire CERFA de déclaration d’achat et le récépissé SIV de déclaration d’achat du garage. Il lit le numéro d’identification du véhicule (VIN) pour proposer un dossier.",
+				"challenge": "Un opérateur doit classer les pièces reçues pour chaque véhicule hors d’usage. Une erreur de dossier peut rendre un document visible aux mauvais interlocuteurs.",
+				"approach": "Le parcours prévu commence par le dépôt d’un ou plusieurs fichiers. L’OCR distingue la carte grise française, le formulaire CERFA de déclaration d’achat et le récépissé SIV de déclaration d’achat du garage. Il lit le numéro d’identification du véhicule (VIN) pour proposer un dossier.",
 				"tags": [
 					"OCR",
-					"VIN",
-					"CarInput"
+					"VIN"
 				],
 				"details": [
 					"Seuls les dossiers autorisés dont le VIN correspond exactement sont recherchés.",
 					"L’opérateur vérifie la pièce, son type, le VIN lu et le dossier proposé. Même une correspondance unique exige sa confirmation avant que la pièce soit visible dans le dossier.",
 					"Un document illisible, un VIN incertain, plusieurs correspondances ou un doublon restent en revue manuelle. Une pièce existante n’est pas remplacée automatiquement."
-				]
+				],
+				"expectedOutcome": "Objectif du projet : éviter les erreurs de classement tout en laissant à l’opérateur la décision de rendre une pièce visible dans le dossier."
 			},
 			{
 				"id": "9",
@@ -1070,8 +1070,8 @@
 				"title": "Plateforme de gestion des véhicules en fin de vie",
 				"date": "2020-2025",
 				"location": "Europe",
-				"challenge": "Suite à la création de Valorauto, joint-venture entre Stellantis et Galloo, une plateforme d'économie circulaire devait moderniser son outil existant pour gérer la reprise de véhicules en fin de vie (B2B et B2C) et suivre leur parcours de la collecte chez le propriétaire à la démolition du véhicule.",
-				"approach": "Développement du portail Valorauto avec interfaces de déclaration, d'administration et de suivi des véhicules entre les différents acteurs, processus métiers et APIs Azure Functions déployés sur l'infrastructure Azure du client (bases MSSQL, Azure Service Bus) pour orchestrer un existant .NET connectant propriétaires et centres VHU.",
+				"challenge": "Un opérateur de la filière automobile devait moderniser son outil de reprise des véhicules en fin de vie, pour suivre chaque véhicule de la collecte chez le propriétaire à la démolition.",
+				"approach": "Développement du portail avec interfaces de déclaration, d'administration et de suivi des véhicules entre les différents acteurs, processus métiers et APIs Azure Functions déployés sur l'infrastructure Azure du client (bases MSSQL, Azure Service Bus) pour orchestrer un existant .NET connectant propriétaires et centres VHU.",
 				"impact": "Traçabilité bout en bout au service de la branche économie circulaire du groupe, avec un réseau de plus de 5 000 entreprises partenaires et une réponse aux impératifs du constructeur liés à la Responsabilité Etendue des Producteurs (REP).",
 				"metrics": [
 					{
@@ -1081,20 +1081,6 @@
 					{
 						"label": "Réseau partenaires",
 						"value": "+5 000"
-					},
-					{
-						"label": "Score Trustpilot",
-						"value": "4,8"
-					}
-				],
-				"links": [
-					{
-						"label": "Site Valorauto",
-						"url": "https://www.valorauto.com/"
-					},
-					{
-						"label": "Avis Trustpilot Valorauto",
-						"url": "https://www.trustpilot.com/review/valorauto.com"
 					}
 				],
 				"tags": [

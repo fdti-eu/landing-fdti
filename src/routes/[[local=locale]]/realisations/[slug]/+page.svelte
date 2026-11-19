@@ -35,6 +35,7 @@
 					challenge?: string | null;
 					approach?: string | null;
 					impact?: string | null;
+					expectedOutcome?: string | null;
 					metrics?: { label?: string | null; value?: string | null }[];
 					links?: { label?: string | null; url?: string | null }[];
 					tags?: string[];
@@ -51,10 +52,6 @@
 			'1': {
 				description:
 					'Une plateforme IA reliée aux outils des greffiers préanalyse environ 400 000 dossiers par an dans le VPN client, pour 48 tribunaux.'
-			},
-			'2': {
-				description:
-					'Valorauto centralise la reprise B2B et B2C des véhicules en fin de vie, de la déclaration à la démolition, pour un réseau de plus de 5 000 partenaires.'
 			},
 			'3': {
 				description:
@@ -92,10 +89,6 @@
 			'1': {
 				description:
 					'An AI platform embedded in court clerks’ software pre-analyzes around 400,000 case files a year inside the client VPN across 48 courts.'
-			},
-			'2': {
-				description:
-					'Valorauto brings B2B and B2C end-of-life vehicle take-back into one platform, tracking each vehicle from declaration to dismantling across 5 countries.'
 			},
 			'3': {
 				description:
@@ -138,10 +131,6 @@
 				description:
 					'Eine in die Software der Geschäftsstellen eingebettete KI-Plattform analysiert im Kundennetzwerk rund 400.000 Akten pro Jahr für 48 Gerichte vor.'
 			},
-			'2': {
-				description:
-					'Valorauto bündelt die B2B- und B2C-Rücknahme von Altfahrzeugen auf einer Plattform und verfolgt jedes Fahrzeug von der Meldung bis zur Demontage in 5 Ländern.'
-			},
 			'3': {
 				description:
 					'Ein Marktplatz koordiniert Sammlung, Recycling und Wiederverkauf von Batterien in 18 Ländern über Portal und API und bearbeitet monatlich 500 Batterien.'
@@ -178,10 +167,6 @@
 			'1': {
 				description:
 					'Una piattaforma di IA integrata nel software delle cancellerie dei tribunali di commercio francesi preanalizza circa 400.000 pratiche all’anno nella VPN del cliente per 48 tribunali.'
-			},
-			'2': {
-				description:
-					'Valorauto riunisce in un’unica piattaforma il ritiro B2B e B2C dei veicoli fuori uso, seguendo ogni veicolo dalla dichiarazione alla demolizione in cinque paesi.'
 			},
 			'3': {
 				description:
@@ -224,45 +209,50 @@
 	$: labels =
 		currentLocale === 'fr'
 			? {
-					context: 'Contexte',
-					approach: 'Approche',
-					impact: 'Impact',
-					delivered: 'Ce que nous avons livré',
+					context: 'Situation de départ',
+					approach: 'Solution',
+					impact: 'Résultat observé',
+					expected: 'Résultat attendu',
+					delivered: 'Parcours métier',
 					back: 'Réalisations',
 					home: 'Accueil'
 				}
 			: currentLocale === 'es'
 				? {
-						context: 'Contexto',
-						approach: 'Enfoque',
-						impact: 'Impacto',
-						delivered: 'Lo que hemos entregado',
+						context: 'Punto de partida',
+						approach: 'Solución',
+						impact: 'Resultado observado',
+						expected: 'Resultado esperado',
+						delivered: 'Flujo de trabajo',
 						back: 'Proyectos',
 						home: 'Inicio'
 					}
 				: currentLocale === 'de'
 					? {
-							context: 'Kontext',
-							approach: 'Vorgehen',
-							impact: 'Wirkung',
-							delivered: 'Unsere Leistungen',
+							context: 'Ausgangslage',
+							approach: 'Lösungsansatz',
+							impact: 'Beobachtetes Ergebnis',
+							expected: 'Angestrebtes Ergebnis',
+							delivered: 'Ablauf in der Praxis',
 							back: 'Referenzen',
 							home: 'Startseite'
 						}
 					: currentLocale === 'it'
 						? {
-								context: 'Contesto',
-								approach: 'Approccio',
-								impact: 'Impatto',
-								delivered: 'Cosa abbiamo realizzato',
+								context: 'Situazione iniziale',
+								approach: 'Soluzione',
+								impact: 'Risultato osservato',
+								expected: 'Risultato atteso',
+								delivered: 'Flusso operativo',
 								back: 'Progetti',
 								home: 'Pagina iniziale'
 							}
 						: {
-								context: 'Context',
-								approach: 'Approach',
-								impact: 'Impact',
-								delivered: 'What we delivered',
+								context: 'Starting point',
+								approach: 'Solution',
+								impact: 'Observed outcome',
+								expected: 'Expected outcome',
+								delivered: 'Workflow',
 								back: 'Work',
 								home: 'Home'
 							};
@@ -541,14 +531,30 @@
 								</p>
 							</div>
 						{/if}
-						{#if useCase.impact}
+						{#if useCase.details?.length}
+							<div
+								class="case-delivered bg-white rounded-2xl shadow-md p-4 sm:p-6 md:p-8 space-y-3"
+							>
+								<h2 class="text-lg sm:text-xl font-bold text-darkGrey mb-3 sm:mb-4">
+									{labels.delivered}
+								</h2>
+								<ul
+									class="list-disc pl-4 sm:pl-5 space-y-2 text-sm sm:text-base text-darkGrey leading-relaxed"
+								>
+									{#each useCase.details as detail}
+										<li>{detail}</li>
+									{/each}
+								</ul>
+							</div>
+						{/if}
+						{#if useCase.impact || useCase.expectedOutcome}
 							<div>
 								<h2 class="text-lg sm:text-xl font-bold text-darkGrey mb-3 flex items-center gap-2">
 									<span class="w-2 h-2 rounded-full bg-green-500"></span>
-									{labels.impact}
+									{useCase.impact ? labels.impact : labels.expected}
 								</h2>
 								<p class="text-sm sm:text-base text-darkGrey/80 leading-relaxed">
-									{useCase.impact}
+									{useCase.impact || useCase.expectedOutcome}
 								</p>
 							</div>
 						{/if}
@@ -612,21 +618,6 @@
 					</div>
 				</div>
 			</div>
-
-			{#if useCase.details?.length}
-				<div class="case-delivered bg-white rounded-2xl shadow-md p-4 sm:p-6 md:p-8 space-y-3">
-					<h2 class="text-lg sm:text-xl font-bold text-darkGrey mb-3 sm:mb-4">
-						{labels.delivered}
-					</h2>
-					<ul
-						class="list-disc pl-4 sm:pl-5 space-y-2 text-sm sm:text-base text-darkGrey leading-relaxed"
-					>
-						{#each useCase.details as detail}
-							<li>{detail}</li>
-						{/each}
-					</ul>
-				</div>
-			{/if}
 
 			{#if data?.relatedGuides?.length}
 				<section

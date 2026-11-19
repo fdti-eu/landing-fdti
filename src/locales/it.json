@@ -1021,21 +1021,21 @@
 			},
 			{
 				"id": "10",
-				"slug": "valorauto-ocr-fascicoli-veicoli",
-				"title": "Valorauto: associare i documenti al veicolo corretto con l’OCR",
+				"slug": "ocr-fascicoli-veicoli",
+				"title": "Associare i documenti al veicolo corretto con l’OCR",
 				"category": "Aftermarket e riciclo",
-				"challenge": "Gli operatori di Valorauto devono archiviare i documenti di ogni veicolo fuori uso. Un errore di fascicolo potrebbe renderli visibili a persone estranee alla pratica.",
-				"approach": "Nel flusso previsto in CarInput, l’operatore carica uno o più file. L’OCR distingue la carta di circolazione francese, il modulo CERFA di dichiarazione di acquisto e la ricevuta SIV della dichiarazione di acquisto dell’officina. Legge il numero di telaio (VIN) per proporre un fascicolo.",
+				"challenge": "Gli operatori devono archiviare i documenti di ogni veicolo fuori uso. Un errore di fascicolo potrebbe renderli visibili a persone estranee alla pratica.",
+				"approach": "Nel flusso previsto, l’operatore carica uno o più file. L’OCR distingue la carta di circolazione francese, il modulo CERFA di dichiarazione di acquisto e la ricevuta SIV della dichiarazione di acquisto dell’officina. Legge il numero di telaio (VIN) per proporre un fascicolo.",
 				"tags": [
 					"OCR",
-					"VIN",
-					"CarInput"
+					"VIN"
 				],
 				"details": [
 					"La ricerca considera solo i fascicoli autorizzati con una corrispondenza esatta del VIN.",
 					"L’operatore verifica documento, tipo, VIN e fascicolo. Anche in presenza di una sola corrispondenza, il documento diventa visibile nel fascicolo solo dopo la conferma.",
 					"Documenti illeggibili, VIN incerti, corrispondenze multiple e duplicati restano in revisione manuale. I documenti esistenti non vengono sostituiti automaticamente."
-				]
+				],
+				"expectedOutcome": "L’obiettivo è evitare errori di archiviazione lasciando all’operatore la decisione di rendere il documento visibile nel fascicolo."
 			},
 			{
 				"id": "9",
@@ -1061,19 +1061,17 @@
 				"title": "Piattaforma di gestione dei veicoli fuori uso",
 				"date": "2020-2025",
 				"location": "Europa",
-				"challenge": "Dopo la creazione di Valorauto, joint venture tra Stellantis e Galloo, una piattaforma per l'economia circolare doveva modernizzare il proprio sistema per gestire il ritiro B2B e B2C dei veicoli fuori uso e seguirne il percorso dalla raccolta presso il proprietario alla demolizione.",
-				"approach": "Sviluppo del portale Valorauto con interfacce per dichiarazione, amministrazione e monitoraggio dei veicoli tra i diversi soggetti, processi aziendali e API Azure Functions distribuiti sull'infrastruttura Azure del cliente (database MSSQL, Azure Service Bus) per orchestrare uno stack .NET esistente che collega proprietari e centri per veicoli fuori uso.",
+				"challenge": "Un operatore del riciclo automobilistico doveva modernizzare la gestione dei ritiri B2B e B2C e seguire ogni veicolo dalla raccolta alla demolizione.",
+				"approach": "Sviluppo del portale con interfacce per dichiarazione, amministrazione e monitoraggio dei veicoli tra i diversi soggetti, processi aziendali e API Azure Functions distribuiti sull'infrastruttura Azure del cliente (database MSSQL, Azure Service Bus) per orchestrare uno stack .NET esistente che collega proprietari e centri per veicoli fuori uso.",
 				"impact": "Tracciabilità end-to-end per la divisione economia circolare del gruppo, con una rete di oltre 5 000 aziende partner e un supporto al costruttore nell'adempimento degli obblighi connessi alla responsabilità estesa del produttore (EPR).",
 				"metrics": [
-					{ "label": "Paesi coperti", "value": "5" },
-					{ "label": "Rete di partner", "value": "+5 000" },
-					{ "label": "Punteggio Trustpilot", "value": "4,8" }
-				],
-				"links": [
-					{ "label": "Sito Valorauto", "url": "https://www.valorauto.com/" },
 					{
-						"label": "Recensioni Trustpilot di Valorauto",
-						"url": "https://www.trustpilot.com/review/valorauto.com"
+						"label": "Paesi coperti",
+						"value": "5"
+					},
+					{
+						"label": "Rete di partner",
+						"value": "+5 000"
 					}
 				],
 				"tags": [
