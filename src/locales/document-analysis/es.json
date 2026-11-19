@@ -41,6 +41,12 @@
 			"title": "Generar y hacer firmar los documentos de una recuperación.",
 			"text": "Un recorrido integrado que prepara certificados de cesión y destrucción, los transmite a los firmantes y vincula el seguimiento de firmas al vehículo.",
 			"href": "/realisations/plataforma-economia-circular"
+		},
+		{
+			"label": "Valorauto",
+			"title": "Proyecto Valorauto: clasificación documental mediante OCR",
+			"text": "El flujo previsto combina la lectura del VIN con la confirmación del operador antes de adjuntar la pieza al expediente del vehículo.",
+			"href": "/realisations/valorauto-ocr-expedientes-vehiculos"
 		}
 	],
 	"integration": {

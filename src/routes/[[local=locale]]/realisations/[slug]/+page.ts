@@ -6,6 +6,7 @@ import type { PageLoad } from './$types';
 export const prerender = true;
 
 const relatedTopics: Record<string, { document?: string[]; circular?: string[] }> = {
+	'10': { document: ['extraction-et-integration'], circular: ['vehicules'] },
 	'1': { document: ['dossiers-et-controles'] },
 	'2': { circular: ['vehicules'] },
 	'3': { circular: ['batteries', 'documents-et-integrations'] },

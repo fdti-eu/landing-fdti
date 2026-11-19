@@ -41,6 +41,12 @@
 			"title": "Generate and route takeover documents for signature.",
 			"text": "An integrated journey that prepares transfer and destruction certificates, sends them to signers and attaches signature tracking to the vehicle.",
 			"href": "/realisations/end-of-life-vehicle-platform"
+		},
+		{
+			"label": "Valorauto",
+			"title": "Valorauto project: filing documents with OCR",
+			"text": "The proposed workflow combines reading the VIN with operator confirmation before attaching a document to a vehicle record.",
+			"href": "/realisations/valorauto-ocr-vehicle-records"
 		}
 	],
 	"integration": {

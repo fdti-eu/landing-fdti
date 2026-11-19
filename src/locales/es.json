@@ -1024,6 +1024,24 @@
 				"slug": "automatizacion-secretarias-judiciales"
 			},
 			{
+				"id": "10",
+				"slug": "valorauto-ocr-expedientes-vehiculos",
+				"title": "Valorauto: asignar documentos al vehículo correcto mediante OCR",
+				"category": "Posventa y reciclaje",
+				"challenge": "En Valorauto, un operador debe archivar la documentación de cada vehículo al final de su vida útil. Un error de expediente podría exponer el documento a personas ajenas.",
+				"approach": "En el flujo previsto en CarInput, el operador carga uno o varios archivos. El OCR distingue el permiso de circulación francés, el formulario CERFA de declaración de compra y el justificante SIV de la declaración de compra del taller. Lee el número de bastidor (VIN) para proponer un expediente.",
+				"tags": [
+					"OCR",
+					"VIN",
+					"CarInput"
+				],
+				"details": [
+					"Solo se buscan coincidencias exactas del VIN en los expedientes autorizados.",
+					"El operador comprueba el documento, su tipo, el VIN y el expediente. Incluso una coincidencia única requiere confirmación antes de que el documento sea visible en el expediente.",
+					"Las piezas ilegibles, los VIN dudosos, las coincidencias múltiples y los duplicados pasan a revisión manual. No se sustituyen documentos automáticamente."
+				]
+			},
+			{
 				"id": "9",
 				"category": "Justicia y sector público",
 				"title": "Plataforma de gestión de un litigio colectivo",

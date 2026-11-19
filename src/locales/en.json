@@ -1021,6 +1021,24 @@
 				"slug": "automatisation-greffes"
 			},
 			{
+				"id": "10",
+				"slug": "valorauto-ocr-vehicle-records",
+				"title": "Valorauto: matching documents to vehicle records with OCR",
+				"category": "Aftermarket & recycling",
+				"challenge": "Valorauto operators need to file documents for each end-of-life vehicle. Filing a document against the wrong vehicle could expose it to the wrong people.",
+				"approach": "In the proposed CarInput workflow, an operator uploads one or more files. OCR distinguishes a French registration certificate, a CERFA purchase declaration and the garage’s SIV purchase declaration receipt. It reads the vehicle identification number (VIN) to suggest a record.",
+				"tags": [
+					"OCR",
+					"VIN",
+					"CarInput"
+				],
+				"details": [
+					"The search is restricted to accessible records with an exact VIN match.",
+					"The operator checks the document, its type, the VIN and the suggested record. Even a unique match requires confirmation before the document becomes visible in the record.",
+					"Unreadable documents, uncertain VINs, multiple matches and duplicates remain in manual review. Existing documents are never replaced automatically."
+				]
+			},
+			{
 				"id": "9",
 				"category": "Justice & public sector",
 				"title": "Case-management platform for collective litigation",

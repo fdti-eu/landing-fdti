@@ -1020,6 +1020,24 @@
 				"slug": "automazione-cancellerie-tribunali"
 			},
 			{
+				"id": "10",
+				"slug": "valorauto-ocr-fascicoli-veicoli",
+				"title": "Valorauto: associare i documenti al veicolo corretto con l’OCR",
+				"category": "Aftermarket e riciclo",
+				"challenge": "Gli operatori di Valorauto devono archiviare i documenti di ogni veicolo fuori uso. Un errore di fascicolo potrebbe renderli visibili a persone estranee alla pratica.",
+				"approach": "Nel flusso previsto in CarInput, l’operatore carica uno o più file. L’OCR distingue la carta di circolazione francese, il modulo CERFA di dichiarazione di acquisto e la ricevuta SIV della dichiarazione di acquisto dell’officina. Legge il numero di telaio (VIN) per proporre un fascicolo.",
+				"tags": [
+					"OCR",
+					"VIN",
+					"CarInput"
+				],
+				"details": [
+					"La ricerca considera solo i fascicoli autorizzati con una corrispondenza esatta del VIN.",
+					"L’operatore verifica documento, tipo, VIN e fascicolo. Anche in presenza di una sola corrispondenza, il documento diventa visibile nel fascicolo solo dopo la conferma.",
+					"Documenti illeggibili, VIN incerti, corrispondenze multiple e duplicati restano in revisione manuale. I documenti esistenti non vengono sostituiti automaticamente."
+				]
+			},
+			{
 				"id": "9",
 				"category": "Giustizia e settore pubblico",
 				"title": "Piattaforma per un contenzioso collettivo",

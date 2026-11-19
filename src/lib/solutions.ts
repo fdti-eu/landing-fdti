@@ -22,7 +22,7 @@ export const solutionProofIds: Record<SolutionId, string[]> = {
 	'applications-web': ['2', '8', '9'],
 	'api-integrations': ['3', '2'],
 	'data-pilotage': ['6', '7', '4'],
-	'ia-documents': ['1', '9'],
+	'ia-documents': ['1', '9', '10'],
 	'automatisation-agents': ['8', '1'],
 	'infrastructure-exploitation': ['2', '1']
 };

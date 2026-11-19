@@ -1029,6 +1029,24 @@
 				"slug": "automatisation-greffes"
 			},
 			{
+				"id": "10",
+				"slug": "valorauto-ocr-dossiers-vhu",
+				"title": "Valorauto : rattacher les documents au bon véhicule par OCR",
+				"category": "Aftermarket & recyclage",
+				"challenge": "Chez Valorauto, un opérateur doit classer les pièces reçues pour chaque véhicule hors d’usage. Une erreur de dossier peut rendre un document visible aux mauvais interlocuteurs.",
+				"approach": "Le parcours prévu dans CarInput commence par le dépôt d’un ou plusieurs fichiers. L’OCR distingue la carte grise française, le formulaire CERFA de déclaration d’achat et le récépissé SIV de déclaration d’achat du garage. Il lit le numéro d’identification du véhicule (VIN) pour proposer un dossier.",
+				"tags": [
+					"OCR",
+					"VIN",
+					"CarInput"
+				],
+				"details": [
+					"Seuls les dossiers autorisés dont le VIN correspond exactement sont recherchés.",
+					"L’opérateur vérifie la pièce, son type, le VIN lu et le dossier proposé. Même une correspondance unique exige sa confirmation avant que la pièce soit visible dans le dossier.",
+					"Un document illisible, un VIN incertain, plusieurs correspondances ou un doublon restent en revue manuelle. Une pièce existante n’est pas remplacée automatiquement."
+				]
+			},
+			{
 				"id": "9",
 				"category": "Justice & secteur public",
 				"title": "Plateforme de gestion d’un contentieux collectif",
