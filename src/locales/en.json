@@ -1117,7 +1117,7 @@
 					{
 						"label": "Vehicles per year",
 						"value": "≈ 20,000",
-						"note": "Approximate annual scale of vehicle registrations on the platform."
+						"note": "Vehicles registered on the platform."
 					},
 					{
 						"label": "Network partners",
@@ -1127,7 +1127,7 @@
 					{
 						"label": "Median lead time",
 						"value": "6 days",
-						"note": "From registration to receipt at a centre, across 14,116 usable records from January to October 2026."
+						"note": "From vehicle registration to receipt at a treatment centre."
 					}
 				],
 				"tags": [

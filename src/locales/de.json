@@ -1125,7 +1125,7 @@
 					{
 						"label": "Fahrzeuge pro Jahr",
 						"value": "≈ 20.000",
-						"note": "Jährliche Größenordnung der auf der Plattform registrierten Fahrzeuge."
+						"note": "Auf der Plattform registrierte Fahrzeuge."
 					},
 					{
 						"label": "Partner im Netzwerk",
@@ -1135,7 +1135,7 @@
 					{
 						"label": "Mediane Durchlaufzeit",
 						"value": "6 Tage",
-						"note": "Von der Anmeldung bis zum Eingang beim Verwerter, auf Basis von 14.116 auswertbaren Vorgängen von Januar bis Oktober 2026."
+						"note": "Von der Fahrzeuganmeldung bis zum Eingang beim Verwertungsbetrieb."
 					}
 				],
 				"tags": [

@@ -1125,7 +1125,7 @@
 					{
 						"label": "Veicoli all’anno",
 						"value": "≈ 20.000",
-						"note": "Ordine di grandezza annuo dei veicoli registrati sulla piattaforma."
+						"note": "Veicoli registrati sulla piattaforma."
 					},
 					{
 						"label": "Partner della rete",
@@ -1135,7 +1135,7 @@
 					{
 						"label": "Tempo mediano",
 						"value": "6 giorni",
-						"note": "Dalla registrazione alla ricezione nel centro, su 14.116 pratiche utilizzabili da gennaio a ottobre 2026."
+						"note": "Dalla registrazione del veicolo alla ricezione nel centro di trattamento."
 					}
 				],
 				"tags": [
