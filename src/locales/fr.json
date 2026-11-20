@@ -1125,7 +1125,7 @@
 					{
 						"label": "VHU par an",
 						"value": "≈ 20 000",
-						"note": "Ordre de grandeur annuel des véhicules enregistrés sur la plateforme."
+						"note": "Véhicules enregistrés sur la plateforme."
 					},
 					{
 						"label": "Partenaires du réseau",
@@ -1135,7 +1135,7 @@
 					{
 						"label": "Délai médian",
 						"value": "6 jours",
-						"note": "Entre déclaration et réception en centre, sur 14 116 dossiers exploitables de janvier à octobre 2026."
+						"note": "Entre la déclaration du véhicule et sa réception en centre."
 					}
 				],
 				"tags": [

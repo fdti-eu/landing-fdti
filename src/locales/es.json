@@ -1129,7 +1129,7 @@
 					{
 						"label": "Vehículos al año",
 						"value": "≈ 20.000",
-						"note": "Orden de magnitud anual de los vehículos registrados en la plataforma."
+						"note": "Vehículos registrados en la plataforma."
 					},
 					{
 						"label": "Socios de la red",
@@ -1139,7 +1139,7 @@
 					{
 						"label": "Plazo mediano",
 						"value": "6 días",
-						"note": "Desde el registro hasta la recepción en el centro, sobre 14.116 expedientes válidos entre enero y octubre de 2026."
+						"note": "Desde el registro del vehículo hasta su recepción en el centro."
 					}
 				],
 				"tags": [
