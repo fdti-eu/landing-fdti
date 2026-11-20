@@ -1163,143 +1163,130 @@
 			{
 				"id": "3",
 				"category": "Aftermarket e riciclo",
-				"title": "Marketplace per batterie di seconda vita",
+				"title": "Mercato delle batterie di seconda vita",
 				"date": "2024",
 				"location": "Europa",
-				"challenge": "Un costruttore automobilistico aveva bisogno di uno strumento centrale per gestire raccolta, riciclo e rivendita delle batterie, in collaborazione con partner e acquirenti. Lo strumento doveva garantire la tracciabilità completa del processo per rispondere ai vincoli normativi legati alla strutturazione dei sistemi di responsabilità estesa del produttore (EPR).",
-				"approach": "Marketplace web collegato agli ERP dei partner, utilizzato come piattaforma logistica e di incontro tra domanda e offerta. Tracciabilità end-to-end, flussi automatizzati verso acquirenti o riciclatori e negoziazione di prezzi e condizioni con i partner integrata nell'applicazione. L'intero processo può essere gestito dal portale o tramite API.",
-				"impact": "500 batterie avviate ogni mese al riutilizzo o al riciclo da centinaia di detentori e operatori, con rendicontazione centralizzata per le autorità e un'interfaccia di amministrazione per il personale del cliente. La soluzione è integrata nell'ecosistema esistente.",
+				"challenge": "Una casa automobilistica deve sapere cosa succede a ogni batteria a fine vita affidata alla sua rete. Un’offerta di acquisto, un ritiro e una ricezione corrispondono a momenti diversi.",
+				"approach": "Quando una batteria viene affidata a un operatore con un sistema collegato, la dichiarazione arriva direttamente nel suo gestionale. L’operatore non deve ricreare la pratica. Gli aggiornamenti trasmessi dal suo sistema compaiono nella scheda della batteria consultata dal costruttore.",
+				"impact": "Il costruttore segue la batteria dalla dichiarazione alla conferma dell’acquisto o del riciclo e usa lo storico per preparare i rendiconti previsti dalla normativa.",
 				"metrics": [
-					{ "label": "Batterie/mese", "value": "500" },
-					{ "label": "Partner collegati", "value": "+300" },
-					{ "label": "Paesi coperti", "value": "18" }
+					{
+						"label": "Batterie registrate",
+						"value": "≈ 10.000",
+						"note": "Batterie registrate, esclusi gli annullamenti, a inizio settembre 2026."
+					},
+					{
+						"label": "Partner collegati",
+						"value": "+300"
+					},
+					{
+						"label": "Paesi coperti",
+						"value": "18"
+					}
 				],
 				"tags": ["SvelteKit", "FastAPI", "PostgreSQL", "Keycloak"],
 				"details": [
-					"Sviluppo end-to-end della piattaforma, dei database e delle API.",
-					"Processo dichiarativo completo per le batterie a fine vita e generazione automatica dei documenti logistici.",
-					"Integrazione API con riciclatori e sistemi collettivi EPR per monitorare prelievi, test, certificati e proposte di prezzo.",
-					"Area acquirenti per reperire batterie ricondizionabili e orchestrare la transazione.",
-					"Valutazione della qualità e della conformità dei partner e SLA condivisi.",
-					"Reporting normativo consolidato, esportabile con un clic.",
-					"Notifiche e-mail automatiche per partner e acquirenti nelle diverse fasi (raccolta, test, rivendita).",
-					"Federazione delle identità tramite Keycloak per le entità del gruppo e i partner esterni."
+					"Il proprietario dichiara la batteria. Se un partner propone un prezzo di acquisto, l’offerta resta associata a quella batteria. Chi la riceve può rifiutarla e indicare il motivo.",
+					"Una volta convalidata la pratica, l’operatore registra il ritiro presso il proprietario. Se il ritiro non va a buon fine, può annotare il problema nella pratica.",
+					"All’arrivo l’operatore conferma la ricezione. Il costruttore sa così se la batteria è ancora attesa o è già arrivata. Se è destinata a una seconda vita, l’operatore può poi confermare la transazione."
 				],
 				"slug": "marketplace-batterie-seconda-vita"
 			},
 			{
 				"id": "8",
 				"category": "Aftermarket e riciclo",
-				"title": "Piattaforma operativa per un riciclatore di batterie",
+				"title": "Gestire le operazioni di un riciclatore di batterie",
 				"location": "Francia",
-				"challenge": "Un riciclatore doveva riunire in un unico strumento le dichiarazioni delle batterie, l'esame preliminare, la preparazione delle raccolte, i documenti di tracciabilità e le fasi di ricezione e trattamento.",
-				"approach": "Sviluppo di un'applicazione aziendale che collega dichiarazioni, cataloghi delle batterie, liste dei colli, controlli di raggruppamento, BSD tramite la piattaforma francese Trackdéchets e azioni di ricezione.",
-				"impact": "I team seguono le pratiche dalla dichiarazione al trattamento, con controlli espliciti sugli operatori della raccolta, sui siti destinatari, sulle firme e sugli stati documentali dei flussi francesi.",
+				"challenge": "Per organizzare un ritiro, il riciclatore deve conoscere il tipo di batterie, chi le ritirerà e l’impianto che le riceverà. Due partite pronte a partire non possono necessariamente viaggiare insieme.",
+				"approach": "Il personale esamina ogni dichiarazione prima di inserirla in una distinta di carico. Lo strumento verifica che le batterie del lotto abbiano lo stesso incaricato del ritiro e la stessa destinazione. All’arrivo il personale ritrova le dichiarazioni associate al lotto.",
+				"impact": "Per ogni dichiarazione il riciclatore può risalire al lotto, verificare le firme mancanti e distinguere una batteria ricevuta da una già trattata.",
 				"tags": ["SvelteKit", "FastAPI", "PostgreSQL", "Trackdéchets"],
 				"details": [
-					"Qualificazione delle dichiarazioni in base alla chimica, alla sottochimica e alla tipologia delle batterie.",
-					"Creazione di liste dei colli senza combinare operatori della raccolta o siti destinatari incompatibili.",
-					"Creazione e aggiornamento dei BSD francesi tramite Trackdéchets, con monitoraggio delle firme previste.",
-					"Ricezione delle dichiarazioni e monitoraggio delle fasi di trattamento nella stessa pratica operativa.",
-					"Interfacce adatte ai team interni e ai partner della raccolta."
+					"Il personale identifica il tipo e la composizione della batteria dichiarata per prepararne la presa in carico.",
+					"Chi prepara il ritiro compone il lotto. Se una dichiarazione prevede un incaricato o una destinazione diversi, la inserisce in un’altra distinta.",
+					"Il personale verifica le firme attese sul documento di tracciabilità dei rifiuti. L’impianto destinatario registra nella pratica prima la ricezione e poi il trattamento."
 				],
 				"slug": "piattaforma-riciclo-batterie"
 			},
 			{
 				"id": "4",
 				"category": "Smart city ed energia",
-				"title": "Supervisione e modellazione dell'illuminazione pubblica",
+				"title": "Individuare anomalie nell’illuminazione pubblica",
 				"date": "2024",
 				"location": "Francia",
-				"challenge": "Un cliente specializzato nella gestione dell'illuminazione pubblica per comuni e fornitori aveva bisogno di un'unica piattaforma per controllare l'illuminazione, regolare gli orari, rilevare anomalie e pianificare la manutenzione.",
-				"approach": "Sviluppo di un'applicazione web che funge da portale di gestione e offre dashboard di analisi. Stack in tempo reale AWS S3 + DuckDB/Parquet, pipeline Shell/Cron, API FastAPI e interfaccia TypeScript/SvelteKit.",
-				"impact": "Applicazione consultata ogni mattina dai gestori di rete. Dati su consumi e guasti aggiornati dinamicamente, con manutenzione predittiva e un sistema di allerta adottati in oltre 40 territori.",
+				"challenge": "Ogni mattina il gestore deve decidere quali quadri di illuminazione controllare. Un consumo diurno merita attenzione, ma da solo non significa che le luci siano rimaste accese.",
+				"approach": "Dall’elenco delle anomalie il gestore apre la curva dei consumi del quadro interessato. La confronta con gli orari di accensione per decidere quale scostamento far verificare.",
+				"impact": "I gestori consultano gli avvisi ogni mattina per scegliere dove concentrare i controlli sulla rete.",
 				"metrics": [
-					{ "label": "Misure/giorno", "value": ">100 mln" },
-					{ "label": "Territori", "value": "+40" }
+					{
+						"label": "Territori serviti",
+						"value": "+40",
+						"note": "Territori in cui sono stati attivati gli avvisi."
+					}
 				],
 				"tags": ["DuckDB", "SvelteKit", "PostgreSQL", "FastAPI"],
 				"details": [
-					"Raccolta continua dei contatori dell'illuminazione e archiviazione ottimizzata in S3 + Parquet.",
-					"Pipeline Shell/Cron per aggiornare la cache.",
-					"Analisi DuckDB per generare istantaneamente KPI su diversi anni di storico e visualizzazioni dinamiche dei risultati.",
-					"Sistema di gestione dei mandati legati ai proprietari e agli utenti dei dati.",
-					"Dashboard di allerta dedicate agli operatori (guasti, consumi, anomalie degli orari).",
-					"API REST aperta per collegare gli strumenti aziendali dei fornitori e dei comuni.",
-					"Gestione multi-ente con autorizzazioni granulari e segmentazione per gestore."
+					"Il gestore seleziona un quadro e consulta le misure del relativo contatore.",
+					"Confronta i consumi prima, durante e dopo la fascia di accensione. Può così distinguere un assorbimento presente tutto il giorno da uno scarto nell’orario di accensione.",
+					"Può indicare al manutentore quale quadro controllare, a che ora e per quale scostamento."
 				],
 				"slug": "supervisione-illuminazione-pubblica"
 			},
 			{
 				"id": "5",
 				"category": "ONG e coinvolgimento",
-				"title": "Analisi con IA delle campagne social media",
+				"title": "Scegliere i temi delle prossime campagne",
 				"date": "2023",
 				"location": "Internazionale",
-				"challenge": "L'ONG doveva confrontare le narrazioni ambientali su Facebook e Instagram per orientare gli investimenti nella comunicazione.",
-				"approach": "Metodologia basata su LLM (ChatGPT e prompt specializzati) per valutare tono, argomenti e prospettive, con correlazione ai KPI di Facebook e Instagram per tipologia di pubblico (età, paese, interessi) e visualizzazioni comparative.",
-				"impact": "Riallocazione del budget per paese e piattaforma e adozione interna del modello di analisi.",
-				"metrics": [
-					{ "label": "Post analizzati", "value": "60 mila" },
-					{ "label": "Lingue", "value": "8" },
-					{ "label": "Visualizzazioni", "value": "50+" }
-				],
+				"challenge": "Una ONG deve decidere quali messaggi ambientali privilegiare per paese e social network. I dati sulle prestazioni indicano quali post hanno suscitato reazioni, ma non di cosa parlavano.",
+				"approach": "Su 60.000 post in otto lingue abbiamo identificato per ogni messaggio il tema, il tono e i punti di vista espressi. Il team comunicazione può confrontare come viene accolto lo stesso tema a seconda del pubblico e del canale.",
+				"impact": "La ONG ha adottato internamente la griglia di analisi per orientare la ripartizione del budget tra paesi e canali social.",
 				"tags": ["LLM", "OpenAI", "NLP", "TypeScript"],
 				"details": [
-					"Prompt specifici per rilevare tono, soggetti, temi ed emozioni su Facebook e Instagram.",
-					"Pipeline automatizzata: raccolta dei dati social → LLM → valutazione di argomenti, toni e prospettive per tipo di pubblico.",
-					"Incrocio delle valutazioni con le prestazioni dei post per consigliare i temi prioritari.",
-					"Metodologia documentata e riproducibile dai team locali.",
-					"Sessioni di formazione per interpretare le raccomandazioni e adeguare i budget."
+					"Per ogni post su Facebook o Instagram, l’analisi individua il tema e il modo in cui viene affrontato.",
+					"Il team comunicazione confronta questi elementi con le reazioni osservate nei diversi segmenti di pubblico.",
+					"I team locali usano gli stessi criteri per scegliere quali temi riprendere nella campagna successiva."
 				],
 				"slug": "analisi-ia-campagne-social"
 			},
 			{
 				"id": "6",
 				"category": "Retail ed elettronica",
-				"title": "Data hub e NLP",
+				"title": "Ritrovare i problemi ricorrenti nelle opinioni dei clienti",
 				"date": "2021-2023",
 				"location": "Globale",
-				"challenge": "Centralizzare i flussi di recensioni dei clienti di un leader dell'elettronica in Francia e industrializzarne l'analisi con IA e dashboard.",
-				"approach": "Pipeline per raccogliere i dati tramite API dai diversi fornitori e responsabili della raccolta, da Airflow a BigQuery, governance GCP, NLP (HuggingFace, BERTopic, QA, LLM), restituzione in dashboard Tableau e distribuzione interna dei dati ai team interessati.",
-				"impact": "Il servizio clienti individua immediatamente i temi classificati e le segnalazioni e segue le richieste con maggiore precisione. Il team di prodotto rileva in anticipo difetti e problemi logistici; il team legale individua potenziali controversie.",
-				"metrics": [
-					{ "label": "Fonti integrate", "value": "+25" },
-					{ "label": "Commenti analizzati", "value": "Tutta la Francia" }
-				],
+				"challenge": "Un produttore di elettronica riceve opinioni attraverso più canali. Per capire un difetto ricorrente i team devono poter accostare commenti che lo descrivono con parole diverse.",
+				"approach": "Abbiamo riunito le opinioni di oltre 25 fonti e raggruppato i commenti per tema. Chi studia le esperienze dei clienti può partire da un problema ricorrente e ritrovare le parole usate dai clienti stessi.",
+				"impact": "Il team di ricerca consulta le analisi ogni giorno e le condivide con i reparti interessati.",
 				"tags": ["GCP", "Airflow", "NLP", "LLM", "Tableau", "HuggingFace"],
 				"details": [
-					"Raccolta multi-API (mystery shopping, CRM, social media, recensioni) orchestrata da Airflow.",
-					"Policy cloud: segmentazione per team, localizzazione dei dati, sicurezza e buone pratiche.",
-					"Pipeline di analisi e classificazione con LLM.",
-					"Pipeline NLP per similarità, sentiment e argomenti in più lingue.",
-					"Progettazione e implementazione delle dashboard utilizzate quotidianamente dal team Customer & Market Insights.",
-					"Documentazione e formazione dei team dati e business.",
-					"Esportazioni automatizzate degli insight verso le business unit marketing e le agenzie."
+					"Un commento proveniente da un sondaggio, dall’assistenza clienti o da un sito di recensioni confluisce insieme agli altri riscontri.",
+					"Il team di ricerca ritrova i commenti sullo stesso tema e consulta le formulazioni originali.",
+					"L’assistenza segue le richieste ricorrenti. Il team di prodotto può esaminare le segnalazioni di un difetto separatamente dai problemi di consegna."
 				],
 				"slug": "hub-dati-nlp"
 			},
 			{
 				"id": "7",
 				"category": "Retail ed elettronica",
-				"title": "Data warehouse retail in tempo reale",
+				"title": "Seguire le vendite dei negozi durante il cambio di gestionale",
 				"date": "2020-2021",
 				"location": "Europa",
-				"challenge": "Nell'ambito di una migrazione ERP, trasferire 98 oggetti aziendali JSON con struttura complessa e volumi elevati (negozi, magazzini, utenti, scontrini, scorte...) da Azure a Snowflake per alimentare Qlik quasi in tempo reale.",
-				"approach": "Generazione automatica di centinaia di query SQL e Scala dalle specifiche per appiattire gli oggetti complessi. Il sistema genera e alimenta oltre 150 tabelle e viste aggiornate in tempo reale. Acquisizione ADLS→Snowflake tramite Kafka/ADF e orchestrazione mediante stream e task.",
-				"impact": "Flussi aggiornati minuto per minuto per i team BI e diversi milioni di file elaborati ogni giorno. Transizione al nuovo sistema di analisi e successiva dismissione del sistema precedente.",
+				"challenge": "Una catena di negozi cambia gestionale. Gli analisti devono continuare a seguire le vendite di ogni punto vendita anche se gli scontrini arrivano in un nuovo formato.",
+				"approach": "Abbiamo collegato gli scontrini del nuovo sistema ai negozi e agli articoli corrispondenti. Gli analisti ritrovano le vendite nel loro strumento di analisi senza dover ricostruire ogni scontrino a partire dalle singole righe.",
+				"impact": "Dopo il cambio di gestionale i team hanno continuato a seguire le vendite minuto per minuto.",
 				"metrics": [
-					{ "label": "Oggetti aziendali", "value": "98" },
-					{ "label": "Tabelle e viste", "value": "150+" },
-					{ "label": "Latenza", "value": "<1 min" }
+					{
+						"label": "Aggiornamento dei dati di vendita",
+						"value": "Ogni minuto",
+						"note": "Frequenza con cui il sistema di analisi riceve nuovi dati."
+					}
 				],
 				"tags": ["Snowflake", "Azure", "Kafka", "ADF", "Qlik"],
 				"details": [
-					"Generazione SQL automatica dai metadati XML per accelerare i rilasci.",
-					"Aggiornamenti delta orchestrati da Snowflake Tasks con monitoraggio dedicato.",
-					"Funzioni Scala personalizzate per denormalizzare i JSON annidati.",
-					"Coaching degli analisti per sfruttare i nuovi flussi in tempo reale.",
-					"Gestione multiambiente tramite API Snowflake (test / pre-prod / prod)."
+					"Un negozio registra una vendita. Il nuovo software trasmette lo scontrino con il dettaglio degli articoli.",
+					"Le righe di vendita sono associate al negozio. L’analista può usare gli importi degli scontrini per seguire il fatturato e il valore medio dello scontrino per punto vendita.",
+					"I nuovi dati alimentano le analisi minuto per minuto. I team sono passati al nuovo sistema di analisi e hanno dismesso il precedente."
 				],
 				"slug": "data-warehouse-retail-tempo-reale"
 			}

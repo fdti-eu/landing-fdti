@@ -1167,143 +1167,130 @@
 			{
 				"id": "3",
 				"category": "Posventa y reciclaje",
-				"title": "Marketplace de baterías de segunda vida",
+				"title": "Mercado de baterías de segunda vida",
 				"date": "2024",
 				"location": "Europa",
-				"challenge": "Un fabricante de automóviles necesitaba una herramienta central para gestionar la recogida, el reciclaje y la reventa de sus baterías, en colaboración con sus socios y compradores. La herramienta debía gestionar la trazabilidad completa del proceso para responder a las exigencias normativas relacionadas con la estructuración de los sistemas de RAP (Responsabilidad Ampliada del Productor).",
-				"approach": "Marketplace web conectado a los ERP de los socios, que funciona como plataforma logística y de intermediación. Trazabilidad de principio a fin y flujos automatizados hacia compradores o recicladores, con la negociación de precios y condiciones con los socios integrada en la aplicación. Todo el proceso puede gestionarse desde el portal o mediante la API.",
-				"impact": "500 baterías redirigidas cada mes por cientos de propietarios y proveedores de servicios, con informes centralizados para las autoridades y una interfaz de administración para los empleados del cliente. Integración de la solución en el ecosistema.",
+				"challenge": "Un fabricante de automóviles necesita saber qué ocurre con cada batería al final de su vida útil que confía a su red. Una oferta de compra, una recogida y una recepción representan momentos distintos.",
+				"approach": "Cuando se asigna una batería a un proveedor cuyo sistema está conectado, la declaración llega directamente a ese sistema. El proveedor no tiene que volver a crear el expediente. Las actualizaciones que transmite desde su herramienta aparecen en la ficha que consulta el fabricante.",
+				"impact": "El fabricante sigue la batería desde la declaración hasta la confirmación de su compra o reciclaje y utiliza ese historial para preparar sus informes reglamentarios.",
 				"metrics": [
-					{ "label": "Baterías/mes", "value": "500" },
-					{ "label": "Socios conectados", "value": "+300" },
-					{ "label": "Países cubiertos", "value": "18" }
+					{
+						"label": "Baterías registradas",
+						"value": "≈ 10 000",
+						"note": "Baterías registradas, excluidas las anulaciones, a principios de septiembre de 2026."
+					},
+					{
+						"label": "Socios conectados",
+						"value": "+300"
+					},
+					{
+						"label": "Países cubiertos",
+						"value": "18"
+					}
 				],
 				"tags": ["SvelteKit", "FastAPI", "PostgreSQL", "Keycloak"],
 				"details": [
-					"Desarrollo integral de la plataforma, las bases de datos y la API.",
-					"Proceso declarativo completo para baterías al final de su vida útil y generación automática de documentos logísticos.",
-					"Integración mediante API con recicladores y sistemas colectivos de responsabilidad ampliada del productor para seguir las recogidas, las pruebas, los certificados y las propuestas de precios.",
-					"Espacio para compradores destinado a localizar baterías reacondicionables y gestionar la transacción.",
-					"Evaluación de la calidad y el cumplimiento de los socios, con SLA compartidos.",
-					"Informes normativos consolidados y exportables con un clic.",
-					"Notificaciones automáticas por correo electrónico para socios y compradores durante las distintas etapas (recogida, pruebas y reventa).",
-					"Federación de identidades mediante Keycloak para las entidades del grupo y los socios externos."
+					"El propietario declara la batería. Si un socio ofrece un precio de compra, la oferta queda vinculada a esa batería. Quien la recibe puede rechazarla e indicar el motivo.",
+					"Una vez validado el expediente, el proveedor registra la recogida en las instalaciones del propietario. Si no puede recogerla, deja constancia en el expediente.",
+					"Al llegar la batería, el proveedor confirma su recepción. El fabricante sabe así si sigue pendiente o ya ha llegado. Si se destina a una segunda vida, el proveedor puede confirmar después la transacción."
 				],
 				"slug": "marketplace-baterias"
 			},
 			{
 				"id": "8",
 				"category": "Posventa y reciclaje",
-				"title": "Plataforma de operaciones para un reciclador de baterías",
+				"title": "Gestión de las operaciones de un reciclador de baterías",
 				"location": "Francia",
-				"challenge": "Un reciclador necesitaba reunir en una misma herramienta las declaraciones de baterías, su revisión previa, la preparación de las recogidas, los documentos de seguimiento y las etapas de recepción y tratamiento.",
-				"approach": "Desarrollo de una aplicación de negocio que conecta declaraciones, catálogos de baterías, listas de bultos, controles de agrupación, BSD Trackdéchets y acciones de recepción.",
-				"impact": "Los equipos siguen los expedientes desde la declaración hasta el tratamiento, con controles explícitos sobre los recolectores, los centros de destino, las firmas y los estados documentales.",
+				"challenge": "Para preparar una recogida, el reciclador necesita conocer el tipo de batería, el transportista y la planta de destino. Dos partidas listas para salir no siempre pueden viajar juntas.",
+				"approach": "El equipo revisa cada declaración antes de añadirla a la lista de carga. La herramienta comprueba que todas las baterías del lote compartan transportista y destino. En la recepción, el personal recupera las declaraciones del lote.",
+				"impact": "Para cada declaración, el reciclador puede identificar el lote, comprobar las firmas pendientes y distinguir una batería recibida de una ya tratada.",
 				"tags": ["SvelteKit", "FastAPI", "PostgreSQL", "Trackdéchets"],
 				"details": [
-					"Clasificación de las declaraciones según la composición química, la subcomposición y la tipología de las baterías.",
-					"Creación de listas de bultos sin mezclar recolectores o centros de destino incompatibles.",
-					"Creación y actualización de BSD mediante Trackdéchets, con seguimiento de las firmas requeridas.",
-					"Recepción de las declaraciones y seguimiento de las etapas de tratamiento en el mismo expediente de negocio.",
-					"Interfaces adaptadas a los equipos internos y a los socios de recogida."
+					"El equipo identifica el tipo y la composición de la batería declarada para preparar su gestión.",
+					"La persona que organiza la recogida forma el lote. Si una declaración corresponde a otro transportista o destino, la incluye en otra lista.",
+					"El equipo comprueba las firmas pendientes en el documento de seguimiento de residuos. La planta de destino registra la recepción y después el tratamiento en el expediente."
 				],
 				"slug": "plataforma-operaciones-reciclaje-baterias"
 			},
 			{
 				"id": "4",
 				"category": "Smart city y energía",
-				"title": "Supervisión y modelado del alumbrado público",
+				"title": "Detectar anomalías en el alumbrado público",
 				"date": "2024",
 				"location": "Francia",
-				"challenge": "Un cliente especializado en la gestión del alumbrado público para municipios y sus proveedores necesitaba una plataforma única para controlar el alumbrado público, ajustar los horarios, detectar anomalías y planificar el mantenimiento.",
-				"approach": "Desarrollo de una aplicación web como portal de gestión y cuadros de mando analíticos. Arquitectura en tiempo real con AWS S3 + DuckDB/Parquet, procesos Shell/Cron, API FastAPI e interfaz TypeScript/SvelteKit.",
-				"impact": "Los gestores de red consultan la aplicación cada mañana. Los datos de consumo e incidencias se actualizan dinámicamente, y el mantenimiento predictivo y el sistema de alertas se han desplegado en más de 40 territorios.",
+				"challenge": "Cada mañana, el gestor decide qué cuadros de alumbrado revisar. El consumo diurno merece atención, pero no basta para concluir que las luces se han quedado encendidas.",
+				"approach": "Desde la lista de anomalías, el gestor abre la curva de consumo del cuadro. La compara con el horario de alumbrado para decidir qué desviación conviene comprobar.",
+				"impact": "Los gestores consultan las alertas cada mañana para dirigir las comprobaciones en la red.",
 				"metrics": [
-					{ "label": "Mediciones/día", "value": ">100 M" },
-					{ "label": "Territorios", "value": "+40" }
+					{
+						"label": "Territorios cubiertos",
+						"value": "+40",
+						"note": "Territorios en los que se han implantado las alertas."
+					}
 				],
 				"tags": ["DuckDB", "SvelteKit", "PostgreSQL", "FastAPI"],
 				"details": [
-					"Recopilación continua de los datos de los contadores de alumbrado y almacenamiento optimizado en S3 + Parquet.",
-					"Procesos Shell/Cron para actualizar la caché.",
-					"Análisis con DuckDB para generar KPI al instante sobre varios años de historial y visualizaciones dinámicas para mostrar los resultados.",
-					"Sistema de gestión de mandatos vinculados a los propietarios y usuarios de los datos.",
-					"Cuadros de mando de alertas específicos para operadores (averías, consumo y anomalías horarias).",
-					"API REST abierta para conectar las herramientas de gestión de proveedores y municipios.",
-					"Gestión de múltiples administraciones con permisos detallados y segmentación por gestor."
+					"El gestor selecciona un cuadro y consulta las lecturas de su contador.",
+					"Compara el consumo antes, durante y después del horario previsto. Así distingue un consumo presente todo el día de un desfase en la hora de encendido.",
+					"Puede indicar al contratista qué cuadro revisar, a qué hora y por qué desviación."
 				],
 				"slug": "supervision-alumbrado-publico"
 			},
 			{
 				"id": "5",
 				"category": "ONG y participación",
-				"title": "Análisis mediante IA de campañas en redes sociales",
+				"title": "Elegir los temas de las próximas campañas",
 				"date": "2023",
 				"location": "Internacional",
-				"challenge": "La ONG necesitaba comparar los discursos medioambientales en Facebook e Instagram para orientar sus inversiones en comunicación.",
-				"approach": "Metodología basada en LLM (ChatGPT + instrucciones especializadas) para puntuar el tono, los temas y las perspectivas y correlacionarlos con los KPI de Facebook/Instagram por tipo de audiencia (edad, país e intereses), con visualizaciones comparativas.",
-				"impact": "Redistribución del presupuesto por país y plataforma, y adopción interna del método de análisis.",
-				"metrics": [
-					{ "label": "Publicaciones analizadas", "value": "60 k" },
-					{ "label": "Idiomas", "value": "8" },
-					{ "label": "Visualizaciones", "value": "50+" }
-				],
+				"challenge": "Una ONG necesita decidir qué mensajes ambientales priorizar en cada país y red social. Las cifras de rendimiento muestran qué publicaciones suscitaron una reacción, pero no de qué hablaban.",
+				"approach": "En un conjunto de 60 000 publicaciones en ocho idiomas, relacionamos cada mensaje con su tema, su tono y los puntos de vista expresados. El equipo de comunicación puede comparar la acogida de un mismo tema según el público y la red.",
+				"impact": "La ONG adoptó estos criterios para orientar el reparto de su presupuesto entre países y redes sociales.",
 				"tags": ["LLM", "OpenAI", "NLP", "TypeScript"],
 				"details": [
-					"Instrucciones específicas para captar el tono, los actores, los temas y las emociones en Facebook/Instagram.",
-					"Proceso automatizado: recopilación de datos de redes sociales → LLM → puntuación de temas, tonos y perspectivas por tipo de público.",
-					"Cruce de las puntuaciones con el rendimiento de las publicaciones para recomendar los temas prioritarios.",
-					"Metodología documentada y reproducible por los equipos locales.",
-					"Sesiones de formación para interpretar las recomendaciones y ajustar los presupuestos."
+					"Para cada publicación en Facebook o Instagram, el análisis identifica el tema y cómo se aborda.",
+					"El equipo de comunicación contrasta esos elementos con los resultados observados entre los distintos públicos.",
+					"Los equipos locales utilizan los mismos criterios para elegir los temas de la próxima campaña."
 				],
 				"slug": "analisis-generativo-campanas"
 			},
 			{
 				"id": "6",
 				"category": "Comercio minorista y electrónica",
-				"title": "Plataforma de datos y NLP",
+				"title": "Identificar problemas recurrentes en las opiniones de los clientes",
 				"date": "2021-2023",
 				"location": "Global",
-				"challenge": "Centralizar los flujos de opiniones de clientes de una empresa líder de electrónica en Francia e industrializar su análisis con IA y cuadros de mando.",
-				"approach": "Procesos para recopilar datos de distintos proveedores y responsables de la recopilación de datos mediante API Airflow→BigQuery, gobernanza GCP, NLP (HuggingFace, BERTopic, QA, LLM), presentación en cuadros de mando de Tableau y distribución interna de los datos a los demás equipos implicados.",
-				"impact": "El servicio de atención al cliente accede al instante a los temas clasificados y a las alertas notificadas, y realiza un seguimiento más preciso de las solicitudes. El equipo de producto identifica y anticipa defectos y problemas logísticos. El equipo jurídico anticipa los litigios.",
-				"metrics": [
-					{ "label": "Fuentes integradas", "value": "+25" },
-					{ "label": "Comentarios analizados", "value": "Toda Francia" }
-				],
+				"challenge": "Un fabricante de electrónica recibe opiniones por varios canales. Para entender un fallo recurrente, sus equipos necesitan reunir comentarios que lo describen con palabras distintas.",
+				"approach": "Reunimos opiniones de más de 25 fuentes y agrupamos los comentarios por tema. El equipo de estudios de clientes puede partir de un problema recurrente y recuperar las palabras de los propios clientes.",
+				"impact": "El equipo de estudios consulta estos análisis a diario y los comparte con los equipos correspondientes.",
 				"tags": ["GCP", "Airflow", "NLP", "LLM", "Tableau", "HuggingFace"],
 				"details": [
-					"Recopilación mediante múltiples API (cliente misterioso, CRM, redes sociales y reseñas), orquestada por Airflow.",
-					"Políticas de nube: segmentación por equipo, localización de datos, seguridad y buenas prácticas.",
-					"Proceso de análisis y clasificación con LLM.",
-					"Procesos NLP para similitud, sentimiento y temas en varios idiomas.",
-					"Diseño e implementación de los cuadros de mando utilizados a diario por el equipo de conocimiento del cliente y del mercado.",
-					"Documentación y formación de los equipos de datos / negocio.",
-					"Exportaciones automatizadas de conclusiones a las unidades de negocio de marketing y las agencias."
+					"Un comentario de una encuesta, del servicio de atención al cliente o de una web de reseñas se incorpora al resto de las opiniones.",
+					"El equipo de estudios reúne los comentarios sobre un mismo tema y consulta el texto original.",
+					"Atención al cliente sigue las consultas recurrentes. El equipo de producto puede examinar por separado los comentarios sobre un defecto y los que describen problemas de entrega."
 				],
 				"slug": "hub-datos-nlp"
 			},
 			{
 				"id": "7",
 				"category": "Comercio minorista y electrónica",
-				"title": "Almacén de datos en tiempo real para el comercio minorista",
+				"title": "Seguir las ventas de las tiendas durante un cambio de software",
 				"date": "2020-2021",
 				"location": "Europa",
-				"challenge": "En el marco de una migración de ERP, migrar 98 objetos de negocio JSON con una estructura compleja y un gran volumen (tiendas, almacenes, usuarios, tiques de caja, existencias...) desde Azure hacia Snowflake para alimentar Qlik casi en tiempo real.",
-				"approach": "Generación automática de cientos de consultas SQL y Scala a partir de las especificaciones para desanidar los objetos complejos. El sistema produjo y alimenta más de 150 tablas y vistas actualizadas en tiempo real. Ingesta ADLS→Snowflake mediante Kafka/ADF y orquestación mediante streams and tasks.",
-				"impact": "Flujos minuto a minuto para los equipos de BI y varios millones de archivos procesados cada día. Transición al nuevo sistema de análisis y posterior retirada del antiguo.",
+				"challenge": "Una cadena cambia de software de gestión. Los analistas necesitan seguir las ventas de cada tienda aunque los tickets de caja lleguen en otro formato.",
+				"approach": "Vinculamos los tickets del nuevo sistema con la tienda y los artículos correspondientes. Los analistas consultan las ventas en su herramienta habitual sin reconstruir cada ticket línea por línea.",
+				"impact": "Los equipos mantuvieron el seguimiento de las ventas minuto a minuto tras el cambio de software.",
 				"metrics": [
-					{ "label": "Objetos de negocio", "value": "98" },
-					{ "label": "Tablas y vistas", "value": "150+" },
-					{ "label": "Latencia", "value": "<1 min" }
+					{
+						"label": "Actualización de los datos de ventas",
+						"value": "Cada minuto",
+						"note": "Frecuencia con la que el sistema de análisis recibe datos nuevos."
+					}
 				],
 				"tags": ["Snowflake", "Azure", "Kafka", "ADF", "Qlik"],
 				"details": [
-					"Generación automática de SQL a partir de metadatos XML para acelerar los despliegues.",
-					"Actualizaciones incrementales orquestadas mediante Snowflake Tasks con supervisión específica.",
-					"Funciones Scala personalizadas para desnormalizar los JSON anidados.",
-					"Formación de los analistas para aprovechar los nuevos flujos en tiempo real.",
-					"Gestión de múltiples entornos mediante la API de Snowflake (pruebas / preproducción / producción)."
+					"Una tienda registra una venta. El nuevo software transmite el ticket y el detalle de los artículos.",
+					"Las líneas de venta quedan asociadas a la tienda. El analista utiliza los importes de los tickets para seguir la facturación y el importe medio por compra en cada tienda.",
+					"Los datos nuevos alimentan los análisis minuto a minuto. Los equipos pudieron pasar al nuevo sistema de análisis y retirar el anterior."
 				],
 				"slug": "almacen-datos-retail"
 			}
