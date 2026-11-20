@@ -1115,12 +1115,12 @@
 			{
 				"id": "2",
 				"category": "Aftermarket & recyclage",
-				"title": "Plateforme de gestion des véhicules en fin de vie",
+				"title": "Suivre un véhicule de la demande de reprise au certificat de destruction",
 				"date": "2020-2025",
 				"location": "Europe",
-				"challenge": "Le service a été lancé pour organiser les reprises entre propriétaires, garages et centres de traitement. Il fallait ensuite permettre aux équipes d’exploiter ce réseau à grande échelle et de suivre chaque véhicule jusqu’à sa destruction.",
-				"approach": "Développement du portail avec interfaces de déclaration, d'administration et de suivi des véhicules entre les différents acteurs, processus métiers et APIs Azure Functions déployés sur l'infrastructure Azure du client (bases MSSQL, Azure Service Bus) pour orchestrer un existant .NET connectant propriétaires et centres VHU.",
-				"impact": "Traçabilité bout en bout au service de la branche économie circulaire du groupe, avec un réseau de plus de 5 000 entreprises partenaires et une réponse aux impératifs du constructeur liés à la Responsabilité Etendue des Producteurs (REP).",
+				"challenge": "Un particulier veut faire reprendre sa voiture, ou un garage déclare un véhicule à enlever. Le transporteur doit savoir où le récupérer, le centre de traitement doit en confirmer la réception et le propriétaire doit pouvoir retrouver son certificat. Pour lancer le service puis le faire fonctionner à grande échelle, l’opérateur devait relier ces étapes entre des entreprises qui n’ont pas toutes besoin des mêmes informations.",
+				"approach": "Nous avons construit le service autour d’un dossier par véhicule. Le particulier ou le garage y fait sa demande. Le transporteur y retrouve les informations nécessaires à l’enlèvement. Le centre y enregistre ce qu’il a reçu. L’équipe qui pilote le réseau peut ainsi distinguer un véhicule encore à enlever d’un véhicule déjà arrivé dont le dossier reste à compléter.",
+				"impact": "Le propriétaire peut justifier la reprise de son véhicule. Le garage sait si l’enlèvement a eu lieu. Le centre repère les dossiers incomplets. Et l’opérateur peut suivre ces opérations à l’échelle du réseau, jusqu’au délai médian de 6 jours entre déclaration et réception en centre.",
 				"metrics": [
 					{
 						"label": "VHU par an",
@@ -1148,15 +1148,10 @@
 					"Azure Service Bus"
 				],
 				"details": [
-					"Développement de bout en bout de la plateforme, bases de données et API.",
-					"Design complet du workflow de déclaration pour concessionnaires, centres de réparation et particuliers.",
-					"APIs Azure Functions pour relier les SI logistiques, CRM et finance du groupe.",
-					"Interconnexion avec l'écosystème des autres acteurs de l'économie circulaire par API (recycleurs, propriétaires, acheteurs, éco-organismes).",
-					"Cartographie en temps réel des flux matières et génération automatique des documents réglementaires.",
-					"Gestion multi-marques : règles locales, catalogues et pricing par pays.",
-					"Infrastructure Azure dimensionnée pour absorber les pics de régulation et audits.",
-					"Tableaux de bord opérationnels et réglementaires consolidant B2B et B2C.",
-					"Notifications e-mail personnalisées pour chaque utilisateur (garages, concessions, particuliers) à chaque étape du workflow."
+					"Déclarer le véhicule. À partir de la plaque ou du numéro de série, les caractéristiques disponibles sont reprises dans la fiche. Le déclarant complète les informations manquantes et précise le lieu d’enlèvement.",
+					"Organiser la collecte. Le garage suit l’enlèvement prévu. Sur place, le transporteur vérifie le véhicule et peut signaler un problème si la collecte ne se déroule pas comme prévu.",
+					"Réceptionner le véhicule et ses papiers. Le centre enregistre l’arrivée du véhicule et, séparément, celle des documents. Une voiture peut être sur le parc alors que ses papiers ne sont pas encore arrivés. L’équipe sait alors ce qu’il reste à récupérer.",
+					"Remettre les justificatifs. Pour les reprises en France, les documents de cession et de destruction sont rattachés au dossier. Le propriétaire retrouve ses certificats signés dans son espace."
 				],
 				"slug": "plateforme-economie-circulaire"
 			},
