@@ -1107,12 +1107,12 @@
 			{
 				"id": "2",
 				"category": "Aftermarket & recycling",
-				"title": "End-of-life vehicle management platform",
+				"title": "Tracking a vehicle from take-back request to certificate of destruction",
 				"date": "2020-2025",
 				"location": "Europe",
-				"challenge": "The service was launched to coordinate take-back between owners, garages and treatment centres. Teams then needed to operate the network at scale and track each vehicle through to destruction.",
-				"approach": "Development of the portal, with interfaces for declarations, administration, and vehicle tracking across stakeholders. Business workflows and Azure Functions APIs deployed on the client's Azure infrastructure (MSSQL databases and Azure Service Bus) orchestrate an existing .NET stack connecting owners and authorized treatment facilities.",
-				"impact": "End-to-end traceability for the group's circular economy business, supporting a network of more than 5,000 partner companies and helping the manufacturer meet its Extended Producer Responsibility (EPR) obligations.",
+				"challenge": "An owner wants a car collected, or a garage reports a vehicle ready for collection. The carrier needs to know where to pick it up, the treatment centre must confirm its arrival, and the owner needs to find the certificate. To launch the service and then run it at scale, the operator had to connect these steps across businesses that each need different information.",
+				"approach": "We built the service around one record per vehicle. The owner or garage submits the request there. The carrier finds the collection details and the centre records what has arrived. The network team can tell a vehicle still awaiting collection from one already at the centre whose paperwork is incomplete.",
+				"impact": "The owner can show proof of take-back, the garage knows whether collection took place and the centre can identify incomplete records. The operator can track the whole network, including the median time of 6 days from registration to receipt at a centre.",
 				"metrics": [
 					{
 						"label": "Vehicles per year",
@@ -1140,15 +1140,10 @@
 					"Azure Service Bus"
 				],
 				"details": [
-					"End-to-end development of the platform, databases, and APIs.",
-					"Complete declaration workflow design for dealers, repair shops, and private owners.",
-					"Azure Functions APIs connecting the group's logistics, CRM, and finance systems.",
-					"API integration with the wider circular economy ecosystem (recyclers, owners, buyers, and producer responsibility organizations).",
-					"Real-time mapping of material flows and automatic generation of regulatory documents.",
-					"Multi-brand management: local rules, catalogs, and pricing by country.",
-					"Azure infrastructure sized to handle peaks in regulatory activity and audits.",
-					"Operational and regulatory dashboards consolidating B2B and B2C flows.",
-					"Personalized email notifications for every user (garages, dealers, private owners) at each workflow step."
+					"Register the vehicle. The registration number or VIN brings up the available vehicle details. The person making the request fills in any gaps and specifies the collection point.",
+					"Arrange collection. The garage can see the planned pickup. On site, the carrier checks the vehicle and can report a problem if collection does not go as planned.",
+					"Record the vehicle and its paperwork separately. A car may already be in the yard while its papers are still on their way. By recording the two arrivals separately, the centre knows what it still needs to obtain.",
+					"Provide the certificates. For take-backs in France, the transfer and destruction documents are attached to the vehicle record. The owner can retrieve the signed certificates from their account."
 				],
 				"slug": "end-of-life-vehicle-platform"
 			},

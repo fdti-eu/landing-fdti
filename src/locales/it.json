@@ -1115,12 +1115,12 @@
 			{
 				"id": "2",
 				"category": "Aftermarket e riciclo",
-				"title": "Piattaforma di gestione dei veicoli fuori uso",
+				"title": "Seguire un veicolo dalla richiesta di ritiro al certificato di distruzione",
 				"date": "2020-2025",
 				"location": "Europa",
-				"challenge": "Il servizio è nato per coordinare il ritiro tra proprietari, officine e centri di trattamento. Successivamente i team hanno dovuto gestire la rete su larga scala e seguire ogni veicolo fino alla demolizione.",
-				"approach": "Sviluppo del portale con interfacce per dichiarazione, amministrazione e monitoraggio dei veicoli tra i diversi soggetti, processi aziendali e API Azure Functions distribuiti sull'infrastruttura Azure del cliente (database MSSQL, Azure Service Bus) per orchestrare uno stack .NET esistente che collega proprietari e centri per veicoli fuori uso.",
-				"impact": "Tracciabilità end-to-end per la divisione economia circolare del gruppo, con una rete di oltre 5 000 aziende partner e un supporto al costruttore nell'adempimento degli obblighi connessi alla responsabilità estesa del produttore (EPR).",
+				"challenge": "Un privato vuole far ritirare la propria auto oppure un’officina segnala un veicolo da prelevare. Il trasportatore deve sapere dove trovarlo, il centro di trattamento deve confermarne la ricezione e il proprietario deve poter recuperare il certificato. Per avviare il servizio e poi gestirlo su larga scala, l’operatore doveva collegare queste fasi tra aziende che hanno bisogno di informazioni diverse.",
+				"approach": "Abbiamo costruito il servizio attorno a un fascicolo per ogni veicolo. Il privato o l’officina inserisce la richiesta, il trasportatore trova le indicazioni per il ritiro e il centro registra ciò che riceve. Chi coordina la rete può così distinguere un veicolo ancora da prelevare da uno già arrivato al centro con una pratica da completare.",
+				"impact": "Il proprietario può dimostrare l’avvenuta consegna, l’officina sa se il ritiro è stato effettuato e il centro individua le pratiche incomplete. L’operatore può seguire tutta la rete, compreso il tempo mediano di 6 giorni tra la registrazione e la ricezione nel centro.",
 				"metrics": [
 					{
 						"label": "Veicoli all’anno",
@@ -1148,15 +1148,10 @@
 					"Azure Service Bus"
 				],
 				"details": [
-					"Sviluppo end-to-end della piattaforma, dei database e delle API.",
-					"Progettazione completa del flusso di dichiarazione per concessionari, centri di riparazione e privati.",
-					"API Azure Functions per collegare i sistemi logistici, CRM e finanziari del gruppo.",
-					"Integrazione via API con l'ecosistema degli altri operatori dell'economia circolare (riciclatori, proprietari, acquirenti e sistemi collettivi EPR).",
-					"Mappatura in tempo reale dei flussi di materiali e generazione automatica dei documenti normativi.",
-					"Gestione multimarca: regole locali, cataloghi e prezzi per paese.",
-					"Infrastruttura Azure dimensionata per assorbire i picchi di attività normativa e gli audit.",
-					"Dashboard operative e normative che consolidano i flussi B2B e B2C.",
-					"Notifiche e-mail personalizzate per ogni utente (officine, concessionari, privati) in ogni fase del flusso."
+					"Registrare il veicolo. Dalla targa o dal numero di telaio vengono recuperate le caratteristiche disponibili. Chi presenta la richiesta completa i dati mancanti e indica il luogo del ritiro.",
+					"Organizzare il ritiro. L’officina può seguire il ritiro programmato. Sul posto il trasportatore controlla il veicolo e può segnalare eventuali problemi.",
+					"Registrare separatamente il veicolo e i suoi documenti. Un’auto può trovarsi già nel piazzale mentre i documenti devono ancora arrivare. Registrando separatamente i due arrivi, il centro sa che cosa resta da recuperare.",
+					"Consegnare i giustificativi. Per i ritiri in Francia, i documenti di cessione e distruzione vengono associati al fascicolo. Il proprietario ritrova i certificati firmati nella propria area personale."
 				],
 				"slug": "piattaforma-veicoli-fuori-uso"
 			},

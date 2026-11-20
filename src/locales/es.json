@@ -1119,12 +1119,12 @@
 			{
 				"id": "2",
 				"category": "Posventa y reciclaje",
-				"title": "Plataforma de gestión de vehículos fuera de uso",
+				"title": "Seguir un vehículo desde la solicitud de retirada hasta el certificado de destrucción",
 				"date": "2020-2025",
 				"location": "Europa",
-				"challenge": "El servicio se lanzó para coordinar las retiradas entre propietarios, talleres y centros de tratamiento. Después, los equipos necesitaban gestionar la red a gran escala y seguir cada vehículo hasta su destrucción.",
-				"approach": "Desarrollo del portal con interfaces de declaración, administración y seguimiento de vehículos entre las distintas partes, procesos de negocio y API Azure Functions desplegadas en la infraestructura Azure del cliente (bases MSSQL, Azure Service Bus) para orquestar un sistema .NET existente que conecta propietarios y centros de VFU.",
-				"impact": "Trazabilidad de principio a fin al servicio de la división de economía circular del grupo, con una red de más de 5 000 empresas asociadas y una respuesta a las obligaciones del fabricante relacionadas con la Responsabilidad Ampliada del Productor (RAP).",
+				"challenge": "Un particular quiere entregar su coche o un taller comunica que hay un vehículo pendiente de recogida. El transportista necesita saber dónde recogerlo, el centro de tratamiento debe confirmar su llegada y el propietario tiene que poder recuperar su certificado. Para lanzar el servicio y después gestionar toda la red, el operador debía conectar a empresas que necesitan información distinta en cada etapa.",
+				"approach": "Organizamos el servicio en torno a un expediente por vehículo. El particular o el taller presenta la solicitud, el transportista consulta los datos de recogida y el centro registra lo que recibe. Así, el equipo que coordina la red distingue un vehículo pendiente de recogida de otro que ya ha llegado pero al que todavía le falta documentación.",
+				"impact": "El propietario puede acreditar la entrega, el taller sabe si se ha efectuado la recogida y el centro identifica los expedientes incompletos. El operador puede seguir la actividad de toda la red, incluido el plazo mediano de 6 días entre la declaración y la recepción en el centro.",
 				"metrics": [
 					{
 						"label": "Vehículos al año",
@@ -1152,15 +1152,10 @@
 					"Azure Service Bus"
 				],
 				"details": [
-					"Desarrollo integral de la plataforma, las bases de datos y la API.",
-					"Diseño completo del proceso de declaración para concesionarios, centros de reparación y particulares.",
-					"API Azure Functions para conectar los sistemas logísticos, CRM y financieros del grupo.",
-					"Interconexión mediante API con el ecosistema de otros actores de la economía circular (recicladores, propietarios, compradores y sistemas colectivos de responsabilidad ampliada del productor).",
-					"Cartografía en tiempo real de los flujos de materiales y generación automática de documentos normativos.",
-					"Gestión multimarca: reglas locales, catálogos y precios por país.",
-					"Infraestructura Azure dimensionada para absorber picos de actividad vinculados a cambios normativos y auditorías.",
-					"Cuadros de mando operativos y normativos que consolidan los flujos B2B y B2C.",
-					"Notificaciones personalizadas por correo electrónico para cada usuario (talleres, concesionarios y particulares) en cada etapa del flujo de trabajo."
+					"Declarar el vehículo. La matrícula o el número de bastidor permite recuperar los datos disponibles. Quien presenta la solicitud completa la información que falta e indica el lugar de recogida.",
+					"Organizar la recogida. El taller puede consultar la recogida prevista. Al llegar, el transportista comprueba el vehículo y puede comunicar cualquier incidencia.",
+					"Registrar el vehículo y su documentación por separado. El coche puede estar ya en las instalaciones sin que hayan llegado los papeles. Al registrar ambas recepciones por separado, el centro sabe qué queda por obtener.",
+					"Entregar los justificantes. En las retiradas en Francia, los documentos de cesión y destrucción se incorporan al expediente. El propietario puede consultar los certificados firmados en su espacio personal."
 				],
 				"slug": "plataforma-economia-circular"
 			},
