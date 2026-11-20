@@ -13,7 +13,7 @@
 		stripLocaleFromPath,
 		type SeoAlternatePaths
 	} from '$lib/functions/seo';
-	import { SUPPORTED_LOCALES } from '$lib/data';
+	import { SUPPORTED_LOCALES, type Lang } from '$lib/data';
 	import ContactPanel from '$lib/components/ContactPanel.svelte';
 	import ContactSignup from '$lib/components/ContactSignup.svelte';
 
@@ -25,7 +25,9 @@
 	// Use page-provided paths when translated dynamic routes have different slugs.
 	$: currentPathWithoutLocale = stripLocaleFromPath($page.url.pathname);
 	$: alternatePaths = ($page.data as { alternatePaths?: SeoAlternatePaths }).alternatePaths;
-	$: alternateLinks = SUPPORTED_LOCALES.map((locale) => ({
+	$: alternateLocales =
+		($page.data as { alternateLocales?: Lang[] }).alternateLocales ?? SUPPORTED_LOCALES;
+	$: alternateLinks = alternateLocales.map((locale) => ({
 		locale,
 		href: buildLocalizedUrl(alternatePaths?.[locale] || currentPathWithoutLocale, locale)
 	}));

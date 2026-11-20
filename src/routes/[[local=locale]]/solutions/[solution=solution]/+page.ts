@@ -29,6 +29,7 @@ export const load: PageLoad = async ({ params }) => {
 		id,
 		content,
 		alternatePaths: buildSolutionAlternatePaths(id),
+		alternateLocales: solutionPageLocales,
 		projects: work.use_case_list.map(({ id, title, slug, category }) => ({
 			id,
 			title,
