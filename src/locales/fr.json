@@ -1166,13 +1166,14 @@
 				"title": "Marketplace batteries seconde vie",
 				"date": "2024",
 				"location": "Europe",
-				"challenge": "Un constructeur automobile avait besoin d'un outil central pour piloter la collecte, le recyclage et la revente de ses batteries, en lien avec ses partenaires et acheteurs. L'outil devait gérer la traçabilité complète du processus pour répondre à des contraintes réglementaires liées à la structuration des filières REP (Responsabilité Élargie du Producteur).",
-				"approach": "Marketplace web connectée aux ERP partenaires, agissant comme plateforme de logistique et de mise en relation. Tracabilité de bout en bout et flux automatisés vers les acheteurs ou les recycleurs, négociation de prix et de conditions avec les partenaires intégrés dans l'app. Tout le processus peut être géré depuis le portail ou par l'API.",
-				"impact": "500 batteries redirigées chaque mois par des centaines de propriétaires et prestataires de service, avec reporting centralisé pour les autorités et interface d'administration pour les employés du client. Intégration de la solution dans l'écosystème.",
+				"challenge": "Un constructeur automobile doit savoir ce que devient chaque batterie en fin de vie confiée à son réseau. Une offre de reprise, un enlèvement et une réception ne disent pas la même chose sur le devenir de la batterie.",
+				"approach": "Quand une batterie est confiée à un prestataire dont l’outil est connecté, il y reçoit directement les informations de la déclaration. Il n’a pas à recréer le dossier. Lorsqu’il met à jour le suivi dans son outil, les étapes transmises apparaissent sur la fiche de la batterie côté constructeur.",
+				"impact": "Le constructeur suit la batterie depuis sa déclaration jusqu’à la confirmation de sa reprise ou de son recyclage. Il retrouve ces étapes pour préparer son reporting réglementaire.",
 				"metrics": [
 					{
-						"label": "Batteries/mois",
-						"value": "500"
+						"label": "Batteries suivies",
+						"value": "≈ 10 000",
+						"note": "Batteries enregistrées, hors annulations, au début de septembre 2026."
 					},
 					{
 						"label": "Partenaires connectés",
@@ -1185,14 +1186,9 @@
 				],
 				"tags": ["SvelteKit", "FastAPI", "PostgreSQL", "Keycloak"],
 				"details": [
-					"Développement de bout en bout de la plateforme, bases de données et API.",
-					"Process déclaratif complet pour les batteries en fin de vie et génération automatique des bons logistiques.",
-					"Intégration API avec les recycleurs et éco-organismes pour suivre enlèvements, tests et certificats, propositions de prix.",
-					"Espace acheteur pour sourcer les batteries reconditionnables et orchestrer la transaction.",
-					"Scoring qualité/conformité des partenaires et SLA partagés.",
-					"Reporting réglementaire consolidé exportable en un clic.",
-					"Notifications e-mail automatiques pour les partenaires et acheteurs lors des différentes étapes (collecte, tests, revente).",
-					"Fédération d'identité via Keycloak pour les entités du groupe et les partenaires externes."
+					"Le propriétaire déclare sa batterie. Lorsqu’un partenaire propose un prix de reprise, l’offre reste rattachée à cette batterie. La personne qui reçoit l’offre peut la refuser et en préciser la raison.",
+					"Une fois le dossier validé, le prestataire indique qu’il a enlevé la batterie chez son propriétaire. Si la collecte échoue, il peut signaler le problème sur le dossier.",
+					"À l’arrivée, le prestataire confirme la réception : l’équipe du constructeur sait alors si la batterie est encore attendue ou si elle est bien arrivée. Pour une batterie destinée à la seconde vie, le prestataire peut ensuite confirmer la transaction."
 				],
 				"slug": "marketplace-batteries"
 			},
@@ -1201,16 +1197,14 @@
 				"category": "Aftermarket & recyclage",
 				"title": "Plateforme d'opérations pour un recycleur de batteries",
 				"location": "France",
-				"challenge": "Un recycleur devait réunir dans un même outil les déclarations de batteries, leur examen préalable, la préparation des collectes, les documents de suivi et les étapes de réception et de traitement.",
-				"approach": "Développement d'une application métier reliant déclarations, référentiels batteries, listes de colisage, contrôles de regroupement, BSD Trackdéchets et actions de réception.",
-				"impact": "Les équipes suivent les dossiers depuis la déclaration jusqu'au traitement, avec des contrôles explicites sur les collecteurs, les sites destinataires, les signatures et les statuts documentaires.",
+				"challenge": "Pour préparer une collecte, un recycleur doit connaître la nature des batteries, le collecteur et le site qui les recevra. Deux déclarations prêtes au départ ne peuvent pas forcément voyager ensemble.",
+				"approach": "L’équipe examine chaque déclaration avant de l’ajouter à une liste de colisage. L’outil vérifie que les batteries du lot ont le même collecteur et le même site destinataire. À la réception, l’équipe retrouve les déclarations associées au lot.",
+				"impact": "Pour chaque déclaration, le recycleur peut retrouver le lot de collecte, vérifier les signatures attendues et distinguer une batterie reçue d’une batterie traitée.",
 				"tags": ["SvelteKit", "FastAPI", "PostgreSQL", "Trackdéchets"],
 				"details": [
-					"Qualification des déclarations à partir de la chimie, de la sous-chimie et de la typologie des batteries.",
-					"Constitution de listes de colisage sans mélanger des collecteurs ou sites destinataires incompatibles.",
-					"Création et mise à jour des BSD via Trackdéchets, avec suivi des signatures attendues.",
-					"Réception des déclarations et suivi des étapes de traitement dans le même dossier métier.",
-					"Interfaces adaptées aux équipes internes et aux partenaires de la collecte."
+					"L’équipe qualifie la batterie déclarée : elle précise son type et sa composition pour préparer sa prise en charge.",
+					"La personne qui prépare la collecte constitue le lot. Si une déclaration concerne un autre collecteur ou un autre site, elle doit la placer sur une autre liste.",
+					"L’équipe suit les signatures du bordereau de suivi des déchets. Le site destinataire enregistre la réception, puis le traitement dans le dossier."
 				],
 				"slug": "plateforme-operations-recyclage-batteries"
 			},

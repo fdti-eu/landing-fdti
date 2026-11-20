@@ -1167,45 +1167,48 @@
 			{
 				"id": "3",
 				"category": "Posventa y reciclaje",
-				"title": "Marketplace de baterías de segunda vida",
+				"title": "Mercado de baterías de segunda vida",
 				"date": "2024",
 				"location": "Europa",
-				"challenge": "Un fabricante de automóviles necesitaba una herramienta central para gestionar la recogida, el reciclaje y la reventa de sus baterías, en colaboración con sus socios y compradores. La herramienta debía gestionar la trazabilidad completa del proceso para responder a las exigencias normativas relacionadas con la estructuración de los sistemas de RAP (Responsabilidad Ampliada del Productor).",
-				"approach": "Marketplace web conectado a los ERP de los socios, que funciona como plataforma logística y de intermediación. Trazabilidad de principio a fin y flujos automatizados hacia compradores o recicladores, con la negociación de precios y condiciones con los socios integrada en la aplicación. Todo el proceso puede gestionarse desde el portal o mediante la API.",
-				"impact": "500 baterías redirigidas cada mes por cientos de propietarios y proveedores de servicios, con informes centralizados para las autoridades y una interfaz de administración para los empleados del cliente. Integración de la solución en el ecosistema.",
+				"challenge": "Un fabricante de automóviles necesita saber qué ocurre con cada batería al final de su vida útil que confía a su red. Una oferta de compra, una recogida y una recepción representan momentos distintos.",
+				"approach": "Cuando se asigna una batería a un proveedor cuyo sistema está conectado, la declaración llega directamente a ese sistema. El proveedor no tiene que volver a crear el expediente. Las actualizaciones que transmite desde su herramienta aparecen en la ficha que consulta el fabricante.",
+				"impact": "El fabricante sigue la batería desde la declaración hasta la confirmación de su compra o reciclaje y utiliza ese historial para preparar sus informes reglamentarios.",
 				"metrics": [
-					{ "label": "Baterías/mes", "value": "500" },
-					{ "label": "Socios conectados", "value": "+300" },
-					{ "label": "Países cubiertos", "value": "18" }
+					{
+						"label": "Baterías registradas",
+						"value": "≈ 10 000",
+						"note": "Baterías registradas, excluidas las anulaciones, a principios de septiembre de 2026."
+					},
+					{
+						"label": "Socios conectados",
+						"value": "+300"
+					},
+					{
+						"label": "Países cubiertos",
+						"value": "18"
+					}
 				],
 				"tags": ["SvelteKit", "FastAPI", "PostgreSQL", "Keycloak"],
 				"details": [
-					"Desarrollo integral de la plataforma, las bases de datos y la API.",
-					"Proceso declarativo completo para baterías al final de su vida útil y generación automática de documentos logísticos.",
-					"Integración mediante API con recicladores y sistemas colectivos de responsabilidad ampliada del productor para seguir las recogidas, las pruebas, los certificados y las propuestas de precios.",
-					"Espacio para compradores destinado a localizar baterías reacondicionables y gestionar la transacción.",
-					"Evaluación de la calidad y el cumplimiento de los socios, con SLA compartidos.",
-					"Informes normativos consolidados y exportables con un clic.",
-					"Notificaciones automáticas por correo electrónico para socios y compradores durante las distintas etapas (recogida, pruebas y reventa).",
-					"Federación de identidades mediante Keycloak para las entidades del grupo y los socios externos."
+					"El propietario declara la batería. Si un socio ofrece un precio de compra, la oferta queda vinculada a esa batería. Quien la recibe puede rechazarla e indicar el motivo.",
+					"Una vez validado el expediente, el proveedor registra la recogida en las instalaciones del propietario. Si no puede recogerla, deja constancia en el expediente.",
+					"Al llegar la batería, el proveedor confirma su recepción. El fabricante sabe así si sigue pendiente o ya ha llegado. Si se destina a una segunda vida, el proveedor puede confirmar después la transacción."
 				],
 				"slug": "marketplace-baterias"
 			},
 			{
 				"id": "8",
 				"category": "Posventa y reciclaje",
-				"title": "Plataforma de operaciones para un reciclador de baterías",
+				"title": "Gestión de las operaciones de un reciclador de baterías",
 				"location": "Francia",
-				"challenge": "Un reciclador necesitaba reunir en una misma herramienta las declaraciones de baterías, su revisión previa, la preparación de las recogidas, los documentos de seguimiento y las etapas de recepción y tratamiento.",
-				"approach": "Desarrollo de una aplicación de negocio que conecta declaraciones, catálogos de baterías, listas de bultos, controles de agrupación, BSD Trackdéchets y acciones de recepción.",
-				"impact": "Los equipos siguen los expedientes desde la declaración hasta el tratamiento, con controles explícitos sobre los recolectores, los centros de destino, las firmas y los estados documentales.",
+				"challenge": "Para preparar una recogida, el reciclador necesita conocer el tipo de batería, el transportista y la planta de destino. Dos partidas listas para salir no siempre pueden viajar juntas.",
+				"approach": "El equipo revisa cada declaración antes de añadirla a la lista de carga. La herramienta comprueba que todas las baterías del lote compartan transportista y destino. En la recepción, el personal recupera las declaraciones del lote.",
+				"impact": "Para cada declaración, el reciclador puede identificar el lote, comprobar las firmas pendientes y distinguir una batería recibida de una ya tratada.",
 				"tags": ["SvelteKit", "FastAPI", "PostgreSQL", "Trackdéchets"],
 				"details": [
-					"Clasificación de las declaraciones según la composición química, la subcomposición y la tipología de las baterías.",
-					"Creación de listas de bultos sin mezclar recolectores o centros de destino incompatibles.",
-					"Creación y actualización de BSD mediante Trackdéchets, con seguimiento de las firmas requeridas.",
-					"Recepción de las declaraciones y seguimiento de las etapas de tratamiento en el mismo expediente de negocio.",
-					"Interfaces adaptadas a los equipos internos y a los socios de recogida."
+					"El equipo identifica el tipo y la composición de la batería declarada para preparar su gestión.",
+					"La persona que organiza la recogida forma el lote. Si una declaración corresponde a otro transportista o destino, la incluye en otra lista.",
+					"El equipo comprueba las firmas pendientes en el documento de seguimiento de residuos. La planta de destino registra la recepción y después el tratamiento en el expediente."
 				],
 				"slug": "plataforma-operaciones-reciclaje-baterias"
 			},

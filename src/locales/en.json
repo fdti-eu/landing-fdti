@@ -1155,20 +1155,21 @@
 			{
 				"id": "3",
 				"category": "Aftermarket & recycling",
-				"title": "Battery reuse marketplace",
+				"title": "Second-life battery marketplace",
 				"date": "2024",
 				"location": "Europe",
-				"challenge": "An automotive manufacturer needed a central tool to manage the collection, recycling, and resale of its batteries in collaboration with partners and buyers. The tool had to provide end-to-end process traceability to meet regulatory requirements as Extended Producer Responsibility (EPR) systems were being established.",
-				"approach": "A web marketplace connected to partner ERP systems that serves as both a logistics and matchmaking platform. It provides end-to-end traceability, automates flows to buyers or recyclers, and integrates price and terms negotiations with partners. The entire process can be managed through the portal or the API.",
-				"impact": "500 batteries are routed each month by hundreds of owners and service providers, with centralized reporting for authorities and an administration interface for the client's employees. The solution integrates seamlessly with the existing ecosystem.",
+				"challenge": "A car manufacturer needs to know what happens to each end-of-life battery entrusted to its network. A purchase offer, a pickup and a delivery each tell the manufacturer something different.",
+				"approach": "When a battery is assigned to a partner with a connected system, the declaration appears directly in that system. The partner can work on the existing record. Updates sent from the partner’s system appear on the manufacturer’s battery record.",
+				"impact": "The manufacturer tracks each battery from declaration to confirmation of purchase or recycling and uses that history for regulatory reporting.",
 				"metrics": [
 					{
-						"label": "Batteries per month",
-						"value": "500"
+						"label": "Batteries tracked",
+						"value": "≈ 10,000",
+						"note": "Registered batteries, excluding cancellations, in early September 2026."
 					},
 					{
-						"label": "Partners onboarded",
-						"value": "300+"
+						"label": "Connected partners",
+						"value": "+300"
 					},
 					{
 						"label": "Countries covered",
@@ -1177,32 +1178,25 @@
 				],
 				"tags": ["SvelteKit", "FastAPI", "PostgreSQL", "Keycloak"],
 				"details": [
-					"End-to-end development of the platform, databases, and APIs.",
-					"Complete declaration workflow for end-of-life batteries, including automated generation of logistics documents.",
-					"API integrations with recyclers and producer responsibility organizations to track pickups, tests, certificates, and price proposals.",
-					"Buyer workspace to source batteries suitable for reuse and manage the transaction.",
-					"Quality and compliance scoring with shared SLAs.",
-					"One-click regulatory reporting exports.",
-					"Automated email notifications for partners and buyers across pickup, testing and resale steps.",
-					"Identity federation through Keycloak for group entities and external partners."
+					"The owner declares the battery. A partner’s purchase offer stays linked to it. The recipient can turn down the offer and record the reason.",
+					"Once the record is approved, the partner records collection from the owner or flags a failed pickup.",
+					"On arrival, the partner confirms receipt. The manufacturer can see whether the battery is still expected or has arrived. For a second-life battery, the partner can then confirm the transaction."
 				],
 				"slug": "marketplace-batteries"
 			},
 			{
 				"id": "8",
 				"category": "Aftermarket & recycling",
-				"title": "Operations platform for a battery recycler",
+				"title": "Managing operations for a battery recycler",
 				"location": "France",
-				"challenge": "A recycler needed a single tool for battery declarations, preliminary reviews, collection preparation, tracking documents, receipt, and treatment stages.",
-				"approach": "Development of a business application connecting declarations, battery reference data, packing lists, grouping controls, Trackdéchets waste tracking forms, and receipt actions.",
-				"impact": "Teams track each record from declaration through treatment, with explicit controls for collectors, destination sites, signatures, and document statuses.",
+				"challenge": "To arrange collection, a recycler needs to know what the batteries contain, who will collect them and which site will receive them. Two consignments ready to leave may still need to travel separately.",
+				"approach": "The team reviews each declaration before adding it to a packing list. The tool checks that every battery in a batch has the same collector and receiving site. On arrival, staff can retrieve the declarations for the batch.",
+				"impact": "For each declaration, the recycler can identify the collection batch, check outstanding signatures and distinguish receipt from completed treatment.",
 				"tags": ["SvelteKit", "FastAPI", "PostgreSQL", "Trackdéchets"],
 				"details": [
-					"Assessment of declarations based on battery chemistry, sub-chemistry, and type.",
-					"Packing lists that prevent incompatible collectors or destination sites from being grouped together.",
-					"Creation and updating of Trackdéchets waste tracking forms, with visibility into required signatures.",
-					"Receipt of declarations and treatment stages tracked in the same business record.",
-					"Interfaces suited to internal teams and collection partners."
+					"The team identifies the declared battery’s type and composition to prepare for handling.",
+					"The collection planner builds the batch. A declaration for a different collector or receiving site goes on a separate list.",
+					"The team checks which signatures are due on the waste tracking document. The receiving site records receipt and then treatment in the same record."
 				],
 				"slug": "battery-recycling-operations-platform"
 			},

@@ -1163,19 +1163,20 @@
 			{
 				"id": "3",
 				"category": "Aftermarket und Recycling",
-				"title": "Marktplatz für die Wiederverwendung von Batterien",
+				"title": "Marktplatz für Second-Life-Batterien",
 				"date": "2024",
 				"location": "Europa",
-				"challenge": "Ein Automobilhersteller benötigte ein zentrales System, um Sammlung, Recycling und Weiterverkauf seiner Batterien gemeinsam mit Partnern und Käufern zu steuern. Es musste den gesamten Prozess rückverfolgbar machen und regulatorische Anforderungen beim Aufbau von Systemen der erweiterten Herstellerverantwortung (EPR) erfüllen.",
-				"approach": "Web-Marktplatz mit Anbindung an die ERP-Systeme der Partner, der als Logistik- und Vermittlungsplattform dient. Durchgängige Rückverfolgbarkeit, automatisierte Abläufe zu Käufern oder Recyclern sowie Preis- und Konditionsverhandlungen mit den Partnern sind integriert. Der gesamte Prozess kann über das Portal oder die API verwaltet werden.",
-				"impact": "Jeden Monat werden 500 Batterien von Hunderten von Eigentümern und Dienstleistern über die Plattform geeigneten Wiederverwendungs- oder Recyclingwegen zugeführt. Behörden erhalten eine zentrale Berichterstattung, die Kundenmitarbeiter eine Verwaltungsoberfläche. Die Lösung ist nahtlos in das bestehende Ökosystem integriert.",
+				"challenge": "Ein Fahrzeughersteller muss wissen, was mit jeder ausgedienten Batterie geschieht, die er seinem Partnernetz anvertraut. Ein Kaufangebot, eine Abholung und ein bestätigter Wareneingang stehen für unterschiedliche Schritte.",
+				"approach": "Übernimmt ein Dienstleister mit angebundenem System eine Batterie, erhält er die Meldung direkt in seinem eigenen System. Er muss den Vorgang nicht erneut anlegen. Die von ihm übermittelten Statusmeldungen erscheinen auch in der Batterieakte des Herstellers.",
+				"impact": "Der Hersteller verfolgt die Batterie von der Meldung bis zur Bestätigung des Ankaufs oder des Recyclings. Diesen Verlauf nutzt er für seine gesetzlich vorgeschriebenen Berichte.",
 				"metrics": [
 					{
-						"label": "Batterien/Monat",
-						"value": "500"
+						"label": "Erfasste Batterien",
+						"value": "≈ 10.000",
+						"note": "Registrierte Batterien ohne Stornierungen, Stand Anfang September 2026."
 					},
 					{
-						"label": "Angeschlossene Partner",
+						"label": "Angebundene Partner",
 						"value": "+300"
 					},
 					{
@@ -1185,32 +1186,25 @@
 				],
 				"tags": ["SvelteKit", "FastAPI", "PostgreSQL", "Keycloak"],
 				"details": [
-					"End-to-End-Plattformentwicklung, Datenbanken und APIs.",
-					"Vollständiger Meldeprozess für Altbatterien und automatische Erstellung von Logistikdokumenten.",
-					"API-Integrationen mit Recyclern und Organisationen für Herstellerverantwortung zur Nachverfolgung von Abholungen, Tests, Zertifikaten und Preisangeboten.",
-					"Arbeitsbereich für Käufer, um wiederverwendbare Batterien zu beschaffen und die Transaktion zu verwalten.",
-					"Bewertung der Qualität und Konformität der Partner sowie gemeinsam vereinbarte SLAs.",
-					"Regulatorische Berichterstattung mit einem Klick exportierbar.",
-					"Automatisierte E-Mail-Benachrichtigungen für Partner und Käufer über alle Abhol-, Test- und Wiederverkaufsschritte hinweg.",
-					"Identitätsföderation über Keycloak für Gruppeneinheiten und externe Partner."
+					"Der Eigentümer meldet seine Batterie. Bietet ein Partner einen Kaufpreis an, bleibt das Angebot dieser Batterie zugeordnet. Der Empfänger kann es ablehnen und den Grund angeben.",
+					"Nach Freigabe des Vorgangs vermerkt der Dienstleister die Abholung beim Eigentümer. Scheitert die Abholung, kann er das Problem in der Akte festhalten.",
+					"Bei Ankunft bestätigt der Dienstleister den Eingang. Der Hersteller sieht, ob die Batterie noch erwartet wird oder eingetroffen ist. Bei einer Batterie zur Weiterverwendung kann der Dienstleister anschließend den Geschäftsabschluss bestätigen."
 				],
 				"slug": "marktplatz-fuer-second-life-batterien"
 			},
 			{
 				"id": "8",
 				"category": "Aftermarket und Recycling",
-				"title": "Betriebsplattform für einen Batterierecycler",
+				"title": "Betriebsabläufe bei einem Batterierecycler",
 				"location": "Frankreich",
-				"challenge": "Ein Recycler benötigte ein zentrales System für Batteriemeldungen, Vorprüfung, Vorbereitung der Abholung, Begleitdokumente sowie Annahme und Behandlung.",
-				"approach": "Entwicklung einer Fachanwendung, die Meldungen, Batteriereferenzdaten, Packlisten, Gruppierungsprüfungen, BSD über Trackdéchets und Annahmevorgänge verbindet.",
-				"impact": "Die Teams verfolgen jeden Vorgang von der Meldung bis zur Behandlung. Explizite Prüfungen berücksichtigen Sammler, Zielstandorte, Unterschriften und Dokumentstatus.",
+				"challenge": "Für eine Abholung muss der Recycler wissen, um welche Batterien es geht, wer sie abholt und welcher Standort sie annimmt. Zwei abholbereite Partien können nicht immer gemeinsam transportiert werden.",
+				"approach": "Das Team prüft jede Meldung, bevor es sie einer Packliste zuordnet. Das System prüft, ob alle Batterien der Partie denselben Abholer und Zielstandort haben. Beim Wareneingang kann das Personal die zugehörigen Meldungen aufrufen.",
+				"impact": "Für jede Meldung kann der Recycler die Partie ermitteln, ausstehende Unterschriften prüfen und zwischen Eingang und abgeschlossener Behandlung unterscheiden.",
 				"tags": ["SvelteKit", "FastAPI", "PostgreSQL", "Trackdéchets"],
 				"details": [
-					"Einstufung der Meldungen anhand von Batteriechemie, Unterchemie und Batterietyp.",
-					"Packlisten verhindern, dass inkompatible Sammler oder Zielstandorte gemeinsam gruppiert werden.",
-					"Erstellung und Aktualisierung der BSD über Trackdéchets mit Nachverfolgung der erforderlichen Unterschriften.",
-					"Annahme der gemeldeten Batterien und Behandlungsschritte werden in derselben Fachakte nachverfolgt.",
-					"Oberflächen für interne Teams und Sammelpartner."
+					"Das Team bestimmt Typ und Zusammensetzung der gemeldeten Batterie, um die Übernahme vorzubereiten.",
+					"Wer die Abholung plant, stellt die Partie zusammen. Meldungen für einen anderen Abholer oder Zielstandort gehören auf eine eigene Liste.",
+					"Das Team prüft die ausstehenden Unterschriften auf dem Abfallbegleitschein. Der Zielstandort erfasst im Vorgang zuerst den Eingang und später die Behandlung."
 				],
 				"slug": "betriebsplattform-batterierecycling"
 			},
