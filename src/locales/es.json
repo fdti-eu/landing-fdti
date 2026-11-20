@@ -1215,98 +1215,82 @@
 			{
 				"id": "4",
 				"category": "Smart city y energía",
-				"title": "Supervisión y modelado del alumbrado público",
+				"title": "Detectar anomalías en el alumbrado público",
 				"date": "2024",
 				"location": "Francia",
-				"challenge": "Un cliente especializado en la gestión del alumbrado público para municipios y sus proveedores necesitaba una plataforma única para controlar el alumbrado público, ajustar los horarios, detectar anomalías y planificar el mantenimiento.",
-				"approach": "Desarrollo de una aplicación web como portal de gestión y cuadros de mando analíticos. Arquitectura en tiempo real con AWS S3 + DuckDB/Parquet, procesos Shell/Cron, API FastAPI e interfaz TypeScript/SvelteKit.",
-				"impact": "Los gestores de red consultan la aplicación cada mañana. Los datos de consumo e incidencias se actualizan dinámicamente, y el mantenimiento predictivo y el sistema de alertas se han desplegado en más de 40 territorios.",
+				"challenge": "Cada mañana, el gestor decide qué cuadros de alumbrado revisar. El consumo diurno merece atención, pero no basta para concluir que las luces se han quedado encendidas.",
+				"approach": "Desde la lista de anomalías, el gestor abre la curva de consumo del cuadro. La compara con el horario de alumbrado para decidir qué desviación conviene comprobar.",
+				"impact": "Los gestores consultan las alertas cada mañana para dirigir las comprobaciones en la red.",
 				"metrics": [
-					{ "label": "Mediciones/día", "value": ">100 M" },
-					{ "label": "Territorios", "value": "+40" }
+					{
+						"label": "Territorios cubiertos",
+						"value": "+40",
+						"note": "Territorios en los que se han implantado las alertas."
+					}
 				],
 				"tags": ["DuckDB", "SvelteKit", "PostgreSQL", "FastAPI"],
 				"details": [
-					"Recopilación continua de los datos de los contadores de alumbrado y almacenamiento optimizado en S3 + Parquet.",
-					"Procesos Shell/Cron para actualizar la caché.",
-					"Análisis con DuckDB para generar KPI al instante sobre varios años de historial y visualizaciones dinámicas para mostrar los resultados.",
-					"Sistema de gestión de mandatos vinculados a los propietarios y usuarios de los datos.",
-					"Cuadros de mando de alertas específicos para operadores (averías, consumo y anomalías horarias).",
-					"API REST abierta para conectar las herramientas de gestión de proveedores y municipios.",
-					"Gestión de múltiples administraciones con permisos detallados y segmentación por gestor."
+					"El gestor selecciona un cuadro y consulta las lecturas de su contador.",
+					"Compara el consumo antes, durante y después del horario previsto. Así distingue un consumo presente todo el día de un desfase en la hora de encendido.",
+					"Puede indicar al contratista qué cuadro revisar, a qué hora y por qué desviación."
 				],
 				"slug": "supervision-alumbrado-publico"
 			},
 			{
 				"id": "5",
 				"category": "ONG y participación",
-				"title": "Análisis mediante IA de campañas en redes sociales",
+				"title": "Elegir los temas de las próximas campañas",
 				"date": "2023",
 				"location": "Internacional",
-				"challenge": "La ONG necesitaba comparar los discursos medioambientales en Facebook e Instagram para orientar sus inversiones en comunicación.",
-				"approach": "Metodología basada en LLM (ChatGPT + instrucciones especializadas) para puntuar el tono, los temas y las perspectivas y correlacionarlos con los KPI de Facebook/Instagram por tipo de audiencia (edad, país e intereses), con visualizaciones comparativas.",
-				"impact": "Redistribución del presupuesto por país y plataforma, y adopción interna del método de análisis.",
-				"metrics": [
-					{ "label": "Publicaciones analizadas", "value": "60 k" },
-					{ "label": "Idiomas", "value": "8" },
-					{ "label": "Visualizaciones", "value": "50+" }
-				],
+				"challenge": "Una ONG necesita decidir qué mensajes ambientales priorizar en cada país y red social. Las cifras de rendimiento muestran qué publicaciones suscitaron una reacción, pero no de qué hablaban.",
+				"approach": "En un conjunto de 60 000 publicaciones en ocho idiomas, relacionamos cada mensaje con su tema, su tono y los puntos de vista expresados. El equipo de comunicación puede comparar la acogida de un mismo tema según el público y la red.",
+				"impact": "La ONG adoptó estos criterios para orientar el reparto de su presupuesto entre países y redes sociales.",
 				"tags": ["LLM", "OpenAI", "NLP", "TypeScript"],
 				"details": [
-					"Instrucciones específicas para captar el tono, los actores, los temas y las emociones en Facebook/Instagram.",
-					"Proceso automatizado: recopilación de datos de redes sociales → LLM → puntuación de temas, tonos y perspectivas por tipo de público.",
-					"Cruce de las puntuaciones con el rendimiento de las publicaciones para recomendar los temas prioritarios.",
-					"Metodología documentada y reproducible por los equipos locales.",
-					"Sesiones de formación para interpretar las recomendaciones y ajustar los presupuestos."
+					"Para cada publicación en Facebook o Instagram, el análisis identifica el tema y cómo se aborda.",
+					"El equipo de comunicación contrasta esos elementos con los resultados observados entre los distintos públicos.",
+					"Los equipos locales utilizan los mismos criterios para elegir los temas de la próxima campaña."
 				],
 				"slug": "analisis-generativo-campanas"
 			},
 			{
 				"id": "6",
 				"category": "Comercio minorista y electrónica",
-				"title": "Plataforma de datos y NLP",
+				"title": "Identificar problemas recurrentes en las opiniones de los clientes",
 				"date": "2021-2023",
 				"location": "Global",
-				"challenge": "Centralizar los flujos de opiniones de clientes de una empresa líder de electrónica en Francia e industrializar su análisis con IA y cuadros de mando.",
-				"approach": "Procesos para recopilar datos de distintos proveedores y responsables de la recopilación de datos mediante API Airflow→BigQuery, gobernanza GCP, NLP (HuggingFace, BERTopic, QA, LLM), presentación en cuadros de mando de Tableau y distribución interna de los datos a los demás equipos implicados.",
-				"impact": "El servicio de atención al cliente accede al instante a los temas clasificados y a las alertas notificadas, y realiza un seguimiento más preciso de las solicitudes. El equipo de producto identifica y anticipa defectos y problemas logísticos. El equipo jurídico anticipa los litigios.",
-				"metrics": [
-					{ "label": "Fuentes integradas", "value": "+25" },
-					{ "label": "Comentarios analizados", "value": "Toda Francia" }
-				],
+				"challenge": "Un fabricante de electrónica recibe opiniones por varios canales. Para entender un fallo recurrente, sus equipos necesitan reunir comentarios que lo describen con palabras distintas.",
+				"approach": "Reunimos opiniones de más de 25 fuentes y agrupamos los comentarios por tema. El equipo de estudios de clientes puede partir de un problema recurrente y recuperar las palabras de los propios clientes.",
+				"impact": "El equipo de estudios consulta estos análisis a diario y los comparte con los equipos correspondientes.",
 				"tags": ["GCP", "Airflow", "NLP", "LLM", "Tableau", "HuggingFace"],
 				"details": [
-					"Recopilación mediante múltiples API (cliente misterioso, CRM, redes sociales y reseñas), orquestada por Airflow.",
-					"Políticas de nube: segmentación por equipo, localización de datos, seguridad y buenas prácticas.",
-					"Proceso de análisis y clasificación con LLM.",
-					"Procesos NLP para similitud, sentimiento y temas en varios idiomas.",
-					"Diseño e implementación de los cuadros de mando utilizados a diario por el equipo de conocimiento del cliente y del mercado.",
-					"Documentación y formación de los equipos de datos / negocio.",
-					"Exportaciones automatizadas de conclusiones a las unidades de negocio de marketing y las agencias."
+					"Un comentario de una encuesta, del servicio de atención al cliente o de una web de reseñas se incorpora al resto de las opiniones.",
+					"El equipo de estudios reúne los comentarios sobre un mismo tema y consulta el texto original.",
+					"Atención al cliente sigue las consultas recurrentes. El equipo de producto puede examinar por separado los comentarios sobre un defecto y los que describen problemas de entrega."
 				],
 				"slug": "hub-datos-nlp"
 			},
 			{
 				"id": "7",
 				"category": "Comercio minorista y electrónica",
-				"title": "Almacén de datos en tiempo real para el comercio minorista",
+				"title": "Seguir las ventas de las tiendas durante un cambio de software",
 				"date": "2020-2021",
 				"location": "Europa",
-				"challenge": "En el marco de una migración de ERP, migrar 98 objetos de negocio JSON con una estructura compleja y un gran volumen (tiendas, almacenes, usuarios, tiques de caja, existencias...) desde Azure hacia Snowflake para alimentar Qlik casi en tiempo real.",
-				"approach": "Generación automática de cientos de consultas SQL y Scala a partir de las especificaciones para desanidar los objetos complejos. El sistema produjo y alimenta más de 150 tablas y vistas actualizadas en tiempo real. Ingesta ADLS→Snowflake mediante Kafka/ADF y orquestación mediante streams and tasks.",
-				"impact": "Flujos minuto a minuto para los equipos de BI y varios millones de archivos procesados cada día. Transición al nuevo sistema de análisis y posterior retirada del antiguo.",
+				"challenge": "Una cadena cambia de software de gestión. Los analistas necesitan seguir las ventas de cada tienda aunque los tickets de caja lleguen en otro formato.",
+				"approach": "Vinculamos los tickets del nuevo sistema con la tienda y los artículos correspondientes. Los analistas consultan las ventas en su herramienta habitual sin reconstruir cada ticket línea por línea.",
+				"impact": "Los equipos mantuvieron el seguimiento de las ventas minuto a minuto tras el cambio de software.",
 				"metrics": [
-					{ "label": "Objetos de negocio", "value": "98" },
-					{ "label": "Tablas y vistas", "value": "150+" },
-					{ "label": "Latencia", "value": "<1 min" }
+					{
+						"label": "Actualización de los datos de ventas",
+						"value": "Cada minuto",
+						"note": "Frecuencia con la que el sistema de análisis recibe datos nuevos."
+					}
 				],
 				"tags": ["Snowflake", "Azure", "Kafka", "ADF", "Qlik"],
 				"details": [
-					"Generación automática de SQL a partir de metadatos XML para acelerar los despliegues.",
-					"Actualizaciones incrementales orquestadas mediante Snowflake Tasks con supervisión específica.",
-					"Funciones Scala personalizadas para desnormalizar los JSON anidados.",
-					"Formación de los analistas para aprovechar los nuevos flujos en tiempo real.",
-					"Gestión de múltiples entornos mediante la API de Snowflake (pruebas / preproducción / producción)."
+					"Una tienda registra una venta. El nuevo software transmite el ticket y el detalle de los artículos.",
+					"Las líneas de venta quedan asociadas a la tienda. El analista utiliza los importes de los tickets para seguir la facturación y el importe medio por compra en cada tienda.",
+					"Los datos nuevos alimentan los análisis minuto a minuto. Los equipos pudieron pasar al nuevo sistema de análisis y retirar el anterior."
 				],
 				"slug": "almacen-datos-retail"
 			}

@@ -1211,128 +1211,82 @@
 			{
 				"id": "4",
 				"category": "Intelligente Stadt und Energie",
-				"title": "Überwachung und Modellierung der Straßenbeleuchtung",
+				"title": "Auffälligkeiten in der Straßenbeleuchtung erkennen",
 				"date": "2024",
 				"location": "Frankreich",
-				"challenge": "Ein Kunde, der sich auf das öffentliche Beleuchtungsmanagement für Kommunen und deren Dienstleister spezialisiert hat, benötigte eine einzige Plattform, um die öffentliche Beleuchtung zu verwalten, Zeitpläne anzupassen, Anomalien zu erkennen und Wartungsarbeiten zu planen.",
-				"approach": "Entwicklung einer Webanwendung als Steuerungsportal mit Analyse-Dashboards. Der Echtzeit-Stack umfasst AWS S3, DuckDB/Parquet, Shell-/Cron-Pipelines, ein FastAPI-Backend und eine TypeScript-/SvelteKit-Oberfläche.",
-				"impact": "Netzverantwortliche nutzen die Anwendung jeden Morgen. Verbrauchs- und Störungsmessungen werden dynamisch angepasst; vorausschauende Wartung und Warnmeldungen sind in mehr als 40 Gebieten im Einsatz.",
+				"challenge": "Morgens muss der Netzbetreiber entscheiden, welche Schaltschränke er prüfen lässt. Stromverbrauch am Tag verdient Aufmerksamkeit, bedeutet aber nicht zwangsläufig, dass die Leuchten eingeschaltet blieben.",
+				"approach": "Aus der Liste der Auffälligkeiten öffnet der Betreiber die Verbrauchskurve des Schaltschranks. Er vergleicht sie mit den vorgesehenen Schaltzeiten und entscheidet, welcher Abweichung er nachgeht.",
+				"impact": "Die Betreiber sichten die Meldungen jeden Morgen und richten ihre Prüfungen im Netz danach aus.",
 				"metrics": [
 					{
-						"label": "Messungen/Tag",
-						"value": ">100 M"
-					},
-					{
-						"label": "Gebiete",
-						"value": "+40"
+						"label": "Versorgungsgebiete",
+						"value": "+40",
+						"note": "Gebiete, in denen die Warnmeldungen im Einsatz sind."
 					}
 				],
 				"tags": ["DuckDB", "SvelteKit", "PostgreSQL", "FastAPI"],
 				"details": [
-					"Kontinuierliche Erfassung der Beleuchtungszähler mit optimierter Speicherung in AWS S3 und Parquet.",
-					"Shell/Cron-Pipelines zum Aktualisieren des Caches.",
-					"DuckDB-Analysen liefern sofort KPIs über mehrere Jahre hinweg, mit dynamischen Visualisierungen zur Anzeige der Ergebnisse.",
-					"Mandatsverwaltungssystem für Dateneigentümer und -nutzer.",
-					"Alarm-Dashboards für Betreiber (Ausfälle, Verbrauch, Zeitplananomalien).",
-					"Offene REST API zur Anbindung der Systeme von Betreibern und Kommunen.",
-					"Mandantenverwaltung mit detaillierten Berechtigungen und Segmentierung pro Stadt."
+					"Der Betreiber wählt einen Schaltschrank und ruft die Messwerte des zugehörigen Zählers auf.",
+					"Er vergleicht den Verbrauch vor, während und nach der vorgesehenen Leuchtdauer. So unterscheidet er eine durchgehende Last am Tag von einem verschobenen Einschaltzeitpunkt.",
+					"Dem Dienstleister kann er sagen, welchen Schaltschrank er prüfen soll, zu welcher Uhrzeit und wegen welcher Abweichung."
 				],
 				"slug": "ueberwachung-strassenbeleuchtung"
 			},
 			{
 				"id": "5",
 				"category": "NGO & Engagement",
-				"title": "KI-Analyse von Social-Media-Kampagnen",
+				"title": "Themen für die nächsten Kampagnen auswählen",
 				"date": "2023",
 				"location": "International",
-				"challenge": "Die NGO musste Umweltnarrative auf Facebook und Instagram vergleichen, um Kommunikationsinvestitionen zu steuern.",
-				"approach": "LLM-Methodik (ChatGPT und spezialisierte Prompts) zur Bewertung von Tonalität, Themen und Perspektiven. Die Ergebnisse wurden mit Facebook- und Instagram-KPIs nach Zielgruppentyp (Alter, Land, Interessen) korreliert und in vergleichenden Visualisierungen aufbereitet.",
-				"impact": "Budgets wurden nach Land und Plattform neu verteilt; der Analyserahmen kann nun intern genutzt werden.",
-				"metrics": [
-					{
-						"label": "Beiträge analysiert",
-						"value": "60 k"
-					},
-					{
-						"label": "Sprachen",
-						"value": "8"
-					},
-					{
-						"label": "Visualisierungen",
-						"value": "50+"
-					}
-				],
+				"challenge": "Eine Umweltorganisation muss entscheiden, welche Botschaften sie in welchem Land und auf welcher Plattform in den Vordergrund stellt. Die Kennzahlen zeigen, welche Beiträge Reaktionen ausgelöst haben, aber nicht, worum es darin ging.",
+				"approach": "Für 60.000 Beiträge in acht Sprachen haben wir Thema, Ton und vertretene Standpunkte erfasst. Das Kommunikationsteam kann vergleichen, wie dasselbe Thema bei verschiedenen Zielgruppen und auf verschiedenen Plattformen ankommt.",
+				"impact": "Die Organisation hat das Analyseraster intern übernommen und nutzt es für die Budgetverteilung auf Länder und Plattformen.",
 				"tags": ["LLM", "OpenAI", "NLP", "TypeScript"],
 				"details": [
-					"Spezifische Prompts zur Erfassung von Tonalität, Akteuren, Themen und Emotionen auf Facebook und Instagram.",
-					"Automatisierte Pipeline: soziale Daten → LLM → Bewertung von Themen/Tönen/Perspektiven pro Zielgruppentyp.",
-					"Kreuzanalyse mit Beitragsleistung, um vorrangige Themen zu empfehlen.",
-					"Dokumentierte Methodik, die von lokalen Teams reproduziert werden kann.",
-					"Enablement-Sitzungen zur Interpretation von Empfehlungen und zur Anpassung von Budgets."
+					"Die Analyse bestimmt für jeden Facebook- oder Instagram-Beitrag das Thema und den Blickwinkel.",
+					"Das Kommunikationsteam vergleicht diese Merkmale mit der Resonanz bei den jeweiligen Zielgruppen.",
+					"Die Teams vor Ort nutzen dieselben Kriterien, um Themen für die nächste Kampagne auszuwählen."
 				],
 				"slug": "ki-analyse-social-media-kampagnen"
 			},
 			{
 				"id": "6",
 				"category": "Einzelhandel und Unterhaltungselektronik",
-				"title": "Datenhub & NLP",
+				"title": "Wiederkehrende Probleme in Kundenrückmeldungen finden",
 				"date": "2021-2023",
 				"location": "Global",
-				"challenge": "Kundenbewertungen eines führenden Elektronikunternehmens in Frankreich zentralisieren und ihre Analyse mit KI und Dashboards industrialisieren.",
-				"approach": "Airflow-Pipelines sammeln Daten verschiedener Anbieter und Erhebungsverantwortlicher per API in BigQuery. Hinzu kommen GCP-Governance, NLP mit HuggingFace, BERTopic, QA und LLMs, Tableau-Dashboards sowie die interne Bereitstellung der Daten für weitere Teams.",
-				"impact": "Der Kundenservice ruft klassifizierte Themen und eskalierte Warnmeldungen sofort ab und verfolgt Anfragen präziser. Das Produktteam erkennt und antizipiert Mängel sowie Logistikprobleme. Die Rechtsabteilung kann Rechtsstreitigkeiten frühzeitig erkennen.",
-				"metrics": [
-					{
-						"label": "Quellen integriert",
-						"value": "+25"
-					},
-					{
-						"label": "Bewertungen analysiert",
-						"value": "Ganz Frankreich"
-					}
-				],
+				"challenge": "Ein Elektronikhersteller erhält Rückmeldungen über mehrere Kanäle. Um einen wiederkehrenden Fehler zu verstehen, müssen die Teams Kommentare zusammenführen, die ihn mit unterschiedlichen Worten beschreiben.",
+				"approach": "Wir haben Rückmeldungen aus mehr als 25 Quellen gesammelt und nach Themen gruppiert. Das Kundenforschungsteam kann von einem wiederkehrenden Problem ausgehend die Originalaussagen der Kunden finden.",
+				"impact": "Das Kundenforschungsteam nutzt die Analysen täglich und teilt sie mit den zuständigen Teams.",
 				"tags": ["GCP", "Airflow", "NLP", "LLM", "Tableau", "HuggingFace"],
 				"details": [
-					"Multi-API-Sammlung (Mystery Shopping, CRM, soziale Netzwerke, Rezensionen), orchestriert von Airflow.",
-					"Cloud-Richtlinien: Teamsegmentierung, Datenlokalisierung, Sicherheit und Best Practices.",
-					"Analyse- und Klassifizierungspipeline mit LLMs.",
-					"NLP-Pipelines für Ähnlichkeit, Sentiment und Themen in mehreren Sprachen.",
-					"Design und Implementierung von Dashboards, die täglich vom Customer & Market insights-Team verwendet werden.",
-					"Dokumentation und Schulung für Daten- und Fachteams.",
-					"Automatisierte Exporte von Erkenntnissen an Marketingeinheiten und Agenturen."
+					"Ein Kommentar aus einer Umfrage, dem Kundendienst oder einem Bewertungsportal fließt mit den übrigen Rückmeldungen zusammen.",
+					"Das Kundenforschungsteam findet Kommentare zum selben Thema und liest sie im ursprünglichen Wortlaut.",
+					"Der Kundendienst verfolgt wiederkehrende Anfragen. Das Produktteam kann Meldungen zu einem Produktfehler getrennt von Lieferproblemen untersuchen."
 				],
 				"slug": "datenhub-nlp"
 			},
 			{
 				"id": "7",
 				"category": "Einzelhandel und Unterhaltungselektronik",
-				"title": "Nahezu Echtzeit-Data Warehouse",
+				"title": "Filialumsätze während eines Softwarewechsels verfolgen",
 				"date": "2020-2021",
 				"location": "Europa",
-				"challenge": "Im Rahmen einer ERP-Migration sollten 98 umfangreiche JSON-Geschäftsobjekte mit komplexen Strukturen (Filialen, Lager, Benutzer, Kassenbons, Bestände usw.) von Azure nach Snowflake migriert werden, um Qlik nahezu in Echtzeit zu versorgen.",
-				"approach": "Automatische Generierung Hunderter SQL- und Scala-Abfragen aus den Spezifikationen, um komplexe Objekte zu entflechten. Das System erzeugt und versorgt mehr als 150 Tabellen und Ansichten, die in Echtzeit aktualisiert werden. Die Daten werden über Kafka/ADF von ADLS nach Snowflake übernommen und dort mit Streams und Tasks orchestriert.",
-				"impact": "Minutengenaue Feeds für BI-Teams, die täglich Millionen von Dateien verarbeiten. Übergang zum neuen Analysesystem, gefolgt von der Abschaffung des alten Systems.",
+				"challenge": "Eine Handelskette wechselt ihr Warenwirtschaftssystem. Die Analysten müssen die Verkäufe jeder Filiale weiter verfolgen können, obwohl die Kassenbons in einem neuen Format eintreffen.",
+				"approach": "Wir haben die Bons aus dem neuen System den jeweiligen Filialen und Artikeln zugeordnet. Die Analysten sehen die Verkäufe in ihrem Auswertungssystem, ohne jeden Bon aus Einzelpositionen zusammensetzen zu müssen.",
+				"impact": "Auch nach dem Softwarewechsel konnten die Teams die Verkäufe im Minutentakt verfolgen.",
 				"metrics": [
 					{
-						"label": "Geschäftsobjekte",
-						"value": "98"
-					},
-					{
-						"label": "Tabellen und Ansichten",
-						"value": "150+"
-					},
-					{
-						"label": "Latenz",
-						"value": "<1 min"
+						"label": "Aktualisierung der Verkaufsdaten",
+						"value": "Jede Minute",
+						"note": "Intervall, in dem das Berichtssystem neue Daten erhält."
 					}
 				],
 				"tags": ["Snowflake", "Azure", "Kafka", "ADF", "Qlik"],
 				"details": [
-					"Automatische SQL-Generierung aus XML-Metadaten, um Bereitstellungen zu beschleunigen.",
-					"Über Snowflake Tasks orchestrierte Delta-Updates mit eigener Überwachung.",
-					"Benutzerdefinierte Scala-Funktionen zum Denormalisieren verschachtelter JSON.",
-					"Coaching für Analysten zur Nutzung der neuen Echtzeit-Feeds.",
-					"Umgebungsmanagement über Snowflake API (Test / Pre-Prod / Prod)."
+					"Eine Filiale erfasst einen Verkauf. Die neue Software übermittelt den Bon mit den einzelnen Artikeln.",
+					"Die Verkaufspositionen werden der Filiale zugeordnet. Aus den Bonbeträgen kann der Analyst Umsatz und durchschnittlichen Einkaufswert je Filiale ermitteln.",
+					"Die Auswertungen erhalten jede Minute neue Daten. Die Teams konnten auf das neue Berichtssystem umsteigen und das alte ablösen."
 				],
 				"slug": "data-warehouse-nahezu-echtzeit-einzelhandel"
 			}

@@ -1203,128 +1203,82 @@
 			{
 				"id": "4",
 				"category": "Smart city & energy",
-				"title": "Public lighting monitoring and modeling",
+				"title": "Spotting anomalies in street lighting",
 				"date": "2024",
 				"location": "France",
-				"challenge": "A company specializing in public lighting management for municipalities and their service providers needed a single platform to manage public lighting, adjust schedules, detect anomalies, and plan maintenance.",
-				"approach": "Development of a web application that serves as a management portal and provides analytical dashboards. The real-time stack combines AWS S3, DuckDB, and Parquet, with Shell/Cron pipelines, a FastAPI backend, and a TypeScript/SvelteKit interface.",
-				"impact": "Network managers use the application every morning. Consumption and incident metrics update dynamically, with predictive maintenance and alerting deployed across more than 40 territories.",
+				"challenge": "Each morning the network operator needs to decide which lighting cabinets to inspect. Daytime power use warrants a look, but does not by itself mean the lights stayed on.",
+				"approach": "From the list of anomalies, the operator opens the consumption chart for the cabinet and checks it against the lighting schedule to decide which discrepancy to investigate.",
+				"impact": "Operators review the alerts each morning to target checks across the network.",
 				"metrics": [
 					{
-						"label": "Measurements per day",
-						"value": "100M+"
-					},
-					{
-						"label": "Territories",
-						"value": "40+"
+						"label": "Areas served",
+						"value": "+40",
+						"note": "Areas where alerts have been deployed."
 					}
 				],
 				"tags": ["DuckDB", "SvelteKit", "PostgreSQL", "FastAPI"],
 				"details": [
-					"Continuous collection of lighting meter data with optimized S3 and Parquet storage.",
-					"Shell/Cron pipelines to refresh the cache.",
-					"DuckDB analytics delivering KPIs instantly across years of historical data, with dynamic visualizations of the results.",
-					"Management of mandates associated with data owners and users.",
-					"Alert dashboards for operators (failures, consumption, schedule anomalies).",
-					"Open REST API for connecting service provider and municipal systems.",
-					"Multi-tenant management with granular permissions and segmentation by operator."
+					"The operator selects a cabinet and retrieves the readings from its meter.",
+					"Comparing consumption before, during and after the scheduled lighting period helps distinguish a steady daytime load from a shift in switch-on time.",
+					"The operator can tell the contractor which cabinet to check, at what time and for which discrepancy."
 				],
 				"slug": "supervision-eclairage-public"
 			},
 			{
 				"id": "5",
 				"category": "NGO & engagement",
-				"title": "AI analysis of social media campaigns",
+				"title": "Choosing themes for upcoming campaigns",
 				"date": "2023",
 				"location": "International",
-				"challenge": "The NGO needed to compare environmental narratives on Facebook and Instagram to guide its communications spending.",
-				"approach": "An LLM-based methodology uses ChatGPT and tailored prompts to score tone, topics, and perspectives. The results are correlated with Facebook and Instagram KPIs by audience type (age, country, and interests) and presented in comparative visualizations.",
-				"impact": "Budgets were reallocated by country and platform, and the analysis framework was adopted internally.",
-				"metrics": [
-					{
-						"label": "Posts analyzed",
-						"value": "60K"
-					},
-					{
-						"label": "Languages",
-						"value": "8"
-					},
-					{
-						"label": "Visualizations",
-						"value": "50+"
-					}
-				],
+				"challenge": "An NGO needs to decide which environmental messages to prioritise by country and social network. Performance figures show which posts drew a response but not what they said.",
+				"approach": "Across 60,000 posts in eight languages, we linked each message to its subject, tone and viewpoints. The communications team can compare how different audiences respond to the same theme across networks.",
+				"impact": "The NGO adopted the framework internally to guide budget allocation across countries and social networks.",
 				"tags": ["LLM", "OpenAI", "NLP", "TypeScript"],
 				"details": [
-					"Prompts capturing tone, stakeholders, topics, and emotions on Facebook and Instagram.",
-					"Automated pipeline: social media data → LLM → scoring of topics, tones, and perspectives by audience type.",
-					"Correlation with post performance to recommend priority themes.",
-					"Documented methodology replicable by local teams.",
-					"Training sessions to help teams interpret recommendations and adjust budgets."
+					"For each Facebook or Instagram post, the analysis identifies the theme and how the author approaches it.",
+					"The communications team compares these findings with the response to each post among different audiences.",
+					"Local teams use the same framework to choose themes for their next campaign."
 				],
 				"slug": "analyse-generative-campagnes"
 			},
 			{
 				"id": "6",
 				"category": "Retail & consumer electronics",
-				"title": "Data hub & NLP",
+				"title": "Finding recurring problems in customer feedback",
 				"date": "2021-2023",
 				"location": "Global",
-				"challenge": "A leading consumer electronics company in France needed to centralize customer review data and scale its analysis using AI and dashboards.",
-				"approach": "Airflow-to-BigQuery pipelines collect data via APIs from multiple providers and collection systems, supported by GCP governance and NLP models (Hugging Face, BERTopic, QA, and LLMs). Results are delivered through Tableau dashboards and distributed internally to the relevant teams.",
-				"impact": "Customer service can instantly find classified topics and escalated alerts while tracking requests more accurately. The product team identifies and anticipates defects and logistics issues, while the legal team can better anticipate disputes.",
-				"metrics": [
-					{
-						"label": "Sources integrated",
-						"value": "25+"
-					},
-					{
-						"label": "Reviews analyzed",
-						"value": "Nationwide in France"
-					}
-				],
+				"challenge": "An electronics manufacturer receives feedback through several channels. To understand a recurring fault, teams need to bring together comments that describe it in different words.",
+				"approach": "We gathered feedback from more than 25 sources and grouped comments by theme. The customer insights team can start with a recurring issue and find the words customers actually used.",
+				"impact": "The customer insights team consults the analysis daily and shares it with the relevant teams.",
 				"tags": ["GCP", "Airflow", "NLP", "LLM", "Tableau", "HuggingFace"],
 				"details": [
-					"Data collection from multiple APIs (mystery shopping, CRM, social media, and reviews), orchestrated by Airflow.",
-					"Cloud policies covering team segmentation, data localization, security, and best practices.",
-					"Analysis and classification pipeline with LLMs.",
-					"NLP pipelines for similarity, sentiment, and topic analysis across multiple languages.",
-					"Design and implementation of dashboards used daily by the Customer & Market insights team.",
-					"Documentation and training for data and business teams.",
-					"Automated insight exports to marketing business units and agencies."
+					"A comment from a survey, customer service or a review site joins the other feedback.",
+					"The insights team finds comments on the same subject and reads their original wording.",
+					"Customer service tracks recurring enquiries. The product team can examine reports of a product fault separately from delivery complaints."
 				],
 				"slug": "data-hub-nlp"
 			},
 			{
 				"id": "7",
 				"category": "Retail & consumer electronics",
-				"title": "Near real-time data warehouse",
+				"title": "Tracking store sales through a software migration",
 				"date": "2020-2021",
 				"location": "Europe",
-				"challenge": "As part of an ERP migration, the client needed to move 98 high-volume, complex JSON business objects (stores, warehouses, users, receipts, inventory, and more) from Azure to Snowflake to feed Qlik in near real time.",
-				"approach": "Hundreds of SQL and Scala queries were generated automatically from specifications to flatten complex objects. The system creates and feeds more than 150 tables and views updated in real time. Data is ingested from ADLS into Snowflake through Kafka and ADF, with orchestration handled by streams and tasks.",
-				"impact": "BI teams receive minute-by-minute data feeds while the system processes millions of files each day. The organization transitioned to the new analytics system and then deprecated the legacy platform.",
+				"challenge": "A retailer is replacing its management software. Analysts need to keep tracking sales at each store even though receipts now arrive in a new format.",
+				"approach": "We linked receipts from the new system to their stores and items. Analysts see sales in their reporting tool without having to reconstruct each receipt from its lines.",
+				"impact": "Teams retained minute-by-minute sales reporting after the software change.",
 				"metrics": [
 					{
-						"label": "Business objects",
-						"value": "98"
-					},
-					{
-						"label": "Tables and views",
-						"value": "150+"
-					},
-					{
-						"label": "Latency",
-						"value": "<1 min"
+						"label": "Sales data updates",
+						"value": "Every minute",
+						"note": "Frequency at which the reporting system receives new data."
 					}
 				],
 				"tags": ["Snowflake", "Azure", "Kafka", "ADF", "Qlik"],
 				"details": [
-					"Automatic SQL generation from XML metadata to speed up deployments.",
-					"Incremental updates orchestrated by Snowflake Tasks with dedicated monitoring.",
-					"Custom Scala functions to denormalize nested JSON.",
-					"Coaching for analysts to leverage the new real-time feeds.",
-					"Environment management via Snowflake API (test / pre-prod / prod)."
+					"A store records a sale. The new software sends the receipt and its item details.",
+					"Each sales line is linked to the store. Analysts can use receipt totals to track revenue and average transaction value by store.",
+					"New data feeds the reports minute by minute. The teams switched to the new reporting system and retired the old one."
 				],
 				"slug": "data-warehouse-retail"
 			}
