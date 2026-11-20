@@ -31,7 +31,7 @@ export const load: PageLoad = async ({ params, parent }) => {
 				if (!localizedDossier?.slug) {
 					throw error(500, `Missing ${local} circular economy dossier at index ${dossierIndex}`);
 				}
-				return [local, `/expertises/economie-circulaire/${localizedDossier.slug}`];
+				return [local, `/filieres/economie-circulaire/${localizedDossier.slug}`];
 			})
 		)
 	) as SeoAlternatePaths;

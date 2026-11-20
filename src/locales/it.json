@@ -997,37 +997,112 @@
 			{
 				"id": "1",
 				"category": "Giustizia e settore pubblico",
-				"title": "Piattaforma IA per i tribunali di commercio francesi",
+				"title": "Verificare le pratiche di registro e preparare la lettura dei fascicoli giudiziari",
 				"date": "2025",
 				"location": "Francia",
-				"challenge": "Un editore di software per le cancellerie dei tribunali di commercio francesi desiderava integrare funzionalità di IA direttamente nella propria piattaforma, per migliorare velocità e precisione di alcune attività lunghe e ripetitive.",
-				"approach": "Architettura modulare strutturata per casi d'uso di IA, con LLM specializzati. API di intelligenza artificiale ospitata sui server del cliente (FastAPI), perfettamente integrata nello strumento esistente e accessibile anche ad altri utenti tramite API sicura. Portale TypeScript/SvelteKit.",
-				"impact": "Preanalisi IA eseguita in parallelo ai flussi aziendali: circa 400.000 pratiche elaborate all'anno per un primo caso d'uso, con un significativo risparmio di tempo e nel rispetto dei requisiti di riservatezza del settore giudiziario.",
+				"challenge": "La cancelleria confronta i dati dichiarati con i documenti giustificativi. Per esaminare una causa, il giudice deve individuare i fatti, le domande delle parti e gli argomenti su cui si fondano.",
+				"approach": "Un’API integrata nel gestionale prepara la verifica sui server del fornitore del software. Restituisce alla cancelleria i controlli documentali e al giudice sintesi con riferimenti alle fonti. La valutazione resta a chi esamina la pratica.",
+				"impact": "Nell’ottobre 2026 la piattaforma ha trattato 36.000 depositi di bilanci annuali (DCA), 1.080 pratiche del registro delle imprese (RCS) e 190 fascicoli giudiziari.",
 				"metrics": [
-					{ "label": "Pratiche elaborate / anno", "value": "400.000" },
-					{ "label": "Tempo risparmiato", "value": "≈16 giorni-persona/giorno" },
-					{ "label": "Tribunali serviti", "value": "48" }
+					{
+						"label": "Tribunali attrezzati",
+						"value": "48",
+						"note": "Piattaforma integrata nel gestionale delle cancellerie."
+					},
+					{
+						"label": "Tempo di lavoro stimato",
+						"value": "3.105 h 50 min",
+						"note": "Ottobre 2026: 37.270 pratiche × 5 minuti stimati ciascuna. IPP escluse."
+					},
+					{
+						"label": "Capacità equivalente",
+						"value": "≈ 444 giornate-persona",
+						"note": "Conversione basata su giornate di 7 ore."
+					}
 				],
-				"tags": ["LLM", "FastAPI", "Keycloak", "TypeScript", "SvelteKit", "PostgreSQL"],
+				"tags": [
+					"LLM",
+					"FastAPI",
+					"Keycloak",
+					"TypeScript",
+					"SvelteKit",
+					"PostgreSQL"
+				],
 				"details": [
-					"Modellazione di casi d'uso critici: sintesi dei procedimenti, convalida dei fascicoli ed estrazione automatizzata di documenti sensibili con LLM e OCR.",
-					"Implementazione completa nell'ambiente VPN del cliente, con monitoraggio dettagliato delle prestazioni e SLA contrattuali.",
-					"Portale self-service per generare chiavi API, monitorare i consumi e diagnosticare le richieste.",
-					"Cicli di riannotazione per migliorare i modelli e strumenti di audit su tutti i flussi.",
-					"Programma di adozione: formazione, guide operative e supporto dedicato.",
-					"Implementazione TypeScript/SvelteKit per offrire un'esperienza fluida senza interferire con i software esistenti."
+					"Bilanci annuali (DCA): verificare i documenti richiesti e la coerenza tra i conti depositati e la dichiarazione di riservatezza.",
+					"Registro delle imprese (RCS): confrontare le dichiarazioni INPI con statuti, atti e giustificativi per evidenziare le discrepanze.",
+					"Fascicoli giudiziari: riunire parti, fatti, domande e argomenti in una sintesi con riferimenti ai documenti e alle pagine di origine.",
+					"Iscrizioni di persone fisiche (IPP): classificare i documenti e raggruppare le verifiche di identità, indirizzo e dichiarazione di assenza di condanne. I volumi di ottobre escludono questo flusso."
 				],
 				"slug": "automazione-cancellerie-tribunali"
+			},
+			{
+				"id": "10",
+				"slug": "ocr-fascicoli-veicoli",
+				"title": "Archiviare un lotto di documenti nei fascicoli dei veicoli corretti",
+				"category": "Aftermarket e riciclo",
+				"challenge": "Un’addetta amministrativa riceve e scansiona i documenti dei veicoli fuori uso. Per ciascun documento apre la scheda del veicolo, avvia il caricamento, seleziona il file sul computer, sceglie il tipo di documento e conferma. Poi ricomincia. Con centinaia di documenti al giorno e migliaia al mese, non è solo la scansione a richiedere tempo: anche quando i file sono già digitalizzati, occorre cercare il fascicolo e classificare ogni documento.",
+				"approach": "Il flusso previsto inverte l’ordine. Oggi l’addetta parte dal veicolo per aggiungere un documento. Con il nuovo processo partirebbe dai documenti e il software proporrebbe i veicoli corrispondenti. Potrebbe caricare un lotto senza ordinarlo prima. Per ogni file il sistema riconoscerebbe il tipo di documento, leggerebbe il numero di telaio (VIN) e cercherebbe il fascicolo. La decisione finale resterebbe all’addetta, senza dover ripetere ogni ricerca da zero.",
+				"metrics": [
+					{
+						"label": "Capacità liberata",
+						"value": "≈ 7 giorni/mese",
+						"note": "Arrivano 3.000 documenti al mese. Un minuto netto risparmiato per documento libererebbe 50 ore al mese (giornate di 7 ore)."
+					},
+					{
+						"label": "Valore del tempo liberato",
+						"value": "2.000 €/mese",
+						"note": "Simulazione a 40 €/ora per 50 ore da dedicare ad altre attività."
+					},
+					{
+						"label": "Budget di pareggio",
+						"value": "≤ 12.000 €",
+						"note": "A questo ritmo per 6 mesi: costo totale massimo, gestione inclusa, coperto dal valore del tempo liberato."
+					}
+				],
+				"tags": [
+					"OCR",
+					"VIN"
+				],
+				"details": [
+					"Caricare il lotto. Una carta di circolazione francese, un modulo CERFA di dichiarazione d’acquisto e una ricevuta SIV possono essere caricati insieme, anche se riguardano veicoli diversi.",
+					"Distinguere documenti simili. La dichiarazione d’acquisto e la ricevuta che ne attesta la registrazione riguardano la stessa pratica, ma si archiviano sotto tipi diversi. Il software propone la categoria appropriata per ciascun documento.",
+					"Trovare il veicolo senza ricopiare il VIN. L’OCR legge il numero sul documento. Il software cerca una corrispondenza esatta tra i fascicoli accessibili e mostra il documento, il tipo proposto, il VIN letto e il fascicolo suggerito.",
+					"Verificare prima di rendere visibile il documento. L’addetta conferma l’associazione anche quando la corrispondenza è unica. Numeri illeggibili, corrispondenze multiple e possibili duplicati passano alla revisione manuale. Nessun documento esistente viene sovrascritto."
+				],
+				"expectedOutcome": "Il personale amministrativo potrebbe dedicare meno tempo ad aprire fascicoli e archiviare i file uno alla volta, e più tempo a verificare i documenti e gestire le eccezioni. L’officina o il centro di demolizione autorizzato potrebbe consultare il documento convalidato nel fascicolo e nella categoria corretti. Se il ritiro del veicolo è in attesa del giustificativo, la squadra potrebbe procedere alla fase successiva."
 			},
 			{
 				"id": "9",
 				"category": "Giustizia e settore pubblico",
 				"title": "Piattaforma per un contenzioso collettivo",
-				"challenge": "In un contenzioso collettivo, migliaia di persone compaiono in decisioni giudiziarie e file inviati da parti diverse. La sfida è estrarre i dati con l’aiuto dell’IA e collegare automaticamente le persone tra le fonti prima di preparare i calcoli di risarcimento.",
+				"challenge": "In un contenzioso collettivo, migliaia di persone compaiono in decisioni giudiziarie e file inviati da parti diverse. Il team deve preparare più rapidamente le tabelle di indennizzo, associare ogni importo alla persona corretta e spiegarne il calcolo alle parti.",
 				"approach": "Una piattaforma su misura ospitata nell’ambiente del cliente segue le stesse persone dall’appello alla sentenza, nonostante le diverse versioni scambiate da avvocati, difesa, periti e giudici. L’IA estrae i dati dalle decisioni PDF; l’importazione individua le colonne utili in ogni foglio e collega le persone tra le fonti. Le valutazioni peritali alimentano i calcoli di danni, spese, acconti e valute. I team verificano i casi incerti e le correzioni; dati originali e decisioni registrate restano consultabili.",
 				"impact": "Per ogni persona, i team ritrovano fonti, valutazioni mediche, osservazioni, valori originali e adottati, oltre ai dettagli dei calcoli e delle correzioni. Possono verificare le pratiche e preparare le tabelle per la sentenza senza confondere un calcolo preparatorio con una decisione giudiziaria.",
-				"metrics": [{ "label": "Persone coinvolte", "value": "20.000" }],
-				"tags": ["IA", "OCR", "Python", "FastAPI", "SQLite"],
+				"metrics": [
+					{
+						"label": "Persone coinvolte",
+						"value": "20.000",
+						"note": "Persone coinvolte nel contenzioso collettivo."
+					},
+					{
+						"label": "Righe importate",
+						"value": "11.023",
+						"note": "Prima cartella di lavoro, su tutti i fogli."
+					},
+					{
+						"label": "Abbinamenti da verificare",
+						"value": "5 casi",
+						"note": "Al controllo dell’11 maggio 2026 restavano cinque registrazioni di inammissibilità da associare con certezza alla persona interessata."
+					}
+				],
+				"tags": [
+					"IA",
+					"OCR",
+					"Python",
+					"FastAPI",
+					"SQLite"
+				],
 				"details": [
 					"Strutturare decisioni PDF e importare fogli di calcolo degli avvocati le cui colonne, intestazioni e versioni cambiano tra gli invii.",
 					"Collegare le persone tra decisioni e file degli avvocati, verificando omonimie, cambi di cognome e casi incerti.",
@@ -1043,19 +1118,24 @@
 				"title": "Piattaforma di gestione dei veicoli fuori uso",
 				"date": "2020-2025",
 				"location": "Europa",
-				"challenge": "Dopo la creazione di Valorauto, joint venture tra Stellantis e Galloo, una piattaforma per l'economia circolare doveva modernizzare il proprio sistema per gestire il ritiro B2B e B2C dei veicoli fuori uso e seguirne il percorso dalla raccolta presso il proprietario alla demolizione.",
-				"approach": "Sviluppo del portale Valorauto con interfacce per dichiarazione, amministrazione e monitoraggio dei veicoli tra i diversi soggetti, processi aziendali e API Azure Functions distribuiti sull'infrastruttura Azure del cliente (database MSSQL, Azure Service Bus) per orchestrare uno stack .NET esistente che collega proprietari e centri per veicoli fuori uso.",
+				"challenge": "Il servizio è nato per coordinare il ritiro tra proprietari, officine e centri di trattamento. Successivamente i team hanno dovuto gestire la rete su larga scala e seguire ogni veicolo fino alla demolizione.",
+				"approach": "Sviluppo del portale con interfacce per dichiarazione, amministrazione e monitoraggio dei veicoli tra i diversi soggetti, processi aziendali e API Azure Functions distribuiti sull'infrastruttura Azure del cliente (database MSSQL, Azure Service Bus) per orchestrare uno stack .NET esistente che collega proprietari e centri per veicoli fuori uso.",
 				"impact": "Tracciabilità end-to-end per la divisione economia circolare del gruppo, con una rete di oltre 5 000 aziende partner e un supporto al costruttore nell'adempimento degli obblighi connessi alla responsabilità estesa del produttore (EPR).",
 				"metrics": [
-					{ "label": "Paesi coperti", "value": "5" },
-					{ "label": "Rete di partner", "value": "+5 000" },
-					{ "label": "Punteggio Trustpilot", "value": "4,8" }
-				],
-				"links": [
-					{ "label": "Sito Valorauto", "url": "https://www.valorauto.com/" },
 					{
-						"label": "Recensioni Trustpilot di Valorauto",
-						"url": "https://www.trustpilot.com/review/valorauto.com"
+						"label": "Veicoli all’anno",
+						"value": "≈ 20.000",
+						"note": "Ordine di grandezza annuo dei veicoli registrati sulla piattaforma."
+					},
+					{
+						"label": "Partner della rete",
+						"value": "Oltre 5.000",
+						"note": "Officine e centri di trattamento dei veicoli fuori uso."
+					},
+					{
+						"label": "Tempo mediano",
+						"value": "6 giorni",
+						"note": "Dalla registrazione alla ricezione nel centro, su 14.116 pratiche utilizzabili da gennaio a ottobre 2026."
 					}
 				],
 				"tags": [

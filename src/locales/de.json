@@ -997,46 +997,112 @@
 			{
 				"id": "1",
 				"category": "Justiz und öffentlicher Sektor",
-				"title": "KI-Plattform für Handelsgerichte",
+				"title": "Registeranmeldungen prüfen und Gerichtsakten zur Durchsicht vorbereiten",
 				"date": "2025",
 				"location": "Frankreich",
-				"challenge": "Ein Softwareanbieter für die Geschäftsstellen von Handelsgerichten wollte KI-Funktionen direkt in seine Plattform integrieren, um bestimmte zeitaufwendige Aufgaben schneller und präziser zu bearbeiten.",
-				"approach": "Modulare Architektur nach KI-Anwendungsfällen mit spezialisierten LLMs. Eine auf den Servern des Kunden gehostete KI-API auf Basis von FastAPI ist vollständig in die bestehende Fachsoftware integriert und steht weiteren Benutzern über eine abgesicherte API zur Verfügung. Hinzu kommt ein TypeScript-/SvelteKit-Portal.",
-				"impact": "Die KI-Voranalyse läuft parallel zu den Geschäftsabläufen: Rund 400.000 Akten werden pro Jahr in einem ersten Anwendungsfall verarbeitet, mit einer erheblichen Zeitersparnis bei gleichzeitiger Einhaltung der gerichtlichen Vertraulichkeitsanforderungen.",
+				"challenge": "Registermitarbeitende gleichen Angaben mit Belegen ab. Bei der Vorbereitung eines Verfahrens muss das Gericht die Tatsachen, Anträge und Argumente der Parteien in den Unterlagen finden.",
+				"approach": "Eine in die Fachsoftware integrierte API bereitet die Prüfung auf den Servern des Softwareanbieters vor. Das Register erhält Dokumentenprüfungen, das Gericht Zusammenfassungen mit Quellenangaben. Die Beurteilung bleibt bei den zuständigen Personen.",
+				"impact": "Im Oktober 2026 verarbeitete die Plattform 36.000 Einreichungen von Jahresabschlüssen (DCA), 1.080 Handelsregistervorgänge (RCS) und 190 Gerichtsakten.",
 				"metrics": [
 					{
-						"label": "Verarbeitete Akten / Jahr",
-						"value": "400.000"
-					},
-					{
-						"label": "Eingesparte Zeit (Äquivalent)",
-						"value": "≈16 Personentage / Tag"
-					},
-					{
 						"label": "Ausgestattete Gerichte",
-						"value": "48"
+						"value": "48",
+						"note": "In die Fachsoftware der Geschäftsstellen integriert."
+					},
+					{
+						"label": "Geschätzter Arbeitsaufwand",
+						"value": "3.105 Std. 50 Min.",
+						"note": "Oktober 2026: 37.270 Vorgänge × geschätzte 5 Minuten. Ohne IPP."
+					},
+					{
+						"label": "Entsprechende Kapazität",
+						"value": "≈ 444 Personentage",
+						"note": "Berechnet mit 7 Stunden je Arbeitstag."
 					}
 				],
-				"tags": ["LLM", "FastAPI", "Keycloak", "TypeScript", "SvelteKit", "PostgreSQL"],
+				"tags": [
+					"LLM",
+					"FastAPI",
+					"Keycloak",
+					"TypeScript",
+					"SvelteKit",
+					"PostgreSQL"
+				],
 				"details": [
-					"Modellierung kritischer Anwendungsfälle: Verfahrenszusammenfassungen, Prüfung von Dokumentenpaketen und automatisierte Extraktion sensibler Unterlagen mit LLM und OCR.",
-					"Bereitstellung im VPN des Kunden mit detailliertem Performance-Monitoring und vertraglich vereinbarten SLAs.",
-					"Self-Service-Portal zum Erstellen von API-Schlüsseln, Nachverfolgen der Nutzung und Analysieren von API-Aufrufen.",
-					"Re-Annotation-Schleifen zur Verbesserung der Modelle und Audit-Werkzeuge für sämtliche Datenflüsse.",
-					"Einführungsprogramm mit Schulungen, Praxisleitfäden und dediziertem Support.",
-					"TypeScript-/SvelteKit-Implementierung für eine reibungslose Nutzung, ohne die bestehende Fachsoftware zu beeinträchtigen."
+					"Jahresabschlüsse (DCA): erforderliche Unterlagen und Übereinstimmung zwischen Abschluss und Vertraulichkeitserklärung prüfen.",
+					"Handelsregister (RCS): INPI-Angaben mit Satzungen, Urkunden und Belegen vergleichen und Abweichungen aufzeigen.",
+					"Gerichtsverfahren: Parteien, Tatsachen, Anträge und Argumente zusammenfassen und auf Quelldokumente und Seiten verweisen.",
+					"Eintragung natürlicher Personen (IPP): Belege zuordnen und Prüfungen zu Identität, Anschrift und Straffreiheitserklärung bündeln. Die Oktoberzahlen enthalten diesen Ablauf nicht."
 				],
 				"slug": "automatisierung-handelsgerichte"
+			},
+			{
+				"id": "10",
+				"slug": "ocr-fahrzeugakten",
+				"title": "Gemischte Dokumentenstapel den richtigen Fahrzeugakten zuordnen",
+				"category": "Aftermarket und Recycling",
+				"challenge": "Eine Sachbearbeiterin nimmt Unterlagen zu Altfahrzeugen entgegen und scannt sie. Für jedes Dokument öffnet sie die Fahrzeugakte, startet den Upload, wählt die lokale Datei und den Dokumenttyp aus und bestätigt die Ablage. Dann beginnt sie von vorn. Bei Hunderten von Belegen täglich und Tausenden im Monat kostet nicht nur das Scannen Zeit: Auch bereits digitalisierte Unterlagen muss sie einzeln zuordnen und ablegen.",
+				"approach": "Der geplante Ablauf kehrt die Reihenfolge um. Heute sucht die Sachbearbeiterin zuerst das Fahrzeug, um ein Dokument hinzuzufügen. Künftig würde sie einen unsortierten Stapel hochladen, und die Software würde die passenden Fahrzeuge vorschlagen. Für jede Datei würde sie den Dokumenttyp erkennen, die Fahrzeugidentifikationsnummer (FIN) lesen und die Akte suchen. Die Entscheidung bliebe bei der Sachbearbeiterin, ohne dass sie jede Suche selbst wiederholen müsste.",
+				"metrics": [
+					{
+						"label": "Freie Kapazität",
+						"value": "≈ 7 Tage/Monat",
+						"note": "Monatlich gehen 3.000 Belege ein. Eine Minute Nettozeitgewinn pro Beleg entspräche 50 Stunden im Monat (7 Stunden je Arbeitstag)."
+					},
+					{
+						"label": "Wert der Arbeitszeit",
+						"value": "2.000 €/Monat",
+						"note": "Beispielrechnung mit 40 €/Stunde für 50 frei werdende Arbeitsstunden."
+					},
+					{
+						"label": "Budgetschwelle",
+						"value": "≤ 12.000 €",
+						"note": "Bei gleicher Auslastung über 6 Monate: maximale Gesamtkosten einschließlich Betrieb, die der Zeitgewinn decken würde."
+					}
+				],
+				"tags": [
+					"OCR",
+					"VIN"
+				],
+				"details": [
+					"Stapel hochladen. Eine französische Zulassungsbescheinigung, eine CERFA-Kaufmeldung und ein SIV-Registrierungsbeleg können gemeinsam eingereicht werden, selbst wenn sie unterschiedliche Fahrzeuge betreffen.",
+					"Ähnliche Belege unterscheiden. Die Kaufmeldung und die Bestätigung ihrer Registrierung gehören zum selben Vorgang, werden aber unter unterschiedlichen Dokumenttypen abgelegt. Die Software schlägt für jeden Beleg den passenden Typ vor.",
+					"Fahrzeug finden, ohne die FIN abzutippen. Die OCR liest die Nummer aus dem Dokument. Die Software sucht unter den zugänglichen Akten nach einer exakten Übereinstimmung und zeigt Beleg, vorgeschlagenen Typ, gelesene FIN und Fahrzeugakte an.",
+					"Vor der Freigabe prüfen. Auch bei nur einem Treffer bestätigt die Sachbearbeiterin die Zuordnung. Unleserliche Nummern, mehrere Treffer oder mögliche Dubletten prüft sie manuell. Bestehende Dokumente werden nicht überschrieben."
+				],
+				"expectedOutcome": "Das Verwaltungsteam könnte die Zeit für das Öffnen einzelner Akten und die Ablage stärker für die Prüfung von Belegen und Sonderfällen nutzen. Die berechtigte Werkstatt oder der Demontagebetrieb könnte den bestätigten Beleg in der richtigen Akte unter dem passenden Typ einsehen. Wartet eine Fahrzeugrücknahme auf diesen Nachweis, könnte das Team den nächsten Schritt einleiten."
 			},
 			{
 				"id": "9",
 				"category": "Justiz und öffentlicher Sektor",
 				"title": "Plattform für einen komplexen Rechtsstreit",
-				"challenge": "In einem kollektiven Rechtsstreit tauchen Tausende Menschen in Gerichtsentscheidungen und Dateien verschiedener Parteien auf. Die Aufgabe: Daten mit KI-Unterstützung extrahieren und Personen quellenübergreifend automatisch zuordnen, bevor Entschädigungsberechnungen vorbereitet werden.",
+				"challenge": "In einem kollektiven Rechtsstreit tauchen Tausende Menschen in Gerichtsentscheidungen und Dateien verschiedener Parteien auf. Das Team muss Entschädigungstabellen schneller vorbereiten, jeden Betrag der richtigen Person zuordnen und den Parteien seine Berechnung erklären können.",
 				"approach": "Eine maßgeschneiderte Plattform in der Umgebung des Kunden begleitet dieselben Personen von der Berufung bis zum Urteil, trotz wechselnder Dateiversionen von Anwälten, Beklagtenseite, Sachverständigen und Richtern. KI extrahiert Daten aus PDF-Entscheidungen; beim Import werden relevante Spalten je Tabelle erkannt und Personen quellenübergreifend zugeordnet. Gutachterbewertungen fließen in Berechnungen zu Schäden, Kosten, Vorauszahlungen und Währungen ein. Teams prüfen unsichere Fälle und Korrekturen; Originaldaten und erfasste Entscheidungen bleiben einsehbar.",
 				"impact": "Für jede Person finden Teams Quellen, medizinische Bewertungen, Stellungnahmen, ursprüngliche und berücksichtigte Werte sowie Berechnungs- und Korrekturdetails. Sie können Akten prüfen und Tabellen für das Urteil vorbereiten, ohne eine vorbereitende Berechnung mit einer richterlichen Entscheidung zu verwechseln.",
-				"metrics": [{ "label": "Betroffene Personen", "value": "20.000" }],
-				"tags": ["KI", "OCR", "Python", "FastAPI", "SQLite"],
+				"metrics": [
+					{
+						"label": "Betroffene Personen",
+						"value": "20.000",
+						"note": "Personen im Sammelverfahren."
+					},
+					{
+						"label": "Importierte Zeilen",
+						"value": "11.023",
+						"note": "Erste Arbeitsmappe, über alle Tabellenblätter hinweg."
+					},
+					{
+						"label": "Offene Zuordnungen",
+						"value": "5 Fälle",
+						"note": "Bei der Prüfung am 11. Mai 2026 waren fünf Einträge zur Unzulässigkeit noch keiner Person eindeutig zugeordnet."
+					}
+				],
+				"tags": [
+					"KI",
+					"OCR",
+					"Python",
+					"FastAPI",
+					"SQLite"
+				],
 				"details": [
 					"PDF-Entscheidungen strukturiert erfassen und Anwaltstabellen importieren, deren Spalten, Bezeichnungen und Versionen sich zwischen Einreichungen ändern.",
 					"Personen zwischen Entscheidungen und Anwaltsdateien zuordnen; Namensänderungen, Namensgleichheiten und unsichere Fälle gesondert prüfen.",
@@ -1052,31 +1118,24 @@
 				"title": "Plattform für die Verwaltung von Altfahrzeugen",
 				"date": "2020-2025",
 				"location": "Europa",
-				"challenge": "Nach der Gründung von Valorauto, einem Joint Venture von Stellantis und Galloo, sollte die Kreislaufwirtschaftsplattform ihr bestehendes System modernisieren, um die Rücknahme von Altfahrzeugen (B2B und B2C) zu verwalten und jedes Fahrzeug von der Abholung beim Eigentümer bis zur Demontage nachzuverfolgen.",
-				"approach": "Entwicklung des Valorauto-Portals mit Oberflächen für Meldung, Verwaltung und Fahrzeugverfolgung für die verschiedenen Beteiligten. Geschäftsprozesse und Azure Functions APIs wurden in der Azure-Infrastruktur des Kunden (MSSQL-Datenbanken, Azure Service Bus) bereitgestellt, um einen bestehenden .NET-Stack für Eigentümer und Altfahrzeugzentren zu orchestrieren.",
+				"challenge": "Der Dienst wurde eingeführt, um die Rücknahme zwischen Haltern, Werkstätten und Verwertungsbetrieben zu koordinieren. Danach galt es, das Netzwerk im großen Maßstab zu betreiben und jedes Fahrzeug bis zur Verwertung zu verfolgen.",
+				"approach": "Entwicklung des Portals mit Oberflächen für Meldung, Verwaltung und Fahrzeugverfolgung für die verschiedenen Beteiligten. Geschäftsprozesse und Azure Functions APIs wurden in der Azure-Infrastruktur des Kunden (MSSQL-Datenbanken, Azure Service Bus) bereitgestellt, um einen bestehenden .NET-Stack für Eigentümer und Altfahrzeugzentren zu orchestrieren.",
 				"impact": "Durchgängige Rückverfolgbarkeit für den Kreislaufwirtschaftsbereich der Gruppe, mit einem Netzwerk von mehr als 5 000 Partnerunternehmen und Unterstützung der Herstellerpflichten im Rahmen der erweiterten Herstellerverantwortung (EPR).",
 				"metrics": [
 					{
-						"label": "Abgedeckte Länder",
-						"value": "5"
+						"label": "Fahrzeuge pro Jahr",
+						"value": "≈ 20.000",
+						"note": "Jährliche Größenordnung der auf der Plattform registrierten Fahrzeuge."
 					},
 					{
-						"label": "Partnernetzwerk",
-						"value": "+5 000"
+						"label": "Partner im Netzwerk",
+						"value": "Über 5.000",
+						"note": "Werkstätten und Altfahrzeugverwertungsbetriebe."
 					},
 					{
-						"label": "Trustpilot-Bewertung",
-						"value": "4,8"
-					}
-				],
-				"links": [
-					{
-						"label": "Valorauto-Website",
-						"url": "https://www.valorauto.com/"
-					},
-					{
-						"label": "Valorauto Trustpilot Bewertungen",
-						"url": "https://www.trustpilot.com/review/valorauto.com"
+						"label": "Mediane Durchlaufzeit",
+						"value": "6 Tage",
+						"note": "Von der Anmeldung bis zum Eingang beim Verwerter, auf Basis von 14.116 auswertbaren Vorgängen von Januar bis Oktober 2026."
 					}
 				],
 				"tags": [

@@ -16,8 +16,8 @@
 
 	export let data: PageData;
 	$: ({ content, guide } = data);
-	$: root = buildLocalizedPath('/expertises/analyse-documentaire', data.locale);
-	$: canonical = buildLocalizedUrl(`/expertises/analyse-documentaire/${guide.slug}`, data.locale);
+	$: root = buildLocalizedPath('/solutions/analyse-documentaire', data.locale);
+	$: canonical = buildLocalizedUrl(`/solutions/analyse-documentaire/${guide.slug}`, data.locale);
 	$: title = guide.metaTitle;
 	$: description = guide.metaDescription;
 	$: guideIndex = content.guides.findIndex((item) => item.slug === guide.slug);
@@ -122,7 +122,7 @@
 					'@type': 'ListItem',
 					position: 2,
 					name: content.label,
-					item: buildLocalizedUrl('/expertises/analyse-documentaire', data.locale)
+					item: buildLocalizedUrl('/solutions/analyse-documentaire', data.locale)
 				},
 				{
 					'@type': 'ListItem',

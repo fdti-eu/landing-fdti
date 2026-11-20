@@ -2,6 +2,10 @@
 	import { MetaTags } from 'svelte-meta-tags';
 	import ExpertiseHub, { type ExpertiseHubContent } from '$lib/components/ExpertiseHub.svelte';
 	import LdTag from '$lib/components/json-ld/LDTag.svelte';
+	import SolutionFamilyNav from '$lib/components/solutions/SolutionFamilyNav.svelte';
+	import SolutionOptions from '$lib/components/solutions/SolutionOptions.svelte';
+	import SolutionPractices from '$lib/components/solutions/SolutionPractices.svelte';
+	import { solutionPages } from '$lib/solution-pages';
 	import { schema } from '$lib/components/json-ld/json-ld';
 	import {
 		absoluteImageUrl,
@@ -14,7 +18,9 @@
 
 	export let data: PageData;
 	$: content = data.content;
-	$: canonical = buildLocalizedUrl('/expertises/analyse-documentaire', data.locale);
+	$: canonical = buildLocalizedUrl('/solutions/analyse-documentaire', data.locale);
+	// This page also serves the "AI & document processing" solution family.
+	$: family = solutionPages[data.locale];
 	const labels: Record<
 		Lang,
 		{
@@ -87,7 +93,7 @@
 		),
 		dossiers: content.guides.map((guide) => ({
 			...guide,
-			href: buildLocalizedPath(`/expertises/analyse-documentaire/${guide.slug}`, data.locale)
+			href: buildLocalizedPath(`/solutions/analyse-documentaire/${guide.slug}`, data.locale)
 		})),
 		proofLabel: copy.proof,
 		proofs: content.proofs.map((proof) => ({
@@ -131,7 +137,7 @@
 					'@type': 'ListItem',
 					position: 2,
 					name: copy.expertise,
-					item: buildLocalizedUrl('/expertises', data.locale)
+					item: buildLocalizedUrl('/solutions', data.locale)
 				},
 				{
 					'@type': 'ListItem',
@@ -163,4 +169,26 @@
 	content={hub}
 	eventPrefix="document_analysis"
 	hubTransitionName="expertise-hub-document-analysis"
-/>
+>
+	<svelte:fragment slot="before-faq">
+		{#if family}
+			<SolutionOptions
+				title={family.optionsTitle}
+				intro={family.documents.optionsIntro}
+				whenLabel={family.whenLabel}
+				impactLabel={family.impactLabel}
+				options={family.documents.options}
+			/>
+		{/if}
+	</svelte:fragment>
+	<svelte:fragment slot="before-contact">
+		{#if family}
+			<SolutionPractices title={family.practicesTitle} practices={family.practices} />
+			<SolutionFamilyNav
+				title={family.otherFamiliesTitle}
+				locale={data.locale}
+				current="ia-documents"
+			/>
+		{/if}
+	</svelte:fragment>
+</ExpertiseHub>

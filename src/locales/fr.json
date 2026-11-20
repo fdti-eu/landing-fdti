@@ -997,46 +997,112 @@
 			{
 				"id": "1",
 				"category": "Justice & secteur public",
-				"title": "Plateforme d'IA pour les tribunaux de commerce",
+				"title": "Contrôler les formalités du greffe et préparer la lecture des dossiers judiciaires",
 				"date": "2025",
 				"location": "France",
-				"challenge": "Un éditeur de logiciels pour greffiers souhaitait intégrer des fonctionnalités d'IA directement dans sa plateforme pour optimiser le temps et la précision de certaines tâches chronophages des greffiers.",
-				"approach": "Architecture modulaire structurée par cas d'usage IA (LLM spécialisés). API d'intelligence artificielle hébergée sur les serveurs du client (FastAPI), parfaitement intégrée à l'outil existant mais aussi accessible à d'autres utilisateurs via API sécurisée. Portail TypeScript/SvelteKit.",
-				"impact": "Pré-analyse IA lancée en parallèle des flux métier : environ 400 000 dossiers traités par an sur un premier cas d’usage, avec un équivalent temps économisé significatif tout en respectant les exigences de confidentialité du secteur judiciaire.",
+				"challenge": "Pour vérifier un dépôt, le greffe doit rapprocher les informations déclarées des pièces reçues. Pour préparer l’examen d’une affaire, le juge doit retrouver les faits, les demandes de chaque partie et les arguments qui les soutiennent.",
+				"approach": "Une API intégrée au logiciel métier prépare ces lectures sur les serveurs de l’éditeur. Elle restitue les contrôles documentaires au greffe et les synthèses sourcées pour le juge. L’appréciation du dossier reste humaine.",
+				"impact": "En octobre 2026, la plateforme a traité 36 000 dépôts de comptes annuels (DCA), 1 080 formalités RCS et 190 dossiers judiciaires.",
 				"metrics": [
 					{
-						"label": "Dossiers traités / an",
-						"value": "400 000"
-					},
-					{
-						"label": "Équivalent économisé",
-						"value": "≈16 j.h / jour"
-					},
-					{
 						"label": "Tribunaux équipés",
-						"value": "48"
+						"value": "48",
+						"note": "Plateforme intégrée au logiciel métier des greffes."
+					},
+					{
+						"label": "Temps de traitement estimé",
+						"value": "3 105 h 50",
+						"note": "Octobre 2026 : 37 270 dossiers × 5 minutes estimées par dossier. Hors IPP."
+					},
+					{
+						"label": "Capacité équivalente",
+						"value": "≈ 444 jours-personnes",
+						"note": "Base de conversion : 7 heures par journée de travail."
 					}
 				],
-				"tags": ["LLM", "FastAPI", "Keycloak", "TypeScript", "SvelteKit", "PostgreSQL"],
+				"tags": [
+					"LLM",
+					"FastAPI",
+					"Keycloak",
+					"TypeScript",
+					"SvelteKit",
+					"PostgreSQL"
+				],
 				"details": [
-					"Modélisation de cas d'usage critiques : résumés de procédures, validation de liasses et extraction automatisée de pièces sensibles avec LLM et OCR.",
-					"Déploiement complet dans le VPN client avec monitoring fin des performances et SLA contractualisés.",
-					"Portail self-service pour générer des clés API, suivre la consommation et diagnostiquer les requêtes.",
-					"Boucles de ré-annotation pour améliorer les modèles et outillage d'audit sur l'ensemble des flux.",
-					"Programme d'adoption : formations, guides opérationnels et support dédié.",
-					"Instrumentation TypeScript/SvelteKit pour offrir une expérience fluide sans perturber leurs logiciels existants."
+					"Comptes annuels (DCA) : contrôler les pièces attendues et leur cohérence, notamment entre les comptes déposés et la déclaration de confidentialité.",
+					"Registre du commerce (RCS) : comparer les informations déclarées à l’INPI avec les statuts, actes et justificatifs pour faire ressortir les écarts à examiner.",
+					"Judiciaire : réunir les parties, les faits, les demandes et les moyens dans une synthèse qui renvoie aux pièces et aux pages sources.",
+					"Immatriculation de personnes physiques (IPP) : classer les justificatifs et regrouper les contrôles d’identité, d’adresse et de non-condamnation. Ce parcours n’entre pas dans les volumes d’octobre."
 				],
 				"slug": "automatisation-greffes"
+			},
+			{
+				"id": "10",
+				"slug": "ocr-dossiers-vhu",
+				"title": "Classer un lot de documents dans les bons dossiers véhicules",
+				"category": "Aftermarket & recyclage",
+				"challenge": "Une gestionnaire administrative reçoit et scanne les pièces de véhicules hors d’usage. Pour chaque document, elle ouvre la fiche du véhicule, lance l’ajout d’une pièce, sélectionne le fichier sur son poste, choisit le type de document et valide. Puis elle recommence pour la pièce suivante. À raison de centaines de pièces par jour et de milliers par mois, ce n’est pas le scan seul qui prend du temps : c’est toute la séquence de recherche et de classement qui se répète, même quand toutes les pièces sont déjà numérisées.",
+				"approach": "Le parcours prévu inverse l’ordre du travail. Aujourd’hui, la gestionnaire part du véhicule pour y ajouter un document. Demain, elle part des documents et le logiciel lui propose les véhicules correspondants. Elle dépose un lot de fichiers sans les trier au préalable. Pour chaque pièce, le logiciel reconnaît le type de document, lit le numéro d’identification du véhicule (VIN) et recherche le dossier. La gestionnaire garde la décision finale, sans avoir à refaire elle-même toute la recherche.",
+				"metrics": [
+					{
+						"label": "Capacité libérée",
+						"value": "≈ 7 j/mois",
+						"note": "3 000 pièces reçues par mois. Avec 1 minute nette gagnée par pièce, cela représenterait 50 heures par mois (journées de 7 h)."
+					},
+					{
+						"label": "Valeur du temps libéré",
+						"value": "2 000 €/mois",
+						"note": "Simulation à 40 €/h pour 50 heures de travail réaffectées."
+					},
+					{
+						"label": "Budget au point d’équilibre",
+						"value": "≤ 12 000 €",
+						"note": "Sur 6 mois au même rythme : plafond de coût total, fonctionnement inclus, pour équilibrer la valeur du temps."
+					}
+				],
+				"tags": [
+					"OCR",
+					"VIN"
+				],
+				"details": [
+					"Déposer le lot. Une carte grise, un formulaire CERFA de déclaration d’achat et un récépissé SIV peuvent arriver dans le même dépôt, y compris s’ils concernent des véhicules différents.",
+					"Distinguer les pièces. Le formulaire de déclaration d’achat et le récépissé qui en atteste l’enregistrement concernent la même démarche, mais ne se classent pas sous le même type. Le logiciel propose la catégorie propre à chaque pièce.",
+					"Retrouver le véhicule sans recopier le VIN. L’OCR lit le numéro sur le document. Le logiciel cherche une correspondance exacte parmi les dossiers auxquels la gestionnaire a accès et lui présente la pièce, le type reconnu, le VIN lu et le dossier proposé.",
+					"Vérifier avant de rendre la pièce visible. La gestionnaire confirme le rattachement, même si un seul véhicule correspond. Si le numéro est illisible, si plusieurs dossiers correspondent ou si la pièce semble déjà présente, elle reprend le cas manuellement. Aucun document existant n’est écrasé."
+				],
+				"expectedOutcome": "Pour l’équipe administrative, le temps consacré à ouvrir les fiches et à classer les fichiers un par un peut être réaffecté à la vérification des pièces et au traitement des exceptions. Pour le garage ou le centre VHU habilité, la pièce validée devient consultable dans le bon dossier, sous le bon type. Et lorsqu’une reprise attend ce justificatif, l’équipe peut passer à l’étape suivante."
 			},
 			{
 				"id": "9",
 				"category": "Justice & secteur public",
 				"title": "Plateforme de gestion d’un contentieux collectif",
-				"challenge": "Dans un contentieux collectif, des milliers de personnes apparaissent dans des décisions judiciaires et des fichiers transmis par différentes parties. L’enjeu : extraire ces données avec l’aide de l’IA, puis rapprocher automatiquement les personnes entre sources avant de préparer les calculs d’indemnisation.",
+				"challenge": "Dans un contentieux collectif, des milliers de personnes apparaissent dans des décisions judiciaires et des fichiers transmis par différentes parties. L’équipe doit préparer les tableaux d’indemnisation plus rapidement, attribuer chaque montant à la bonne personne et pouvoir expliquer aux parties comment il a été calculé.",
 				"approach": "Une plateforme sur mesure, hébergée chez le client, suit les mêmes personnes de l’appel au jugement malgré les versions échangées par avocats, défense, experts et juges. L’IA extrait les données des décisions PDF ; l’import repère les colonnes utiles dans chaque classeur et rapproche les personnes entre les sources. Les évaluations d’expertise alimentent les calculs de préjudices, frais, provisions et devises. Les cas incertains et les corrections sont revus par les équipes ; données d’origine et arbitrages saisis restent consultables.",
 				"impact": "Les équipes retrouvent, pour chaque personne, les sources, les évaluations médicales, les observations, les valeurs initiales et retenues ainsi que le détail des calculs et des corrections. Elles peuvent contrôler les dossiers et préparer les tableaux destinés au jugement, sans confondre calcul préparatoire et décision judiciaire.",
-				"metrics": [{ "label": "Personnes concernées", "value": "20 000" }],
-				"tags": ["IA", "OCR", "Python", "FastAPI", "SQLite"],
+				"metrics": [
+					{
+						"label": "Personnes concernées",
+						"value": "20 000",
+						"note": "Personnes suivies dans le contentieux collectif."
+					},
+					{
+						"label": "Lignes importées",
+						"value": "11 023",
+						"note": "Premier classeur de travail, toutes feuilles confondues."
+					},
+					{
+						"label": "Rapprochements à vérifier",
+						"value": "5 cas",
+						"note": "Au contrôle du 11 mai 2026, cinq entrées d’irrecevabilité restaient à rattacher avec certitude à une personne."
+					}
+				],
+				"tags": [
+					"IA",
+					"OCR",
+					"Python",
+					"FastAPI",
+					"SQLite"
+				],
 				"details": [
 					"Lecture structurée des décisions PDF et import de classeurs d’avocats dont les colonnes, intitulés et versions évoluent d’un envoi à l’autre.",
 					"Rapprochement des personnes entre décisions et fichiers d’avocats, avec vérification des homonymes, changements de nom et cas incertains.",
@@ -1052,31 +1118,24 @@
 				"title": "Plateforme de gestion des véhicules en fin de vie",
 				"date": "2020-2025",
 				"location": "Europe",
-				"challenge": "Suite à la création de Valorauto, joint-venture entre Stellantis et Galloo, une plateforme d'économie circulaire devait moderniser son outil existant pour gérer la reprise de véhicules en fin de vie (B2B et B2C) et suivre leur parcours de la collecte chez le propriétaire à la démolition du véhicule.",
-				"approach": "Développement du portail Valorauto avec interfaces de déclaration, d'administration et de suivi des véhicules entre les différents acteurs, processus métiers et APIs Azure Functions déployés sur l'infrastructure Azure du client (bases MSSQL, Azure Service Bus) pour orchestrer un existant .NET connectant propriétaires et centres VHU.",
+				"challenge": "Le service a été lancé pour organiser les reprises entre propriétaires, garages et centres de traitement. Il fallait ensuite permettre aux équipes d’exploiter ce réseau à grande échelle et de suivre chaque véhicule jusqu’à sa destruction.",
+				"approach": "Développement du portail avec interfaces de déclaration, d'administration et de suivi des véhicules entre les différents acteurs, processus métiers et APIs Azure Functions déployés sur l'infrastructure Azure du client (bases MSSQL, Azure Service Bus) pour orchestrer un existant .NET connectant propriétaires et centres VHU.",
 				"impact": "Traçabilité bout en bout au service de la branche économie circulaire du groupe, avec un réseau de plus de 5 000 entreprises partenaires et une réponse aux impératifs du constructeur liés à la Responsabilité Etendue des Producteurs (REP).",
 				"metrics": [
 					{
-						"label": "Pays couverts",
-						"value": "5"
+						"label": "VHU par an",
+						"value": "≈ 20 000",
+						"note": "Ordre de grandeur annuel des véhicules enregistrés sur la plateforme."
 					},
 					{
-						"label": "Réseau partenaires",
-						"value": "+5 000"
+						"label": "Partenaires du réseau",
+						"value": "Plus de 5 000",
+						"note": "Garages et centres de traitement des véhicules hors d’usage."
 					},
 					{
-						"label": "Score Trustpilot",
-						"value": "4,8"
-					}
-				],
-				"links": [
-					{
-						"label": "Site Valorauto",
-						"url": "https://www.valorauto.com/"
-					},
-					{
-						"label": "Avis Trustpilot Valorauto",
-						"url": "https://www.trustpilot.com/review/valorauto.com"
+						"label": "Délai médian",
+						"value": "6 jours",
+						"note": "Entre déclaration et réception en centre, sur 14 116 dossiers exploitables de janvier à octobre 2026."
 					}
 				],
 				"tags": [

@@ -34,13 +34,19 @@
 			"label": "Recherche technique",
 			"title": "Qualifier des brevets à partir de leur contenu.",
 			"text": "Un prototype de recherche dans des PDF qui prépare une qualification par thème avec des références de pages, pour orienter la lecture des experts.",
-			"href": "/expertises/analyse-documentaire/connaissance-et-veille#brevets"
+			"href": "/solutions/analyse-documentaire/connaissance-et-veille#brevets"
 		},
 		{
 			"label": "Signature électronique",
 			"title": "Générer et faire signer les documents d’une reprise.",
 			"text": "Un parcours intégré qui prépare les certificats de cession et de destruction, les transmet aux signataires et rattache le suivi des signatures au véhicule.",
 			"href": "/realisations/plateforme-economie-circulaire"
+		},
+		{
+			"label": "Recyclage automobile",
+			"title": "Classement des pièces par OCR",
+			"text": "Le parcours prévu associe lecture du VIN et confirmation par l’opérateur avant le rattachement à un dossier véhicule.",
+			"href": "/realisations/ocr-dossiers-vhu"
 		}
 	],
 	"integration": {

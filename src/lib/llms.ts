@@ -10,6 +10,10 @@ import deDocumentAnalysis from '$locales/document-analysis/de.json';
 import itDocumentAnalysis from '$locales/document-analysis/it.json';
 import type { Lang, LocaleData } from '$lib/data';
 import { buildLocalizedUrl } from '$lib/functions/seo';
+import { expertiseOffers, offerPaths } from '$lib/expertise-offers';
+import { sectorCopy, navigationCopy, solutionIds, solutionLabels } from '$lib/navigation';
+import { solutionsContent } from '$lib/solutions';
+import { solutionPageIds, solutionPagePath, solutionPages } from '$lib/solution-pages';
 
 const htmlEntities: Record<string, string> = {
 	amp: '&',
@@ -61,6 +65,14 @@ function formatSection(title: string, content?: string): string {
 function buildLanguageSection(locale: Lang, data: LocaleData): string {
 	const home = data.GetHomePageContent;
 	let output = `\n# ${locale.toUpperCase()}\n`;
+	for (const key of Object.keys(offerPaths) as Array<keyof typeof offerPaths>) {
+		const offer = expertiseOffers[locale][key];
+		output += `\n## ${offer.label}\n${buildLocalizedUrl(offerPaths[key], locale)}\n${offer.description}\n`;
+		for (const item of [...offer.useCases, ...offer.steps]) {
+			output += `\n### ${item.title}\n${item.text}\n`;
+		}
+		output += `\n${offer.boundary}\n`;
+	}
 
 	if (home) {
 		const meta = home.meta_tags?.page_tags?.[0];
@@ -113,10 +125,11 @@ function buildLanguageSection(locale: Lang, data: LocaleData): string {
 				if (context) ucText += `Context: ${context}\n`;
 				ucText += `Challenge: ${uc.challenge}\n`;
 				ucText += `Approach: ${uc.approach}\n`;
-				ucText += `Impact: ${uc.impact}\n`;
+				if (uc.expectedOutcome) ucText += `Expected outcome: ${uc.expectedOutcome}\n`;
+				else if (uc.impact) ucText += `Impact: ${uc.impact}\n`;
 
 				if (uc.metrics) {
-					ucText += `Key Metrics: ${uc.metrics.map((m) => `${m.label}: ${m.value}`).join(', ')}\n`;
+					ucText += `Key Metrics: ${uc.metrics.map((m) => `${m.label}: ${m.value}${'note' in m ? ` (${m.note})` : ''}`).join(', ')}\n`;
 				}
 				if (uc.tags) {
 					ucText += `Stack: ${uc.tags.join(', ')}\n`;
@@ -129,19 +142,57 @@ function buildLanguageSection(locale: Lang, data: LocaleData): string {
 			.join('\n');
 	}
 
+	output += formatSection(navigationCopy[locale].sectors, navigationCopy[locale].sectorIntro);
+	output += `\n${buildLocalizedUrl('/filieres', locale)}\n`;
+	output += formatSection(sectorCopy[locale].justice, sectorCopy[locale].justiceIntro);
+	output += `\n${buildLocalizedUrl('/filieres/justice', locale)}\n`;
 	const circular = data.CircularEconomy;
 	output += formatSection(circular.title, circular.intro);
-	output += `\n${buildLocalizedUrl('/expertises/economie-circulaire', locale)}\n`;
+	output += `\n${buildLocalizedUrl('/filieres/economie-circulaire', locale)}\n`;
 
 	const documentAnalysis = data.DocumentAnalysis;
 	output += formatSection(documentAnalysis.title, documentAnalysis.intro);
-	output += `\n${buildLocalizedUrl('/expertises/analyse-documentaire', locale)}\n`;
+	output += `\n${buildLocalizedUrl('/solutions/analyse-documentaire', locale)}\n`;
 	for (const guide of documentAnalysis.guides) {
 		output += formatSection(guide.title, guide.summary);
-		output += `\n${buildLocalizedUrl(`/expertises/analyse-documentaire/${guide.slug}`, locale)}\n`;
+		output += `\n${buildLocalizedUrl(`/solutions/analyse-documentaire/${guide.slug}`, locale)}\n`;
 	}
 
-	output += `\n# EXPERTISE\n${buildLocalizedUrl('/expertises', locale)}\n`;
+	output += `\n# ${navigationCopy[locale].solutions}\n${buildLocalizedUrl('/solutions', locale)}\n`;
+	for (const id of solutionIds) {
+		const family = solutionsContent[locale].families[id];
+		output += formatSection(solutionLabels[locale][id], family.need);
+		output += family.deliverables.map((item) => `- ${item}`).join('\n');
+		output += `\n${family.evidence}\n${buildLocalizedUrl('/solutions', locale)}#${id}\n`;
+	}
+
+	const familyPages = solutionPages[locale];
+	if (familyPages) {
+		for (const id of solutionPageIds) {
+			const page = familyPages.pages[id];
+			output += `\n## ${solutionLabels[locale][id]}\n${buildLocalizedUrl(solutionPagePath(id), locale)}\n${page.lead}\n`;
+			for (const situation of page.situations) {
+				output += `\n### ${situation.title}\n${situation.text}\n`;
+			}
+			output += `\n### ${familyPages.optionsTitle}\n${page.optionsIntro}\n`;
+			for (const option of page.options) {
+				output += `- ${option.title}. ${familyPages.whenLabel} : ${option.when} ${familyPages.impactLabel} : ${option.impact}\n`;
+			}
+			for (const item of [...(page.examples?.items ?? []), ...(page.method?.steps ?? [])]) {
+				output += `\n### ${item.title}\n${item.text}\n`;
+			}
+			if (page.method) output += `\n${page.method.note}\n`;
+			output += `\n### ${familyPages.deliverablesTitle}\n${page.deliverables.map((item) => `- ${item}`).join('\n')}\n`;
+		}
+		output += `\n## ${solutionLabels[locale]['ia-documents']}\n${buildLocalizedUrl(solutionPagePath('ia-documents'), locale)}\n${familyPages.documents.optionsIntro}\n`;
+		for (const option of familyPages.documents.options) {
+			output += `- ${option.title}. ${familyPages.whenLabel} : ${option.when} ${familyPages.impactLabel} : ${option.impact}\n`;
+		}
+		output += `\n## ${familyPages.practicesTitle}\n`;
+		for (const practice of familyPages.practices) {
+			output += `- ${practice.title} : ${practice.text}\n`;
+		}
+	}
 
 	if (home?.contact_section) {
 		output += `\n# CONTACT\nEmail: ${home.contact_section.mail}\nCallback requests: use any contact call-to-action on the website; only an email address or phone number is required.\nAddress: ${home.contact_section.address}\n`;

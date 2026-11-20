@@ -6,6 +6,7 @@ import type { PageLoad } from './$types';
 export const prerender = true;
 
 const relatedTopics: Record<string, { document?: string[]; circular?: string[] }> = {
+	'10': { document: ['extraction-et-integration'], circular: ['vehicules'] },
 	'1': { document: ['dossiers-et-controles'] },
 	'2': { circular: ['vehicules'] },
 	'3': { circular: ['batteries', 'documents-et-integrations'] },
@@ -80,13 +81,13 @@ export const load: PageLoad = async ({ params, depends }) => {
 				slugs: topics.document ?? [],
 				source: sourceData.DocumentAnalysis.guides,
 				localized: localizedData.DocumentAnalysis.guides,
-				root: '/expertises/analyse-documentaire'
+				root: '/solutions/analyse-documentaire'
 			},
 			{
 				slugs: topics.circular ?? [],
 				source: sourceData.CircularEconomy.dossiers,
 				localized: localizedData.CircularEconomy.dossiers,
-				root: '/expertises/economie-circulaire'
+				root: '/filieres/economie-circulaire'
 			}
 		];
 		for (const collection of collections) {

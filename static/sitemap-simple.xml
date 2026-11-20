@@ -26,27 +26,27 @@
 		<priority>1.00</priority>
 	</url>
 <url>
-		<loc>https://www.fdti.eu/expertises</loc>
+		<loc>https://www.fdti.eu/solutions</loc>
 		<changefreq>weekly</changefreq>
 		<priority>0.95</priority>
 	</url>
 <url>
-		<loc>https://www.fdti.eu/en/expertises</loc>
+		<loc>https://www.fdti.eu/en/solutions</loc>
 		<changefreq>weekly</changefreq>
 		<priority>0.95</priority>
 	</url>
 <url>
-		<loc>https://www.fdti.eu/es/expertises</loc>
+		<loc>https://www.fdti.eu/es/solutions</loc>
 		<changefreq>weekly</changefreq>
 		<priority>0.95</priority>
 	</url>
 <url>
-		<loc>https://www.fdti.eu/de/expertises</loc>
+		<loc>https://www.fdti.eu/de/solutions</loc>
 		<changefreq>weekly</changefreq>
 		<priority>0.95</priority>
 	</url>
 <url>
-		<loc>https://www.fdti.eu/it/expertises</loc>
+		<loc>https://www.fdti.eu/it/solutions</loc>
 		<changefreq>weekly</changefreq>
 		<priority>0.95</priority>
 	</url>
@@ -76,52 +76,52 @@
 		<priority>0.95</priority>
 	</url>
 <url>
-		<loc>https://www.fdti.eu/expertises/economie-circulaire</loc>
+		<loc>https://www.fdti.eu/filieres/economie-circulaire</loc>
 		<changefreq>monthly</changefreq>
 		<priority>0.90</priority>
 	</url>
 <url>
-		<loc>https://www.fdti.eu/en/expertises/economie-circulaire</loc>
+		<loc>https://www.fdti.eu/en/filieres/economie-circulaire</loc>
 		<changefreq>monthly</changefreq>
 		<priority>0.90</priority>
 	</url>
 <url>
-		<loc>https://www.fdti.eu/es/expertises/economie-circulaire</loc>
+		<loc>https://www.fdti.eu/es/filieres/economie-circulaire</loc>
 		<changefreq>monthly</changefreq>
 		<priority>0.90</priority>
 	</url>
 <url>
-		<loc>https://www.fdti.eu/de/expertises/economie-circulaire</loc>
+		<loc>https://www.fdti.eu/de/filieres/economie-circulaire</loc>
 		<changefreq>monthly</changefreq>
 		<priority>0.90</priority>
 	</url>
 <url>
-		<loc>https://www.fdti.eu/it/expertises/economie-circulaire</loc>
+		<loc>https://www.fdti.eu/it/filieres/economie-circulaire</loc>
 		<changefreq>monthly</changefreq>
 		<priority>0.90</priority>
 	</url>
 <url>
-		<loc>https://www.fdti.eu/expertises/analyse-documentaire</loc>
+		<loc>https://www.fdti.eu/solutions/analyse-documentaire</loc>
 		<changefreq>monthly</changefreq>
 		<priority>0.90</priority>
 	</url>
 <url>
-		<loc>https://www.fdti.eu/en/expertises/analyse-documentaire</loc>
+		<loc>https://www.fdti.eu/en/solutions/analyse-documentaire</loc>
 		<changefreq>monthly</changefreq>
 		<priority>0.90</priority>
 	</url>
 <url>
-		<loc>https://www.fdti.eu/es/expertises/analyse-documentaire</loc>
+		<loc>https://www.fdti.eu/es/solutions/analyse-documentaire</loc>
 		<changefreq>monthly</changefreq>
 		<priority>0.90</priority>
 	</url>
 <url>
-		<loc>https://www.fdti.eu/de/expertises/analyse-documentaire</loc>
+		<loc>https://www.fdti.eu/de/solutions/analyse-documentaire</loc>
 		<changefreq>monthly</changefreq>
 		<priority>0.90</priority>
 	</url>
 <url>
-		<loc>https://www.fdti.eu/it/expertises/analyse-documentaire</loc>
+		<loc>https://www.fdti.eu/it/solutions/analyse-documentaire</loc>
 		<changefreq>monthly</changefreq>
 		<priority>0.90</priority>
 	</url>
@@ -476,153 +476,163 @@
 		<priority>0.75</priority>
 	</url>
 <url>
-		<loc>https://www.fdti.eu/expertises/economie-circulaire/vehicules</loc>
+		<loc>https://www.fdti.eu/filieres/economie-circulaire/vehicules</loc>
 		<changefreq>monthly</changefreq>
 		<priority>0.75</priority>
 	</url>
 <url>
-		<loc>https://www.fdti.eu/en/expertises/economie-circulaire/vehicules</loc>
+		<loc>https://www.fdti.eu/en/filieres/economie-circulaire/vehicules</loc>
 		<changefreq>monthly</changefreq>
 		<priority>0.75</priority>
 	</url>
 <url>
-		<loc>https://www.fdti.eu/es/expertises/economie-circulaire/vehiculos</loc>
+		<loc>https://www.fdti.eu/es/filieres/economie-circulaire/vehiculos</loc>
 		<changefreq>monthly</changefreq>
 		<priority>0.75</priority>
 	</url>
 <url>
-		<loc>https://www.fdti.eu/de/expertises/economie-circulaire/fahrzeuge</loc>
+		<loc>https://www.fdti.eu/de/filieres/economie-circulaire/fahrzeuge</loc>
 		<changefreq>monthly</changefreq>
 		<priority>0.75</priority>
 	</url>
 <url>
-		<loc>https://www.fdti.eu/it/expertises/economie-circulaire/veicoli-fuori-uso</loc>
+		<loc>https://www.fdti.eu/it/filieres/economie-circulaire/veicoli-fuori-uso</loc>
 		<changefreq>monthly</changefreq>
 		<priority>0.75</priority>
 	</url>
 <url>
-		<loc>https://www.fdti.eu/expertises/economie-circulaire/batteries</loc>
+		<loc>https://www.fdti.eu/filieres/economie-circulaire/batteries</loc>
 		<changefreq>monthly</changefreq>
 		<priority>0.75</priority>
 	</url>
 <url>
-		<loc>https://www.fdti.eu/en/expertises/economie-circulaire/batteries</loc>
+		<loc>https://www.fdti.eu/en/filieres/economie-circulaire/batteries</loc>
 		<changefreq>monthly</changefreq>
 		<priority>0.75</priority>
 	</url>
 <url>
-		<loc>https://www.fdti.eu/es/expertises/economie-circulaire/baterias</loc>
+		<loc>https://www.fdti.eu/es/filieres/economie-circulaire/baterias</loc>
 		<changefreq>monthly</changefreq>
 		<priority>0.75</priority>
 	</url>
 <url>
-		<loc>https://www.fdti.eu/de/expertises/economie-circulaire/batterien</loc>
+		<loc>https://www.fdti.eu/de/filieres/economie-circulaire/batterien</loc>
 		<changefreq>monthly</changefreq>
 		<priority>0.75</priority>
 	</url>
 <url>
-		<loc>https://www.fdti.eu/it/expertises/economie-circulaire/batterie</loc>
+		<loc>https://www.fdti.eu/it/filieres/economie-circulaire/batterie</loc>
 		<changefreq>monthly</changefreq>
 		<priority>0.75</priority>
 	</url>
 <url>
-		<loc>https://www.fdti.eu/expertises/economie-circulaire/documents-et-integrations</loc>
+		<loc>https://www.fdti.eu/filieres/economie-circulaire/documents-et-integrations</loc>
 		<changefreq>monthly</changefreq>
 		<priority>0.75</priority>
 	</url>
 <url>
-		<loc>https://www.fdti.eu/en/expertises/economie-circulaire/documents-et-integrations</loc>
+		<loc>https://www.fdti.eu/en/filieres/economie-circulaire/documents-et-integrations</loc>
 		<changefreq>monthly</changefreq>
 		<priority>0.75</priority>
 	</url>
 <url>
-		<loc>https://www.fdti.eu/es/expertises/economie-circulaire/documentos-e-integraciones</loc>
+		<loc>https://www.fdti.eu/es/filieres/economie-circulaire/documentos-e-integraciones</loc>
 		<changefreq>monthly</changefreq>
 		<priority>0.75</priority>
 	</url>
 <url>
-		<loc>https://www.fdti.eu/de/expertises/economie-circulaire/dokumente-und-integrationen</loc>
+		<loc>https://www.fdti.eu/de/filieres/economie-circulaire/dokumente-und-integrationen</loc>
 		<changefreq>monthly</changefreq>
 		<priority>0.75</priority>
 	</url>
 <url>
-		<loc>https://www.fdti.eu/it/expertises/economie-circulaire/documenti-e-integrazioni</loc>
+		<loc>https://www.fdti.eu/it/filieres/economie-circulaire/documenti-e-integrazioni</loc>
 		<changefreq>monthly</changefreq>
 		<priority>0.75</priority>
 	</url>
 <url>
-		<loc>https://www.fdti.eu/expertises/analyse-documentaire/dossiers-et-controles</loc>
+		<loc>https://www.fdti.eu/solutions/analyse-documentaire/dossiers-et-controles</loc>
 		<changefreq>monthly</changefreq>
 		<priority>0.75</priority>
 	</url>
 <url>
-		<loc>https://www.fdti.eu/en/expertises/analyse-documentaire/case-files-and-controls</loc>
+		<loc>https://www.fdti.eu/en/solutions/analyse-documentaire/case-files-and-controls</loc>
 		<changefreq>monthly</changefreq>
 		<priority>0.75</priority>
 	</url>
 <url>
-		<loc>https://www.fdti.eu/es/expertises/analyse-documentaire/expedientes-y-controles</loc>
+		<loc>https://www.fdti.eu/es/solutions/analyse-documentaire/expedientes-y-controles</loc>
 		<changefreq>monthly</changefreq>
 		<priority>0.75</priority>
 	</url>
 <url>
-		<loc>https://www.fdti.eu/de/expertises/analyse-documentaire/akten-und-pruefungen</loc>
+		<loc>https://www.fdti.eu/de/solutions/analyse-documentaire/akten-und-pruefungen</loc>
 		<changefreq>monthly</changefreq>
 		<priority>0.75</priority>
 	</url>
 <url>
-		<loc>https://www.fdti.eu/it/expertises/analyse-documentaire/pratiche-e-controlli</loc>
+		<loc>https://www.fdti.eu/it/solutions/analyse-documentaire/pratiche-e-controlli</loc>
 		<changefreq>monthly</changefreq>
 		<priority>0.75</priority>
 	</url>
 <url>
-		<loc>https://www.fdti.eu/expertises/analyse-documentaire/connaissance-et-veille</loc>
+		<loc>https://www.fdti.eu/solutions/analyse-documentaire/connaissance-et-veille</loc>
 		<changefreq>monthly</changefreq>
 		<priority>0.75</priority>
 	</url>
 <url>
-		<loc>https://www.fdti.eu/en/expertises/analyse-documentaire/knowledge-and-monitoring</loc>
+		<loc>https://www.fdti.eu/en/solutions/analyse-documentaire/knowledge-and-monitoring</loc>
 		<changefreq>monthly</changefreq>
 		<priority>0.75</priority>
 	</url>
 <url>
-		<loc>https://www.fdti.eu/es/expertises/analyse-documentaire/conocimiento-y-vigilancia</loc>
+		<loc>https://www.fdti.eu/es/solutions/analyse-documentaire/conocimiento-y-vigilancia</loc>
 		<changefreq>monthly</changefreq>
 		<priority>0.75</priority>
 	</url>
 <url>
-		<loc>https://www.fdti.eu/de/expertises/analyse-documentaire/wissen-und-monitoring</loc>
+		<loc>https://www.fdti.eu/de/solutions/analyse-documentaire/wissen-und-monitoring</loc>
 		<changefreq>monthly</changefreq>
 		<priority>0.75</priority>
 	</url>
 <url>
-		<loc>https://www.fdti.eu/it/expertises/analyse-documentaire/conoscenza-e-monitoraggio</loc>
+		<loc>https://www.fdti.eu/it/solutions/analyse-documentaire/conoscenza-e-monitoraggio</loc>
 		<changefreq>monthly</changefreq>
 		<priority>0.75</priority>
 	</url>
 <url>
-		<loc>https://www.fdti.eu/expertises/analyse-documentaire/extraction-et-integration</loc>
+		<loc>https://www.fdti.eu/solutions/analyse-documentaire/extraction-et-integration</loc>
 		<changefreq>monthly</changefreq>
 		<priority>0.75</priority>
 	</url>
 <url>
-		<loc>https://www.fdti.eu/en/expertises/analyse-documentaire/extraction-and-integration</loc>
+		<loc>https://www.fdti.eu/en/solutions/analyse-documentaire/extraction-and-integration</loc>
 		<changefreq>monthly</changefreq>
 		<priority>0.75</priority>
 	</url>
 <url>
-		<loc>https://www.fdti.eu/es/expertises/analyse-documentaire/extraccion-e-integracion</loc>
+		<loc>https://www.fdti.eu/es/solutions/analyse-documentaire/extraccion-e-integracion</loc>
 		<changefreq>monthly</changefreq>
 		<priority>0.75</priority>
 	</url>
 <url>
-		<loc>https://www.fdti.eu/de/expertises/analyse-documentaire/extraktion-und-integration</loc>
+		<loc>https://www.fdti.eu/de/solutions/analyse-documentaire/extraktion-und-integration</loc>
 		<changefreq>monthly</changefreq>
 		<priority>0.75</priority>
 	</url>
 <url>
-		<loc>https://www.fdti.eu/it/expertises/analyse-documentaire/estrazione-e-integrazione</loc>
+		<loc>https://www.fdti.eu/it/solutions/analyse-documentaire/estrazione-e-integrazione</loc>
 		<changefreq>monthly</changefreq>
 		<priority>0.75</priority>
 	</url>
+<url><loc>https://www.fdti.eu/solutions/workflows-agentiques</loc><changefreq>monthly</changefreq><priority>0.90</priority></url>
+<url><loc>https://www.fdti.eu/en/solutions/workflows-agentiques</loc><changefreq>monthly</changefreq><priority>0.90</priority></url>
+<url><loc>https://www.fdti.eu/es/solutions/workflows-agentiques</loc><changefreq>monthly</changefreq><priority>0.90</priority></url>
+<url><loc>https://www.fdti.eu/de/solutions/workflows-agentiques</loc><changefreq>monthly</changefreq><priority>0.90</priority></url>
+<url><loc>https://www.fdti.eu/it/solutions/workflows-agentiques</loc><changefreq>monthly</changefreq><priority>0.90</priority></url>
+<url><loc>https://www.fdti.eu/filieres/economie-circulaire/rep-emballages</loc><changefreq>monthly</changefreq><priority>0.90</priority></url>
+<url><loc>https://www.fdti.eu/en/filieres/economie-circulaire/rep-emballages</loc><changefreq>monthly</changefreq><priority>0.90</priority></url>
+<url><loc>https://www.fdti.eu/es/filieres/economie-circulaire/rep-emballages</loc><changefreq>monthly</changefreq><priority>0.90</priority></url>
+<url><loc>https://www.fdti.eu/de/filieres/economie-circulaire/rep-emballages</loc><changefreq>monthly</changefreq><priority>0.90</priority></url>
+<url><loc>https://www.fdti.eu/it/filieres/economie-circulaire/rep-emballages</loc><changefreq>monthly</changefreq><priority>0.90</priority></url>
 </urlset>

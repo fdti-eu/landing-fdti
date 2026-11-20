@@ -34,13 +34,19 @@
 			"label": "Technical research",
 			"title": "Qualify patents from their content.",
 			"text": "A PDF-search prototype that prepares thematic qualification with page references, to guide expert review.",
-			"href": "/expertises/analyse-documentaire/knowledge-and-monitoring#patents"
+			"href": "/solutions/analyse-documentaire/knowledge-and-monitoring#patents"
 		},
 		{
 			"label": "Electronic signature",
 			"title": "Generate and route takeover documents for signature.",
 			"text": "An integrated journey that prepares transfer and destruction certificates, sends them to signers and attaches signature tracking to the vehicle.",
 			"href": "/realisations/end-of-life-vehicle-platform"
+		},
+		{
+			"label": "Automotive recycling",
+			"title": "Filing documents with OCR",
+			"text": "The proposed workflow combines reading the VIN with operator confirmation before attaching a document to a vehicle record.",
+			"href": "/realisations/ocr-vehicle-records"
 		}
 	],
 	"integration": {
