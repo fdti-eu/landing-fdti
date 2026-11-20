@@ -1115,12 +1115,12 @@
 			{
 				"id": "2",
 				"category": "Aftermarket und Recycling",
-				"title": "Plattform für die Verwaltung von Altfahrzeugen",
+				"title": "Ein Fahrzeug von der Rücknahmeanfrage bis zum Verwertungsnachweis verfolgen",
 				"date": "2020-2025",
 				"location": "Europa",
-				"challenge": "Der Dienst wurde eingeführt, um die Rücknahme zwischen Haltern, Werkstätten und Verwertungsbetrieben zu koordinieren. Danach galt es, das Netzwerk im großen Maßstab zu betreiben und jedes Fahrzeug bis zur Verwertung zu verfolgen.",
-				"approach": "Entwicklung des Portals mit Oberflächen für Meldung, Verwaltung und Fahrzeugverfolgung für die verschiedenen Beteiligten. Geschäftsprozesse und Azure Functions APIs wurden in der Azure-Infrastruktur des Kunden (MSSQL-Datenbanken, Azure Service Bus) bereitgestellt, um einen bestehenden .NET-Stack für Eigentümer und Altfahrzeugzentren zu orchestrieren.",
-				"impact": "Durchgängige Rückverfolgbarkeit für den Kreislaufwirtschaftsbereich der Gruppe, mit einem Netzwerk von mehr als 5 000 Partnerunternehmen und Unterstützung der Herstellerpflichten im Rahmen der erweiterten Herstellerverantwortung (EPR).",
+				"challenge": "Ein Halter möchte sein Auto abholen lassen oder eine Werkstatt meldet ein abholbereites Fahrzeug. Der Transporteur braucht den Abholort, der Verwertungsbetrieb muss den Eingang bestätigen und der Halter später seinen Nachweis finden. Um den Dienst zunächst aufzubauen und dann im gesamten Netzwerk zu betreiben, musste der Betreiber Unternehmen verbinden, die für ihre jeweilige Aufgabe unterschiedliche Informationen brauchen.",
+				"approach": "Für jedes Fahrzeug haben wir eine gemeinsame Akte vorgesehen. Halter oder Werkstatt stellen dort die Anfrage, der Transporteur findet die Abholdaten und der Verwertungsbetrieb erfasst den Eingang. Das Team kann dadurch unterscheiden, ob ein Fahrzeug noch auf die Abholung wartet oder schon eingetroffen ist und lediglich Unterlagen fehlen.",
+				"impact": "Der Halter kann die Rücknahme belegen, die Werkstatt sieht, ob das Fahrzeug abgeholt wurde, und der Verwertungsbetrieb erkennt unvollständige Akten. Der Betreiber hat den Überblick über das gesamte Netzwerk: Von der Anmeldung bis zum Eingang beim Verwertungsbetrieb vergehen im Median 6 Tage.",
 				"metrics": [
 					{
 						"label": "Fahrzeuge pro Jahr",
@@ -1148,15 +1148,10 @@
 					"Azure Service Bus"
 				],
 				"details": [
-					"End-to-End-Entwicklung der Plattform, Datenbanken und APIs.",
-					"Vollständige Konzeption des Meldeprozesses für Vertragshändler, Reparaturzentren und Privatpersonen.",
-					"Azure Functions APIs zur Anbindung der Logistik-, CRM- und Finanzsysteme der Gruppe.",
-					"API-Anbindung an das Ökosystem weiterer Akteure der Kreislaufwirtschaft (Recycler, Besitzer, Käufer und Organisationen für Herstellerverantwortung).",
-					"Echtzeit-Abbildung von Materialflüssen und automatische Generierung regulatorischer Dokumente.",
-					"Multi-Marken-Management: lokale Regeln, Kataloge und Preise nach Ländern.",
-					"Azure Infrastruktur, die für regulatorische Spitzen und Audits ausgelegt ist.",
-					"Operative und regulatorische Dashboards, die die Flüsse B2B und B2C konsolidieren.",
-					"Personalisierte E-Mail-Benachrichtigungen für jeden Benutzer (Werkstätten, Händler, Privatbesitzer) bei jedem Arbeitsschritt."
+					"Fahrzeug anmelden. Anhand des Kennzeichens oder der Fahrzeugidentifikationsnummer werden die verfügbaren Fahrzeugdaten übernommen. Die meldende Person ergänzt fehlende Angaben und nennt den Abholort.",
+					"Abholung organisieren. Die Werkstatt sieht die geplante Abholung. Vor Ort prüft der Transporteur das Fahrzeug und kann Probleme bei der Abholung melden.",
+					"Fahrzeug und Papiere getrennt erfassen. Das Auto kann schon auf dem Hof stehen, während die Unterlagen noch unterwegs sind. Der Verwertungsbetrieb erfasst beide Eingänge separat und sieht, was noch fehlt.",
+					"Nachweise bereitstellen. Bei Rücknahmen in Frankreich werden die Übergabe- und Verwertungsnachweise in der Fahrzeugakte hinterlegt. Der Halter findet die unterschriebenen Dokumente in seinem Konto."
 				],
 				"slug": "plattform-fahrzeugruecknahme"
 			},
