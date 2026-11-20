@@ -34,13 +34,19 @@
 			"label": "Investigación técnica",
 			"title": "Calificar patentes a partir de su contenido.",
 			"text": "Un prototipo de búsqueda en PDF que prepara una calificación por tema con referencias de páginas, para orientar la lectura de expertos.",
-			"href": "/expertises/analyse-documentaire/conocimiento-y-vigilancia#patentes"
+			"href": "/solutions/analyse-documentaire/conocimiento-y-vigilancia#patentes"
 		},
 		{
 			"label": "Firma electrónica",
 			"title": "Generar y hacer firmar los documentos de una recuperación.",
 			"text": "Un recorrido integrado que prepara certificados de cesión y destrucción, los transmite a los firmantes y vincula el seguimiento de firmas al vehículo.",
 			"href": "/realisations/plataforma-economia-circular"
+		},
+		{
+			"label": "Reciclaje de vehículos",
+			"title": "Clasificación documental mediante OCR",
+			"text": "El flujo previsto combina la lectura del VIN con la confirmación del operador antes de adjuntar la pieza al expediente del vehículo.",
+			"href": "/realisations/ocr-expedientes-vehiculos"
 		}
 	],
 	"integration": {

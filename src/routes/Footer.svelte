@@ -6,31 +6,31 @@
 
 	const labels: Record<Lang, { jobs: string; privacy: string; terms: string; linkedin: string }> = {
 		fr: {
-			jobs: 'Nos offres de stage',
+			jobs: 'Nous rejoindre',
 			privacy: 'Politique de confidentialité',
 			terms: 'Conditions d’utilisation',
 			linkedin: 'Page LinkedIn de FDTI'
 		},
 		en: {
-			jobs: 'Internship opportunities',
+			jobs: 'Join us',
 			privacy: 'Privacy',
 			terms: 'Terms of use',
 			linkedin: 'FDTI LinkedIn page'
 		},
 		es: {
-			jobs: 'Ofertas de prácticas',
+			jobs: 'Únete al equipo',
 			privacy: 'Política de privacidad',
 			terms: 'Condiciones de uso',
 			linkedin: 'Página de LinkedIn de FDTI'
 		},
 		de: {
-			jobs: 'Praktikumsangebote',
+			jobs: 'Karriere',
 			privacy: 'Datenschutzerklärung',
 			terms: 'Nutzungsbedingungen',
 			linkedin: 'LinkedIn-Seite von FDTI'
 		},
 		it: {
-			jobs: 'Offerte di stage',
+			jobs: 'Lavora con noi',
 			privacy: 'Informativa sulla privacy',
 			terms: 'Condizioni d’uso',
 			linkedin: 'Pagina LinkedIn di FDTI'

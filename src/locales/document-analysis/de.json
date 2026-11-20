@@ -34,13 +34,19 @@
 			"label": "Technische Recherche",
 			"title": "Patente anhand ihres Inhalts qualifizieren.",
 			"text": "Ein PDF-Suchprototyp, der eine thematische Qualifikation mit Seitenverweisen vorbereitet, um die Prüfung durch Fachleute zu orientieren.",
-			"href": "/expertises/analyse-documentaire/wissen-und-monitoring#patente"
+			"href": "/solutions/analyse-documentaire/wissen-und-monitoring#patente"
 		},
 		{
 			"label": "Elektronische Signatur",
 			"title": "Dokumente einer Rücknahme erzeugen und signieren lassen.",
 			"text": "Ein integrierter Ablauf, der Übergabe- und Vernichtungsbescheinigungen vorbereitet, an Unterzeichner sendet und die Signaturverfolgung am Fahrzeug hält.",
 			"href": "/realisations/plattform-fahrzeugruecknahme"
+		},
+		{
+			"label": "Fahrzeugverwertung",
+			"title": "Belege per OCR zuordnen",
+			"text": "Der geplante Ablauf kombiniert das Auslesen der FIN mit einer manuellen Bestätigung, bevor der Beleg der Fahrzeugakte zugeordnet wird.",
+			"href": "/realisations/ocr-fahrzeugakten"
 		}
 	],
 	"integration": {

@@ -34,13 +34,19 @@
 			"label": "Ricerca tecnica",
 			"title": "Qualificare brevetti a partire dal loro contenuto.",
 			"text": "Un prototipo di ricerca in PDF che prepara una qualificazione per tema con riferimenti di pagina, per orientare la lettura degli esperti.",
-			"href": "/expertises/analyse-documentaire/conoscenza-e-monitoraggio#brevetti"
+			"href": "/solutions/analyse-documentaire/conoscenza-e-monitoraggio#brevetti"
 		},
 		{
 			"label": "Firma elettronica",
 			"title": "Generare e far firmare i documenti di un ritiro.",
 			"text": "Un percorso integrato che prepara certificati di cessione e distruzione, li trasmette ai firmatari e collega il monitoraggio delle firme al veicolo.",
 			"href": "/realisations/piattaforma-veicoli-fuori-uso"
+		},
+		{
+			"label": "Riciclo dei veicoli",
+			"title": "Classificare i documenti tramite OCR",
+			"text": "Il flusso previsto combina la lettura del VIN con la conferma dell’operatore prima di associare il documento al fascicolo del veicolo.",
+			"href": "/realisations/ocr-fascicoli-veicoli"
 		}
 	],
 	"integration": {

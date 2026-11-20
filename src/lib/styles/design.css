@@ -126,6 +126,19 @@
 	.nav-links > li {
 		position: relative;
 	}
+	.nav-links a.nav-contact {
+		background: var(--color-yellow);
+		color: var(--color-dark-grey);
+		font-weight: 600;
+		border-radius: 4px;
+	}
+	.nav-links a.nav-contact:hover {
+		background: #f4d45b;
+		color: var(--color-dark-grey);
+	}
+	.nav-links a.nav-contact::after {
+		display: none;
+	}
 	.nav-submenu {
 		position: absolute;
 		top: calc(100% + 13px);
@@ -139,10 +152,7 @@
 		opacity: 0;
 		visibility: hidden;
 		transform: translateY(-6px);
-		transition:
-			opacity 0.18s,
-			transform 0.18s,
-			visibility 0.18s;
+		z-index: 2;
 	}
 	.nav-submenu::before {
 		content: '';
@@ -1737,6 +1747,9 @@
 			display: flex;
 			flex-direction: column;
 			align-items: stretch;
+			max-height: calc(100dvh - 80px);
+			overflow-y: auto;
+			overscroll-behavior: contain;
 		}
 		/* Native links remain available when the interactive mobile menu cannot start. */
 		html:not([data-fdti-hydrated]) .nav-brand > span,

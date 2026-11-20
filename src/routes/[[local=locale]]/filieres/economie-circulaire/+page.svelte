@@ -1,5 +1,7 @@
 <script lang="ts">
 	import { MetaTags } from 'svelte-meta-tags';
+	import { expertiseOffers, offerPaths } from '$lib/expertise-offers';
+	import { navigationCopy } from '$lib/navigation';
 	import ExpertiseHub, { type ExpertiseHubContent } from '$lib/components/ExpertiseHub.svelte';
 	import LdTag from '$lib/components/json-ld/LDTag.svelte';
 	import { schema } from '$lib/components/json-ld/json-ld';
@@ -14,7 +16,7 @@
 
 	export let data: PageData;
 	$: content = data.content;
-	$: canonical = buildLocalizedUrl('/expertises/economie-circulaire', data.locale);
+	$: canonical = buildLocalizedUrl('/filieres/economie-circulaire', data.locale);
 	const workSlugs: Record<'2' | '3' | '8', Record<Lang, string>> = {
 		'2': {
 			fr: 'plateforme-economie-circulaire',
@@ -257,16 +259,35 @@
 		...content,
 		title: common.heroTitle,
 		journeyLabel: pageCopy.journeyLabel,
+		dossiersLabel: navigationCopy[data.locale].sectors,
+		dossiersIntro: navigationCopy[data.locale].sectorIntro,
 		workflows: workflowItems.map((item) => ({
 			group: item.group,
 			title: item.navLabel,
 			text: item.situation,
 			result: item.result
 		})),
-		dossiers: content.dossiers.map((item) => ({
-			...item,
-			href: buildLocalizedPath(`/expertises/economie-circulaire/${item.slug}`, data.locale)
-		})),
+		dossiers: [
+			...content.dossiers.slice(0, 2).map((item) => ({
+				...item,
+				href: buildLocalizedPath(`/filieres/economie-circulaire/${item.slug}`, data.locale)
+			})),
+			{
+				label: navigationCopy[data.locale].packaging,
+				transitionIndex: 3,
+				title: expertiseOffers[data.locale].packaging.title,
+				summary: expertiseOffers[data.locale].packaging.description,
+				href: buildLocalizedPath(offerPaths.packaging, data.locale)
+			}
+		],
+		resources: {
+			label: navigationCopy[data.locale].resources,
+			intro: navigationCopy[data.locale].resourceIntro,
+			items: content.dossiers.slice(2).map((item) => ({
+				...item,
+				href: buildLocalizedPath(`/filieres/economie-circulaire/${item.slug}`, data.locale)
+			}))
+		},
 		proofLabel: pageCopy.proofLabel,
 		proofs: [
 			{
@@ -340,8 +361,8 @@
 				{
 					'@type': 'ListItem',
 					position: 2,
-					name: common.expertise,
-					item: buildLocalizedUrl('/expertises', data.locale)
+					name: navigationCopy[data.locale].sectors,
+					item: buildLocalizedUrl('/filieres', data.locale)
 				},
 				{
 					'@type': 'ListItem',
@@ -369,8 +390,4 @@
 	/>
 </svelte:head>
 
-<ExpertiseHub
-	content={hub}
-	eventPrefix="circular"
-	hubTransitionName="expertise-hub-circular"
-/>
+<ExpertiseHub content={hub} eventPrefix="circular" hubTransitionName="expertise-hub-circular" />

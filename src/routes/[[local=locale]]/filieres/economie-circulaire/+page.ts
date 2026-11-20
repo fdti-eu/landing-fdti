@@ -9,5 +9,5 @@ export function entries() {
 }
 
 export const load: PageLoad = () => ({
-	alternatePaths: buildSeoAlternatePaths('/expertises/economie-circulaire')
+	alternatePaths: buildSeoAlternatePaths('/filieres/economie-circulaire')
 });

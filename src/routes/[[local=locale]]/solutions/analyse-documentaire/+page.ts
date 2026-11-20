@@ -9,5 +9,5 @@ export function entries() {
 }
 
 export const load: PageLoad = () => ({
-	alternatePaths: buildSeoAlternatePaths('/expertises/analyse-documentaire')
+	alternatePaths: buildSeoAlternatePaths('/solutions/analyse-documentaire')
 });

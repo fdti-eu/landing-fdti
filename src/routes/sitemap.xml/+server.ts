@@ -1,6 +1,8 @@
 import { getData, getUseCasesContent, SUPPORTED_LOCALES, type Lang } from '$lib/data';
 import { buildLocalizedUrl, type SeoAlternatePaths } from '$lib/functions/seo';
 import { getJobOffers, type JobOffer } from '$lib/jobs';
+import { offerPaths } from '$lib/expertise-offers';
+import { solutionPageIds, solutionPageLocales, solutionPagePath } from '$lib/solution-pages';
 
 type SitemapPage = {
 	path: string;
@@ -11,11 +13,14 @@ type SitemapPage = {
 type UseCase = Awaited<ReturnType<typeof getUseCasesContent>>['use_case_list'][number];
 
 const staticPages: SitemapPage[] = [
+	...Object.values(offerPaths).map((path) => ({ path, changefreq: 'monthly', priority: '0.90' })),
 	{ path: '/', changefreq: 'weekly', priority: '1.00' },
-	{ path: '/expertises', changefreq: 'weekly', priority: '0.95' },
+	{ path: '/filieres', changefreq: 'monthly', priority: '0.95' },
+	{ path: '/filieres/justice', changefreq: 'monthly', priority: '0.90' },
+	{ path: '/solutions', changefreq: 'weekly', priority: '0.95' },
 	{ path: '/realisations', changefreq: 'weekly', priority: '0.95' },
-	{ path: '/expertises/economie-circulaire', changefreq: 'monthly', priority: '0.90' },
-	{ path: '/expertises/analyse-documentaire', changefreq: 'monthly', priority: '0.90' },
+	{ path: '/filieres/economie-circulaire', changefreq: 'monthly', priority: '0.90' },
+	{ path: '/solutions/analyse-documentaire', changefreq: 'monthly', priority: '0.90' },
 	{ path: '/confidentialite', changefreq: 'monthly', priority: '0.60' },
 	{ path: '/condition-utilisation', changefreq: 'monthly', priority: '0.60' }
 ];
@@ -118,7 +123,7 @@ export async function GET() {
 		const paths = Object.fromEntries(
 			SUPPORTED_LOCALES.map((locale, localeIndex) => [
 				locale,
-				`/expertises/economie-circulaire/${localizedDossiers[localeIndex]!.slug}`
+				`/filieres/economie-circulaire/${localizedDossiers[localeIndex]!.slug}`
 			])
 		) as SeoAlternatePaths;
 		addLocalizedEntries(paths, 'monthly', '0.75');
@@ -137,10 +142,33 @@ export async function GET() {
 		const paths = Object.fromEntries(
 			SUPPORTED_LOCALES.map((locale, localeIndex) => [
 				locale,
-				`/expertises/analyse-documentaire/${localizedGuides[localeIndex]!.slug}`
+				`/solutions/analyse-documentaire/${localizedGuides[localeIndex]!.slug}`
 			])
 		) as SeoAlternatePaths;
 		addLocalizedEntries(paths, 'monthly', '0.75');
+	}
+
+	// Family pages are listed only for the locales in which they are published.
+	for (const id of solutionPageIds) {
+		const path = solutionPagePath(id);
+		const alternates = solutionPageLocales
+			.map(
+				(locale) =>
+					`\t\t<xhtml:link rel="alternate" hreflang="${locale}" href="${buildLocalizedUrl(path, locale)}" />`
+			)
+			.join('\n');
+		for (const locale of solutionPageLocales) {
+			const location = buildLocalizedUrl(path, locale);
+			urls.set(
+				location,
+				`<url>
+		<loc>${location}</loc>
+${alternates}
+		<changefreq>monthly</changefreq>
+		<priority>0.90</priority>
+	</url>`
+			);
+		}
 	}
 
 	const xml = `<?xml version="1.0" encoding="UTF-8"?>

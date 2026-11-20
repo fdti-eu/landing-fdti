@@ -1,4 +1,5 @@
 <script lang="ts">
+	import CaseIndicators from '$lib/components/CaseIndicators.svelte';
 	import { tick } from 'svelte';
 	import { goto } from '$app/navigation';
 	import type { Lang } from '$lib/data';
@@ -15,7 +16,7 @@
 				challenge?: string | null;
 				approach?: string | null;
 				impact?: string | null;
-				metrics?: { label?: string | null; value?: string | null }[];
+				metrics?: { label?: string | null; value?: string | null; note?: string | null }[];
 				tags?: string[];
 		  }[]
 		| null;
@@ -105,7 +106,9 @@
 						{/if}
 					</div>
 
-					{#if useCase.metrics?.length}
+					{#if useCase.metrics?.[0]?.note}
+			<CaseIndicators compact metrics={useCase.metrics.slice(0, 2)} />
+		{:else if useCase.metrics?.length}
 						<div class="preview-metrics">
 							{#each useCase.metrics.slice(0, 2) as metric, metricIndex}
 								<div

@@ -989,46 +989,112 @@
 			{
 				"id": "1",
 				"category": "Justice & public sector",
-				"title": "AI platform for commercial courts",
+				"title": "Checking registry filings and preparing judicial case files for review",
 				"date": "2025",
 				"location": "France",
-				"challenge": "A software vendor for commercial court clerks wanted to embed AI directly into its platform to improve the speed and accuracy of specific time-consuming clerical tasks.",
-				"approach": "A modular architecture organized around specialized AI use cases and tailored LLMs. An on-premises FastAPI AI stack is fully integrated with the existing platform through an API and is also available to other users through a secure API. The portal is built with TypeScript and SvelteKit.",
-				"impact": "AI pre-analysis runs in parallel with business workflows. The first use case processes around 400,000 case files per year, delivering substantial time savings while meeting judicial confidentiality requirements.",
+				"challenge": "Registry staff compare declared information with supporting documents. Judges preparing to hear a case need to locate the facts, each party’s claims and the arguments supporting them.",
+				"approach": "An API integrated into the existing software prepares these reviews on the publisher’s servers. It returns document checks for registry staff and source-linked summaries for judges. People remain responsible for assessing each case.",
+				"impact": "In October 2026 the platform processed 36,000 annual accounts filings (DCA), 1,080 company register filings (RCS) and 190 judicial cases.",
 				"metrics": [
 					{
-						"label": "Case files processed per year",
-						"value": "400,000"
-					},
-					{
-						"label": "Equivalent time saved per day",
-						"value": "≈16 person-days"
-					},
-					{
 						"label": "Courts equipped",
-						"value": "48"
+						"value": "48",
+						"note": "Platform integrated into court registry software."
+					},
+					{
+						"label": "Estimated staff time",
+						"value": "3,105 h 50 min",
+						"note": "October 2026: 37,270 cases × an estimated 5 minutes each. Excludes IPP."
+					},
+					{
+						"label": "Equivalent capacity",
+						"value": "≈ 444 staff days",
+						"note": "Based on 7-hour working days."
 					}
 				],
-				"tags": ["LLM", "FastAPI", "Keycloak", "TypeScript", "SvelteKit", "PostgreSQL"],
+				"tags": [
+					"LLM",
+					"FastAPI",
+					"Keycloak",
+					"TypeScript",
+					"SvelteKit",
+					"PostgreSQL"
+				],
 				"details": [
-					"Critical use cases covered: case summaries, filing validation, and automated extraction from sensitive documents using LLMs and OCR.",
-					"Deployment inside the client's VPN with fine-grained monitoring and contractual SLAs.",
-					"Self-service portal to generate API keys, track usage, and troubleshoot calls.",
-					"Re-annotation loops to improve models plus full audit tooling.",
-					"Adoption program with training, operational guides, and dedicated support.",
-					"TypeScript/SvelteKit frontend delivering a frictionless experience alongside legacy tools."
+					"Annual accounts (DCA): check required documents and consistency between the accounts and confidentiality declaration.",
+					"Company register (RCS): compare INPI declarations with articles of association, deeds and supporting documents to flag discrepancies.",
+					"Judicial cases: summarize the parties, facts, claims and arguments with references to source documents and pages.",
+					"Individual registrations (IPP): classify supporting documents and group checks on identity, address and declarations of no convictions. October volumes exclude this workflow."
 				],
 				"slug": "automatisation-greffes"
+			},
+			{
+				"id": "10",
+				"slug": "ocr-vehicle-records",
+				"title": "Filing a mixed batch of documents against the right vehicle records",
+				"category": "Aftermarket & recycling",
+				"challenge": "An administrator receives and scans paperwork for end-of-life vehicles. For each document, she opens the vehicle record, starts an upload, selects the file on her computer, chooses the document type and confirms. Then she starts again. With hundreds of documents a day and thousands a month, scanning is only part of the work. Even when everything is already scanned, every file still needs to be matched and filed.",
+				"approach": "The proposed workflow reverses the sequence. Today the administrator starts with a vehicle and adds a document. Instead, she would start with the documents and the software would suggest the vehicles. She could upload an unsorted batch in one go. For each file, the software would identify the document type, read the vehicle identification number (VIN) and look up the record. She would still make the final decision without having to start each search from scratch.",
+				"metrics": [
+					{
+						"label": "Capacity freed up",
+						"value": "≈ 7 days/month",
+						"note": "3,000 documents received each month. Saving one net minute per document would free up 50 hours a month (7-hour days)."
+					},
+					{
+						"label": "Value of staff time",
+						"value": "€2,000/month",
+						"note": "Illustration at €40/hour for 50 hours available for other work."
+					},
+					{
+						"label": "Break-even budget",
+						"value": "≤ €12,000",
+						"note": "Over 6 months at that rate: maximum total cost, including running costs, covered by the value of staff time."
+					}
+				],
+				"tags": [
+					"OCR",
+					"VIN"
+				],
+				"details": [
+					"Upload a mixed batch. A French registration certificate, a CERFA purchase declaration and an SIV filing receipt can be uploaded together, even when they concern different vehicles.",
+					"Tell similar documents apart. The purchase declaration and the receipt confirming its registration relate to the same transaction but belong in different categories. The software suggests the appropriate type for each.",
+					"Find the vehicle without retyping the VIN. OCR reads the number from the document. The software looks for an exact match among the records the administrator can access, then shows the document, its suggested type, the VIN it read and the proposed record.",
+					"Review before sharing. Even a unique match requires confirmation. An unreadable number, multiple matches or a possible duplicate goes to manual review. No existing document is overwritten."
+				],
+				"expectedOutcome": "The administrative team could spend less time opening records and filing documents individually, and more time checking documents and handling exceptions. An authorized garage or dismantling centre could find the approved document under the correct type in the right record. If a vehicle collection is waiting on that document, the team could move on to the next step."
 			},
 			{
 				"id": "9",
 				"category": "Justice & public sector",
 				"title": "Case-management platform for collective litigation",
-				"challenge": "In collective litigation, thousands of people appear across court rulings and files submitted by different parties. The challenge is to extract that data with AI assistance, then match people automatically across sources before preparing compensation calculations.",
+				"challenge": "In collective litigation, thousands of people appear across court rulings and files submitted by different parties. The team needs to prepare compensation tables faster, assign each amount to the right person and explain its calculation to the parties.",
 				"approach": "A tailored platform deployed in the client’s environment follows the same people from appeal through judgment, despite versions exchanged by lawyers, the defence, experts and judges. AI extracts data from PDF rulings; imports identify relevant columns in each spreadsheet and match people across sources. Expert assessments feed calculations covering damages, expenses, provisional payments and currencies. Teams review uncertain cases and corrections; source data and recorded decisions remain available.",
 				"impact": "For each person, teams can find the sources, medical assessments, observations, original and retained figures, and the details of calculations and corrections. They can review case files and prepare tables for the judgment without mistaking a working calculation for a judicial decision.",
-				"metrics": [{ "label": "People involved", "value": "20,000" }],
-				"tags": ["AI", "OCR", "Python", "FastAPI", "SQLite"],
+				"metrics": [
+					{
+						"label": "People involved",
+						"value": "20,000",
+						"note": "People covered by the collective proceedings."
+					},
+					{
+						"label": "Rows imported",
+						"value": "11,023",
+						"note": "First workbook, across all sheets."
+					},
+					{
+						"label": "Matches to review",
+						"value": "5 cases",
+						"note": "At the 11 May 2026 check, five inadmissibility entries still required confirmation of the person concerned."
+					}
+				],
+				"tags": [
+					"AI",
+					"OCR",
+					"Python",
+					"FastAPI",
+					"SQLite"
+				],
 				"details": [
 					"Structure PDF rulings and import lawyers’ spreadsheets whose columns, labels and versions change from one submission to the next.",
 					"Match people across rulings and lawyers’ files, reviewing name changes, namesakes and uncertain cases.",
@@ -1044,21 +1110,24 @@
 				"title": "End-of-life vehicle management platform",
 				"date": "2020-2025",
 				"location": "Europe",
-				"challenge": "Following the creation of Valorauto, a joint venture between Stellantis and Galloo, the circular economy platform needed to modernize its existing system to manage B2B and B2C take-back of end-of-life vehicles and track each vehicle from collection at the owner's location through dismantling.",
-				"approach": "Development of the Valorauto portal, with interfaces for declarations, administration, and vehicle tracking across stakeholders. Business workflows and Azure Functions APIs deployed on the client's Azure infrastructure (MSSQL databases and Azure Service Bus) orchestrate an existing .NET stack connecting owners and authorized treatment facilities.",
+				"challenge": "The service was launched to coordinate take-back between owners, garages and treatment centres. Teams then needed to operate the network at scale and track each vehicle through to destruction.",
+				"approach": "Development of the portal, with interfaces for declarations, administration, and vehicle tracking across stakeholders. Business workflows and Azure Functions APIs deployed on the client's Azure infrastructure (MSSQL databases and Azure Service Bus) orchestrate an existing .NET stack connecting owners and authorized treatment facilities.",
 				"impact": "End-to-end traceability for the group's circular economy business, supporting a network of more than 5,000 partner companies and helping the manufacturer meet its Extended Producer Responsibility (EPR) obligations.",
 				"metrics": [
 					{
-						"label": "Countries covered",
-						"value": "5"
+						"label": "Vehicles per year",
+						"value": "≈ 20,000",
+						"note": "Approximate annual scale of vehicle registrations on the platform."
 					},
 					{
-						"label": "Partner network",
-						"value": "5,000+"
+						"label": "Network partners",
+						"value": "Over 5,000",
+						"note": "Garages and end-of-life vehicle treatment centres."
 					},
 					{
-						"label": "Trustpilot score",
-						"value": "4.8"
+						"label": "Median lead time",
+						"value": "6 days",
+						"note": "From registration to receipt at a centre, across 14,116 usable records from January to October 2026."
 					}
 				],
 				"tags": [
@@ -1081,17 +1150,7 @@
 					"Operational and regulatory dashboards consolidating B2B and B2C flows.",
 					"Personalized email notifications for every user (garages, dealers, private owners) at each workflow step."
 				],
-				"slug": "end-of-life-vehicle-platform",
-				"links": [
-					{
-						"label": "Valorauto website",
-						"url": "https://www.valorauto.com/"
-					},
-					{
-						"label": "Valorauto Trustpilot reviews",
-						"url": "https://www.trustpilot.com/review/valorauto.com"
-					}
-				]
+				"slug": "end-of-life-vehicle-platform"
 			},
 			{
 				"id": "3",

@@ -1001,37 +1001,112 @@
 			{
 				"id": "1",
 				"category": "Justicia y sector público",
-				"title": "Plataforma de IA para los registros de los tribunales mercantiles",
+				"title": "Verificar trámites registrales y preparar la lectura de expedientes judiciales",
 				"date": "2025",
 				"location": "Francia",
-				"challenge": "Un editor de software para el personal de los registros judiciales quería integrar funcionalidades de IA directamente en su plataforma para mejorar el tiempo de ejecución y la precisión de determinadas tareas laboriosas.",
-				"approach": "Arquitectura modular estructurada por casos de uso de IA (LLM especializados). API de inteligencia artificial alojada en los servidores del cliente (FastAPI), plenamente integrada en la herramienta existente y también accesible para otros usuarios mediante una API segura. Portal TypeScript/SvelteKit.",
-				"impact": "Preanálisis mediante IA ejecutado en paralelo a los flujos de negocio: alrededor de 400 000 expedientes procesados al año en un primer caso de uso, con un ahorro de tiempo equivalente significativo y respetando los requisitos de confidencialidad del sector judicial.",
+				"challenge": "El personal del registro contrasta los datos declarados con los justificantes. Para examinar un asunto, el juez necesita localizar los hechos, las pretensiones de cada parte y sus argumentos.",
+				"approach": "Una API integrada en el programa de gestión prepara la revisión en los servidores del editor. Devuelve controles documentales al registro y síntesis con referencias al juez. La valoración del expediente sigue en manos de las personas responsables.",
+				"impact": "En octubre de 2026 la plataforma trató 36.000 depósitos de cuentas anuales (DCA), 1.080 trámites del registro mercantil (RCS) y 190 expedientes judiciales.",
 				"metrics": [
-					{ "label": "Expedientes procesados / año", "value": "400 000" },
-					{ "label": "Ahorro equivalente", "value": "≈16 días-persona/día" },
-					{ "label": "Tribunales equipados", "value": "48" }
+					{
+						"label": "Tribunales equipados",
+						"value": "48",
+						"note": "Plataforma integrada en el programa de gestión de los registros judiciales."
+					},
+					{
+						"label": "Tiempo de trabajo estimado",
+						"value": "3.105 h 50 min",
+						"note": "Octubre de 2026: 37.270 expedientes × 5 minutos estimados por expediente. Sin IPP."
+					},
+					{
+						"label": "Capacidad equivalente",
+						"value": "≈ 444 jornadas",
+						"note": "Conversión basada en jornadas de 7 horas."
+					}
 				],
-				"tags": ["LLM", "FastAPI", "Keycloak", "TypeScript", "SvelteKit", "PostgreSQL"],
+				"tags": [
+					"LLM",
+					"FastAPI",
+					"Keycloak",
+					"TypeScript",
+					"SvelteKit",
+					"PostgreSQL"
+				],
 				"details": [
-					"Modelado de casos de uso críticos: resúmenes de procedimientos, validación de lotes documentales y extracción automatizada de documentos sensibles mediante LLM y OCR.",
-					"Despliegue completo en la VPN del cliente con supervisión detallada del rendimiento y SLA contractuales.",
-					"Portal de autoservicio para generar claves API, controlar el consumo y diagnosticar las solicitudes.",
-					"Ciclos de reanotación para mejorar los modelos y herramientas de auditoría para todos los flujos.",
-					"Programa de adopción: formación, guías operativas y soporte específico.",
-					"Instrumentación TypeScript/SvelteKit para ofrecer una experiencia fluida sin alterar su software existente."
+					"Cuentas anuales (DCA): comprobar las piezas exigidas y la coherencia entre las cuentas y la declaración de confidencialidad.",
+					"Registro mercantil (RCS): contrastar lo declarado al INPI con estatutos, actos y justificantes para identificar discrepancias.",
+					"Expedientes judiciales: resumir partes, hechos, pretensiones y argumentos con referencias a los documentos y páginas originales.",
+					"Inscripción de personas físicas (IPP): clasificar justificantes y agrupar controles de identidad, domicilio y declaración de ausencia de condenas. Los volúmenes de octubre excluyen este flujo."
 				],
 				"slug": "automatizacion-secretarias-judiciales"
+			},
+			{
+				"id": "10",
+				"slug": "ocr-expedientes-vehiculos",
+				"title": "Clasificar un lote de documentos en los expedientes de vehículo correctos",
+				"category": "Posventa y reciclaje",
+				"challenge": "Una gestora administrativa recibe y escanea documentos de vehículos al final de su vida útil. Para cada documento, abre la ficha del vehículo, inicia la carga, selecciona el archivo en su equipo, elige el tipo de documento y confirma. Después repite la operación. Con cientos de documentos al día y miles al mes, el escaneo es solo una parte del trabajo: incluso con los archivos ya digitalizados, hay que buscar el expediente y clasificar cada pieza.",
+				"approach": "El flujo previsto invierte el orden. Hoy la gestora parte del vehículo para añadir un documento. Con el nuevo proceso partiría de los documentos y el programa propondría los vehículos correspondientes. Podría cargar un lote sin clasificarlo antes. Para cada archivo, el sistema identificaría el tipo de documento, leería el número de bastidor (VIN) y buscaría el expediente. La decisión final seguiría en manos de la gestora, sin repetir cada búsqueda desde cero.",
+				"metrics": [
+					{
+						"label": "Capacidad liberada",
+						"value": "≈ 7 días/mes",
+						"note": "Se reciben 3.000 documentos al mes. Ahorrar un minuto neto por documento liberaría 50 horas al mes (jornadas de 7 horas)."
+					},
+					{
+						"label": "Valor del tiempo liberado",
+						"value": "2.000 €/mes",
+						"note": "Simulación a 40 €/h para 50 horas disponibles para otras tareas."
+					},
+					{
+						"label": "Presupuesto de equilibrio",
+						"value": "≤ 12.000 €",
+						"note": "A ese ritmo durante 6 meses: coste total máximo, con explotación incluida, cubierto por el valor del tiempo."
+					}
+				],
+				"tags": [
+					"OCR",
+					"VIN"
+				],
+				"details": [
+					"Cargar el lote. Un permiso de circulación francés, un formulario CERFA de declaración de compra y un justificante SIV pueden cargarse juntos, aunque correspondan a vehículos distintos.",
+					"Distinguir documentos similares. La declaración de compra y el justificante de su registro corresponden al mismo trámite, pero se archivan bajo tipos diferentes. El programa propone la categoría de cada documento.",
+					"Encontrar el vehículo sin copiar el VIN. El OCR lee el número en el documento. El sistema busca una coincidencia exacta entre los expedientes autorizados y muestra el documento, el tipo propuesto, el VIN leído y el expediente candidato.",
+					"Verificar antes de dar acceso. La gestora confirma la asociación incluso si solo hay una coincidencia. Si el número es ilegible, hay varias coincidencias o parece haber un duplicado, revisa el caso manualmente. No se sobrescribe ningún documento."
+				],
+				"expectedOutcome": "El equipo administrativo podría dedicar menos tiempo a abrir expedientes y archivar documentos uno a uno, y más a verificarlos y resolver excepciones. El taller o centro autorizado de tratamiento podría consultar el justificante validado en el expediente y la categoría correctos. Si la retirada está pendiente de ese justificante, el equipo podría dar el siguiente paso."
 			},
 			{
 				"id": "9",
 				"category": "Justicia y sector público",
 				"title": "Plataforma de gestión de un litigio colectivo",
-				"challenge": "En un litigio colectivo, miles de personas aparecen en resoluciones judiciales y archivos enviados por distintas partes. El reto es extraer esos datos con ayuda de la IA y vincular automáticamente a las personas entre fuentes antes de preparar los cálculos de indemnización.",
+				"challenge": "En un litigio colectivo, miles de personas aparecen en resoluciones judiciales y archivos enviados por distintas partes. El equipo necesita preparar antes las tablas de indemnización, asignar cada importe a la persona correcta y explicar su cálculo a las partes.",
 				"approach": "Una plataforma a medida alojada en el entorno del cliente sigue a las mismas personas desde la apelación hasta la sentencia, pese a las versiones intercambiadas por abogados, defensa, peritos y jueces. La IA extrae datos de resoluciones PDF; la importación identifica las columnas útiles de cada hoja y vincula a las personas entre fuentes. Las evaluaciones periciales alimentan cálculos de daños, gastos, provisiones y divisas. Los equipos revisan los casos dudosos y las correcciones; se conservan los datos originales y las decisiones registradas.",
 				"impact": "Para cada persona, los equipos encuentran las fuentes, evaluaciones médicas, observaciones, valores originales y retenidos, y el detalle de cálculos y correcciones. Pueden revisar expedientes y preparar las tablas para la sentencia sin confundir un cálculo preparatorio con una decisión judicial.",
-				"metrics": [{ "label": "Personas afectadas", "value": "20 000" }],
-				"tags": ["IA", "OCR", "Python", "FastAPI", "SQLite"],
+				"metrics": [
+					{
+						"label": "Personas afectadas",
+						"value": "20 000",
+						"note": "Personas incluidas en el litigio colectivo."
+					},
+					{
+						"label": "Filas importadas",
+						"value": "11.023",
+						"note": "Primer libro de trabajo, incluidas todas las hojas."
+					},
+					{
+						"label": "Vínculos por verificar",
+						"value": "5 casos",
+						"note": "En la revisión del 11 de mayo de 2026 quedaban cinco registros de inadmisibilidad pendientes de vincular con certeza a una persona."
+					}
+				],
+				"tags": [
+					"IA",
+					"OCR",
+					"Python",
+					"FastAPI",
+					"SQLite"
+				],
 				"details": [
 					"Estructuración de resoluciones PDF e importación de hojas de cálculo de abogados cuyas columnas, nombres y versiones varían entre envíos.",
 					"Vinculación de personas entre resoluciones y archivos de abogados, con revisión de homónimos, cambios de apellido y casos dudosos.",
@@ -1047,19 +1122,24 @@
 				"title": "Plataforma de gestión de vehículos fuera de uso",
 				"date": "2020-2025",
 				"location": "Europa",
-				"challenge": "Tras la creación de Valorauto, una empresa conjunta de Stellantis y Galloo, una plataforma de economía circular debía modernizar su herramienta existente para gestionar la recuperación de vehículos fuera de uso (B2B y B2C) y seguir su recorrido desde la recogida en las instalaciones del propietario hasta el desguace del vehículo.",
-				"approach": "Desarrollo del portal Valorauto con interfaces de declaración, administración y seguimiento de vehículos entre las distintas partes, procesos de negocio y API Azure Functions desplegadas en la infraestructura Azure del cliente (bases MSSQL, Azure Service Bus) para orquestar un sistema .NET existente que conecta propietarios y centros de VFU.",
+				"challenge": "El servicio se lanzó para coordinar las retiradas entre propietarios, talleres y centros de tratamiento. Después, los equipos necesitaban gestionar la red a gran escala y seguir cada vehículo hasta su destrucción.",
+				"approach": "Desarrollo del portal con interfaces de declaración, administración y seguimiento de vehículos entre las distintas partes, procesos de negocio y API Azure Functions desplegadas en la infraestructura Azure del cliente (bases MSSQL, Azure Service Bus) para orquestar un sistema .NET existente que conecta propietarios y centros de VFU.",
 				"impact": "Trazabilidad de principio a fin al servicio de la división de economía circular del grupo, con una red de más de 5 000 empresas asociadas y una respuesta a las obligaciones del fabricante relacionadas con la Responsabilidad Ampliada del Productor (RAP).",
 				"metrics": [
-					{ "label": "Países cubiertos", "value": "5" },
-					{ "label": "Red de socios", "value": "+5 000" },
-					{ "label": "Puntuación en Trustpilot", "value": "4,8" }
-				],
-				"links": [
-					{ "label": "Sitio web de Valorauto", "url": "https://www.valorauto.com/" },
 					{
-						"label": "Opiniones de Valorauto en Trustpilot",
-						"url": "https://www.trustpilot.com/review/valorauto.com"
+						"label": "Vehículos al año",
+						"value": "≈ 20.000",
+						"note": "Orden de magnitud anual de los vehículos registrados en la plataforma."
+					},
+					{
+						"label": "Socios de la red",
+						"value": "Más de 5.000",
+						"note": "Talleres y centros de tratamiento de vehículos fuera de uso."
+					},
+					{
+						"label": "Plazo mediano",
+						"value": "6 días",
+						"note": "Desde el registro hasta la recepción en el centro, sobre 14.116 expedientes válidos entre enero y octubre de 2026."
 					}
 				],
 				"tags": [

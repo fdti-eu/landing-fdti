@@ -31,7 +31,7 @@ export const load: PageLoad = async ({ params, parent }) => {
 				if (!localizedGuide?.slug) {
 					throw error(500, `Missing ${local} document analysis guide at index ${guideIndex}`);
 				}
-				return [local, `/expertises/analyse-documentaire/${localizedGuide.slug}`];
+				return [local, `/solutions/analyse-documentaire/${localizedGuide.slug}`];
 			})
 		)
 	) as SeoAlternatePaths;
