@@ -247,10 +247,7 @@
 		class:hero-hidden={Boolean(activeSlug)}
 	>
 		<div class="max-w-6xl mx-auto px-4 w-full">
-			<div class="space-y-6 text-center mb-8">
-				<p class="uppercase tracking-wider sm:tracking-[0.2em] text-yellow text-xs sm:text-sm">
-					{content.subtitle}
-				</p>
+			<div>
 				<h1 class="text-2xl sm:text-3xl md:text-5xl font-bold">{content.title}</h1>
 			</div>
 
@@ -296,52 +293,7 @@
 											>
 												{useCase.category}
 											</p>
-											{#if useCase.location || useCase.date}
-												<div
-													class="flex flex-wrap gap-2 sm:gap-3"
-													style={getViewTransitionStyle(useCase.slug, useCase.id, 'meta')}
-												>
-													{#if useCase.location}
-														<span
-															class="text-xs font-medium text-darkGrey/60 flex items-center gap-1"
-														>
-															<svg
-																xmlns="http://www.w3.org/2000/svg"
-																class="h-3 w-3"
-																viewBox="0 0 20 20"
-																fill="currentColor"
-															>
-																<path
-																	fill-rule="evenodd"
-																	d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
-																	clip-rule="evenodd"
-																/>
-															</svg>
-															{useCase.location}
-														</span>
-													{/if}
-													{#if useCase.date}
-														<span
-															class="text-xs font-medium text-darkGrey/60 flex items-center gap-1"
-														>
-															<svg
-																xmlns="http://www.w3.org/2000/svg"
-																class="h-3 w-3"
-																viewBox="0 0 20 20"
-																fill="currentColor"
-															>
-																<path
-																	fill-rule="evenodd"
-																	d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
-																	clip-rule="evenodd"
-																/>
-															</svg>
-															{useCase.date}
-														</span>
-													{/if}
-												</div>
-											{/if}
-										</div>
+											</div>
 										<h2
 											class="case-index-title text-base sm:text-lg font-bold text-darkGrey group-hover:text-yellow transition-colors mb-2"
 											style={getViewTransitionStyle(useCase.slug, useCase.id, 'title')}
@@ -360,58 +312,10 @@
 									<div
 										class="flex flex-row lg:flex-col xl:flex-row gap-4 items-start lg:items-end xl:items-start"
 									>
-										{#if useCase.metrics?.[0]?.note}
-			<CaseIndicators compact metrics={useCase.metrics.slice(0, 2)} />
-		{:else if useCase.metrics?.length}
-											<div
-												class="case-index-metrics grid grid-cols-2 gap-x-4 gap-y-2 w-full lg:w-auto"
-											>
-												{#each useCase.metrics.slice(0, 2) as metric, index}
-													<div
-														class="min-w-0 text-left lg:text-right transition-all duration-300 {index >=
-														2
-															? 'opacity-0 h-0 overflow-hidden group-hover:opacity-100 group-hover:h-auto group-hover:overflow-visible'
-															: ''}"
-														style={getViewTransitionStyle(
-															useCase.slug,
-															useCase.id,
-															`metric-${index}`
-														)}
-													>
-														<p class="text-xs text-darkGrey/60 leading-tight">
-															{metric?.label}
-														</p>
-														<p class="text-sm sm:text-base font-bold text-darkGrey leading-tight">
-															{metric?.value}
-														</p>
-													</div>
-												{/each}
-											</div>
-										{/if}
-
-										{#if useCase.tags?.length}
-											<div
-												class="case-index-tags relative flex flex-wrap gap-1 max-w-full lg:max-w-[200px] lg:justify-end"
-											>
-												{#each useCase.tags.slice(0, 3) as tag, index}
-													<span
-														class="px-2 py-0.5 rounded-md bg-slate-100 text-xs font-medium text-darkGrey whitespace-nowrap transition-all duration-300 {index >=
-														3
-															? 'opacity-0 w-0 overflow-hidden group-hover:opacity-100 group-hover:w-auto group-hover:overflow-visible'
-															: ''}"
-														style={getViewTransitionStyle(useCase.slug, useCase.id, `tag-${index}`)}
-													>
-														{tag}
-													</span>
-												{/each}
-												{#if useCase.tags.length > 3}
-													<span
-														class="px-2 py-0.5 rounded-md bg-slate-200 text-xs font-semibold text-darkGrey"
-													>
-														+{useCase.tags.length - 3}
-													</span>
-												{/if}
-											</div>
+										{#if useCase.metrics?.length}
+											<CaseIndicators compact metrics={useCase.metrics} />
+										{:else if useCase.impact}
+											<p><strong>{copy.impact}</strong><br />{useCase.impact}</p>
 										{/if}
 									</div>
 								</div>

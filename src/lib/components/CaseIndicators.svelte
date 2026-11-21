@@ -7,7 +7,7 @@
 	{#each metrics as metric}
 		<div>
 			<dt>{metric.label}</dt>
-			<dd><strong>{metric.value}</strong><small>{metric.note}</small></dd>
+			<dd><strong>{metric.value}</strong>{#if metric.note}<small>{metric.note}</small>{/if}</dd>
 		</div>
 	{/each}
 </dl>
@@ -50,7 +50,7 @@
 	}
 	.compact {
 		margin: 0;
-		grid-template-columns: repeat(2, minmax(0, 1fr));
+		grid-template-columns: repeat(auto-fit, minmax(min(100%, 9rem), 1fr));
 	}
 	.compact > div {
 		padding: 0.85rem;

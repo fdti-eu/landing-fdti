@@ -2567,4 +2567,14 @@
 			flex-wrap: wrap;
 		}
 	}
+
+	.case-index-hero { padding-block: 108px 16px; }
+	.case-index-hero h1 { font-size: clamp(32px, 3vw, 46px); }
+	.case-index-hero > div > div:nth-child(2) { margin-top: 12px; }
+	.case-index-body { padding-top: 20px; }
+	.case-index-body .use-case-card > article { min-height: 0; }
+	@media (max-width: 640px) {
+		.case-index-hero { padding-block: 92px 12px; }
+		.case-index-body { padding-top: 14px; }
+	}
 }
