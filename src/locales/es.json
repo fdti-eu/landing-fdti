@@ -1329,8 +1329,8 @@
 				"indexCard": {
 					"title": "Seguir las ventas de las tiendas durante un cambio de software",
 					"description": "Aunque cambie el formato de los tickets, cada venta sigue vinculada a los artículos y a la tienda correspondientes. Los equipos pueden seguir la facturación y el importe medio por compra.",
-					"proof": "Una actualización por minuto",
-					"note": "Frecuencia de actualización de los datos de ventas."
+					"proof": "Antiguo sistema de análisis retirado",
+					"note": "Los analistas siguen las ventas en el nuevo sistema."
 				},
 				"slug": "almacen-datos-retail"
 			}

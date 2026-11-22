@@ -1,44 +1,34 @@
 <script lang="ts">
 	import type { Lang } from '$lib/data';
+	import { expertiseOffers } from '$lib/expertise-offers';
 	import { buildLocalizedPath } from '$lib/functions/seo';
 	import { navigationCopy, sectorCopy, sectorPaths } from '$lib/navigation';
 
 	export let locale: Lang = 'fr';
+	/** Published summaries of the vehicle and battery sector pages, in navigation order. */
+	export let summaries: { vehicles?: string; batteries?: string } = {};
 
 	$: nav = navigationCopy[locale];
 	$: copy = sectorCopy[locale];
+	$: circularPath = '/filieres/economie-circulaire';
 	$: sectors = [
+		{ title: nav.circular, text: copy.circularIntro, path: circularPath },
 		{
-			title: nav.circular,
-			text: copy.circularIntro,
-			href: buildLocalizedPath('/filieres/economie-circulaire', locale),
-			topics: [
-				{
-					label: nav.vehicles,
-					href: buildLocalizedPath(
-						`/filieres/economie-circulaire/${sectorPaths[locale].vehicles}`,
-						locale
-					)
-				},
-				{
-					label: nav.batteries,
-					href: buildLocalizedPath(
-						`/filieres/economie-circulaire/${sectorPaths[locale].batteries}`,
-						locale
-					)
-				},
-				{
-					label: nav.packaging,
-					href: buildLocalizedPath('/filieres/economie-circulaire/rep-emballages', locale)
-				}
-			]
+			title: nav.vehicles,
+			text: summaries.vehicles,
+			path: `${circularPath}/${sectorPaths[locale].vehicles}`
 		},
 		{
-			title: copy.justice,
-			text: copy.justiceIntro,
-			href: buildLocalizedPath('/filieres/justice', locale),
-			topics: []
-		}
+			title: nav.batteries,
+			text: summaries.batteries,
+			path: `${circularPath}/${sectorPaths[locale].batteries}`
+		},
+		{
+			title: nav.packaging,
+			text: expertiseOffers[locale].packaging.description,
+			path: `${circularPath}/rep-emballages`
+		},
+		{ title: copy.justice, text: copy.justiceIntro, path: '/filieres/justice' }
 	];
 </script>
 
@@ -49,18 +39,10 @@
 	</div>
 	<div class="sectors-preview-grid">
 		{#each sectors as sector}
-			<article>
-				<h3><a href={sector.href}>{sector.title}</a></h3>
-				<p>{sector.text}</p>
-				{#if sector.topics.length}
-					<ul>
-						{#each sector.topics as topic}
-							<li><a href={topic.href}>{topic.label}</a></li>
-						{/each}
-					</ul>
-				{/if}
-			</article>
+			<a href={buildLocalizedPath(sector.path, locale)}>
+				<h3>{sector.title}</h3>
+				{#if sector.text}<p>{sector.text}</p>{/if}
+			</a>
 		{/each}
 	</div>
-	<a class="editorial-text-link" href={buildLocalizedPath('/filieres', locale)}>{copy.all}</a>
 </section>

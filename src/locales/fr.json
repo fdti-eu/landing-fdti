@@ -1325,8 +1325,8 @@
 				"indexCard": {
 					"title": "Suivre les ventes des magasins pendant un changement de logiciel",
 					"description": "Quand le format des tickets de caisse change, les équipes conservent leurs repères : chaque vente reste rattachée aux bons articles et au bon magasin pour suivre le chiffre d’affaires et le panier moyen.",
-					"proof": "Une mise à jour par minute",
-					"note": "Cadence d’alimentation du suivi des ventes."
+					"proof": "Ancien outil d’analyse retiré",
+					"note": "Les analystes suivent les ventes sur le nouveau système."
 				},
 				"slug": "data-warehouse-retail"
 			}

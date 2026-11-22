@@ -1325,8 +1325,8 @@
 				"indexCard": {
 					"title": "Seguire le vendite dei negozi durante il cambio di gestionale",
 					"description": "Anche quando cambia il formato degli scontrini, ogni vendita resta collegata agli articoli e al negozio corretti. I team possono così seguire fatturato e valore medio dello scontrino per punto vendita.",
-					"proof": "Un aggiornamento al minuto",
-					"note": "Frequenza di aggiornamento dei dati di vendita."
+					"proof": "Vecchio sistema di analisi dismesso",
+					"note": "Gli analisti seguono le vendite nel nuovo sistema."
 				},
 				"slug": "data-warehouse-retail-tempo-reale"
 			}

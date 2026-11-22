@@ -73,9 +73,9 @@
 	{#if pageContent}
 		<div class="home-sections">
 			<ConfianceSection content={pageContent.trust_content} />
-			<FdtiSection content={pageContent.fdti_section} />
 			<CapabilitiesSection locale={currentLocale} />
-			<SectorsPreviewSection locale={currentLocale} />
+			<FdtiSection content={pageContent.fdti_section} />
+			<SectorsPreviewSection locale={currentLocale} summaries={pageContent.sector_summaries} />
 			<UseCasesPreviewSection
 				title={pageContent.homepage_use_cases_title}
 				subtitle={pageContent.homepage_use_cases_subtitle}

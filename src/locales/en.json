@@ -1317,8 +1317,8 @@
 				"indexCard": {
 					"title": "Tracking store sales through a software migration",
 					"description": "When receipt formats change, the teams keep their bearings: each sale stays linked to the right items and store so analysts can track revenue and average transaction value.",
-					"proof": "Updated every minute",
-					"note": "Sales reporting refresh rate."
+					"proof": "Legacy reporting system retired",
+					"note": "Analysts track sales in the new system."
 				},
 				"slug": "data-warehouse-retail"
 			}

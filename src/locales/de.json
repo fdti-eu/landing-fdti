@@ -1325,8 +1325,8 @@
 				"indexCard": {
 					"title": "Filialumsätze während eines Softwarewechsels verfolgen",
 					"description": "Auch wenn Kassenbons in einem neuen Format eintreffen, bleibt jeder Verkauf den richtigen Artikeln und der richtigen Filiale zugeordnet. Die Teams können Umsatz und durchschnittlichen Einkaufswert weiterhin verfolgen.",
-					"proof": "Aktualisierung im Minutentakt",
-					"note": "So oft erhält das Berichtssystem neue Verkaufsdaten."
+					"proof": "Altes Berichtssystem abgelöst",
+					"note": "Die Analysten verfolgen die Verkäufe im neuen System."
 				},
 				"slug": "data-warehouse-nahezu-echtzeit-einzelhandel"
 			}
