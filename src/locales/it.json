@@ -480,12 +480,12 @@
 	},
 	"GetHomePageContent": {
 		"hero_section": {
-			"subtitle": "Copiloti, automazioni e applicazioni aziendali integrati con i vostri strumenti esistenti",
-			"description": "<p>Realizziamo strumenti che collegano dati, piattaforme SaaS e sistemi interni per rendere le operazioni più rapide, affidabili e automatizzate. L'IA non è un accessorio: diventa una componente centrale dei processi quotidiani.</p>",
+			"subtitle": "Applicazioni aziendali, automazione e IA, progettate con i vostri team e collegate ai software che già utilizzate.",
+			"description": "<p>Mettiamo in discussione la richiesta iniziale per definire ciò che vale davvero la pena sviluppare, poi consegniamo un primo ambito utilizzabile che facciamo evolvere con i riscontri del campo. Parlate direttamente con le persone che progettano la vostra soluzione.</p>",
 			"btn_brochure": "Scaricate la nostra brochure",
-			"btn_contact": "Parliamo della vostra esigenza",
+			"btn_contact": "Parliamo del vostro progetto",
 			"brochure_link": "https://docs.google.com/presentation/d/e/2PACX-1vTxf7KCRA90Jm1rClbzRMZqB7wprtcUv30NwlpyT7RsxcGCKEQxW9HneEJBxo0Ml50srOHn18p5ECpD/pub?start=false&loop=false&delayms=3000",
-			"title": "IA, codice e dati al servizio dei vostri processi aziendali",
+			"title": "Conoscete il vostro mestiere. Noi costruiamo lo strumento che gli manca.",
 			"status": "Studio IA e automazione aziendale"
 		},
 		"fdti_section": {
@@ -1333,7 +1333,7 @@
 		],
 		"cta": {
 			"label": "Un processo critico merita più di uno strumento generico.",
-			"button": "Definire un primo ambito",
+			"button": "Parliamo del vostro progetto",
 			"link": "mailto:info@fdti.eu",
 			"description": "Partiamo da un caso reale, dai soggetti coinvolti e dai dati disponibili per individuare il prossimo passo utile."
 		}

@@ -489,9 +489,7 @@
 					<div class="flex-1 min-w-0 space-y-8 w-full">
 						{#if useCase.challenge}
 							<div class="relative pl-4 border-l-4 border-yellow/50">
-								<h2
-									class="text-lg sm:text-xl font-bold text-darkGrey mb-2 sm:mb-3 uppercase tracking-wide"
-								>
+								<h2 class="text-lg sm:text-xl font-bold text-darkGrey mb-2 sm:mb-3">
 									{labels.context}
 								</h2>
 								<p
@@ -510,7 +508,7 @@
 									<span class="w-2 h-2 rounded-full bg-yellow"></span>
 									{labels.approach}
 								</h2>
-								<p class="text-sm sm:text-base text-darkGrey/80 leading-relaxed">
+								<p class="text-base sm:text-lg text-darkGrey leading-relaxed">
 									{useCase.approach}
 								</p>
 							</div>
@@ -537,7 +535,7 @@
 									<span class="w-2 h-2 rounded-full bg-green-500"></span>
 									{labels.impact}
 								</h2>
-								<p class="text-sm sm:text-base text-darkGrey/80 leading-relaxed">
+								<p class="text-base sm:text-lg text-darkGrey leading-relaxed">
 									{useCase.impact}
 								</p>
 							</div>
@@ -638,9 +636,7 @@
 						style="box-shadow: 0 0 65px 10px rgba(251, 210, 67, 0.25);"
 					>
 						<div class="relative z-10">
-							<p
-								class="text-xs sm:text-sm uppercase tracking-wider sm:tracking-[0.2em] text-yellow/80"
-							>
+							<p class="text-sm sm:text-base text-yellow/80">
 								{content.cta.label}
 							</p>
 							<p

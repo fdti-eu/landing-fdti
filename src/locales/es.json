@@ -484,12 +484,12 @@
 	},
 	"GetHomePageContent": {
 		"hero_section": {
-			"subtitle": "Copilotos, automatizaciones y aplicaciones de negocio integrados en sus herramientas existentes",
-			"description": "<p>Creamos herramientas que conectan sus datos, sus plataformas SaaS y sus sistemas internos para que sus operaciones sean más rápidas, fiables y automatizadas. La IA no es un accesorio añadido: se convierte en un componente central de sus procesos diarios.</p>",
+			"subtitle": "Aplicaciones de negocio, automatización e IA, diseñadas con sus equipos y conectadas al software que ya utilizan.",
+			"description": "<p>Cuestionamos la solicitud inicial para definir lo que realmente merece desarrollarse y, después, entregamos un primer alcance utilizable que hacemos evolucionar con los comentarios del terreno. Usted habla directamente con las personas que diseñan su solución.</p>",
 			"btn_brochure": "Descargue nuestro folleto",
-			"btn_contact": "Hablemos de su necesidad",
+			"btn_contact": "Hablemos de su proyecto",
 			"brochure_link": "https://docs.google.com/presentation/d/e/2PACX-1vTxf7KCRA90Jm1rClbzRMZqB7wprtcUv30NwlpyT7RsxcGCKEQxW9HneEJBxo0Ml50srOHn18p5ECpD/pub?start=false&loop=false&delayms=3000",
-			"title": "IA, código y datos al servicio de sus procesos de negocio",
+			"title": "Usted conoce su oficio. Nosotros construimos la herramienta que le falta.",
 			"status": "Estudio de IA y automatización de procesos"
 		},
 		"fdti_section": {
@@ -1337,7 +1337,7 @@
 		],
 		"cta": {
 			"label": "Un proceso crítico merece algo mejor que una herramienta genérica.",
-			"button": "Delimitar un primer alcance",
+			"button": "Hablemos de su proyecto",
 			"link": "mailto:info@fdti.eu",
 			"description": "Partamos de un caso real, sus participantes y sus datos para identificar el siguiente paso útil."
 		}

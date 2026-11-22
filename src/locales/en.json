@@ -472,12 +472,12 @@
 	},
 	"GetHomePageContent": {
 		"hero_section": {
-			"subtitle": "Copilots, automation, and business applications integrated with your existing tools",
-			"description": "<p>We build tools that connect your data, SaaS platforms, and internal systems to make your operations faster, more reliable, and more automated. AI is not bolted on as an afterthought; it is designed into your day-to-day processes as a core capability.</p>",
+			"subtitle": "Business applications, automation and AI, designed with your teams and connected to the software you already use.",
+			"description": "<p>We question the initial request to define what is actually worth building, then deliver a first usable scope that we develop further with feedback from the field. You talk directly with the people who design your solution.</p>",
 			"btn_brochure": "Download our brochure",
-			"btn_contact": "Discuss your needs",
+			"btn_contact": "Discuss your project",
 			"brochure_link": "https://docs.google.com/presentation/d/e/2PACX-1vTqoylpjD44uKvXaQVAsPAlGMXDLBP_cqpr7gnuj0S2qXDS07mXwww8rMfjU-nAeTyYgR6CRSICSj17/pub?start=false&loop=false&delayms=3000",
-			"title": "AI, code, and data for your business processes",
+			"title": "You know your business. We build the tool it is missing.",
 			"status": "AI studio & business automation"
 		},
 		"fdti_section": {
@@ -1325,7 +1325,7 @@
 		],
 		"cta": {
 			"label": "Critical work deserves more than generic software.",
-			"button": "Define an initial scope",
+			"button": "Discuss your project",
 			"link": "mailto:info@fdti.eu",
 			"description": "Start with a real use case, the stakeholders involved, and the available data to identify the next useful step."
 		}

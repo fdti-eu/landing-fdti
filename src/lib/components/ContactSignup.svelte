@@ -136,8 +136,12 @@
 <section id="contact" class="contact-preview" aria-labelledby="closing-title">
 	<div class="closing-shell">
 		<div class="contact-intro">
-			<h2 id="closing-title">On reste en contact ?</h2>
-			<p>Un projet, une question ou simplement envie de suivre l’actualité IA et tech.</p>
+			<h2 id="closing-title">Parlons de votre projet</h2>
+			<p>
+				Dites-nous ce que vos équipes font aujourd’hui et ce qui les ralentit. Nous revenons vers
+				vous pour un premier échange avec les personnes qui concevront la solution : votre besoin,
+				les options possibles et leurs conséquences sur le coût, les délais et la maintenance.
+			</p>
 			<div class="direct-contact">
 				<p>Vous préférez nous écrire directement ?</p>
 				<button
@@ -213,7 +217,7 @@
 						disabled={!hydrated || pending}
 						rows="2"
 						maxlength="1000"
-						placeholder="Parlez-nous de votre projet…"
+						placeholder="Ce que vos équipes font aujourd’hui, ce que vous aimeriez changer…"
 					></textarea>
 					<label class="newsletter-option" for="closing-newsletter">
 						<input

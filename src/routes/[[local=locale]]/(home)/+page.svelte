@@ -1,11 +1,8 @@
 <script lang="ts">
 	import Hero from '$lib/components/sections/Hero.svelte';
-	import FdtiSection from '$lib/components/sections/FdtiSection.svelte';
 	import CapabilitiesSection from '$lib/components/sections/CapabilitiesSection.svelte';
-	import TechnologiesSection from '$lib/components/sections/TechnologiesSection.svelte';
 	import ConfianceSection from '$lib/components/sections/ConfianceSection.svelte';
 	import UseCasesPreviewSection from '$lib/components/sections/UseCasesPreviewSection.svelte';
-	import ExpertisePreviewSection from '$lib/components/sections/ExpertisePreviewSection.svelte';
 	import { MetaTags } from 'svelte-meta-tags';
 	import LdTag from '$lib/components/json-ld/LDTag.svelte';
 	import { schema } from '$lib/components/json-ld/json-ld';
@@ -69,11 +66,15 @@
 </svelte:head>
 
 <div class="fdti-home">
-	<Hero content={pageContent?.hero_section} />
+	<Hero
+		content={pageContent?.hero_section}
+		proofs={pageContent?.hero_proofs}
+		locale={currentLocale}
+	/>
 
 	{#if pageContent}
 		<div class="home-sections">
-			<FdtiSection content={pageContent.fdti_section} />
+			<ConfianceSection content={pageContent.trust_content} />
 			<CapabilitiesSection locale={currentLocale} />
 			<UseCasesPreviewSection
 				title={pageContent.homepage_use_cases_title}
@@ -81,9 +82,6 @@
 				useCases={pageContent.homepage_use_cases}
 				locale={currentLocale}
 			/>
-			<ExpertisePreviewSection locale={currentLocale} />
-			<TechnologiesSection content={pageContent.technology_content} locale={currentLocale} />
-			<ConfianceSection content={pageContent.trust_content} />
 		</div>
 	{/if}
 </div>

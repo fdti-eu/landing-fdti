@@ -318,9 +318,7 @@
 						style="box-shadow: 0 0 65px 10px rgba(251, 210, 67, 0.25);"
 					>
 						<div class="relative z-10">
-							<p
-								class="text-xs sm:text-sm uppercase tracking-wider sm:tracking-[0.2em] text-yellow/80"
-							>
+							<p class="text-sm sm:text-base text-yellow/80">
 								{content.cta.label}
 							</p>
 							<p
