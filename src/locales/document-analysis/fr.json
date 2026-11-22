@@ -45,7 +45,7 @@
 		{
 			"label": "Recyclage automobile",
 			"title": "Classement des pièces par OCR",
-			"text": "Le parcours prévu associe lecture du VIN et confirmation par l’opérateur avant le rattachement à un dossier véhicule.",
+			"text": "Le logiciel lit le numéro de série du véhicule ; la gestionnaire confirme le dossier avant d’y classer la pièce.",
 			"href": "/realisations/ocr-dossiers-vhu"
 		}
 	],

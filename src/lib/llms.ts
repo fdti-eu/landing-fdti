@@ -125,8 +125,8 @@ function buildLanguageSection(locale: Lang, data: LocaleData): string {
 				if (context) ucText += `Context: ${context}\n`;
 				ucText += `Challenge: ${uc.challenge}\n`;
 				ucText += `Approach: ${uc.approach}\n`;
-				if (uc.expectedOutcome) ucText += `Expected outcome: ${uc.expectedOutcome}\n`;
-				else if (uc.impact) ucText += `Impact: ${uc.impact}\n`;
+
+				if (uc.impact) ucText += `Impact: ${uc.impact}\n`;
 
 				if (uc.metrics) {
 					ucText += `Key Metrics: ${uc.metrics.map((m) => `${m.label}: ${m.value}${'note' in m ? ` (${m.note})` : ''}`).join(', ')}\n`;

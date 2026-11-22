@@ -45,7 +45,7 @@
 		{
 			"label": "Riciclo dei veicoli",
 			"title": "Classificare i documenti tramite OCR",
-			"text": "Il flusso previsto combina la lettura del VIN con la conferma dell’operatore prima di associare il documento al fascicolo del veicolo.",
+			"text": "Il software legge il numero di telaio e l’addetta conferma il fascicolo prima di archiviare il documento.",
 			"href": "/realisations/ocr-fascicoli-veicoli"
 		}
 	],

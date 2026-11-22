@@ -8,6 +8,6 @@ Avant de créer, traduire ou modifier une réalisation, appliquer la [trame des 
 
 **Règle ferme : chaque KPI doit éclairer une décision d’achat.** Appliquer les [critères de sélection des KPI](README.md#kpi-des-réalisations) à chaque fiche et à ses cartes, dans chaque langue.
 
-**Règle ferme pour toutes les réalisations et leurs traductions :** formuler les chiffres positivement (mesure, estimation, période, hypothèse utile). Ne jamais ajouter de dénégation défensive sur ce que le chiffre ne mesure pas. Conserver les preuves de déploiement pertinentes, notamment le nombre de sites équipés, lors d’une mise à jour des chiffres d’activité.
+**Règle ferme pour toutes les réalisations et leurs traductions :** formuler les chiffres positivement (mesure, période, périmètre). Ne jamais ajouter de dénégation défensive sur ce que le chiffre ne mesure pas. Conserver les preuves de déploiement pertinentes, notamment le nombre de sites équipés, lors d’une mise à jour des chiffres d’activité.
 
 **Confidentialité et concision des KPI :** publier uniquement la précision validée. Avec « ≈ », ne pas redire « environ » ou « ordre de grandeur ». Pour un délai, expliquer son début et sa fin ; garder en privé le volume exact et la période de l’échantillon de calcul.

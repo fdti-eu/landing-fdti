@@ -1010,14 +1010,9 @@
 						"note": "Piattaforma integrata nel gestionale delle cancellerie."
 					},
 					{
-						"label": "Tempo di lavoro stimato",
-						"value": "3.105 h 50 min",
-						"note": "Ottobre 2026: 37.270 pratiche × 5 minuti stimati ciascuna. IPP escluse."
-					},
-					{
-						"label": "Capacità equivalente",
-						"value": "≈ 444 giornate-persona",
-						"note": "Conversione basata su giornate di 7 ore."
+						"label": "Fascicoli trattati",
+						"value": "37.270",
+						"note": "Ottobre 2026: depositi di bilanci annuali, pratiche del registro delle imprese e fascicoli giudiziari."
 					}
 				],
 				"tags": [
@@ -1047,31 +1042,14 @@
 				"indexCard": {
 					"title": "Archiviare i documenti di più veicoli con un solo caricamento",
 					"description": "L’addetta carica un lotto di documenti senza suddividerli per veicolo. Per ogni documento il software legge il numero di telaio, trova la pratica corrispondente e propone l’abbinamento da convalidare.",
-					"proof": "50 ore/mese con 1 minuto risparmiato a documento",
-					"note": "Scenario su 3.000 documenti al mese."
+					"proof": "3.000 documenti ricevuti al mese",
+					"note": "Documenti ricevuti dal personale amministrativo."
 				},
 				"slug": "ocr-fascicoli-veicoli",
 				"title": "Archiviare un lotto di documenti nei fascicoli dei veicoli corretti",
 				"category": "Aftermarket e riciclo",
 				"challenge": "Un’addetta amministrativa riceve e scansiona i documenti dei veicoli fuori uso. Per ciascun documento apre la scheda del veicolo, avvia il caricamento, seleziona il file sul computer, sceglie il tipo di documento e conferma. Poi ricomincia. Con centinaia di documenti al giorno e migliaia al mese, non è solo la scansione a richiedere tempo: anche quando i file sono già digitalizzati, occorre cercare il fascicolo e classificare ogni documento.",
-				"approach": "Il flusso previsto inverte l’ordine. Oggi l’addetta parte dal veicolo per aggiungere un documento. Con il nuovo processo partirebbe dai documenti e il software proporrebbe i veicoli corrispondenti. Potrebbe caricare un lotto senza ordinarlo prima. Per ogni file il sistema riconoscerebbe il tipo di documento, leggerebbe il numero di telaio (VIN) e cercherebbe il fascicolo. La decisione finale resterebbe all’addetta, senza dover ripetere ogni ricerca da zero.",
-				"metrics": [
-					{
-						"label": "Capacità liberata",
-						"value": "≈ 7 giorni/mese",
-						"note": "Arrivano 3.000 documenti al mese. Un minuto netto risparmiato per documento libererebbe 50 ore al mese (giornate di 7 ore)."
-					},
-					{
-						"label": "Valore del tempo liberato",
-						"value": "2.000 €/mese",
-						"note": "Simulazione a 40 €/ora per 50 ore da dedicare ad altre attività."
-					},
-					{
-						"label": "Budget di pareggio",
-						"value": "≤ 12.000 €",
-						"note": "A questo ritmo per 6 mesi: costo totale massimo, gestione inclusa, coperto dal valore del tempo liberato."
-					}
-				],
+				"approach": "Il software legge il numero di telaio su ogni documento del lotto, cerca il fascicolo del veicolo e propone una categoria. L’addetta verifica il documento e conferma l’abbinamento.",
 				"tags": [
 					"OCR",
 					"VIN"
@@ -1082,7 +1060,14 @@
 					"Trovare il veicolo senza ricopiare il VIN. L’OCR legge il numero sul documento. Il software cerca una corrispondenza esatta tra i fascicoli accessibili e mostra il documento, il tipo proposto, il VIN letto e il fascicolo suggerito.",
 					"Verificare prima di rendere visibile il documento. L’addetta conferma l’associazione anche quando la corrispondenza è unica. Numeri illeggibili, corrispondenze multiple e possibili duplicati passano alla revisione manuale. Nessun documento esistente viene sovrascritto."
 				],
-				"expectedOutcome": "Il personale amministrativo potrebbe dedicare meno tempo ad aprire fascicoli e archiviare i file uno alla volta, e più tempo a verificare i documenti e gestire le eccezioni. L’officina o il centro di demolizione autorizzato potrebbe consultare il documento convalidato nel fascicolo e nella categoria corretti. Se il ritiro del veicolo è in attesa del giustificativo, la squadra potrebbe procedere alla fase successiva."
+				"impact": "L’officina o il centro autorizzato ritrova il documento convalidato nel fascicolo del veicolo. L’addetta verifica i numeri illeggibili, le corrispondenze multiple e i duplicati.",
+				"metrics": [
+					{
+						"label": "Documenti ricevuti dal personale amministrativo",
+						"value": "3.000",
+						"note": "Al mese."
+					}
+				]
 			},
 			{
 				"id": "9",

@@ -45,7 +45,7 @@
 		{
 			"label": "Reciclaje de vehículos",
 			"title": "Clasificación documental mediante OCR",
-			"text": "El flujo previsto combina la lectura del VIN con la confirmación del operador antes de adjuntar la pieza al expediente del vehículo.",
+			"text": "El programa lee el número de bastidor y la gestora confirma el expediente antes de archivar el documento.",
 			"href": "/realisations/ocr-expedientes-vehiculos"
 		}
 	],
