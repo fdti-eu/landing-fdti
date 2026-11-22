@@ -1,5 +1,4 @@
 <script lang="ts">
-	import CaseIndicators from '$lib/components/CaseIndicators.svelte';
 	import { tick } from 'svelte';
 	import { goto } from '$app/navigation';
 	import type { Lang } from '$lib/data';
@@ -10,23 +9,20 @@
 	export let useCases:
 		| {
 				id?: string | null;
+				indexCard?: { title: string; description: string; proof?: string; note?: string };
 				category?: string | null;
 				title?: string | null;
 				slug?: string | null;
 				challenge?: string | null;
-				approach?: string | null;
-				impact?: string | null;
-				metrics?: { label?: string | null; value?: string | null; note?: string | null }[];
-				tags?: string[];
 		  }[]
 		| null;
 	export let locale: Lang = 'fr';
 	const allCasesLabels: Record<Lang, string> = {
-		fr: 'Voir tous les cas d’usage',
-		en: 'See all use cases',
-		es: 'Ver todos los casos de uso',
+		fr: 'Voir toutes les réalisations',
+		en: 'See all work',
+		es: 'Ver todos los proyectos',
 		de: 'Alle Referenzen ansehen',
-		it: 'Vedete tutti i progetti'
+		it: 'Vedi tutti i progetti'
 	};
 
 	let activeSlug: string | null = null;
@@ -74,7 +70,7 @@
 			{/if}
 		</div>
 		<div class="cases-preview-grid">
-			{#each useCases as useCase, index}
+			{#each useCases as useCase}
 				<a
 					href={`${buildLocalizedPath(`/realisations/${useCase.slug}`, locale)}?from=home`}
 					on:click={(event) => handleCardClick(event, useCase.slug)}
@@ -90,48 +86,16 @@
 						class="mt-3 text-xl font-bold text-darkGrey group-hover:text-yellow transition-colors"
 						style={getViewTransitionStyle(useCase.slug, useCase.id, 'title')}
 					>
-						{useCase.title}
+						{useCase.indexCard?.title ?? useCase.title}
 					</h4>
 					<div class="case-preview-copy">
-						{#if index === 0}
-							{#if useCase.challenge}
-								<p style={getViewTransitionStyle(useCase.slug, useCase.id, 'challenge')}>
-									{useCase.challenge}
-								</p>
-							{/if}
-							{#if useCase.approach}<p>{useCase.approach}</p>{/if}
-							{#if useCase.impact}<p>{useCase.impact}</p>{/if}
-						{:else}
-							<p>{useCase.impact || useCase.challenge}</p>
-						{/if}
+						<p>{useCase.indexCard?.description ?? useCase.challenge}</p>
 					</div>
 
-					{#if useCase.metrics?.[0]?.note}
-			<CaseIndicators compact metrics={useCase.metrics.slice(0, 2)} />
-		{:else if useCase.metrics?.length}
-						<div class="preview-metrics">
-							{#each useCase.metrics.slice(0, 2) as metric, metricIndex}
-								<div
-									class="rounded-xl bg-slate-50 p-3 border border-slate-100"
-									style={getViewTransitionStyle(useCase.slug, useCase.id, `metric-${metricIndex}`)}
-								>
-									<p class="text-[11px] uppercase tracking-wide text-darkGrey/60">{metric.label}</p>
-									<p class="mt-1 text-lg font-bold text-darkGrey">{metric.value}</p>
-								</div>
-							{/each}
-						</div>
-					{/if}
-
-					{#if useCase.tags?.length}
-						<div class="preview-tags">
-							{#each useCase.tags.slice(0, 4) as tag, tagIndex}
-								<span
-									class="rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-darkGrey"
-									style={getViewTransitionStyle(useCase.slug, useCase.id, `tag-${tagIndex}`)}
-								>
-									{tag}
-								</span>
-							{/each}
+					{#if useCase.indexCard?.proof}
+						<div class="preview-proof">
+							<strong>{useCase.indexCard.proof}</strong>
+							{#if useCase.indexCard.note}<small>{useCase.indexCard.note}</small>{/if}
 						</div>
 					{/if}
 				</a>

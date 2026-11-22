@@ -13,6 +13,7 @@
 		SOCIAL_IMAGE_PATH
 	} from '$lib/functions/seo';
 	import { beforeNavigate, afterNavigate, goto } from '$app/navigation';
+	import { sortCaseCards } from '$lib/case-studies';
 
 	// Récupérer le store du layout parent
 	const highlightedUseCase = getContext<Writable<string | null>>('highlightedUseCase');
@@ -205,15 +206,14 @@
 		'10': 'M11 4h14l7 7v19H11z M25 4v8h7 M6 9v25h21 M15 17h13m-13 6h10',
 		'8': 'M4 14l14-8 15 8-15 8z M4 14v11l14 8 15-8V14 M18 22v11'
 	};
-	const cardOrder = ['2', '1', '7', '4', '3', '6', '9', '5', '10', '8'];
-	$: filteredUseCases = (content?.use_case_list ?? [])
-		.filter((useCase) => {
+	$: filteredUseCases = sortCaseCards(
+		(content?.use_case_list ?? []).filter((useCase) => {
 			if (!selectedSector) return true;
 			return sectorGroups
 				.find((sector) => sector.label === selectedSector)
 				?.caseIds.includes(useCase.id || '');
 		})
-		.sort((a, b) => cardOrder.indexOf(a.id ?? '') - cardOrder.indexOf(b.id ?? ''));
+	);
 </script>
 
 {#if metatags}

@@ -1,5 +1,6 @@
 import { getHomePageContent, getUseCasesContent, SUPPORTED_LOCALES, type Lang } from '$lib/data';
 import { buildSeoAlternatePaths } from '$lib/functions/seo';
+import { sortCaseCards } from '$lib/case-studies';
 import type { PageLoad } from './$types';
 
 export const prerender = true;
@@ -43,7 +44,7 @@ export const load: PageLoad = async ({ params }) => {
 
 	return {
 		...content,
-		homepage_use_cases: useCasesContent.use_case_list?.slice(0, 3) || [],
+		homepage_use_cases: sortCaseCards(useCasesContent.use_case_list ?? []).slice(0, 3),
 		homepage_use_cases_title: useCasesLabels[local].title,
 		homepage_use_cases_subtitle: useCasesLabels[local].subtitle,
 		locale: local,

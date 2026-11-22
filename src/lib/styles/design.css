@@ -615,45 +615,39 @@
 	.case-preview-card:hover h4 {
 		color: var(--color-dark-grey);
 	}
-	.preview-metrics {
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		gap: 25px;
-		margin-top: 27px;
+	.preview-proof {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: baseline;
+		gap: 4px 12px;
+		margin-top: auto;
+		padding-top: 14px;
 		border-top: 1px solid var(--color-light-grey);
-		padding-top: 18px;
+		color: var(--color-dark-grey);
 	}
-	.preview-metrics > div {
-		padding: 0;
-		background: transparent;
-		border: 0;
-		border-radius: 0;
+	.case-preview-copy {
+		margin-bottom: 22px;
+	}
+	.case-preview-card {
 		display: flex;
 		flex-direction: column;
 	}
-	.preview-metrics > div > p:first-child {
-		font-size: 10px;
-		letter-spacing: 0.055em;
+	.preview-proof strong {
+		font-size: 20px;
+	}
+	.preview-proof small {
+		font-size: 14px;
 		color: var(--color-grey);
 	}
-	.preview-metrics > div > p:last-child {
-		font-size: 31px;
-		letter-spacing: -0.04em;
-		line-height: 1.15;
-		margin-top: 6px;
+	.case-preview-card:first-child .preview-proof {
+		border-color: var(--color-grey);
+		color: var(--color-yellow);
 	}
-	.preview-tags {
-		display: flex;
-		flex-wrap: wrap;
-		gap: 7px;
-		margin-top: 24px;
+	.case-preview-card:first-child .preview-proof strong {
+		font-size: 26px;
 	}
-	.preview-tags > span {
-		font-size: 11px;
-		padding: 4px 8px;
-		color: var(--color-grey);
-		background: color-mix(in srgb, var(--color-light-grey) 35%, white);
-		border-radius: 2px;
+	.case-preview-card:first-child .preview-proof small {
+		color: var(--color-dark-grey-2);
 	}
 	.case-preview-card:first-child {
 		grid-row: span 2;
@@ -680,23 +674,6 @@
 		color: var(--color-dark-grey-2);
 		font-size: 17px;
 		margin-bottom: 40px;
-	}
-	.case-preview-card:first-child .preview-metrics {
-		margin-top: auto;
-		padding-top: 25px;
-		border-color: var(--color-grey);
-		gap: 20px;
-	}
-	.case-preview-card:first-child .preview-metrics p:first-child {
-		color: var(--color-dark-grey-2);
-	}
-	.case-preview-card:first-child .preview-metrics p:last-child {
-		font-size: 42px;
-		color: var(--color-yellow);
-	}
-	.case-preview-card:first-child .preview-tags > span {
-		background: var(--color-grey-2);
-		color: var(--color-light-grey);
 	}
 	.case-preview-card:first-child:focus-visible {
 		outline-color: var(--color-grey);
@@ -1696,9 +1673,6 @@
 		.case-preview-card:first-child h4 {
 			font-size: 34px;
 		}
-		.case-preview-card:first-child .preview-metrics p:last-child {
-			font-size: 34px;
-		}
 		.contact-grid {
 			gap: 55px;
 		}
@@ -1906,12 +1880,6 @@
 			margin-bottom: 25px;
 		}
 		.case-preview-card h4 {
-			font-size: 26px;
-		}
-		.preview-metrics {
-			gap: 18px;
-		}
-		.preview-metrics > div > p:last-child {
 			font-size: 26px;
 		}
 		.technologies-grid {
@@ -2192,17 +2160,6 @@
 		.case-preview-card:first-child .case-preview-copy {
 			font-size: 16px;
 		}
-		.preview-metrics {
-			gap: 18px;
-		}
-		.preview-metrics > div > p:last-child,
-		.case-preview-card:first-child .preview-metrics p:last-child {
-			font-size: 30px;
-			overflow-wrap: anywhere;
-		}
-		.preview-metrics > div > p:first-child {
-			font-size: 10px;
-		}
 		.cases-preview-section > div:last-child {
 			justify-content: stretch;
 		}
@@ -2455,9 +2412,6 @@
 		}
 		.tech-toggle {
 			font-size: 22px;
-		}
-		.preview-metrics {
-			grid-template-columns: 1fr;
 		}
 		.contact-identity h3 {
 			font-size: 22px;
