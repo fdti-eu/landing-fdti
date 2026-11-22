@@ -75,7 +75,7 @@ Exprimer une approximation **une seule fois** : si la valeur porte « ≈ », ne
 
 Sur les cartes, les fiches et leurs renvois, dans chaque langue, présenter les réalisations au présent. Le titre annonce le fait métier à retenir ; la description suit l’acteur et l’objet concret. Publier les volumes, délais et gains étayés, avec leur périmètre. Garder les simulations de ROI, les gains conditionnels et les conversions fondées sur un temps unitaire supposé hors des réalisations. À défaut de mesure, décrire le travail accompli. Ne pas publier le prix d’un contrat client.
 
-**Présentation de référence :** utiliser `CaseIndicators.svelte` avec `metrics[].label`, `value` et `note`. Sur la fiche, empiler les indicateurs dans la colonne de droite sur ordinateur ; sur mobile, les placer dans le flux sans défilement horizontal. Afficher un libellé bref, une valeur lisible avec unité et horizon, puis sa base de calcul. Sur l’index, utiliser la variante compacte sans couper la note. Vérifier le rendu réel sur les deux tailles.
+**Présentation de référence :** utiliser `CaseIndicators.svelte` avec `metrics[].label`, `value` et `note`. Sur la fiche, empiler les indicateurs dans la colonne de droite sur ordinateur ; sur mobile, les placer dans le flux sans défilement horizontal. Afficher un libellé bref, une valeur lisible avec unité et horizon, puis sa base de calcul. Sur l’index, chaque carte affiche un seul indicateur phare dans le bloc sous le trait (`indexCard.proof` et `indexCard.note`). Le titre ne remplace pas ce bloc. Si aucun volume ou gain n’est établi, retenir une règle métier vérifiée qui éclaire la décision. Vérifier le rendu réel sur les deux tailles.
 
 ## Développement local
 

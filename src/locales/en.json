@@ -1100,8 +1100,10 @@
 					"Prepare calculations and the data needed for tables in Word judgments, under human supervision."
 				],
 				"indexCard": {
-					"title": "Preparing compensation for 20,000 people and accounting for each amount",
-					"description": "The same individuals appear in court decisions, lawyers’ files and medical assessments. The platform matches these sources and keeps the original value, the value used and any corrections for each calculation."
+					"title": "Preparing compensation and accounting for each amount",
+					"description": "The same individuals appear in court decisions, lawyers’ files and medical assessments. The platform matches these sources and keeps the original value, the value used and any corrections for each calculation.",
+					"proof": "20,000 people tracked",
+					"note": "Scope of the collective litigation."
 				},
 				"slug": "compensation-case-files"
 			},
@@ -1208,7 +1210,9 @@
 				],
 				"indexCard": {
 					"title": "Tracking every battery from declaration to treatment",
-					"description": "Before collection, the team identifies batteries that can travel together based on their collector and destination. On arrival, the site retrieves the batch declarations, checks the tracking documents and records receipt and treatment."
+					"description": "Before collection, the team identifies batteries that can travel together based on their collector and destination. On arrival, the site retrieves the batch declarations, checks the tracking documents and records receipt and treatment.",
+					"proof": "One receiving site per batch",
+					"note": "The collector and receiving site are checked before dispatch."
 				},
 				"slug": "battery-recycling-operations-platform"
 			},
@@ -1235,8 +1239,10 @@
 					"The operator can tell the contractor which cabinet to check, at what time and for which discrepancy."
 				],
 				"indexCard": {
-					"title": "Over 40 territories equipped to spot street lighting anomalies",
-					"description": "Each morning, operators compare lighting schedules with consumption curves. They can distinguish a shift in switch-on time from a steady daytime load and tell the contractor which cabinet to inspect and when."
+					"title": "Spotting anomalies in street lighting",
+					"description": "Each morning, operators compare lighting schedules with consumption curves. They can distinguish a shift in switch-on time from a steady daytime load and tell the contractor which cabinet to inspect and when.",
+					"proof": "Over 40 territories equipped",
+					"note": "Operators use network alerts across these areas."
 				},
 				"slug": "supervision-eclairage-public"
 			},
@@ -1256,8 +1262,10 @@
 					"Local teams use the same framework to choose themes for their next campaign."
 				],
 				"indexCard": {
-					"title": "Analysing 60,000 posts in eight languages to guide campaign budgets",
-					"description": "Which messages draw a response, in which country and from whom? By comparing each post’s topic and tone with its performance, the NGO uses shared criteria to allocate funding across countries and social networks."
+					"title": "Comparing messages to guide campaign budgets",
+					"description": "Which messages draw a response, in which country and from whom? By comparing each post’s topic and tone with its performance, the NGO uses shared criteria to allocate funding across countries and social networks.",
+					"proof": "60,000 posts analysed",
+					"note": "Facebook and Instagram posts in eight languages."
 				},
 				"slug": "analyse-generative-campagnes"
 			},
@@ -1277,8 +1285,10 @@
 					"Customer service tracks recurring enquiries. The product team can examine reports of a product fault separately from delivery complaints."
 				],
 				"indexCard": {
-					"title": "Bringing together feedback from over 25 sources to understand customer problems",
-					"description": "Surveys, reviews and customer service enquiries can describe the same fault in different words. The insights team brings those comments together and shares the accounts that explain the issue with product teams."
+					"title": "Bringing customer feedback together to understand recurring problems",
+					"description": "Surveys, reviews and customer service enquiries can describe the same fault in different words. The insights team brings those comments together and shares the accounts that explain the issue with product teams.",
+					"proof": "Over 25 sources combined",
+					"note": "Surveys, customer service and review sites."
 				},
 				"slug": "data-hub-nlp"
 			},
@@ -1305,8 +1315,10 @@
 					"New data feeds the reports minute by minute. The teams switched to the new reporting system and retired the old one."
 				],
 				"indexCard": {
-					"title": "Changing management systems while tracking store sales minute by minute",
-					"description": "When receipt formats change, the teams keep their bearings: each sale stays linked to the right items and store so analysts can track revenue and average transaction value."
+					"title": "Tracking store sales through a software migration",
+					"description": "When receipt formats change, the teams keep their bearings: each sale stays linked to the right items and store so analysts can track revenue and average transaction value.",
+					"proof": "Updated every minute",
+					"note": "Sales reporting refresh rate."
 				},
 				"slug": "data-warehouse-retail"
 			}

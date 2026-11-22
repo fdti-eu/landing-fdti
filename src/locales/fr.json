@@ -1108,8 +1108,10 @@
 					"Préparation des calculs et des données nécessaires aux tableaux à intégrer dans les jugements Word, sous contrôle humain."
 				],
 				"indexCard": {
-					"title": "Préparer les indemnisations de 20 000 personnes et pouvoir justifier chaque montant",
-					"description": "Les mêmes personnes apparaissent dans des décisions de justice, des fichiers d’avocats et des évaluations médicales. La plateforme rapproche ces sources et conserve, pour chaque calcul, la valeur d’origine, la valeur retenue et les corrections apportées."
+					"title": "Préparer les indemnisations et pouvoir justifier chaque montant",
+					"description": "Les mêmes personnes apparaissent dans des décisions de justice, des fichiers d’avocats et des évaluations médicales. La plateforme rapproche ces sources et conserve, pour chaque calcul, la valeur d’origine, la valeur retenue et les corrections apportées.",
+					"proof": "20 000 personnes suivies",
+					"note": "Périmètre du contentieux collectif."
 				},
 				"slug": "dossiers-indemnisation"
 			},
@@ -1216,7 +1218,9 @@
 				],
 				"indexCard": {
 					"title": "De la déclaration au traitement, le recycleur garde la trace de chaque batterie",
-					"description": "Avant le départ, l’équipe identifie les batteries qui peuvent voyager ensemble selon leur collecteur et leur destination. À l’arrivée, le site retrouve les déclarations du lot, vérifie les bordereaux et enregistre ce qui a été reçu puis traité."
+					"description": "Avant le départ, l’équipe identifie les batteries qui peuvent voyager ensemble selon leur collecteur et leur destination. À l’arrivée, le site retrouve les déclarations du lot, vérifie les bordereaux et enregistre ce qui a été reçu puis traité.",
+					"proof": "Un seul site destinataire par lot",
+					"note": "Le collecteur et le site sont vérifiés avant le départ."
 				},
 				"slug": "plateforme-operations-recyclage-batteries"
 			},
@@ -1243,8 +1247,10 @@
 					"Il peut indiquer au prestataire quelle armoire examiner, à quelle heure et pour quel écart."
 				],
 				"indexCard": {
-					"title": "Plus de 40 territoires équipés pour repérer les anomalies d’éclairage public",
-					"description": "Chaque matin, le gestionnaire compare les horaires prévus aux courbes de consommation. Il peut distinguer un décalage d’allumage d’une consommation présente toute la journée, puis indiquer au prestataire quelle armoire vérifier et à quel moment."
+					"title": "Repérer les anomalies de l’éclairage public",
+					"description": "Chaque matin, le gestionnaire compare les horaires prévus aux courbes de consommation. Il peut distinguer un décalage d’allumage d’une consommation présente toute la journée, puis indiquer au prestataire quelle armoire vérifier et à quel moment.",
+					"proof": "Plus de 40 territoires équipés",
+					"note": "Les gestionnaires y suivent les alertes du réseau."
 				},
 				"slug": "supervision-eclairage-public"
 			},
@@ -1264,8 +1270,10 @@
 					"Les équipes locales disposent de la même grille pour choisir les thèmes à reprendre lors de la campagne suivante."
 				],
 				"indexCard": {
-					"title": "Analyser 60 000 publications en huit langues pour orienter les budgets de campagne",
-					"description": "Quels messages suscitent une réaction, dans quel pays et auprès de quel public ? En reliant le thème et le ton de chaque publication à ses résultats, l’ONG dispose de critères communs pour répartir ses investissements entre pays et réseaux sociaux."
+					"title": "Comparer les messages qui orientent les budgets de campagne",
+					"description": "Quels messages suscitent une réaction, dans quel pays et auprès de quel public ? En reliant le thème et le ton de chaque publication à ses résultats, l’ONG dispose de critères communs pour répartir ses investissements entre pays et réseaux sociaux.",
+					"proof": "60 000 publications analysées",
+					"note": "Corpus en huit langues sur Facebook et Instagram."
 				},
 				"slug": "analyse-generative-campagnes"
 			},
@@ -1285,8 +1293,10 @@
 					"Le service client suit les demandes récurrentes. L’équipe produit peut examiner les retours sur un défaut de produit séparément de ceux qui décrivent un problème de livraison."
 				],
 				"indexCard": {
-					"title": "Croiser les avis de plus de 25 sources pour comprendre ce qui pose problème aux clients",
-					"description": "Un même défaut peut être décrit avec des mots différents dans une enquête, un avis en ligne ou un échange avec le service client. L’équipe études retrouve ces commentaires ensemble et transmet aux équipes produit les témoignages qui expliquent le problème."
+					"title": "Croiser les avis clients pour comprendre les problèmes récurrents",
+					"description": "Un même défaut peut être décrit avec des mots différents dans une enquête, un avis en ligne ou un échange avec le service client. L’équipe études retrouve ces commentaires ensemble et transmet aux équipes produit les témoignages qui expliquent le problème.",
+					"proof": "Plus de 25 sources réunies",
+					"note": "Enquêtes, service client et sites d’avis."
 				},
 				"slug": "data-hub-nlp"
 			},
@@ -1313,8 +1323,10 @@
 					"Les nouvelles données alimentent les analyses minute par minute. Les équipes ont pu basculer sur le nouveau suivi puis retirer l’ancien système d’analyse."
 				],
 				"indexCard": {
-					"title": "Changer de système de gestion tout en continuant à suivre les ventes minute par minute",
-					"description": "Quand le format des tickets de caisse change, les équipes conservent leurs repères : chaque vente reste rattachée aux bons articles et au bon magasin pour suivre le chiffre d’affaires et le panier moyen."
+					"title": "Suivre les ventes des magasins pendant un changement de logiciel",
+					"description": "Quand le format des tickets de caisse change, les équipes conservent leurs repères : chaque vente reste rattachée aux bons articles et au bon magasin pour suivre le chiffre d’affaires et le panier moyen.",
+					"proof": "Une mise à jour par minute",
+					"note": "Cadence d’alimentation du suivi des ventes."
 				},
 				"slug": "data-warehouse-retail"
 			}

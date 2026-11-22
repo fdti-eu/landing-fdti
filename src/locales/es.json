@@ -1112,8 +1112,10 @@
 					"Preparación de los cálculos y datos necesarios para las tablas de los fallos en Word, bajo supervisión humana."
 				],
 				"indexCard": {
-					"title": "Preparar las indemnizaciones de 20 000 personas y justificar cada importe",
-					"description": "Las mismas personas aparecen en resoluciones judiciales, archivos de abogados y evaluaciones médicas. La plataforma cruza estas fuentes y conserva para cada cálculo el valor original, el valor utilizado y las correcciones."
+					"title": "Preparar las indemnizaciones y justificar cada importe",
+					"description": "Las mismas personas aparecen en resoluciones judiciales, archivos de abogados y evaluaciones médicas. La plataforma cruza estas fuentes y conserva para cada cálculo el valor original, el valor utilizado y las correcciones.",
+					"proof": "20 000 personas registradas",
+					"note": "Personas incluidas en el litigio colectivo."
 				},
 				"slug": "expedientes-indemnizacion"
 			},
@@ -1220,7 +1222,9 @@
 				],
 				"indexCard": {
 					"title": "El reciclador sigue cada batería desde la declaración hasta el tratamiento",
-					"description": "Antes de la salida, el equipo determina qué baterías pueden viajar juntas según el transportista y el destino. La planta receptora recupera las declaraciones del lote, comprueba los documentos y registra la recepción y el tratamiento."
+					"description": "Antes de la salida, el equipo determina qué baterías pueden viajar juntas según el transportista y el destino. La planta receptora recupera las declaraciones del lote, comprueba los documentos y registra la recepción y el tratamiento.",
+					"proof": "Un único destino por lote",
+					"note": "Se comprueban el transportista y la planta de destino antes de la salida."
 				},
 				"slug": "plataforma-operaciones-reciclaje-baterias"
 			},
@@ -1247,8 +1251,10 @@
 					"Puede indicar al contratista qué cuadro revisar, a qué hora y por qué desviación."
 				],
 				"indexCard": {
-					"title": "Más de 40 territorios equipados para detectar anomalías en el alumbrado público",
-					"description": "Cada mañana el gestor compara los horarios previstos con las curvas de consumo. Distingue un desfase de encendido de un consumo continuo durante el día e indica al contratista qué cuadro revisar y a qué hora."
+					"title": "Detectar anomalías en el alumbrado público",
+					"description": "Cada mañana el gestor compara los horarios previstos con las curvas de consumo. Distingue un desfase de encendido de un consumo continuo durante el día e indica al contratista qué cuadro revisar y a qué hora.",
+					"proof": "Más de 40 territorios equipados",
+					"note": "Los gestores consultan las alertas de la red en estos territorios."
 				},
 				"slug": "supervision-alumbrado-publico"
 			},
@@ -1268,8 +1274,10 @@
 					"Los equipos locales utilizan los mismos criterios para elegir los temas de la próxima campaña."
 				],
 				"indexCard": {
-					"title": "Analizar 60 000 publicaciones en ocho idiomas para orientar el presupuesto de campaña",
-					"description": "¿Qué mensajes generan una reacción, en qué país y entre qué públicos? Al relacionar el tema y el tono de cada publicación con sus resultados, la ONG utiliza criterios comunes para repartir su presupuesto entre países y redes sociales."
+					"title": "Comparar mensajes para orientar los presupuestos de campaña",
+					"description": "¿Qué mensajes generan una reacción, en qué país y entre qué públicos? Al relacionar el tema y el tono de cada publicación con sus resultados, la ONG utiliza criterios comunes para repartir su presupuesto entre países y redes sociales.",
+					"proof": "60 000 publicaciones analizadas",
+					"note": "Publicaciones de Facebook e Instagram en ocho idiomas."
 				},
 				"slug": "analisis-generativo-campanas"
 			},
@@ -1289,8 +1297,10 @@
 					"Atención al cliente sigue las consultas recurrentes. El equipo de producto puede examinar por separado los comentarios sobre un defecto y los que describen problemas de entrega."
 				],
 				"indexCard": {
-					"title": "Cruzar opiniones de más de 25 fuentes para entender los problemas de los clientes",
-					"description": "Una encuesta, una reseña y una consulta a atención al cliente pueden describir el mismo defecto con palabras distintas. El equipo de estudios reúne esos comentarios y comparte con el equipo de producto los testimonios que explican el problema."
+					"title": "Cruzar las opiniones de los clientes para entender los problemas recurrentes",
+					"description": "Una encuesta, una reseña y una consulta a atención al cliente pueden describir el mismo defecto con palabras distintas. El equipo de estudios reúne esos comentarios y comparte con el equipo de producto los testimonios que explican el problema.",
+					"proof": "Más de 25 fuentes reunidas",
+					"note": "Encuestas, atención al cliente y sitios de reseñas."
 				},
 				"slug": "hub-datos-nlp"
 			},
@@ -1317,8 +1327,10 @@
 					"Los datos nuevos alimentan los análisis minuto a minuto. Los equipos pudieron pasar al nuevo sistema de análisis y retirar el anterior."
 				],
 				"indexCard": {
-					"title": "Cambiar de sistema de gestión y seguir las ventas de cada tienda minuto a minuto",
-					"description": "Aunque cambie el formato de los tickets, cada venta sigue vinculada a los artículos y a la tienda correspondientes. Los equipos pueden seguir la facturación y el importe medio por compra."
+					"title": "Seguir las ventas de las tiendas durante un cambio de software",
+					"description": "Aunque cambie el formato de los tickets, cada venta sigue vinculada a los artículos y a la tienda correspondientes. Los equipos pueden seguir la facturación y el importe medio por compra.",
+					"proof": "Una actualización por minuto",
+					"note": "Frecuencia de actualización de los datos de ventas."
 				},
 				"slug": "almacen-datos-retail"
 			}
