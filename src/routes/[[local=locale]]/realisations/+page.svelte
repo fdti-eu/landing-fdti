@@ -1,5 +1,4 @@
 <script lang="ts">
-	import CaseIndicators from '$lib/components/CaseIndicators.svelte';
 	import { getContext } from 'svelte';
 	import { tick } from 'svelte';
 	import type { Writable } from 'svelte/store';
@@ -35,6 +34,7 @@
 					} | null;
 					use_case_list?: {
 						id?: string | null;
+						indexCard?: { title: string; description: string; proof?: string; note?: string };
 						category?: string | null;
 						title?: string | null;
 						date?: string | null;
@@ -193,12 +193,27 @@
 		return `view-transition-name: ${part}-${id};`;
 	};
 
-	$: filteredUseCases = (content?.use_case_list ?? []).filter((useCase) => {
-		if (!selectedSector) return true;
-		return sectorGroups
-			.find((sector) => sector.label === selectedSector)
-			?.caseIds.includes(useCase.id || '');
-	});
+	const icons: Record<string, string> = {
+		'2': 'M3 21h34l-2-8-6-1-5-6H12l-4 7-5 2z M9 21a3 3 0 1 0 6 0m11 0a3 3 0 1 0 6 0 M11 13h17',
+		'1': 'M5 10l15-7 15 7z M7 28h26 M4 32h32 M10 13v12m7-12v12m7-12v12m7-12v12',
+		'7': 'M10 3h21v29l-4-2-3 2-4-2-4 2-3-2-3 2z M14 10h13m-13 5h8m-8 7h13',
+		'4': 'M8 32V12q0-7 8-7h8 M19 12q0-7 6-7t6 7z M22 16l-2 4m6-4v5m3-5 2 4',
+		'3': 'M3 9h29v18H3z M33 14h3v8h-3 M18 11l-5 8h6l-3 6 9-10h-7z',
+		'6': 'M4 5h25v17H14l-7 6v-6H4z M32 13h4v17h-5v4l-6-4h-8 M9 11h14m-14 5h9',
+		'9': 'M5 30h30 M20 30V5 M7 10l24-3 M8 10l-5 10h10z M31 8l-5 10h10z',
+		'5': 'M5 13h8l17-7v23l-17-7H5z M11 22l3 9h5l-3-8',
+		'10': 'M11 4h14l7 7v19H11z M25 4v8h7 M6 9v25h21 M15 17h13m-13 6h10',
+		'8': 'M4 14l14-8 15 8-15 8z M4 14v11l14 8 15-8V14 M18 22v11'
+	};
+	const cardOrder = ['2', '1', '7', '4', '3', '6', '9', '5', '10', '8'];
+	$: filteredUseCases = (content?.use_case_list ?? [])
+		.filter((useCase) => {
+			if (!selectedSector) return true;
+			return sectorGroups
+				.find((sector) => sector.label === selectedSector)
+				?.caseIds.includes(useCase.id || '');
+		})
+		.sort((a, b) => cardOrder.indexOf(a.id ?? '') - cardOrder.indexOf(b.id ?? ''));
 </script>
 
 {#if metatags}
@@ -242,24 +257,20 @@
 </svelte:head>
 
 {#if content}
-	<section
-		class="case-index-hero hero-section bg-darkGrey text-white py-24 md:py-32 overflow-x-hidden"
-		class:hero-hidden={Boolean(activeSlug)}
-	>
-		<div class="max-w-6xl mx-auto px-4 w-full">
-			<div class="space-y-6 text-center mb-8">
-				<p class="uppercase tracking-wider sm:tracking-[0.2em] text-yellow text-xs sm:text-sm">
-					{content.subtitle}
-				</p>
-				<h1 class="text-2xl sm:text-3xl md:text-5xl font-bold">{content.title}</h1>
-			</div>
-
-			<div class="sector-filter" aria-label={copy.filter}>
-				<button class:active={selectedSector === null} on:click={() => (selectedSector = null)}>
+	<section class="panorama-heading" class:hero-hidden={Boolean(activeSlug)}>
+		<div class="panorama-wrap">
+			<h1>{content.title}</h1>
+			<div class="sector-filter" role="group" aria-label={copy.filter}>
+				<button
+					aria-pressed={selectedSector === null}
+					class:active={selectedSector === null}
+					on:click={() => (selectedSector = null)}
+				>
 					{copy.all}
 				</button>
 				{#each sectorGroups as sector}
 					<button
+						aria-pressed={selectedSector === sector.label}
 						class:active={selectedSector === sector.label}
 						on:click={() =>
 							(selectedSector = selectedSector === sector.label ? null : sector.label)}
@@ -271,181 +282,28 @@
 		</div>
 	</section>
 
-	<section class="case-index-body bg-slate-50 py-12 md:py-16 overflow-x-hidden">
-		<div class="max-w-6xl mx-auto px-4 space-y-6 w-full">
-			<div class="case-index-grid">
-				{#each filteredUseCases as useCase (useCase.id)}
-					<div>
-						<a
-							href={buildLocalizedPath(`/realisations/${useCase.slug}`, currentLocale)}
-							on:click={(event) => handleCardClick(event, useCase.slug)}
-							class="use-case-card group block bg-white rounded-xl shadow-md hover:shadow-2xl hover:scale-[1.02] hover:border-yellow/50 border-2 border-transparent transition-all duration-300 cursor-pointer relative
-							{$highlightedUseCase === useCase.slug ? 'animate-highlight' : ''}"
-							class:use-case-card-active={activeSlug === useCase.slug}
-							class:use-case-card-inactive={Boolean(activeSlug) && activeSlug !== useCase.slug}
-						>
-							<article class="p-4 md:p-5">
-								<!-- Version repliée : layout horizontal compact sur desktop, vertical sur mobile -->
-								<div class="flex flex-col lg:flex-row lg:items-start gap-4">
-									<!-- Gauche : Info principale -->
-									<div class="flex-1 min-w-0">
-										<div class="flex flex-col sm:flex-row sm:items-baseline gap-2 sm:gap-6 mb-2">
-											<p
-												class="text-xs uppercase tracking-wide sm:tracking-[0.15em] text-darkGrey/70"
-												style={getViewTransitionStyle(useCase.slug, useCase.id, 'category')}
-											>
-												{useCase.category}
-											</p>
-											{#if useCase.location || useCase.date}
-												<div
-													class="flex flex-wrap gap-2 sm:gap-3"
-													style={getViewTransitionStyle(useCase.slug, useCase.id, 'meta')}
-												>
-													{#if useCase.location}
-														<span
-															class="text-xs font-medium text-darkGrey/60 flex items-center gap-1"
-														>
-															<svg
-																xmlns="http://www.w3.org/2000/svg"
-																class="h-3 w-3"
-																viewBox="0 0 20 20"
-																fill="currentColor"
-															>
-																<path
-																	fill-rule="evenodd"
-																	d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
-																	clip-rule="evenodd"
-																/>
-															</svg>
-															{useCase.location}
-														</span>
-													{/if}
-													{#if useCase.date}
-														<span
-															class="text-xs font-medium text-darkGrey/60 flex items-center gap-1"
-														>
-															<svg
-																xmlns="http://www.w3.org/2000/svg"
-																class="h-3 w-3"
-																viewBox="0 0 20 20"
-																fill="currentColor"
-															>
-																<path
-																	fill-rule="evenodd"
-																	d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
-																	clip-rule="evenodd"
-																/>
-															</svg>
-															{useCase.date}
-														</span>
-													{/if}
-												</div>
-											{/if}
-										</div>
-										<h2
-											class="case-index-title text-base sm:text-lg font-bold text-darkGrey group-hover:text-yellow transition-colors mb-2"
-											style={getViewTransitionStyle(useCase.slug, useCase.id, 'title')}
-										>
-											{useCase.title}
-										</h2>
-										<p
-											class="text-sm text-darkGrey/80 line-clamp-2"
-											style={getViewTransitionStyle(useCase.slug, useCase.id, 'challenge')}
-										>
-											{useCase.challenge}
-										</p>
-									</div>
-
-									<!-- Droite : Métriques et tags (stack vertical sur mobile, horizontal sur desktop) -->
-									<div
-										class="flex flex-row lg:flex-col xl:flex-row gap-4 items-start lg:items-end xl:items-start"
-									>
-										{#if useCase.metrics?.[0]?.note}
-			<CaseIndicators compact metrics={useCase.metrics.slice(0, 2)} />
-		{:else if useCase.metrics?.length}
-											<div
-												class="case-index-metrics grid grid-cols-2 gap-x-4 gap-y-2 w-full lg:w-auto"
-											>
-												{#each useCase.metrics.slice(0, 2) as metric, index}
-													<div
-														class="min-w-0 text-left lg:text-right transition-all duration-300 {index >=
-														2
-															? 'opacity-0 h-0 overflow-hidden group-hover:opacity-100 group-hover:h-auto group-hover:overflow-visible'
-															: ''}"
-														style={getViewTransitionStyle(
-															useCase.slug,
-															useCase.id,
-															`metric-${index}`
-														)}
-													>
-														<p class="text-xs text-darkGrey/60 leading-tight">
-															{metric?.label}
-														</p>
-														<p class="text-sm sm:text-base font-bold text-darkGrey leading-tight">
-															{metric?.value}
-														</p>
-													</div>
-												{/each}
-											</div>
-										{/if}
-
-										{#if useCase.tags?.length}
-											<div
-												class="case-index-tags relative flex flex-wrap gap-1 max-w-full lg:max-w-[200px] lg:justify-end"
-											>
-												{#each useCase.tags.slice(0, 3) as tag, index}
-													<span
-														class="px-2 py-0.5 rounded-md bg-slate-100 text-xs font-medium text-darkGrey whitespace-nowrap transition-all duration-300 {index >=
-														3
-															? 'opacity-0 w-0 overflow-hidden group-hover:opacity-100 group-hover:w-auto group-hover:overflow-visible'
-															: ''}"
-														style={getViewTransitionStyle(useCase.slug, useCase.id, `tag-${index}`)}
-													>
-														{tag}
-													</span>
-												{/each}
-												{#if useCase.tags.length > 3}
-													<span
-														class="px-2 py-0.5 rounded-md bg-slate-200 text-xs font-semibold text-darkGrey"
-													>
-														+{useCase.tags.length - 3}
-													</span>
-												{/if}
-											</div>
-										{/if}
-									</div>
-								</div>
-
-								<!-- Version dépliée : Approche et Impact -->
-								<div class="hidden">
-									<div class="overflow-hidden">
-										<div class="pt-4 mt-4 border-t border-slate-100 grid md:grid-cols-2 gap-4">
-											{#if useCase.approach}
-												<div>
-													<h3
-														class="text-xs font-bold text-darkGrey/70 uppercase tracking-wider mb-1"
-													>
-														{copy.approach}
-													</h3>
-													<p class="text-sm text-darkGrey/80 leading-relaxed">{useCase.approach}</p>
-												</div>
-											{/if}
-											{#if useCase.impact}
-												<div>
-													<h3
-														class="text-xs font-bold text-darkGrey/70 uppercase tracking-wider mb-1"
-													>
-														{copy.impact}
-													</h3>
-													<p class="text-sm text-darkGrey/80 leading-relaxed">{useCase.impact}</p>
-												</div>
-											{/if}
-										</div>
-									</div>
-								</div>
-							</article>
-						</a>
-					</div>
+	<section class="panorama-body">
+		<div class="panorama-wrap">
+			<div class="panorama-grid">
+				{#each filteredUseCases as item (item.id)}
+					<a
+						class="panorama-card"
+						data-case={item.id}
+						href={buildLocalizedPath(`/realisations/${item.slug}`, currentLocale)}
+						on:click={(event) => handleCardClick(event, item.slug)}
+					>
+						<div class="eyebrow">
+							<svg aria-hidden="true" viewBox="0 0 40 38"><path d={icons[item.id ?? '']} /></svg
+							>{item.category}<span aria-hidden="true">→</span>
+						</div>
+						<h2 style={getViewTransitionStyle(item.slug, item.id, 'title')}>
+							{item.indexCard?.title ?? item.title}
+						</h2>
+						<p>{item.indexCard?.description ?? item.challenge}</p>
+						{#if item.indexCard?.proof}<div class="proof">
+								<strong>{item.indexCard.proof}</strong><small>{item.indexCard.note}</small>
+							</div>{/if}
+					</a>
 				{/each}
 			</div>
 
@@ -489,36 +347,154 @@
 {/if}
 
 <style>
-	.use-case-card {
-		position: relative;
+	.panorama-heading,
+	.panorama-body {
+		background: #faf9f6;
+		color: #24282b;
 	}
-
-	.use-case-card:hover {
-		box-shadow:
-			0 20px 50px -12px rgba(0, 0, 0, 0.15),
-			0 0 0 1px rgba(251, 210, 67, 0.2);
-		background: linear-gradient(to bottom, #ffffff, #fffef8);
+	.panorama-heading {
+		padding-top: 116px;
 	}
-
-	.use-case-card-active {
-		z-index: 10;
+	.panorama-wrap {
+		width: 90%;
+		max-width: 1328px;
+		margin: auto;
 	}
-
-	.use-case-card-inactive {
-		opacity: 0;
-		visibility: hidden;
-		pointer-events: none;
-		transition: none !important;
+	.panorama-heading h1 {
+		font-size: clamp(34px, 3vw, 46px);
+		line-height: 1.1;
+		font-weight: 700;
+		letter-spacing: -0.035em;
 	}
-
-	.hero-section {
-		position: relative;
+	.panorama-heading .sector-filter {
+		margin: 12px 0 0;
+		gap: 14px;
+		border: 0;
+		border-bottom: 1px solid #c9c9c1;
 	}
-
+	.panorama-heading .sector-filter button {
+		width: auto;
+		border: 0;
+		border-bottom: 3px solid transparent;
+		background: transparent;
+		color: #464b4c;
+		padding: 9px 3px;
+		min-height: 42px;
+		border-radius: 0;
+	}
+	.panorama-heading .sector-filter button.active {
+		border-bottom-color: #b88426;
+		color: #202426;
+	}
+	.panorama-body {
+		padding: 16px 0 52px;
+	}
+	.panorama-grid {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 16px;
+	}
+	.panorama-card {
+		display: flex;
+		flex-direction: column;
+		min-width: 0;
+		padding: 18px 24px 20px;
+		background: #fff;
+		border: 1px solid #d7d5cd;
+		border-radius: 0;
+		color: #24282b;
+		text-decoration: none;
+		--accent: #815b20;
+	}
+	.eyebrow {
+		display: flex;
+		align-items: center;
+		gap: 10px;
+		color: var(--accent);
+		font-weight: 700;
+		font-size: 13px;
+		text-transform: uppercase;
+		letter-spacing: 0.1em;
+	}
+	.eyebrow svg {
+		width: 30px;
+		height: 29px;
+		fill: none;
+		stroke: currentColor;
+		stroke-width: 1.65;
+		stroke-linecap: round;
+		stroke-linejoin: round;
+	}
+	.eyebrow span {
+		margin-left: auto;
+		font-size: 20px;
+	}
+	.panorama-card h2 {
+		font-size: clamp(22px, 1.85vw, 29px);
+		font-weight: 700;
+		line-height: 1.09;
+		letter-spacing: -0.025em;
+		margin: 12px 0 8px;
+	}
+	.panorama-card p {
+		font-size: 16.5px;
+		line-height: 1.38;
+		color: #42484a;
+	}
+	.proof {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: baseline;
+		gap: 4px 12px;
+		padding-top: 10px;
+		border-top: 1px solid #d0cdc4;
+		margin-top: 12px;
+	}
+	.proof strong {
+		font-size: 20px;
+	}
+	.proof small {
+		font-size: 14px;
+	}
+	.panorama-card:is([data-case='2'], [data-case='5']) {
+		background: #252b2d;
+		color: #fff;
+		--accent: #fcd088;
+	}
+	.panorama-card:is([data-case='2'], [data-case='5']) p {
+		color: #e3e4df;
+	}
+	.panorama-card[data-case='2'] .proof strong {
+		color: #fcd088;
+	}
+	.panorama-card:is([data-case='1'], [data-case='8']) {
+		background: #f6eddc;
+	}
+	.panorama-card:is([data-case='4'], [data-case='9']) {
+		background: #eeefea;
+	}
+	.panorama-card:hover,
+	.panorama-card:focus-visible {
+		border-color: var(--accent);
+	}
 	.hero-hidden {
-		opacity: 0;
 		visibility: hidden;
-		pointer-events: none;
-		transition: none !important;
+	}
+	@media (max-width: 760px) {
+		.panorama-heading {
+			padding-top: 96px;
+		}
+		.panorama-grid {
+			grid-template-columns: 1fr;
+		}
+		.panorama-card {
+			padding: 16px 18px;
+		}
+		.panorama-heading .sector-filter {
+			gap: 0 10px;
+		}
+		.panorama-heading .sector-filter button {
+			font-size: 13px;
+		}
 	}
 </style>

@@ -1026,10 +1026,22 @@
 					"Judicial cases: summarize the parties, facts, claims and arguments with references to source documents and pages.",
 					"Individual registrations (IPP): classify supporting documents and group checks on identity, address and declarations of no convictions. October volumes exclude this workflow."
 				],
+				"indexCard": {
+					"title": "AI prepares registry checks and points judges to the source documents",
+					"description": "Registry staff see discrepancies between a filing and its supporting documents in their usual software. For court cases, judges receive a summary of claims and arguments with references to the original pages.",
+					"proof": "48 courts equipped",
+					"note": "Platform integrated into court registry software."
+				},
 				"slug": "automatisation-greffes"
 			},
 			{
 				"id": "10",
+				"indexCard": {
+					"title": "Filing documents for several vehicles in one upload",
+					"description": "The administrator uploads a batch without sorting it by vehicle. For each document, the software reads the vehicle identification number, finds the matching record and asks her to confirm the link.",
+					"proof": "50 h/month if each document saves 1 min",
+					"note": "Scenario based on 3,000 documents a month."
+				},
 				"slug": "ocr-vehicle-records",
 				"title": "Filing a mixed batch of documents against the right vehicle records",
 				"category": "Aftermarket & recycling",
@@ -1102,6 +1114,10 @@
 					"Retain a history of corrections and validations entered in the tool, together with original values and recorded reasons.",
 					"Prepare calculations and the data needed for tables in Word judgments, under human supervision."
 				],
+				"indexCard": {
+					"title": "Preparing compensation for 20,000 people and accounting for each amount",
+					"description": "The same individuals appear in court decisions, lawyers’ files and medical assessments. The platform matches these sources and keeps the original value, the value used and any corrections for each calculation."
+				},
 				"slug": "compensation-case-files"
 			},
 			{
@@ -1145,6 +1161,12 @@
 					"Record the vehicle and its paperwork separately. A car may already be in the yard while its papers are still on their way. By recording the two arrivals separately, the centre knows what it still needs to obtain.",
 					"Provide the certificates. For take-backs in France, the transfer and destruction documents are attached to the vehicle record. The owner can retrieve the signed certificates from their account."
 				],
+				"indexCard": {
+					"title": "Organising vehicle take-back with over 5,000 partners",
+					"description": "An owner or garage requests collection. From the carrier to the treatment centre, each partner records its part. The operator follows each vehicle through to its destruction documents.",
+					"proof": "≈ 20,000 vehicles a year",
+					"note": "Vehicles registered on the platform."
+				},
 				"slug": "end-of-life-vehicle-platform"
 			},
 			{
@@ -1177,6 +1199,12 @@
 					"Once the record is approved, the partner records collection from the owner or flags a failed pickup.",
 					"On arrival, the partner confirms receipt. The manufacturer can see whether the battery is still expected or has arrived. For a second-life battery, the partner can then confirm the transaction."
 				],
+				"indexCard": {
+					"title": "A marketplace for battery reuse and recycling across 18 countries",
+					"description": "Owners register their batteries, partners offer a purchase price and the manufacturer tracks their destination. Connected partners receive the declaration in their own system and confirm pickup and receipt there.",
+					"proof": "≈ 10,000 batteries tracked",
+					"note": "Registered batteries, excluding cancellations, in early September 2026."
+				},
 				"slug": "marketplace-batteries"
 			},
 			{
@@ -1193,6 +1221,10 @@
 					"The collection planner builds the batch. A declaration for a different collector or receiving site goes on a separate list.",
 					"The team checks which signatures are due on the waste tracking document. The receiving site records receipt and then treatment in the same record."
 				],
+				"indexCard": {
+					"title": "Tracking every battery from declaration to treatment",
+					"description": "Before collection, the team identifies batteries that can travel together based on their collector and destination. On arrival, the site retrieves the batch declarations, checks the tracking documents and records receipt and treatment."
+				},
 				"slug": "battery-recycling-operations-platform"
 			},
 			{
@@ -1217,6 +1249,10 @@
 					"Comparing consumption before, during and after the scheduled lighting period helps distinguish a steady daytime load from a shift in switch-on time.",
 					"The operator can tell the contractor which cabinet to check, at what time and for which discrepancy."
 				],
+				"indexCard": {
+					"title": "Over 40 territories equipped to spot street lighting anomalies",
+					"description": "Each morning, operators compare lighting schedules with consumption curves. They can distinguish a shift in switch-on time from a steady daytime load and tell the contractor which cabinet to inspect and when."
+				},
 				"slug": "supervision-eclairage-public"
 			},
 			{
@@ -1234,6 +1270,10 @@
 					"The communications team compares these findings with the response to each post among different audiences.",
 					"Local teams use the same framework to choose themes for their next campaign."
 				],
+				"indexCard": {
+					"title": "Analysing 60,000 posts in eight languages to guide campaign budgets",
+					"description": "Which messages draw a response, in which country and from whom? By comparing each post’s topic and tone with its performance, the NGO uses shared criteria to allocate funding across countries and social networks."
+				},
 				"slug": "analyse-generative-campagnes"
 			},
 			{
@@ -1251,6 +1291,10 @@
 					"The insights team finds comments on the same subject and reads their original wording.",
 					"Customer service tracks recurring enquiries. The product team can examine reports of a product fault separately from delivery complaints."
 				],
+				"indexCard": {
+					"title": "Bringing together feedback from over 25 sources to understand customer problems",
+					"description": "Surveys, reviews and customer service enquiries can describe the same fault in different words. The insights team brings those comments together and shares the accounts that explain the issue with product teams."
+				},
 				"slug": "data-hub-nlp"
 			},
 			{
@@ -1275,6 +1319,10 @@
 					"Each sales line is linked to the store. Analysts can use receipt totals to track revenue and average transaction value by store.",
 					"New data feeds the reports minute by minute. The teams switched to the new reporting system and retired the old one."
 				],
+				"indexCard": {
+					"title": "Changing management systems while tracking store sales minute by minute",
+					"description": "When receipt formats change, the teams keep their bearings: each sale stays linked to the right items and store so analysts can track revenue and average transaction value."
+				},
 				"slug": "data-warehouse-retail"
 			}
 		],

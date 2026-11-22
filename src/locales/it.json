@@ -1034,10 +1034,22 @@
 					"Fascicoli giudiziari: riunire parti, fatti, domande e argomenti in una sintesi con riferimenti ai documenti e alle pagine di origine.",
 					"Iscrizioni di persone fisiche (IPP): classificare i documenti e raggruppare le verifiche di identità, indirizzo e dichiarazione di assenza di condanne. I volumi di ottobre escludono questo flusso."
 				],
+				"indexCard": {
+					"title": "L’IA prepara i controlli di cancelleria e rimanda il giudice alle pagine del fascicolo",
+					"description": "Il personale di cancelleria trova nel proprio gestionale le differenze tra quanto dichiarato e i documenti presentati. Per le cause giudiziarie il giudice riceve una sintesi delle richieste e delle argomentazioni con riferimenti alle pagine originali.",
+					"proof": "48 tribunali attrezzati",
+					"note": "Piattaforma integrata nel gestionale delle cancellerie."
+				},
 				"slug": "automazione-cancellerie-tribunali"
 			},
 			{
 				"id": "10",
+				"indexCard": {
+					"title": "Archiviare i documenti di più veicoli con un solo caricamento",
+					"description": "L’addetta carica un lotto di documenti senza suddividerli per veicolo. Per ogni documento il software legge il numero di telaio, trova la pratica corrispondente e propone l’abbinamento da convalidare.",
+					"proof": "50 ore/mese con 1 minuto risparmiato a documento",
+					"note": "Scenario su 3.000 documenti al mese."
+				},
 				"slug": "ocr-fascicoli-veicoli",
 				"title": "Archiviare un lotto di documenti nei fascicoli dei veicoli corretti",
 				"category": "Aftermarket e riciclo",
@@ -1110,6 +1122,10 @@
 					"Storicizzare correzioni e convalide registrate nell’applicazione, conservando valori originali e motivi documentati.",
 					"Preparare calcoli e dati per le tabelle da inserire nelle sentenze Word, sotto controllo umano."
 				],
+				"indexCard": {
+					"title": "Preparare i risarcimenti di 20.000 persone e motivare ogni importo",
+					"description": "Le stesse persone compaiono nelle decisioni giudiziarie, nei file degli avvocati e nelle perizie mediche. La piattaforma confronta le fonti e conserva per ogni calcolo il valore originario, quello utilizzato e le correzioni."
+				},
 				"slug": "pratiche-risarcimento"
 			},
 			{
@@ -1153,6 +1169,12 @@
 					"Registrare separatamente il veicolo e i suoi documenti. Un’auto può trovarsi già nel piazzale mentre i documenti devono ancora arrivare. Registrando separatamente i due arrivi, il centro sa che cosa resta da recuperare.",
 					"Consegnare i giustificativi. Per i ritiri in Francia, i documenti di cessione e distruzione vengono associati al fascicolo. Il proprietario ritrova i certificati firmati nella propria area personale."
 				],
+				"indexCard": {
+					"title": "Organizzare il ritiro dei veicoli a fine vita con oltre 5.000 partner",
+					"description": "Un privato o un’officina richiede il ritiro. Dal trasportatore al centro di trattamento, ogni operatore registra la propria fase. Il gestore segue ogni veicolo fino ai documenti di avvenuta distruzione.",
+					"proof": "≈ 20.000 veicoli all’anno",
+					"note": "Veicoli registrati sulla piattaforma."
+				},
 				"slug": "piattaforma-veicoli-fuori-uso"
 			},
 			{
@@ -1185,6 +1207,12 @@
 					"Una volta convalidata la pratica, l’operatore registra il ritiro presso il proprietario. Se il ritiro non va a buon fine, può annotare il problema nella pratica.",
 					"All’arrivo l’operatore conferma la ricezione. Il costruttore sa così se la batteria è ancora attesa o è già arrivata. Se è destinata a una seconda vita, l’operatore può poi confermare la transazione."
 				],
+				"indexCard": {
+					"title": "Un mercato per la seconda vita e il riciclo delle batterie in 18 paesi",
+					"description": "I proprietari dichiarano le batterie, i partner propongono un prezzo di acquisto e il costruttore ne segue la destinazione. Gli operatori collegati ricevono la dichiarazione nel proprio gestionale e vi confermano il ritiro e la ricezione.",
+					"proof": "≈ 10.000 batterie registrate",
+					"note": "Batterie registrate, esclusi gli annullamenti, a inizio settembre 2026."
+				},
 				"slug": "marketplace-batterie-seconda-vita"
 			},
 			{
@@ -1201,6 +1229,10 @@
 					"Chi prepara il ritiro compone il lotto. Se una dichiarazione prevede un incaricato o una destinazione diversi, la inserisce in un’altra distinta.",
 					"Il personale verifica le firme attese sul documento di tracciabilità dei rifiuti. L’impianto destinatario registra nella pratica prima la ricezione e poi il trattamento."
 				],
+				"indexCard": {
+					"title": "Il riciclatore segue ogni batteria dalla dichiarazione al trattamento",
+					"description": "Prima del ritiro il team individua le batterie che possono viaggiare insieme in base al trasportatore e alla destinazione. All’arrivo l’impianto recupera le dichiarazioni del lotto, verifica i documenti e registra la ricezione e il trattamento."
+				},
 				"slug": "piattaforma-riciclo-batterie"
 			},
 			{
@@ -1225,6 +1257,10 @@
 					"Confronta i consumi prima, durante e dopo la fascia di accensione. Può così distinguere un assorbimento presente tutto il giorno da uno scarto nell’orario di accensione.",
 					"Può indicare al manutentore quale quadro controllare, a che ora e per quale scostamento."
 				],
+				"indexCard": {
+					"title": "Oltre 40 territori attrezzati per individuare anomalie nell’illuminazione pubblica",
+					"description": "Ogni mattina il gestore confronta gli orari previsti con le curve di consumo. Distingue un ritardo nell’accensione da un assorbimento continuo durante il giorno e indica al manutentore quale quadro controllare e a che ora."
+				},
 				"slug": "supervisione-illuminazione-pubblica"
 			},
 			{
@@ -1242,6 +1278,10 @@
 					"Il team comunicazione confronta questi elementi con le reazioni osservate nei diversi segmenti di pubblico.",
 					"I team locali usano gli stessi criteri per scegliere quali temi riprendere nella campagna successiva."
 				],
+				"indexCard": {
+					"title": "Analizzare 60.000 post in otto lingue per orientare i budget delle campagne",
+					"description": "Quali messaggi suscitano reazioni, in quale paese e tra quali pubblici? Collegando il tema e il tono di ogni post ai risultati, l’ONG usa criteri comuni per distribuire il budget tra paesi e social network."
+				},
 				"slug": "analisi-ia-campagne-social"
 			},
 			{
@@ -1259,6 +1299,10 @@
 					"Il team di ricerca ritrova i commenti sullo stesso tema e consulta le formulazioni originali.",
 					"L’assistenza segue le richieste ricorrenti. Il team di prodotto può esaminare le segnalazioni di un difetto separatamente dai problemi di consegna."
 				],
+				"indexCard": {
+					"title": "Confrontare opinioni da oltre 25 fonti per capire i problemi dei clienti",
+					"description": "Lo stesso difetto può essere descritto con parole diverse in un sondaggio, una recensione o una richiesta di assistenza. Il team di ricerca riunisce i commenti e trasmette al team di prodotto le testimonianze che spiegano il problema."
+				},
 				"slug": "hub-dati-nlp"
 			},
 			{
@@ -1283,6 +1327,10 @@
 					"Le righe di vendita sono associate al negozio. L’analista può usare gli importi degli scontrini per seguire il fatturato e il valore medio dello scontrino per punto vendita.",
 					"I nuovi dati alimentano le analisi minuto per minuto. I team sono passati al nuovo sistema di analisi e hanno dismesso il precedente."
 				],
+				"indexCard": {
+					"title": "Cambiare gestionale continuando a seguire le vendite dei negozi minuto per minuto",
+					"description": "Anche quando cambia il formato degli scontrini, ogni vendita resta collegata agli articoli e al negozio corretti. I team possono così seguire fatturato e valore medio dello scontrino per punto vendita."
+				},
 				"slug": "data-warehouse-retail-tempo-reale"
 			}
 		],

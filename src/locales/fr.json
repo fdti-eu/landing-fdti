@@ -1034,10 +1034,22 @@
 					"Judiciaire : réunir les parties, les faits, les demandes et les moyens dans une synthèse qui renvoie aux pièces et aux pages sources.",
 					"Immatriculation de personnes physiques (IPP) : classer les justificatifs et regrouper les contrôles d’identité, d’adresse et de non-condamnation. Ce parcours n’entre pas dans les volumes d’octobre."
 				],
+				"indexCard": {
+					"title": "L’IA prépare les contrôles du greffe et renvoie le juge aux pièces du dossier",
+					"description": "Dans leur logiciel habituel, les greffiers retrouvent les écarts entre une formalité déclarée et ses justificatifs. Pour les affaires judiciaires, le juge dispose d’une synthèse des demandes et des arguments, avec un renvoi aux pages sources.",
+					"proof": "48 tribunaux équipés",
+					"note": "Plateforme intégrée au logiciel métier des greffes."
+				},
 				"slug": "automatisation-greffes"
 			},
 			{
 				"id": "10",
+				"indexCard": {
+					"title": "Classer les pièces de plusieurs véhicules à partir d’un seul dépôt",
+					"description": "La gestionnaire dépose un lot de documents sans les trier par véhicule. Pour chaque pièce, le logiciel lit le numéro de série, retrouve le dossier correspondant et lui propose le rattachement à valider.",
+					"proof": "50 h/mois si 1 min gagnée par pièce",
+					"note": "Scénario sur 3 000 pièces mensuelles."
+				},
 				"slug": "ocr-dossiers-vhu",
 				"title": "Classer un lot de documents dans les bons dossiers véhicules",
 				"category": "Aftermarket & recyclage",
@@ -1110,6 +1122,10 @@
 					"Historique des corrections et validations saisies dans l’outil, avec conservation des valeurs d’origine et des motifs renseignés.",
 					"Préparation des calculs et des données nécessaires aux tableaux à intégrer dans les jugements Word, sous contrôle humain."
 				],
+				"indexCard": {
+					"title": "Préparer les indemnisations de 20 000 personnes et pouvoir justifier chaque montant",
+					"description": "Les mêmes personnes apparaissent dans des décisions de justice, des fichiers d’avocats et des évaluations médicales. La plateforme rapproche ces sources et conserve, pour chaque calcul, la valeur d’origine, la valeur retenue et les corrections apportées."
+				},
 				"slug": "dossiers-indemnisation"
 			},
 			{
@@ -1153,6 +1169,12 @@
 					"Réceptionner le véhicule et ses papiers. Le centre enregistre l’arrivée du véhicule et, séparément, celle des documents. Une voiture peut être sur le parc alors que ses papiers ne sont pas encore arrivés. L’équipe sait alors ce qu’il reste à récupérer.",
 					"Remettre les justificatifs. Pour les reprises en France, les documents de cession et de destruction sont rattachés au dossier. Le propriétaire retrouve ses certificats signés dans son espace."
 				],
+				"indexCard": {
+					"title": "Organiser la reprise de véhicules hors d’usage avec plus de 5 000 partenaires",
+					"description": "Un particulier ou un garage demande l’enlèvement d’un véhicule. Du transporteur au centre de traitement, chacun renseigne son étape. L’opérateur suit chaque véhicule jusqu’aux justificatifs de destruction.",
+					"proof": "≈ 20 000 VHU par an",
+					"note": "Véhicules enregistrés sur la plateforme."
+				},
 				"slug": "plateforme-economie-circulaire"
 			},
 			{
@@ -1185,6 +1207,12 @@
 					"Une fois le dossier validé, le prestataire indique qu’il a enlevé la batterie chez son propriétaire. Si la collecte échoue, il peut signaler le problème sur le dossier.",
 					"À l’arrivée, le prestataire confirme la réception : l’équipe du constructeur sait alors si la batterie est encore attendue ou si elle est bien arrivée. Pour une batterie destinée à la seconde vie, le prestataire peut ensuite confirmer la transaction."
 				],
+				"indexCard": {
+					"title": "Une marketplace pour organiser la seconde vie et le recyclage des batteries dans 18 pays",
+					"description": "Les propriétaires déclarent leurs batteries, les partenaires proposent un prix de reprise et le constructeur suit leur destination. Les prestataires équipés reçoivent la déclaration dans leur propre outil et y confirment l’enlèvement puis la réception.",
+					"proof": "≈ 10 000 batteries suivies",
+					"note": "Batteries enregistrées, hors annulations, au début de septembre 2026."
+				},
 				"slug": "marketplace-batteries"
 			},
 			{
@@ -1201,6 +1229,10 @@
 					"La personne qui prépare la collecte constitue le lot. Si une déclaration concerne un autre collecteur ou un autre site, elle doit la placer sur une autre liste.",
 					"L’équipe suit les signatures du bordereau de suivi des déchets. Le site destinataire enregistre la réception, puis le traitement dans le dossier."
 				],
+				"indexCard": {
+					"title": "De la déclaration au traitement, le recycleur garde la trace de chaque batterie",
+					"description": "Avant le départ, l’équipe identifie les batteries qui peuvent voyager ensemble selon leur collecteur et leur destination. À l’arrivée, le site retrouve les déclarations du lot, vérifie les bordereaux et enregistre ce qui a été reçu puis traité."
+				},
 				"slug": "plateforme-operations-recyclage-batteries"
 			},
 			{
@@ -1225,6 +1257,10 @@
 					"Il examine la consommation avant, pendant et après la plage d’allumage. Il peut ainsi distinguer une consommation présente toute la journée d’un décalage au moment de l’allumage.",
 					"Il peut indiquer au prestataire quelle armoire examiner, à quelle heure et pour quel écart."
 				],
+				"indexCard": {
+					"title": "Plus de 40 territoires équipés pour repérer les anomalies d’éclairage public",
+					"description": "Chaque matin, le gestionnaire compare les horaires prévus aux courbes de consommation. Il peut distinguer un décalage d’allumage d’une consommation présente toute la journée, puis indiquer au prestataire quelle armoire vérifier et à quel moment."
+				},
 				"slug": "supervision-eclairage-public"
 			},
 			{
@@ -1242,6 +1278,10 @@
 					"L’équipe communication rapproche ces éléments des performances observées auprès des différents publics.",
 					"Les équipes locales disposent de la même grille pour choisir les thèmes à reprendre lors de la campagne suivante."
 				],
+				"indexCard": {
+					"title": "Analyser 60 000 publications en huit langues pour orienter les budgets de campagne",
+					"description": "Quels messages suscitent une réaction, dans quel pays et auprès de quel public ? En reliant le thème et le ton de chaque publication à ses résultats, l’ONG dispose de critères communs pour répartir ses investissements entre pays et réseaux sociaux."
+				},
 				"slug": "analyse-generative-campagnes"
 			},
 			{
@@ -1259,6 +1299,10 @@
 					"L’équipe études clients retrouve les commentaires qui portent sur un même sujet et consulte les formulations d’origine.",
 					"Le service client suit les demandes récurrentes. L’équipe produit peut examiner les retours sur un défaut de produit séparément de ceux qui décrivent un problème de livraison."
 				],
+				"indexCard": {
+					"title": "Croiser les avis de plus de 25 sources pour comprendre ce qui pose problème aux clients",
+					"description": "Un même défaut peut être décrit avec des mots différents dans une enquête, un avis en ligne ou un échange avec le service client. L’équipe études retrouve ces commentaires ensemble et transmet aux équipes produit les témoignages qui expliquent le problème."
+				},
 				"slug": "data-hub-nlp"
 			},
 			{
@@ -1283,6 +1327,10 @@
 					"Les lignes de vente sont rapprochées du magasin concerné. L’analyste peut utiliser les montants des tickets pour suivre le chiffre d’affaires et le panier moyen par magasin.",
 					"Les nouvelles données alimentent les analyses minute par minute. Les équipes ont pu basculer sur le nouveau suivi puis retirer l’ancien système d’analyse."
 				],
+				"indexCard": {
+					"title": "Changer de système de gestion tout en continuant à suivre les ventes minute par minute",
+					"description": "Quand le format des tickets de caisse change, les équipes conservent leurs repères : chaque vente reste rattachée aux bons articles et au bon magasin pour suivre le chiffre d’affaires et le panier moyen."
+				},
 				"slug": "data-warehouse-retail"
 			}
 		],
