@@ -46,6 +46,8 @@ L’ajout au sitemap facilite la découverte des pages, sans garantir leur index
 
 ### Réalisations
 
+**Une fiche par problème d’achat, pas par client.** Un même client peut donner lieu à plusieurs réalisations si chacune répond à un besoin distinct : organiser la reprise d’un véhicule et classer les justificatifs reçus en lot justifient deux fiches.
+
 Une réalisation raconte un travail métier, jamais l’identité du client. Désigner l’acteur par son rôle (« un recycleur de batteries », « les équipes chargées de la reprise des véhicules »). Écarter noms de sociétés et de partenaires identifiants, marques applicatives propres au client, logos, domaines et liens vers ses sites ou ses avis. Une technologie publique ou un service tiers peut être nommé si cela explique le travail. Les références institutionnelles de l’accueil sont distinctes : ne pas associer leurs logos aux fiches.
 
 Cette règle vaut pour la fiche, son URL, les cartes et liens entrants, les métadonnées, les données structurées, les exports et toutes les langues. Garder les sources commerciales et les correspondances client/projet hors du contenu publié.
