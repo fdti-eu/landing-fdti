@@ -1034,10 +1034,22 @@
 					"Gerichtsverfahren: Parteien, Tatsachen, Anträge und Argumente zusammenfassen und auf Quelldokumente und Seiten verweisen.",
 					"Eintragung natürlicher Personen (IPP): Belege zuordnen und Prüfungen zu Identität, Anschrift und Straffreiheitserklärung bündeln. Die Oktoberzahlen enthalten diesen Ablauf nicht."
 				],
+				"indexCard": {
+					"title": "KI bereitet Registerprüfungen vor und führt Richter zu den Belegstellen",
+					"description": "Die Geschäftsstelle sieht Abweichungen zwischen Anmeldung und Belegen in ihrer gewohnten Software. Für Gerichtsverfahren erhält der Richter eine Zusammenfassung der Anträge und Argumente mit Verweisen auf die Originalseiten.",
+					"proof": "48 ausgestattete Gerichte",
+					"note": "In die Fachsoftware der Geschäftsstellen integriert."
+				},
 				"slug": "automatisierung-handelsgerichte"
 			},
 			{
 				"id": "10",
+				"indexCard": {
+					"title": "Unterlagen für mehrere Fahrzeuge mit einem Upload zuordnen",
+					"description": "Die Sachbearbeiterin lädt die Dokumente gesammelt hoch, ohne sie nach Fahrzeug zu sortieren. Die Software liest die Fahrzeugidentifikationsnummer, findet die passende Akte und schlägt die Zuordnung zur Bestätigung vor.",
+					"proof": "50 Std./Monat bei 1 Min. Ersparnis je Beleg",
+					"note": "Szenario mit 3.000 Belegen im Monat."
+				},
 				"slug": "ocr-fahrzeugakten",
 				"title": "Gemischte Dokumentenstapel den richtigen Fahrzeugakten zuordnen",
 				"category": "Aftermarket und Recycling",
@@ -1110,6 +1122,10 @@
 					"In der Anwendung erfasste Korrekturen und Bestätigungen historisieren und Ausgangswerte sowie dokumentierte Gründe erhalten.",
 					"Berechnungen und Daten für Tabellen in Word-Urteilen unter menschlicher Aufsicht vorbereiten."
 				],
+				"indexCard": {
+					"title": "Entschädigungen für 20.000 Personen vorbereiten und jeden Betrag nachvollziehbar machen",
+					"description": "Dieselben Personen erscheinen in Gerichtsentscheidungen, Anwaltsunterlagen und medizinischen Gutachten. Die Plattform gleicht die Quellen ab und bewahrt für jede Berechnung den Ausgangswert, den angesetzten Wert und die Korrekturen auf."
+				},
 				"slug": "entschaedigungsakten"
 			},
 			{
@@ -1153,6 +1169,12 @@
 					"Fahrzeug und Papiere getrennt erfassen. Das Auto kann schon auf dem Hof stehen, während die Unterlagen noch unterwegs sind. Der Verwertungsbetrieb erfasst beide Eingänge separat und sieht, was noch fehlt.",
 					"Nachweise bereitstellen. Bei Rücknahmen in Frankreich werden die Übergabe- und Verwertungsnachweise in der Fahrzeugakte hinterlegt. Der Halter findet die unterschriebenen Dokumente in seinem Konto."
 				],
+				"indexCard": {
+					"title": "Fahrzeugrücknahme mit über 5.000 Partnern organisieren",
+					"description": "Eine Privatperson oder eine Werkstatt meldet ein Fahrzeug zur Abholung an. Vom Transporteur bis zum Verwertungsbetrieb erfasst jeder Beteiligte seinen Schritt. Der Betreiber verfolgt das Fahrzeug bis zum Verwertungsnachweis.",
+					"proof": "≈ 20.000 Fahrzeuge pro Jahr",
+					"note": "Auf der Plattform registrierte Fahrzeuge."
+				},
 				"slug": "plattform-fahrzeugruecknahme"
 			},
 			{
@@ -1185,6 +1207,12 @@
 					"Nach Freigabe des Vorgangs vermerkt der Dienstleister die Abholung beim Eigentümer. Scheitert die Abholung, kann er das Problem in der Akte festhalten.",
 					"Bei Ankunft bestätigt der Dienstleister den Eingang. Der Hersteller sieht, ob die Batterie noch erwartet wird oder eingetroffen ist. Bei einer Batterie zur Weiterverwendung kann der Dienstleister anschließend den Geschäftsabschluss bestätigen."
 				],
+				"indexCard": {
+					"title": "Ein Marktplatz für die Weiterverwendung und das Recycling von Batterien in 18 Ländern",
+					"description": "Eigentümer melden ihre Batterien, Partner bieten einen Kaufpreis und der Hersteller verfolgt den Verbleib. Angebundene Dienstleister erhalten die Meldung im eigenen System und bestätigen dort Abholung und Eingang.",
+					"proof": "≈ 10.000 erfasste Batterien",
+					"note": "Registrierte Batterien ohne Stornierungen, Stand Anfang September 2026."
+				},
 				"slug": "marktplatz-fuer-second-life-batterien"
 			},
 			{
@@ -1201,6 +1229,10 @@
 					"Wer die Abholung plant, stellt die Partie zusammen. Meldungen für einen anderen Abholer oder Zielstandort gehören auf eine eigene Liste.",
 					"Das Team prüft die ausstehenden Unterschriften auf dem Abfallbegleitschein. Der Zielstandort erfasst im Vorgang zuerst den Eingang und später die Behandlung."
 				],
+				"indexCard": {
+					"title": "Der Recycler verfolgt jede Batterie von der Meldung bis zur Behandlung",
+					"description": "Vor der Abholung bestimmt das Team anhand von Abholer und Zielstandort, welche Batterien gemeinsam transportiert werden können. Bei Ankunft ruft der Standort die Meldungen der Partie ab, prüft die Begleitpapiere und erfasst Eingang und Behandlung."
+				},
 				"slug": "betriebsplattform-batterierecycling"
 			},
 			{
@@ -1225,6 +1257,10 @@
 					"Er vergleicht den Verbrauch vor, während und nach der vorgesehenen Leuchtdauer. So unterscheidet er eine durchgehende Last am Tag von einem verschobenen Einschaltzeitpunkt.",
 					"Dem Dienstleister kann er sagen, welchen Schaltschrank er prüfen soll, zu welcher Uhrzeit und wegen welcher Abweichung."
 				],
+				"indexCard": {
+					"title": "Über 40 Gebiete mit einem System zur Erkennung von Störungen der Straßenbeleuchtung",
+					"description": "Morgens vergleicht der Betreiber Schaltzeiten und Verbrauchskurven. Er unterscheidet eine verschobene Einschaltzeit von dauerhaftem Tagesverbrauch und sagt dem Dienstleister, welchen Schaltschrank er wann prüfen soll."
+				},
 				"slug": "ueberwachung-strassenbeleuchtung"
 			},
 			{
@@ -1242,6 +1278,10 @@
 					"Das Kommunikationsteam vergleicht diese Merkmale mit der Resonanz bei den jeweiligen Zielgruppen.",
 					"Die Teams vor Ort nutzen dieselben Kriterien, um Themen für die nächste Kampagne auszuwählen."
 				],
+				"indexCard": {
+					"title": "60.000 Beiträge in acht Sprachen analysieren und Kampagnenbudgets gezielt verteilen",
+					"description": "Welche Botschaften lösen in welchem Land bei welcher Zielgruppe eine Reaktion aus? Die Organisation verbindet Thema und Ton jedes Beitrags mit seiner Resonanz und verteilt ihr Budget nach gemeinsamen Kriterien auf Länder und Plattformen."
+				},
 				"slug": "ki-analyse-social-media-kampagnen"
 			},
 			{
@@ -1259,6 +1299,10 @@
 					"Das Kundenforschungsteam findet Kommentare zum selben Thema und liest sie im ursprünglichen Wortlaut.",
 					"Der Kundendienst verfolgt wiederkehrende Anfragen. Das Produktteam kann Meldungen zu einem Produktfehler getrennt von Lieferproblemen untersuchen."
 				],
+				"indexCard": {
+					"title": "Rückmeldungen aus über 25 Quellen zusammenführen, um Kundenprobleme zu verstehen",
+					"description": "In einer Umfrage, einer Rezension oder einer Anfrage beim Kundendienst kann derselbe Fehler unterschiedlich beschrieben sein. Das Kundenforschungsteam bündelt die Kommentare und gibt die aussagekräftigen Originalberichte an das Produktteam weiter."
+				},
 				"slug": "datenhub-nlp"
 			},
 			{
@@ -1283,6 +1327,10 @@
 					"Die Verkaufspositionen werden der Filiale zugeordnet. Aus den Bonbeträgen kann der Analyst Umsatz und durchschnittlichen Einkaufswert je Filiale ermitteln.",
 					"Die Auswertungen erhalten jede Minute neue Daten. Die Teams konnten auf das neue Berichtssystem umsteigen und das alte ablösen."
 				],
+				"indexCard": {
+					"title": "Das Warenwirtschaftssystem wechseln und Filialumsätze im Minutentakt verfolgen",
+					"description": "Auch wenn Kassenbons in einem neuen Format eintreffen, bleibt jeder Verkauf den richtigen Artikeln und der richtigen Filiale zugeordnet. Die Teams können Umsatz und durchschnittlichen Einkaufswert weiterhin verfolgen."
+				},
 				"slug": "data-warehouse-nahezu-echtzeit-einzelhandel"
 			}
 		],
