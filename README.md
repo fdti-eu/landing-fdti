@@ -53,9 +53,11 @@ Cette règle vaut pour la fiche, son URL, les cartes et liens entrants, les mét
 Chaque fiche suit le même ordre :
 
 1. **Situation de départ** (`challenge`) : qui effectue quelle tâche, avec quelle difficulté ou quel risque ?
-2. **Solution** (`approach`) : que change la réponse de FDTI dans cet outil ou ce processus ? Employer le futur ou préciser « prévu » si le projet n’est pas livré.
+2. **Solution** (`approach`) : que change la réponse de FDTI dans cet outil ou ce processus ? Décrire le fonctionnement au présent, du point de vue de la personne qui s’en sert : « La gestionnaire dépose le lot. Le logiciel lit le numéro de série et lui propose le dossier à valider. »
 3. **Parcours métier** (`details`) : décrire les opérations concrètes dans leur ordre utile, de l’entrée à la sortie ; préciser les exceptions et la décision humaine lorsqu’elles comptent.
 4. **Résultat** : décrire un usage ou un effet établi (`impact`), ou, pour un projet commandé, un objectif explicitement **attendu** (`expectedOutcome`). Ne pas transformer une estimation en gain mesuré. Chiffres, dates et technologies sont facultatifs ; ne les ajouter que s’ils sont étayés et utiles.
+
+**Titres et descriptions de l’index, dans toutes les langues.** Choisir une réalisation par problème d’achat. Le titre annonce le fait que l’acheteur doit retenir : une opération rendue possible, un changement de pratique ou une échelle significative. La description ajoute une ou deux phrases au présent : qui fait quoi, sur quel objet, et ce que la personne suivante peut en faire. Écarter les intitulés génériques et les détails d’intégration qui ne sont pas le sujet principal. Le présent décrit le parcours ; les mentions de déploiement, d’usage observé et de gains mesurés reposent sur leurs preuves.
 
 **Test de relecture : masquer les noms des technologies.** Peut-on encore suivre un véhicule, une pièce ou une demande d’un acteur à l’autre, et comprendre ce que chacun sait ou peut faire ensuite ? Si la « Solution » se résume à une architecture ou le « Parcours métier » à une liste de livrables techniques, réécrire ces passages. Dans la fiche VHU, « le centre enregistre séparément l’arrivée de la voiture et celle de ses papiers » explique pourquoi le logiciel est utile ; « portail, API et base de données » ne l’explique pas. Garder la stack dans les tags. Mentionner un choix technique dans le récit seulement si sa conséquence mérite d’y figurer (par exemple, traiter des pièces sensibles sur les serveurs du client).
 
