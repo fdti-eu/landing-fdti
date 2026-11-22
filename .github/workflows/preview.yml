@@ -1,0 +1,66 @@
+name: Deploy preview
+
+# Every branch except master gets a private preview on Cloudflare Pages,
+# protected by Cloudflare Access. Production stays on GitHub Pages.
+on:
+  push:
+    branches-ignore: [master]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
+concurrency:
+  group: preview-${{ github.ref_name }}
+  cancel-in-progress: true
+
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v6
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Check
+        run: npm run check
+        env:
+          GITHUB_EVENT_BEFORE: ${{ github.event.before }}
+
+      - name: Build static site
+        run: npm run build
+
+      - name: Keep previews out of search engines
+        run: |
+          rm -f build/CNAME
+          printf '/*\n  X-Robots-Tag: noindex, nofollow\n' > build/_headers
+
+      - name: Deploy to Cloudflare Pages
+        id: deploy
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          npx --yes wrangler@4.166.0 pages deploy build \
+            --project-name fdti-site \
+            --branch "${GITHUB_REF_NAME}" \
+            --commit-hash "${GITHUB_SHA}" \
+            --commit-dirty=true
+
+      - name: Preview URL
+        run: |
+          alias=$(echo "${GITHUB_REF_NAME}" | tr '[:upper:]' '[:lower:]' | sed -E 's/[^a-z0-9-]+/-/g; s/^-+|-+$//g' | cut -c1-28 | sed -E 's/-+$//')
+          echo "Preview: https://${alias}.fdti-site.pages.dev" >> "$GITHUB_STEP_SUMMARY"
