@@ -45,7 +45,7 @@
 		{
 			"label": "Fahrzeugverwertung",
 			"title": "Belege per OCR zuordnen",
-			"text": "Der geplante Ablauf kombiniert das Auslesen der FIN mit einer manuellen Bestätigung, bevor der Beleg der Fahrzeugakte zugeordnet wird.",
+			"text": "Die Software liest die Fahrzeugidentifikationsnummer. Vor der Ablage bestätigt die Sachbearbeiterin die Fahrzeugakte.",
 			"href": "/realisations/ocr-fahrzeugakten"
 		}
 	],

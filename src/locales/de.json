@@ -1010,14 +1010,9 @@
 						"note": "In die Fachsoftware der Geschäftsstellen integriert."
 					},
 					{
-						"label": "Geschätzter Arbeitsaufwand",
-						"value": "3.105 Std. 50 Min.",
-						"note": "Oktober 2026: 37.270 Vorgänge × geschätzte 5 Minuten. Ohne IPP."
-					},
-					{
-						"label": "Entsprechende Kapazität",
-						"value": "≈ 444 Personentage",
-						"note": "Berechnet mit 7 Stunden je Arbeitstag."
+						"label": "Bearbeitete Vorgänge",
+						"value": "37.270",
+						"note": "Oktober 2026: Jahresabschlüsse, Handelsregistervorgänge und Gerichtsakten."
 					}
 				],
 				"tags": [
@@ -1047,31 +1042,14 @@
 				"indexCard": {
 					"title": "Unterlagen für mehrere Fahrzeuge mit einem Upload zuordnen",
 					"description": "Die Sachbearbeiterin lädt die Dokumente gesammelt hoch, ohne sie nach Fahrzeug zu sortieren. Die Software liest die Fahrzeugidentifikationsnummer, findet die passende Akte und schlägt die Zuordnung zur Bestätigung vor.",
-					"proof": "50 Std./Monat bei 1 Min. Ersparnis je Beleg",
-					"note": "Szenario mit 3.000 Belegen im Monat."
+					"proof": "3.000 eingehende Belege pro Monat",
+					"note": "Belege, die beim Verwaltungsteam eingehen."
 				},
 				"slug": "ocr-fahrzeugakten",
 				"title": "Gemischte Dokumentenstapel den richtigen Fahrzeugakten zuordnen",
 				"category": "Aftermarket und Recycling",
 				"challenge": "Eine Sachbearbeiterin nimmt Unterlagen zu Altfahrzeugen entgegen und scannt sie. Für jedes Dokument öffnet sie die Fahrzeugakte, startet den Upload, wählt die lokale Datei und den Dokumenttyp aus und bestätigt die Ablage. Dann beginnt sie von vorn. Bei Hunderten von Belegen täglich und Tausenden im Monat kostet nicht nur das Scannen Zeit: Auch bereits digitalisierte Unterlagen muss sie einzeln zuordnen und ablegen.",
-				"approach": "Der geplante Ablauf kehrt die Reihenfolge um. Heute sucht die Sachbearbeiterin zuerst das Fahrzeug, um ein Dokument hinzuzufügen. Künftig würde sie einen unsortierten Stapel hochladen, und die Software würde die passenden Fahrzeuge vorschlagen. Für jede Datei würde sie den Dokumenttyp erkennen, die Fahrzeugidentifikationsnummer (FIN) lesen und die Akte suchen. Die Entscheidung bliebe bei der Sachbearbeiterin, ohne dass sie jede Suche selbst wiederholen müsste.",
-				"metrics": [
-					{
-						"label": "Freie Kapazität",
-						"value": "≈ 7 Tage/Monat",
-						"note": "Monatlich gehen 3.000 Belege ein. Eine Minute Nettozeitgewinn pro Beleg entspräche 50 Stunden im Monat (7 Stunden je Arbeitstag)."
-					},
-					{
-						"label": "Wert der Arbeitszeit",
-						"value": "2.000 €/Monat",
-						"note": "Beispielrechnung mit 40 €/Stunde für 50 frei werdende Arbeitsstunden."
-					},
-					{
-						"label": "Budgetschwelle",
-						"value": "≤ 12.000 €",
-						"note": "Bei gleicher Auslastung über 6 Monate: maximale Gesamtkosten einschließlich Betrieb, die der Zeitgewinn decken würde."
-					}
-				],
+				"approach": "Die Software liest die Fahrzeugidentifikationsnummer auf jedem Beleg, sucht die Fahrzeugakte und schlägt eine Kategorie vor. Die Sachbearbeiterin prüft den Beleg und bestätigt die Zuordnung.",
 				"tags": [
 					"OCR",
 					"VIN"
@@ -1082,7 +1060,14 @@
 					"Fahrzeug finden, ohne die FIN abzutippen. Die OCR liest die Nummer aus dem Dokument. Die Software sucht unter den zugänglichen Akten nach einer exakten Übereinstimmung und zeigt Beleg, vorgeschlagenen Typ, gelesene FIN und Fahrzeugakte an.",
 					"Vor der Freigabe prüfen. Auch bei nur einem Treffer bestätigt die Sachbearbeiterin die Zuordnung. Unleserliche Nummern, mehrere Treffer oder mögliche Dubletten prüft sie manuell. Bestehende Dokumente werden nicht überschrieben."
 				],
-				"expectedOutcome": "Das Verwaltungsteam könnte die Zeit für das Öffnen einzelner Akten und die Ablage stärker für die Prüfung von Belegen und Sonderfällen nutzen. Die berechtigte Werkstatt oder der Demontagebetrieb könnte den bestätigten Beleg in der richtigen Akte unter dem passenden Typ einsehen. Wartet eine Fahrzeugrücknahme auf diesen Nachweis, könnte das Team den nächsten Schritt einleiten."
+				"impact": "Die Werkstatt oder der zugelassene Verwertungsbetrieb findet den geprüften Beleg in der Fahrzeugakte. Die Sachbearbeiterin klärt unleserliche Nummern, mehrdeutige Treffer und Duplikate.",
+				"metrics": [
+					{
+						"label": "Belege, die beim Verwaltungsteam eingehen",
+						"value": "3.000",
+						"note": "Pro Monat."
+					}
+				]
 			},
 			{
 				"id": "9",

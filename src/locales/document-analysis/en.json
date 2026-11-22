@@ -45,7 +45,7 @@
 		{
 			"label": "Automotive recycling",
 			"title": "Filing documents with OCR",
-			"text": "The proposed workflow combines reading the VIN with operator confirmation before attaching a document to a vehicle record.",
+			"text": "The software reads the VIN and the administrator confirms the vehicle record before filing the document.",
 			"href": "/realisations/ocr-vehicle-records"
 		}
 	],

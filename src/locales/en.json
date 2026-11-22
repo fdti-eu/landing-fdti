@@ -1002,14 +1002,9 @@
 						"note": "Platform integrated into court registry software."
 					},
 					{
-						"label": "Estimated staff time",
-						"value": "3,105 h 50 min",
-						"note": "October 2026: 37,270 cases × an estimated 5 minutes each. Excludes IPP."
-					},
-					{
-						"label": "Equivalent capacity",
-						"value": "≈ 444 staff days",
-						"note": "Based on 7-hour working days."
+						"label": "Cases processed",
+						"value": "37,270",
+						"note": "October 2026: annual accounts filings, company register formalities and court cases."
 					}
 				],
 				"tags": [
@@ -1039,31 +1034,14 @@
 				"indexCard": {
 					"title": "Filing documents for several vehicles in one upload",
 					"description": "The administrator uploads a batch without sorting it by vehicle. For each document, the software reads the vehicle identification number, finds the matching record and asks her to confirm the link.",
-					"proof": "50 h/month if each document saves 1 min",
-					"note": "Scenario based on 3,000 documents a month."
+					"proof": "3,000 documents received per month",
+					"note": "Documents received by the administrative team."
 				},
 				"slug": "ocr-vehicle-records",
 				"title": "Filing a mixed batch of documents against the right vehicle records",
 				"category": "Aftermarket & recycling",
 				"challenge": "An administrator receives and scans paperwork for end-of-life vehicles. For each document, she opens the vehicle record, starts an upload, selects the file on her computer, chooses the document type and confirms. Then she starts again. With hundreds of documents a day and thousands a month, scanning is only part of the work. Even when everything is already scanned, every file still needs to be matched and filed.",
-				"approach": "The proposed workflow reverses the sequence. Today the administrator starts with a vehicle and adds a document. Instead, she would start with the documents and the software would suggest the vehicles. She could upload an unsorted batch in one go. For each file, the software would identify the document type, read the vehicle identification number (VIN) and look up the record. She would still make the final decision without having to start each search from scratch.",
-				"metrics": [
-					{
-						"label": "Capacity freed up",
-						"value": "≈ 7 days/month",
-						"note": "3,000 documents received each month. Saving one net minute per document would free up 50 hours a month (7-hour days)."
-					},
-					{
-						"label": "Value of staff time",
-						"value": "€2,000/month",
-						"note": "Illustration at €40/hour for 50 hours available for other work."
-					},
-					{
-						"label": "Break-even budget",
-						"value": "≤ €12,000",
-						"note": "Over 6 months at that rate: maximum total cost, including running costs, covered by the value of staff time."
-					}
-				],
+				"approach": "The software reads the VIN on each document in the batch, finds the vehicle record and suggests a category. The administrator reviews the document and confirms the match.",
 				"tags": [
 					"OCR",
 					"VIN"
@@ -1074,7 +1052,14 @@
 					"Find the vehicle without retyping the VIN. OCR reads the number from the document. The software looks for an exact match among the records the administrator can access, then shows the document, its suggested type, the VIN it read and the proposed record.",
 					"Review before sharing. Even a unique match requires confirmation. An unreadable number, multiple matches or a possible duplicate goes to manual review. No existing document is overwritten."
 				],
-				"expectedOutcome": "The administrative team could spend less time opening records and filing documents individually, and more time checking documents and handling exceptions. An authorized garage or dismantling centre could find the approved document under the correct type in the right record. If a vehicle collection is waiting on that document, the team could move on to the next step."
+				"impact": "The garage or authorised centre finds the validated document in the vehicle record. The administrator handles unreadable numbers, multiple matches and duplicates.",
+				"metrics": [
+					{
+						"label": "Documents received by the administrative team",
+						"value": "3,000",
+						"note": "Per month."
+					}
+				]
 			},
 			{
 				"id": "9",

@@ -1010,14 +1010,9 @@
 						"note": "Plateforme intégrée au logiciel métier des greffes."
 					},
 					{
-						"label": "Temps de traitement estimé",
-						"value": "3 105 h 50",
-						"note": "Octobre 2026 : 37 270 dossiers × 5 minutes estimées par dossier. Hors IPP."
-					},
-					{
-						"label": "Capacité équivalente",
-						"value": "≈ 444 jours-personnes",
-						"note": "Base de conversion : 7 heures par journée de travail."
+						"label": "Dossiers traités",
+						"value": "37 270",
+						"note": "Octobre 2026 : dépôts de comptes annuels, formalités RCS et dossiers judiciaires."
 					}
 				],
 				"tags": [
@@ -1047,31 +1042,14 @@
 				"indexCard": {
 					"title": "Classer les pièces de plusieurs véhicules à partir d’un seul dépôt",
 					"description": "La gestionnaire dépose un lot de documents sans les trier par véhicule. Pour chaque pièce, le logiciel lit le numéro de série, retrouve le dossier correspondant et lui propose le rattachement à valider.",
-					"proof": "50 h/mois si 1 min gagnée par pièce",
-					"note": "Scénario sur 3 000 pièces mensuelles."
+					"proof": "3 000 pièces reçues par mois",
+					"note": "Pièces reçues par l’équipe administrative."
 				},
 				"slug": "ocr-dossiers-vhu",
 				"title": "Classer un lot de documents dans les bons dossiers véhicules",
 				"category": "Aftermarket & recyclage",
 				"challenge": "Une gestionnaire administrative reçoit et scanne les pièces de véhicules hors d’usage. Pour chaque document, elle ouvre la fiche du véhicule, lance l’ajout d’une pièce, sélectionne le fichier sur son poste, choisit le type de document et valide. Puis elle recommence pour la pièce suivante. À raison de centaines de pièces par jour et de milliers par mois, ce n’est pas le scan seul qui prend du temps : c’est toute la séquence de recherche et de classement qui se répète, même quand toutes les pièces sont déjà numérisées.",
-				"approach": "Le parcours prévu inverse l’ordre du travail. Aujourd’hui, la gestionnaire part du véhicule pour y ajouter un document. Demain, elle part des documents et le logiciel lui propose les véhicules correspondants. Elle dépose un lot de fichiers sans les trier au préalable. Pour chaque pièce, le logiciel reconnaît le type de document, lit le numéro d’identification du véhicule (VIN) et recherche le dossier. La gestionnaire garde la décision finale, sans avoir à refaire elle-même toute la recherche.",
-				"metrics": [
-					{
-						"label": "Capacité libérée",
-						"value": "≈ 7 j/mois",
-						"note": "3 000 pièces reçues par mois. Avec 1 minute nette gagnée par pièce, cela représenterait 50 heures par mois (journées de 7 h)."
-					},
-					{
-						"label": "Valeur du temps libéré",
-						"value": "2 000 €/mois",
-						"note": "Simulation à 40 €/h pour 50 heures de travail réaffectées."
-					},
-					{
-						"label": "Budget au point d’équilibre",
-						"value": "≤ 12 000 €",
-						"note": "Sur 6 mois au même rythme : plafond de coût total, fonctionnement inclus, pour équilibrer la valeur du temps."
-					}
-				],
+				"approach": "Le logiciel lit le numéro de série sur chaque document du lot, recherche le dossier véhicule et propose une catégorie. La gestionnaire vérifie la pièce et confirme le rattachement.",
 				"tags": [
 					"OCR",
 					"VIN"
@@ -1082,7 +1060,14 @@
 					"Retrouver le véhicule sans recopier le VIN. L’OCR lit le numéro sur le document. Le logiciel cherche une correspondance exacte parmi les dossiers auxquels la gestionnaire a accès et lui présente la pièce, le type reconnu, le VIN lu et le dossier proposé.",
 					"Vérifier avant de rendre la pièce visible. La gestionnaire confirme le rattachement, même si un seul véhicule correspond. Si le numéro est illisible, si plusieurs dossiers correspondent ou si la pièce semble déjà présente, elle reprend le cas manuellement. Aucun document existant n’est écrasé."
 				],
-				"expectedOutcome": "Pour l’équipe administrative, le temps consacré à ouvrir les fiches et à classer les fichiers un par un peut être réaffecté à la vérification des pièces et au traitement des exceptions. Pour le garage ou le centre VHU habilité, la pièce validée devient consultable dans le bon dossier, sous le bon type. Et lorsqu’une reprise attend ce justificatif, l’équipe peut passer à l’étape suivante."
+				"impact": "Le garage ou le centre habilité retrouve le justificatif validé dans le dossier du véhicule. La gestionnaire reprend les numéros illisibles, les correspondances multiples et les doublons.",
+				"metrics": [
+					{
+						"label": "Pièces reçues par l’équipe administrative",
+						"value": "3 000",
+						"note": "Par mois."
+					}
+				]
 			},
 			{
 				"id": "9",

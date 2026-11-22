@@ -277,10 +277,12 @@ for (const [locale, data, documents] of [
 			!item.challenge?.trim() ||
 			!item.approach?.trim() ||
 			!item.details?.length ||
-			Boolean(item.impact?.trim()) === Boolean(item.expectedOutcome?.trim())
+			!item.impact?.trim() ||
+			item.expectedOutcome !== undefined ||
+			/\b(?:scénario|scenario|simulation|simulación|simulazione|Szenario)\b/iu.test(JSON.stringify([item.indexCard, item.metrics]))
 		) {
 			errors.push(
-				`${at}: provide a situation, solution, workflow and exactly one observed or expected outcome`
+				`${at}: provide a situation, solution, workflow and actual outcome; exclude scenario-based indicators`
 			);
 		}
 	}

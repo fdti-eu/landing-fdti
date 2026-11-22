@@ -53,9 +53,9 @@ Cette règle vaut pour la fiche, son URL, les cartes et liens entrants, les mét
 Chaque fiche suit le même ordre :
 
 1. **Situation de départ** (`challenge`) : qui effectue quelle tâche, avec quelle difficulté ou quel risque ?
-2. **Solution** (`approach`) : que change la réponse de FDTI dans cet outil ou ce processus ? Employer le futur ou préciser « prévu » si le projet n’est pas livré.
+2. **Solution** (`approach`) : que change la réponse de FDTI dans cet outil ou ce processus ? Décrire au présent les gestes des personnes qui utilisent l’outil.
 3. **Parcours métier** (`details`) : décrire les opérations concrètes dans leur ordre utile, de l’entrée à la sortie ; préciser les exceptions et la décision humaine lorsqu’elles comptent.
-4. **Résultat** : décrire un usage ou un effet établi (`impact`), ou, pour un projet commandé, un objectif explicitement **attendu** (`expectedOutcome`). Ne pas transformer une estimation en gain mesuré. Chiffres, dates et technologies sont facultatifs ; ne les ajouter que s’ils sont étayés et utiles.
+4. **Résultat** : décrire un usage ou un effet établi (`impact`). Ne pas transformer une estimation en gain mesuré. Chiffres, dates et technologies sont facultatifs ; ne les ajouter que s’ils sont étayés et utiles.
 
 **Test de relecture : masquer les noms des technologies.** Peut-on encore suivre un véhicule, une pièce ou une demande d’un acteur à l’autre, et comprendre ce que chacun sait ou peut faire ensuite ? Si la « Solution » se résume à une architecture ou le « Parcours métier » à une liste de livrables techniques, réécrire ces passages. Dans la fiche VHU, « le centre enregistre séparément l’arrivée de la voiture et celle de ses papiers » explique pourquoi le logiciel est utile ; « portail, API et base de données » ne l’explique pas. Garder la stack dans les tags. Mentionner un choix technique dans le récit seulement si sa conséquence mérite d’y figurer (par exemple, traiter des pièces sensibles sur les serveurs du client).
 
@@ -73,9 +73,7 @@ Pour une plateforme exploitée en réseau, distinguer **activité, couverture et
 
 Exprimer une approximation **une seule fois** : si la valeur porte « ≈ », ne répéter ni « environ » ni « ordre de grandeur » dans le libellé ou la note. La note précise ce qui est compté, par exemple « Véhicules enregistrés sur la plateforme. »
 
-Pour un résultat observé, vérifier la source, la période, le périmètre et, si l’on annonce un gain, le point de comparaison. Pour un projet non mesuré, préférer l’absence de chiffre à un gain inventé. Un scénario de décision est possible si ses hypothèses et sa nature conditionnelle restent visibles **sur la carte elle-même**, y compris sur l’index. Préciser la durée d’une journée si l’on convertit des heures en jours-personnes. Ne pas publier le prix d’un contrat client pour illustrer un ROI.
-
-Distinguer dans la même note la donnée réelle (« 3 000 pièces reçues par mois ») du paramètre à vérifier (« si chaque pièce demande une minute de moins »). Présenter plusieurs repères complémentaires quand les sources le permettent : capacité rendue, valeur de cette capacité au coût horaire retenu, budget maximal à l’équilibre sur une durée donnée. Ces lectures d’un même gain ne s’additionnent pas. Pour un autre projet, délai de décision, qualité ou risque peuvent être plus pertinents ; ne pas imposer trois chiffres à tout prix.
+Sur les cartes, les fiches et leurs renvois, dans chaque langue, présenter les réalisations au présent. Le titre annonce le fait métier à retenir ; la description suit l’acteur et l’objet concret. Publier les volumes, délais et gains étayés, avec leur périmètre. Garder les simulations de ROI, les gains conditionnels et les conversions fondées sur un temps unitaire supposé hors des réalisations. À défaut de mesure, décrire le travail accompli. Ne pas publier le prix d’un contrat client.
 
 **Présentation de référence :** utiliser `CaseIndicators.svelte` avec `metrics[].label`, `value` et `note`. Sur la fiche, empiler les indicateurs dans la colonne de droite sur ordinateur ; sur mobile, les placer dans le flux sans défilement horizontal. Afficher un libellé bref, une valeur lisible avec unité et horizon, puis sa base de calcul. Sur l’index, utiliser la variante compacte sans couper la note. Vérifier le rendu réel sur les deux tailles.
 

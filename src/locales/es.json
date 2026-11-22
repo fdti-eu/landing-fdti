@@ -1014,14 +1014,9 @@
 						"note": "Plataforma integrada en el programa de gestión de los registros judiciales."
 					},
 					{
-						"label": "Tiempo de trabajo estimado",
-						"value": "3.105 h 50 min",
-						"note": "Octubre de 2026: 37.270 expedientes × 5 minutos estimados por expediente. Sin IPP."
-					},
-					{
-						"label": "Capacidad equivalente",
-						"value": "≈ 444 jornadas",
-						"note": "Conversión basada en jornadas de 7 horas."
+						"label": "Expedientes tramitados",
+						"value": "37 270",
+						"note": "Octubre de 2026: depósitos de cuentas anuales, trámites del registro mercantil y expedientes judiciales."
 					}
 				],
 				"tags": [
@@ -1051,31 +1046,14 @@
 				"indexCard": {
 					"title": "Clasificar documentos de varios vehículos en una sola entrega",
 					"description": "La gestora carga un lote de documentos sin separarlos por vehículo. El programa lee el número de bastidor de cada documento, localiza el expediente y le propone la vinculación para que la valide.",
-					"proof": "50 h/mes si se ahorra 1 min por documento",
-					"note": "Escenario con 3 000 documentos mensuales."
+					"proof": "3 000 documentos recibidos al mes",
+					"note": "Documentos recibidos por el equipo administrativo."
 				},
 				"slug": "ocr-expedientes-vehiculos",
 				"title": "Clasificar un lote de documentos en los expedientes de vehículo correctos",
 				"category": "Posventa y reciclaje",
 				"challenge": "Una gestora administrativa recibe y escanea documentos de vehículos al final de su vida útil. Para cada documento, abre la ficha del vehículo, inicia la carga, selecciona el archivo en su equipo, elige el tipo de documento y confirma. Después repite la operación. Con cientos de documentos al día y miles al mes, el escaneo es solo una parte del trabajo: incluso con los archivos ya digitalizados, hay que buscar el expediente y clasificar cada pieza.",
-				"approach": "El flujo previsto invierte el orden. Hoy la gestora parte del vehículo para añadir un documento. Con el nuevo proceso partiría de los documentos y el programa propondría los vehículos correspondientes. Podría cargar un lote sin clasificarlo antes. Para cada archivo, el sistema identificaría el tipo de documento, leería el número de bastidor (VIN) y buscaría el expediente. La decisión final seguiría en manos de la gestora, sin repetir cada búsqueda desde cero.",
-				"metrics": [
-					{
-						"label": "Capacidad liberada",
-						"value": "≈ 7 días/mes",
-						"note": "Se reciben 3.000 documentos al mes. Ahorrar un minuto neto por documento liberaría 50 horas al mes (jornadas de 7 horas)."
-					},
-					{
-						"label": "Valor del tiempo liberado",
-						"value": "2.000 €/mes",
-						"note": "Simulación a 40 €/h para 50 horas disponibles para otras tareas."
-					},
-					{
-						"label": "Presupuesto de equilibrio",
-						"value": "≤ 12.000 €",
-						"note": "A ese ritmo durante 6 meses: coste total máximo, con explotación incluida, cubierto por el valor del tiempo."
-					}
-				],
+				"approach": "El programa lee el número de bastidor de cada documento del lote, busca el expediente del vehículo y propone una categoría. La gestora revisa el documento y confirma la vinculación.",
 				"tags": [
 					"OCR",
 					"VIN"
@@ -1086,7 +1064,14 @@
 					"Encontrar el vehículo sin copiar el VIN. El OCR lee el número en el documento. El sistema busca una coincidencia exacta entre los expedientes autorizados y muestra el documento, el tipo propuesto, el VIN leído y el expediente candidato.",
 					"Verificar antes de dar acceso. La gestora confirma la asociación incluso si solo hay una coincidencia. Si el número es ilegible, hay varias coincidencias o parece haber un duplicado, revisa el caso manualmente. No se sobrescribe ningún documento."
 				],
-				"expectedOutcome": "El equipo administrativo podría dedicar menos tiempo a abrir expedientes y archivar documentos uno a uno, y más a verificarlos y resolver excepciones. El taller o centro autorizado de tratamiento podría consultar el justificante validado en el expediente y la categoría correctos. Si la retirada está pendiente de ese justificante, el equipo podría dar el siguiente paso."
+				"impact": "El taller o el centro autorizado encuentra el justificante validado en el expediente del vehículo. La gestora revisa los números ilegibles, las coincidencias múltiples y los duplicados.",
+				"metrics": [
+					{
+						"label": "Documentos recibidos por el equipo administrativo",
+						"value": "3 000",
+						"note": "Al mes."
+					}
+				]
 			},
 			{
 				"id": "9",

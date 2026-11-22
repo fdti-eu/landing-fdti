@@ -36,7 +36,7 @@
 					challenge?: string | null;
 					approach?: string | null;
 					impact?: string | null;
-					expectedOutcome?: string | null;
+
 					metrics?: { label?: string | null; value?: string | null; note?: string | null }[];
 					links?: { label?: string | null; url?: string | null }[];
 					tags?: string[];
@@ -197,7 +197,7 @@
 					context: 'Situation de départ',
 					approach: 'Solution',
 					impact: 'Résultat observé',
-					expected: 'Résultat attendu',
+
 					delivered: 'Parcours métier',
 					back: 'Réalisations',
 					home: 'Accueil'
@@ -207,7 +207,7 @@
 						context: 'Punto de partida',
 						approach: 'Solución',
 						impact: 'Resultado observado',
-						expected: 'Resultado esperado',
+
 						delivered: 'Flujo de trabajo',
 						back: 'Proyectos',
 						home: 'Inicio'
@@ -217,7 +217,7 @@
 							context: 'Ausgangslage',
 							approach: 'Lösungsansatz',
 							impact: 'Beobachtetes Ergebnis',
-							expected: 'Angestrebtes Ergebnis',
+
 							delivered: 'Ablauf in der Praxis',
 							back: 'Referenzen',
 							home: 'Startseite'
@@ -227,7 +227,7 @@
 								context: 'Situazione iniziale',
 								approach: 'Soluzione',
 								impact: 'Risultato osservato',
-								expected: 'Risultato atteso',
+
 								delivered: 'Flusso operativo',
 								back: 'Progetti',
 								home: 'Pagina iniziale'
@@ -236,7 +236,7 @@
 								context: 'Starting point',
 								approach: 'Solution',
 								impact: 'Observed outcome',
-								expected: 'Expected outcome',
+
 								delivered: 'Workflow',
 								back: 'Work',
 								home: 'Home'
@@ -531,14 +531,14 @@
 								</ul>
 							</div>
 						{/if}
-						{#if useCase.impact || useCase.expectedOutcome}
+						{#if useCase.impact}
 							<div>
 								<h2 class="text-lg sm:text-xl font-bold text-darkGrey mb-3 flex items-center gap-2">
 									<span class="w-2 h-2 rounded-full bg-green-500"></span>
-									{useCase.impact ? labels.impact : labels.expected}
+									{labels.impact}
 								</h2>
 								<p class="text-sm sm:text-base text-darkGrey/80 leading-relaxed">
-									{useCase.impact || useCase.expectedOutcome}
+									{useCase.impact}
 								</p>
 							</div>
 						{/if}
