@@ -1,5 +1,7 @@
 <script lang="ts">
 	import Hero from '$lib/components/sections/Hero.svelte';
+	import FdtiSection from '$lib/components/sections/FdtiSection.svelte';
+	import SectorsPreviewSection from '$lib/components/sections/SectorsPreviewSection.svelte';
 	import CapabilitiesSection from '$lib/components/sections/CapabilitiesSection.svelte';
 	import ConfianceSection from '$lib/components/sections/ConfianceSection.svelte';
 	import UseCasesPreviewSection from '$lib/components/sections/UseCasesPreviewSection.svelte';
@@ -66,16 +68,14 @@
 </svelte:head>
 
 <div class="fdti-home">
-	<Hero
-		content={pageContent?.hero_section}
-		proofs={pageContent?.hero_proofs}
-		locale={currentLocale}
-	/>
+	<Hero content={pageContent?.hero_section} />
 
 	{#if pageContent}
 		<div class="home-sections">
 			<ConfianceSection content={pageContent.trust_content} />
+			<FdtiSection content={pageContent.fdti_section} />
 			<CapabilitiesSection locale={currentLocale} />
+			<SectorsPreviewSection locale={currentLocale} />
 			<UseCasesPreviewSection
 				title={pageContent.homepage_use_cases_title}
 				subtitle={pageContent.homepage_use_cases_subtitle}

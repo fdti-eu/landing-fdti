@@ -480,12 +480,12 @@
 	},
 	"GetHomePageContent": {
 		"hero_section": {
-			"subtitle": "Applications métier, automatisation et IA, conçues avec vos équipes et branchées sur les logiciels que vous utilisez déjà.",
-			"description": "<p>Nous questionnons la demande initiale pour définir ce qui mérite réellement d’être développé, puis nous livrons un premier périmètre utilisable que nous faisons évoluer avec le terrain. Vous échangez directement avec les personnes qui conçoivent votre solution.</p>",
+			"subtitle": "Copilotes, automatisations et applications métier intégrés à vos outils existants",
+			"description": "<p>Nous construisons des outils qui connectent vos données, vos SaaS et vos outils internes pour rendre vos opérations plus rapides, plus fiables et plus automatisées. L’IA n’est pas un gadget en plus : elle devient une brique centrale dans vos processus quotidiens.</p>",
 			"btn_brochure": "Téléchargez notre plaquette",
 			"btn_contact": "Parlons de votre projet",
 			"brochure_link": "https://docs.google.com/presentation/d/e/2PACX-1vTxf7KCRA90Jm1rClbzRMZqB7wprtcUv30NwlpyT7RsxcGCKEQxW9HneEJBxo0Ml50srOHn18p5ECpD/pub?start=false&loop=false&delayms=3000",
-			"title": "Vous connaissez votre métier. Nous construisons l’outil qui lui manque.",
+			"title": "IA, code et data au service de vos processus métiers",
 			"status": "Studio IA & automatisation métier"
 		},
 		"fdti_section": {

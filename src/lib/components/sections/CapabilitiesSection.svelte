@@ -2,7 +2,7 @@
 	import CapabilityDiagram from './CapabilityDiagram.svelte';
 	import type { Lang } from '$lib/data';
 	import { buildLocalizedPath } from '$lib/functions/seo';
-	import { navigationCopy, sectorCopy, solutionLabels, type SolutionId } from '$lib/navigation';
+	import { navigationCopy, solutionIds, solutionLabels, type SolutionId } from '$lib/navigation';
 	import { solutionHref } from '$lib/solution-pages';
 
 	/** Solution page detailing each capability, in display order. */
@@ -19,116 +19,127 @@
 		{
 			title: string;
 			subtitle: string;
-			items: { title: string; description: string }[];
+			items: { title: string; description: string; points: string[] }[];
 		}
 	> = {
 		fr: {
 			title: 'Ce que nous construisons',
-			subtitle:
-				'Nous questionnons la demande initiale pour définir ce qui mérite réellement d’être développé. Adapter l’existant, connecter vos logiciels ou simplifier un processus sont aussi de vraies réponses.',
+			subtitle: 'Une expertise lisible, avec des formats d’intervention concrets pour vos équipes.',
 			items: [
 				{
-					title: 'IA appliquée à vos dossiers',
+					title: 'Copilotes IA',
 					description:
-						'Lire un lot de pièces, retrouver le bon dossier, préparer une synthèse avec un renvoi aux sources. L’IA prépare le travail, la personne vérifie et décide.'
+						'Recherche d’information, synthèse, aide à la décision, rédaction assistée, support opérationnel ou métier directement dans vos outils.',
+					points: ['LLM', 'RAG', 'agents', 'interfaces métier']
 				},
 				{
-					title: 'Automatisation des processus',
+					title: 'Automatisation de workflows',
 					description:
-						'Saisies, classements, relances et rapprochements passent par un workflow. Vos équipes traitent les exceptions au lieu de recopier les informations.'
+						'Traitement documentaire, qualification, orchestration, reporting, alerting et coordination entre équipes, logiciels et données.',
+					points: ['workflows assistés', 'APIs', 'règles métier', 'automatisation']
 				},
 				{
-					title: 'Applications métier',
+					title: 'Applications, bases de données & APIs métier',
 					description:
-						'Portails, back-offices et tableaux de bord où vos équipes et vos partenaires suivent le même dossier, chacun avec ses droits.'
+						'Portails, back-offices, dashboards, bases de données, APIs sécurisées et outils internes pensés pour intégrer l’IA proprement dans l’existant.',
+					points: ['apps métier', 'bases de données', 'API sécurisée', 'intégration']
 				}
 			]
 		},
 		en: {
 			title: 'What we build',
-			subtitle:
-				'We question the initial request to define what is actually worth building. Adapting what you have, connecting your software or simplifying a process are real answers too.',
+			subtitle: 'Clear expertise, with concrete delivery formats for your teams.',
 			items: [
 				{
-					title: 'AI applied to your case files',
+					title: 'AI copilots for teams',
 					description:
-						'Read a batch of documents, find the right file, prepare a summary that links back to the sources. AI prepares the work; people check and decide.'
+						'Information retrieval, summarization, decision support, assisted writing, and operational help embedded into your tools.',
+					points: ['LLM', 'RAG', 'agents', 'business interfaces']
 				},
 				{
-					title: 'Process automation',
+					title: 'Workflow automation',
 					description:
-						'Data entry, filing, reminders and reconciliations run through a workflow. Your teams handle the exceptions instead of copying information.'
+						'Document processing, qualification, orchestration, reporting, alerting, and coordination across teams, software, and data.',
+					points: ['assisted workflows', 'APIs', 'business rules', 'automation']
 				},
 				{
-					title: 'Business applications',
+					title: 'Business apps, databases & APIs',
 					description:
-						'Portals, back offices and dashboards where your teams and partners follow the same file, each with their own permissions.'
+						'Portals, back offices, dashboards, databases, secure APIs, and internal tools designed to integrate AI cleanly into existing systems.',
+					points: ['business apps', 'databases', 'secure API', 'integration']
 				}
 			]
 		},
 		es: {
 			title: 'Lo que construimos',
 			subtitle:
-				'Cuestionamos la solicitud inicial para definir lo que realmente merece desarrollarse. Adaptar lo existente, conectar sus programas o simplificar un proceso también son respuestas reales.',
+				'Competencias claramente definidas, con formatos de intervención concretos para sus equipos.',
 			items: [
 				{
-					title: 'IA aplicada a sus expedientes',
+					title: 'Copilotos de IA para equipos',
 					description:
-						'Leer un lote de documentos, encontrar el expediente correcto y preparar una síntesis con referencias a las fuentes. La IA prepara el trabajo; la persona verifica y decide.'
+						'Búsqueda de información, síntesis, ayuda para la toma de decisiones, redacción asistida y apoyo operativo integrados en sus herramientas.',
+					points: ['LLM', 'RAG', 'agentes', 'interfaces empresariales']
 				},
 				{
 					title: 'Automatización de procesos',
 					description:
-						'Las entradas de datos, clasificaciones, recordatorios y conciliaciones pasan por un flujo de trabajo. Sus equipos se ocupan de las excepciones en lugar de copiar información.'
+						'Tratamiento documental, clasificación, orquestación, reporting, alertas y coordinación entre equipos, software y datos.',
+					points: ['procesos asistidos', 'API', 'reglas de negocio', 'automatización']
 				},
 				{
-					title: 'Aplicaciones de negocio',
+					title: 'Aplicaciones, bases de datos y API empresariales',
 					description:
-						'Portales, back offices y paneles donde sus equipos y sus socios siguen el mismo expediente, cada uno con sus permisos.'
+						'Portales, back offices, dashboards, bases de datos, API seguras y herramientas internas diseñadas para integrar la IA correctamente en los sistemas existentes.',
+					points: ['aplicaciones empresariales', 'bases de datos', 'API segura', 'integración']
 				}
 			]
 		},
 		de: {
 			title: 'Was wir entwickeln',
-			subtitle:
-				'Wir hinterfragen die ursprüngliche Anfrage, um festzulegen, was sich wirklich zu entwickeln lohnt. Bestehendes anpassen, Ihre Software verbinden oder einen Prozess vereinfachen sind ebenfalls echte Antworten.',
+			subtitle: 'Klare Kompetenzen und konkrete Umsetzungsformate für Ihre Teams.',
 			items: [
 				{
-					title: 'KI für Ihre Vorgänge',
+					title: 'KI-Copiloten für Teams',
 					description:
-						'Einen Stapel Dokumente lesen, den richtigen Vorgang finden und eine Zusammenfassung mit Verweis auf die Quellen vorbereiten. Die KI bereitet vor, der Mensch prüft und entscheidet.'
+						'Informationssuche, Zusammenfassungen, Entscheidungshilfen, unterstütztes Schreiben und operative Unterstützung direkt in Ihren Werkzeugen.',
+					points: ['LLM', 'RAG', 'Agenten', 'Fachanwendungen']
 				},
 				{
-					title: 'Prozessautomatisierung',
+					title: 'Workflow-Automatisierung',
 					description:
-						'Erfassung, Ablage, Erinnerungen und Abgleiche laufen über einen Workflow. Ihre Teams bearbeiten die Ausnahmen, statt Informationen abzutippen.'
+						'Dokumentenverarbeitung, Qualifizierung, Orchestrierung, Reporting, Warnmeldungen und Koordination zwischen Teams, Software und Daten.',
+					points: ['unterstützte Workflows', 'APIs', 'Geschäftsregeln', 'Automatisierung']
 				},
 				{
-					title: 'Fachanwendungen',
+					title: 'Fachanwendungen, Datenbanken und APIs',
 					description:
-						'Portale, Backoffices und Dashboards, in denen Ihre Teams und Partner denselben Vorgang verfolgen, jeweils mit eigenen Berechtigungen.'
+						'Portale, Backoffices, Dashboards, Datenbanken, sichere APIs und interne Werkzeuge, die KI sauber in bestehende Systeme integrieren.',
+					points: ['Fachanwendungen', 'Datenbanken', 'sichere API', 'Integration']
 				}
 			]
 		},
 		it: {
 			title: 'Cosa realizziamo',
-			subtitle:
-				'Mettiamo in discussione la richiesta iniziale per definire ciò che vale davvero la pena sviluppare. Adattare l’esistente, collegare i vostri software o semplificare un processo sono anch’esse risposte concrete.',
+			subtitle: 'Competenze chiare e modalità di intervento concrete per i vostri team.',
 			items: [
 				{
-					title: 'IA applicata alle vostre pratiche',
+					title: 'Copiloti IA per i team',
 					description:
-						'Leggere un lotto di documenti, ritrovare la pratica giusta, preparare una sintesi con rimando alle fonti. L’IA prepara il lavoro, la persona verifica e decide.'
+						'Ricerca di informazioni, sintesi, supporto alle decisioni, scrittura assistita e aiuto operativo integrati nei vostri strumenti.',
+					points: ['LLM', 'RAG', 'agenti', 'interfacce aziendali']
 				},
 				{
-					title: 'Automazione dei processi',
+					title: 'Automazione dei workflow',
 					description:
-						'Inserimenti, classificazioni, solleciti e riconciliazioni passano da un workflow. I vostri team gestiscono le eccezioni invece di ricopiare le informazioni.'
+						'Elaborazione documentale, qualificazione, orchestrazione, reporting, avvisi e coordinamento tra team, software e dati.',
+					points: ['workflow assistiti', 'API', 'regole aziendali', 'automazione']
 				},
 				{
-					title: 'Applicazioni aziendali',
+					title: 'Applicazioni, database e API aziendali',
 					description:
-						'Portali, back office e dashboard in cui i vostri team e i vostri partner seguono la stessa pratica, ciascuno con i propri permessi.'
+						'Portali, back office, dashboard, database, API sicure e strumenti interni progettati per integrare correttamente l’IA nei sistemi esistenti.',
+					points: ['applicazioni aziendali', 'database', 'API sicure', 'integrazione']
 				}
 			]
 		}
@@ -152,6 +163,13 @@
 				<CapabilityDiagram {index} />
 				<h4 class="text-xl font-bold text-darkGrey">{item.title}</h4>
 				<p class="mt-3 text-sm leading-relaxed text-darkGrey/80">{item.description}</p>
+				<div class="mt-5 flex flex-wrap gap-2">
+					{#each item.points as point}
+						<span class="rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-darkGrey"
+							>{point}</span
+						>
+					{/each}
+				</div>
 				<a
 					class="capability-link"
 					href={buildLocalizedPath(solutionHref(capabilitySolutions[index], locale), locale)}
@@ -162,11 +180,11 @@
 		{/each}
 	</div>
 
-	<nav class="capability-sectors" aria-label={navigationCopy[locale].sectors}>
-		<a href={buildLocalizedPath('/filieres', locale)}>{navigationCopy[locale].sectorLink}</a>
-		<a href={buildLocalizedPath('/filieres/economie-circulaire', locale)}
-			>{navigationCopy[locale].circular}</a
-		>
-		<a href={buildLocalizedPath('/filieres/justice', locale)}>{sectorCopy[locale].justice}</a>
+	<nav class="capability-solutions" aria-label={navigationCopy[locale].solutions}>
+		<a href={buildLocalizedPath('/solutions', locale)}>{navigationCopy[locale].allSolutions}</a>
+		{#each solutionIds as id}
+			<a href={buildLocalizedPath(solutionHref(id, locale), locale)}>{solutionLabels[locale][id]}</a
+			>
+		{/each}
 	</nav>
 </section>

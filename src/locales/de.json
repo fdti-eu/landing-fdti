@@ -480,12 +480,12 @@
 	},
 	"GetHomePageContent": {
 		"hero_section": {
-			"subtitle": "Fachanwendungen, Automatisierung und KI, gemeinsam mit Ihren Teams entwickelt und an die Software angebunden, die Sie bereits nutzen.",
-			"description": "<p>Wir hinterfragen die ursprüngliche Anfrage, um festzulegen, was sich wirklich zu entwickeln lohnt. Danach liefern wir einen ersten nutzbaren Umfang, den wir anhand der Rückmeldungen aus der Praxis weiterentwickeln. Sie sprechen direkt mit den Menschen, die Ihre Lösung konzipieren.</p>",
+			"subtitle": "Copiloten, Automatisierungen und Fachanwendungen, integriert in Ihre bestehenden Systeme",
+			"description": "<p>Wir entwickeln Lösungen, die Ihre Daten, SaaS-Plattformen und internen Systeme verbinden und Ihre Abläufe schneller, zuverlässiger und automatisierter machen. KI ist kein zusätzliches Gimmick, sondern wird zum zentralen Baustein Ihrer täglichen Prozesse.</p>",
 			"btn_brochure": "Laden Sie unsere Broschüre herunter",
 			"btn_contact": "Ihr Projekt besprechen",
 			"brochure_link": "https://docs.google.com/presentation/d/e/2PACX-1vTqoylpjD44uKvXaQVAsPAlGMXDLBP_cqpr7gnuj0S2qXDS07mXwww8rMfjU-nAeTyYgR6CRSICSj17/pub?start=false&loop=false&delayms=3000",
-			"title": "Sie kennen Ihr Geschäft. Wir bauen das Werkzeug, das ihm fehlt.",
+			"title": "KI, Code und Daten für Ihre Geschäftsprozesse",
 			"status": "KI-Studio und Geschäftsautomatisierung"
 		},
 		"fdti_section": {

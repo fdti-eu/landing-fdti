@@ -480,12 +480,12 @@
 	},
 	"GetHomePageContent": {
 		"hero_section": {
-			"subtitle": "Applicazioni aziendali, automazione e IA, progettate con i vostri team e collegate ai software che già utilizzate.",
-			"description": "<p>Mettiamo in discussione la richiesta iniziale per definire ciò che vale davvero la pena sviluppare, poi consegniamo un primo ambito utilizzabile che facciamo evolvere con i riscontri del campo. Parlate direttamente con le persone che progettano la vostra soluzione.</p>",
+			"subtitle": "Copiloti, automazioni e applicazioni aziendali integrati con i vostri strumenti esistenti",
+			"description": "<p>Realizziamo strumenti che collegano dati, piattaforme SaaS e sistemi interni per rendere le operazioni più rapide, affidabili e automatizzate. L'IA non è un accessorio: diventa una componente centrale dei processi quotidiani.</p>",
 			"btn_brochure": "Scaricate la nostra brochure",
 			"btn_contact": "Parliamo del vostro progetto",
 			"brochure_link": "https://docs.google.com/presentation/d/e/2PACX-1vTxf7KCRA90Jm1rClbzRMZqB7wprtcUv30NwlpyT7RsxcGCKEQxW9HneEJBxo0Ml50srOHn18p5ECpD/pub?start=false&loop=false&delayms=3000",
-			"title": "Conoscete il vostro mestiere. Noi costruiamo lo strumento che gli manca.",
+			"title": "IA, codice e dati al servizio dei vostri processi aziendali",
 			"status": "Studio IA e automazione aziendale"
 		},
 		"fdti_section": {

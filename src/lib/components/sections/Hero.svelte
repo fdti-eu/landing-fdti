@@ -1,29 +1,15 @@
 <script lang="ts">
 	import Button from '$lib/components/Button.svelte';
-	import type { Lang } from '$lib/data';
-	import { buildLocalizedPath } from '$lib/functions/seo';
 
 	export let content: {
+		status?: string | null;
 		title?: string | null;
 		subtitle?: string | null;
 		description?: string | null;
+		btn_brochure?: string | null;
 		btn_contact?: string | null;
+		brochure_link?: string | null;
 	} | null;
-	export let proofs: {
-		slug?: string | null;
-		indexCard?: { proof?: string; note?: string };
-	}[] = [];
-	export let locale: Lang = 'fr';
-
-	const proofHeadings: Record<Lang, string> = {
-		fr: 'En service aujourd’hui',
-		en: 'In use today',
-		es: 'En uso hoy',
-		de: 'Heute im Einsatz',
-		it: 'In uso oggi'
-	};
-
-	$: visibleProofs = proofs.filter((item) => item.slug && item.indexCard?.proof);
 </script>
 
 <section class="fdti-hero">
@@ -31,6 +17,7 @@
 	{#if content}
 		<div class="hero-shell">
 			<div class="hero-copy">
+				{#if content.status}<div class="hero-status">{content.status}</div>{/if}
 				<h1>{content.title}</h1>
 				<p class="hero-subtitle">{content.subtitle}</p>
 				<div class="hero-description">{@html content.description || ''}</div>
@@ -44,21 +31,20 @@
 					>
 				</div>
 			</div>
-			{#if visibleProofs.length}
-				<aside class="hero-proofs" aria-labelledby="hero-proofs-title">
-					<h2 id="hero-proofs-title">{proofHeadings[locale]}</h2>
-					<ul>
-						{#each visibleProofs as item}
-							<li>
-								<a href={buildLocalizedPath(`/realisations/${item.slug}`, locale)}>
-									<strong>{item.indexCard?.proof}</strong>
-									{#if item.indexCard?.note}<span>{item.indexCard.note}</span>{/if}
-								</a>
-							</li>
-						{/each}
-					</ul>
-				</aside>
-			{/if}
+			<figure class="hero-figure">
+				<div class="hero-orbit orbit-one" aria-hidden="true"></div>
+				<div class="hero-orbit orbit-two" aria-hidden="true"></div>
+				<div class="hero-figure-surface">
+					<img
+						src="/images/analysts-working.svg"
+						width="512"
+						height="458"
+						alt=""
+						fetchpriority="high"
+						loading="eager"
+					/>
+				</div>
+			</figure>
 		</div>
 	{/if}
 </section>

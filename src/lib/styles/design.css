@@ -245,8 +245,17 @@
 		position: relative;
 		z-index: 2;
 	}
+	.hero-status {
+		display: flex;
+		align-items: center;
+		color: var(--color-yellow);
+		text-transform: uppercase;
+		letter-spacing: 0.13em;
+		font-size: 12px;
+		margin-bottom: 27px;
+	}
 	.hero-copy h1 {
-		font-size: clamp(42px, 4.3vw, 64px);
+		font-size: clamp(44px, 4.95vw, 76px);
 		letter-spacing: -0.043em;
 		line-height: 1.055;
 		font-weight: 700;
@@ -293,48 +302,47 @@
 	.fdti-hero a:focus-visible {
 		outline-color: var(--color-yellow);
 	}
-	.hero-proofs {
+	.hero-figure {
 		position: relative;
-		z-index: 2;
-		border-top: 1px solid var(--color-yellow);
-		padding-top: 22px;
+		margin: 0;
+		padding: 32px 0;
 	}
-	.hero-proofs h2 {
-		font-size: 15px;
-		font-weight: 700;
-		color: var(--color-yellow);
+	.hero-figure-surface {
+		aspect-ratio: 1 / 1.03;
+		position: relative;
+		display: flex;
+		align-items: center;
 	}
-	.hero-proofs ul {
-		margin-top: 8px;
+	.hero-figure img {
+		width: 110%;
+		max-width: none;
+		margin-left: -5%;
+		height: auto;
+		position: relative;
+		z-index: 1;
 	}
-	.hero-proofs li + li {
-		border-top: 1px solid var(--color-grey);
+	.hero-orbit {
+		position: absolute;
+		border: 1px solid color-mix(in srgb, var(--color-yellow) 20%, transparent);
+		border-radius: 50%;
+		width: 77%;
+		aspect-ratio: 1;
+		top: 10%;
+		right: -7%;
+		pointer-events: none;
 	}
-	.hero-proofs a {
-		display: grid;
-		gap: 4px;
-		padding: 20px 0;
-		color: white;
-		text-decoration: none;
-	}
-	.hero-proofs strong {
-		font-size: clamp(26px, 2.4vw, 36px);
-		line-height: 1.1;
-		letter-spacing: -0.03em;
-	}
-	.hero-proofs span {
-		font-size: 15px;
-		line-height: 1.5;
-		color: var(--color-dark-grey-2);
-	}
-	.hero-proofs a:hover strong,
-	.hero-proofs a:focus-visible strong {
-		color: var(--color-yellow);
+	.orbit-two {
+		width: 96%;
+		top: 1%;
+		right: -17%;
+		border-style: dashed;
+		border-color: color-mix(in srgb, var(--color-yellow) 12%, transparent);
 	}
 	/* Shared editorial grid, retaining every heading and its original wording. */
 	.home-sections {
 		max-width: none;
 	}
+	.approach-section,
 	.capabilities-section,
 	.cases-preview-section,
 	.trust-section {
@@ -364,6 +372,57 @@
 		margin: 0;
 		color: var(--color-grey);
 	}
+	.approach-grid {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 56px;
+	}
+	.approach-grid > article {
+		display: grid;
+		grid-template-columns: 54px 1fr;
+		gap: 25px;
+		margin: 0;
+		padding: 31px 0 0;
+		border-top: 1px solid var(--color-light-grey);
+		align-items: start;
+	}
+	.approach-grid article > img {
+		width: 45px;
+		height: 45px;
+	}
+	.approach-grid article > div {
+		width: auto;
+		font-size: 17px;
+		line-height: 1.75;
+	}
+	.approach-grid p {
+		color: var(--color-grey);
+	}
+	.approach-grid strong {
+		color: var(--color-dark-grey);
+		font-weight: 700;
+	}
+	.approach-grid ul {
+		margin-top: 24px;
+		display: grid;
+		gap: 17px;
+	}
+	.approach-grid li {
+		position: relative;
+		padding-left: 18px;
+		font-size: 15px;
+		line-height: 1.6;
+		color: var(--color-grey);
+	}
+	.approach-grid li::before {
+		content: '';
+		position: absolute;
+		left: 0;
+		top: 9px;
+		width: 5px;
+		height: 5px;
+		background: var(--color-yellow);
+	}
 	/* Three disciplines, three bespoke diagrams, the existing identity. */
 	.capabilities-section {
 		background: var(--color-dark-grey);
@@ -390,6 +449,10 @@
 			border-color 0.25s,
 			transform 0.25s;
 	}
+	.capability-card:hover {
+		border-color: var(--color-yellow);
+		transform: translateY(-5px);
+	}
 	.capability-diagram {
 		width: 100%;
 		height: auto;
@@ -408,8 +471,20 @@
 		color: var(--color-dark-grey-2);
 		margin: 17px 0 27px;
 	}
-	.capability-link {
+	.capability-card > div {
+		gap: 7px;
 		margin-top: auto;
+	}
+	.capability-card > div > span {
+		background: transparent;
+		color: var(--color-yellow);
+		border: 1px solid color-mix(in srgb, var(--color-yellow) 25%, transparent);
+		border-radius: 2px;
+		font-size: 12px;
+		padding: 5px 9px;
+	}
+	.capability-link {
+		margin-top: 18px;
 		align-self: flex-start;
 		color: var(--color-yellow);
 		font-weight: 700;
@@ -420,7 +495,7 @@
 	.capability-link:focus-visible {
 		color: white;
 	}
-	.capability-sectors {
+	.capability-solutions {
 		display: flex;
 		flex-wrap: wrap;
 		gap: 12px 28px;
@@ -428,18 +503,88 @@
 		padding-top: 24px;
 		border-top: 1px solid var(--color-grey);
 	}
-	.capability-sectors a {
+	.capability-solutions a {
 		color: white;
 		text-decoration: underline;
 		text-underline-offset: 5px;
 	}
-	.capability-sectors a:first-child {
+	.capability-solutions a:first-child {
 		color: var(--color-yellow);
 		font-weight: 700;
 	}
-	.capability-sectors a:hover,
-	.capability-sectors a:focus-visible {
+	.capability-solutions a:hover,
+	.capability-solutions a:focus-visible {
 		color: var(--color-yellow);
+	}
+	.sectors-preview-section {
+		max-width: none;
+		padding: 100px max(var(--design-gutter), calc((100% - var(--design-width)) / 2));
+		background: #f5f4ee;
+	}
+	.sectors-preview-section .section-heading h3 {
+		color: var(--color-grey);
+	}
+	.sectors-preview-grid {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		border-top: 1px solid #c9cbc8;
+		border-bottom: 1px solid #c9cbc8;
+	}
+	.sectors-preview-grid > article {
+		padding: 30px 30px 34px 0;
+	}
+	.sectors-preview-grid > article + article {
+		padding-left: 30px;
+		border-left: 1px solid #c9cbc8;
+	}
+	.sectors-preview-grid h3 {
+		font-size: 28px;
+		font-weight: 700;
+		line-height: 1.2;
+		letter-spacing: -0.025em;
+	}
+	.sectors-preview-grid h3 a {
+		text-decoration: underline;
+		text-decoration-thickness: 1px;
+		text-underline-offset: 6px;
+	}
+	.sectors-preview-grid p {
+		font-size: 16px;
+		line-height: 1.7;
+		color: var(--color-grey);
+		margin-top: 16px;
+		max-width: 60ch;
+	}
+	.sectors-preview-grid ul {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 10px 24px;
+		margin-top: 20px;
+	}
+	.sectors-preview-grid li a {
+		font-weight: 700;
+		text-decoration: underline;
+		text-underline-offset: 5px;
+	}
+	.sectors-preview-grid a:hover,
+	.sectors-preview-grid a:focus-visible {
+		color: #815b20;
+	}
+	@media (max-width: 760px) {
+		.sectors-preview-section {
+			padding-block: 58px;
+		}
+		.sectors-preview-grid {
+			grid-template-columns: 1fr;
+		}
+		.sectors-preview-grid > article,
+		.sectors-preview-grid > article + article {
+			padding: 26px 0;
+			border-left: 0;
+		}
+		.sectors-preview-grid > article + article {
+			border-top: 1px solid #c9cbc8;
+		}
 	}
 	.editorial-kicker {
 		font-size: 12px;
@@ -448,6 +593,13 @@
 		letter-spacing: 0.13em;
 		color: #6b7074;
 		margin-bottom: 18px;
+	}
+	.editorial-text-link {
+		display: inline-flex;
+		font-weight: 700;
+		text-decoration: underline;
+		text-underline-offset: 6px;
+		margin-top: 32px;
 	}
 	/* Case studies: the proof is prominent, not hidden inside identical tiles. */
 	.cases-preview-grid {
@@ -1450,10 +1602,13 @@
 			gap: 38px;
 		}
 		.hero-copy h1 {
-			font-size: 54px;
+			font-size: 60px;
 		}
 		.section-heading {
 			gap: 50px;
+		}
+		.approach-grid {
+			gap: 38px;
 		}
 		.capability-card {
 			padding: 24px;
@@ -1601,6 +1756,11 @@
 		.hero-copy h1 {
 			font-size: 47px;
 		}
+		.hero-status {
+			font-size: 10px;
+			letter-spacing: 0.09em;
+			margin-bottom: 23px;
+		}
 		.hero-subtitle {
 			font-size: 20px;
 		}
@@ -1622,8 +1782,19 @@
 		.section-heading > h3 {
 			font-size: 19px;
 		}
+		.approach-section,
 		.capabilities-section,
 		.cases-preview-section,
+		.trust-section {
+			padding-block: 72px;
+		}
+		.approach-grid {
+			gap: 30px;
+		}
+		.approach-grid > article {
+			grid-template-columns: 1fr;
+			gap: 20px;
+		}
 		.capabilities-grid {
 			grid-template-columns: 1fr;
 			gap: 20px;
@@ -1798,6 +1969,11 @@
 			grid-template-columns: 1fr;
 			gap: 18px;
 		}
+		.hero-status {
+			font-size: 9px;
+			letter-spacing: 0.085em;
+			margin-bottom: 24px;
+		}
 		.hero-copy h1 {
 			font-size: clamp(40px, 10.65vw, 59px);
 			letter-spacing: -0.035em;
@@ -1823,6 +1999,26 @@
 			max-width: 380px;
 			justify-content: space-between;
 		}
+		.hero-figure {
+			max-width: 360px;
+			width: 84%;
+			margin: auto;
+			padding: 32px 0 18px;
+		}
+		.hero-figure-surface {
+			aspect-ratio: 1.2;
+		}
+		.hero-orbit {
+			width: 68%;
+			right: -6%;
+			top: 10%;
+		}
+		.orbit-two {
+			width: 90%;
+			right: -17%;
+			top: 0;
+		}
+		.approach-section,
 		.capabilities-section,
 		.cases-preview-section {
 			padding-block: 58px;
@@ -1839,6 +2035,24 @@
 			font-size: 19px;
 			line-height: 1.55;
 		}
+		.approach-grid {
+			grid-template-columns: 1fr;
+			gap: 32px;
+		}
+		.approach-grid > article {
+			padding-top: 27px;
+		}
+		.approach-grid article > div {
+			font-size: 17px;
+		}
+		.approach-grid li {
+			font-size: 16px;
+			line-height: 1.65;
+		}
+		.approach-grid ul {
+			gap: 18px;
+			margin-top: 20px;
+		}
 		.capability-card {
 			display: flex;
 			flex-direction: column;
@@ -1853,6 +2067,9 @@
 		}
 		.capability-card > p {
 			font-size: 16px;
+		}
+		.capability-card > div {
+			margin-top: 0;
 		}
 		.cases-preview-grid {
 			grid-template-columns: 1fr;
@@ -2105,6 +2322,9 @@
 		}
 		.hero-copy h1 {
 			font-size: 38px;
+		}
+		.hero-status {
+			font-size: 8px;
 		}
 		.fdti-button {
 			font-size: 13px;

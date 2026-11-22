@@ -5,9 +5,6 @@ import type { PageLoad } from './$types';
 
 export const prerender = true;
 
-/** Deployed case studies whose published headline indicator is shown in the hero. */
-const HERO_PROOF_IDS = ['1', '4', '9'];
-
 export function entries() {
 	return SUPPORTED_LOCALES.map((local) => ({ local }));
 }
@@ -47,14 +44,7 @@ export const load: PageLoad = async ({ params }) => {
 
 	return {
 		...content,
-		homepage_use_cases: sortCaseCards(
-			(useCasesContent.use_case_list ?? []).filter(
-				(useCase) => !HERO_PROOF_IDS.includes(useCase.id ?? '')
-			)
-		).slice(0, 3),
-		hero_proofs: HERO_PROOF_IDS.map((id) =>
-			useCasesContent.use_case_list?.find((useCase) => useCase.id === id)
-		).filter((useCase) => useCase !== undefined),
+		homepage_use_cases: sortCaseCards(useCasesContent.use_case_list ?? []).slice(0, 3),
 		homepage_use_cases_title: useCasesLabels[local].title,
 		homepage_use_cases_subtitle: useCasesLabels[local].subtitle,
 		locale: local,
