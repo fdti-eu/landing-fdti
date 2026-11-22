@@ -1315,6 +1315,11 @@
 				"impact": "Los equipos mantuvieron el seguimiento de las ventas minuto a minuto tras el cambio de software.",
 				"metrics": [
 					{
+						"label": "Tiendas seguidas",
+						"value": "Más de 500",
+						"note": "Toda la red de la cadena."
+					},
+					{
 						"label": "Actualización de los datos de ventas",
 						"value": "Cada minuto",
 						"note": "Frecuencia con la que el sistema de análisis recibe datos nuevos."
@@ -1329,8 +1334,8 @@
 				"indexCard": {
 					"title": "Seguir las ventas de las tiendas durante un cambio de software",
 					"description": "Aunque cambie el formato de los tickets, cada venta sigue vinculada a los artículos y a la tienda correspondientes. Los equipos pueden seguir la facturación y el importe medio por compra.",
-					"proof": "Antiguo sistema de análisis retirado",
-					"note": "Los analistas siguen las ventas en el nuevo sistema."
+					"proof": "Más de 500 tiendas",
+					"note": "Ventas de cada tienda de la red, seguidas en el nuevo sistema."
 				},
 				"slug": "almacen-datos-retail"
 			}

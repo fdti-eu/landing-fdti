@@ -1311,6 +1311,11 @@
 				"impact": "Auch nach dem Softwarewechsel konnten die Teams die Verkäufe im Minutentakt verfolgen.",
 				"metrics": [
 					{
+						"label": "Erfasste Filialen",
+						"value": "Über 500",
+						"note": "Das gesamte Filialnetz der Kette."
+					},
+					{
 						"label": "Aktualisierung der Verkaufsdaten",
 						"value": "Jede Minute",
 						"note": "Intervall, in dem das Berichtssystem neue Daten erhält."
@@ -1325,8 +1330,8 @@
 				"indexCard": {
 					"title": "Filialumsätze während eines Softwarewechsels verfolgen",
 					"description": "Auch wenn Kassenbons in einem neuen Format eintreffen, bleibt jeder Verkauf den richtigen Artikeln und der richtigen Filiale zugeordnet. Die Teams können Umsatz und durchschnittlichen Einkaufswert weiterhin verfolgen.",
-					"proof": "Altes Berichtssystem abgelöst",
-					"note": "Die Analysten verfolgen die Verkäufe im neuen System."
+					"proof": "Über 500 Filialen",
+					"note": "Verkäufe jeder Filiale des Netzes, im neuen System verfolgt."
 				},
 				"slug": "data-warehouse-nahezu-echtzeit-einzelhandel"
 			}

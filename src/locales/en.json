@@ -1303,6 +1303,11 @@
 				"impact": "Teams retained minute-by-minute sales reporting after the software change.",
 				"metrics": [
 					{
+						"label": "Stores tracked",
+						"value": "Over 500",
+						"note": "The retailer’s entire network."
+					},
+					{
 						"label": "Sales data updates",
 						"value": "Every minute",
 						"note": "Frequency at which the reporting system receives new data."
@@ -1317,8 +1322,8 @@
 				"indexCard": {
 					"title": "Tracking store sales through a software migration",
 					"description": "When receipt formats change, the teams keep their bearings: each sale stays linked to the right items and store so analysts can track revenue and average transaction value.",
-					"proof": "Legacy reporting system retired",
-					"note": "Analysts track sales in the new system."
+					"proof": "Over 500 stores",
+					"note": "Sales from every store in the network, tracked in the new system."
 				},
 				"slug": "data-warehouse-retail"
 			}

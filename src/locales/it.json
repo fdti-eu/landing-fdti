@@ -1311,6 +1311,11 @@
 				"impact": "Dopo il cambio di gestionale i team hanno continuato a seguire le vendite minuto per minuto.",
 				"metrics": [
 					{
+						"label": "Negozi seguiti",
+						"value": "Oltre 500",
+						"note": "L’intera rete dell’insegna."
+					},
+					{
 						"label": "Aggiornamento dei dati di vendita",
 						"value": "Ogni minuto",
 						"note": "Frequenza con cui il sistema di analisi riceve nuovi dati."
@@ -1325,8 +1330,8 @@
 				"indexCard": {
 					"title": "Seguire le vendite dei negozi durante il cambio di gestionale",
 					"description": "Anche quando cambia il formato degli scontrini, ogni vendita resta collegata agli articoli e al negozio corretti. I team possono così seguire fatturato e valore medio dello scontrino per punto vendita.",
-					"proof": "Vecchio sistema di analisi dismesso",
-					"note": "Gli analisti seguono le vendite nel nuovo sistema."
+					"proof": "Oltre 500 negozi",
+					"note": "Vendite di ogni negozio della rete, seguite nel nuovo sistema."
 				},
 				"slug": "data-warehouse-retail-tempo-reale"
 			}

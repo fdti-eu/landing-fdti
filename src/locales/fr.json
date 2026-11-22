@@ -1311,6 +1311,11 @@
 				"impact": "Les équipes ont conservé un suivi des ventes minute par minute après le changement de logiciel.",
 				"metrics": [
 					{
+						"label": "Magasins suivis",
+						"value": "Plus de 500",
+						"note": "Tout le réseau de l’enseigne."
+					},
+					{
 						"label": "Mise à jour des données de vente",
 						"value": "Chaque minute",
 						"note": "Cadence d’alimentation du système d’analyse."
@@ -1325,8 +1330,8 @@
 				"indexCard": {
 					"title": "Suivre les ventes des magasins pendant un changement de logiciel",
 					"description": "Quand le format des tickets de caisse change, les équipes conservent leurs repères : chaque vente reste rattachée aux bons articles et au bon magasin pour suivre le chiffre d’affaires et le panier moyen.",
-					"proof": "Ancien outil d’analyse retiré",
-					"note": "Les analystes suivent les ventes sur le nouveau système."
+					"proof": "Plus de 500 magasins",
+					"note": "Ventes de chaque magasin du réseau, suivies dans le nouveau système."
 				},
 				"slug": "data-warehouse-retail"
 			}
