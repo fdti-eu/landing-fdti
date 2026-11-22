@@ -1108,8 +1108,10 @@
 					"Berechnungen und Daten für Tabellen in Word-Urteilen unter menschlicher Aufsicht vorbereiten."
 				],
 				"indexCard": {
-					"title": "Entschädigungen für 20.000 Personen vorbereiten und jeden Betrag nachvollziehbar machen",
-					"description": "Dieselben Personen erscheinen in Gerichtsentscheidungen, Anwaltsunterlagen und medizinischen Gutachten. Die Plattform gleicht die Quellen ab und bewahrt für jede Berechnung den Ausgangswert, den angesetzten Wert und die Korrekturen auf."
+					"title": "Entschädigungen vorbereiten und jeden Betrag nachvollziehbar machen",
+					"description": "Dieselben Personen erscheinen in Gerichtsentscheidungen, Anwaltsunterlagen und medizinischen Gutachten. Die Plattform gleicht die Quellen ab und bewahrt für jede Berechnung den Ausgangswert, den angesetzten Wert und die Korrekturen auf.",
+					"proof": "20.000 erfasste Personen",
+					"note": "Personen im Sammelverfahren."
 				},
 				"slug": "entschaedigungsakten"
 			},
@@ -1216,7 +1218,9 @@
 				],
 				"indexCard": {
 					"title": "Der Recycler verfolgt jede Batterie von der Meldung bis zur Behandlung",
-					"description": "Vor der Abholung bestimmt das Team anhand von Abholer und Zielstandort, welche Batterien gemeinsam transportiert werden können. Bei Ankunft ruft der Standort die Meldungen der Partie ab, prüft die Begleitpapiere und erfasst Eingang und Behandlung."
+					"description": "Vor der Abholung bestimmt das Team anhand von Abholer und Zielstandort, welche Batterien gemeinsam transportiert werden können. Bei Ankunft ruft der Standort die Meldungen der Partie ab, prüft die Begleitpapiere und erfasst Eingang und Behandlung.",
+					"proof": "Ein Zielstandort je Partie",
+					"note": "Abholer und Zielstandort werden vor dem Abtransport geprüft."
 				},
 				"slug": "betriebsplattform-batterierecycling"
 			},
@@ -1243,8 +1247,10 @@
 					"Dem Dienstleister kann er sagen, welchen Schaltschrank er prüfen soll, zu welcher Uhrzeit und wegen welcher Abweichung."
 				],
 				"indexCard": {
-					"title": "Über 40 Gebiete mit einem System zur Erkennung von Störungen der Straßenbeleuchtung",
-					"description": "Morgens vergleicht der Betreiber Schaltzeiten und Verbrauchskurven. Er unterscheidet eine verschobene Einschaltzeit von dauerhaftem Tagesverbrauch und sagt dem Dienstleister, welchen Schaltschrank er wann prüfen soll."
+					"title": "Auffälligkeiten in der Straßenbeleuchtung erkennen",
+					"description": "Morgens vergleicht der Betreiber Schaltzeiten und Verbrauchskurven. Er unterscheidet eine verschobene Einschaltzeit von dauerhaftem Tagesverbrauch und sagt dem Dienstleister, welchen Schaltschrank er wann prüfen soll.",
+					"proof": "Über 40 Versorgungsgebiete",
+					"note": "In diesen Gebieten nutzen Betreiber die Warnmeldungen."
 				},
 				"slug": "ueberwachung-strassenbeleuchtung"
 			},
@@ -1264,8 +1270,10 @@
 					"Die Teams vor Ort nutzen dieselben Kriterien, um Themen für die nächste Kampagne auszuwählen."
 				],
 				"indexCard": {
-					"title": "60.000 Beiträge in acht Sprachen analysieren und Kampagnenbudgets gezielt verteilen",
-					"description": "Welche Botschaften lösen in welchem Land bei welcher Zielgruppe eine Reaktion aus? Die Organisation verbindet Thema und Ton jedes Beitrags mit seiner Resonanz und verteilt ihr Budget nach gemeinsamen Kriterien auf Länder und Plattformen."
+					"title": "Botschaften vergleichen und Kampagnenbudgets gezielt verteilen",
+					"description": "Welche Botschaften lösen in welchem Land bei welcher Zielgruppe eine Reaktion aus? Die Organisation verbindet Thema und Ton jedes Beitrags mit seiner Resonanz und verteilt ihr Budget nach gemeinsamen Kriterien auf Länder und Plattformen.",
+					"proof": "60.000 analysierte Beiträge",
+					"note": "Facebook- und Instagram-Beiträge in acht Sprachen."
 				},
 				"slug": "ki-analyse-social-media-kampagnen"
 			},
@@ -1285,8 +1293,10 @@
 					"Der Kundendienst verfolgt wiederkehrende Anfragen. Das Produktteam kann Meldungen zu einem Produktfehler getrennt von Lieferproblemen untersuchen."
 				],
 				"indexCard": {
-					"title": "Rückmeldungen aus über 25 Quellen zusammenführen, um Kundenprobleme zu verstehen",
-					"description": "In einer Umfrage, einer Rezension oder einer Anfrage beim Kundendienst kann derselbe Fehler unterschiedlich beschrieben sein. Das Kundenforschungsteam bündelt die Kommentare und gibt die aussagekräftigen Originalberichte an das Produktteam weiter."
+					"title": "Kundenrückmeldungen zusammenführen und wiederkehrende Probleme verstehen",
+					"description": "In einer Umfrage, einer Rezension oder einer Anfrage beim Kundendienst kann derselbe Fehler unterschiedlich beschrieben sein. Das Kundenforschungsteam bündelt die Kommentare und gibt die aussagekräftigen Originalberichte an das Produktteam weiter.",
+					"proof": "Über 25 Quellen gebündelt",
+					"note": "Umfragen, Kundendienst und Bewertungsportale."
 				},
 				"slug": "datenhub-nlp"
 			},
@@ -1313,8 +1323,10 @@
 					"Die Auswertungen erhalten jede Minute neue Daten. Die Teams konnten auf das neue Berichtssystem umsteigen und das alte ablösen."
 				],
 				"indexCard": {
-					"title": "Das Warenwirtschaftssystem wechseln und Filialumsätze im Minutentakt verfolgen",
-					"description": "Auch wenn Kassenbons in einem neuen Format eintreffen, bleibt jeder Verkauf den richtigen Artikeln und der richtigen Filiale zugeordnet. Die Teams können Umsatz und durchschnittlichen Einkaufswert weiterhin verfolgen."
+					"title": "Filialumsätze während eines Softwarewechsels verfolgen",
+					"description": "Auch wenn Kassenbons in einem neuen Format eintreffen, bleibt jeder Verkauf den richtigen Artikeln und der richtigen Filiale zugeordnet. Die Teams können Umsatz und durchschnittlichen Einkaufswert weiterhin verfolgen.",
+					"proof": "Aktualisierung im Minutentakt",
+					"note": "So oft erhält das Berichtssystem neue Verkaufsdaten."
 				},
 				"slug": "data-warehouse-nahezu-echtzeit-einzelhandel"
 			}

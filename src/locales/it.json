@@ -1108,8 +1108,10 @@
 					"Preparare calcoli e dati per le tabelle da inserire nelle sentenze Word, sotto controllo umano."
 				],
 				"indexCard": {
-					"title": "Preparare i risarcimenti di 20.000 persone e motivare ogni importo",
-					"description": "Le stesse persone compaiono nelle decisioni giudiziarie, nei file degli avvocati e nelle perizie mediche. La piattaforma confronta le fonti e conserva per ogni calcolo il valore originario, quello utilizzato e le correzioni."
+					"title": "Preparare i risarcimenti e motivare ogni importo",
+					"description": "Le stesse persone compaiono nelle decisioni giudiziarie, nei file degli avvocati e nelle perizie mediche. La piattaforma confronta le fonti e conserva per ogni calcolo il valore originario, quello utilizzato e le correzioni.",
+					"proof": "20.000 persone seguite",
+					"note": "Persone coinvolte nel contenzioso collettivo."
 				},
 				"slug": "pratiche-risarcimento"
 			},
@@ -1216,7 +1218,9 @@
 				],
 				"indexCard": {
 					"title": "Il riciclatore segue ogni batteria dalla dichiarazione al trattamento",
-					"description": "Prima del ritiro il team individua le batterie che possono viaggiare insieme in base al trasportatore e alla destinazione. All’arrivo l’impianto recupera le dichiarazioni del lotto, verifica i documenti e registra la ricezione e il trattamento."
+					"description": "Prima del ritiro il team individua le batterie che possono viaggiare insieme in base al trasportatore e alla destinazione. All’arrivo l’impianto recupera le dichiarazioni del lotto, verifica i documenti e registra la ricezione e il trattamento.",
+					"proof": "Un unico impianto destinatario per lotto",
+					"note": "Prima della partenza si verificano l’incaricato del ritiro e la destinazione."
 				},
 				"slug": "piattaforma-riciclo-batterie"
 			},
@@ -1243,8 +1247,10 @@
 					"Può indicare al manutentore quale quadro controllare, a che ora e per quale scostamento."
 				],
 				"indexCard": {
-					"title": "Oltre 40 territori attrezzati per individuare anomalie nell’illuminazione pubblica",
-					"description": "Ogni mattina il gestore confronta gli orari previsti con le curve di consumo. Distingue un ritardo nell’accensione da un assorbimento continuo durante il giorno e indica al manutentore quale quadro controllare e a che ora."
+					"title": "Individuare anomalie nell’illuminazione pubblica",
+					"description": "Ogni mattina il gestore confronta gli orari previsti con le curve di consumo. Distingue un ritardo nell’accensione da un assorbimento continuo durante il giorno e indica al manutentore quale quadro controllare e a che ora.",
+					"proof": "Oltre 40 territori attrezzati",
+					"note": "I gestori consultano gli avvisi della rete in questi territori."
 				},
 				"slug": "supervisione-illuminazione-pubblica"
 			},
@@ -1264,8 +1270,10 @@
 					"I team locali usano gli stessi criteri per scegliere quali temi riprendere nella campagna successiva."
 				],
 				"indexCard": {
-					"title": "Analizzare 60.000 post in otto lingue per orientare i budget delle campagne",
-					"description": "Quali messaggi suscitano reazioni, in quale paese e tra quali pubblici? Collegando il tema e il tono di ogni post ai risultati, l’ONG usa criteri comuni per distribuire il budget tra paesi e social network."
+					"title": "Confrontare i messaggi per orientare i budget delle campagne",
+					"description": "Quali messaggi suscitano reazioni, in quale paese e tra quali pubblici? Collegando il tema e il tono di ogni post ai risultati, l’ONG usa criteri comuni per distribuire il budget tra paesi e social network.",
+					"proof": "60.000 post analizzati",
+					"note": "Post di Facebook e Instagram in otto lingue."
 				},
 				"slug": "analisi-ia-campagne-social"
 			},
@@ -1285,8 +1293,10 @@
 					"L’assistenza segue le richieste ricorrenti. Il team di prodotto può esaminare le segnalazioni di un difetto separatamente dai problemi di consegna."
 				],
 				"indexCard": {
-					"title": "Confrontare opinioni da oltre 25 fonti per capire i problemi dei clienti",
-					"description": "Lo stesso difetto può essere descritto con parole diverse in un sondaggio, una recensione o una richiesta di assistenza. Il team di ricerca riunisce i commenti e trasmette al team di prodotto le testimonianze che spiegano il problema."
+					"title": "Confrontare le opinioni dei clienti per capire i problemi ricorrenti",
+					"description": "Lo stesso difetto può essere descritto con parole diverse in un sondaggio, una recensione o una richiesta di assistenza. Il team di ricerca riunisce i commenti e trasmette al team di prodotto le testimonianze che spiegano il problema.",
+					"proof": "Oltre 25 fonti riunite",
+					"note": "Sondaggi, assistenza clienti e siti di recensioni."
 				},
 				"slug": "hub-dati-nlp"
 			},
@@ -1313,8 +1323,10 @@
 					"I nuovi dati alimentano le analisi minuto per minuto. I team sono passati al nuovo sistema di analisi e hanno dismesso il precedente."
 				],
 				"indexCard": {
-					"title": "Cambiare gestionale continuando a seguire le vendite dei negozi minuto per minuto",
-					"description": "Anche quando cambia il formato degli scontrini, ogni vendita resta collegata agli articoli e al negozio corretti. I team possono così seguire fatturato e valore medio dello scontrino per punto vendita."
+					"title": "Seguire le vendite dei negozi durante il cambio di gestionale",
+					"description": "Anche quando cambia il formato degli scontrini, ogni vendita resta collegata agli articoli e al negozio corretti. I team possono così seguire fatturato e valore medio dello scontrino per punto vendita.",
+					"proof": "Un aggiornamento al minuto",
+					"note": "Frequenza di aggiornamento dei dati di vendita."
 				},
 				"slug": "data-warehouse-retail-tempo-reale"
 			}

@@ -270,6 +270,9 @@ for (const [locale, data, documents] of [
 ]) {
 	for (const item of data?.GetUseCasesContent?.use_case_list ?? []) {
 		const at = `${locale} case ${item.id}`;
+		if (!item.indexCard?.proof?.trim() || !item.indexCard?.note?.trim()) {
+			errors.push(`${at}: provide a headline indicator and its context on the index card`);
+		}
 		if (identifiers.some((pattern) => pattern.test(JSON.stringify(item)))) {
 			errors.push(`${at}: client identifier in a case study`);
 		}

@@ -448,7 +448,10 @@
 		gap: 4px 12px;
 		padding-top: 10px;
 		border-top: 1px solid #d0cdc4;
-		margin-top: 12px;
+		margin-top: auto;
+	}
+	.panorama-card > p {
+		padding-bottom: 12px;
 	}
 	.proof strong {
 		font-size: 20px;
