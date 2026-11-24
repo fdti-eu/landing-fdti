@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { locale } from 'svelte-i18n';
-	import { isSupportedLocale, type Lang } from '$lib/data';
+	import { isSupportedLocale, type Lang } from '#lib/data.ts';
 
 	export let title = '';
 	export let description = '';

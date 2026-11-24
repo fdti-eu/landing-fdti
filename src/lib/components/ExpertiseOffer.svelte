@@ -1,13 +1,13 @@
 <script lang="ts">
 	import { MetaTags } from 'svelte-meta-tags';
-	import type { Lang } from '$lib/data';
-	import { expertiseOffers, offerPaths, type OfferKey } from '$lib/expertise-offers';
+	import type { Lang } from '#lib/data.ts';
+	import { expertiseOffers, offerPaths, type OfferKey } from '#lib/expertise-offers.ts';
 	import {
 		absoluteImageUrl,
 		buildLocalizedPath,
 		buildLocalizedUrl,
 		SOCIAL_IMAGE_PATH
-	} from '$lib/functions/seo';
+	} from '#lib/functions/seo.ts';
 
 	export let locale: Lang;
 	export let offer: OfferKey;

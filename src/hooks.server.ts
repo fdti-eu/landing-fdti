@@ -1,5 +1,5 @@
-import type { Handle } from '@sveltejs/kit';
-import { resolveLocaleFromPath } from '$lib/functions/seo';
+import type { Handle } from '@sveltejs/kit/hooks';
+import { resolveLocaleFromPath } from '#lib/functions/seo.ts';
 
 const securityHeaders = {
 	'Strict-Transport-Security': 'max-age=31536000; includeSubDomains; preload',

@@ -1,7 +1,7 @@
 <script lang="ts">
-	import type { Lang } from '$lib/data';
-	import { buildLocalizedUrl } from '$lib/functions/seo';
-	import type { JobOffer } from '$lib/jobs';
+	import type { Lang } from '#lib/data.ts';
+	import { buildLocalizedUrl } from '#lib/functions/seo.ts';
+	import type { JobOffer } from '#lib/jobs.ts';
 
 	export let job: JobOffer;
 	export let locale: Lang;

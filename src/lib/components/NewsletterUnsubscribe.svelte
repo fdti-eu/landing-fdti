@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { onMount, onDestroy } from 'svelte';
-	import { resolveNewsletterEndpoint } from '$lib/contact';
+	import { resolveNewsletterEndpoint } from '#lib/contact.ts';
 	let token = '';
 	let state: 'loading' | 'ready' | 'pending' | 'success' | 'invalid' | 'error' = 'loading';
 	let controller: AbortController | undefined;

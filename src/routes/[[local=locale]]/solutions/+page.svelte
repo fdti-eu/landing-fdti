@@ -1,14 +1,14 @@
 <script lang="ts">
 	import { MetaTags } from 'svelte-meta-tags';
-	import { sectorCopy, navigationCopy, solutionIds, solutionLabels } from '$lib/navigation';
-	import { solutionProofIds, solutionsContent } from '$lib/solutions';
-	import { solutionPagePath, solutionPages } from '$lib/solution-pages';
+	import { sectorCopy, navigationCopy, solutionIds, solutionLabels } from '#lib/navigation.ts';
+	import { solutionProofIds, solutionsContent } from '#lib/solutions.ts';
+	import { solutionPagePath, solutionPages } from '#lib/solution-pages.ts';
 	import {
 		absoluteImageUrl,
 		buildLocalizedPath,
 		buildLocalizedUrl,
 		SOCIAL_IMAGE_PATH
-	} from '$lib/functions/seo';
+	} from '#lib/functions/seo.ts';
 	import type { PageData } from './$types';
 
 	export let data: PageData;

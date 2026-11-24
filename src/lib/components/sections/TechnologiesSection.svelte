@@ -1,7 +1,7 @@
 <script lang="ts">
 	import TechnoItem from './TechnoItem.svelte';
 	import TechnoList from './TechnoList.svelte';
-	import type { Lang } from '$lib/data';
+	import type { Lang } from '#lib/data.ts';
 
 	export let locale: Lang = 'fr';
 	const labels: Record<Lang, { title: string; subtitle: string; documentation: string }> = {

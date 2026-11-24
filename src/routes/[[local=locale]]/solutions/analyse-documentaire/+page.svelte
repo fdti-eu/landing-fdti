@@ -1,19 +1,19 @@
 <script lang="ts">
 	import { MetaTags } from 'svelte-meta-tags';
-	import ExpertiseHub, { type ExpertiseHubContent } from '$lib/components/ExpertiseHub.svelte';
-	import LdTag from '$lib/components/json-ld/LDTag.svelte';
-	import SolutionFamilyNav from '$lib/components/solutions/SolutionFamilyNav.svelte';
-	import SolutionOptions from '$lib/components/solutions/SolutionOptions.svelte';
-	import SolutionPractices from '$lib/components/solutions/SolutionPractices.svelte';
-	import { solutionPages } from '$lib/solution-pages';
-	import { schema } from '$lib/components/json-ld/json-ld';
+	import ExpertiseHub, { type ExpertiseHubContent } from '#lib/components/ExpertiseHub.svelte';
+	import LdTag from '#lib/components/json-ld/LDTag.svelte';
+	import SolutionFamilyNav from '#lib/components/solutions/SolutionFamilyNav.svelte';
+	import SolutionOptions from '#lib/components/solutions/SolutionOptions.svelte';
+	import SolutionPractices from '#lib/components/solutions/SolutionPractices.svelte';
+	import { solutionPages } from '#lib/solution-pages.ts';
+	import { schema } from '#lib/components/json-ld/json-ld.ts';
 	import {
 		absoluteImageUrl,
 		buildLocalizedPath,
 		buildLocalizedUrl,
 		SOCIAL_IMAGE_PATH
-	} from '$lib/functions/seo';
-	import type { Lang } from '$lib/data';
+	} from '#lib/functions/seo.ts';
+	import type { Lang } from '#lib/data.ts';
 	import type { PageData } from './$types';
 
 	export let data: PageData;

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { LocaleData } from '$lib/data';
+	import type { LocaleData } from '#lib/data.ts';
 	export let content: Pick<LocaleData['CircularEconomy'], 'ctaText' | 'ctaButton'>;
 	export let eventPlacement = 'circular_contact';
 </script>

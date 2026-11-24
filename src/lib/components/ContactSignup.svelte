@@ -1,11 +1,11 @@
 <script lang="ts">
 	import { onMount, onDestroy, tick } from 'svelte';
-	import { dev } from '$app/environment';
+	import { dev } from '$app/env';
 	import {
 		createContactRequestId,
 		resolveContactEndpoint,
 		resolveNewsletterEndpoint
-	} from '$lib/contact';
+	} from '#lib/contact.ts';
 
 	let email = '';
 	let message = '';
@@ -153,8 +153,9 @@
 						stroke="currentColor"
 						stroke-width="1.6"
 						aria-hidden="true"
-						><rect x="8" y="8" width="11" height="11" rx="1" /><path d="M16 8V5H5v11h3" /></svg
 					>
+						<rect x="8" y="8" width="11" height="11" rx="1"></rect><path d="M16 8V5H5v11h3"></path>
+					</svg>
 				</button>
 				<span class="copy-feedback" role="status"
 					>{copied

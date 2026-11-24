@@ -1,8 +1,8 @@
 <script lang="ts">
-	import type { Lang } from '$lib/data';
-	import { buildLocalizedPath } from '$lib/functions/seo';
-	import { solutionIds, solutionLabels, type SolutionId } from '$lib/navigation';
-	import { solutionHref } from '$lib/solution-pages';
+	import type { Lang } from '#lib/data.ts';
+	import { buildLocalizedPath } from '#lib/functions/seo.ts';
+	import { solutionIds, solutionLabels, type SolutionId } from '#lib/navigation.ts';
+	import { solutionHref } from '#lib/solution-pages.ts';
 
 	export let title: string;
 	export let locale: Lang;

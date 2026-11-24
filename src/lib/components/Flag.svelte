@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { FLAGS } from '$lib/const';
+	import { FLAGS } from '#lib/const.ts';
 
 	export let local: string | null = null;
 

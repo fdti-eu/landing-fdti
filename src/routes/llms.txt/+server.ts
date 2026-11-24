@@ -1,4 +1,4 @@
-import { buildLlmsText } from '$lib/llms';
+import { buildLlmsText } from '#lib/llms.ts';
 
 export const prerender = true;
 

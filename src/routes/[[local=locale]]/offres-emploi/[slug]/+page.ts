@@ -1,7 +1,7 @@
 import { error } from '@sveltejs/kit';
-import { isSupportedLocale, SUPPORTED_LOCALES, type Lang } from '$lib/data';
-import type { SeoAlternatePaths } from '$lib/functions/seo';
-import { getJobOffer, getJobOffers } from '$lib/jobs';
+import { isSupportedLocale, SUPPORTED_LOCALES, type Lang } from '#lib/data.ts';
+import type { SeoAlternatePaths } from '#lib/functions/seo.ts';
+import { getJobOffer, getJobOffers } from '#lib/jobs.ts';
 import type { PageLoad } from './$types';
 
 export const prerender = true;

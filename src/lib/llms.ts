@@ -1,19 +1,19 @@
-import enLocale from '$locales/en.json';
-import frLocale from '$locales/fr.json';
-import esLocale from '$locales/es.json';
-import deLocale from '$locales/de.json';
-import itLocale from '$locales/it.json';
-import enDocumentAnalysis from '$locales/document-analysis/en.json';
-import frDocumentAnalysis from '$locales/document-analysis/fr.json';
-import esDocumentAnalysis from '$locales/document-analysis/es.json';
-import deDocumentAnalysis from '$locales/document-analysis/de.json';
-import itDocumentAnalysis from '$locales/document-analysis/it.json';
-import type { Lang, LocaleData } from '$lib/data';
-import { buildLocalizedUrl } from '$lib/functions/seo';
-import { expertiseOffers, offerPaths } from '$lib/expertise-offers';
-import { sectorCopy, navigationCopy, solutionIds, solutionLabels } from '$lib/navigation';
-import { solutionsContent } from '$lib/solutions';
-import { solutionPageIds, solutionPagePath, solutionPages } from '$lib/solution-pages';
+import enLocale from '#locales/en.json';
+import frLocale from '#locales/fr.json';
+import esLocale from '#locales/es.json';
+import deLocale from '#locales/de.json';
+import itLocale from '#locales/it.json';
+import enDocumentAnalysis from '#locales/document-analysis/en.json';
+import frDocumentAnalysis from '#locales/document-analysis/fr.json';
+import esDocumentAnalysis from '#locales/document-analysis/es.json';
+import deDocumentAnalysis from '#locales/document-analysis/de.json';
+import itDocumentAnalysis from '#locales/document-analysis/it.json';
+import type { Lang, LocaleData } from '#lib/data.ts';
+import { buildLocalizedUrl } from '#lib/functions/seo.ts';
+import { expertiseOffers, offerPaths } from '#lib/expertise-offers.ts';
+import { sectorCopy, navigationCopy, solutionIds, solutionLabels } from '#lib/navigation.ts';
+import { solutionsContent } from '#lib/solutions.ts';
+import { solutionPageIds, solutionPagePath, solutionPages } from '#lib/solution-pages.ts';
 
 const htmlEntities: Record<string, string> = {
 	amp: '&',

@@ -1,5 +1,5 @@
-import type { Lang } from '$lib/data';
-import type { SolutionId } from '$lib/navigation';
+import type { Lang } from '#lib/data.ts';
+import type { SolutionId } from '#lib/navigation.ts';
 
 type Solution = { need: string; deliverables: string[]; evidence: string };
 type SolutionsContent = {

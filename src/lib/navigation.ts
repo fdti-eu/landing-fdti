@@ -1,4 +1,4 @@
-import type { Lang } from '$lib/data';
+import type { Lang } from '#lib/data.ts';
 
 export const solutionIds = [
 	'applications-web',

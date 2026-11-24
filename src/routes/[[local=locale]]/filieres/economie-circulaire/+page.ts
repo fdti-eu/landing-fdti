@@ -1,5 +1,5 @@
-import { SUPPORTED_LOCALES } from '$lib/data';
-import { buildSeoAlternatePaths } from '$lib/functions/seo';
+import { SUPPORTED_LOCALES } from '#lib/data.ts';
+import { buildSeoAlternatePaths } from '#lib/functions/seo.ts';
 import type { PageLoad } from './$types';
 
 export const prerender = true;

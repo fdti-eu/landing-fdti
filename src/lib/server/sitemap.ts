@@ -1,8 +1,8 @@
-import { getData, getUseCasesContent, SUPPORTED_LOCALES, type Lang } from '$lib/data';
-import { buildLocalizedUrl, type SeoAlternatePaths } from '$lib/functions/seo';
-import { getJobOffers, type JobOffer } from '$lib/jobs';
-import { offerPaths } from '$lib/expertise-offers';
-import { solutionPageIds, solutionPageLocales, solutionPagePath } from '$lib/solution-pages';
+import { getData, getUseCasesContent, SUPPORTED_LOCALES, type Lang } from '#lib/data.ts';
+import { buildLocalizedUrl, type SeoAlternatePaths } from '#lib/functions/seo.ts';
+import { getJobOffers, type JobOffer } from '#lib/jobs.ts';
+import { offerPaths } from '#lib/expertise-offers.ts';
+import { solutionPageIds, solutionPageLocales, solutionPagePath } from '#lib/solution-pages.ts';
 
 type SitemapPage = {
 	path: string;

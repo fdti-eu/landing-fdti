@@ -1,8 +1,8 @@
 <script lang="ts">
-	import LinkedinIcon from '$lib/components/LinkedinIcon.svelte';
+	import LinkedinIcon from '#lib/components/LinkedinIcon.svelte';
 	import { locale } from 'svelte-i18n';
-	import { isSupportedLocale, type Lang } from '$lib/data';
-	import { buildLocalizedPath } from '$lib/functions/seo';
+	import { isSupportedLocale, type Lang } from '#lib/data.ts';
+	import { buildLocalizedPath } from '#lib/functions/seo.ts';
 
 	const labels: Record<Lang, { jobs: string; privacy: string; terms: string; linkedin: string }> = {
 		fr: {

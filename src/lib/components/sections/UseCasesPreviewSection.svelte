@@ -1,9 +1,9 @@
 <script lang="ts">
-	import CaseIndicators from '$lib/components/CaseIndicators.svelte';
+	import CaseIndicators from '#lib/components/CaseIndicators.svelte';
 	import { tick } from 'svelte';
 	import { goto } from '$app/navigation';
-	import type { Lang } from '$lib/data';
-	import { buildLocalizedPath } from '$lib/functions/seo';
+	import type { Lang } from '#lib/data.ts';
+	import { buildLocalizedPath } from '#lib/functions/seo.ts';
 
 	export let title: string | null | undefined;
 	export let subtitle: string | null | undefined;
@@ -107,8 +107,8 @@
 					</div>
 
 					{#if useCase.metrics?.[0]?.note}
-			<CaseIndicators compact metrics={useCase.metrics.slice(0, 2)} />
-		{:else if useCase.metrics?.length}
+						<CaseIndicators compact metrics={useCase.metrics.slice(0, 2)} />
+					{:else if useCase.metrics?.length}
 						<div class="preview-metrics">
 							{#each useCase.metrics.slice(0, 2) as metric, metricIndex}
 								<div

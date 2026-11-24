@@ -1,22 +1,22 @@
 <script lang="ts">
-	import { page } from '$app/stores';
+	import { page } from '$app/state';
 	import { locale } from 'svelte-i18n';
 	import { afterNavigate } from '$app/navigation';
 	import Hamburger from './Hamburger.svelte';
 	import LocaleToggle from './LocaleToggle.svelte';
-	import { isSupportedLocale, type Lang } from '$lib/data';
-	import { buildLocalizedPath } from '$lib/functions/seo';
+	import { isSupportedLocale, type Lang } from '#lib/data.ts';
+	import { buildLocalizedPath } from '#lib/functions/seo.ts';
 	import {
 		navigationCopy,
 		sectorPaths,
 		sectorCopy,
 		solutionIds,
 		solutionLabels
-	} from '$lib/navigation';
-	import { solutionHref } from '$lib/solution-pages';
+	} from '#lib/navigation.ts';
+	import { solutionHref } from '#lib/solution-pages.ts';
 
-	let isNavbarOpen = false;
-	let menuButton: HTMLButtonElement;
+	let isNavbarOpen = $state(false);
+	let menuButton = $state<HTMLButtonElement>();
 	type NavLink = {
 		href: string;
 		label: string;
@@ -24,7 +24,6 @@
 		cta?: boolean;
 		children?: { href: string; label: string }[];
 	};
-	let links: NavLink[];
 	const menuLabels: Record<Lang, string> = {
 		fr: 'Menu de navigation',
 		en: 'Navigation menu',
@@ -32,8 +31,8 @@
 		de: 'Navigationsmenü',
 		it: 'Menu di navigazione'
 	};
-	$: currentLocale = isSupportedLocale($locale) ? $locale : 'fr';
-	$: navigation = navigationCopy[currentLocale];
+	const currentLocale = $derived(isSupportedLocale($locale) ? $locale : 'fr');
+	const navigation = $derived(navigationCopy[currentLocale]);
 	const isPathActive = (path: string, pathname: string, locale: Lang, exact = false) => {
 		const canonicalPath = buildLocalizedPath(path, locale);
 		const activePaths =
@@ -47,16 +46,16 @@
 				: pathname === activePath || pathname.startsWith(`${activePath}/`)
 		);
 	};
-	$: links = [
+	const links: NavLink[] = $derived([
 		{
 			href: buildLocalizedPath('/', currentLocale),
 			label: sectorCopy[currentLocale].home,
-			active: isPathActive('/', $page.url.pathname, currentLocale, true)
+			active: isPathActive('/', page.url.pathname, currentLocale, true)
 		},
 		{
 			href: buildLocalizedPath('/solutions', currentLocale),
 			label: navigation.solutions,
-			active: isPathActive('/solutions', $page.url.pathname, currentLocale),
+			active: isPathActive('/solutions', page.url.pathname, currentLocale),
 			children: [
 				{
 					href: buildLocalizedPath('/solutions', currentLocale),
@@ -71,7 +70,7 @@
 		{
 			href: buildLocalizedPath('/filieres', currentLocale),
 			label: navigation.sectors,
-			active: isPathActive('/filieres', $page.url.pathname, currentLocale),
+			active: isPathActive('/filieres', page.url.pathname, currentLocale),
 			children: [
 				{
 					href: buildLocalizedPath('/filieres', currentLocale),
@@ -108,39 +107,38 @@
 		{
 			href: buildLocalizedPath('/realisations', currentLocale),
 			label: navigation.work,
-			active: isPathActive('/realisations', $page.url.pathname, currentLocale)
+			active: isPathActive('/realisations', page.url.pathname, currentLocale)
 		},
 		{
-			href: $page.url.pathname.startsWith('/newsletter/')
+			href: page.url.pathname.startsWith('/newsletter/')
 				? `${buildLocalizedPath('/', currentLocale)}#contact`
 				: '#contact',
 			label: navigation.contact,
 			active: false,
 			cta: true
 		}
-	];
+	]);
 	function closeOnEscape(event: KeyboardEvent) {
 		if (event.key === 'Escape' && isNavbarOpen) {
 			isNavbarOpen = false;
 			menuButton?.focus();
 		}
 	}
-	afterNavigate(() => {
+
+	afterNavigate(({ shallow, type }) => {
+		if (shallow && type === 'goto') return;
+
 		isNavbarOpen = false;
 	});
 </script>
 
-<svelte:window on:keydown={closeOnEscape} />
+<svelte:window onkeydown={closeOnEscape} />
+
 <nav class="fdti-nav" style="view-transition-name: navbar;">
 	<div class="nav-shell">
 		<a href={buildLocalizedPath('/', currentLocale)} class="nav-brand">
 			<figure>
-				<img
-					src="/images/fdti_vector_54px.svg"
-					alt=""
-					height="48px"
-					width="48px"
-				/>
+				<img src="/images/fdti_vector_54px.svg" alt="" height="48px" width="48px" />
 			</figure>
 			<div class="wordmark"><b>FDTI</b><small>From Data To Insight</small></div>
 		</a>
@@ -153,13 +151,13 @@
 						data-umami-event={link.cta ? 'contact_open' : undefined}
 						data-umami-event-placement={link.cta ? 'navigation' : undefined}
 						aria-current={link.active ? 'page' : undefined}
-						on:click={() => (isNavbarOpen = false)}>{link.label}</a
+						onclick={() => (isNavbarOpen = false)}>{link.label}</a
 					>
 					{#if link.children?.length}
 						<ul class="nav-submenu">
 							{#each link.children as child, childIndex}
 								<li class:nav-overview={childIndex === 0}>
-									<a href={child.href} on:click={() => (isNavbarOpen = false)}>{child.label}</a>
+									<a href={child.href} onclick={() => (isNavbarOpen = false)}>{child.label}</a>
 								</li>
 							{/each}
 						</ul>
@@ -170,7 +168,7 @@
 		<button
 			bind:this={menuButton}
 			class="nav-menu-button"
-			on:click={() => (isNavbarOpen = !isNavbarOpen)}
+			onclick={() => (isNavbarOpen = !isNavbarOpen)}
 			aria-label={menuLabels[currentLocale]}
 			aria-expanded={isNavbarOpen}
 			aria-controls="fdti-navigation"><Hamburger isOpen={isNavbarOpen} /></button
@@ -179,9 +177,29 @@
 </nav>
 
 <style>
-	.nav-brand figure { border: 0; width: auto; height: auto; }
-	.nav-brand img { width: 33px; height: 38px; }
-	.wordmark { display: grid; gap: 3px; color: #faf9f6; }
-	.wordmark b { font-size: 25px; line-height: 1; letter-spacing: .065em; }
-	.wordmark small { font-size: 11px; line-height: 1; letter-spacing: .035em; color: #dedbd2; }
+	.nav-brand figure {
+		border: 0;
+		width: auto;
+		height: auto;
+	}
+	.nav-brand img {
+		width: 33px;
+		height: 38px;
+	}
+	.wordmark {
+		display: grid;
+		gap: 3px;
+		color: #faf9f6;
+	}
+	.wordmark b {
+		font-size: 25px;
+		line-height: 1;
+		letter-spacing: 0.065em;
+	}
+	.wordmark small {
+		font-size: 11px;
+		line-height: 1;
+		letter-spacing: 0.035em;
+		color: #dedbd2;
+	}
 </style>

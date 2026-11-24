@@ -1,6 +1,6 @@
 import { error, redirect } from '@sveltejs/kit';
-import { getData, getUseCasesContent, SUPPORTED_LOCALES, type Lang } from '$lib/data';
-import { buildLocalizedPath, type SeoAlternatePaths } from '$lib/functions/seo';
+import { getData, getUseCasesContent, SUPPORTED_LOCALES, type Lang } from '#lib/data.ts';
+import { buildLocalizedPath, type SeoAlternatePaths } from '#lib/functions/seo.ts';
 import type { PageLoad } from './$types';
 
 export const prerender = true;

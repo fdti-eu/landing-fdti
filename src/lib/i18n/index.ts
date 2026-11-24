@@ -1,15 +1,15 @@
-import { browser } from '$app/environment';
-import { isSupportedLocale, type Lang } from '$lib/data';
+import { browser } from '$app/env';
+import { isSupportedLocale, type Lang } from '#lib/data.ts';
 import { init, register, locale } from 'svelte-i18n';
 
 const defaultLocale: Lang = 'fr';
 const LOCALE_STORAGE_KEY = 'fdti_locale';
 
-register('en', () => import('$locales/en.json'));
-register('fr', () => import('$locales/fr.json'));
-register('es', () => import('$locales/es.json'));
-register('de', () => import('$locales/de.json'));
-register('it', () => import('$locales/it.json'));
+register('en', () => import('#locales/en.json'));
+register('fr', () => import('#locales/fr.json'));
+register('es', () => import('#locales/es.json'));
+register('de', () => import('#locales/de.json'));
+register('it', () => import('#locales/it.json'));
 
 const storedLocale = browser ? localStorage.getItem(LOCALE_STORAGE_KEY) : null;
 const browserLocale = browser ? window.navigator.language?.slice(0, 2).toLowerCase() : null;

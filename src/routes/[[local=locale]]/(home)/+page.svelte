@@ -1,16 +1,16 @@
 <script lang="ts">
-	import Hero from '$lib/components/sections/Hero.svelte';
-	import FdtiSection from '$lib/components/sections/FdtiSection.svelte';
-	import CapabilitiesSection from '$lib/components/sections/CapabilitiesSection.svelte';
-	import TechnologiesSection from '$lib/components/sections/TechnologiesSection.svelte';
-	import ConfianceSection from '$lib/components/sections/ConfianceSection.svelte';
-	import UseCasesPreviewSection from '$lib/components/sections/UseCasesPreviewSection.svelte';
-	import ExpertisePreviewSection from '$lib/components/sections/ExpertisePreviewSection.svelte';
+	import Hero from '#lib/components/sections/Hero.svelte';
+	import FdtiSection from '#lib/components/sections/FdtiSection.svelte';
+	import CapabilitiesSection from '#lib/components/sections/CapabilitiesSection.svelte';
+	import TechnologiesSection from '#lib/components/sections/TechnologiesSection.svelte';
+	import ConfianceSection from '#lib/components/sections/ConfianceSection.svelte';
+	import UseCasesPreviewSection from '#lib/components/sections/UseCasesPreviewSection.svelte';
+	import ExpertisePreviewSection from '#lib/components/sections/ExpertisePreviewSection.svelte';
 	import { MetaTags } from 'svelte-meta-tags';
-	import LdTag from '$lib/components/json-ld/LDTag.svelte';
-	import { schema } from '$lib/components/json-ld/json-ld';
-	import type { Lang } from '$lib/data';
-	import { absoluteImageUrl, buildLocalizedUrl, SOCIAL_IMAGE_PATH } from '$lib/functions/seo';
+	import LdTag from '#lib/components/json-ld/LDTag.svelte';
+	import { schema } from '#lib/components/json-ld/json-ld.ts';
+	import type { Lang } from '#lib/data.ts';
+	import { absoluteImageUrl, buildLocalizedUrl, SOCIAL_IMAGE_PATH } from '#lib/functions/seo.ts';
 
 	export let data;
 

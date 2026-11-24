@@ -1,5 +1,5 @@
-import { getPrivacyContent, SUPPORTED_LOCALES, type Lang } from '$lib/data';
-import { buildSeoAlternatePaths } from '$lib/functions/seo';
+import { getPrivacyContent, SUPPORTED_LOCALES, type Lang } from '#lib/data.ts';
+import { buildSeoAlternatePaths } from '#lib/functions/seo.ts';
 import type { PageLoad } from './$types';
 
 export const prerender = true;
