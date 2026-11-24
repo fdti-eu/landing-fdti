@@ -71,7 +71,7 @@
 				</p>{/if}
 		{/if}
 	</div>
-	<a href={resolve('/[[local=locale]]/(home)#contact', { local: '' })}>Retour au site FDTI</a>
+	<a href={resolve('/[[local=locale]]/(home)#contact', {})}>Retour au site FDTI</a>
 </section>
 
 <style>
