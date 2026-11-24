@@ -1,5 +1,5 @@
-import type { Lang } from '$lib/data';
-import { buildLocalizedUrl } from '$lib/functions/seo';
+import type { Lang } from '#lib/data.ts';
+import { buildLocalizedUrl } from '#lib/functions/seo.ts';
 
 export type JobSection = {
 	title: string;

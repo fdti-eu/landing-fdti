@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { PageData } from './$types';
-	import { navigationCopy, sectorCopy } from '$lib/navigation';
-	import { buildLocalizedPath, buildLocalizedUrl } from '$lib/functions/seo';
+	import { navigationCopy, sectorCopy } from '#lib/navigation.ts';
+	import { buildLocalizedPath, buildLocalizedUrl } from '#lib/functions/seo.ts';
 	import { MetaTags } from 'svelte-meta-tags';
 	export let data: PageData;
 	$: nav = navigationCopy[data.locale];

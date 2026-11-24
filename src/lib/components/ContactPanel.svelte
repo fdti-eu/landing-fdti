@@ -1,35 +1,34 @@
 <script lang="ts">
 	import { onMount, tick } from 'svelte';
-	import { page } from '$app/stores';
-	import { resolveContactEndpoint } from '$lib/contact';
-	import { resolveLocaleFromPath } from '$lib/functions/seo';
-	import { contact_panel as frContact } from '$locales/fr.json';
-	import { contact_panel as enContact } from '$locales/en.json';
-	import { contact_panel as esContact } from '$locales/es.json';
-	import { contact_panel as deContact } from '$locales/de.json';
-	import { contact_panel as itContact } from '$locales/it.json';
+	import { page } from '$app/state';
+	import { resolveContactEndpoint } from '#lib/contact.ts';
+	import { resolveLocaleFromPath } from '#lib/functions/seo.ts';
+	import { contact_panel as frContact } from '#locales/fr.json';
+	import { contact_panel as enContact } from '#locales/en.json';
+	import { contact_panel as esContact } from '#locales/es.json';
+	import { contact_panel as deContact } from '#locales/de.json';
+	import { contact_panel as itContact } from '#locales/it.json';
 
 	const contactCopy = { fr: frContact, en: enContact, es: esContact, de: deContact, it: itContact };
 
 	type SubmissionState = 'idle' | 'pending' | 'success' | 'error';
 
-	let contactInput: HTMLInputElement;
-	let successMessage: HTMLParagraphElement;
-	let contact = '';
-	let note = '';
-	let website = '';
-	let fieldError = '';
-	let state: SubmissionState = 'idle';
+	let contactInput = $state<HTMLInputElement>();
+	let successMessage = $state<HTMLParagraphElement>();
+	let contact = $state('');
+	let note = $state('');
+	let website = $state('');
+	let fieldError = $state('');
+	let submissionState: SubmissionState = $state('idle');
 	let requestId = '';
 	let submissionController: AbortController | null = null;
 	let copyResetTimer: number | null = null;
-	let emailCopied = false;
-	let hydrated = false;
-	let pagePath = '/';
+	let emailCopied = $state(false);
+	let hydrated = $state(false);
 
-	$: pagePath = $page.url.pathname;
-	$: currentLocale = resolveLocaleFromPath(pagePath);
-	$: copy = contactCopy[currentLocale];
+	const pagePath = $derived(page.url.pathname);
+	const currentLocale = $derived(resolveLocaleFromPath(pagePath));
+	const copy = $derived(contactCopy[currentLocale]);
 
 	function track(event: string) {
 		if (typeof window === 'undefined') return;
@@ -54,19 +53,19 @@
 	}
 
 	async function submit() {
-		if (state === 'pending') return;
+		if (submissionState === 'pending') return;
 		const normalizedContact = contact.trim();
 		fieldError = '';
 		if (!isValidContact(normalizedContact)) {
 			fieldError = copy.validation;
-			contactInput.focus();
+			contactInput?.focus();
 			return;
 		}
 
 		const controller = new AbortController();
 		const timeout = window.setTimeout(() => controller.abort(), 8000);
 		submissionController = controller;
-		state = 'pending';
+		submissionState = 'pending';
 		try {
 			requestId ||= createRequestId();
 			const response = await fetch(resolveContactEndpoint(window.location.hostname), {
@@ -83,15 +82,15 @@
 				})
 			});
 			if (!response.ok) throw new Error(`Contact request failed with status ${response.status}`);
-			state = 'success';
+			submissionState = 'success';
 			contact = '';
 			note = '';
 			requestId = '';
 			track('contact_callback_success');
 			await tick();
-			successMessage.focus();
+			successMessage?.focus();
 		} catch {
-			state = 'error';
+			submissionState = 'error';
 			track('contact_callback_error');
 		} finally {
 			window.clearTimeout(timeout);
@@ -100,7 +99,7 @@
 	}
 
 	function resetRequestId() {
-		if (state !== 'pending') requestId = '';
+		if (submissionState !== 'pending') requestId = '';
 	}
 
 	async function copyEmail() {
@@ -152,16 +151,17 @@
 					class="contact-email-copy"
 					type="button"
 					disabled={!hydrated}
-					on:click={copyEmail}
+					onclick={copyEmail}
 					aria-label={`${emailCopied ? copy.copied : copy.copy_email} info@fdti.eu`}
 				>
 					<span>info@fdti.eu</span>
 					{#if emailCopied}
-						<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4 4L19 6" /></svg>
+						<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4 4L19 6"></path></svg>
 					{:else}
-						<svg viewBox="0 0 24 24" aria-hidden="true"
-							><rect x="8" y="8" width="11" height="11" rx="1" /><path d="M16 8V5H5v11h3" /></svg
-						>
+						<svg viewBox="0 0 24 24" aria-hidden="true">
+							<rect x="8" y="8" width="11" height="11" rx="1"></rect><path d="M16 8V5H5v11h3"
+							></path>
+						</svg>
 					{/if}
 					<span class="contact-sr-only" aria-live="polite">
 						{emailCopied ? copy.copied : ''}
@@ -172,22 +172,25 @@
 
 			<div class="contact-callback">
 				<h3>{copy.callback_title}</h3>
-				{#if state === 'success'}
+				{#if submissionState === 'success'}
 					<p bind:this={successMessage} class="contact-success" role="status" tabindex="-1">
 						{copy.success}
 					</p>
 				{:else}
-					<form method="post" action="/contact" on:submit|preventDefault={submit} novalidate>
+					<form method="post" action="/contact" onsubmit={(event) => {
+							event.preventDefault();
+							submit();
+						}} novalidate>
 						<label for="contact-value">{copy.contact_label}</label>
 						<input
 							bind:this={contactInput}
 							bind:value={contact}
-							on:input={resetRequestId}
+							oninput={resetRequestId}
 							id="contact-value"
 							name="contact"
 							type="text"
 							required
-							disabled={!hydrated || state === 'pending'}
+							disabled={!hydrated || submissionState === 'pending'}
 							autocomplete="email"
 							maxlength="254"
 							placeholder={copy.contact_placeholder}
@@ -199,12 +202,12 @@
 						<label for="contact-note">{copy.note_label}</label>
 						<textarea
 							bind:value={note}
-							on:input={resetRequestId}
+							oninput={resetRequestId}
 							id="contact-note"
 							name="note"
 							rows="2"
 							maxlength="1000"
-							disabled={!hydrated || state === 'pending'}
+							disabled={!hydrated || submissionState === 'pending'}
 						></textarea>
 
 						<div class="contact-honeypot" aria-hidden="true">
@@ -214,7 +217,7 @@
 								id="contact-website"
 								name="website"
 								type="text"
-								disabled={!hydrated || state === 'pending'}
+								disabled={!hydrated || submissionState === 'pending'}
 								tabindex="-1"
 								autocomplete="off"
 							/>
@@ -223,14 +226,16 @@
 						<button
 							class="contact-submit"
 							type="submit"
-							disabled={!hydrated || state === 'pending'}
+							disabled={!hydrated || submissionState === 'pending'}
 							data-umami-event="contact_callback_submit"
 							data-umami-event-placement="contact_section"
+							>{submissionState === 'pending' ? copy.pending : copy.submit}</button
 						>
-							{state === 'pending' ? copy.pending : copy.submit}
-						</button>
+
 						<div class="contact-status" aria-live="polite" aria-atomic="true">
-							{#if state === 'error'}<p class="contact-error">{copy.error}</p>{/if}
+							{#if submissionState === 'error'}
+								<p class="contact-error">{copy.error}</p>
+							{/if}
 						</div>
 					</form>
 				{/if}

@@ -1,4 +1,4 @@
-import { SUPPORTED_LOCALES, isSupportedLocale, type Lang } from '$lib/data';
+import { SUPPORTED_LOCALES, isSupportedLocale, type Lang } from '#lib/data.ts';
 
 export const BASE_URL = 'https://www.fdti.eu';
 export const DEFAULT_LOCALE: Lang = 'fr';

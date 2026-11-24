@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { beforeNavigate, afterNavigate } from '$app/navigation';
-	import { browser } from '$app/environment';
+	import { browser } from '$app/env';
 	import { writable } from 'svelte/store';
 	import { setContext } from 'svelte';
 
@@ -24,6 +24,8 @@
 	setContext('highlightedUseCase', highlightedUseCaseStore);
 
 	beforeNavigate((nav) => {
+		if (nav.shallow && nav.type === 'goto') return;
+
 		// Si on quitte la page liste pour aller vers un use case
 		if (browser && nav.to?.route.id?.includes('[slug]') && isUseCaseList(nav.from?.route.id)) {
 			scrollPosition = window.scrollY;
@@ -36,6 +38,8 @@
 	});
 
 	afterNavigate((nav) => {
+		if (nav.shallow && nav.type === 'goto') return;
+
 		// Restaurer le scroll uniquement si on revient à la liste depuis un use case
 		if (browser && nav.from?.route.id?.includes('[slug]') && isUseCaseList(nav.to?.route.id)) {
 			// La feuille globale active le scroll fluide pour les ancres. On le neutralise ici afin
@@ -56,4 +60,4 @@
 	});
 </script>
 
-<slot />
+<slot></slot>

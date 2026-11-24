@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { MetaTags } from 'svelte-meta-tags';
-	import LdTag from '$lib/components/json-ld/LDTag.svelte';
-	import { schema } from '$lib/components/json-ld/json-ld';
-	import { absoluteImageUrl, SOCIAL_IMAGE_PATH } from '$lib/functions/seo';
+	import LdTag from '#lib/components/json-ld/LDTag.svelte';
+	import { schema } from '#lib/components/json-ld/json-ld.ts';
+	import { absoluteImageUrl, SOCIAL_IMAGE_PATH } from '#lib/functions/seo.ts';
 
 	const title = 'Logiciels sur mesure pour les emballages et la REP | FDTI';
 	const description =

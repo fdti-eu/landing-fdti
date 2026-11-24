@@ -1,6 +1,6 @@
-import { SUPPORTED_LOCALES, type Lang } from '$lib/data';
-import type { SeoAlternatePaths } from '$lib/functions/seo';
-import { solutionIds, type SolutionId } from '$lib/navigation';
+import { SUPPORTED_LOCALES, type Lang } from '#lib/data.ts';
+import type { SeoAlternatePaths } from '#lib/functions/seo.ts';
+import { solutionIds, type SolutionId } from '#lib/navigation.ts';
 
 type TitledText = { title: string; text: string };
 type SolutionOption = { title: string; when: string; impact: string };

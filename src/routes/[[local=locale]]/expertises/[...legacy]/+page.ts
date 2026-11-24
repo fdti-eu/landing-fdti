@@ -1,7 +1,7 @@
 import { error, redirect } from '@sveltejs/kit';
-import { getData, SUPPORTED_LOCALES, type Lang } from '$lib/data';
-import { solutionPageIds, solutionPageLocales } from '$lib/solution-pages';
-import { buildLocalizedPath } from '$lib/functions/seo';
+import { getData, SUPPORTED_LOCALES, type Lang } from '#lib/data.ts';
+import { solutionPageIds, solutionPageLocales } from '#lib/solution-pages.ts';
+import { buildLocalizedPath } from '#lib/functions/seo.ts';
 import type { PageLoad } from './$types';
 export const prerender = true;
 async function paths(locale: Lang) {

@@ -1,15 +1,15 @@
 <script lang="ts">
 	import { MetaTags } from 'svelte-meta-tags';
-	import LdTag from '$lib/components/json-ld/LDTag.svelte';
-	import { schema } from '$lib/components/json-ld/json-ld';
-	import type { Lang } from '$lib/data';
+	import LdTag from '#lib/components/json-ld/LDTag.svelte';
+	import { schema } from '#lib/components/json-ld/json-ld.ts';
+	import type { Lang } from '#lib/data.ts';
 	import {
 		absoluteImageUrl,
 		buildLocalizedPath,
 		buildLocalizedUrl,
 		SOCIAL_IMAGE_PATH
-	} from '$lib/functions/seo';
-	import type { JobOffer } from '$lib/jobs';
+	} from '#lib/functions/seo.ts';
+	import type { JobOffer } from '#lib/jobs.ts';
 
 	export let data: { jobs: JobOffer[]; locale: Lang };
 

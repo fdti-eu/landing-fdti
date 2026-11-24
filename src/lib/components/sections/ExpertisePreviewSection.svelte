@@ -1,6 +1,6 @@
 <script lang="ts">
-	import type { Lang } from '$lib/data';
-	import { buildLocalizedPath } from '$lib/functions/seo';
+	import type { Lang } from '#lib/data.ts';
+	import { buildLocalizedPath } from '#lib/functions/seo.ts';
 
 	export let locale: Lang = 'fr';
 
@@ -143,6 +143,5 @@
 			{/if}
 		{/each}
 	</div>
-	<a class="editorial-text-link" href={buildLocalizedPath('/solutions', locale)}>{content.all} →</a
-	>
+	<a class="editorial-text-link" href={buildLocalizedPath('/solutions', locale)}>{content.all} →</a>
 </section>

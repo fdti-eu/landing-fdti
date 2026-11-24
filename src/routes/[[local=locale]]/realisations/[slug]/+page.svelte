@@ -1,16 +1,16 @@
 <script lang="ts">
-	import CaseIndicators from '$lib/components/CaseIndicators.svelte';
+	import CaseIndicators from '#lib/components/CaseIndicators.svelte';
 	import { MetaTags } from 'svelte-meta-tags';
-	import LdTag from '$lib/components/json-ld/LDTag.svelte';
-	import { schema } from '$lib/components/json-ld/json-ld';
-	import type { Lang } from '$lib/data';
+	import LdTag from '#lib/components/json-ld/LDTag.svelte';
+	import { schema } from '#lib/components/json-ld/json-ld.ts';
+	import type { Lang } from '#lib/data.ts';
 	import {
 		absoluteImageUrl,
 		buildLocalizedPath,
 		buildLocalizedUrl,
 		SOCIAL_IMAGE_PATH
-	} from '$lib/functions/seo';
-	import { browser } from '$app/environment';
+	} from '#lib/functions/seo.ts';
+	import { browser } from '$app/env';
 
 	export let data:
 		| {
@@ -253,7 +253,7 @@
 	$: twitterImage = absoluteImageUrl(SOCIAL_IMAGE_PATH);
 
 	import { beforeNavigate } from '$app/navigation';
-	import { page } from '$app/stores';
+	import { page } from '$app/state';
 
 	let enableViewTransition = true;
 
@@ -273,14 +273,16 @@
 		event.button !== 0;
 
 	const handleBackClick = (event: MouseEvent) => {
-		const { caseOrigin } = $page.state as CaseNavigationState;
+		const { caseOrigin } = page.state as CaseNavigationState;
 		if (!caseOrigin || shouldUseNativeLink(event)) return;
 
 		event.preventDefault();
 		history.back();
 	};
 
-	beforeNavigate(({ to }) => {
+	beforeNavigate(({ to, shallow, type }) => {
+		if (shallow && type === 'goto') return;
+
 		const returnsToHome = cameFromHome && to?.route.id?.includes('(home)');
 		if (!to?.route.id?.includes('/realisations') && !returnsToHome) {
 			enableViewTransition = false;
@@ -304,6 +306,7 @@
 		return `bg-gradient-to-br ${variations[hash % variations.length]}`;
 	}
 </script>
+
 
 {#if metatags}
 	<MetaTags
@@ -404,7 +407,7 @@
 							fill-rule="evenodd"
 							d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z"
 							clip-rule="evenodd"
-						/>
+						></path>
 					</svg>
 					{cameFromHome ? labels.home : labels.back}
 				</a>
@@ -443,7 +446,7 @@
 								fill-rule="evenodd"
 								d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
 								clip-rule="evenodd"
-							/>
+							></path>
 						</svg>
 						{useCase.location}
 					</span>
@@ -463,7 +466,7 @@
 								fill-rule="evenodd"
 								d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
 								clip-rule="evenodd"
-							/>
+							></path>
 						</svg>
 						{useCase.date}
 					</span>

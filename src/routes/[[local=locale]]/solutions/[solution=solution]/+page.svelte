@@ -1,16 +1,16 @@
 <script lang="ts">
 	import { MetaTags } from 'svelte-meta-tags';
-	import SolutionFamilyNav from '$lib/components/solutions/SolutionFamilyNav.svelte';
-	import SolutionOptions from '$lib/components/solutions/SolutionOptions.svelte';
-	import SolutionPractices from '$lib/components/solutions/SolutionPractices.svelte';
-	import { navigationCopy, solutionLabels } from '$lib/navigation';
-	import { solutionPagePath } from '$lib/solution-pages';
+	import SolutionFamilyNav from '#lib/components/solutions/SolutionFamilyNav.svelte';
+	import SolutionOptions from '#lib/components/solutions/SolutionOptions.svelte';
+	import SolutionPractices from '#lib/components/solutions/SolutionPractices.svelte';
+	import { navigationCopy, solutionLabels } from '#lib/navigation.ts';
+	import { solutionPagePath } from '#lib/solution-pages.ts';
 	import {
 		absoluteImageUrl,
 		buildLocalizedPath,
 		buildLocalizedUrl,
 		SOCIAL_IMAGE_PATH
-	} from '$lib/functions/seo';
+	} from '#lib/functions/seo.ts';
 	import type { PageData } from './$types';
 
 	export let data: PageData;

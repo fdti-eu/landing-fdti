@@ -1,6 +1,6 @@
 <script lang="ts">
 	import CapabilityDiagram from './CapabilityDiagram.svelte';
-	import type { Lang } from '$lib/data';
+	import type { Lang } from '#lib/data.ts';
 
 	export let locale: Lang = 'fr';
 

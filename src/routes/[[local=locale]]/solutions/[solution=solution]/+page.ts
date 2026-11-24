@@ -1,12 +1,12 @@
 import { error } from '@sveltejs/kit';
-import { getUseCasesContent, type Lang } from '$lib/data';
+import { getUseCasesContent, type Lang } from '#lib/data.ts';
 import {
 	buildSolutionAlternatePaths,
 	solutionPageIds,
 	solutionPageLocales,
 	solutionPages,
 	type SolutionPageId
-} from '$lib/solution-pages';
+} from '#lib/solution-pages.ts';
 import type { PageLoad } from './$types';
 
 export const prerender = true;

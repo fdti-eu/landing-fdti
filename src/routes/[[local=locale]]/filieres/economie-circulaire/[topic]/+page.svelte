@@ -1,20 +1,20 @@
 <script lang="ts">
 	import { MetaTags } from 'svelte-meta-tags';
-	import CircularContact from '$lib/components/CircularContact.svelte';
-	import LdTag from '$lib/components/json-ld/LDTag.svelte';
-	import { schema } from '$lib/components/json-ld/json-ld';
+	import CircularContact from '#lib/components/CircularContact.svelte';
+	import LdTag from '#lib/components/json-ld/LDTag.svelte';
+	import { schema } from '#lib/components/json-ld/json-ld.ts';
 	import {
 		absoluteImageUrl,
 		buildLocalizedPath,
 		buildLocalizedUrl,
 		SOCIAL_IMAGE_PATH
-	} from '$lib/functions/seo';
+	} from '#lib/functions/seo.ts';
 	import type { PageData } from './$types';
-	import type { Lang } from '$lib/data';
+	import type { Lang } from '#lib/data.ts';
 	import { afterNavigate } from '$app/navigation';
 	import { onDestroy } from 'svelte';
-	import { navigationCopy } from '$lib/navigation';
-	import { expertiseOffers, offerPaths } from '$lib/expertise-offers';
+	import { navigationCopy } from '#lib/navigation.ts';
+	import { expertiseOffers, offerPaths } from '#lib/expertise-offers.ts';
 
 	export let data: PageData;
 	$: ({ content, dossier } = data);

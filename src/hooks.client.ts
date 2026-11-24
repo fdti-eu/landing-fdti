@@ -1,7 +1,7 @@
-import { dev } from '$app/environment';
-import { getData, SUPPORTED_LOCALES } from '$lib/data';
-import { resolveLocaleFromPath, stripLocaleFromPath } from '$lib/functions/seo';
-import type { ClientInit, HandleClientError } from '@sveltejs/kit';
+import type { ClientInit, HandleClientError } from '@sveltejs/kit/hooks';
+import { dev } from '$app/env';
+import { getData, SUPPORTED_LOCALES } from '#lib/data.ts';
+import { resolveLocaleFromPath, stripLocaleFromPath } from '#lib/functions/seo.ts';
 
 export const init: ClientInit = async () => {
 	if (dev) return;
@@ -15,10 +15,12 @@ export const init: ClientInit = async () => {
 
 	// Detail loaders also import other languages to resolve translated canonical paths.
 	const path = stripLocaleFromPath(location.pathname);
+
 	const needsAlternates =
-		/^\/(?:expertises\/(?:analyse-documentaire|economie-circulaire)|realisations)\/[^/]+\/?$/.test(
+		/^\/(?:solutions\/analyse-documentaire|filieres\/economie-circulaire|realisations)\/[^/]+\/?$/.test(
 			path
 		);
+
 	const locales = needsAlternates ? SUPPORTED_LOCALES : [resolveLocaleFromPath(location.pathname)];
 
 	await Promise.all([
@@ -27,8 +29,8 @@ export const init: ClientInit = async () => {
 	]);
 };
 
-export const handleError: HandleClientError = ({ error, event, message }) => {
-	console.error(error);
+export const handleError: HandleClientError = ({ error, event, kind }) => {
+	if (kind === 'unknown') console.error(error);
 
 	// A document navigation gets fresh HTML after a missing/stale navigation chunk.
 	// Never retry during initial startup: the new document must not enter a reload loop.
@@ -41,6 +43,4 @@ export const handleError: HandleClientError = ({ error, event, message }) => {
 	) {
 		location.assign(event.url.href);
 	}
-
-	return { message };
 };

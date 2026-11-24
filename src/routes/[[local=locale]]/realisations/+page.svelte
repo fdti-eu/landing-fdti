@@ -3,15 +3,15 @@
 	import { tick } from 'svelte';
 	import type { Writable } from 'svelte/store';
 	import { MetaTags } from 'svelte-meta-tags';
-	import LdTag from '$lib/components/json-ld/LDTag.svelte';
-	import { schema } from '$lib/components/json-ld/json-ld';
-	import type { Lang } from '$lib/data';
+	import LdTag from '#lib/components/json-ld/LDTag.svelte';
+	import { schema } from '#lib/components/json-ld/json-ld.ts';
+	import type { Lang } from '#lib/data.ts';
 	import {
 		absoluteImageUrl,
 		buildLocalizedPath,
 		buildLocalizedUrl,
 		SOCIAL_IMAGE_PATH
-	} from '$lib/functions/seo';
+	} from '#lib/functions/seo.ts';
 	import { beforeNavigate, afterNavigate, goto } from '$app/navigation';
 
 	// Récupérer le store du layout parent
@@ -142,13 +142,23 @@
 	};
 	$: copy = interfaceLabels[currentLocale];
 	const caseImages: Record<string, string> = {
-		'1': 'registry-color', '2': 'vehicle-reception', '3': 'battery-module',
-		'4': 'street-light', '5': 'campaign-posts', '6': 'customer-feedback',
-		'7': 'store-checkout', '8': 'battery-reception', '9': 'legal-evidence',
+		'1': 'registry-color',
+		'2': 'vehicle-reception',
+		'3': 'battery-module',
+		'4': 'street-light',
+		'5': 'campaign-posts',
+		'6': 'customer-feedback',
+		'7': 'store-checkout',
+		'8': 'battery-reception',
+		'9': 'legal-evidence',
 		'10': 'vehicle-documents'
 	};
 	const featuredLabel: Record<Lang, string> = {
-		fr: 'À la une', en: 'Featured', es: 'Destacado', de: 'Im Fokus', it: 'In primo piano'
+		fr: 'À la une',
+		en: 'Featured',
+		es: 'Destacado',
+		de: 'Im Fokus',
+		it: 'In primo piano'
 	};
 	$: sectorGroups = [
 		{ label: sectorLabels[currentLocale][0], caseIds: ['2', '3', '8'] },
@@ -156,13 +166,17 @@
 		{ label: sectorLabels[currentLocale][2], caseIds: ['5', '6', '7'] }
 	];
 
-	beforeNavigate(({ to }) => {
+	beforeNavigate(({ to, shallow, type }) => {
+		if (shallow && type === 'goto') return;
+
 		if (!to?.route.id?.includes('/realisations/')) {
 			document.documentElement.classList.add('disable-card-transitions');
 		}
 	});
 
-	afterNavigate(() => {
+	afterNavigate(({ shallow, type }) => {
+		if (shallow && type === 'goto') return;
+
 		document.documentElement.classList.remove('disable-card-transitions');
 	});
 
@@ -273,19 +287,17 @@
 				<button
 					aria-pressed={selectedSector === null}
 					class:active={selectedSector === null}
-					on:click={() => (selectedSector = null)}
+					on:click={() => (selectedSector = null)}>{copy.all}</button
 				>
-					{copy.all}
-				</button>
+
 				{#each sectorGroups as sector}
 					<button
 						aria-pressed={selectedSector === sector.label}
 						class:active={selectedSector === sector.label}
 						on:click={() =>
 							(selectedSector = selectedSector === sector.label ? null : sector.label)}
+						>{sector.label}</button
 					>
-						{sector.label}
-					</button>
 				{/each}
 			</div>
 		</div>
@@ -311,12 +323,19 @@
 						{/if}
 						{#if item.id === '2' && !selectedSector}
 							<div class="featured-photo">
-								<img src="/images/cases/vehicle-reception.webp" alt="" width="1200" height="800" fetchpriority="high" />
+								<img
+									src="/images/cases/vehicle-reception.webp"
+									alt=""
+									width="1200"
+									height="800"
+									fetchpriority="high"
+								/>
 								<strong>{featuredLabel[currentLocale]}</strong>
 							</div>
 						{/if}
 						<div class="eyebrow">
-							<svg aria-hidden="true" viewBox="0 0 40 38"><path d={icons[item.id ?? '']} /></svg
+							<svg aria-hidden="true" viewBox="0 0 40 38"
+								><path d={icons[item.id ?? '']}></path></svg
 							>{item.category}<span aria-hidden="true">→</span>
 						</div>
 						<h2 style={getViewTransitionStyle(item.slug, item.id, 'title')}>
@@ -507,10 +526,28 @@
 		padding: clamp(24px, 3vw, 44px) 3% clamp(24px, 3vw, 44px) 52%;
 		justify-content: center;
 	}
-	.featured-photo { position: absolute; inset: 0 51% 0 0; overflow: hidden; }
-	.featured-photo img { width: 100%; height: 100%; object-fit: cover; }
-	.featured-photo strong { position: absolute; top: 16px; left: 16px; padding: 5px 14px; background: #fbd243; color: #252b2d; font-size: 15px; }
-	.featured .proof { margin-top: 8px; }
+	.featured-photo {
+		position: absolute;
+		inset: 0 51% 0 0;
+		overflow: hidden;
+	}
+	.featured-photo img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+	.featured-photo strong {
+		position: absolute;
+		top: 16px;
+		left: 16px;
+		padding: 5px 14px;
+		background: #fbd243;
+		color: #252b2d;
+		font-size: 15px;
+	}
+	.featured .proof {
+		margin-top: 8px;
+	}
 	.panorama-card.illustrated {
 		position: relative;
 		padding-left: clamp(95px, 9vw, 152px);
@@ -529,10 +566,22 @@
 		object-position: center;
 	}
 	@media (max-width: 760px) {
-		.panorama-card.illustrated { padding-left: 64px; }
-		.case-strip { width: 68px; }
-		.panorama-card.featured { min-height: auto; padding: 0 18px 18px; }
-		.featured-photo { position: relative; inset: auto; margin: 0 -18px 16px; aspect-ratio: 2.1; }
+		.panorama-card.illustrated {
+			padding-left: 64px;
+		}
+		.case-strip {
+			width: 68px;
+		}
+		.panorama-card.featured {
+			min-height: auto;
+			padding: 0 18px 18px;
+		}
+		.featured-photo {
+			position: relative;
+			inset: auto;
+			margin: 0 -18px 16px;
+			aspect-ratio: 2.1;
+		}
 		.panorama-heading {
 			padding-top: 96px;
 		}

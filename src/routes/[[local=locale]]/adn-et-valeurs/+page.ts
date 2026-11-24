@@ -1,6 +1,6 @@
 import { redirect } from '@sveltejs/kit';
-import { SUPPORTED_LOCALES, type Lang } from '$lib/data';
-import { buildLocalizedPath } from '$lib/functions/seo';
+import { SUPPORTED_LOCALES, type Lang } from '#lib/data.ts';
+import { buildLocalizedPath } from '#lib/functions/seo.ts';
 import type { PageLoad } from './$types';
 
 export const prerender = true;

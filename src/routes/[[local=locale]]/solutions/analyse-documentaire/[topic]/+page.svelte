@@ -1,15 +1,15 @@
 <script lang="ts">
 	import { MetaTags } from 'svelte-meta-tags';
-	import CircularContact from '$lib/components/CircularContact.svelte';
-	import LdTag from '$lib/components/json-ld/LDTag.svelte';
-	import { schema } from '$lib/components/json-ld/json-ld';
+	import CircularContact from '#lib/components/CircularContact.svelte';
+	import LdTag from '#lib/components/json-ld/LDTag.svelte';
+	import { schema } from '#lib/components/json-ld/json-ld.ts';
 	import {
 		absoluteImageUrl,
 		buildLocalizedPath,
 		buildLocalizedUrl,
 		SOCIAL_IMAGE_PATH
-	} from '$lib/functions/seo';
-	import type { Lang } from '$lib/data';
+	} from '#lib/functions/seo.ts';
+	import type { Lang } from '#lib/data.ts';
 	import type { PageData } from './$types';
 	import { afterNavigate } from '$app/navigation';
 	import { onDestroy } from 'svelte';

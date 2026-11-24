@@ -1,6 +1,6 @@
-import { SUPPORTED_LOCALES, type Lang } from '$lib/data';
-import { buildSeoAlternatePaths } from '$lib/functions/seo';
-import { getJobOffers } from '$lib/jobs';
+import { SUPPORTED_LOCALES, type Lang } from '#lib/data.ts';
+import { buildSeoAlternatePaths } from '#lib/functions/seo.ts';
+import { getJobOffers } from '#lib/jobs.ts';
 import type { PageLoad } from './$types';
 
 export const prerender = true;
