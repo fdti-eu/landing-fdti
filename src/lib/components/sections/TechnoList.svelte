@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { locale } from 'svelte-i18n';
+	import { locale } from '#lib/i18n/index.ts';
 	import { isSupportedLocale, type Lang } from '#lib/data.ts';
 
 	export let title = '';

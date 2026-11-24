@@ -1,33 +1,5 @@
-import { browser } from '$app/env';
-import { isSupportedLocale, type Lang } from '#lib/data.ts';
-import { init, register, locale } from 'svelte-i18n';
+import { writable } from 'svelte/store';
+import type { Lang } from '#lib/data.ts';
 
-const defaultLocale: Lang = 'fr';
-const LOCALE_STORAGE_KEY = 'fdti_locale';
-
-register('en', () => import('#locales/en.json'));
-register('fr', () => import('#locales/fr.json'));
-register('es', () => import('#locales/es.json'));
-register('de', () => import('#locales/de.json'));
-register('it', () => import('#locales/it.json'));
-
-const storedLocale = browser ? localStorage.getItem(LOCALE_STORAGE_KEY) : null;
-const browserLocale = browser ? window.navigator.language?.slice(0, 2).toLowerCase() : null;
-const initialLocale = isSupportedLocale(storedLocale)
-	? storedLocale
-	: isSupportedLocale(browserLocale)
-		? browserLocale
-		: defaultLocale;
-
-init({
-	fallbackLocale: defaultLocale,
-	initialLocale
-});
-
-if (browser) {
-	locale.subscribe(($locale) => {
-		if (isSupportedLocale($locale)) {
-			localStorage.setItem(LOCALE_STORAGE_KEY, $locale);
-		}
-	});
-}
+// The root layout sets the locale from the URL before child components render.
+export const locale = writable<Lang>('fr');
