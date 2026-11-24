@@ -137,13 +137,12 @@
 			<figure>
 				<img
 					src="/images/fdti_vector_54px.svg"
-					alt="Logo fdti"
-					title="logo fdti"
+					alt=""
 					height="48px"
 					width="48px"
 				/>
 			</figure>
-			<span>FDTI - From Data To Insights</span>
+			<div class="wordmark"><b>FDTI</b><small>From Data To Insight</small></div>
 		</a>
 		<ul id="fdti-navigation" class="nav-links" class:open={isNavbarOpen}>
 			{#each links as link}<li class:has-submenu={link.children?.length}>
@@ -178,3 +177,11 @@
 		>
 	</div>
 </nav>
+
+<style>
+	.nav-brand figure { border: 0; width: auto; height: auto; }
+	.nav-brand img { width: 33px; height: 38px; }
+	.wordmark { display: grid; gap: 3px; color: #faf9f6; }
+	.wordmark b { font-size: 25px; line-height: 1; letter-spacing: .065em; }
+	.wordmark small { font-size: 11px; line-height: 1; letter-spacing: .035em; color: #dedbd2; }
+</style>

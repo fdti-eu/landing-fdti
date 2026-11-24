@@ -1006,17 +1006,21 @@
 				"location": "Francia",
 				"challenge": "El personal del registro contrasta los datos declarados con los justificantes. Para examinar un asunto, el juez necesita localizar los hechos, las pretensiones de cada parte y sus argumentos.",
 				"approach": "Una API integrada en el programa de gestión prepara la revisión en los servidores del editor. Devuelve controles documentales al registro y síntesis con referencias al juez. La valoración del expediente sigue en manos de las personas responsables.",
-				"impact": "En octubre de 2026 la plataforma trató 36.000 depósitos de cuentas anuales (DCA), 1.080 trámites del registro mercantil (RCS) y 190 expedientes judiciales.",
+				"impact": "En un mes, los registros tramitaron casi 40 000 expedientes en la plataforma: depósitos de cuentas anuales, trámites del registro mercantil y expedientes judiciales.",
 				"metrics": [
 					{
 						"label": "Tribunales equipados",
-						"value": "48",
+						"value": "Unos 50",
 						"note": "Plataforma integrada en el programa de gestión de los registros judiciales."
 					},
 					{
 						"label": "Expedientes tramitados",
-						"value": "37 270",
-						"note": "Octubre de 2026: depósitos de cuentas anuales, trámites del registro mercantil y expedientes judiciales."
+						"value": "Casi 40 000",
+						"note": "En un mes, entre depósitos de cuentas anuales, trámites del registro mercantil y expedientes judiciales."
+					},
+					{
+						"label": "Procesos cubiertos",
+						"value": "4"
 					}
 				],
 				"tags": [
@@ -1036,7 +1040,7 @@
 				"indexCard": {
 					"title": "La IA prepara los controles registrales y remite al juez a las páginas del expediente",
 					"description": "El personal del registro ve en su programa habitual las diferencias entre lo declarado y los justificantes. En los asuntos judiciales, el juez recibe una síntesis de las peticiones y los argumentos con referencias a las páginas originales.",
-					"proof": "48 tribunales equipados",
+					"proof": "Unos 50 tribunales equipados",
 					"note": "Plataforma integrada en el programa de gestión de los registros judiciales."
 				},
 				"slug": "automatizacion-secretarias-judiciales"
@@ -1070,6 +1074,14 @@
 						"label": "Documentos recibidos por el equipo administrativo",
 						"value": "3 000",
 						"note": "Al mes."
+					},
+					{
+						"label": "Tipos de documentos en el lote descrito",
+						"value": "3"
+					},
+					{
+						"label": "Validación antes de archivar",
+						"value": "1"
 					}
 				]
 			},
@@ -1083,18 +1095,16 @@
 				"metrics": [
 					{
 						"label": "Personas afectadas",
-						"value": "20 000",
+						"value": "Unas 20 000",
 						"note": "Personas incluidas en el litigio colectivo."
 					},
 					{
-						"label": "Filas importadas",
-						"value": "11.023",
-						"note": "Primer libro de trabajo, incluidas todas las hojas."
+						"label": "Tipos de fuentes reunidas",
+						"value": "3"
 					},
 					{
-						"label": "Vínculos por verificar",
-						"value": "5 casos",
-						"note": "En la revisión del 11 de mayo de 2026 quedaban cinco registros de inadmisibilidad pendientes de vincular con certeza a una persona."
+						"label": "Datos conservados por corrección",
+						"value": "3"
 					}
 				],
 				"tags": [
@@ -1114,7 +1124,7 @@
 				"indexCard": {
 					"title": "Preparar las indemnizaciones y justificar cada importe",
 					"description": "Las mismas personas aparecen en resoluciones judiciales, archivos de abogados y evaluaciones médicas. La plataforma cruza estas fuentes y conserva para cada cálculo el valor original, el valor utilizado y las correcciones.",
-					"proof": "20 000 personas registradas",
+					"proof": "Unas 20 000 personas registradas",
 					"note": "Personas incluidas en el litigio colectivo."
 				},
 				"slug": "expedientes-indemnizacion"
@@ -1192,7 +1202,12 @@
 						"value": "18"
 					}
 				],
-				"tags": ["SvelteKit", "FastAPI", "PostgreSQL", "Keycloak"],
+				"tags": [
+					"SvelteKit",
+					"FastAPI",
+					"PostgreSQL",
+					"Keycloak"
+				],
 				"details": [
 					"El propietario declara la batería. Si un socio ofrece un precio de compra, la oferta queda vinculada a esa batería. Quien la recibe puede rechazarla e indicar el motivo.",
 					"Una vez validado el expediente, el proveedor registra la recogida en las instalaciones del propietario. Si no puede recogerla, deja constancia en el expediente.",
@@ -1214,7 +1229,12 @@
 				"challenge": "Para preparar una recogida, el reciclador necesita conocer el tipo de batería, el transportista y la planta de destino. Dos partidas listas para salir no siempre pueden viajar juntas.",
 				"approach": "El equipo revisa cada declaración antes de añadirla a la lista de carga. La herramienta comprueba que todas las baterías del lote compartan transportista y destino. En la recepción, el personal recupera las declaraciones del lote.",
 				"impact": "Para cada declaración, el reciclador puede identificar el lote, comprobar las firmas pendientes y distinguir una batería recibida de una ya tratada.",
-				"tags": ["SvelteKit", "FastAPI", "PostgreSQL", "Trackdéchets"],
+				"tags": [
+					"SvelteKit",
+					"FastAPI",
+					"PostgreSQL",
+					"Trackdéchets"
+				],
 				"details": [
 					"El equipo identifica el tipo y la composición de la batería declarada para preparar su gestión.",
 					"La persona que organiza la recogida forma el lote. Si una declaración corresponde a otro transportista o destino, la incluye en otra lista.",
@@ -1226,7 +1246,21 @@
 					"proof": "Un único destino por lote",
 					"note": "Se comprueban el transportista y la planta de destino antes de la salida."
 				},
-				"slug": "plataforma-operaciones-reciclaje-baterias"
+				"slug": "plataforma-operaciones-reciclaje-baterias",
+				"metrics": [
+					{
+						"label": "Centro de destino por lote",
+						"value": "1"
+					},
+					{
+						"label": "Recolector por lote",
+						"value": "1"
+					},
+					{
+						"label": "Etapas diferenciadas en el centro",
+						"value": "2"
+					}
+				]
 			},
 			{
 				"id": "4",
@@ -1242,9 +1276,22 @@
 						"label": "Territorios cubiertos",
 						"value": "+40",
 						"note": "Territorios en los que se han implantado las alertas."
+					},
+					{
+						"label": "Franjas de consumo comparadas",
+						"value": "3"
+					},
+					{
+						"label": "Consulta de alertas",
+						"value": "Cada mañana"
 					}
 				],
-				"tags": ["DuckDB", "SvelteKit", "PostgreSQL", "FastAPI"],
+				"tags": [
+					"DuckDB",
+					"SvelteKit",
+					"PostgreSQL",
+					"FastAPI"
+				],
 				"details": [
 					"El gestor selecciona un cuadro y consulta las lecturas de su contador.",
 					"Compara el consumo antes, durante y después del horario previsto. Así distingue un consumo presente todo el día de un desfase en la hora de encendido.",
@@ -1267,7 +1314,12 @@
 				"challenge": "Una ONG necesita decidir qué mensajes ambientales priorizar en cada país y red social. Las cifras de rendimiento muestran qué publicaciones suscitaron una reacción, pero no de qué hablaban.",
 				"approach": "En un conjunto de 60 000 publicaciones en ocho idiomas, relacionamos cada mensaje con su tema, su tono y los puntos de vista expresados. El equipo de comunicación puede comparar la acogida de un mismo tema según el público y la red.",
 				"impact": "La ONG adoptó estos criterios para orientar el reparto de su presupuesto entre países y redes sociales.",
-				"tags": ["LLM", "OpenAI", "NLP", "TypeScript"],
+				"tags": [
+					"LLM",
+					"OpenAI",
+					"NLP",
+					"TypeScript"
+				],
 				"details": [
 					"Para cada publicación en Facebook o Instagram, el análisis identifica el tema y cómo se aborda.",
 					"El equipo de comunicación contrasta esos elementos con los resultados observados entre los distintos públicos.",
@@ -1279,7 +1331,21 @@
 					"proof": "60 000 publicaciones analizadas",
 					"note": "Publicaciones de Facebook e Instagram en ocho idiomas."
 				},
-				"slug": "analisis-generativo-campanas"
+				"slug": "analisis-generativo-campanas",
+				"metrics": [
+					{
+						"label": "Publicaciones analizadas",
+						"value": "60 000"
+					},
+					{
+						"label": "Idiomas del corpus",
+						"value": "8"
+					},
+					{
+						"label": "Redes sociales estudiadas",
+						"value": "2"
+					}
+				]
 			},
 			{
 				"id": "6",
@@ -1290,7 +1356,14 @@
 				"challenge": "Un fabricante de electrónica recibe opiniones por varios canales. Para entender un fallo recurrente, sus equipos necesitan reunir comentarios que lo describen con palabras distintas.",
 				"approach": "Reunimos opiniones de más de 25 fuentes y agrupamos los comentarios por tema. El equipo de estudios de clientes puede partir de un problema recurrente y recuperar las palabras de los propios clientes.",
 				"impact": "El equipo de estudios consulta estos análisis a diario y los comparte con los equipos correspondientes.",
-				"tags": ["GCP", "Airflow", "NLP", "LLM", "Tableau", "HuggingFace"],
+				"tags": [
+					"GCP",
+					"Airflow",
+					"NLP",
+					"LLM",
+					"Tableau",
+					"HuggingFace"
+				],
 				"details": [
 					"Un comentario de una encuesta, del servicio de atención al cliente o de una web de reseñas se incorpora al resto de las opiniones.",
 					"El equipo de estudios reúne los comentarios sobre un mismo tema y consulta el texto original.",
@@ -1302,7 +1375,21 @@
 					"proof": "Más de 25 fuentes reunidas",
 					"note": "Encuestas, atención al cliente y sitios de reseñas."
 				},
-				"slug": "hub-datos-nlp"
+				"slug": "hub-datos-nlp",
+				"metrics": [
+					{
+						"label": "Fuentes de opiniones reunidas",
+						"value": "Más de 25"
+					},
+					{
+						"label": "Consulta por el equipo de estudios",
+						"value": "Diaria"
+					},
+					{
+						"label": "Equipos usuarios mencionados",
+						"value": "3"
+					}
+				]
 			},
 			{
 				"id": "7",
@@ -1315,12 +1402,27 @@
 				"impact": "Los equipos mantuvieron el seguimiento de las ventas minuto a minuto tras el cambio de software.",
 				"metrics": [
 					{
+						"label": "Tiendas seguidas",
+						"value": "Más de 500",
+						"note": "Toda la red de la cadena."
+					},
+					{
 						"label": "Actualización de los datos de ventas",
 						"value": "Cada minuto",
 						"note": "Frecuencia con la que el sistema de análisis recibe datos nuevos."
+					},
+					{
+						"label": "Indicadores de ventas por tienda",
+						"value": "2"
 					}
 				],
-				"tags": ["Snowflake", "Azure", "Kafka", "ADF", "Qlik"],
+				"tags": [
+					"Snowflake",
+					"Azure",
+					"Kafka",
+					"ADF",
+					"Qlik"
+				],
 				"details": [
 					"Una tienda registra una venta. El nuevo software transmite el ticket y el detalle de los artículos.",
 					"Las líneas de venta quedan asociadas a la tienda. El analista utiliza los importes de los tickets para seguir la facturación y el importe medio por compra en cada tienda.",
@@ -1329,15 +1431,15 @@
 				"indexCard": {
 					"title": "Seguir las ventas de las tiendas durante un cambio de software",
 					"description": "Aunque cambie el formato de los tickets, cada venta sigue vinculada a los artículos y a la tienda correspondientes. Los equipos pueden seguir la facturación y el importe medio por compra.",
-					"proof": "Una actualización por minuto",
-					"note": "Frecuencia de actualización de los datos de ventas."
+					"proof": "Más de 500 tiendas",
+					"note": "Ventas de cada tienda de la red, seguidas en el nuevo sistema."
 				},
 				"slug": "almacen-datos-retail"
 			}
 		],
 		"cta": {
 			"label": "Un proceso crítico merece algo mejor que una herramienta genérica.",
-			"button": "Delimitar un primer alcance",
+			"button": "Hablemos de su proyecto",
 			"link": "mailto:info@fdti.eu",
 			"description": "Partamos de un caso real, sus participantes y sus datos para identificar el siguiente paso útil."
 		}

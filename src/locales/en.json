@@ -994,17 +994,21 @@
 				"location": "France",
 				"challenge": "Registry staff compare declared information with supporting documents. Judges preparing to hear a case need to locate the facts, each party’s claims and the arguments supporting them.",
 				"approach": "An API integrated into the existing software prepares these reviews on the publisher’s servers. It returns document checks for registry staff and source-linked summaries for judges. People remain responsible for assessing each case.",
-				"impact": "In October 2026 the platform processed 36,000 annual accounts filings (DCA), 1,080 company register filings (RCS) and 190 judicial cases.",
+				"impact": "In one month, court registries processed nearly 40,000 cases on the platform across annual accounts filings, company register formalities and court cases.",
 				"metrics": [
 					{
 						"label": "Courts equipped",
-						"value": "48",
+						"value": "Around 50",
 						"note": "Platform integrated into court registry software."
 					},
 					{
 						"label": "Cases processed",
-						"value": "37,270",
-						"note": "October 2026: annual accounts filings, company register formalities and court cases."
+						"value": "Nearly 40,000",
+						"note": "In one month across annual accounts filings, company register formalities and court cases."
+					},
+					{
+						"label": "Workflows covered",
+						"value": "4"
 					}
 				],
 				"tags": [
@@ -1024,7 +1028,7 @@
 				"indexCard": {
 					"title": "AI prepares registry checks and points judges to the source documents",
 					"description": "Registry staff see discrepancies between a filing and its supporting documents in their usual software. For court cases, judges receive a summary of claims and arguments with references to the original pages.",
-					"proof": "48 courts equipped",
+					"proof": "Around 50 courts equipped",
 					"note": "Platform integrated into court registry software."
 				},
 				"slug": "automatisation-greffes"
@@ -1058,6 +1062,14 @@
 						"label": "Documents received by the administrative team",
 						"value": "3,000",
 						"note": "Per month."
+					},
+					{
+						"label": "Document types in the example batch",
+						"value": "3"
+					},
+					{
+						"label": "Confirmation before filing",
+						"value": "1"
 					}
 				]
 			},
@@ -1071,18 +1083,16 @@
 				"metrics": [
 					{
 						"label": "People involved",
-						"value": "20,000",
+						"value": "About 20,000",
 						"note": "People covered by the collective proceedings."
 					},
 					{
-						"label": "Rows imported",
-						"value": "11,023",
-						"note": "First workbook, across all sheets."
+						"label": "Source types brought together",
+						"value": "3"
 					},
 					{
-						"label": "Matches to review",
-						"value": "5 cases",
-						"note": "At the 11 May 2026 check, five inadmissibility entries still required confirmation of the person concerned."
+						"label": "Details retained per correction",
+						"value": "3"
 					}
 				],
 				"tags": [
@@ -1102,7 +1112,7 @@
 				"indexCard": {
 					"title": "Preparing compensation and accounting for each amount",
 					"description": "The same individuals appear in court decisions, lawyers’ files and medical assessments. The platform matches these sources and keeps the original value, the value used and any corrections for each calculation.",
-					"proof": "20,000 people tracked",
+					"proof": "About 20,000 people tracked",
 					"note": "Scope of the collective litigation."
 				},
 				"slug": "compensation-case-files"
@@ -1180,7 +1190,12 @@
 						"value": "18"
 					}
 				],
-				"tags": ["SvelteKit", "FastAPI", "PostgreSQL", "Keycloak"],
+				"tags": [
+					"SvelteKit",
+					"FastAPI",
+					"PostgreSQL",
+					"Keycloak"
+				],
 				"details": [
 					"The owner declares the battery. A partner’s purchase offer stays linked to it. The recipient can turn down the offer and record the reason.",
 					"Once the record is approved, the partner records collection from the owner or flags a failed pickup.",
@@ -1202,7 +1217,12 @@
 				"challenge": "To arrange collection, a recycler needs to know what the batteries contain, who will collect them and which site will receive them. Two consignments ready to leave may still need to travel separately.",
 				"approach": "The team reviews each declaration before adding it to a packing list. The tool checks that every battery in a batch has the same collector and receiving site. On arrival, staff can retrieve the declarations for the batch.",
 				"impact": "For each declaration, the recycler can identify the collection batch, check outstanding signatures and distinguish receipt from completed treatment.",
-				"tags": ["SvelteKit", "FastAPI", "PostgreSQL", "Trackdéchets"],
+				"tags": [
+					"SvelteKit",
+					"FastAPI",
+					"PostgreSQL",
+					"Trackdéchets"
+				],
 				"details": [
 					"The team identifies the declared battery’s type and composition to prepare for handling.",
 					"The collection planner builds the batch. A declaration for a different collector or receiving site goes on a separate list.",
@@ -1214,7 +1234,21 @@
 					"proof": "One receiving site per batch",
 					"note": "The collector and receiving site are checked before dispatch."
 				},
-				"slug": "battery-recycling-operations-platform"
+				"slug": "battery-recycling-operations-platform",
+				"metrics": [
+					{
+						"label": "Receiving site per batch",
+						"value": "1"
+					},
+					{
+						"label": "Collector per batch",
+						"value": "1"
+					},
+					{
+						"label": "Distinct on-site stages",
+						"value": "2"
+					}
+				]
 			},
 			{
 				"id": "4",
@@ -1230,9 +1264,22 @@
 						"label": "Areas served",
 						"value": "+40",
 						"note": "Areas where alerts have been deployed."
+					},
+					{
+						"label": "Consumption windows compared",
+						"value": "3"
+					},
+					{
+						"label": "Alert review",
+						"value": "Every morning"
 					}
 				],
-				"tags": ["DuckDB", "SvelteKit", "PostgreSQL", "FastAPI"],
+				"tags": [
+					"DuckDB",
+					"SvelteKit",
+					"PostgreSQL",
+					"FastAPI"
+				],
 				"details": [
 					"The operator selects a cabinet and retrieves the readings from its meter.",
 					"Comparing consumption before, during and after the scheduled lighting period helps distinguish a steady daytime load from a shift in switch-on time.",
@@ -1255,7 +1302,12 @@
 				"challenge": "An NGO needs to decide which environmental messages to prioritise by country and social network. Performance figures show which posts drew a response but not what they said.",
 				"approach": "Across 60,000 posts in eight languages, we linked each message to its subject, tone and viewpoints. The communications team can compare how different audiences respond to the same theme across networks.",
 				"impact": "The NGO adopted the framework internally to guide budget allocation across countries and social networks.",
-				"tags": ["LLM", "OpenAI", "NLP", "TypeScript"],
+				"tags": [
+					"LLM",
+					"OpenAI",
+					"NLP",
+					"TypeScript"
+				],
 				"details": [
 					"For each Facebook or Instagram post, the analysis identifies the theme and how the author approaches it.",
 					"The communications team compares these findings with the response to each post among different audiences.",
@@ -1267,7 +1319,21 @@
 					"proof": "60,000 posts analysed",
 					"note": "Facebook and Instagram posts in eight languages."
 				},
-				"slug": "analyse-generative-campagnes"
+				"slug": "analyse-generative-campagnes",
+				"metrics": [
+					{
+						"label": "Posts analyzed",
+						"value": "60,000"
+					},
+					{
+						"label": "Languages in the corpus",
+						"value": "8"
+					},
+					{
+						"label": "Social networks studied",
+						"value": "2"
+					}
+				]
 			},
 			{
 				"id": "6",
@@ -1278,7 +1344,14 @@
 				"challenge": "An electronics manufacturer receives feedback through several channels. To understand a recurring fault, teams need to bring together comments that describe it in different words.",
 				"approach": "We gathered feedback from more than 25 sources and grouped comments by theme. The customer insights team can start with a recurring issue and find the words customers actually used.",
 				"impact": "The customer insights team consults the analysis daily and shares it with the relevant teams.",
-				"tags": ["GCP", "Airflow", "NLP", "LLM", "Tableau", "HuggingFace"],
+				"tags": [
+					"GCP",
+					"Airflow",
+					"NLP",
+					"LLM",
+					"Tableau",
+					"HuggingFace"
+				],
 				"details": [
 					"A comment from a survey, customer service or a review site joins the other feedback.",
 					"The insights team finds comments on the same subject and reads their original wording.",
@@ -1290,7 +1363,21 @@
 					"proof": "Over 25 sources combined",
 					"note": "Surveys, customer service and review sites."
 				},
-				"slug": "data-hub-nlp"
+				"slug": "data-hub-nlp",
+				"metrics": [
+					{
+						"label": "Feedback sources combined",
+						"value": "More than 25"
+					},
+					{
+						"label": "Review by the insights team",
+						"value": "Daily"
+					},
+					{
+						"label": "User teams identified",
+						"value": "3"
+					}
+				]
 			},
 			{
 				"id": "7",
@@ -1303,12 +1390,27 @@
 				"impact": "Teams retained minute-by-minute sales reporting after the software change.",
 				"metrics": [
 					{
+						"label": "Stores tracked",
+						"value": "Over 500",
+						"note": "The retailer’s entire network."
+					},
+					{
 						"label": "Sales data updates",
 						"value": "Every minute",
 						"note": "Frequency at which the reporting system receives new data."
+					},
+					{
+						"label": "Sales indicators tracked per store",
+						"value": "2"
 					}
 				],
-				"tags": ["Snowflake", "Azure", "Kafka", "ADF", "Qlik"],
+				"tags": [
+					"Snowflake",
+					"Azure",
+					"Kafka",
+					"ADF",
+					"Qlik"
+				],
 				"details": [
 					"A store records a sale. The new software sends the receipt and its item details.",
 					"Each sales line is linked to the store. Analysts can use receipt totals to track revenue and average transaction value by store.",
@@ -1317,15 +1419,15 @@
 				"indexCard": {
 					"title": "Tracking store sales through a software migration",
 					"description": "When receipt formats change, the teams keep their bearings: each sale stays linked to the right items and store so analysts can track revenue and average transaction value.",
-					"proof": "Updated every minute",
-					"note": "Sales reporting refresh rate."
+					"proof": "Over 500 stores",
+					"note": "Sales from every store in the network, tracked in the new system."
 				},
 				"slug": "data-warehouse-retail"
 			}
 		],
 		"cta": {
 			"label": "Critical work deserves more than generic software.",
-			"button": "Define an initial scope",
+			"button": "Discuss your project",
 			"link": "mailto:info@fdti.eu",
 			"description": "Start with a real use case, the stakeholders involved, and the available data to identify the next useful step."
 		}

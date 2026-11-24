@@ -1002,17 +1002,21 @@
 				"location": "France",
 				"challenge": "Pour vérifier un dépôt, le greffe doit rapprocher les informations déclarées des pièces reçues. Pour préparer l’examen d’une affaire, le juge doit retrouver les faits, les demandes de chaque partie et les arguments qui les soutiennent.",
 				"approach": "Une API intégrée au logiciel métier prépare ces lectures sur les serveurs de l’éditeur. Elle restitue les contrôles documentaires au greffe et les synthèses sourcées pour le juge. L’appréciation du dossier reste humaine.",
-				"impact": "En octobre 2026, la plateforme a traité 36 000 dépôts de comptes annuels (DCA), 1 080 formalités RCS et 190 dossiers judiciaires.",
+				"impact": "En un mois, les greffes ont traité près de 40 000 dossiers sur la plateforme : dépôts de comptes annuels, formalités du registre du commerce et dossiers judiciaires.",
 				"metrics": [
 					{
 						"label": "Tribunaux équipés",
-						"value": "48",
+						"value": "Une cinquantaine",
 						"note": "Plateforme intégrée au logiciel métier des greffes."
 					},
 					{
 						"label": "Dossiers traités",
-						"value": "37 270",
-						"note": "Octobre 2026 : dépôts de comptes annuels, formalités RCS et dossiers judiciaires."
+						"value": "Près de 40 000",
+						"note": "En un mois, sur les trois parcours : comptes annuels, formalités RCS et dossiers judiciaires."
+					},
+					{
+						"label": "Parcours métier couverts",
+						"value": "4"
 					}
 				],
 				"tags": [
@@ -1032,7 +1036,7 @@
 				"indexCard": {
 					"title": "L’IA prépare les contrôles du greffe et renvoie le juge aux pièces du dossier",
 					"description": "Dans leur logiciel habituel, les greffiers retrouvent les écarts entre une formalité déclarée et ses justificatifs. Pour les affaires judiciaires, le juge dispose d’une synthèse des demandes et des arguments, avec un renvoi aux pages sources.",
-					"proof": "48 tribunaux équipés",
+					"proof": "Une cinquantaine de tribunaux équipés",
 					"note": "Plateforme intégrée au logiciel métier des greffes."
 				},
 				"slug": "automatisation-greffes"
@@ -1066,6 +1070,14 @@
 						"label": "Pièces reçues par l’équipe administrative",
 						"value": "3 000",
 						"note": "Par mois."
+					},
+					{
+						"label": "Types de pièces dans le lot présenté",
+						"value": "3"
+					},
+					{
+						"label": "Validation avant classement",
+						"value": "1"
 					}
 				]
 			},
@@ -1079,18 +1091,16 @@
 				"metrics": [
 					{
 						"label": "Personnes concernées",
-						"value": "20 000",
+						"value": "Environ 20 000",
 						"note": "Personnes suivies dans le contentieux collectif."
 					},
 					{
-						"label": "Lignes importées",
-						"value": "11 023",
-						"note": "Premier classeur de travail, toutes feuilles confondues."
+						"label": "Types de sources réunies",
+						"value": "3"
 					},
 					{
-						"label": "Rapprochements à vérifier",
-						"value": "5 cas",
-						"note": "Au contrôle du 11 mai 2026, cinq entrées d’irrecevabilité restaient à rattacher avec certitude à une personne."
+						"label": "Éléments conservés par correction",
+						"value": "3"
 					}
 				],
 				"tags": [
@@ -1110,7 +1120,7 @@
 				"indexCard": {
 					"title": "Préparer les indemnisations et pouvoir justifier chaque montant",
 					"description": "Les mêmes personnes apparaissent dans des décisions de justice, des fichiers d’avocats et des évaluations médicales. La plateforme rapproche ces sources et conserve, pour chaque calcul, la valeur d’origine, la valeur retenue et les corrections apportées.",
-					"proof": "20 000 personnes suivies",
+					"proof": "Environ 20 000 personnes suivies",
 					"note": "Périmètre du contentieux collectif."
 				},
 				"slug": "dossiers-indemnisation"
@@ -1188,7 +1198,12 @@
 						"value": "18"
 					}
 				],
-				"tags": ["SvelteKit", "FastAPI", "PostgreSQL", "Keycloak"],
+				"tags": [
+					"SvelteKit",
+					"FastAPI",
+					"PostgreSQL",
+					"Keycloak"
+				],
 				"details": [
 					"Le propriétaire déclare sa batterie. Lorsqu’un partenaire propose un prix de reprise, l’offre reste rattachée à cette batterie. La personne qui reçoit l’offre peut la refuser et en préciser la raison.",
 					"Une fois le dossier validé, le prestataire indique qu’il a enlevé la batterie chez son propriétaire. Si la collecte échoue, il peut signaler le problème sur le dossier.",
@@ -1210,7 +1225,12 @@
 				"challenge": "Pour préparer une collecte, un recycleur doit connaître la nature des batteries, le collecteur et le site qui les recevra. Deux déclarations prêtes au départ ne peuvent pas forcément voyager ensemble.",
 				"approach": "L’équipe examine chaque déclaration avant de l’ajouter à une liste de colisage. L’outil vérifie que les batteries du lot ont le même collecteur et le même site destinataire. À la réception, l’équipe retrouve les déclarations associées au lot.",
 				"impact": "Pour chaque déclaration, le recycleur peut retrouver le lot de collecte, vérifier les signatures attendues et distinguer une batterie reçue d’une batterie traitée.",
-				"tags": ["SvelteKit", "FastAPI", "PostgreSQL", "Trackdéchets"],
+				"tags": [
+					"SvelteKit",
+					"FastAPI",
+					"PostgreSQL",
+					"Trackdéchets"
+				],
 				"details": [
 					"L’équipe qualifie la batterie déclarée : elle précise son type et sa composition pour préparer sa prise en charge.",
 					"La personne qui prépare la collecte constitue le lot. Si une déclaration concerne un autre collecteur ou un autre site, elle doit la placer sur une autre liste.",
@@ -1222,7 +1242,21 @@
 					"proof": "Un seul site destinataire par lot",
 					"note": "Le collecteur et le site sont vérifiés avant le départ."
 				},
-				"slug": "plateforme-operations-recyclage-batteries"
+				"slug": "plateforme-operations-recyclage-batteries",
+				"metrics": [
+					{
+						"label": "Site destinataire par lot",
+						"value": "1"
+					},
+					{
+						"label": "Collecteur par lot",
+						"value": "1"
+					},
+					{
+						"label": "Étapes distinguées sur site",
+						"value": "2"
+					}
+				]
 			},
 			{
 				"id": "4",
@@ -1238,9 +1272,22 @@
 						"label": "Territoires équipés",
 						"value": "+40",
 						"note": "Territoires sur lesquels les alertes ont été déployées."
+					},
+					{
+						"label": "Plages de consommation comparées",
+						"value": "3"
+					},
+					{
+						"label": "Consultation des alertes",
+						"value": "Chaque matin"
 					}
 				],
-				"tags": ["DuckDB", "SvelteKit", "PostgreSQL", "FastAPI"],
+				"tags": [
+					"DuckDB",
+					"SvelteKit",
+					"PostgreSQL",
+					"FastAPI"
+				],
 				"details": [
 					"Le gestionnaire sélectionne une armoire et retrouve les mesures du compteur correspondant.",
 					"Il examine la consommation avant, pendant et après la plage d’allumage. Il peut ainsi distinguer une consommation présente toute la journée d’un décalage au moment de l’allumage.",
@@ -1263,7 +1310,12 @@
 				"challenge": "Une ONG doit décider quels messages environnementaux privilégier selon le pays et le réseau social. Les chiffres de performance indiquent quelles publications ont suscité une réaction, mais pas de quoi elles parlaient.",
 				"approach": "Sur un corpus de 60 000 publications en huit langues, nous avons relié chaque message à son sujet, à son ton et aux points de vue exprimés. L’équipe communication peut comparer la réception d’un même thème selon le public et le réseau.",
 				"impact": "L’ONG a repris la grille d’analyse en interne pour orienter la répartition de son budget entre pays et réseaux sociaux.",
-				"tags": ["LLM", "OpenAI", "NLP", "TypeScript"],
+				"tags": [
+					"LLM",
+					"OpenAI",
+					"NLP",
+					"TypeScript"
+				],
 				"details": [
 					"Pour chaque publication Facebook ou Instagram, l’analyse relève le thème et la manière de l’aborder.",
 					"L’équipe communication rapproche ces éléments des performances observées auprès des différents publics.",
@@ -1275,7 +1327,21 @@
 					"proof": "60 000 publications analysées",
 					"note": "Corpus en huit langues sur Facebook et Instagram."
 				},
-				"slug": "analyse-generative-campagnes"
+				"slug": "analyse-generative-campagnes",
+				"metrics": [
+					{
+						"label": "Publications analysées",
+						"value": "60 000"
+					},
+					{
+						"label": "Langues du corpus",
+						"value": "8"
+					},
+					{
+						"label": "Réseaux sociaux étudiés",
+						"value": "2"
+					}
+				]
 			},
 			{
 				"id": "6",
@@ -1286,7 +1352,14 @@
 				"challenge": "Un fabricant d’électronique reçoit des avis par plusieurs canaux. Pour comprendre un problème récurrent, les équipes doivent pouvoir rapprocher des commentaires qui décrivent le même défaut avec des mots différents.",
 				"approach": "Nous avons réuni les avis de plus de 25 sources et regroupé les commentaires par thème. L’équipe chargée des études clients peut partir d’un sujet récurrent et retrouver les mots employés par les clients.",
 				"impact": "L’équipe études clients consulte ces analyses au quotidien et les partage avec les équipes concernées.",
-				"tags": ["GCP", "Airflow", "NLP", "LLM", "Tableau", "HuggingFace"],
+				"tags": [
+					"GCP",
+					"Airflow",
+					"NLP",
+					"LLM",
+					"Tableau",
+					"HuggingFace"
+				],
 				"details": [
 					"Un commentaire issu d’une enquête, du service client ou d’un site d’avis rejoint les autres retours.",
 					"L’équipe études clients retrouve les commentaires qui portent sur un même sujet et consulte les formulations d’origine.",
@@ -1298,7 +1371,21 @@
 					"proof": "Plus de 25 sources réunies",
 					"note": "Enquêtes, service client et sites d’avis."
 				},
-				"slug": "data-hub-nlp"
+				"slug": "data-hub-nlp",
+				"metrics": [
+					{
+						"label": "Sources d’avis réunies",
+						"value": "Plus de 25"
+					},
+					{
+						"label": "Consultation par l’équipe études",
+						"value": "Quotidienne"
+					},
+					{
+						"label": "Équipes utilisatrices citées",
+						"value": "3"
+					}
+				]
 			},
 			{
 				"id": "7",
@@ -1311,12 +1398,27 @@
 				"impact": "Les équipes ont conservé un suivi des ventes minute par minute après le changement de logiciel.",
 				"metrics": [
 					{
+						"label": "Magasins suivis",
+						"value": "Plus de 500",
+						"note": "Tout le réseau de l’enseigne."
+					},
+					{
 						"label": "Mise à jour des données de vente",
 						"value": "Chaque minute",
 						"note": "Cadence d’alimentation du système d’analyse."
+					},
+					{
+						"label": "Indicateurs de vente suivis par magasin",
+						"value": "2"
 					}
 				],
-				"tags": ["Snowflake", "Azure", "Kafka", "ADF", "Qlik"],
+				"tags": [
+					"Snowflake",
+					"Azure",
+					"Kafka",
+					"ADF",
+					"Qlik"
+				],
 				"details": [
 					"Un magasin enregistre une vente. Le nouveau logiciel transmet le ticket et le détail des articles.",
 					"Les lignes de vente sont rapprochées du magasin concerné. L’analyste peut utiliser les montants des tickets pour suivre le chiffre d’affaires et le panier moyen par magasin.",
@@ -1325,15 +1427,15 @@
 				"indexCard": {
 					"title": "Suivre les ventes des magasins pendant un changement de logiciel",
 					"description": "Quand le format des tickets de caisse change, les équipes conservent leurs repères : chaque vente reste rattachée aux bons articles et au bon magasin pour suivre le chiffre d’affaires et le panier moyen.",
-					"proof": "Une mise à jour par minute",
-					"note": "Cadence d’alimentation du suivi des ventes."
+					"proof": "Plus de 500 magasins",
+					"note": "Ventes de chaque magasin du réseau, suivies dans le nouveau système."
 				},
 				"slug": "data-warehouse-retail"
 			}
 		],
 		"cta": {
 			"label": "Un processus critique mérite mieux qu'un outil générique.",
-			"button": "Cadrer un premier périmètre",
+			"button": "Parlons de votre projet",
 			"link": "mailto:info@fdti.eu",
 			"description": "Partons d'un cas réel, de ses acteurs et de ses données pour identifier la prochaine étape utile."
 		}
