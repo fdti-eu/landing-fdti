@@ -1,7 +1,6 @@
 <script lang="ts">
 	import CaseIndicators from '#lib/components/CaseIndicators.svelte';
-	import { MetaTags } from 'svelte-meta-tags';
-	import LdTag from '#lib/components/json-ld/LDTag.svelte';
+	import PageSeo from '#lib/components/PageSeo.svelte';
 	import { schema } from '#lib/components/json-ld/json-ld.ts';
 	import type { Lang } from '#lib/data.ts';
 	import {
@@ -250,7 +249,6 @@
 	};
 	$: canonicalUrl = buildLocalizedUrl(metatags.url || '/realisations', currentLocale);
 	$: ogImage = absoluteImageUrl(metatags.img);
-	$: twitterImage = absoluteImageUrl(SOCIAL_IMAGE_PATH);
 
 	import { beforeNavigate } from '$app/navigation';
 	import { page } from '$app/state';
@@ -307,38 +305,15 @@
 	}
 </script>
 
-
-{#if metatags}
-	<MetaTags
-		title={metatags.title}
-		description={metatags.description}
-		canonical={canonicalUrl}
-		openGraph={{
-			type: 'article',
-			url: canonicalUrl,
-			title: metatags.title,
-			description: metatags.description,
-			images: [
-				{
-					url: ogImage,
-					alt: metatags.description
-				}
-			],
-			siteName: 'FDTI'
-		}}
-		twitter={{
-			cardType: 'summary_large_image',
-			title: metatags.title,
-			description: metatags.description,
-			image: twitterImage,
-			imageAlt: metatags.description
-		}}
-	/>
-{/if}
-
-<svelte:head>
-	<LdTag
-		schema={schema('Article', {
+<PageSeo
+	title={metatags.title}
+	description={metatags.description}
+	canonical={canonicalUrl}
+	type="article"
+	image={ogImage}
+	twitter
+	structuredData={[
+		schema('Article', {
 			name: metatags.title,
 			headline: useCase?.title || metatags.title,
 			description: metatags.description,
@@ -347,10 +322,8 @@
 			inLanguage: currentLocale,
 			articleSection: useCase?.category,
 			mainEntityOfPage: canonicalUrl
-		})}
-	/>
-	<LdTag
-		schema={schema('BreadcrumbList', {
+		}),
+		schema('BreadcrumbList', {
 			name: metatags.title,
 			description: metatags.description,
 			url: canonicalUrl,
@@ -374,9 +347,9 @@
 					item: canonicalUrl
 				}
 			]
-		})}
-	/>
-</svelte:head>
+		})
+	]}
+/>
 
 {#if useCase}
 	<section

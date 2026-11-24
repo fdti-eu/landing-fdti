@@ -1,18 +1,12 @@
 <script lang="ts">
-	import { MetaTags } from 'svelte-meta-tags';
+	import PageSeo from '#lib/components/PageSeo.svelte';
 	import ExpertiseHub, { type ExpertiseHubContent } from '#lib/components/ExpertiseHub.svelte';
-	import LdTag from '#lib/components/json-ld/LDTag.svelte';
 	import SolutionFamilyNav from '#lib/components/solutions/SolutionFamilyNav.svelte';
 	import SolutionOptions from '#lib/components/solutions/SolutionOptions.svelte';
 	import SolutionPractices from '#lib/components/solutions/SolutionPractices.svelte';
 	import { solutionPages } from '#lib/solution-pages.ts';
 	import { schema } from '#lib/components/json-ld/json-ld.ts';
-	import {
-		absoluteImageUrl,
-		buildLocalizedPath,
-		buildLocalizedUrl,
-		SOCIAL_IMAGE_PATH
-	} from '#lib/functions/seo.ts';
+	import { buildLocalizedPath, buildLocalizedUrl } from '#lib/functions/seo.ts';
 	import type { Lang } from '#lib/data.ts';
 	import type { PageData } from './$types';
 
@@ -106,23 +100,13 @@
 	} satisfies ExpertiseHubContent;
 </script>
 
-<MetaTags
+<PageSeo
 	title={content.metaTitle}
 	description={content.metaDescription}
 	{canonical}
-	openGraph={{
-		type: 'website',
-		url: canonical,
-		title: content.metaTitle,
-		description: content.metaDescription,
-		siteName: 'FDTI',
-		images: [{ url: absoluteImageUrl(SOCIAL_IMAGE_PATH), alt: copy.imageAlt }]
-	}}
-/>
-
-<svelte:head>
-	<LdTag
-		schema={schema('BreadcrumbList', {
+	imageAlt={copy.imageAlt}
+	structuredData={[
+		schema('BreadcrumbList', {
 			name: content.metaTitle,
 			description: content.metaDescription,
 			url: canonical,
@@ -146,10 +130,8 @@
 					item: canonical
 				}
 			]
-		})}
-	/>
-	<LdTag
-		schema={schema('FAQPage', {
+		}),
+		schema('FAQPage', {
 			name: content.metaTitle,
 			description: content.metaDescription,
 			url: canonical,
@@ -161,9 +143,9 @@
 					text: faq.answer
 				}
 			}))
-		})}
-	/>
-</svelte:head>
+		})
+	]}
+/>
 
 <ExpertiseHub
 	content={hub}

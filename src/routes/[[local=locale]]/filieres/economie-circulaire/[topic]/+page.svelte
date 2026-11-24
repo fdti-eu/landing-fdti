@@ -1,14 +1,8 @@
 <script lang="ts">
-	import { MetaTags } from 'svelte-meta-tags';
+	import PageSeo from '#lib/components/PageSeo.svelte';
 	import CircularContact from '#lib/components/CircularContact.svelte';
-	import LdTag from '#lib/components/json-ld/LDTag.svelte';
 	import { schema } from '#lib/components/json-ld/json-ld.ts';
-	import {
-		absoluteImageUrl,
-		buildLocalizedPath,
-		buildLocalizedUrl,
-		SOCIAL_IMAGE_PATH
-	} from '#lib/functions/seo.ts';
+	import { buildLocalizedPath, buildLocalizedUrl } from '#lib/functions/seo.ts';
 	import type { PageData } from './$types';
 	import type { Lang } from '#lib/data.ts';
 	import { afterNavigate } from '$app/navigation';
@@ -59,23 +53,13 @@
 
 <svelte:window on:scroll={updateSection} on:resize={updateSection} />
 
-<MetaTags
+<PageSeo
 	{title}
 	description={dossier.summary}
 	{canonical}
-	openGraph={{
-		type: 'website',
-		url: canonical,
-		title,
-		description: dossier.summary,
-		siteName: 'FDTI',
-		images: [{ url: absoluteImageUrl(SOCIAL_IMAGE_PATH), alt: imageAlts[data.locale] }]
-	}}
-/>
-
-<svelte:head>
-	<LdTag
-		schema={schema('BreadcrumbList', {
+	imageAlt={imageAlts[data.locale]}
+	structuredData={[
+		schema('BreadcrumbList', {
 			name: title,
 			description: dossier.summary,
 			url: canonical,
@@ -99,9 +83,9 @@
 					item: canonical
 				}
 			]
-		})}
-	/>
-</svelte:head>
+		})
+	]}
+/>
 
 <header class="ce-hero ce-detail-hero">
 	<div class="ce-shell">

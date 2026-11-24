@@ -1,8 +1,7 @@
 <script lang="ts">
 	import { fade } from 'svelte/transition';
 	import type { PageData } from './$types';
-	import { MetaTags } from 'svelte-meta-tags';
-	import LdTag from '#lib/components/json-ld/LDTag.svelte';
+	import PageSeo from '#lib/components/PageSeo.svelte';
 	import { schema } from '#lib/components/json-ld/json-ld.ts';
 	import { absoluteImageUrl, buildLocalizedUrl, SOCIAL_IMAGE_PATH } from '#lib/functions/seo.ts';
 	import type { Lang } from '#lib/data.ts';
@@ -23,7 +22,6 @@
 	};
 	$: canonicalUrl = buildLocalizedUrl(metatags.url, currentLocale);
 	$: ogImage = absoluteImageUrl(metatags.img);
-	$: twitterImage = absoluteImageUrl(SOCIAL_IMAGE_PATH);
 	const contactCopy: Record<Lang, { title: string; paragraphs: string[] }> = {
 		fr: {
 			title: 'Demandes de contact',
@@ -150,45 +148,22 @@
 	$: audience = audienceCopy[currentLocale];
 </script>
 
-{#if metatags}
-	<MetaTags
-		title={metatags.title}
-		description={metatags.description}
-		canonical={canonicalUrl}
-		openGraph={{
-			type: 'website',
-			url: canonicalUrl,
-			title: metatags.title,
-			description: metatags.description,
-			images: [
-				{
-					url: ogImage,
-					alt: metatags.description
-				}
-			],
-			siteName: 'FDTI'
-		}}
-		twitter={{
-			cardType: 'summary_large_image',
-			title: metatags.title,
-			description: metatags.description,
-			image: twitterImage,
-			imageAlt: metatags.description
-		}}
-	/>
-{/if}
-
-<svelte:head>
-	<LdTag
-		schema={schema('WebPage', {
+<PageSeo
+	title={metatags.title}
+	description={metatags.description}
+	canonical={canonicalUrl}
+	image={ogImage}
+	twitter
+	structuredData={[
+		schema('WebPage', {
 			name: metatags.title,
 			description: metatags.description,
 			image: ogImage,
 			url: canonicalUrl,
 			inLanguage: currentLocale
-		})}
-	/>
-</svelte:head>
+		})
+	]}
+/>
 
 <section
 	class="legal-page relative w-full max-w-[120rem] px-4 sm:px-8 lg:px-16 xl:px-24 mx-auto space-y-8 py-16 mt-20 md:py-24"

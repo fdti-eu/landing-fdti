@@ -1,8 +1,6 @@
 <script lang="ts">
-	import { MetaTags } from 'svelte-meta-tags';
-	import LdTag from '#lib/components/json-ld/LDTag.svelte';
+	import PageSeo from '#lib/components/PageSeo.svelte';
 	import { schema } from '#lib/components/json-ld/json-ld.ts';
-	import { absoluteImageUrl, SOCIAL_IMAGE_PATH } from '#lib/functions/seo.ts';
 
 	const title = 'Logiciels sur mesure pour les emballages et la REP | FDTI';
 	const description =
@@ -74,23 +72,13 @@
 	];
 </script>
 
-<MetaTags
+<PageSeo
 	{title}
 	{description}
 	{canonical}
-	openGraph={{
-		type: 'website',
-		url: canonical,
-		title,
-		description,
-		siteName: 'FDTI',
-		images: [{ url: absoluteImageUrl(SOCIAL_IMAGE_PATH), alt: 'FDTI' }]
-	}}
-/>
-
-<svelte:head>
-	<LdTag
-		schema={schema('BreadcrumbList', {
+	imageAlt="FDTI"
+	structuredData={[
+		schema('BreadcrumbList', {
 			name: title,
 			description,
 			url: canonical,
@@ -109,9 +97,9 @@
 					item: canonical
 				}
 			]
-		})}
-	/>
-</svelte:head>
+		})
+	]}
+/>
 
 <div class="editorial-page packaging-page">
 	<header class="editorial-hero">

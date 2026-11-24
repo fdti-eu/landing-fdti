@@ -2,7 +2,7 @@
 	import type { PageData } from './$types';
 	import { navigationCopy, sectorCopy } from '#lib/navigation.ts';
 	import { buildLocalizedPath, buildLocalizedUrl } from '#lib/functions/seo.ts';
-	import { MetaTags } from 'svelte-meta-tags';
+	import PageSeo from '#lib/components/PageSeo.svelte';
 	export let data: PageData;
 	$: nav = navigationCopy[data.locale];
 	$: copy = sectorCopy[data.locale];
@@ -10,10 +10,11 @@
 	$: description = copy.justiceIntro;
 </script>
 
-<MetaTags
+<PageSeo
 	title={`${heading} | FDTI`}
 	{description}
 	canonical={buildLocalizedUrl('/filieres/justice', data.locale)}
+	openGraph={false}
 />
 <div class="editorial-page">
 	<header class="editorial-hero">

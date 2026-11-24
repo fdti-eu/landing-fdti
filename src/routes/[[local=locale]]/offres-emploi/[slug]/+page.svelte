@@ -1,6 +1,5 @@
 <script lang="ts">
-	import { MetaTags } from 'svelte-meta-tags';
-	import LdTag from '#lib/components/json-ld/LDTag.svelte';
+	import PageSeo from '#lib/components/PageSeo.svelte';
 	import { schema } from '#lib/components/json-ld/json-ld.ts';
 	import type { Lang } from '#lib/data.ts';
 	import {
@@ -140,30 +139,15 @@
 	};
 </script>
 
-<MetaTags
+<PageSeo
 	{title}
 	{description}
 	canonical={canonicalUrl}
-	openGraph={{
-		type: 'article',
-		url: canonicalUrl,
-		title,
-		description,
-		images: [{ url: ogImage, alt: description }],
-		siteName: 'FDTI'
-	}}
-	twitter={{
-		cardType: 'summary_large_image',
-		title,
-		description,
-		image: ogImage,
-		imageAlt: description
-	}}
-/>
-
-<svelte:head>
-	<LdTag
-		schema={schema('JobPosting', {
+	type="article"
+	image={ogImage}
+	twitter
+	structuredData={[
+		schema('JobPosting', {
 			name: title,
 			title: job.title,
 			description: jobDescription,
@@ -182,10 +166,8 @@
 				name: 'FDTI Consulting',
 				sameAs: 'https://www.fdti.eu'
 			}
-		})}
-	/>
-	<LdTag
-		schema={schema('BreadcrumbList', {
+		}),
+		schema('BreadcrumbList', {
 			name: title,
 			description,
 			url: canonicalUrl,
@@ -209,10 +191,11 @@
 					item: canonicalUrl
 				}
 			]
-		})}
-	/>
+		})
+	]}
+>
 	<script async src="https://tally.so/widgets/embed.js"></script>
-</svelte:head>
+</PageSeo>
 
 <section class="job-detail-hero bg-darkGrey text-white pt-28 pb-16 md:pt-36 md:pb-24 print:hidden">
 	<div class="max-w-6xl mx-auto px-4 space-y-8">

@@ -1,6 +1,5 @@
 <script lang="ts">
-	import { MetaTags } from 'svelte-meta-tags';
-	import LdTag from '#lib/components/json-ld/LDTag.svelte';
+	import PageSeo from '#lib/components/PageSeo.svelte';
 	import { schema } from '#lib/components/json-ld/json-ld.ts';
 	import type { Lang } from '#lib/data.ts';
 	import {
@@ -130,38 +129,22 @@
 		`view-transition-name: job-${part}-${job.slug};`;
 </script>
 
-<MetaTags
+<PageSeo
 	{title}
 	{description}
 	canonical={canonicalUrl}
-	openGraph={{
-		type: 'website',
-		url: canonicalUrl,
-		title,
-		description,
-		images: [{ url: ogImage, alt: description }],
-		siteName: 'FDTI'
-	}}
-	twitter={{
-		cardType: 'summary_large_image',
-		title,
-		description,
-		image: ogImage,
-		imageAlt: description
-	}}
-/>
-
-<svelte:head>
-	<LdTag
-		schema={schema('CollectionPage', {
+	image={ogImage}
+	twitter
+	structuredData={[
+		schema('CollectionPage', {
 			name: title,
 			description,
 			url: canonicalUrl,
 			image: ogImage,
 			inLanguage: data.locale
-		})}
-	/>
-</svelte:head>
+		})
+	]}
+/>
 
 <section class="jobs-hero bg-darkGrey text-white pt-28 pb-20 md:pt-36 md:pb-28">
 	<div class="max-w-6xl mx-auto px-4 space-y-8">

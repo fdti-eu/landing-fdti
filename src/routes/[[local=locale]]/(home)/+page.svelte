@@ -6,8 +6,7 @@
 	import ConfianceSection from '#lib/components/sections/ConfianceSection.svelte';
 	import UseCasesPreviewSection from '#lib/components/sections/UseCasesPreviewSection.svelte';
 	import ExpertisePreviewSection from '#lib/components/sections/ExpertisePreviewSection.svelte';
-	import { MetaTags } from 'svelte-meta-tags';
-	import LdTag from '#lib/components/json-ld/LDTag.svelte';
+	import PageSeo from '#lib/components/PageSeo.svelte';
 	import { schema } from '#lib/components/json-ld/json-ld.ts';
 	import type { Lang } from '#lib/data.ts';
 	import { absoluteImageUrl, buildLocalizedUrl, SOCIAL_IMAGE_PATH } from '#lib/functions/seo.ts';
@@ -26,47 +25,23 @@
 	$: currentLocale = (pageContent?.locale as Lang) ?? 'fr';
 	$: canonicalUrl = buildLocalizedUrl(metatags.url || '/', currentLocale);
 	$: ogImage = absoluteImageUrl(metatags.img);
-	$: twitterImage = absoluteImageUrl(SOCIAL_IMAGE_PATH);
 </script>
 
-{#if metatags}
-	<MetaTags
-		title={metatags.title}
-		description={metatags.description}
-		canonical={canonicalUrl}
-		openGraph={{
-			type: 'website',
-			url: canonicalUrl,
-			title: metatags.title,
-			description: metatags.description,
-			images: [
-				{
-					url: ogImage,
-					alt: metatags.description
-				}
-			],
-			siteName: 'FDTI'
-		}}
-		twitter={{
-			cardType: 'summary_large_image',
-			title: metatags.title,
-			description: metatags.description,
-			image: twitterImage,
-			imageAlt: metatags.description
-		}}
-	/>
-{/if}
-
-<svelte:head>
-	<LdTag
-		schema={schema('WebSite', {
+<PageSeo
+	title={metatags.title}
+	description={metatags.description}
+	canonical={canonicalUrl}
+	image={ogImage}
+	twitter
+	structuredData={[
+		schema('WebSite', {
 			name: metatags.title,
 			description: metatags.description,
 			image: ogImage,
 			url: canonicalUrl
-		})}
-	/>
-</svelte:head>
+		})
+	]}
+/>
 
 <div class="fdti-home">
 	<Hero content={pageContent?.hero_section} />

@@ -1,14 +1,9 @@
 <script lang="ts">
-	import { MetaTags } from 'svelte-meta-tags';
+	import PageSeo from '#lib/components/PageSeo.svelte';
 	import { sectorCopy, navigationCopy, solutionIds, solutionLabels } from '#lib/navigation.ts';
 	import { solutionProofIds, solutionsContent } from '#lib/solutions.ts';
 	import { solutionPagePath, solutionPages } from '#lib/solution-pages.ts';
-	import {
-		absoluteImageUrl,
-		buildLocalizedPath,
-		buildLocalizedUrl,
-		SOCIAL_IMAGE_PATH
-	} from '#lib/functions/seo.ts';
+	import { buildLocalizedPath, buildLocalizedUrl } from '#lib/functions/seo.ts';
 	import type { PageData } from './$types';
 
 	export let data: PageData;
@@ -20,19 +15,7 @@
 	$: title = content.metaTitle;
 </script>
 
-<MetaTags
-	{title}
-	description={content.description}
-	{canonical}
-	openGraph={{
-		type: 'website',
-		url: canonical,
-		title,
-		description: content.description,
-		siteName: 'FDTI',
-		images: [{ url: absoluteImageUrl(SOCIAL_IMAGE_PATH), alt: 'FDTI' }]
-	}}
-/>
+<PageSeo {title} description={content.description} {canonical} imageAlt="FDTI" />
 
 <div class="editorial-page solutions-page">
 	<header class="editorial-hero">

@@ -1,13 +1,8 @@
 <script lang="ts">
-	import { MetaTags } from 'svelte-meta-tags';
+	import PageSeo from '#lib/components/PageSeo.svelte';
 	import type { Lang } from '#lib/data.ts';
 	import { expertiseOffers, offerPaths, type OfferKey } from '#lib/expertise-offers.ts';
-	import {
-		absoluteImageUrl,
-		buildLocalizedPath,
-		buildLocalizedUrl,
-		SOCIAL_IMAGE_PATH
-	} from '#lib/functions/seo.ts';
+	import { buildLocalizedPath, buildLocalizedUrl } from '#lib/functions/seo.ts';
 
 	export let locale: Lang;
 	export let offer: OfferKey;
@@ -17,19 +12,7 @@
 	const parentPath = '/filieres/economie-circulaire';
 </script>
 
-<MetaTags
-	{title}
-	description={content.description}
-	{canonical}
-	openGraph={{
-		type: 'website',
-		url: canonical,
-		title,
-		description: content.description,
-		siteName: 'FDTI',
-		images: [{ url: absoluteImageUrl(SOCIAL_IMAGE_PATH), alt: 'FDTI' }]
-	}}
-/>
+<PageSeo {title} description={content.description} {canonical} imageAlt="FDTI" />
 
 <div class="editorial-page offer-page">
 	<header class="editorial-hero">

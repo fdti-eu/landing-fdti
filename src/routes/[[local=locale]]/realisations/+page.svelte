@@ -2,8 +2,7 @@
 	import { getContext } from 'svelte';
 	import { tick } from 'svelte';
 	import type { Writable } from 'svelte/store';
-	import { MetaTags } from 'svelte-meta-tags';
-	import LdTag from '#lib/components/json-ld/LDTag.svelte';
+	import PageSeo from '#lib/components/PageSeo.svelte';
 	import { schema } from '#lib/components/json-ld/json-ld.ts';
 	import type { Lang } from '#lib/data.ts';
 	import {
@@ -78,7 +77,6 @@
 
 	$: canonicalUrl = buildLocalizedUrl('/realisations', currentLocale);
 	$: ogImage = absoluteImageUrl(metatags.img);
-	$: twitterImage = absoluteImageUrl(SOCIAL_IMAGE_PATH);
 
 	let selectedSector: string | null = null;
 	let activeSlug: string | null = null;
@@ -239,45 +237,22 @@
 		.sort((a, b) => cardOrder.indexOf(a.id ?? '') - cardOrder.indexOf(b.id ?? ''));
 </script>
 
-{#if metatags}
-	<MetaTags
-		title={metatags.title}
-		description={metatags.description}
-		canonical={canonicalUrl}
-		openGraph={{
-			type: 'website',
-			url: canonicalUrl,
-			title: metatags.title,
-			description: metatags.description,
-			images: [
-				{
-					url: ogImage,
-					alt: metatags.description
-				}
-			],
-			siteName: 'FDTI'
-		}}
-		twitter={{
-			cardType: 'summary_large_image',
-			title: metatags.title,
-			description: metatags.description,
-			image: twitterImage,
-			imageAlt: metatags.description
-		}}
-	/>
-{/if}
-
-<svelte:head>
-	<LdTag
-		schema={schema('CollectionPage', {
+<PageSeo
+	title={metatags.title}
+	description={metatags.description}
+	canonical={canonicalUrl}
+	image={ogImage}
+	twitter
+	structuredData={[
+		schema('CollectionPage', {
 			name: metatags.title,
 			description: metatags.description,
 			image: ogImage,
 			url: canonicalUrl,
 			inLanguage: currentLocale
-		})}
-	/>
-</svelte:head>
+		})
+	]}
+/>
 
 {#if content}
 	<section class="panorama-heading" class:hero-hidden={Boolean(activeSlug)}>

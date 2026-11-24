@@ -1,16 +1,11 @@
 <script lang="ts">
-	import { MetaTags } from 'svelte-meta-tags';
+	import PageSeo from '#lib/components/PageSeo.svelte';
 	import SolutionFamilyNav from '#lib/components/solutions/SolutionFamilyNav.svelte';
 	import SolutionOptions from '#lib/components/solutions/SolutionOptions.svelte';
 	import SolutionPractices from '#lib/components/solutions/SolutionPractices.svelte';
 	import { navigationCopy, solutionLabels } from '#lib/navigation.ts';
 	import { solutionPagePath } from '#lib/solution-pages.ts';
-	import {
-		absoluteImageUrl,
-		buildLocalizedPath,
-		buildLocalizedUrl,
-		SOCIAL_IMAGE_PATH
-	} from '#lib/functions/seo.ts';
+	import { buildLocalizedPath, buildLocalizedUrl } from '#lib/functions/seo.ts';
 	import type { PageData } from './$types';
 
 	export let data: PageData;
@@ -25,19 +20,7 @@
 	});
 </script>
 
-<MetaTags
-	title={page.metaTitle}
-	description={page.metaDescription}
-	{canonical}
-	openGraph={{
-		type: 'website',
-		url: canonical,
-		title: page.metaTitle,
-		description: page.metaDescription,
-		siteName: 'FDTI',
-		images: [{ url: absoluteImageUrl(SOCIAL_IMAGE_PATH), alt: 'FDTI' }]
-	}}
-/>
+<PageSeo title={page.metaTitle} description={page.metaDescription} {canonical} imageAlt="FDTI" />
 
 <div class="editorial-page solution-page">
 	<header class="editorial-hero">
