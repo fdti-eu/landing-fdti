@@ -143,8 +143,9 @@
 							<a
 								href={`#${section.id}`}
 								aria-current={activeSection === section.id ? 'location' : undefined}
-								><span>0{index + 1}</span>{section.title}</a
 							>
+								<span>0{index + 1}</span>{section.title}
+							</a>
 						</li>
 					{/each}
 				</ol>
@@ -154,8 +155,9 @@
 				href="#contact"
 				data-umami-event="contact_open"
 				data-umami-event-placement="document_analysis_topic_toc"
-				>{content.contact}<span aria-hidden="true">↗</span></a
 			>
+				{content.contact}<span aria-hidden="true">↗</span>
+			</a>
 		</aside>
 		<div class="ce-detail-content">
 			<p class="ce-context">{content.evidenceNote}</p>
@@ -178,9 +180,9 @@
 						<h3>{copy.limit}</h3>
 						<p>{section.limit}</p>
 					</div>
-					<a class="ce-return-to-contents" href="#sommaire"
-						>{content.backToContents}<span aria-hidden="true">↑</span></a
-					>
+					<a class="ce-return-to-contents" href="#sommaire">
+						{content.backToContents}<span aria-hidden="true">↑</span>
+					</a>
 				</section>
 			{/each}
 		</div>
@@ -192,12 +194,12 @@
 		<h2>{content.relatedTitle}</h2>
 		<div class="ce-related-grid">
 			{#each content.guides.filter((item) => item.slug !== guide.slug) as item (item.slug)}
-				<a href={`${root}/${item.slug}`}
-					><span class="ce-eyebrow">{item.label}</span>
+				<a href={buildLocalizedPath(`/solutions/analyse-documentaire/${item.slug}`, data.locale)}>
+					<span class="ce-eyebrow">{item.label}</span>
 					<h3>{item.title}</h3>
 					<p>{item.summary}</p>
-					<span class="ce-link">{content.detailLink}<span aria-hidden="true">↗</span></span></a
-				>
+					<span class="ce-link">{content.detailLink}<span aria-hidden="true">↗</span></span>
+				</a>
 			{/each}
 		</div>
 	</div>

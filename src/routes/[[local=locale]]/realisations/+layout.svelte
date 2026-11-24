@@ -1,4 +1,5 @@
 <script lang="ts">
+	import '#lib/styles/realisations.css';
 	import { beforeNavigate, afterNavigate } from '$app/navigation';
 	import { browser } from '$app/env';
 	import { writable } from 'svelte/store';

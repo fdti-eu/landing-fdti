@@ -945,7 +945,7 @@
 		},
 		"CGU": {
 			"title": "Legal Notice and Terms of Use",
-			"content": "<div class=\"text-2xl lg:mx-72 mx-16 mt-14 text-grey1 font-semibold s-_nwK2CU3lMz9\">Site Publisher</div>\n<div class=\"text-sm lg:mx-72 mx-16 text-grey1 s-_nwK2CU3lMz9\">\n<p class=\"s-_nwK2CU3lMz9\">The website <strong>fdti.eu</strong> is published by <strong>FDTI Consulting</strong>, a French limited liability company (SARL) with share capital of €2,000, registered with the Toulouse Trade and Companies Register (RCS) under number 850 172 164.</p>\n<p class=\"s-_nwK2CU3lMz9\">Registered office: 8 place Roger Salengro, 31000 Toulouse.</p>\n<p class=\"s-_nwK2CU3lMz9\">Email: <a href=\"mailto:info@fdti.eu\" class=\"text-blue-700\">info@fdti.eu</a></p>\n</div>\n<div class=\"text-2xl lg:mx-72 mx-16 mt-5 text-grey1 font-semibold s-_nwK2CU3lMz9\">Intellectual Property</div>\n<div class=\"text-sm lg:mx-72 mx-16 text-grey1 s-_nwK2CU3lMz9\">\n<p class=\"s-_nwK2CU3lMz9\">All content (text, images, and logos) on this site is the exclusive property of FDTI Consulting. Any reproduction or use without prior authorization is prohibited.</p>\n</div>\n<div class=\"text-2xl lg:mx-72 mx-16 mt-5 text-grey1 font-semibold s-_nwK2CU3lMz9\">Personal Data</div>\n<div class=\"text-sm lg:mx-72 mx-16 text-grey1 s-_nwK2CU3lMz9\">\n<p class=\"s-_nwK2CU3lMz9\">Data voluntarily submitted through the contact journey is processed in accordance with our privacy policy.</p>\n</div>\n<div class=\"text-2xl lg:mx-72 mx-16 mt-5 text-grey1 font-semibold s-_nwK2CU3lMz9\">Liability</div>\n<div class=\"text-sm lg:mx-72 mx-16 text-grey1 mb-28 s-_nwK2CU3lMz9\">\n<p class=\"s-_nwK2CU3lMz9\">FDTI Consulting strives to provide accurate information on this site but cannot be held liable for any errors or omissions. You use the site entirely at your own risk.</p>\n</div>"
+			"content": "<div class=\"text-2xl lg:mx-72 mx-16 mt-14 text-grey font-semibold s-_nwK2CU3lMz9\">Site Publisher</div>\n<div class=\"text-sm lg:mx-72 mx-16 text-grey s-_nwK2CU3lMz9\">\n<p class=\"s-_nwK2CU3lMz9\">The website <strong>fdti.eu</strong> is published by <strong>FDTI Consulting</strong>, a French limited liability company (SARL) with share capital of €2,000, registered with the Toulouse Trade and Companies Register (RCS) under number 850 172 164.</p>\n<p class=\"s-_nwK2CU3lMz9\">Registered office: 8 place Roger Salengro, 31000 Toulouse.</p>\n<p class=\"s-_nwK2CU3lMz9\">Email: <a href=\"mailto:info@fdti.eu\" class=\"text-blue-700\">info@fdti.eu</a></p>\n</div>\n<div class=\"text-2xl lg:mx-72 mx-16 mt-5 text-grey font-semibold s-_nwK2CU3lMz9\">Intellectual Property</div>\n<div class=\"text-sm lg:mx-72 mx-16 text-grey s-_nwK2CU3lMz9\">\n<p class=\"s-_nwK2CU3lMz9\">All content (text, images, and logos) on this site is the exclusive property of FDTI Consulting. Any reproduction or use without prior authorization is prohibited.</p>\n</div>\n<div class=\"text-2xl lg:mx-72 mx-16 mt-5 text-grey font-semibold s-_nwK2CU3lMz9\">Personal Data</div>\n<div class=\"text-sm lg:mx-72 mx-16 text-grey s-_nwK2CU3lMz9\">\n<p class=\"s-_nwK2CU3lMz9\">Data voluntarily submitted through the contact journey is processed in accordance with our privacy policy.</p>\n</div>\n<div class=\"text-2xl lg:mx-72 mx-16 mt-5 text-grey font-semibold s-_nwK2CU3lMz9\">Liability</div>\n<div class=\"text-sm lg:mx-72 mx-16 text-grey mb-28 s-_nwK2CU3lMz9\">\n<p class=\"s-_nwK2CU3lMz9\">FDTI Consulting strives to provide accurate information on this site but cannot be held liable for any errors or omissions. You use the site entirely at your own risk.</p>\n</div>"
 		}
 	},
 	"GetPrivacyContent": {
@@ -965,7 +965,7 @@
 		},
 		"privacy": {
 			"title": "Privacy Policy",
-			"content": "<div class=\"text-2xl lg:mx-72 mx-16 mt-14 text-grey1 font-semibold\">Legal framework &ndash; compliance with the GDPR and French law</div>\n<div class=\"text-sm lg:mx-72 mx-16 text-grey1\">\n<p>FDTI Consulting processes personal data in accordance with Regulation (EU) 2016/679 of the European Parliament and of the Council of April 27, 2016, on the protection of natural persons with regard to the processing of personal data and on the free movement of such data (hereinafter the GDPR), and with French Law No. 78-17 of January 6, 1978, on information technology, data files, and civil liberties.</p>\n<br />\n<p>The General Data Protection Regulation took effect on May 25, 2018. Organizations that process data must ensure the highest possible level of data protection at all times and be able to demonstrate their compliance through documentation.</p>\n<br />\n<p>Given the nature of its work, FDTI Consulting may need to process personal data collected and processed by its clients. The following provisions define FDTI Consulting's internal processing rules and are intended to ensure that personal data is handled in accordance with the GDPR.</p>\n<br />\n<p>FDTI Consulting considers the protection of personal data fundamental to all its activities. It seeks to anonymize all data it processes as early as possible and works to prevent its disclosure outside the applicable legal frameworks.</p>\n</div>\n<div class=\"text-2xl lg:mx-72 mx-16 mt-5 text-grey1 font-semibold \">Governance</div>\n<div class=\"text-sm lg:mx-72 mx-16 text-grey1\">\n<p>Data processed by FDTI never leaves the European Union and is not subject to any jurisdiction outside the European Union.</p>\n<br />\n<p>Our hosting provider, OVH France, is based in France and hosts our services in France. It is therefore not subject to the CLOUD Act.</p>\n</div>\n<div class=\"text-2xl lg:mx-72 mx-16 mt-5 text-grey1 font-semibold\">Personal data processing</div>\n<div class=\"text-sm lg:mx-72 mx-16 text-grey1 mb-28\">\n<p>Except in specific cases, FDTI Consulting does not need personal data to perform its services. FDTI Consulting therefore asks its clients not to send it personal data. If FDTI Consulting receives personal data unexpectedly, it will delete the data immediately and notify the sender.</p>\n<br />\n<p>Some personal data may be useful for identification purposes. In such cases, FDTI Consulting will ask the data provider to pseudonymize the data and will assist with the pseudonymization process.</p>\n<p>If the sender lacks the technical or human resources to perform this pseudonymization in its own environment, FDTI Consulting will handle it. Only one person within FDTI Consulting will have access to the personal data for the purpose of pseudonymizing it and sharing only the pseudonymized data within FDTI Consulting.</p>\n<br />\n<p>All personal data used in our work is stored securely and processed in accordance with the consent provided by the data subjects. The data is permanently deleted once the studies and processing required for our projects have been completed.</p>\n</div>"
+			"content": "<div class=\"text-2xl lg:mx-72 mx-16 mt-14 text-grey font-semibold\">Legal framework &ndash; compliance with the GDPR and French law</div>\n<div class=\"text-sm lg:mx-72 mx-16 text-grey\">\n<p>FDTI Consulting processes personal data in accordance with Regulation (EU) 2016/679 of the European Parliament and of the Council of April 27, 2016, on the protection of natural persons with regard to the processing of personal data and on the free movement of such data (hereinafter the GDPR), and with French Law No. 78-17 of January 6, 1978, on information technology, data files, and civil liberties.</p>\n<br />\n<p>The General Data Protection Regulation took effect on May 25, 2018. Organizations that process data must ensure the highest possible level of data protection at all times and be able to demonstrate their compliance through documentation.</p>\n<br />\n<p>Given the nature of its work, FDTI Consulting may need to process personal data collected and processed by its clients. The following provisions define FDTI Consulting's internal processing rules and are intended to ensure that personal data is handled in accordance with the GDPR.</p>\n<br />\n<p>FDTI Consulting considers the protection of personal data fundamental to all its activities. It seeks to anonymize all data it processes as early as possible and works to prevent its disclosure outside the applicable legal frameworks.</p>\n</div>\n<div class=\"text-2xl lg:mx-72 mx-16 mt-5 text-grey font-semibold \">Governance</div>\n<div class=\"text-sm lg:mx-72 mx-16 text-grey\">\n<p>Data processed by FDTI never leaves the European Union and is not subject to any jurisdiction outside the European Union.</p>\n<br />\n<p>Our hosting provider, OVH France, is based in France and hosts our services in France. It is therefore not subject to the CLOUD Act.</p>\n</div>\n<div class=\"text-2xl lg:mx-72 mx-16 mt-5 text-grey font-semibold\">Personal data processing</div>\n<div class=\"text-sm lg:mx-72 mx-16 text-grey mb-28\">\n<p>Except in specific cases, FDTI Consulting does not need personal data to perform its services. FDTI Consulting therefore asks its clients not to send it personal data. If FDTI Consulting receives personal data unexpectedly, it will delete the data immediately and notify the sender.</p>\n<br />\n<p>Some personal data may be useful for identification purposes. In such cases, FDTI Consulting will ask the data provider to pseudonymize the data and will assist with the pseudonymization process.</p>\n<p>If the sender lacks the technical or human resources to perform this pseudonymization in its own environment, FDTI Consulting will handle it. Only one person within FDTI Consulting will have access to the personal data for the purpose of pseudonymizing it and sharing only the pseudonymized data within FDTI Consulting.</p>\n<br />\n<p>All personal data used in our work is stored securely and processed in accordance with the consent provided by the data subjects. The data is permanently deleted once the studies and processing required for our projects have been completed.</p>\n</div>"
 		}
 	},
 	"GetUseCasesContent": {
@@ -1011,14 +1011,7 @@
 						"value": "4"
 					}
 				],
-				"tags": [
-					"LLM",
-					"FastAPI",
-					"Keycloak",
-					"TypeScript",
-					"SvelteKit",
-					"PostgreSQL"
-				],
+				"tags": ["LLM", "FastAPI", "Keycloak", "TypeScript", "SvelteKit", "PostgreSQL"],
 				"details": [
 					"Annual accounts (DCA): check required documents and consistency between the accounts and confidentiality declaration.",
 					"Company register (RCS): compare INPI declarations with articles of association, deeds and supporting documents to flag discrepancies.",
@@ -1046,10 +1039,7 @@
 				"category": "Aftermarket & recycling",
 				"challenge": "An administrator receives and scans paperwork for end-of-life vehicles. For each document, she opens the vehicle record, starts an upload, selects the file on her computer, chooses the document type and confirms. Then she starts again. With hundreds of documents a day and thousands a month, scanning is only part of the work. Even when everything is already scanned, every file still needs to be matched and filed.",
 				"approach": "The software reads the VIN on each document in the batch, finds the vehicle record and suggests a category. The administrator reviews the document and confirms the match.",
-				"tags": [
-					"OCR",
-					"VIN"
-				],
+				"tags": ["OCR", "VIN"],
 				"details": [
 					"Upload a mixed batch. A French registration certificate, a CERFA purchase declaration and an SIV filing receipt can be uploaded together, even when they concern different vehicles.",
 					"Tell similar documents apart. The purchase declaration and the receipt confirming its registration relate to the same transaction but belong in different categories. The software suggests the appropriate type for each.",
@@ -1095,13 +1085,7 @@
 						"value": "3"
 					}
 				],
-				"tags": [
-					"AI",
-					"OCR",
-					"Python",
-					"FastAPI",
-					"SQLite"
-				],
+				"tags": ["AI", "OCR", "Python", "FastAPI", "SQLite"],
 				"details": [
 					"Structure PDF rulings and import lawyers’ spreadsheets whose columns, labels and versions change from one submission to the next.",
 					"Match people across rulings and lawyers’ files, reviewing name changes, namesakes and uncertain cases.",
@@ -1190,12 +1174,7 @@
 						"value": "18"
 					}
 				],
-				"tags": [
-					"SvelteKit",
-					"FastAPI",
-					"PostgreSQL",
-					"Keycloak"
-				],
+				"tags": ["SvelteKit", "FastAPI", "PostgreSQL", "Keycloak"],
 				"details": [
 					"The owner declares the battery. A partner’s purchase offer stays linked to it. The recipient can turn down the offer and record the reason.",
 					"Once the record is approved, the partner records collection from the owner or flags a failed pickup.",
@@ -1217,12 +1196,7 @@
 				"challenge": "To arrange collection, a recycler needs to know what the batteries contain, who will collect them and which site will receive them. Two consignments ready to leave may still need to travel separately.",
 				"approach": "The team reviews each declaration before adding it to a packing list. The tool checks that every battery in a batch has the same collector and receiving site. On arrival, staff can retrieve the declarations for the batch.",
 				"impact": "For each declaration, the recycler can identify the collection batch, check outstanding signatures and distinguish receipt from completed treatment.",
-				"tags": [
-					"SvelteKit",
-					"FastAPI",
-					"PostgreSQL",
-					"Trackdéchets"
-				],
+				"tags": ["SvelteKit", "FastAPI", "PostgreSQL", "Trackdéchets"],
 				"details": [
 					"The team identifies the declared battery’s type and composition to prepare for handling.",
 					"The collection planner builds the batch. A declaration for a different collector or receiving site goes on a separate list.",
@@ -1274,12 +1248,7 @@
 						"value": "Every morning"
 					}
 				],
-				"tags": [
-					"DuckDB",
-					"SvelteKit",
-					"PostgreSQL",
-					"FastAPI"
-				],
+				"tags": ["DuckDB", "SvelteKit", "PostgreSQL", "FastAPI"],
 				"details": [
 					"The operator selects a cabinet and retrieves the readings from its meter.",
 					"Comparing consumption before, during and after the scheduled lighting period helps distinguish a steady daytime load from a shift in switch-on time.",
@@ -1302,12 +1271,7 @@
 				"challenge": "An NGO needs to decide which environmental messages to prioritise by country and social network. Performance figures show which posts drew a response but not what they said.",
 				"approach": "Across 60,000 posts in eight languages, we linked each message to its subject, tone and viewpoints. The communications team can compare how different audiences respond to the same theme across networks.",
 				"impact": "The NGO adopted the framework internally to guide budget allocation across countries and social networks.",
-				"tags": [
-					"LLM",
-					"OpenAI",
-					"NLP",
-					"TypeScript"
-				],
+				"tags": ["LLM", "OpenAI", "NLP", "TypeScript"],
 				"details": [
 					"For each Facebook or Instagram post, the analysis identifies the theme and how the author approaches it.",
 					"The communications team compares these findings with the response to each post among different audiences.",
@@ -1344,14 +1308,7 @@
 				"challenge": "An electronics manufacturer receives feedback through several channels. To understand a recurring fault, teams need to bring together comments that describe it in different words.",
 				"approach": "We gathered feedback from more than 25 sources and grouped comments by theme. The customer insights team can start with a recurring issue and find the words customers actually used.",
 				"impact": "The customer insights team consults the analysis daily and shares it with the relevant teams.",
-				"tags": [
-					"GCP",
-					"Airflow",
-					"NLP",
-					"LLM",
-					"Tableau",
-					"HuggingFace"
-				],
+				"tags": ["GCP", "Airflow", "NLP", "LLM", "Tableau", "HuggingFace"],
 				"details": [
 					"A comment from a survey, customer service or a review site joins the other feedback.",
 					"The insights team finds comments on the same subject and reads their original wording.",
@@ -1404,13 +1361,7 @@
 						"value": "2"
 					}
 				],
-				"tags": [
-					"Snowflake",
-					"Azure",
-					"Kafka",
-					"ADF",
-					"Qlik"
-				],
+				"tags": ["Snowflake", "Azure", "Kafka", "ADF", "Qlik"],
 				"details": [
 					"A store records a sale. The new software sends the receipt and its item details.",
 					"Each sales line is linked to the store. Analysts can use receipt totals to track revenue and average transaction value by store.",

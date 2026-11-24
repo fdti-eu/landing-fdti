@@ -48,17 +48,17 @@
 		font-size: 1.1rem;
 		line-height: 1.7;
 		margin-bottom: 2.5rem;
-		color: #3d444a;
+		color: var(--color-text-body);
 	}
 	.option-list {
-		border-top: 2px solid #242a2e;
+		border-top: 2px solid var(--color-surface-deep);
 	}
 	.option-row {
 		display: grid;
 		grid-template-columns: 0.9fr 1fr 1fr;
 		gap: 2.5rem;
 		padding: 1.9rem 0;
-		border-bottom: 1px solid #c9cbc8;
+		border-bottom: 1px solid var(--color-line-primary);
 	}
 	.solution-options .option-row h3 {
 		font-size: 1.3rem;
@@ -72,11 +72,11 @@
 		letter-spacing: 0.09em;
 		text-transform: uppercase;
 		margin-bottom: 0.6rem;
-		color: #5d666d;
+		color: var(--color-text-option-label);
 	}
 	.option-row p {
 		line-height: 1.65;
-		color: #3d444a;
+		color: var(--color-text-body);
 	}
 	@media (max-width: 1000px) {
 		.option-row {

@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { onMount, onDestroy, tick } from 'svelte';
 	import { dev } from '$app/env';
+	import { resolve } from '$app/paths';
 	import {
 		createContactRequestId,
 		resolveContactEndpoint,
@@ -159,13 +160,13 @@
 						<rect x="8" y="8" width="11" height="11" rx="1"></rect><path d="M16 8V5H5v11h3"></path>
 					</svg>
 				</button>
-				<span class="copy-feedback" role="status"
-					>{copied
+				<span class="copy-feedback" role="status">
+					{copied
 						? 'Adresse copiée'
 						: copyError
 							? 'Copie indisponible : sélectionnez l’adresse ci-dessus.'
-							: 'Cliquer pour copier'}</span
-				>
+							: 'Cliquer pour copier'}
+				</span>
 			</div>
 		</div>
 		<div class="contact-form-panel">
@@ -187,8 +188,10 @@
 						onclick={() => {
 							submitted = false;
 							resetSubmission();
-						}}>Revenir au formulaire</button
+						}}
 					>
+						Revenir au formulaire
+					</button>
 				</div>
 			{:else}
 				<form method="post" action="/contact" onsubmit={submit} aria-busy={pending}>
@@ -205,9 +208,9 @@
 						maxlength="254"
 						placeholder="vous@entreprise.fr"
 					/>
-					<label for="closing-message" class="message-label"
-						>Votre message <span>(facultatif)</span></label
-					>
+					<label for="closing-message" class="message-label">
+						Votre message <span>(facultatif)</span>
+					</label>
 					<textarea
 						id="closing-message"
 						name="message"
@@ -216,8 +219,7 @@
 						disabled={!hydrated || pending}
 						rows="2"
 						maxlength="1000"
-						placeholder="Parlez-nous de votre projet…"
-					></textarea>
+						placeholder="Parlez-nous de votre projet…"></textarea>
 					<label class="newsletter-option" for="closing-newsletter">
 						<input
 							id="closing-newsletter"
@@ -230,22 +232,22 @@
 							}}
 							disabled={!hydrated || pending}
 						/>
-						<span
-							><strong>Recevoir la newsletter FDTI</strong><span class="newsletter-description"
-								>4 actualités IA et Tech. Un email par semaine.</span
-							></span
-						>
+						<span>
+							<strong>Recevoir la newsletter FDTI</strong><span class="newsletter-description">
+								4 actualités IA et Tech. Un email par semaine.
+							</span>
+						</span>
 					</label>
 					<div class="form-bottom">
 						<p class="privacy">
 							{newsletter
 								? 'Inscription immédiate. Désinscription à tout moment.'
 								: 'Vos coordonnées servent uniquement à vous répondre.'}
-							<a href="/confidentialite">Confidentialité</a>
+							<a href={resolve('confidentialite')}>Confidentialité</a>
 						</p>
-						<button type="submit" class="submit-button" disabled={!hydrated || pending}
-							>{submitLabel}<span aria-hidden="true">→</span></button
-						>
+						<button type="submit" class="submit-button" disabled={!hydrated || pending}>
+							{submitLabel}<span aria-hidden="true">→</span>
+						</button>
 					</div>
 					<div class="honeypot" aria-hidden="true">
 						<label for="closing-website">Website</label><input
@@ -259,12 +261,12 @@
 				</form>
 			{/if}
 		</div>
-		<noscript
-			><p>
+		<noscript>
+			<p>
 				Pour nous contacter, sélectionnez l’adresse info@fdti.eu et copiez-la dans votre messagerie.
 				L’inscription à la newsletter nécessite JavaScript.
-			</p></noscript
-		>
+			</p>
+		</noscript>
 	</div>
 </section>
 
@@ -277,7 +279,7 @@
 		clip-path: inset(50%);
 	}
 	.form-error {
-		color: #a21b1b;
+		color: var(--color-feedback-error);
 		font-size: 13px;
 		line-height: 1.6;
 		margin-top: 15px;
@@ -287,10 +289,10 @@
 		cursor: wait;
 	}
 	.contact-preview {
-		background: #f5f4ee;
-		color: #1d2024;
+		background: var(--color-ivory);
+		color: var(--color-dark-grey);
 		padding: 46px var(--design-gutter);
-		border-top: 1px solid #d5d6ce;
+		border-top: 1px solid var(--color-line-ivory);
 		scroll-margin-top: 100px;
 	}
 	.closing-shell {
@@ -314,14 +316,14 @@
 		font-size: 15px;
 		line-height: 1.65;
 		max-width: 340px;
-		color: #5c6264;
+		color: var(--color-text-muted);
 	}
 	.direct-contact {
 		margin-top: 37px;
 	}
 	.direct-contact > p {
 		font-size: 12px;
-		color: #656b6d;
+		color: var(--color-text-meta);
 		margin-bottom: 9px;
 	}
 	.copy-email {
@@ -346,7 +348,7 @@
 		min-height: 18px;
 		margin-top: 5px;
 		font-size: 11px;
-		color: #686e70;
+		color: var(--color-text-note);
 	}
 	form > label:not(.newsletter-option) {
 		display: block;
@@ -359,19 +361,19 @@
 	}
 	.message-label span {
 		font-weight: 400;
-		color: #747a7c;
+		color: var(--color-text-placeholder);
 	}
 	input[type='email'],
 	textarea {
 		width: 100%;
 		min-height: 46px;
-		border: 1px solid #a5aaa8;
+		border: 1px solid var(--color-text-disabled);
 		border-radius: 3px;
 		padding: 11px 13px;
 		font: inherit;
 		font-size: 16px;
-		background: white;
-		color: #1d2024;
+		background: var(--color-white);
+		color: var(--color-dark-grey);
 	}
 	textarea {
 		display: block;
@@ -390,7 +392,7 @@
 		height: 17px;
 		margin-top: 3px;
 		flex-shrink: 0;
-		accent-color: #1d2024;
+		accent-color: var(--color-dark-grey);
 	}
 	.newsletter-option strong {
 		display: block;
@@ -401,7 +403,7 @@
 		display: block;
 		margin-top: 3px;
 		font-size: 12px;
-		color: #63696b;
+		color: var(--color-text-helper);
 		line-height: 1.5;
 	}
 	.form-bottom {
@@ -415,7 +417,7 @@
 		max-width: 280px;
 		font-size: 11px;
 		line-height: 1.6;
-		color: #686e70;
+		color: var(--color-text-note);
 	}
 	.privacy a {
 		text-decoration: underline;
@@ -429,9 +431,9 @@
 		gap: 24px;
 		padding: 13px 18px;
 		min-height: 46px;
-		background: #1d2024;
-		color: white;
-		border: 1px solid #1d2024;
+		background: var(--color-dark-grey);
+		color: var(--color-white);
+		border: 1px solid var(--color-dark-grey);
 		border-radius: 3px;
 		font-size: 14px;
 		font-weight: 700;
@@ -439,12 +441,12 @@
 	}
 	.submit-button:hover {
 		background: var(--color-yellow);
-		color: #1d2024;
+		color: var(--color-dark-grey);
 		border-color: var(--color-yellow);
 	}
 	.preview-result {
 		padding: 24px;
-		background: white;
+		background: var(--color-white);
 		border-left: 3px solid var(--color-yellow);
 		overflow-wrap: anywhere;
 	}
@@ -460,7 +462,7 @@
 	}
 	.preview-result .preview-note {
 		font-size: 12px;
-		color: #63696b;
+		color: var(--color-text-helper);
 		margin-top: 20px;
 	}
 	.back-button {
@@ -473,7 +475,7 @@
 	input:focus-visible,
 	textarea:focus-visible,
 	a:focus-visible {
-		outline: 2px solid #1d2024;
+		outline: 2px solid var(--color-dark-grey);
 		outline-offset: 4px;
 	}
 	@media (max-width: 760px) {

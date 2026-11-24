@@ -13,7 +13,8 @@
 		},
 		en: {
 			title: 'Technologies',
-			subtitle: 'We use modern tools suited to every situation encountered when processing your data',
+			subtitle:
+				'We use modern tools suited to every situation encountered when processing your data',
 			documentation: 'Link to the documentation'
 		},
 		es: {

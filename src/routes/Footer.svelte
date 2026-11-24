@@ -41,7 +41,7 @@
 </script>
 
 <!-- footer -->
-<footer class="fdti-footer bg-darkGrey pt-10 pb-20 md:py-5">
+<footer class="fdti-footer bg-dark-grey pt-10 pb-20 md:py-5">
 	<div class="mx-auto px-3">
 		<div class="flex flex-col gap-8 md:flex-row justify-between items-center">
 			<div class="flex items-center gap-10 h-full">
@@ -51,18 +51,21 @@
 				<a
 					href={buildLocalizedPath('/offres-emploi', currentLocale)}
 					class="font-medium leading-none text-white hover:text-yellow transition-all ease-in-out duration-300"
-					>{copy.jobs}</a
 				>
+					{copy.jobs}
+				</a>
 				<a
 					href={buildLocalizedPath('/confidentialite', currentLocale)}
 					class="font-medium leading-none text-white hover:text-yellow transition-all ease-in-out duration-300"
-					>{copy.privacy}</a
 				>
+					{copy.privacy}
+				</a>
 				<a
 					href={buildLocalizedPath('/condition-utilisation', currentLocale)}
 					class="font-medium leading-none text-white hover:text-yellow transition-all ease-in-out duration-300 sm:pl-2"
-					>{copy.terms}</a
 				>
+					{copy.terms}
+				</a>
 				<LinkedinIcon ariaLabel={copy.linkedin} />
 			</div>
 		</div>

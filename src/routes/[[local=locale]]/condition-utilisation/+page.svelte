@@ -1,4 +1,5 @@
 <script lang="ts">
+	import '#lib/styles/legal.css';
 	import { fade } from 'svelte/transition';
 	import type { PageData } from './$types';
 	import PageSeo from '#lib/components/PageSeo.svelte';

@@ -15,10 +15,7 @@
 			<p class="ce-eyebrow">FDTI</p>
 			<p class="ce-contact-copy">{content.ctaText}</p>
 		</div>
-		<ContactLink
-			class="ce-button"
-			placement={eventPlacement}
-		>
+		<ContactLink class="ce-button" placement={eventPlacement}>
 			{content.ctaButton}<span aria-hidden="true">↗</span>
 		</ContactLink>
 	</div>

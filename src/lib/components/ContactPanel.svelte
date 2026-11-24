@@ -177,10 +177,15 @@
 						{copy.success}
 					</p>
 				{:else}
-					<form method="post" action="/contact" onsubmit={(event) => {
+					<form
+						method="post"
+						action="/contact"
+						onsubmit={(event) => {
 							event.preventDefault();
 							submit();
-						}} novalidate>
+						}}
+						novalidate
+					>
 						<label for="contact-value">{copy.contact_label}</label>
 						<input
 							bind:this={contactInput}
@@ -207,8 +212,7 @@
 							name="note"
 							rows="2"
 							maxlength="1000"
-							disabled={!hydrated || submissionState === 'pending'}
-						></textarea>
+							disabled={!hydrated || submissionState === 'pending'}></textarea>
 
 						<div class="contact-honeypot" aria-hidden="true">
 							<label for="contact-website">Website</label>
@@ -229,8 +233,9 @@
 							disabled={!hydrated || submissionState === 'pending'}
 							data-umami-event="contact_callback_submit"
 							data-umami-event-placement="contact_section"
-							>{submissionState === 'pending' ? copy.pending : copy.submit}</button
 						>
+							{submissionState === 'pending' ? copy.pending : copy.submit}
+						</button>
 
 						<div class="contact-status" aria-live="polite" aria-atomic="true">
 							{#if submissionState === 'error'}
@@ -265,9 +270,9 @@
 		scroll-margin-top: -24px;
 		/* Leave room for the footer when navigating to #contact. */
 		min-height: calc(100svh - 172px);
-		background: #f5f4ee;
+		background: var(--color-ivory);
 		padding: 0;
-		color: var(--color-dark-grey, #1d2024);
+		color: var(--color-dark-grey);
 		font-family: var(--font-quattrocento, 'Quattrocento Sans', sans-serif);
 	}
 
@@ -288,7 +293,7 @@
 		row-gap: 0.5rem;
 		align-items: end;
 		padding-bottom: 1.15rem;
-		border-bottom: 1px solid #c9c8c2;
+		border-bottom: 1px solid var(--color-line-ivory-strong);
 	}
 
 	.contact-eyebrow {
@@ -312,7 +317,7 @@
 	.contact-heading > p:last-child {
 		max-width: 40rem;
 		margin: 0;
-		color: #555;
+		color: var(--color-dark-grey-1);
 		font-size: 0.92rem;
 		line-height: 1.5;
 	}
@@ -336,7 +341,7 @@
 		border: 0;
 		background: transparent;
 		padding: 0;
-		color: var(--color-dark-grey, #1d2024);
+		color: var(--color-dark-grey);
 		text-align: left;
 	}
 
@@ -366,7 +371,7 @@
 	}
 
 	.contact-email-copy.copied svg {
-		stroke: #9a6700;
+		stroke: var(--color-feedback-warning);
 	}
 
 	form {
@@ -386,18 +391,18 @@
 	input,
 	textarea {
 		width: 100%;
-		border: 1px solid #8a8e91;
+		border: 1px solid var(--color-text-placeholder-light);
 		border-radius: 3px;
-		background: white;
+		background: var(--color-white);
 		padding: 0.65rem 0.75rem;
-		color: #1d2024;
+		color: var(--color-dark-grey);
 	}
 
 	input:focus-visible,
 	textarea:focus-visible {
-		border-color: var(--color-dark-grey, #1d2024);
+		border-color: var(--color-dark-grey);
 		outline: none;
-		box-shadow: 0 0 0 2px color-mix(in srgb, var(--color-dark-grey, #1d2024) 18%, transparent);
+		box-shadow: 0 0 0 2px color-mix(in srgb, var(--color-dark-grey) 18%, transparent);
 	}
 
 	textarea {
@@ -407,20 +412,20 @@
 	.contact-submit {
 		min-height: 2.75rem;
 		margin-top: 1rem;
-		border: 1px solid var(--color-dark-grey, #1d2024);
+		border: 1px solid var(--color-dark-grey);
 		border-radius: 3px;
-		background: var(--color-dark-grey, #1d2024);
+		background: var(--color-dark-grey);
 		padding: 0.6rem 0.9rem;
-		color: white;
+		color: var(--color-white);
 		font-weight: 700;
 		transition: 160ms ease;
 	}
 
 	.contact-submit:hover:not(:disabled),
 	.contact-submit:focus-visible {
-		border-color: var(--color-yellow, #f9d089);
-		background: var(--color-yellow, #f9d089);
-		color: var(--color-dark-grey, #1d2024);
+		border-color: var(--color-yellow);
+		background: var(--color-yellow);
+		color: var(--color-dark-grey);
 	}
 
 	.contact-submit:disabled {
@@ -431,7 +436,7 @@
 	.contact-email-copy:focus-visible,
 	.contact-submit:focus-visible,
 	a:focus-visible {
-		outline: 2px solid var(--color-dark-grey, #1d2024);
+		outline: 2px solid var(--color-dark-grey);
 		outline-offset: 3px;
 	}
 
@@ -441,13 +446,13 @@
 
 	.contact-error {
 		margin: 0.4rem 0 0;
-		color: #a21b1b;
+		color: var(--color-feedback-error);
 		font-size: 0.9rem;
 	}
 
 	.contact-success {
-		border-left: 4px solid var(--color-yellow, #f9d089);
-		background: white;
+		border-left: 4px solid var(--color-yellow);
+		background: var(--color-white);
 		padding: 1rem;
 		font-weight: 700;
 	}

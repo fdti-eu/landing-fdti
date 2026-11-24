@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { onMount, onDestroy } from 'svelte';
 	import { resolveNewsletterEndpoint } from '#lib/contact.ts';
+	import { resolve } from '$app/paths';
 	let token = '';
 	type SubmissionState = 'loading' | 'ready' | 'pending' | 'success' | 'invalid' | 'error';
 	let submissionState = $state<SubmissionState>('loading');
@@ -62,15 +63,15 @@
 		{:else if submissionState === 'success'}<p>Vous ne recevrez plus la newsletter FDTI.</p>
 		{:else}
 			<p>Votre adresse sera retirée de la liste de diffusion.</p>
-			<button type="button" onclick={submit} disabled={submissionState === 'pending'}
-				>{submissionState === 'pending' ? 'Un instant…' : 'Me désinscrire'}</button
-			>
+			<button type="button" onclick={submit} disabled={submissionState === 'pending'}>
+				{submissionState === 'pending' ? 'Un instant…' : 'Me désinscrire'}
+			</button>
 			{#if submissionState === 'error'}<p role="alert">
 					Le service est indisponible. Vous pouvez réessayer.
 				</p>{/if}
 		{/if}
 	</div>
-	<a href="/#contact">Retour au site FDTI</a>
+	<a href={resolve('/[[local=locale]]/(home)#contact', { local: '' })}>Retour au site FDTI</a>
 </section>
 
 <style>
@@ -95,13 +96,13 @@
 		font-size: 16px;
 		line-height: 1.7;
 		margin-top: 20px;
-		color: #5c6264;
+		color: var(--color-text-muted);
 	}
 	button {
 		margin-top: 26px;
 		padding: 15px 22px;
-		background: #1d2024;
-		color: white;
+		background: var(--color-dark-grey);
+		color: var(--color-white);
 		border-radius: 3px;
 		font-size: 15px;
 	}
@@ -117,7 +118,7 @@
 	}
 	button:focus-visible,
 	a:focus-visible {
-		outline: 2px solid #1d2024;
+		outline: 2px solid var(--color-dark-grey);
 		outline-offset: 4px;
 	}
 </style>

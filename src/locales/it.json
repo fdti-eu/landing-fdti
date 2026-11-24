@@ -953,7 +953,7 @@
 		},
 		"CGU": {
 			"title": "Note legali e condizioni generali d'uso",
-			"content": "<div class=\"text-2xl lg:mx-72 mx-16 mt-14 text-grey1 font-semibold s-_nwK2CU3lMz9\">Titolare del sito</div>\n<div class=\"text-sm lg:mx-72 mx-16 text-grey1 s-_nwK2CU3lMz9\">\n<p class=\"s-_nwK2CU3lMz9\">Il sito <strong>fdti.eu</strong> è pubblicato dalla società <strong>FDTI Consulting</strong>, SARL francese con capitale sociale di 2 000 €, iscritta al Registro del commercio e delle società (RCS) di Tolosa con il n. 850 172 164.</p>\n<p class=\"s-_nwK2CU3lMz9\">Sede legale: 8 place Roger Salengro, 31000 Toulouse.</p>\n<p class=\"s-_nwK2CU3lMz9\">E-mail: <a href=\"mailto:info@fdti.eu\" class=\"text-blue-700\">info@fdti.eu</a></p>\n</div>\n<div class=\"text-2xl lg:mx-72 mx-16 mt-5 text-grey1 font-semibold s-_nwK2CU3lMz9\">Proprietà intellettuale</div>\n<div class=\"text-sm lg:mx-72 mx-16 text-grey1 s-_nwK2CU3lMz9\">\n<p class=\"s-_nwK2CU3lMz9\">Tutti i contenuti (testi, immagini e loghi) presenti su questo sito sono di proprietà esclusiva di FDTI Consulting. È vietata qualsiasi riproduzione o utilizzo senza previa autorizzazione.</p>\n</div>\n<div class=\"text-2xl lg:mx-72 mx-16 mt-5 text-grey1 font-semibold s-_nwK2CU3lMz9\">Dati personali</div>\n<div class=\"text-sm lg:mx-72 mx-16 text-grey1 s-_nwK2CU3lMz9\">\n<p class=\"s-_nwK2CU3lMz9\">I dati forniti volontariamente tramite il percorso di contatto sono trattati in conformità con la nostra informativa sulla privacy.</p>\n</div>\n<div class=\"text-2xl lg:mx-72 mx-16 mt-5 text-grey1 font-semibold s-_nwK2CU3lMz9\">Responsabilità</div>\n<div class=\"text-sm lg:mx-72 mx-16 text-grey1 mb-28 s-_nwK2CU3lMz9\">\n<p class=\"s-_nwK2CU3lMz9\">FDTI Consulting si impegna a fornire informazioni accurate su questo sito, ma non può essere ritenuta responsabile di eventuali errori od omissioni. L'utilizzo del sito avviene sotto la vostra esclusiva responsabilità.</p>\n</div>"
+			"content": "<div class=\"text-2xl lg:mx-72 mx-16 mt-14 text-grey font-semibold s-_nwK2CU3lMz9\">Titolare del sito</div>\n<div class=\"text-sm lg:mx-72 mx-16 text-grey s-_nwK2CU3lMz9\">\n<p class=\"s-_nwK2CU3lMz9\">Il sito <strong>fdti.eu</strong> è pubblicato dalla società <strong>FDTI Consulting</strong>, SARL francese con capitale sociale di 2 000 €, iscritta al Registro del commercio e delle società (RCS) di Tolosa con il n. 850 172 164.</p>\n<p class=\"s-_nwK2CU3lMz9\">Sede legale: 8 place Roger Salengro, 31000 Toulouse.</p>\n<p class=\"s-_nwK2CU3lMz9\">E-mail: <a href=\"mailto:info@fdti.eu\" class=\"text-blue-700\">info@fdti.eu</a></p>\n</div>\n<div class=\"text-2xl lg:mx-72 mx-16 mt-5 text-grey font-semibold s-_nwK2CU3lMz9\">Proprietà intellettuale</div>\n<div class=\"text-sm lg:mx-72 mx-16 text-grey s-_nwK2CU3lMz9\">\n<p class=\"s-_nwK2CU3lMz9\">Tutti i contenuti (testi, immagini e loghi) presenti su questo sito sono di proprietà esclusiva di FDTI Consulting. È vietata qualsiasi riproduzione o utilizzo senza previa autorizzazione.</p>\n</div>\n<div class=\"text-2xl lg:mx-72 mx-16 mt-5 text-grey font-semibold s-_nwK2CU3lMz9\">Dati personali</div>\n<div class=\"text-sm lg:mx-72 mx-16 text-grey s-_nwK2CU3lMz9\">\n<p class=\"s-_nwK2CU3lMz9\">I dati forniti volontariamente tramite il percorso di contatto sono trattati in conformità con la nostra informativa sulla privacy.</p>\n</div>\n<div class=\"text-2xl lg:mx-72 mx-16 mt-5 text-grey font-semibold s-_nwK2CU3lMz9\">Responsabilità</div>\n<div class=\"text-sm lg:mx-72 mx-16 text-grey mb-28 s-_nwK2CU3lMz9\">\n<p class=\"s-_nwK2CU3lMz9\">FDTI Consulting si impegna a fornire informazioni accurate su questo sito, ma non può essere ritenuta responsabile di eventuali errori od omissioni. L'utilizzo del sito avviene sotto la vostra esclusiva responsabilità.</p>\n</div>"
 		}
 	},
 	"GetPrivacyContent": {
@@ -973,7 +973,7 @@
 		},
 		"privacy": {
 			"title": "Informativa sulla privacy",
-			"content": "<main class=\"flex-1  s-7IPF32Wcq3s8\">\n<div>\n<div class=\"text-2xl lg:mx-72 mx-16 mt-14 text-grey1 font-semibold\">Quadro giuridico &ndash; conformit&agrave; al GDPR e alla legge francese</div>\n<div class=\"text-sm lg:mx-72 mx-16 text-grey1\">\n<p>FDTI Consulting dichiara di effettuare trattamenti di dati personali conformemente al regolamento (UE) 2016/679 del Parlamento europeo e del Consiglio del 27 aprile 2016, relativo alla protezione delle persone fisiche con riguardo al trattamento dei dati personali e alla libera circolazione di tali dati (di seguito GDPR), e alla legge francese n. 78-17 del 6 gennaio 1978 relativa all'informatica, agli archivi e alle libert&agrave;.</p>\n<br />\n<p>Il 25 maggio 2018 &egrave; divenuto applicabile il Regolamento generale sulla protezione dei dati. Le imprese che trattano dati devono garantire in ogni momento una protezione ottimale dei dati ed essere in grado di dimostrarla documentando la propria conformit&agrave;.</p>\n<br />\n<p>In ragione della propria attivit&agrave;, FDTI Consulting pu&ograve; essere chiamata a trattare dati personali raccolti e trattati dai propri clienti. Le disposizioni seguenti mirano a definire le regole interne di trattamento di FDTI Consulting e a garantire che i dati personali siano trattati nel rispetto del GDPR.</p>\n<br />\n<p>In tutte le sue attivit&agrave;, FDTI Consulting considera fondamentale la protezione dei dati personali e si impegna ad anonimizzare quanto prima tutti i dati trattati e a impedirne la divulgazione al di fuori dei casi consentiti dalla normativa applicabile.</p>\n</div>\n<div class=\"text-2xl lg:mx-72 mx-16 mt-5 text-grey1 font-semibold \">Governance</div>\n<div class=\"text-sm lg:mx-72 mx-16 text-grey1\">\n<p>I dati trattati da FDTI non lasciano mai l'Unione europea e non sono soggetti ad alcuna giurisdizione esterna all'Unione europea.</p>\n<br />\n<p>Il nostro provider di hosting OVH France ha sede in Francia e ospita i nostri servizi in Francia. Di conseguenza, questi ultimi non sono soggetti al CLOUD Act.</p>\n</div>\n<div class=\"text-2xl lg:mx-72 mx-16 mt-5 text-grey1 font-semibold\">Processo di trattamento dei dati personali</div>\n<div class=\"text-sm lg:mx-72 mx-16 text-grey1 mb-28\">\n<p>Salvo casi particolari, FDTI Consulting non necessita di dati personali per svolgere i propri incarichi. FDTI Consulting chiede pertanto ai clienti di non inviarle dati personali. In caso di ricezione involontaria di dati personali, FDTI Consulting li distrugger&agrave; immediatamente e ne informer&agrave; il mittente.</p>\n<br />\n<p>Alcuni dati personali possono risultare utili a fini di identificazione. In tal caso, FDTI Consulting chieder&agrave; al fornitore dei dati di pseudonimizzarli e offrir&agrave; il proprio supporto per eseguire tale pseudonimizzazione.</p>\n<p>Qualora il mittente non disponga delle capacit&agrave; tecniche o delle risorse umane necessarie per eseguire la pseudonimizzazione nel proprio ambiente, FDTI Consulting se ne far&agrave; carico. Una sola persona all'interno di FDTI Consulting avr&agrave; quindi accesso a tali dati personali, al fine di pseudonimizzarli e rendere disponibili i dati pseudonimizzati all'interno di FDTI Consulting.</p>\n<br />\n<p>Tutti i dati personali utilizzati nell'ambito del nostro lavoro sono pertanto conservati in uno spazio sicuro e nel rispetto del consenso prestato dagli interessati. Tutti questi dati vengono poi cancellati definitivamente al termine degli studi e dei trattamenti necessari allo svolgimento dei nostri diversi progetti.</p>\n</div>\n</div>\n</main>"
+			"content": "<main class=\"flex-1  s-7IPF32Wcq3s8\">\n<div>\n<div class=\"text-2xl lg:mx-72 mx-16 mt-14 text-grey font-semibold\">Quadro giuridico &ndash; conformit&agrave; al GDPR e alla legge francese</div>\n<div class=\"text-sm lg:mx-72 mx-16 text-grey\">\n<p>FDTI Consulting dichiara di effettuare trattamenti di dati personali conformemente al regolamento (UE) 2016/679 del Parlamento europeo e del Consiglio del 27 aprile 2016, relativo alla protezione delle persone fisiche con riguardo al trattamento dei dati personali e alla libera circolazione di tali dati (di seguito GDPR), e alla legge francese n. 78-17 del 6 gennaio 1978 relativa all'informatica, agli archivi e alle libert&agrave;.</p>\n<br />\n<p>Il 25 maggio 2018 &egrave; divenuto applicabile il Regolamento generale sulla protezione dei dati. Le imprese che trattano dati devono garantire in ogni momento una protezione ottimale dei dati ed essere in grado di dimostrarla documentando la propria conformit&agrave;.</p>\n<br />\n<p>In ragione della propria attivit&agrave;, FDTI Consulting pu&ograve; essere chiamata a trattare dati personali raccolti e trattati dai propri clienti. Le disposizioni seguenti mirano a definire le regole interne di trattamento di FDTI Consulting e a garantire che i dati personali siano trattati nel rispetto del GDPR.</p>\n<br />\n<p>In tutte le sue attivit&agrave;, FDTI Consulting considera fondamentale la protezione dei dati personali e si impegna ad anonimizzare quanto prima tutti i dati trattati e a impedirne la divulgazione al di fuori dei casi consentiti dalla normativa applicabile.</p>\n</div>\n<div class=\"text-2xl lg:mx-72 mx-16 mt-5 text-grey font-semibold \">Governance</div>\n<div class=\"text-sm lg:mx-72 mx-16 text-grey\">\n<p>I dati trattati da FDTI non lasciano mai l'Unione europea e non sono soggetti ad alcuna giurisdizione esterna all'Unione europea.</p>\n<br />\n<p>Il nostro provider di hosting OVH France ha sede in Francia e ospita i nostri servizi in Francia. Di conseguenza, questi ultimi non sono soggetti al CLOUD Act.</p>\n</div>\n<div class=\"text-2xl lg:mx-72 mx-16 mt-5 text-grey font-semibold\">Processo di trattamento dei dati personali</div>\n<div class=\"text-sm lg:mx-72 mx-16 text-grey mb-28\">\n<p>Salvo casi particolari, FDTI Consulting non necessita di dati personali per svolgere i propri incarichi. FDTI Consulting chiede pertanto ai clienti di non inviarle dati personali. In caso di ricezione involontaria di dati personali, FDTI Consulting li distrugger&agrave; immediatamente e ne informer&agrave; il mittente.</p>\n<br />\n<p>Alcuni dati personali possono risultare utili a fini di identificazione. In tal caso, FDTI Consulting chieder&agrave; al fornitore dei dati di pseudonimizzarli e offrir&agrave; il proprio supporto per eseguire tale pseudonimizzazione.</p>\n<p>Qualora il mittente non disponga delle capacit&agrave; tecniche o delle risorse umane necessarie per eseguire la pseudonimizzazione nel proprio ambiente, FDTI Consulting se ne far&agrave; carico. Una sola persona all'interno di FDTI Consulting avr&agrave; quindi accesso a tali dati personali, al fine di pseudonimizzarli e rendere disponibili i dati pseudonimizzati all'interno di FDTI Consulting.</p>\n<br />\n<p>Tutti i dati personali utilizzati nell'ambito del nostro lavoro sono pertanto conservati in uno spazio sicuro e nel rispetto del consenso prestato dagli interessati. Tutti questi dati vengono poi cancellati definitivamente al termine degli studi e dei trattamenti necessari allo svolgimento dei nostri diversi progetti.</p>\n</div>\n</div>\n</main>"
 		}
 	},
 	"GetUseCasesContent": {
@@ -1019,14 +1019,7 @@
 						"value": "4"
 					}
 				],
-				"tags": [
-					"LLM",
-					"FastAPI",
-					"Keycloak",
-					"TypeScript",
-					"SvelteKit",
-					"PostgreSQL"
-				],
+				"tags": ["LLM", "FastAPI", "Keycloak", "TypeScript", "SvelteKit", "PostgreSQL"],
 				"details": [
 					"Bilanci annuali (DCA): verificare i documenti richiesti e la coerenza tra i conti depositati e la dichiarazione di riservatezza.",
 					"Registro delle imprese (RCS): confrontare le dichiarazioni INPI con statuti, atti e giustificativi per evidenziare le discrepanze.",
@@ -1054,10 +1047,7 @@
 				"category": "Aftermarket e riciclo",
 				"challenge": "Un’addetta amministrativa riceve e scansiona i documenti dei veicoli fuori uso. Per ciascun documento apre la scheda del veicolo, avvia il caricamento, seleziona il file sul computer, sceglie il tipo di documento e conferma. Poi ricomincia. Con centinaia di documenti al giorno e migliaia al mese, non è solo la scansione a richiedere tempo: anche quando i file sono già digitalizzati, occorre cercare il fascicolo e classificare ogni documento.",
 				"approach": "Il software legge il numero di telaio su ogni documento del lotto, cerca il fascicolo del veicolo e propone una categoria. L’addetta verifica il documento e conferma l’abbinamento.",
-				"tags": [
-					"OCR",
-					"VIN"
-				],
+				"tags": ["OCR", "VIN"],
 				"details": [
 					"Caricare il lotto. Una carta di circolazione francese, un modulo CERFA di dichiarazione d’acquisto e una ricevuta SIV possono essere caricati insieme, anche se riguardano veicoli diversi.",
 					"Distinguere documenti simili. La dichiarazione d’acquisto e la ricevuta che ne attesta la registrazione riguardano la stessa pratica, ma si archiviano sotto tipi diversi. Il software propone la categoria appropriata per ciascun documento.",
@@ -1103,13 +1093,7 @@
 						"value": "3"
 					}
 				],
-				"tags": [
-					"IA",
-					"OCR",
-					"Python",
-					"FastAPI",
-					"SQLite"
-				],
+				"tags": ["IA", "OCR", "Python", "FastAPI", "SQLite"],
 				"details": [
 					"Strutturare decisioni PDF e importare fogli di calcolo degli avvocati le cui colonne, intestazioni e versioni cambiano tra gli invii.",
 					"Collegare le persone tra decisioni e file degli avvocati, verificando omonimie, cambi di cognome e casi incerti.",
@@ -1198,12 +1182,7 @@
 						"value": "18"
 					}
 				],
-				"tags": [
-					"SvelteKit",
-					"FastAPI",
-					"PostgreSQL",
-					"Keycloak"
-				],
+				"tags": ["SvelteKit", "FastAPI", "PostgreSQL", "Keycloak"],
 				"details": [
 					"Il proprietario dichiara la batteria. Se un partner propone un prezzo di acquisto, l’offerta resta associata a quella batteria. Chi la riceve può rifiutarla e indicare il motivo.",
 					"Una volta convalidata la pratica, l’operatore registra il ritiro presso il proprietario. Se il ritiro non va a buon fine, può annotare il problema nella pratica.",
@@ -1225,12 +1204,7 @@
 				"challenge": "Per organizzare un ritiro, il riciclatore deve conoscere il tipo di batterie, chi le ritirerà e l’impianto che le riceverà. Due partite pronte a partire non possono necessariamente viaggiare insieme.",
 				"approach": "Il personale esamina ogni dichiarazione prima di inserirla in una distinta di carico. Lo strumento verifica che le batterie del lotto abbiano lo stesso incaricato del ritiro e la stessa destinazione. All’arrivo il personale ritrova le dichiarazioni associate al lotto.",
 				"impact": "Per ogni dichiarazione il riciclatore può risalire al lotto, verificare le firme mancanti e distinguere una batteria ricevuta da una già trattata.",
-				"tags": [
-					"SvelteKit",
-					"FastAPI",
-					"PostgreSQL",
-					"Trackdéchets"
-				],
+				"tags": ["SvelteKit", "FastAPI", "PostgreSQL", "Trackdéchets"],
 				"details": [
 					"Il personale identifica il tipo e la composizione della batteria dichiarata per prepararne la presa in carico.",
 					"Chi prepara il ritiro compone il lotto. Se una dichiarazione prevede un incaricato o una destinazione diversi, la inserisce in un’altra distinta.",
@@ -1282,12 +1256,7 @@
 						"value": "Ogni mattina"
 					}
 				],
-				"tags": [
-					"DuckDB",
-					"SvelteKit",
-					"PostgreSQL",
-					"FastAPI"
-				],
+				"tags": ["DuckDB", "SvelteKit", "PostgreSQL", "FastAPI"],
 				"details": [
 					"Il gestore seleziona un quadro e consulta le misure del relativo contatore.",
 					"Confronta i consumi prima, durante e dopo la fascia di accensione. Può così distinguere un assorbimento presente tutto il giorno da uno scarto nell’orario di accensione.",
@@ -1310,12 +1279,7 @@
 				"challenge": "Una ONG deve decidere quali messaggi ambientali privilegiare per paese e social network. I dati sulle prestazioni indicano quali post hanno suscitato reazioni, ma non di cosa parlavano.",
 				"approach": "Su 60.000 post in otto lingue abbiamo identificato per ogni messaggio il tema, il tono e i punti di vista espressi. Il team comunicazione può confrontare come viene accolto lo stesso tema a seconda del pubblico e del canale.",
 				"impact": "La ONG ha adottato internamente la griglia di analisi per orientare la ripartizione del budget tra paesi e canali social.",
-				"tags": [
-					"LLM",
-					"OpenAI",
-					"NLP",
-					"TypeScript"
-				],
+				"tags": ["LLM", "OpenAI", "NLP", "TypeScript"],
 				"details": [
 					"Per ogni post su Facebook o Instagram, l’analisi individua il tema e il modo in cui viene affrontato.",
 					"Il team comunicazione confronta questi elementi con le reazioni osservate nei diversi segmenti di pubblico.",
@@ -1352,14 +1316,7 @@
 				"challenge": "Un produttore di elettronica riceve opinioni attraverso più canali. Per capire un difetto ricorrente i team devono poter accostare commenti che lo descrivono con parole diverse.",
 				"approach": "Abbiamo riunito le opinioni di oltre 25 fonti e raggruppato i commenti per tema. Chi studia le esperienze dei clienti può partire da un problema ricorrente e ritrovare le parole usate dai clienti stessi.",
 				"impact": "Il team di ricerca consulta le analisi ogni giorno e le condivide con i reparti interessati.",
-				"tags": [
-					"GCP",
-					"Airflow",
-					"NLP",
-					"LLM",
-					"Tableau",
-					"HuggingFace"
-				],
+				"tags": ["GCP", "Airflow", "NLP", "LLM", "Tableau", "HuggingFace"],
 				"details": [
 					"Un commento proveniente da un sondaggio, dall’assistenza clienti o da un sito di recensioni confluisce insieme agli altri riscontri.",
 					"Il team di ricerca ritrova i commenti sullo stesso tema e consulta le formulazioni originali.",
@@ -1412,13 +1369,7 @@
 						"value": "2"
 					}
 				],
-				"tags": [
-					"Snowflake",
-					"Azure",
-					"Kafka",
-					"ADF",
-					"Qlik"
-				],
+				"tags": ["Snowflake", "Azure", "Kafka", "ADF", "Qlik"],
 				"details": [
 					"Un negozio registra una vendita. Il nuovo software trasmette lo scontrino con il dettaglio degli articoli.",
 					"Le righe di vendita sono associate al negozio. L’analista può usare gli importi degli scontrini per seguire il fatturato e il valore medio dello scontrino per punto vendita.",

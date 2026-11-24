@@ -24,8 +24,7 @@
 		</div>
 	</header>
 	<section class="editorial-section editorial-shell">
-		{#each [[nav.circular, copy.circularIntro, 'economie-circulaire'], [copy.justice, copy.justiceIntro, 'justice']] as [name, intro, slug] (slug)}<article
-			>
+		{#each [[nav.circular, copy.circularIntro, 'economie-circulaire'], [copy.justice, copy.justiceIntro, 'justice']] as [name, intro, slug] (slug)}<article>
 				<h2><a href={buildLocalizedPath(`/filieres/${slug}`, data.locale)}>{name}</a></h2>
 				<p>{intro}</p>
 			</article>{/each}
@@ -34,7 +33,7 @@
 
 <style>
 	article {
-		border-top: 1px solid #ccc;
+		border-top: 1px solid var(--color-line-neutral);
 		padding: 1.5rem 0;
 	}
 	h2 {

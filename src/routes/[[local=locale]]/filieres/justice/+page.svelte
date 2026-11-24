@@ -27,20 +27,20 @@
 	<section class="editorial-section editorial-shell">
 		{#each data.projects as project (project.slug)}<article>
 				<h2>
-					<a href={buildLocalizedPath(`/realisations/${project.slug}`, data.locale)}
-						>{project.title}</a
-					>
+					<a href={buildLocalizedPath(`/realisations/${project.slug}`, data.locale)}>
+						{project.title}
+					</a>
 				</h2>
 				<p>{project.challenge}</p>
-			</article>{/each}<a href={buildLocalizedPath('/solutions/analyse-documentaire', data.locale)}
-			>{nav.documents} →</a
-		>
+			</article>{/each}<a href={buildLocalizedPath('/solutions/analyse-documentaire', data.locale)}>
+			{nav.documents} →
+		</a>
 	</section>
 </div>
 
 <style>
 	article {
-		border-top: 1px solid #ccc;
+		border-top: 1px solid var(--color-line-neutral);
 		padding: 1.5rem 0;
 	}
 	h2 {

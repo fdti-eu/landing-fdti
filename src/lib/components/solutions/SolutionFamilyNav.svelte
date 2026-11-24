@@ -22,9 +22,9 @@
 	<ul>
 		{#each others as id (id)}
 			<li>
-				<a href={buildLocalizedPath(solutionHref(id, locale), locale)}
-					>{solutionLabels[locale][id]} <span aria-hidden="true">→</span></a
-				>
+				<a href={buildLocalizedPath(solutionHref(id, locale), locale)}>
+					{solutionLabels[locale][id]} <span aria-hidden="true">→</span>
+				</a>
 			</li>
 		{/each}
 	</ul>
@@ -52,7 +52,7 @@
 		justify-content: space-between;
 		gap: 1rem;
 		padding: 1rem 0;
-		border-bottom: 1px solid #cccfcf;
+		border-bottom: 1px solid var(--color-line-cool);
 		font-weight: 600;
 		font-size: 0.95rem;
 	}
@@ -61,7 +61,7 @@
 		text-underline-offset: 4px;
 	}
 	a:focus-visible {
-		outline: 2px solid #9a6405;
+		outline: 2px solid var(--color-accent-text);
 		outline-offset: 5px;
 	}
 	@media (max-width: 1000px) {

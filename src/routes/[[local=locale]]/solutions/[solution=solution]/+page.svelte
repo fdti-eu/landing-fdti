@@ -27,9 +27,9 @@
 <div class="editorial-page solution-page">
 	<header class="editorial-hero">
 		<div class="editorial-shell">
-			<a class="solution-back" href={buildLocalizedPath('/solutions', data.locale)}
-				>← {content.back}</a
-			>
+			<a class="solution-back" href={buildLocalizedPath('/solutions', data.locale)}>
+				← {content.back}
+			</a>
 			<p class="editorial-kicker">{labels[data.id]}</p>
 			<h1>{page.title}</h1>
 			<p>{page.lead}</p>
@@ -103,9 +103,9 @@
 				{#each proofs as proof (proof.projectId)}
 					<li>
 						<p>{proof.text}</p>
-						<a href={buildLocalizedPath(`/realisations/${proof.project.slug}`, data.locale)}
-							>{proof.project.title} <span aria-hidden="true">↗</span></a
-						>
+						<a href={buildLocalizedPath(`/realisations/${proof.project.slug}`, data.locale)}>
+							{proof.project.title} <span aria-hidden="true">↗</span>
+						</a>
 					</li>
 				{/each}
 			</ul>
@@ -124,8 +124,9 @@
 				href="#contact"
 				data-umami-event="contact_open"
 				data-umami-event-placement={`solution_${data.id}`}
-				>{navigation.contact} <span aria-hidden="true">↗</span></a
 			>
+				{navigation.contact} <span aria-hidden="true">↗</span>
+			</a>
 		</div>
 	</section>
 </div>
@@ -148,16 +149,16 @@
 		font-size: 1.1rem;
 		line-height: 1.7;
 		margin: -0.5rem 0 2.5rem;
-		color: #3d444a;
+		color: var(--color-text-body);
 	}
 	.method-steps {
 		list-style: decimal-leading-zero;
 		padding-left: 2rem;
-		border-bottom: 1px solid #bbb8b2;
+		border-bottom: 1px solid var(--color-line-warm-strong);
 	}
 	.method-steps li {
 		padding: 1.5rem 0 1.5rem 1rem;
-		border-top: 1px solid #bbb8b2;
+		border-top: 1px solid var(--color-line-warm-strong);
 	}
 	.method-steps h3 {
 		font-size: 1.25rem;
@@ -167,14 +168,14 @@
 	.method-steps p {
 		max-width: 75ch;
 		line-height: 1.7;
-		color: #3d444a;
+		color: var(--color-text-body);
 	}
 	.method-note {
 		max-width: 85ch;
 		margin-top: 2rem;
 		font-size: 0.95rem;
 		line-height: 1.7;
-		color: #3d444a;
+		color: var(--color-text-body);
 	}
 	.delivery {
 		display: grid;
@@ -191,10 +192,10 @@
 	}
 	.proofs li {
 		padding: 1.3rem 0;
-		border-top: 1px solid #d8ddde;
+		border-top: 1px solid var(--color-line-cool-soft);
 	}
 	.proofs li:last-child {
-		border-bottom: 1px solid #d8ddde;
+		border-bottom: 1px solid var(--color-line-cool-soft);
 	}
 	.proofs p {
 		line-height: 1.65;
@@ -210,10 +211,10 @@
 		margin-top: 1.2rem;
 		font-size: 0.9rem;
 		line-height: 1.6;
-		color: #53616a;
+		color: var(--color-text-slate-muted);
 	}
 	a:focus-visible {
-		outline: 2px solid #9a6405;
+		outline: 2px solid var(--color-accent-text);
 		outline-offset: 5px;
 	}
 	.editorial-hero a:focus-visible {

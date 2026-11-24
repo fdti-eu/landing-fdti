@@ -38,6 +38,8 @@
 
 <script lang="ts">
 	import ContactLink from '#lib/components/ContactLink.svelte';
+	import { resolve } from '$app/paths';
+	import type { PathnameWithSearchOrHash } from '$app/types';
 	import CircularContact from './CircularContact.svelte';
 	import type { Snippet } from 'svelte';
 
@@ -61,11 +63,9 @@
 		<p class="ce-positioning">{content.positioning}</p>
 		<div class="ce-hero-actions">
 			<a class="ce-button" href="#flux">{content.explore}<span aria-hidden="true">↓</span></a>
-			<ContactLink
-				class="ce-link"
-				placement={`${eventPrefix}_hero`}
-				>{content.contact}<span aria-hidden="true">↗</span></ContactLink
-			>
+			<ContactLink class="ce-link" placement={`${eventPrefix}_hero`}>
+				{content.contact}<span aria-hidden="true">↗</span>
+			</ContactLink>
 		</div>
 	</div>
 </header>
@@ -76,12 +76,17 @@
 		<p>{content.dossiersIntro}</p>
 		<div class="ce-related-grid">
 			{#each content.dossiers as dossier, index (dossier.href)}
-				<a class="ce-clickable-card" href={dossier.href} aria-labelledby={`guide-${index}`}
-					><span
+				<a
+					class="ce-clickable-card"
+					href={resolve(dossier.href.slice(1) as PathnameWithSearchOrHash)}
+					aria-labelledby={`guide-${index}`}
+				>
+					<span
 						class="ce-eyebrow"
 						style={`view-transition-name: ${dossierTransitionPrefix}-${dossier.transitionIndex ?? index}-label;`}
-						>{dossier.label}</span
 					>
+						{dossier.label}
+					</span>
 					<h3
 						id={`guide-${index}`}
 						style={`view-transition-name: ${dossierTransitionPrefix}-${dossier.transitionIndex ?? index}-title;`}
@@ -89,8 +94,8 @@
 						{dossier.title}
 					</h3>
 					<p>{dossier.summary}</p>
-					<span class="ce-link">{content.detailLink}<span aria-hidden="true">↗</span></span></a
-				>
+					<span class="ce-link">{content.detailLink}<span aria-hidden="true">↗</span></span>
+				</a>
 			{/each}
 		</div>
 	</div>
@@ -118,12 +123,16 @@
 		<h2 class="ce-eyebrow ce-section-label">{content.proofLabel}</h2>
 		<div class="ce-proof-grid">
 			{#each content.proofs as proof, index (proof.href)}
-				<a class="ce-clickable-card" href={proof.href} aria-labelledby={`proof-${index}`}
-					><p class="ce-eyebrow">{proof.label}</p>
+				<a
+					class="ce-clickable-card"
+					href={resolve(proof.href.slice(1) as PathnameWithSearchOrHash)}
+					aria-labelledby={`proof-${index}`}
+				>
+					<p class="ce-eyebrow">{proof.label}</p>
 					<h3 id={`proof-${index}`}>{proof.title}</h3>
 					<p>{proof.text}</p>
-					<span class="ce-link">{proof.link}<span aria-hidden="true">↗</span></span></a
-				>
+					<span class="ce-link">{proof.link}<span aria-hidden="true">↗</span></span>
+				</a>
 			{/each}
 		</div>
 		<p class="ce-proof-note">{content.proofNote}</p>
@@ -137,7 +146,10 @@
 			<p>{content.resources.intro}</p>
 			<div class="ce-related-grid">
 				{#each content.resources.items as resource (resource.href)}
-					<a class="ce-clickable-card" href={resource.href}>
+					<a
+						class="ce-clickable-card"
+						href={resolve(resource.href.slice(1) as PathnameWithSearchOrHash)}
+					>
 						<span class="ce-eyebrow">{resource.label}</span>
 						<h3>{resource.title}</h3>
 						<p>{resource.summary}</p>

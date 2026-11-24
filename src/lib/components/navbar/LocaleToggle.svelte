@@ -63,7 +63,6 @@
 	}
 </script>
 
-
 <div class="relative w-fit {className}">
 	<button
 		aria-label={copy.toggle}
@@ -91,7 +90,7 @@
 			class="absolute top-full right-0 mt-2 p-2 gap-1 bg-white rounded-lg shadow-xl min-w-[120px] z-50"
 		>
 			{#each FLAGS as { code } (code)}
-				<li class="border-b border-darkGrey/10 last:border-none">
+				<li class="border-b border-dark-grey/10 last:border-none">
 					<button
 						value={code}
 						aria-label={copy.languages[code]}
@@ -100,9 +99,9 @@
 					>
 						<Flag
 							local={code}
-							class="w-8 h-5 shrink-0 overflow-hidden rounded-[2px] border border-darkGrey/15"
+							class="w-8 h-5 shrink-0 overflow-hidden rounded-[2px] border border-dark-grey/15"
 						/>
-						<span class="font-medium text-darkGrey text-sm">{copy.languages[code]}</span>
+						<span class="font-medium text-dark-grey text-sm">{copy.languages[code]}</span>
 					</button>
 				</li>
 			{/each}

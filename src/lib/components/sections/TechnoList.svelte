@@ -35,8 +35,8 @@
 <div class="tech-card" class:expanded={isOpen}>
 	<h3>
 		<button class="tech-toggle" onclick={onToggle} aria-expanded={isOpen} aria-controls={panelId}>
-			<span class="tech-icon"
-				>{#if iconLink}<img
+			<span class="tech-icon">
+				{#if iconLink}<img
 						src={iconLink}
 						width="64"
 						height="64"
@@ -44,8 +44,8 @@
 						{title}
 						loading="lazy"
 						decoding="async"
-					/>{/if}</span
-			>
+					/>{/if}
+			</span>
 			<span>{title}</span>
 			<svg
 				class="tech-plus"
@@ -54,8 +54,10 @@
 				height="24"
 				fill="none"
 				stroke="currentColor"
-				aria-hidden="true"><path d="M12 4v16M4 12h16" /></svg
+				aria-hidden="true"
 			>
+				<path d="M12 4v16M4 12h16" />
+			</svg>
 		</button>
 	</h3>
 	<p class="tech-description">{description}</p>

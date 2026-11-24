@@ -197,7 +197,7 @@
 	<script async src="https://tally.so/widgets/embed.js"></script>
 </PageSeo>
 
-<section class="job-detail-hero bg-darkGrey text-white pt-28 pb-16 md:pt-36 md:pb-24 print:hidden">
+<section class="job-detail-hero bg-dark-grey text-white pt-28 pb-16 md:pt-36 md:pb-24 print:hidden">
 	<div class="max-w-6xl mx-auto px-4 space-y-8">
 		<a
 			href={buildLocalizedPath('/offres-emploi', data.locale)}
@@ -209,7 +209,7 @@
 
 		<div class="max-w-4xl space-y-8">
 			<div class="flex flex-wrap gap-2" style={transitionName('meta')}>
-				<span class="rounded-full bg-yellow text-darkGrey px-4 py-1.5 text-sm font-bold">
+				<span class="rounded-full bg-yellow text-dark-grey px-4 py-1.5 text-sm font-bold">
 					{job.contractType}
 				</span>
 				<span class="rounded-full bg-white/10 text-white px-4 py-1.5 text-sm font-semibold">
@@ -244,14 +244,14 @@
 			<div class="flex flex-wrap gap-3">
 				<a
 					href="#candidature"
-					class="inline-flex items-center justify-center rounded-full bg-yellow text-darkGrey px-6 py-3 font-bold hover:bg-white transition-all"
+					class="inline-flex items-center justify-center rounded-full bg-yellow text-dark-grey px-6 py-3 font-bold hover:bg-white transition-all"
 				>
 					{copy.apply}
 				</a>
 				<button
 					type="button"
 					onclick={printJobOffer}
-					class="inline-flex cursor-pointer items-center justify-center gap-3 rounded-full border border-white/20 bg-white/10 text-white px-6 py-3 font-bold hover:bg-white hover:text-darkGrey transition-all"
+					class="inline-flex cursor-pointer items-center justify-center gap-3 rounded-full border border-white/20 bg-white/10 text-white px-6 py-3 font-bold hover:bg-white hover:text-dark-grey transition-all"
 				>
 					<svg
 						class="h-5 w-5"
@@ -282,7 +282,7 @@
 	<div class="max-w-4xl mx-auto px-4">
 		<div class="space-y-10">
 			<section class="rounded-3xl bg-white border border-slate-200 p-6 md:p-8 space-y-4">
-				<h2 class="text-2xl md:text-3xl font-bold text-darkGrey">{copy.introTitle}</h2>
+				<h2 class="text-2xl md:text-3xl font-bold text-dark-grey">{copy.introTitle}</h2>
 				{#each job.intro as paragraph, paragraphIndex (paragraphIndex)}
 					<p class="text-grey leading-relaxed">{paragraph}</p>
 				{/each}
@@ -290,7 +290,7 @@
 
 			{#each job.sections as section (section)}
 				<section class="rounded-3xl bg-white border border-slate-200 p-6 md:p-8 space-y-5">
-					<h2 class="text-2xl md:text-3xl font-bold text-darkGrey">{section.title}</h2>
+					<h2 class="text-2xl md:text-3xl font-bold text-dark-grey">{section.title}</h2>
 					<ul class="space-y-3 text-grey leading-relaxed">
 						{#each section.items as item, itemIndex (itemIndex)}
 							<li class="flex gap-3">
@@ -303,23 +303,23 @@
 			{/each}
 
 			<section class="rounded-3xl bg-white border border-slate-200 p-6 md:p-8 space-y-6">
-				<h2 class="text-2xl md:text-3xl font-bold text-darkGrey">
+				<h2 class="text-2xl md:text-3xl font-bold text-dark-grey">
 					{copy.skillsTitle}
 				</h2>
 				<div class="grid md:grid-cols-2 gap-6">
 					<div class="space-y-4">
-						<h3 class="text-xl font-bold text-darkGrey">{copy.requiredTitle}</h3>
+						<h3 class="text-xl font-bold text-dark-grey">{copy.requiredTitle}</h3>
 						<ul class="space-y-3 text-grey leading-relaxed">
 							{#each job.requiredSkills as skill, skillIndex (skillIndex)}
 								<li class="flex gap-3">
-									<span class="mt-2 h-2 w-2 shrink-0 rounded-full bg-darkGrey"></span>
+									<span class="mt-2 h-2 w-2 shrink-0 rounded-full bg-dark-grey"></span>
 									<span>{skill}</span>
 								</li>
 							{/each}
 						</ul>
 					</div>
 					<div class="space-y-4">
-						<h3 class="text-xl font-bold text-darkGrey">{copy.niceTitle}</h3>
+						<h3 class="text-xl font-bold text-dark-grey">{copy.niceTitle}</h3>
 						<ul class="space-y-3 text-grey leading-relaxed">
 							{#each job.niceToHaveSkills as skill, skillIndex (skillIndex)}
 								<li class="flex gap-3">
@@ -333,7 +333,7 @@
 			</section>
 
 			<section class="rounded-3xl bg-white border border-slate-200 p-6 md:p-8 space-y-5">
-				<h2 class="text-2xl md:text-3xl font-bold text-darkGrey">{copy.environmentTitle}</h2>
+				<h2 class="text-2xl md:text-3xl font-bold text-dark-grey">{copy.environmentTitle}</h2>
 				<p class="text-grey leading-relaxed">{job.environmentIntro}</p>
 				<div class="flex flex-wrap gap-2">
 					{#each job.environment as item, itemIndex (itemIndex)}
@@ -347,7 +347,7 @@
 			</section>
 
 			<section class="rounded-3xl bg-white border border-slate-200 p-6 md:p-8 space-y-5">
-				<h2 class="text-2xl md:text-3xl font-bold text-darkGrey">{copy.conditionsTitle}</h2>
+				<h2 class="text-2xl md:text-3xl font-bold text-dark-grey">{copy.conditionsTitle}</h2>
 				<ul class="grid sm:grid-cols-2 gap-3 text-grey leading-relaxed">
 					{#each job.conditions as condition, conditionIndex (conditionIndex)}
 						<li class="rounded-2xl bg-slate-50 border border-slate-100 p-4">{condition}</li>
@@ -356,17 +356,17 @@
 			</section>
 
 			<section class="rounded-3xl bg-white border border-slate-200 p-6 md:p-8 space-y-5">
-				<h2 class="text-2xl md:text-3xl font-bold text-darkGrey">{copy.processTitle}</h2>
+				<h2 class="text-2xl md:text-3xl font-bold text-dark-grey">{copy.processTitle}</h2>
 				<div class="space-y-5">
 					{#each job.process as step, index (step)}
 						<div class="flex gap-4">
 							<div
-								class="h-9 w-9 shrink-0 rounded-full bg-darkGrey text-white flex items-center justify-center font-bold"
+								class="h-9 w-9 shrink-0 rounded-full bg-dark-grey text-white flex items-center justify-center font-bold"
 							>
 								{index + 1}
 							</div>
 							<div class="space-y-2">
-								<h3 class="text-xl font-bold text-darkGrey">{step.title}</h3>
+								<h3 class="text-xl font-bold text-dark-grey">{step.title}</h3>
 								{#each step.items as item, itemIndex (itemIndex)}
 									<p class="text-grey leading-relaxed">{item}</p>
 								{/each}
@@ -384,7 +384,7 @@
 					<p class="uppercase tracking-[0.2em] text-grey text-xs font-semibold">
 						{copy.applicationEyebrow}
 					</p>
-					<h2 class="text-2xl md:text-3xl font-bold text-darkGrey">{copy.applicationTitle}</h2>
+					<h2 class="text-2xl md:text-3xl font-bold text-dark-grey">{copy.applicationTitle}</h2>
 					<p class="text-grey leading-relaxed">
 						{copy.applicationText}
 					</p>
@@ -407,10 +407,10 @@
 				<a
 					href={job.tallyPublicUrl}
 					target="_blank"
-					rel="noreferrer"
+					rel="noreferrer external"
 					data-umami-event="job_application_click"
 					data-umami-event-offer={job.slug}
-					class="inline-flex text-darkGrey font-bold underline underline-offset-4 hover:text-grey"
+					class="inline-flex text-dark-grey font-bold underline underline-offset-4 hover:text-grey"
 				>
 					{copy.openForm}
 				</a>

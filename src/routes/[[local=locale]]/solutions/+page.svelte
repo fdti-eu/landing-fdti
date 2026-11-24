@@ -27,10 +27,9 @@
 	</header>
 	<nav class="solution-index editorial-shell" aria-label={navigation.allSolutions}>
 		{#each solutionIds as id, index (id)}
-			<a href={`#${id}`}
-				><span aria-hidden="true">0{index + 1}</span>{labels[id]}<span aria-hidden="true">↓</span
-				></a
-			>
+			<a href={`#${id}`}>
+				<span aria-hidden="true">0{index + 1}</span>{labels[id]}<span aria-hidden="true">↓</span>
+			</a>
 		{/each}
 	</nav>
 	<div class="editorial-shell solution-grid">
@@ -52,24 +51,25 @@
 							{@const project = data.projects.find((item) => item.id === projectId)}
 							{#if project}
 								<li>
-									<a href={buildLocalizedPath(`/realisations/${project.slug}`, data.locale)}
-										>{project.title} <span aria-hidden="true">↗</span></a
-									>
+									<a href={buildLocalizedPath(`/realisations/${project.slug}`, data.locale)}>
+										{project.title} <span aria-hidden="true">↗</span>
+									</a>
 								</li>
 							{/if}
 						{/each}
 					</ul>
 				</div>
 				{#if familyPages}
-					<a class="detail-link" href={buildLocalizedPath(solutionPagePath(id), data.locale)}
-						>{familyPages.pageLink} : {labels[id]} <span aria-hidden="true">→</span></a
-					>
+					<a class="detail-link" href={buildLocalizedPath(solutionPagePath(id), data.locale)}>
+						{familyPages.pageLink} : {labels[id]} <span aria-hidden="true">→</span>
+					</a>
 				{:else if id === 'ia-documents'}
 					<a
 						class="detail-link"
 						href={buildLocalizedPath('/solutions/analyse-documentaire', data.locale)}
-						>{content.more} : {navigation.documents} <span aria-hidden="true">↗</span></a
 					>
+						{content.more} : {navigation.documents} <span aria-hidden="true">↗</span>
+					</a>
 				{/if}
 			</section>
 		{/each}
@@ -84,9 +84,9 @@
 		<p class="editorial-kicker">{navigation.sectors}</p>
 		<h2>{navigation.circular} · {sectorCopy[data.locale].justice}</h2>
 		<p>{navigation.sectorIntro}</p>
-		<a class="detail-link" href={buildLocalizedPath('/filieres', data.locale)}
-			>{navigation.sectorLink} <span aria-hidden="true">↗</span></a
-		>
+		<a class="detail-link" href={buildLocalizedPath('/filieres', data.locale)}>
+			{navigation.sectorLink} <span aria-hidden="true">↗</span>
+		</a>
 	</section>
 	<section class="editorial-cta">
 		<div class="editorial-shell">
@@ -95,8 +95,9 @@
 				href="#contact"
 				data-umami-event="contact_open"
 				data-umami-event-placement="solutions_contact"
-				>{navigation.contact} <span aria-hidden="true">↗</span></a
 			>
+				{navigation.contact} <span aria-hidden="true">↗</span>
+			</a>
 		</div>
 	</section>
 </div>
@@ -114,13 +115,13 @@
 		align-items: center;
 		gap: 0.75rem;
 		padding: 1rem 0;
-		border-bottom: 1px solid #cccfcf;
+		border-bottom: 1px solid var(--color-line-cool);
 		font-size: 0.9rem;
 		font-weight: 600;
 	}
 	.solution-index a span:first-child {
 		font-size: 0.7rem;
-		color: #68747c;
+		color: var(--color-text-slate-light);
 	}
 	.solution-index a span:last-child {
 		margin-left: auto;
@@ -133,13 +134,13 @@
 		padding-bottom: 4rem;
 	}
 	.solution-card {
-		background: white;
-		border-top: 3px solid #242a2e;
+		background: var(--color-white);
+		border-top: 3px solid var(--color-surface-deep);
 		padding: 2rem;
 		scroll-margin-top: 115px;
 	}
 	.solution-number {
-		color: #65727b;
+		color: var(--color-text-slate-soft);
 		font-size: 0.8rem;
 		margin: 0 0 1rem;
 	}
@@ -150,7 +151,7 @@
 		letter-spacing: -0.02em;
 	}
 	.solution-card .need {
-		color: #485762;
+		color: var(--color-text-slate);
 		margin-bottom: 1.5rem;
 	}
 	.solution-card h3 {
@@ -171,13 +172,13 @@
 		font-size: 0.95rem;
 	}
 	.evidence {
-		border-top: 1px solid #d8ddde;
+		border-top: 1px solid var(--color-line-cool-soft);
 		padding-top: 1.4rem;
 		margin-top: 1.6rem;
 	}
 	.evidence p {
 		font-size: 0.9rem;
-		color: #53616a;
+		color: var(--color-text-slate-muted);
 		margin-bottom: 1rem;
 	}
 	.evidence ul {
@@ -200,7 +201,7 @@
 		margin-top: 1rem;
 	}
 	.deployment {
-		background: #e9eeeb;
+		background: var(--color-surface-green);
 	}
 	.deployment h2,
 	.sector-link h2 {
@@ -214,7 +215,7 @@
 		max-width: 900px;
 	}
 	a:focus-visible {
-		outline: 2px solid #9a6405;
+		outline: 2px solid var(--color-accent-text);
 		outline-offset: 5px;
 	}
 	@media (max-width: 900px) {

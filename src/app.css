@@ -9,14 +9,110 @@
 	--color-grey: #525659;
 	--color-grey-2: #242930;
 	--color-light-grey: #e6e6e9;
-	--shadow-4: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	--shadow-4: 0px 4px 4px var(--color-shadow-default);
+	--color-print-ink: #111827;
+	--color-print-text: #374151;
+	--color-print-line: #d1d5db;
+	--color-print-line-soft: #e5e7eb;
+	--color-print-surface: #f9fafb;
 
-	/* Legacy aliases to be removed after refactoring */
-	--color-darkGrey: #1d2024;
-	--color-darkGrey-1: #555555;
-	--color-darkGrey-2: #bbbcbd;
-	--color-grey1: #525659;
-	--color-lightGrey: #e6e6e9;
+	--color-paper: #faf9f6;
+	--color-ivory: #f5f4ee;
+	--color-linen: #f0eee8;
+	--color-cream: #f6f5ef;
+	--color-canvas: #faf9f5;
+	--color-surface-soft: #f5f4ef;
+	--color-surface-cool: #f3f4f3;
+	--color-surface-green: #e9eeeb;
+	--color-surface-highlight: #fbf0dd;
+	--color-surface-accent: #f4ead8;
+	--color-surface-accent-light: #fff7e8;
+	--color-surface-deep: #242a2e;
+	--color-surface-panel: #24282b;
+	--color-surface-panel-muted: #202426;
+	--color-surface-panel-dark: #202427;
+	--color-surface-card: #252b2d;
+	--color-accent-hover: #f4d45b;
+	--color-accent-strong: #fbd243;
+	--color-accent-soft: #fcd088;
+	--color-accent-light: #ffe3b3;
+	--color-accent-deep: #d6a52d;
+	--color-accent-ochre: #d49a2f;
+	--color-accent-text: #9a6405;
+	--color-accent-text-hover: #aa7620;
+	--color-accent-text-muted: #b88426;
+	--color-accent-shadow: #815b20;
+	--color-feedback-warning: #9a6700;
+	--color-feedback-error: #a21b1b;
+	--color-line-primary: #c9cbc8;
+	--color-line-soft: #d8d5cf;
+	--color-line-warm: #ccc9c2;
+	--color-line-warm-strong: #bbb8b2;
+	--color-line-paper: #d9d8d0;
+	--color-line-ivory: #d5d6ce;
+	--color-line-ivory-strong: #c9c8c2;
+	--color-line-cool: #cccfcf;
+	--color-line-cool-soft: #d8ddde;
+	--color-line-card: #d7d5cd;
+	--color-line-card-strong: #d0cdc4;
+	--color-line-panel: #c9c9c1;
+	--color-line-panel-soft: #e3e4df;
+	--color-line-neutral: #ccc;
+	--color-line-guide: #dcdedc;
+	--color-line-guide-strong: #cbd0cd;
+	--color-line-guide-cool: #cbd0d4;
+	--color-line-accent: #dfd0b6;
+	--color-line-slate: #d5d8db;
+	--color-line-slate-soft: #d8dcda;
+	--color-line-print: #d8dde5;
+	--color-text-on-dark-muted: #dedbd2;
+	--color-text-on-dark: #d2d6d9;
+	--color-text-on-dark-soft: #d8dcdf;
+	--color-text-body: #3d444a;
+	--color-text-intro: #454b50;
+	--color-text-indicator: #485055;
+	--color-text-card: #464b4c;
+	--color-text-card-strong: #42484a;
+	--color-text-slate: #485762;
+	--color-text-slate-muted: #53616a;
+	--color-text-slate-soft: #65727b;
+	--color-text-slate-light: #68747c;
+	--color-text-muted: #5c6264;
+	--color-text-meta: #656b6d;
+	--color-text-note: #686e70;
+	--color-text-placeholder: #747a7c;
+	--color-text-disabled: #a5aaa8;
+	--color-text-helper: #63696b;
+	--color-text-placeholder-light: #8a8e91;
+	--color-text-evidence: #555b48;
+	--color-text-navigation: #656b70;
+	--color-text-subtle: #6b7074;
+	--color-text-index: #777d82;
+	--color-text-option-label: #5d666d;
+	--color-line-practice: #5b6268;
+	--color-text-guide: #555d64;
+	--color-text-guide-light: #8f9499;
+	--color-text-guide-strong: #4f5459;
+	--color-text-guide-deep: #353b43;
+	--color-text-guide-muted: #737b80;
+	--color-text-guide-note: #757b80;
+	--color-white-grid: #ffffff06;
+	--color-white-line: #ffffff30;
+	--color-ink-overlay: #1d202410;
+	--color-black-overlay-strong: #000e;
+	--color-black-overlay: #0008;
+	--color-shadow-menu: rgba(0, 0, 0, 0.18);
+	--color-shadow-default: rgba(0, 0, 0, 0.25);
+	--color-yellow-transparent: rgba(249, 208, 137, 0);
+	--color-yellow-glow: rgba(249, 208, 137, 0.18);
+	--color-yellow-highlight: rgba(249, 208, 137, 0.4);
+	--color-yellow-line: rgba(249, 208, 137, 0.42);
+	--color-yellow-highlight-strong: rgba(249, 208, 137, 0.6);
+	--color-accent-highlight: rgba(251, 210, 67, 0.25);
+	--color-white-overlay-subtle: rgba(255, 255, 255, 0.06);
+	--color-white-overlay: rgba(255, 255, 255, 0.08);
+	--color-white-muted: rgba(255, 255, 255, 0.72);
+	--color-white-soft: rgba(255, 255, 255, 0.82);
 }
 
 @plugin '@tailwindcss/typography';
@@ -59,19 +155,19 @@
 	/* Animation de highlight pour la carte visitée */
 	@keyframes highlight-ring {
 		0% {
-			box-shadow: 0 0 0 0 rgba(249, 208, 137, 0);
+			box-shadow: 0 0 0 0 var(--color-yellow-transparent);
 		}
 		10% {
-			box-shadow: 0 0 0 3px rgba(249, 208, 137, 0.4);
+			box-shadow: 0 0 0 3px var(--color-yellow-highlight);
 		}
 		50% {
-			box-shadow: 0 0 0 3px rgba(249, 208, 137, 0.6);
+			box-shadow: 0 0 0 3px var(--color-yellow-highlight-strong);
 		}
 		90% {
-			box-shadow: 0 0 0 3px rgba(249, 208, 137, 0.4);
+			box-shadow: 0 0 0 3px var(--color-yellow-highlight);
 		}
 		100% {
-			box-shadow: 0 0 0 0 rgba(249, 208, 137, 0);
+			box-shadow: 0 0 0 0 var(--color-yellow-transparent);
 		}
 	}
 }
@@ -109,8 +205,8 @@
 
 	html,
 	body {
-		background: #ffffff !important;
-		color: #111827 !important;
+		background: var(--color-white) !important;
+		color: var(--color-print-ink) !important;
 		font-size: 10.5pt;
 	}
 
@@ -134,15 +230,20 @@
 		max-width: none;
 		font-family: 'Quattrocento Sans', 'Segoe UI', Arial, sans-serif;
 		line-height: 1.3;
-		color: #1d2024;
+		color: var(--color-dark-grey);
 	}
 
 	.print-job-hero {
 		margin-bottom: 5mm;
 		padding: 7mm;
 		border-radius: 7mm;
-		background: linear-gradient(135deg, #1d2024 0%, #242930 68%, #555555 100%);
-		color: #ffffff;
+		background: linear-gradient(
+			135deg,
+			var(--color-dark-grey) 0%,
+			var(--color-grey-2) 68%,
+			var(--color-dark-grey-1) 100%
+		);
+		color: var(--color-white);
 		position: relative;
 		overflow: hidden;
 	}
@@ -155,7 +256,7 @@
 		width: 70mm;
 		height: 70mm;
 		border-radius: 999px;
-		background: rgba(249, 208, 137, 0.18);
+		background: var(--color-yellow-glow);
 	}
 
 	.print-job-topline {
@@ -173,13 +274,13 @@
 		font-weight: 700;
 		letter-spacing: 0.16em;
 		text-transform: uppercase;
-		color: #f9d089;
+		color: var(--color-yellow);
 	}
 
 	.print-job-eyebrow {
 		margin: 0;
 		font-size: 8.2pt;
-		color: rgba(255, 255, 255, 0.72);
+		color: var(--color-white-muted);
 		letter-spacing: 0.1em;
 		text-transform: uppercase;
 	}
@@ -190,9 +291,9 @@
 		justify-content: center;
 		width: 16mm;
 		height: 16mm;
-		border: 1.2pt solid #f9d089;
+		border: 1.2pt solid var(--color-yellow);
 		border-radius: 999px;
-		background: rgba(255, 255, 255, 0.06);
+		background: var(--color-white-overlay-subtle);
 		position: relative;
 		z-index: 1;
 	}
@@ -214,7 +315,7 @@
 		font-size: 25.5pt;
 		line-height: 1.04;
 		font-weight: 700;
-		color: #ffffff;
+		color: var(--color-white);
 	}
 
 	.print-job-title-block p {
@@ -222,7 +323,7 @@
 		margin: 0;
 		font-size: 11.4pt;
 		line-height: 1.35;
-		color: rgba(255, 255, 255, 0.82);
+		color: var(--color-white-soft);
 	}
 
 	.print-job-meta {
@@ -235,10 +336,10 @@
 	}
 
 	.print-job-meta div {
-		border: 0.7pt solid rgba(249, 208, 137, 0.42);
+		border: 0.7pt solid var(--color-yellow-line);
 		border-radius: 3mm;
 		padding: 2.4mm;
-		background: rgba(255, 255, 255, 0.08);
+		background: var(--color-white-overlay);
 	}
 
 	.print-job-meta span {
@@ -248,37 +349,37 @@
 		font-weight: 700;
 		letter-spacing: 0.08em;
 		text-transform: uppercase;
-		color: #f9d089;
+		color: var(--color-yellow);
 	}
 
 	.print-job-meta strong {
 		display: block;
 		font-size: 9.2pt;
 		line-height: 1.2;
-		color: #ffffff;
+		color: var(--color-white);
 	}
 
 	.print-job-section {
 		margin: 0 0 4.4mm;
 		padding: 3mm 0 0;
-		border-top: 0.7pt solid #d8dde5;
+		border-top: 0.7pt solid var(--color-line-print);
 		background: transparent;
 	}
 
 	.print-job-intro {
 		padding: 3.8mm 4.4mm;
-		border: 0.7pt solid #e5e7eb;
-		border-left: 2.2pt solid #1d2024;
+		border: 0.7pt solid var(--color-print-line-soft);
+		border-left: 2.2pt solid var(--color-dark-grey);
 		border-radius: 3.5mm;
-		background: #f9fafb;
+		background: var(--color-print-surface);
 	}
 
 	.print-job-environment {
 		padding: 3.5mm 4mm;
-		border: 0.7pt solid #e5e7eb;
-		border-left: 2.2pt solid #f9d089;
+		border: 0.7pt solid var(--color-print-line-soft);
+		border-left: 2.2pt solid var(--color-yellow);
 		border-radius: 3.5mm;
-		background: #ffffff;
+		background: var(--color-white);
 	}
 
 	.print-job-section h2,
@@ -287,21 +388,21 @@
 		font-size: 12.8pt;
 		line-height: 1.15;
 		font-weight: 700;
-		color: #111827;
+		color: var(--color-print-ink);
 	}
 
 	.print-job-section p,
 	.print-job-apply p {
 		margin: 0 0 1.8mm;
 		font-size: 9.4pt;
-		color: #374151;
+		color: var(--color-print-text);
 	}
 
 	.print-job-section ul,
 	.print-job-process {
 		margin: 0;
 		padding-left: 5.2mm;
-		color: #374151;
+		color: var(--color-print-text);
 		list-style-position: outside;
 	}
 
@@ -322,7 +423,7 @@
 
 	.print-job-section li::marker,
 	.print-job-process li::marker {
-		color: #d49a2f;
+		color: var(--color-accent-ochre);
 		font-size: 1.05em;
 	}
 
@@ -340,13 +441,13 @@
 
 	.print-job-tags span {
 		display: inline-block;
-		border: 0.7pt solid #d1d5db;
+		border: 0.7pt solid var(--color-print-line);
 		border-radius: 999px;
 		padding: 1.05mm 2.1mm;
 		font-size: 8.4pt;
 		line-height: 1.15;
-		background: #f9fafb;
-		color: #374151;
+		background: var(--color-print-surface);
+		color: var(--color-print-text);
 	}
 
 	.print-job-process {
@@ -356,7 +457,7 @@
 	.print-job-process strong {
 		display: block;
 		margin-bottom: 0.8mm;
-		color: #111827;
+		color: var(--color-print-ink);
 	}
 
 	.print-job-apply {
@@ -365,9 +466,14 @@
 		gap: 5mm;
 		margin-top: 5mm;
 		padding: 5mm;
-		border: 1.1pt solid #1d2024;
+		border: 1.1pt solid var(--color-dark-grey);
 		border-radius: 4mm;
-		background: linear-gradient(135deg, #f9fafb 0%, #ffffff 65%, #fff7e8 100%);
+		background: linear-gradient(
+			135deg,
+			var(--color-print-surface) 0%,
+			var(--color-white) 65%,
+			var(--color-surface-accent-light) 100%
+		);
 	}
 
 	.print-job-apply a {
@@ -376,7 +482,7 @@
 		font-size: 8.6pt;
 		line-height: 1.25;
 		word-break: break-all;
-		color: #111827;
+		color: var(--color-print-ink);
 	}
 
 	.print-job-apply .print-job-page-url {

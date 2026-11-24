@@ -226,11 +226,11 @@
 		<div>
 			<h2>{copy.apply}</h2>
 			<p>{copy.applyText}</p>
-			<a href={job.tallyPublicUrl}>{applicationUrl}</a>
+			<a href={job.tallyPublicUrl} rel="external">{applicationUrl}</a>
 		</div>
 		<div>
 			<p>{copy.pageText}</p>
-			<a class="print-job-page-url" href={pageUrl}>{displayPageUrl}</a>
+			<a class="print-job-page-url" href={pageUrl} rel="external">{displayPageUrl}</a>
 		</div>
 	</footer>
 </article>

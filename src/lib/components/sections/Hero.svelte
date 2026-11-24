@@ -31,8 +31,10 @@
 						color="yellow"
 						isLink
 						analyticsEvent="contact_open"
-						analyticsPlacement="hero">{content.btn_contact}</Button
+						analyticsPlacement="hero"
 					>
+						{content.btn_contact}
+					</Button>
 				</div>
 			</div>
 			<figure class="hero-figure">

@@ -1,7 +1,7 @@
 <script lang="ts">
-	import { getContext } from 'svelte';
 	import { tick } from 'svelte';
-	import type { Writable } from 'svelte/store';
+	import { resolve } from '$app/paths';
+	import type { PathnameWithSearchOrHash } from '$app/types';
 	import PageSeo from '#lib/components/PageSeo.svelte';
 	import { schema } from '#lib/components/json-ld/json-ld.ts';
 	import type { Lang } from '#lib/data.ts';
@@ -12,9 +12,6 @@
 		SOCIAL_IMAGE_PATH
 	} from '#lib/functions/seo.ts';
 	import { beforeNavigate, afterNavigate, goto } from '$app/navigation';
-
-	// Récupérer le store du layout parent
-	const highlightedUseCase = getContext<Writable<string | null>>('highlightedUseCase');
 
 	interface Props {
 		data:
@@ -119,7 +116,11 @@
 		}
 	};
 	const sectorLabels: Record<Lang, [string, string, string]> = {
-		fr: ['Industrie & circularité', 'Services publics & territoires', 'Retail & connaissance client'],
+		fr: [
+			'Industrie & circularité',
+			'Services publics & territoires',
+			'Retail & connaissance client'
+		],
 		en: ['Industry & circularity', 'Public services & territories', 'Retail & customer insight'],
 		es: [
 			'Industria y circularidad',
@@ -190,11 +191,13 @@
 			return;
 		}
 
-		const href = (event.currentTarget as HTMLAnchorElement).href;
+		const href = (event.currentTarget as HTMLAnchorElement).getAttribute('href')!;
 		event.preventDefault();
 		activeSlug = slug;
 		await tick();
-		await goto(href, { state: { caseOrigin: 'list' } });
+		await goto(resolve(href.slice(1) as PathnameWithSearchOrHash), {
+			state: { caseOrigin: 'list' }
+		});
 	};
 
 	const getViewTransitionStyle = (
@@ -263,17 +266,19 @@
 				<button
 					aria-pressed={selectedSector === null}
 					class:active={selectedSector === null}
-					onclick={() => (selectedSector = null)}>{copy.all}</button
+					onclick={() => (selectedSector = null)}
 				>
+					{copy.all}
+				</button>
 
 				{#each sectorGroups as sector (sector.label)}
 					<button
 						aria-pressed={selectedSector === sector.label}
 						class:active={selectedSector === sector.label}
-						onclick={() =>
-							(selectedSector = selectedSector === sector.label ? null : sector.label)}
-						>{sector.label}</button
+						onclick={() => (selectedSector = selectedSector === sector.label ? null : sector.label)}
 					>
+						{sector.label}
+					</button>
 				{/each}
 			</div>
 		</div>
@@ -310,9 +315,9 @@
 							</div>
 						{/if}
 						<div class="eyebrow">
-							<svg aria-hidden="true" viewBox="0 0 40 38"
-								><path d={icons[item.id ?? '']}></path></svg
-							>{item.category}<span aria-hidden="true">→</span>
+							<svg aria-hidden="true" viewBox="0 0 40 38">
+								<path d={icons[item.id ?? '']}></path>
+							</svg>{item.category}<span aria-hidden="true">→</span>
 						</div>
 						<h2 style={getViewTransitionStyle(item.slug, item.id, 'title')}>
 							{item.indexCard?.title ?? item.title}
@@ -332,8 +337,8 @@
 						aria-hidden="true"
 					></span>
 					<div
-						class="case-cta relative rounded-3xl border border-yellow/30 bg-darkGrey text-white shadow-2xl p-6 sm:p-8 md:p-10 lg:p-12 flex flex-col md:flex-row md:items-center md:justify-between gap-6 sm:gap-8"
-						style="box-shadow: 0 0 65px 10px rgba(251, 210, 67, 0.25);"
+						class="case-cta relative rounded-3xl border border-yellow/30 bg-dark-grey text-white shadow-2xl p-6 sm:p-8 md:p-10 lg:p-12 flex flex-col md:flex-row md:items-center md:justify-between gap-6 sm:gap-8"
+						style="box-shadow: 0 0 65px 10px var(--color-accent-highlight);"
 					>
 						<div class="relative z-10">
 							<p
@@ -352,7 +357,7 @@
 								href="#contact"
 								data-umami-event="contact_open"
 								data-umami-event-placement="realisations_contact"
-								class="relative z-10 inline-flex w-full md:w-auto items-center justify-center px-10 py-4 rounded-full bg-yellow text-darkGrey font-semibold text-center tracking-wide border border-yellow/50 hover:bg-yellow/80 transition-colors"
+								class="relative z-10 inline-flex w-full md:w-auto items-center justify-center px-10 py-4 rounded-full bg-yellow text-dark-grey font-semibold text-center tracking-wide border border-yellow/50 hover:bg-yellow/80 transition-colors"
 							>
 								{content.cta.button}
 							</a>
@@ -367,8 +372,8 @@
 <style>
 	.panorama-heading,
 	.panorama-body {
-		background: #faf9f6;
-		color: #24282b;
+		background: var(--color-paper);
+		color: var(--color-surface-panel);
 	}
 	.panorama-heading {
 		padding-top: 116px;
@@ -388,21 +393,21 @@
 		margin: 12px 0 0;
 		gap: 14px;
 		border: 0;
-		border-bottom: 1px solid #c9c9c1;
+		border-bottom: 1px solid var(--color-line-panel);
 	}
 	.panorama-heading .sector-filter button {
 		width: auto;
 		border: 0;
 		border-bottom: 3px solid transparent;
 		background: transparent;
-		color: #464b4c;
+		color: var(--color-text-card);
 		padding: 9px 3px;
 		min-height: 42px;
 		border-radius: 0;
 	}
 	.panorama-heading .sector-filter button.active {
-		border-bottom-color: #b88426;
-		color: #202426;
+		border-bottom-color: var(--color-accent-text-muted);
+		color: var(--color-surface-panel-muted);
 	}
 	.panorama-body {
 		padding: 16px 0 52px;
@@ -417,12 +422,12 @@
 		flex-direction: column;
 		min-width: 0;
 		padding: 18px 24px 20px;
-		background: #fff;
-		border: 1px solid #d7d5cd;
+		background: var(--color-white);
+		border: 1px solid var(--color-line-card);
 		border-radius: 0;
-		color: #24282b;
+		color: var(--color-surface-panel);
 		text-decoration: none;
-		--accent: #815b20;
+		--accent: var(--color-accent-shadow);
 	}
 	.eyebrow {
 		display: flex;
@@ -457,7 +462,7 @@
 	.panorama-card p {
 		font-size: 16.5px;
 		line-height: 1.38;
-		color: #42484a;
+		color: var(--color-text-card-strong);
 	}
 	.proof {
 		display: flex;
@@ -465,7 +470,7 @@
 		align-items: baseline;
 		gap: 4px 12px;
 		padding-top: 10px;
-		border-top: 1px solid #d0cdc4;
+		border-top: 1px solid var(--color-line-card-strong);
 		margin-top: auto;
 	}
 	.panorama-card > p {
@@ -478,15 +483,15 @@
 		font-size: 14px;
 	}
 	.panorama-card.featured {
-		background: #252b2d;
-		color: #fff;
-		--accent: #fcd088;
+		background: var(--color-surface-card);
+		color: var(--color-white);
+		--accent: var(--color-accent-soft);
 	}
 	.panorama-card.featured p {
-		color: #e3e4df;
+		color: var(--color-line-panel-soft);
 	}
 	.panorama-card.featured .proof strong {
-		color: #fcd088;
+		color: var(--color-accent-soft);
 	}
 	.panorama-card:hover,
 	.panorama-card:focus-visible {
@@ -517,8 +522,8 @@
 		top: 16px;
 		left: 16px;
 		padding: 5px 14px;
-		background: #fbd243;
-		color: #252b2d;
+		background: var(--color-accent-strong);
+		color: var(--color-surface-card);
 		font-size: 15px;
 	}
 	.featured .proof {
@@ -533,7 +538,13 @@
 		inset: 0 auto 0 0;
 		width: clamp(100px, 10vw, 160px);
 		pointer-events: none;
-		mask-image: linear-gradient(to right, #000 0%, #000e 20%, #0008 54%, transparent 100%);
+		mask-image: linear-gradient(
+			to right,
+			var(--color-black) 0%,
+			var(--color-black-overlay-strong) 20%,
+			var(--color-black-overlay) 54%,
+			transparent 100%
+		);
 	}
 	.case-strip img {
 		width: 100%;

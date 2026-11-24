@@ -21,7 +21,7 @@
 {#if name && imgUrl}
 	<a
 		target="_blank"
-		rel="noreferrer"
+		rel="noreferrer external"
 		href={link}
 		class="relative h-20 bg-white items-center flex justify-center px-4"
 		aria-label={ariaLabel}

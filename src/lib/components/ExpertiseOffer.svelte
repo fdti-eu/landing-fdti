@@ -29,8 +29,10 @@
 				class="offer-link"
 				href="#contact"
 				data-umami-event="contact_open"
-				data-umami-event-placement={`${offer}_hero`}>{content.cta} ↗</a
+				data-umami-event-placement={`${offer}_hero`}
 			>
+				{content.cta} ↗
+			</a>
 		</div>
 	</header>
 	<section class="editorial-section editorial-shell" aria-labelledby={`${offer}-use-cases`}>
@@ -66,8 +68,10 @@
 			<a
 				href="#contact"
 				data-umami-event="contact_open"
-				data-umami-event-placement={`${offer}_contact`}>{content.cta} ↗</a
+				data-umami-event-placement={`${offer}_contact`}
 			>
+				{content.cta} ↗
+			</a>
 		</div>
 	</section>
 </div>
@@ -106,7 +110,7 @@
 	}
 	.offer-steps li {
 		padding: 1.5rem 0 1.5rem 1rem;
-		border-top: 1px solid #bbb8b2;
+		border-top: 1px solid var(--color-line-warm-strong);
 	}
 	.offer-steps h3 {
 		font-size: 1.25rem;

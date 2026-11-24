@@ -150,13 +150,13 @@
 		{#each copy.items as item, index (item.title)}
 			<Card class="capability-card">
 				<CapabilityDiagram {index} />
-				<h4 class="text-xl font-bold text-darkGrey">{item.title}</h4>
-				<p class="mt-3 text-sm leading-relaxed text-darkGrey/80">{item.description}</p>
+				<h4 class="text-xl font-bold text-dark-grey">{item.title}</h4>
+				<p class="mt-3 text-sm leading-relaxed text-dark-grey/80">{item.description}</p>
 				<div class="mt-5 flex flex-wrap gap-2">
 					{#each item.points as point, pointIndex (pointIndex)}
-						<span class="rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-darkGrey"
-							>{point}</span
-						>
+						<span class="rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-dark-grey">
+							{point}
+						</span>
 					{/each}
 				</div>
 			</Card>

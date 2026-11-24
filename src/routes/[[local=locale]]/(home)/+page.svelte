@@ -1,4 +1,5 @@
 <script lang="ts">
+	import '#lib/styles/home.css';
 	import Hero from '#lib/components/sections/Hero.svelte';
 	import FdtiSection from '#lib/components/sections/FdtiSection.svelte';
 	import CapabilitiesSection from '#lib/components/sections/CapabilitiesSection.svelte';

@@ -1,6 +1,8 @@
 <script lang="ts">
 	import PageSeo from '#lib/components/PageSeo.svelte';
 	import { schema } from '#lib/components/json-ld/json-ld.ts';
+	import { resolve } from '$app/paths';
+	import type { PathnameWithSearchOrHash } from '$app/types';
 
 	const title = 'Logiciels sur mesure pour les emballages et la REP | FDTI';
 	const description =
@@ -104,7 +106,7 @@
 <div class="editorial-page packaging-page">
 	<header class="editorial-hero">
 		<div class="editorial-shell">
-			<a class="back" href="/filieres/economie-circulaire">← Économie circulaire</a>
+			<a class="back" href={resolve('filieres/economie-circulaire')}>← Économie circulaire</a>
 			<p class="editorial-kicker">Emballages · Économie circulaire · REP</p>
 			<h1>Des logiciels métier pour la filière emballages.</h1>
 			<p>
@@ -117,8 +119,10 @@
 				class="text-link"
 				href="#contact"
 				data-umami-event="contact_open"
-				data-umami-event-placement="packaging_hero">Parlons de vos opérations emballages ↗</a
+				data-umami-event-placement="packaging_hero"
 			>
+				Parlons de vos opérations emballages ↗
+			</a>
 		</div>
 	</header>
 
@@ -263,7 +267,9 @@
 			{#each evidence as item (item.href)}<article>
 					<h3>{item.title}</h3>
 					<p>{item.text}</p>
-					<a class="text-link" href={item.href}>{item.label} ↗</a>
+					<a class="text-link" href={resolve(item.href.slice(1) as PathnameWithSearchOrHash)}>
+						{item.label} ↗
+					</a>
 				</article>{/each}
 		</div>
 	</section>
@@ -298,46 +304,46 @@
 		<div class="table-scroll" role="region" aria-label="Données sources de l’exemple" tabindex="0">
 			<table>
 				<caption>Ce que les équipes ont au départ</caption>
-				<thead
-					><tr
-						><th scope="col">Source</th><th scope="col">Information disponible</th><th scope="col"
-							>Travail à réaliser</th
-						></tr
-					></thead
-				>
+				<thead>
+					<tr>
+						<th scope="col">Source</th><th scope="col">Information disponible</th><th scope="col">
+							Travail à réaliser
+						</th>
+					</tr>
+				</thead>
 				<tbody>
-					<tr
-						><th scope="row">Export ERP</th><td
-							>SKU P-100 · 10 000 unités sur une période et un marché définis</td
-						><td
-							>Vérifier le périmètre des mises sur le marché et la configuration d’emballage
-							utilisée.</td
-						></tr
-					>
-					<tr
-						><th scope="row">Fiche fournisseur A</th><td>Pot POT-42 · PET · 20 g</td><td
-							>Relier POT-42 à P-100, conserver le document et sa version.</td
-						></tr
-					>
-					<tr
-						><th scope="row">Fiche fournisseur B</th><td>Couvercle CAP-8 · PP · 3 g</td><td
-							>Confirmer qu’un couvercle est utilisé par unité commercialisée.</td
-						></tr
-					>
-					<tr
-						><th scope="row">Fichier packaging</th><td>Étiquette ET-5 · poids non renseigné</td><td
-							>Attribuer la demande de complément et marquer la préparation comme incomplète.</td
-						></tr
-					>
+					<tr>
+						<th scope="row">Export ERP</th><td>
+							SKU P-100 · 10 000 unités sur une période et un marché définis
+						</td><td>
+							Vérifier le périmètre des mises sur le marché et la configuration d’emballage
+							utilisée.
+						</td>
+					</tr>
+					<tr>
+						<th scope="row">Fiche fournisseur A</th><td>Pot POT-42 · PET · 20 g</td><td>
+							Relier POT-42 à P-100, conserver le document et sa version.
+						</td>
+					</tr>
+					<tr>
+						<th scope="row">Fiche fournisseur B</th><td>Couvercle CAP-8 · PP · 3 g</td><td>
+							Confirmer qu’un couvercle est utilisé par unité commercialisée.
+						</td>
+					</tr>
+					<tr>
+						<th scope="row">Fichier packaging</th><td>Étiquette ET-5 · poids non renseigné</td><td>
+							Attribuer la demande de complément et marquer la préparation comme incomplète.
+						</td>
+					</tr>
 				</tbody>
 			</table>
 		</div>
 		<div class="example-output">
 			<h3>Ce que l’outil doit permettre d’expliquer</h3>
 			<p>
-				<strong>Pot : 10 000 × 20 g = 200 kg de PET.</strong><br /><strong
-					>Couvercle : 10 000 × 3 g = 30 kg de PP.</strong
-				>
+				<strong>Pot : 10 000 × 20 g = 200 kg de PET.</strong><br /><strong>
+					Couvercle : 10 000 × 3 g = 30 kg de PP.
+				</strong>
 			</p>
 			<p>
 				Ces 230 kg sont un <strong>sous-total documenté</strong>, pas le poids total de l’emballage
@@ -428,8 +434,9 @@
 			manière générale depuis le 12 août 2026. Ses différentes exigences suivent leur propre
 			calendrier. <a
 				href="https://environment.ec.europa.eu/topics/waste-and-recycling/packaging-waste_en"
-				>Consulter le cadre et les ressources de la Commission européenne ↗</a
 			>
+				Consulter le cadre et les ressources de la Commission européenne ↗
+			</a>
 		</p>
 	</section>
 
@@ -499,25 +506,25 @@
 			<summary>Repères sectoriels et sources publiques</summary>
 			<ul>
 				<li>
-					<a href="https://ecoembesempresas.com/ayuda-reportes-circularidad-envases"
-						>Ecoembes — accompagnement de la déclaration et adaptation des données au registre des
-						producteurs</a
-					> : les restitutions et l’accompagnement existent déjà.
+					<a href="https://ecoembesempresas.com/ayuda-reportes-circularidad-envases">
+						Ecoembes — accompagnement de la déclaration et adaptation des données au registre des
+						producteurs
+					</a> : les restitutions et l’accompagnement existent déjà.
 				</li>
 				<li>
-					<a href="https://grontpunkt.no/medlemskap/regler-for-medlemskap/hvordan-rapportere"
-						>Grønt Punkt Norge — méthodes de déclaration, contrôles et confidentialité</a
-					> : la méthode de calcul et les justificatifs font partie du processus.
+					<a href="https://grontpunkt.no/medlemskap/regler-for-medlemskap/hvordan-rapportere">
+						Grønt Punkt Norge — méthodes de déclaration, contrôles et confidentialité
+					</a> : la méthode de calcul et les justificatifs font partie du processus.
 				</li>
 				<li>
-					<a href="https://www.citeo.com/declarer/"
-						>Citeo — déclaration et contrôles réglementaires</a
-					> : les données déclarées doivent pouvoir être contrôlées.
+					<a href="https://www.citeo.com/declarer/">
+						Citeo — déclaration et contrôles réglementaires
+					</a> : les données déclarées doivent pouvoir être contrôlées.
 				</li>
 				<li>
-					<a href="https://environment.ec.europa.eu/topics/waste-and-recycling/packaging-waste_en"
-						>Commission européenne — PPWR</a
-					> : cadre réglementaire et ressources de mise en œuvre.
+					<a href="https://environment.ec.europa.eu/topics/waste-and-recycling/packaging-waste_en">
+						Commission européenne — PPWR
+					</a> : cadre réglementaire et ressources de mise en œuvre.
 				</li>
 			</ul>
 			<p>
@@ -536,8 +543,10 @@
 			<a
 				href="#contact"
 				data-umami-event="contact_open"
-				data-umami-event-placement="packaging_contact">Parlons d’un premier périmètre concret ↗</a
+				data-umami-event-placement="packaging_contact"
 			>
+				Parlons d’un premier périmètre concret ↗
+			</a>
 		</div>
 	</section>
 </div>
@@ -559,7 +568,7 @@
 		flex-wrap: wrap;
 		gap: 0.75rem 1.5rem;
 		padding-block: 1.5rem;
-		border-bottom: 1px solid #d8d5cf;
+		border-bottom: 1px solid var(--color-line-soft);
 		font-size: 0.9rem;
 	}
 	.section-nav a:hover,
@@ -597,7 +606,7 @@
 		grid-template-columns: repeat(3, minmax(0, 1fr));
 	}
 	.cards article {
-		border-top: 1px solid #bbb8b2;
+		border-top: 1px solid var(--color-line-warm-strong);
 		padding-top: 1.5rem;
 	}
 	.cards ul {
@@ -609,7 +618,7 @@
 		margin-bottom: 0.5rem;
 	}
 	.tint {
-		background: #f0eee8;
+		background: var(--color-linen);
 	}
 	.result {
 		margin-top: 1.25rem;
@@ -634,20 +643,20 @@
 	}
 	th,
 	td {
-		border-bottom: 1px solid #ccc9c2;
+		border-bottom: 1px solid var(--color-line-warm);
 		padding: 1rem;
 		vertical-align: top;
 	}
 	thead {
-		background: #f0eee8;
+		background: var(--color-linen);
 	}
 	tbody th {
 		min-width: 145px;
 	}
 	.example-output {
-		border-left: 3px solid #555b48;
+		border-left: 3px solid var(--color-text-evidence);
 		padding: 1.5rem;
-		background: #f0eee8;
+		background: var(--color-linen);
 	}
 	.example-output p + p {
 		margin-top: 1rem;
@@ -678,7 +687,7 @@
 	}
 	details {
 		padding: 1.5rem 0;
-		border-bottom: 1px solid #ccc9c2;
+		border-bottom: 1px solid var(--color-line-warm);
 	}
 	summary {
 		cursor: pointer;

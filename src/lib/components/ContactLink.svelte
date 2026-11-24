@@ -15,4 +15,6 @@
 	href="#contact"
 	data-umami-event="contact_open"
 	data-umami-event-placement={placement}
->{@render children()}</a>
+>
+	{@render children()}
+</a>

@@ -1,4 +1,5 @@
 <script lang="ts">
+	import '#lib/styles/legal.css';
 	import { fade } from 'svelte/transition';
 	import type { PageData } from './$types';
 	import PageSeo from '#lib/components/PageSeo.svelte';
@@ -182,7 +183,9 @@
 			<p>{contact.paragraphs[1]}</p>
 			<p>{contact.paragraphs[2]}</p>
 			<h2>{newsletterPrivacy.title}</h2>
-			{#each newsletterPrivacy.paragraphs as paragraph, paragraphIndex (paragraphIndex)}<p>{paragraph}</p>{/each}
+			{#each newsletterPrivacy.paragraphs as paragraph, paragraphIndex (paragraphIndex)}<p>
+					{paragraph}
+				</p>{/each}
 			<h2>{audience.title}</h2>
 			<p>{audience.paragraphs[0]}</p>
 			<p>{audience.paragraphs[1]}</p>

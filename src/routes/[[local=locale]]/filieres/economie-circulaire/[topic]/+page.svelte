@@ -117,8 +117,9 @@
 							<a
 								href={`#${section.id}`}
 								aria-current={activeSection === section.id ? 'location' : undefined}
-								><span>0{index + 1}</span>{section.navLabel}</a
 							>
+								<span>0{index + 1}</span>{section.navLabel}
+							</a>
 						</li>
 					{/each}
 				</ol>
@@ -128,8 +129,9 @@
 				href="#contact"
 				data-umami-event="contact_open"
 				data-umami-event-placement="circular_topic_toc"
-				>{content.contact}<span aria-hidden="true">↗</span></a
 			>
+				{content.contact}<span aria-hidden="true">↗</span>
+			</a>
 		</aside>
 		<div class="ce-detail-content">
 			<p class="ce-context">{dossier.context}</p>
@@ -160,9 +162,9 @@
 						<h3>{content.resultLabel}</h3>
 						<p>{section.result}</p>
 					</div>
-					<a class="ce-return-to-contents" href="#sommaire"
-						>{content.backToContents}<span aria-hidden="true">↑</span></a
-					>
+					<a class="ce-return-to-contents" href="#sommaire">
+						{content.backToContents}<span aria-hidden="true">↑</span>
+					</a>
 				</section>
 			{/each}
 		</div>
@@ -173,13 +175,15 @@
 	<div class="ce-shell">
 		<h2>{navigationCopy[data.locale].sectors}</h2>
 		<div class="ce-related-grid">
-			{#each content.dossiers.slice(0, 2).filter((item) => item.slug !== dossier.slug) as item (item.slug)}
-				<a href={`${root}/${item.slug}`}
-					><span class="ce-eyebrow">{item.label}</span>
+			{#each content.dossiers
+				.slice(0, 2)
+				.filter((item) => item.slug !== dossier.slug) as item (item.slug)}
+				<a href={buildLocalizedPath(`/filieres/economie-circulaire/${item.slug}`, data.locale)}>
+					<span class="ce-eyebrow">{item.label}</span>
 					<h3>{item.title}</h3>
 					<p>{item.summary}</p>
-					<span class="ce-link">{content.detailLink}<span aria-hidden="true">↗</span></span></a
-				>
+					<span class="ce-link">{content.detailLink}<span aria-hidden="true">↗</span></span>
+				</a>
 			{/each}
 			<a href={buildLocalizedPath(offerPaths.packaging, data.locale)}>
 				<span class="ce-eyebrow">{navigationCopy[data.locale].packaging}</span>
@@ -195,9 +199,15 @@
 		<div class="ce-shell">
 			<h2>{navigationCopy[data.locale].resources}</h2>
 			<p>{navigationCopy[data.locale].resourceIntro}</p>
-			<a class="ce-link" href={`${root}/${content.dossiers[2].slug}`}
-				>{content.dossiers[2].label} ↗</a
+			<a
+				class="ce-link"
+				href={buildLocalizedPath(
+					`/filieres/economie-circulaire/${content.dossiers[2].slug}`,
+					data.locale
+				)}
 			>
+				{content.dossiers[2].label} ↗
+			</a>
 		</div>
 	</section>
 {/if}
