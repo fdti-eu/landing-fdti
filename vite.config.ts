@@ -14,7 +14,8 @@ const config = defineConfig({
 			adapter: adapter({
 				pages: 'build',
 				assets: 'build',
-				fallback: undefined,
+				// GitHub Pages serves this page, with a 404 status, for unknown URLs.
+				fallback: '404.html',
 				precompress: true,
 				strict: true
 			}),
