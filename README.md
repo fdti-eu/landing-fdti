@@ -111,3 +111,9 @@ Le domaine custom est déclaré dans `static/CNAME` :
 ```text
 www.fdti.eu
 ```
+
+## Previews
+
+Chaque push sur une branche autre que `master` publie une preview privée sur Cloudflare Pages via `.github/workflows/preview.yml`. L’adresse suit le nom de la branche, raccourci et normalisé : `https://<branche>.fdti-site.pages.dev`. Le lien exact figure dans le résumé de l’exécution GitHub Actions.
+
+Les previews sont réservées aux associés de FDTI par Cloudflare Access, avec un code envoyé par email. Elles portent un en-tête `noindex` ; le formulaire de contact et les statistiques ne fonctionnent qu’en production. La production reste publiée sur GitHub Pages depuis `master`.
