@@ -3,8 +3,12 @@
 	import { buildLocalizedUrl } from '#lib/functions/seo.ts';
 	import type { JobOffer } from '#lib/jobs.ts';
 
-	export let job: JobOffer;
-	export let locale: Lang;
+	interface Props {
+		job: JobOffer;
+		locale: Lang;
+	}
+
+	let { job, locale }: Props = $props();
 
 	const copies = {
 		fr: {
@@ -108,18 +112,18 @@
 			metadata: 'Informazioni sulla posizione'
 		}
 	} satisfies Record<Lang, Record<string, string>>;
-	$: copy = copies[locale];
+	const copy = $derived(copies[locale]);
 
-	$: pageUrl = buildLocalizedUrl(`/offres-emploi/${job.slug}`, locale);
-	$: displayPageUrl = pageUrl.replace('https://', '');
-	$: applicationUrl = job.tallyPublicUrl.split('?')[0];
-	$: metaItems = [
+	const pageUrl = $derived(buildLocalizedUrl(`/offres-emploi/${job.slug}`, locale));
+	const displayPageUrl = $derived(pageUrl.replace('https://', ''));
+	const applicationUrl = $derived(job.tallyPublicUrl.split('?')[0]);
+	const metaItems = $derived([
 		{ label: copy.contract, value: job.contractType },
 		{ label: copy.location, value: job.location },
 		{ label: copy.experience, value: job.experience },
 		{ label: copy.start, value: job.startLabel },
 		{ label: copy.status, value: job.status }
-	];
+	]);
 </script>
 
 <article class="print-job-offer hidden print:block" aria-label={job.title}>
@@ -140,7 +144,7 @@
 		</div>
 
 		<section class="print-job-meta" aria-label={copy.metadata}>
-			{#each metaItems as item}
+			{#each metaItems as item (item.label)}
 				<div>
 					<span>{item.label}</span>
 					<strong>{item.value}</strong>
@@ -151,16 +155,16 @@
 
 	<section class="print-job-section print-job-intro print-avoid-break">
 		<h2>{copy.intro}</h2>
-		{#each job.intro as paragraph}
+		{#each job.intro as paragraph, paragraphIndex (paragraphIndex)}
 			<p>{paragraph}</p>
 		{/each}
 	</section>
 
-	{#each job.sections as section}
+	{#each job.sections as section (section)}
 		<section class="print-job-section print-job-editorial print-avoid-break">
 			<h2>{section.title}</h2>
 			<ul>
-				{#each section.items as item}
+				{#each section.items as item, itemIndex (itemIndex)}
 					<li>{item}</li>
 				{/each}
 			</ul>
@@ -170,7 +174,7 @@
 	<section class="print-job-section print-job-editorial print-avoid-break">
 		<h2>{copy.required}</h2>
 		<ul>
-			{#each job.requiredSkills as skill}
+			{#each job.requiredSkills as skill, skillIndex (skillIndex)}
 				<li>{skill}</li>
 			{/each}
 		</ul>
@@ -179,7 +183,7 @@
 	<section class="print-job-section print-job-editorial print-avoid-break">
 		<h2>{copy.nice}</h2>
 		<ul>
-			{#each job.niceToHaveSkills as skill}
+			{#each job.niceToHaveSkills as skill, skillIndex (skillIndex)}
 				<li>{skill}</li>
 			{/each}
 		</ul>
@@ -189,7 +193,7 @@
 		<h2>{copy.environment}</h2>
 		<p>{job.environmentIntro}</p>
 		<div class="print-job-tags">
-			{#each job.environment as item}
+			{#each job.environment as item, itemIndex (itemIndex)}
 				<span>{item}</span>
 			{/each}
 		</div>
@@ -198,7 +202,7 @@
 	<section class="print-job-section print-job-editorial print-avoid-break">
 		<h2>{copy.conditions}</h2>
 		<ul>
-			{#each job.conditions as condition}
+			{#each job.conditions as condition, conditionIndex (conditionIndex)}
 				<li>{condition}</li>
 			{/each}
 		</ul>
@@ -207,10 +211,10 @@
 	<section class="print-job-section print-job-editorial print-avoid-break">
 		<h2>{copy.process}</h2>
 		<ol class="print-job-process">
-			{#each job.process as step}
+			{#each job.process as step (step)}
 				<li>
 					<strong>{step.title}</strong>
-					{#each step.items as item}
+					{#each step.items as item, itemIndex (itemIndex)}
 						<p>{item}</p>
 					{/each}
 				</li>

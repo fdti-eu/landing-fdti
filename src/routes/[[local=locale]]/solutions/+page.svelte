@@ -6,13 +6,13 @@
 	import { buildLocalizedPath, buildLocalizedUrl } from '#lib/functions/seo.ts';
 	import type { PageData } from './$types';
 
-	export let data: PageData;
-	$: content = solutionsContent[data.locale];
-	$: labels = solutionLabels[data.locale];
-	$: navigation = navigationCopy[data.locale];
-	$: familyPages = solutionPages[data.locale];
-	$: canonical = buildLocalizedUrl('/solutions', data.locale);
-	$: title = content.metaTitle;
+	let { data }: { data: PageData } = $props();
+	const content = $derived(solutionsContent[data.locale]);
+	const labels = $derived(solutionLabels[data.locale]);
+	const navigation = $derived(navigationCopy[data.locale]);
+	const familyPages = $derived(solutionPages[data.locale]);
+	const canonical = $derived(buildLocalizedUrl('/solutions', data.locale));
+	const title = $derived(content.metaTitle);
 </script>
 
 <PageSeo {title} description={content.description} {canonical} imageAlt="FDTI" />
@@ -26,7 +26,7 @@
 		</div>
 	</header>
 	<nav class="solution-index editorial-shell" aria-label={navigation.allSolutions}>
-		{#each solutionIds as id, index}
+		{#each solutionIds as id, index (id)}
 			<a href={`#${id}`}
 				><span aria-hidden="true">0{index + 1}</span>{labels[id]}<span aria-hidden="true">↓</span
 				></a
@@ -34,7 +34,7 @@
 		{/each}
 	</nav>
 	<div class="editorial-shell solution-grid">
-		{#each solutionIds as id, index}
+		{#each solutionIds as id, index (id)}
 			{@const family = content.families[id]}
 			<section {id} class="solution-card" aria-labelledby={`${id}-title`}>
 				<p class="solution-number" aria-hidden="true">0{index + 1}</p>
@@ -42,13 +42,13 @@
 				<p class="need">{family.need}</p>
 				<h3>{content.deliverables}</h3>
 				<ul>
-					{#each family.deliverables as item}<li>{item}</li>{/each}
+					{#each family.deliverables as item, itemIndex (itemIndex)}<li>{item}</li>{/each}
 				</ul>
 				<div class="evidence">
 					<h3>{content.evidence}</h3>
 					<p>{family.evidence}</p>
 					<ul>
-						{#each solutionProofIds[id] as projectId}
+						{#each solutionProofIds[id] as projectId (projectId)}
 							{@const project = data.projects.find((item) => item.id === projectId)}
 							{#if project}
 								<li>

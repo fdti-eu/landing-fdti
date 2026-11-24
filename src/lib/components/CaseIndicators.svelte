@@ -1,10 +1,14 @@
 <script lang="ts">
-	export let metrics: { label?: string | null; value?: string | null; note?: string | null }[];
-	export let compact = false;
+	interface Props {
+		metrics: { label?: string | null; value?: string | null; note?: string | null }[];
+		compact?: boolean;
+	}
+
+	let { metrics, compact = false }: Props = $props();
 </script>
 
 <dl class:compact>
-	{#each metrics as metric}
+	{#each metrics as metric (metric)}
 		<div>
 			<dt>{metric.label}</dt>
 			<dd><strong>{metric.value}</strong><small>{metric.note}</small></dd>

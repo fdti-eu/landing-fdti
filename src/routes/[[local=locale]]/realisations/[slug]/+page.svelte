@@ -11,41 +11,44 @@
 	} from '#lib/functions/seo.ts';
 	import { browser } from '$app/env';
 
-	export let data:
-		| {
-				content: {
-					status?: string | null;
-					title?: string | null;
-					subtitle?: string | null;
-					description?: string | null;
-					cta?: {
-						label?: string | null;
+	interface Props {
+		data:
+			| {
+					content: {
+						status?: string | null;
+						title?: string | null;
+						subtitle?: string | null;
 						description?: string | null;
-						button?: string | null;
-						link?: string | null;
+						cta?: {
+							label?: string | null;
+							description?: string | null;
+							button?: string | null;
+							link?: string | null;
+						} | null;
 					} | null;
-				} | null;
-				useCase: {
-					id?: string | null;
-					category?: string | null;
-					title?: string | null;
-					slug?: string | null;
-					date?: string | null;
-					location?: string | null;
-					challenge?: string | null;
-					approach?: string | null;
-					impact?: string | null;
+					useCase: {
+						id?: string | null;
+						category?: string | null;
+						title?: string | null;
+						slug?: string | null;
+						date?: string | null;
+						location?: string | null;
+						challenge?: string | null;
+						approach?: string | null;
+						impact?: string | null;
 
-					metrics?: { label?: string | null; value?: string | null; note?: string | null }[];
-					links?: { label?: string | null; url?: string | null }[];
-					tags?: string[];
-					details?: string[];
-				} | null;
-				locale?: Lang;
-				relatedGuides?: { href: string; label: string; summary: string }[];
-				relatedGuidesLabel?: string;
-		  }
-		| undefined;
+						metrics?: { label?: string | null; value?: string | null; note?: string | null }[];
+						links?: { label?: string | null; url?: string | null }[];
+						tags?: string[];
+						details?: string[];
+					} | null;
+					locale?: Lang;
+					relatedGuides?: { href: string; label: string; summary: string }[];
+					relatedGuidesLabel?: string;
+			  }
+			| undefined;
+	}
+	let { data }: Props = $props();
 	type UseCaseSeo = { title?: string; description: string };
 	const useCaseSeo: Partial<Record<Lang, Record<string, UseCaseSeo>>> = {
 		fr: {
@@ -186,11 +189,11 @@
 		}
 	};
 
-	$: content = data?.content || null;
-	$: useCase = data?.useCase || null;
-	$: currentLocale = data?.locale || 'fr';
-	$: seo = useCase?.id ? useCaseSeo[currentLocale]?.[useCase.id] : undefined;
-	$: labels =
+	const content = $derived(data?.content || null);
+	const useCase = $derived(data?.useCase || null);
+	const currentLocale = $derived(data?.locale || 'fr');
+	const seo = $derived(useCase?.id ? useCaseSeo[currentLocale]?.[useCase.id] : undefined);
+	const labels = $derived(
 		currentLocale === 'fr'
 			? {
 					context: 'Situation de départ',
@@ -239,26 +242,31 @@
 								delivered: 'Workflow',
 								back: 'Work',
 								home: 'Home'
-							};
+							}
+	);
 
-	$: metatags = {
+	const metatags = $derived({
 		title: seo?.title ?? (useCase?.title ? `${useCase.title} | FDTI` : 'FDTI'),
 		description: seo?.description || useCase?.challenge || useCase?.impact || '',
 		url: useCase?.slug ? `/realisations/${useCase.slug}` : '/realisations',
 		img: SOCIAL_IMAGE_PATH
-	};
-	$: canonicalUrl = buildLocalizedUrl(metatags.url || '/realisations', currentLocale);
-	$: ogImage = absoluteImageUrl(metatags.img);
+	});
+	const canonicalUrl = $derived(buildLocalizedUrl(metatags.url || '/realisations', currentLocale));
+	const ogImage = $derived(absoluteImageUrl(metatags.img));
 
 	import { beforeNavigate } from '$app/navigation';
 	import { page } from '$app/state';
 
-	let enableViewTransition = true;
+	let enableViewTransition = $state(true);
 
-	$: cameFromHome = browser && new URLSearchParams(window.location.search).get('from') === 'home';
-	$: backHref = cameFromHome
-		? `${buildLocalizedPath('/', currentLocale)}#use-cases-preview`
-		: buildLocalizedPath('/realisations', currentLocale);
+	const cameFromHome = $derived(
+		browser && new URLSearchParams(window.location.search).get('from') === 'home'
+	);
+	const backHref = $derived(
+		cameFromHome
+			? `${buildLocalizedPath('/', currentLocale)}#use-cases-preview`
+			: buildLocalizedPath('/realisations', currentLocale)
+	);
 
 	type CaseNavigationState = { caseOrigin?: 'home' | 'list' };
 
@@ -368,7 +376,7 @@
 				<a
 					href={backHref}
 					class="inline-flex items-center gap-2 text-base font-semibold text-white bg-white/10 hover:bg-yellow hover:text-darkGrey px-6 py-3 rounded-full transition-all duration-300 border border-white/20 backdrop-blur-sm"
-					on:click={handleBackClick}
+					onclick={handleBackClick}
 				>
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
@@ -501,7 +509,7 @@
 								<ul
 									class="list-disc pl-4 sm:pl-5 space-y-2 text-sm sm:text-base text-darkGrey leading-relaxed"
 								>
-									{#each useCase.details as detail}
+									{#each useCase.details as detail, detailIndex (detailIndex)}
 										<li>{detail}</li>
 									{/each}
 								</ul>
@@ -526,7 +534,7 @@
 							<CaseIndicators metrics={useCase.metrics} />
 						{:else if useCase.metrics?.length}
 							<div class="space-y-3 sm:space-y-4">
-								{#each useCase.metrics as metric, index}
+								{#each useCase.metrics as metric, index (metric)}
 									<div
 										class="bg-linear-to-br from-slate-50 to-slate-100 rounded-xl p-4 sm:p-5 border border-slate-200 hover:shadow-md transition-shadow"
 										style={enableViewTransition
@@ -548,7 +556,7 @@
 
 						{#if useCase.tags?.length}
 							<div class="flex flex-wrap gap-2">
-								{#each useCase.tags as tag, index}
+								{#each useCase.tags as tag, index (index)}
 									<span
 										class="px-3 py-1.5 rounded-full bg-slate-100 text-xs sm:text-sm font-medium text-darkGrey border border-slate-200 transition-transform hover:scale-105"
 										style={enableViewTransition
@@ -563,7 +571,7 @@
 
 						{#if useCase.links?.length}
 							<div class="space-y-2">
-								{#each useCase.links as link}
+								{#each useCase.links as link (link)}
 									{#if link?.url}
 										<a
 											href={link.url}
@@ -590,7 +598,7 @@
 						{data.relatedGuidesLabel}
 					</h2>
 					<div class="grid gap-4 sm:grid-cols-2">
-						{#each data.relatedGuides as guide}
+						{#each data.relatedGuides as guide (guide.href)}
 							<a
 								href={guide.href}
 								class="block rounded-xl border border-slate-200 px-4 py-3 text-darkGrey hover:border-yellow hover:shadow-md transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-darkGrey"

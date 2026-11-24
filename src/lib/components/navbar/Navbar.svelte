@@ -143,7 +143,7 @@
 			<div class="wordmark"><b>FDTI</b><small>From Data To Insight</small></div>
 		</a>
 		<ul id="fdti-navigation" class="nav-links" class:open={isNavbarOpen}>
-			{#each links as link}<li class:has-submenu={link.children?.length}>
+			{#each links as link (link.href)}<li class:has-submenu={link.children?.length}>
 					<a
 						href={link.href}
 						class:active={link.active}
@@ -155,7 +155,7 @@
 					>
 					{#if link.children?.length}
 						<ul class="nav-submenu">
-							{#each link.children as child, childIndex}
+							{#each link.children as child, childIndex (child.href)}
 								<li class:nav-overview={childIndex === 0}>
 									<a href={child.href} onclick={() => (isNavbarOpen = false)}>{child.label}</a>
 								</li>

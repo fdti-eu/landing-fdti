@@ -7,32 +7,34 @@
 		resolveNewsletterEndpoint
 	} from '#lib/contact.ts';
 
-	let email = '';
-	let message = '';
-	let newsletter = false;
-	let submitted = false;
-	let pending = false;
-	let hydrated = false;
-	let error = '';
+	let email = $state('');
+	let message = $state('');
+	let newsletter = $state(false);
+	let submitted = $state(false);
+	let pending = $state(false);
+	let hydrated = $state(false);
+	let error = $state('');
 	let requestId = '';
-	let contactAccepted = false;
-	let newsletterAccepted = false;
-	let website = '';
+	let contactAccepted = $state(false);
+	let newsletterAccepted = $state(false);
+	let website = $state('');
 	let controller: AbortController | undefined;
-	let copied = false;
-	let copyError = false;
+	let copied = $state(false);
+	let copyError = $state(false);
 	let copyTimer: ReturnType<typeof setTimeout> | undefined;
-	let result: HTMLDivElement;
-	$: hasMessage = message.trim().length > 0;
-	$: submitLabel = pending
-		? 'Envoi en cours…'
-		: contactAccepted && newsletter && !newsletterAccepted
-			? 'Réessayer l’inscription'
-			: hasMessage
-				? 'Envoyer mon message'
-				: newsletter
-					? 'M’inscrire'
-					: 'Être recontacté';
+	let result = $state<HTMLDivElement>();
+	const hasMessage = $derived(message.trim().length > 0);
+	const submitLabel = $derived(
+		pending
+			? 'Envoi en cours…'
+			: contactAccepted && newsletter && !newsletterAccepted
+				? 'Réessayer l’inscription'
+				: hasMessage
+					? 'Envoyer mon message'
+					: newsletter
+						? 'M’inscrire'
+						: 'Être recontacté'
+	);
 	onMount(() => {
 		hydrated = true;
 	});
@@ -117,7 +119,7 @@
 			}
 			submitted = true;
 			await tick();
-			result.focus();
+			result?.focus();
 		} catch {
 			error = contactAccepted
 				? 'Votre demande de contact est reçue, mais l’inscription à la newsletter n’a pas pu être finalisée. Vous pouvez réessayer sans renvoyer votre message.'

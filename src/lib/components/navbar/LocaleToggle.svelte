@@ -11,7 +11,12 @@
 		type SeoAlternatePaths
 	} from '#lib/functions/seo.ts';
 
-	let isDropdownOpen = false;
+	interface Props {
+		class?: string;
+	}
+
+	let { class: className }: Props = $props();
+	let isDropdownOpen = $state(false);
 	const labels: Record<Lang, { toggle: string; languages: Record<Lang, string> }> = {
 		fr: {
 			toggle: 'Changer de langue',
@@ -40,8 +45,8 @@
 			languages: { fr: 'Francese', en: 'Inglese', es: 'Spagnolo', de: 'Tedesco', it: 'Italiano' }
 		}
 	};
-	$: currentLocale = isSupportedLocale($locale) ? $locale : 'fr';
-	$: copy = labels[currentLocale];
+	const currentLocale = $derived(isSupportedLocale($locale) ? $locale : 'fr');
+	const copy = $derived(labels[currentLocale]);
 
 	function toggleLanguageDropdown() {
 		isDropdownOpen = !isDropdownOpen;
@@ -59,12 +64,12 @@
 </script>
 
 
-<div class="relative w-fit {$$props.class}">
+<div class="relative w-fit {className}">
 	<button
 		aria-label={copy.toggle}
 		aria-expanded={isDropdownOpen}
 		class="flex justify-center items-center gap-2 text-white hover:text-yellow transition-colors duration-300"
-		on:click={toggleLanguageDropdown}
+		onclick={toggleLanguageDropdown}
 	>
 		<svg
 			xmlns="http://www.w3.org/2000/svg"
@@ -85,13 +90,13 @@
 		<ul
 			class="absolute top-full right-0 mt-2 p-2 gap-1 bg-white rounded-lg shadow-xl min-w-[120px] z-50"
 		>
-			{#each FLAGS as { code }}
+			{#each FLAGS as { code } (code)}
 				<li class="border-b border-darkGrey/10 last:border-none">
 					<button
 						value={code}
 						aria-label={copy.languages[code]}
 						class="flex items-center gap-3 px-3 py-2 w-full hover:bg-gray-50 transition-colors rounded-md"
-						on:click={() => handleChangeLocale(code)}
+						onclick={() => handleChangeLocale(code)}
 					>
 						<Flag
 							local={code}

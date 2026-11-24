@@ -1,5 +1,9 @@
 <script lang="ts">
-	export let ariaLabel = 'LinkedIn page';
+	interface Props {
+		ariaLabel?: string;
+	}
+
+	let { ariaLabel = 'LinkedIn page' }: Props = $props();
 </script>
 
 <a

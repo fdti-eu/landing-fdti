@@ -1,9 +1,9 @@
 <script lang="ts">
+	import SectionHeading from '#lib/components/SectionHeading.svelte';
 	import TechnoItem from './TechnoItem.svelte';
 	import TechnoList from './TechnoList.svelte';
 	import type { Lang } from '#lib/data.ts';
 
-	export let locale: Lang = 'fr';
 	const labels: Record<Lang, { title: string; subtitle: string; documentation: string }> = {
 		fr: {
 			title: 'Technologies',
@@ -13,8 +13,7 @@
 		},
 		en: {
 			title: 'Technologies',
-			subtitle:
-				'We use modern tools suited to every situation encountered when processing your data',
+			subtitle: 'We use modern tools suited to every situation encountered when processing your data',
 			documentation: 'Link to the documentation'
 		},
 		es: {
@@ -36,27 +35,32 @@
 			documentation: 'Link alla documentazione'
 		}
 	};
-	$: copy = labels[locale];
 
-	export let content: {
-		status?: string | null;
-		title?: string | null;
-		subtitle?: string | null;
-		technology_category_list?: {
+	interface Props {
+		locale?: Lang;
+		content: {
+			status?: string | null;
 			title?: string | null;
-			description?: string | null;
-			category_icon?: { url?: string | null } | null;
-			technology_list?: {
-				name?: string | null;
-				url?: string | null;
-				img?: { url?: string | null; width?: number | null; height?: number | null } | null;
+			subtitle?: string | null;
+			technology_category_list?: {
+				title?: string | null;
+				description?: string | null;
+				category_icon?: { url?: string | null } | null;
+				technology_list?: {
+					name?: string | null;
+					url?: string | null;
+					img?: { url?: string | null; width?: number | null; height?: number | null } | null;
+				}[];
 			}[];
-		}[];
-	} | null;
+		} | null;
+	}
 
-	$: technologyList = content?.technology_category_list || [];
+	let { locale = 'fr', content }: Props = $props();
+	const copy = $derived(labels[locale]);
 
-	let openIndex: number | null = null;
+	const technologyList = $derived(content?.technology_category_list || []);
+
+	let openIndex = $state<number | null>(null);
 
 	const DEFAULT_IMG_WIDTH = 140;
 	const DEFAULT_IMG_HEIGHT = 56;
@@ -68,18 +72,12 @@
 
 {#if technologyList && content}
 	<section class="technologies-section" id="technologies">
-		<div class="section-heading">
-			<div class="group">
-				<h2 class="text-3xl font-bold text-center md:text-4xl">
-					{content.title || copy.title}
-				</h2>
-			</div>
-			<h3 class="text-xl font-bold text-center sm:text-2xl md:text-3xl lg:text-4xl">
-				{content.subtitle || copy.subtitle}
-			</h3>
-		</div>
+		<SectionHeading
+			title={content.title || copy.title}
+			subtitle={content.subtitle || copy.subtitle}
+		/>
 		<article class="technologies-grid">
-			{#each technologyList as category, index}
+			{#each technologyList as category, index (category)}
 				{@const isOpen = openIndex === index}
 				<TechnoList
 					title={category?.title || ''}
@@ -89,7 +87,7 @@
 					onToggle={() => handleToggle(index)}
 				>
 					{#if category?.technology_list && category?.technology_list.length}
-						{#each category.technology_list as technology}
+						{#each category.technology_list as technology (technology)}
 							<TechnoItem
 								link={technology?.url || ''}
 								imgUrl={technology?.img?.url || null}

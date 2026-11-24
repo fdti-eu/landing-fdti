@@ -8,14 +8,16 @@
 	import { afterNavigate } from '$app/navigation';
 	import { onDestroy } from 'svelte';
 
-	export let data: PageData;
-	$: ({ content, guide } = data);
-	$: root = buildLocalizedPath('/solutions/analyse-documentaire', data.locale);
-	$: canonical = buildLocalizedUrl(`/solutions/analyse-documentaire/${guide.slug}`, data.locale);
-	$: title = guide.metaTitle;
-	$: description = guide.metaDescription;
-	$: guideIndex = content.guides.findIndex((item) => item.slug === guide.slug);
-	$: guideTransitionPrefix = `expertise-document_analysis-dossier-${guideIndex}`;
+	let { data }: { data: PageData } = $props();
+	const { content, guide } = $derived(data);
+	const root = $derived(buildLocalizedPath('/solutions/analyse-documentaire', data.locale));
+	const canonical = $derived(
+		buildLocalizedUrl(`/solutions/analyse-documentaire/${guide.slug}`, data.locale)
+	);
+	const title = $derived(guide.metaTitle);
+	const description = $derived(guide.metaDescription);
+	const guideIndex = $derived(content.guides.findIndex((item) => item.slug === guide.slug));
+	const guideTransitionPrefix = $derived(`expertise-document_analysis-dossier-${guideIndex}`);
 	const labels: Record<
 		Lang,
 		{
@@ -62,8 +64,8 @@
 			imageAlt: 'FDTI - IA, codice e dati'
 		}
 	};
-	$: copy = labels[data.locale];
-	let activeSection = '';
+	const copy = $derived(labels[data.locale]);
+	let activeSection = $state('');
 	let scrollFrame = 0;
 	function updateSection() {
 		cancelAnimationFrame(scrollFrame);
@@ -83,7 +85,7 @@
 	});
 </script>
 
-<svelte:window on:scroll={updateSection} on:resize={updateSection} />
+<svelte:window onscroll={updateSection} onresize={updateSection} />
 
 <PageSeo
 	{title}
@@ -136,7 +138,7 @@
 			<nav aria-label={content.contents}>
 				<p class="ce-eyebrow">{content.contents}</p>
 				<ol>
-					{#each guide.sections as section, index}
+					{#each guide.sections as section, index (section.id)}
 						<li>
 							<a
 								href={`#${section.id}`}
@@ -157,7 +159,7 @@
 		</aside>
 		<div class="ce-detail-content">
 			<p class="ce-context">{content.evidenceNote}</p>
-			{#each guide.sections as section, index}
+			{#each guide.sections as section, index (section.id)}
 				<section class="ce-feature" id={section.id}>
 					<p class="ce-feature-index" aria-hidden="true">0{index + 1} · {section.status}</p>
 					<h2>{section.title}</h2>
@@ -189,7 +191,7 @@
 	<div class="ce-shell">
 		<h2>{content.relatedTitle}</h2>
 		<div class="ce-related-grid">
-			{#each content.guides.filter((item) => item.slug !== guide.slug) as item}
+			{#each content.guides.filter((item) => item.slug !== guide.slug) as item (item.slug)}
 				<a href={`${root}/${item.slug}`}
 					><span class="ce-eyebrow">{item.label}</span>
 					<h3>{item.title}</h3>

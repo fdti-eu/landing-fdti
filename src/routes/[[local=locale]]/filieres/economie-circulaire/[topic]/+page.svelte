@@ -10,13 +10,15 @@
 	import { navigationCopy } from '#lib/navigation.ts';
 	import { expertiseOffers, offerPaths } from '#lib/expertise-offers.ts';
 
-	export let data: PageData;
-	$: ({ content, dossier } = data);
-	$: root = buildLocalizedPath('/filieres/economie-circulaire', data.locale);
-	$: canonical = buildLocalizedUrl(`/filieres/economie-circulaire/${dossier.slug}`, data.locale);
-	$: title = `${dossier.label} | FDTI`;
-	$: dossierIndex = content.dossiers.findIndex((item) => item.slug === dossier.slug);
-	$: dossierTransitionPrefix = `expertise-circular-dossier-${dossierIndex}`;
+	let { data }: { data: PageData } = $props();
+	const { content, dossier } = $derived(data);
+	const root = $derived(buildLocalizedPath('/filieres/economie-circulaire', data.locale));
+	const canonical = $derived(
+		buildLocalizedUrl(`/filieres/economie-circulaire/${dossier.slug}`, data.locale)
+	);
+	const title = $derived(`${dossier.label} | FDTI`);
+	const dossierIndex = $derived(content.dossiers.findIndex((item) => item.slug === dossier.slug));
+	const dossierTransitionPrefix = $derived(`expertise-circular-dossier-${dossierIndex}`);
 	const homeLabels: Record<Lang, string> = {
 		fr: 'Accueil',
 		en: 'Home',
@@ -31,7 +33,7 @@
 		de: 'FDTI - KI, Code und Daten',
 		it: 'FDTI - IA, codice e dati'
 	};
-	let activeSection = '';
+	let activeSection = $state('');
 	let scrollFrame = 0;
 	function updateSection() {
 		cancelAnimationFrame(scrollFrame);
@@ -51,7 +53,7 @@
 	});
 </script>
 
-<svelte:window on:scroll={updateSection} on:resize={updateSection} />
+<svelte:window onscroll={updateSection} onresize={updateSection} />
 
 <PageSeo
 	{title}
@@ -99,7 +101,7 @@
 		<h1 style={`view-transition-name: ${dossierTransitionPrefix}-title;`}>{dossier.title}</h1>
 		<p class="ce-lead">{dossier.description}</p>
 		<ul class="ce-terms">
-			{#each dossier.terms as term}<li>{term}</li>{/each}
+			{#each dossier.terms as term, termIndex (termIndex)}<li>{term}</li>{/each}
 		</ul>
 	</div>
 </header>
@@ -110,7 +112,7 @@
 			<nav aria-label={content.contents}>
 				<p class="ce-eyebrow">{content.contents}</p>
 				<ol>
-					{#each dossier.sections as section, index}
+					{#each dossier.sections as section, index (section.id)}
 						<li>
 							<a
 								href={`#${section.id}`}
@@ -131,7 +133,7 @@
 		</aside>
 		<div class="ce-detail-content">
 			<p class="ce-context">{dossier.context}</p>
-			{#each dossier.sections as section, index}
+			{#each dossier.sections as section, index (section.id)}
 				<section class="ce-feature" id={section.id}>
 					<p class="ce-feature-index" aria-hidden="true">0{index + 1}</p>
 					<h2>{section.title}</h2>
@@ -140,13 +142,13 @@
 						<div>
 							<h3 class="ce-small-heading">{content.actionLabel}</h3>
 							<ol class="ce-actions-list">
-								{#each section.actions as action}<li>{action}</li>{/each}
+								{#each section.actions as action, actionIndex (actionIndex)}<li>{action}</li>{/each}
 							</ol>
 						</div>
 						<aside class="ce-data-card">
 							<h3 class="ce-small-heading">{content.dataLabel}</h3>
 							<ul>
-								{#each section.data as item}<li>{item}</li>{/each}
+								{#each section.data as item, itemIndex (itemIndex)}<li>{item}</li>{/each}
 							</ul>
 						</aside>
 					</div>
@@ -171,7 +173,7 @@
 	<div class="ce-shell">
 		<h2>{navigationCopy[data.locale].sectors}</h2>
 		<div class="ce-related-grid">
-			{#each content.dossiers.slice(0, 2).filter((item) => item.slug !== dossier.slug) as item}
+			{#each content.dossiers.slice(0, 2).filter((item) => item.slug !== dossier.slug) as item (item.slug)}
 				<a href={`${root}/${item.slug}`}
 					><span class="ce-eyebrow">{item.label}</span>
 					<h3>{item.title}</h3>

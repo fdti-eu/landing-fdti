@@ -1,19 +1,25 @@
 <script lang="ts">
-	export let content: {
-		status?: string | null;
-		title?: string | null;
-		company_list?: { name?: string | null; img?: { url?: string | null } | null }[];
-	} | null;
-	export let cii: {
-		status?: string | null;
-		description?: string | null;
-		image?: { url?: string | null } | null;
-	} | null = null;
+	interface Props {
+		content: {
+			status?: string | null;
+			title?: string | null;
+			company_list?: { name?: string | null; img?: { url?: string | null } | null }[];
+		} | null;
+		cii?: {
+			status?: string | null;
+			description?: string | null;
+			image?: { url?: string | null } | null;
+		} | null;
+	}
+
+	let { content, cii = null }: Props = $props();
 	const featuredCompanies = ['Stellantis', 'Samsung', 'Mastercard', 'BlaBlaCar'];
-	$: companies = [...(content?.company_list ?? [])].sort(
-		(a, b) =>
-			Number(featuredCompanies.includes(b.name || '')) -
-			Number(featuredCompanies.includes(a.name || ''))
+	const companies = $derived(
+		[...(content?.company_list ?? [])].sort(
+			(a, b) =>
+				Number(featuredCompanies.includes(b.name || '')) -
+				Number(featuredCompanies.includes(a.name || ''))
+		)
 	);
 </script>
 
@@ -28,7 +34,7 @@
 			<div class="relative overflow-hidden">
 				<div class="marquee-container">
 					<div class="marquee-content">
-						{#each companies as company}
+						{#each companies as company (company)}
 							<div
 								class="marquee-item"
 								class:featured-logo={featuredCompanies.includes(company.name || '')}
@@ -47,7 +53,7 @@
 						{/each}
 					</div>
 					<div class="marquee-content" aria-hidden="true">
-						{#each companies as company}
+						{#each companies as company (company)}
 							<div
 								class="marquee-item"
 								class:featured-logo={featuredCompanies.includes(company.name || '')}

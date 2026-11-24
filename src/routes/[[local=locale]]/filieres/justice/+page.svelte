@@ -3,11 +3,11 @@
 	import { navigationCopy, sectorCopy } from '#lib/navigation.ts';
 	import { buildLocalizedPath, buildLocalizedUrl } from '#lib/functions/seo.ts';
 	import PageSeo from '#lib/components/PageSeo.svelte';
-	export let data: PageData;
-	$: nav = navigationCopy[data.locale];
-	$: copy = sectorCopy[data.locale];
-	$: heading = copy.justice;
-	$: description = copy.justiceIntro;
+	let { data }: { data: PageData } = $props();
+	const nav = $derived(navigationCopy[data.locale]);
+	const copy = $derived(sectorCopy[data.locale]);
+	const heading = $derived(copy.justice);
+	const description = $derived(copy.justiceIntro);
 </script>
 
 <PageSeo
@@ -25,7 +25,7 @@
 		</div>
 	</header>
 	<section class="editorial-section editorial-shell">
-		{#each data.projects as project}<article>
+		{#each data.projects as project (project.slug)}<article>
 				<h2>
 					<a href={buildLocalizedPath(`/realisations/${project.slug}`, data.locale)}
 						>{project.title}</a

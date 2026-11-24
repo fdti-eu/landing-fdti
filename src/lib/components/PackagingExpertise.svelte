@@ -260,7 +260,7 @@
 			avec vos équipes.
 		</p>
 		<div class="cards three-columns">
-			{#each evidence as item}<article>
+			{#each evidence as item (item.href)}<article>
 					<h3>{item.title}</h3>
 					<p>{item.text}</p>
 					<a class="text-link" href={item.href}>{item.label} ↗</a>
@@ -278,7 +278,7 @@
 				avant l’import dans le logiciel destinataire.
 			</p>
 			<div class="cards">
-				{#each problems as problem}<article>
+				{#each problems as problem (problem)}<article>
 						<h3>{problem.title}</h3>
 						<p>{problem.text}</p>
 					</article>{/each}
@@ -370,7 +370,7 @@
 				références ou le traitement des anomalies.
 			</p>
 			<ol class="workflow">
-				{#each flow as step}<li>
+				{#each flow as step (step)}<li>
 						<h3>{step.title}</h3>
 						<p>{step.text}</p>
 					</li>{/each}

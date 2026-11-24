@@ -1,13 +1,17 @@
 <script lang="ts">
-	export let title: string;
-	export let practices: { title: string; text: string }[];
+	interface Props {
+		title: string;
+		practices: { title: string; text: string }[];
+	}
+
+	let { title, practices }: Props = $props();
 </script>
 
 <section class="editorial-section solution-practices" aria-labelledby="solution-practices">
 	<div class="editorial-shell">
 		<h2 id="solution-practices">{title}</h2>
 		<div class="practice-grid">
-			{#each practices as practice}
+			{#each practices as practice (practice)}
 				<article>
 					<h3>{practice.title}</h3>
 					<p>{practice.text}</p>

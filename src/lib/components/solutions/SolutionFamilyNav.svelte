@@ -4,10 +4,14 @@
 	import { solutionIds, solutionLabels, type SolutionId } from '#lib/navigation.ts';
 	import { solutionHref } from '#lib/solution-pages.ts';
 
-	export let title: string;
-	export let locale: Lang;
-	export let current: SolutionId;
-	$: others = solutionIds.filter((id) => id !== current);
+	interface Props {
+		title: string;
+		locale: Lang;
+		current: SolutionId;
+	}
+
+	let { title, locale, current }: Props = $props();
+	const others = $derived(solutionIds.filter((id) => id !== current));
 </script>
 
 <nav
@@ -16,7 +20,7 @@
 >
 	<h2 id="solution-others">{title}</h2>
 	<ul>
-		{#each others as id}
+		{#each others as id (id)}
 			<li>
 				<a href={buildLocalizedPath(solutionHref(id, locale), locale)}
 					>{solutionLabels[locale][id]} <span aria-hidden="true">→</span></a

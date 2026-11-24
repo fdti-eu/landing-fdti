@@ -10,7 +10,7 @@
 	} from '#lib/functions/seo.ts';
 	import type { JobOffer } from '#lib/jobs.ts';
 
-	export let data: { jobs: JobOffer[]; locale: Lang };
+	let { data }: { data: { jobs: JobOffer[]; locale: Lang } } = $props();
 
 	const copies = {
 		fr: {
@@ -119,10 +119,10 @@
 			cta: 'Vedi l’offerta e candidati'
 		}
 	} satisfies Record<Lang, Record<string, string>>;
-	$: copy = copies[data.locale];
-	$: title = copy.title;
-	$: description = copy.description;
-	$: canonicalUrl = buildLocalizedUrl('/offres-emploi', data.locale);
+	const copy = $derived(copies[data.locale]);
+	const title = $derived(copy.title);
+	const description = $derived(copy.description);
+	const canonicalUrl = $derived(buildLocalizedUrl('/offres-emploi', data.locale));
 	const ogImage = absoluteImageUrl(SOCIAL_IMAGE_PATH);
 
 	const transitionName = (job: JobOffer, part: string) =>
@@ -190,7 +190,7 @@
 		</div>
 
 		<div class="grid lg:grid-cols-2 gap-6">
-			{#each data.jobs as job}
+			{#each data.jobs as job (job.slug)}
 				<a
 					href={buildLocalizedPath(`/offres-emploi/${job.slug}`, data.locale)}
 					class="job-card group block rounded-3xl bg-white border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden focus:outline-none focus-visible:ring-4 focus-visible:ring-yellow/60"

@@ -10,11 +10,11 @@
 	import type { Lang } from '#lib/data.ts';
 	import type { PageData } from './$types';
 
-	export let data: PageData;
-	$: content = data.content;
-	$: canonical = buildLocalizedUrl('/solutions/analyse-documentaire', data.locale);
+	let { data }: { data: PageData } = $props();
+	const content = $derived(data.content);
+	const canonical = $derived(buildLocalizedUrl('/solutions/analyse-documentaire', data.locale));
 	// This page also serves the "AI & document processing" solution family.
-	$: family = solutionPages[data.locale];
+	const family = $derived(solutionPages[data.locale]);
 	const labels: Record<
 		Lang,
 		{
@@ -73,8 +73,8 @@
 			imageAlt: 'FDTI - IA, codice e dati'
 		}
 	};
-	$: copy = labels[data.locale];
-	$: hub = {
+	const copy = $derived(labels[data.locale]);
+	const hub = $derived({
 		...content,
 		journeyLabel: copy.journey,
 		workflows: content.guides.flatMap((guide) =>
@@ -97,7 +97,7 @@
 		})),
 		proofNote: content.evidenceNote,
 		faqLabel: copy.faq
-	} satisfies ExpertiseHubContent;
+	} satisfies ExpertiseHubContent);
 </script>
 
 <PageSeo
@@ -152,7 +152,7 @@
 	eventPrefix="document_analysis"
 	hubTransitionName="expertise-hub-document-analysis"
 >
-	<svelte:fragment slot="before-faq">
+	{#snippet beforeFaq()}
 		{#if family}
 			<SolutionOptions
 				title={family.optionsTitle}
@@ -162,8 +162,8 @@
 				options={family.documents.options}
 			/>
 		{/if}
-	</svelte:fragment>
-	<svelte:fragment slot="before-contact">
+	{/snippet}
+	{#snippet beforeContact()}
 		{#if family}
 			<SolutionPractices title={family.practicesTitle} practices={family.practices} />
 			<SolutionFamilyNav
@@ -172,5 +172,5 @@
 				current="ia-documents"
 			/>
 		{/if}
-	</svelte:fragment>
+	{/snippet}
 </ExpertiseHub>

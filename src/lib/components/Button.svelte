@@ -1,14 +1,29 @@
 <script lang="ts">
-	export let isLink = false;
-	export let isExternalLink = false;
-	export let linkUrl = '';
-	export let analyticsEvent: string | undefined = undefined;
-	export let analyticsPlacement: string | undefined = undefined;
-	export let color: IColor = 'yellow';
+	import type { Snippet } from 'svelte';
+
+	interface Props {
+		isLink?: boolean;
+		isExternalLink?: boolean;
+		linkUrl?: string;
+		analyticsEvent?: string;
+		analyticsPlacement?: string;
+		color?: IColor;
+		children?: Snippet;
+	}
+
+	let {
+		isLink = false,
+		isExternalLink = false,
+		linkUrl = '',
+		analyticsEvent,
+		analyticsPlacement,
+		color = 'yellow',
+		children
+	}: Props = $props();
 
 	type IColor = 'yellow' | 'white' | 'black' | 'blue' | 'red' | 'green' | 'gray';
 
-	let colorClass: { [key: string]: string } = {
+	const colorClass: Record<IColor, string> = {
 		yellow: 'bg-yellow hover:opacity-80',
 		white: 'bg-white hover:opacity-80',
 		black: 'bg-black',
@@ -30,7 +45,7 @@
 			color
 		]} text-center font-bold transition-all duration-300"
 	>
-		<slot />
+		{@render children?.()}
 		<svg
 			width="20"
 			height="20"

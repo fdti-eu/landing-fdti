@@ -36,8 +36,8 @@
 			linkedin: 'Pagina LinkedIn di FDTI'
 		}
 	};
-	$: currentLocale = isSupportedLocale($locale) ? $locale : 'fr';
-	$: copy = labels[currentLocale];
+	const currentLocale = $derived(isSupportedLocale($locale) ? $locale : 'fr');
+	const copy = $derived(labels[currentLocale]);
 </script>
 
 <!-- footer -->

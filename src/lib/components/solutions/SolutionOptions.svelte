@@ -1,9 +1,13 @@
 <script lang="ts">
-	export let title: string;
-	export let intro: string;
-	export let whenLabel: string;
-	export let impactLabel: string;
-	export let options: { title: string; when: string; impact: string }[];
+	interface Props {
+		title: string;
+		intro: string;
+		whenLabel: string;
+		impactLabel: string;
+		options: { title: string; when: string; impact: string }[];
+	}
+
+	let { title, intro, whenLabel, impactLabel, options }: Props = $props();
 </script>
 
 <section
@@ -14,7 +18,7 @@
 		<h2 id="solution-options">{title}</h2>
 		<p class="intro">{intro}</p>
 		<div class="option-list">
-			{#each options as option}
+			{#each options as option (option)}
 				<article class="option-row">
 					<h3>{option.title}</h3>
 					<div>

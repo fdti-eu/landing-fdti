@@ -11,9 +11,9 @@
 	import PrintableJobOffer from '#lib/components/jobs/PrintableJobOffer.svelte';
 	import type { JobOffer } from '#lib/jobs.ts';
 
-	export let data: { job: JobOffer; locale: Lang };
+	let { data }: { data: { job: JobOffer; locale: Lang } } = $props();
 
-	$: job = data.job;
+	const job = $derived(data.job);
 	const copies = {
 		fr: {
 			back: 'Toutes les offres',
@@ -126,13 +126,13 @@
 			openForm: 'Apri il modulo in una nuova scheda'
 		}
 	} satisfies Record<Lang, Record<string, string>>;
-	$: copy = copies[data.locale];
-	$: title = `${job.title} | FDTI`;
-	$: description = job.summary;
-	$: canonicalUrl = buildLocalizedUrl(`/offres-emploi/${job.slug}`, data.locale);
-	$: ogImage = absoluteImageUrl(SOCIAL_IMAGE_PATH);
-	$: jobDescription = [...job.intro, job.summary].join('\n\n');
-	$: transitionName = (part: string) => `view-transition-name: job-${part}-${job.slug};`;
+	const copy = $derived(copies[data.locale]);
+	const title = $derived(`${job.title} | FDTI`);
+	const description = $derived(job.summary);
+	const canonicalUrl = $derived(buildLocalizedUrl(`/offres-emploi/${job.slug}`, data.locale));
+	const ogImage = absoluteImageUrl(SOCIAL_IMAGE_PATH);
+	const jobDescription = $derived([...job.intro, job.summary].join('\n\n'));
+	const transitionName = (part: string) => `view-transition-name: job-${part}-${job.slug};`;
 
 	const printJobOffer = () => {
 		window.print();
@@ -250,7 +250,7 @@
 				</a>
 				<button
 					type="button"
-					on:click={printJobOffer}
+					onclick={printJobOffer}
 					class="inline-flex cursor-pointer items-center justify-center gap-3 rounded-full border border-white/20 bg-white/10 text-white px-6 py-3 font-bold hover:bg-white hover:text-darkGrey transition-all"
 				>
 					<svg
@@ -283,16 +283,16 @@
 		<div class="space-y-10">
 			<section class="rounded-3xl bg-white border border-slate-200 p-6 md:p-8 space-y-4">
 				<h2 class="text-2xl md:text-3xl font-bold text-darkGrey">{copy.introTitle}</h2>
-				{#each job.intro as paragraph}
+				{#each job.intro as paragraph, paragraphIndex (paragraphIndex)}
 					<p class="text-grey leading-relaxed">{paragraph}</p>
 				{/each}
 			</section>
 
-			{#each job.sections as section}
+			{#each job.sections as section (section)}
 				<section class="rounded-3xl bg-white border border-slate-200 p-6 md:p-8 space-y-5">
 					<h2 class="text-2xl md:text-3xl font-bold text-darkGrey">{section.title}</h2>
 					<ul class="space-y-3 text-grey leading-relaxed">
-						{#each section.items as item}
+						{#each section.items as item, itemIndex (itemIndex)}
 							<li class="flex gap-3">
 								<span class="mt-2 h-2 w-2 shrink-0 rounded-full bg-yellow"></span>
 								<span>{item}</span>
@@ -310,7 +310,7 @@
 					<div class="space-y-4">
 						<h3 class="text-xl font-bold text-darkGrey">{copy.requiredTitle}</h3>
 						<ul class="space-y-3 text-grey leading-relaxed">
-							{#each job.requiredSkills as skill}
+							{#each job.requiredSkills as skill, skillIndex (skillIndex)}
 								<li class="flex gap-3">
 									<span class="mt-2 h-2 w-2 shrink-0 rounded-full bg-darkGrey"></span>
 									<span>{skill}</span>
@@ -321,7 +321,7 @@
 					<div class="space-y-4">
 						<h3 class="text-xl font-bold text-darkGrey">{copy.niceTitle}</h3>
 						<ul class="space-y-3 text-grey leading-relaxed">
-							{#each job.niceToHaveSkills as skill}
+							{#each job.niceToHaveSkills as skill, skillIndex (skillIndex)}
 								<li class="flex gap-3">
 									<span class="mt-2 h-2 w-2 shrink-0 rounded-full bg-yellow"></span>
 									<span>{skill}</span>
@@ -336,7 +336,7 @@
 				<h2 class="text-2xl md:text-3xl font-bold text-darkGrey">{copy.environmentTitle}</h2>
 				<p class="text-grey leading-relaxed">{job.environmentIntro}</p>
 				<div class="flex flex-wrap gap-2">
-					{#each job.environment as item}
+					{#each job.environment as item, itemIndex (itemIndex)}
 						<span
 							class="rounded-full bg-slate-100 text-grey border border-slate-200 px-4 py-2 text-sm font-semibold"
 						>
@@ -349,7 +349,7 @@
 			<section class="rounded-3xl bg-white border border-slate-200 p-6 md:p-8 space-y-5">
 				<h2 class="text-2xl md:text-3xl font-bold text-darkGrey">{copy.conditionsTitle}</h2>
 				<ul class="grid sm:grid-cols-2 gap-3 text-grey leading-relaxed">
-					{#each job.conditions as condition}
+					{#each job.conditions as condition, conditionIndex (conditionIndex)}
 						<li class="rounded-2xl bg-slate-50 border border-slate-100 p-4">{condition}</li>
 					{/each}
 				</ul>
@@ -358,7 +358,7 @@
 			<section class="rounded-3xl bg-white border border-slate-200 p-6 md:p-8 space-y-5">
 				<h2 class="text-2xl md:text-3xl font-bold text-darkGrey">{copy.processTitle}</h2>
 				<div class="space-y-5">
-					{#each job.process as step, index}
+					{#each job.process as step, index (step)}
 						<div class="flex gap-4">
 							<div
 								class="h-9 w-9 shrink-0 rounded-full bg-darkGrey text-white flex items-center justify-center font-bold"
@@ -367,7 +367,7 @@
 							</div>
 							<div class="space-y-2">
 								<h3 class="text-xl font-bold text-darkGrey">{step.title}</h3>
-								{#each step.items as item}
+								{#each step.items as item, itemIndex (itemIndex)}
 									<p class="text-grey leading-relaxed">{item}</p>
 								{/each}
 							</div>

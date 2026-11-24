@@ -16,47 +16,50 @@
 	// Récupérer le store du layout parent
 	const highlightedUseCase = getContext<Writable<string | null>>('highlightedUseCase');
 
-	export let data:
-		| {
-				content: {
-					status?: string | null;
-					title?: string | null;
-					subtitle?: string | null;
-					description?: string | null;
-					meta_tags?: {
-						page_tags?: {
-							title?: string | null;
-							description?: string | null;
-							url?: string | null;
-							img?: { url?: string | null } | null;
-						}[];
-					} | null;
-					use_case_list?: {
-						id?: string | null;
-						indexCard?: { title: string; description: string; proof?: string; note?: string };
-						category?: string | null;
+	interface Props {
+		data:
+			| {
+					content: {
+						status?: string | null;
 						title?: string | null;
-						date?: string | null;
-						location?: string | null;
-						slug?: string | null;
-						challenge?: string | null;
-						approach?: string | null;
-						impact?: string | null;
-						metrics?: { label?: string | null; value?: string | null; note?: string | null }[];
-						links?: { label?: string | null; url?: string | null }[];
-						tags?: string[];
-						details?: string[];
-					}[];
-					cta?: {
-						label?: string | null;
+						subtitle?: string | null;
 						description?: string | null;
-						button?: string | null;
-						link?: string | null;
+						meta_tags?: {
+							page_tags?: {
+								title?: string | null;
+								description?: string | null;
+								url?: string | null;
+								img?: { url?: string | null } | null;
+							}[];
+						} | null;
+						use_case_list?: {
+							id?: string | null;
+							indexCard?: { title: string; description: string; proof?: string; note?: string };
+							category?: string | null;
+							title?: string | null;
+							date?: string | null;
+							location?: string | null;
+							slug?: string | null;
+							challenge?: string | null;
+							approach?: string | null;
+							impact?: string | null;
+							metrics?: { label?: string | null; value?: string | null; note?: string | null }[];
+							links?: { label?: string | null; url?: string | null }[];
+							tags?: string[];
+							details?: string[];
+						}[];
+						cta?: {
+							label?: string | null;
+							description?: string | null;
+							button?: string | null;
+							link?: string | null;
+						} | null;
 					} | null;
-				} | null;
-				locale?: Lang;
-		  }
-		| undefined;
+					locale?: Lang;
+			  }
+			| undefined;
+	}
+	let { data }: Props = $props();
 
 	const defaultMetaTitles: Record<Lang, string> = {
 		fr: 'FDTI - Réalisations',
@@ -65,21 +68,21 @@
 		de: 'FDTI - Referenzen',
 		it: 'FDTI - Progetti'
 	};
-	$: currentLocale = (data?.locale as Lang) ?? 'fr';
-	$: content = data?.content || null;
-	$: metaSource = content?.meta_tags?.page_tags?.[0];
-	$: metatags = {
+	const currentLocale = $derived((data?.locale as Lang) ?? 'fr');
+	const content = $derived(data?.content || null);
+	const metaSource = $derived(content?.meta_tags?.page_tags?.[0]);
+	const metatags = $derived({
 		url: '/realisations',
 		img: SOCIAL_IMAGE_PATH,
 		description: metaSource?.description || '',
 		title: metaSource?.title || defaultMetaTitles[currentLocale]
-	};
+	});
 
-	$: canonicalUrl = buildLocalizedUrl('/realisations', currentLocale);
-	$: ogImage = absoluteImageUrl(metatags.img);
+	const canonicalUrl = $derived(buildLocalizedUrl('/realisations', currentLocale));
+	const ogImage = $derived(absoluteImageUrl(metatags.img));
 
-	let selectedSector: string | null = null;
-	let activeSlug: string | null = null;
+	let selectedSector = $state<string | null>(null);
+	let activeSlug = $state<string | null>(null);
 	const interfaceLabels: Record<
 		Lang,
 		{ filter: string; all: string; approach: string; impact: string }
@@ -116,11 +119,7 @@
 		}
 	};
 	const sectorLabels: Record<Lang, [string, string, string]> = {
-		fr: [
-			'Industrie & circularité',
-			'Services publics & territoires',
-			'Retail & connaissance client'
-		],
+		fr: ['Industrie & circularité', 'Services publics & territoires', 'Retail & connaissance client'],
 		en: ['Industry & circularity', 'Public services & territories', 'Retail & customer insight'],
 		es: [
 			'Industria y circularidad',
@@ -138,7 +137,7 @@
 			'Retail e conoscenza del cliente'
 		]
 	};
-	$: copy = interfaceLabels[currentLocale];
+	const copy = $derived(interfaceLabels[currentLocale]);
 	const caseImages: Record<string, string> = {
 		'1': 'registry-color',
 		'2': 'vehicle-reception',
@@ -158,11 +157,11 @@
 		de: 'Im Fokus',
 		it: 'In primo piano'
 	};
-	$: sectorGroups = [
+	const sectorGroups = $derived([
 		{ label: sectorLabels[currentLocale][0], caseIds: ['2', '3', '8'] },
 		{ label: sectorLabels[currentLocale][1], caseIds: ['1', '4', '9'] },
 		{ label: sectorLabels[currentLocale][2], caseIds: ['5', '6', '7'] }
-	];
+	]);
 
 	beforeNavigate(({ to, shallow, type }) => {
 		if (shallow && type === 'goto') return;
@@ -227,14 +226,16 @@
 		'8': 'M4 14l14-8 15 8-15 8z M4 14v11l14 8 15-8V14 M18 22v11'
 	};
 	const cardOrder = ['2', '1', '7', '4', '3', '6', '9', '5', '10', '8'];
-	$: filteredUseCases = (content?.use_case_list ?? [])
-		.filter((useCase) => {
-			if (!selectedSector) return true;
-			return sectorGroups
-				.find((sector) => sector.label === selectedSector)
-				?.caseIds.includes(useCase.id || '');
-		})
-		.sort((a, b) => cardOrder.indexOf(a.id ?? '') - cardOrder.indexOf(b.id ?? ''));
+	const filteredUseCases = $derived(
+		(content?.use_case_list ?? [])
+			.filter((useCase) => {
+				if (!selectedSector) return true;
+				return sectorGroups
+					.find((sector) => sector.label === selectedSector)
+					?.caseIds.includes(useCase.id || '');
+			})
+			.sort((a, b) => cardOrder.indexOf(a.id ?? '') - cardOrder.indexOf(b.id ?? ''))
+	);
 </script>
 
 <PageSeo
@@ -262,14 +263,14 @@
 				<button
 					aria-pressed={selectedSector === null}
 					class:active={selectedSector === null}
-					on:click={() => (selectedSector = null)}>{copy.all}</button
+					onclick={() => (selectedSector = null)}>{copy.all}</button
 				>
 
-				{#each sectorGroups as sector}
+				{#each sectorGroups as sector (sector.label)}
 					<button
 						aria-pressed={selectedSector === sector.label}
 						class:active={selectedSector === sector.label}
-						on:click={() =>
+						onclick={() =>
 							(selectedSector = selectedSector === sector.label ? null : sector.label)}
 						>{sector.label}</button
 					>
@@ -289,7 +290,7 @@
 						class:featured={item.id === '2' && !selectedSector}
 						data-case={item.id}
 						href={buildLocalizedPath(`/realisations/${item.slug}`, currentLocale)}
-						on:click={(event) => handleCardClick(event, item.slug)}
+						onclick={(event) => handleCardClick(event, item.slug)}
 					>
 						{#if strip}
 							<div class="case-strip">

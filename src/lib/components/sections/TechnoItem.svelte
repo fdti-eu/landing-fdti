@@ -1,10 +1,21 @@
 <script lang="ts">
-	export let link = '';
-	export let imgUrl: string | null = null;
-	export let imgHeight = 40;
-	export let imgWidth = 100;
-	export let ariaLabel = '';
-	export let name: string | null = null;
+	interface Props {
+		link?: string;
+		imgUrl?: string | null;
+		imgHeight?: number;
+		imgWidth?: number;
+		ariaLabel?: string;
+		name?: string | null;
+	}
+
+	let {
+		link = '',
+		imgUrl = null,
+		imgHeight = 40,
+		imgWidth = 100,
+		ariaLabel = '',
+		name = null
+	}: Props = $props();
 </script>
 
 {#if name && imgUrl}

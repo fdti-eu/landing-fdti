@@ -11,20 +11,21 @@
 	import type { Lang } from '#lib/data.ts';
 	import { absoluteImageUrl, buildLocalizedUrl, SOCIAL_IMAGE_PATH } from '#lib/functions/seo.ts';
 
-	export let data;
+	import type { PageData } from './$types';
+	let { data }: { data: PageData } = $props();
 
-	$: pageContent = data;
+	const pageContent = $derived(data);
 
-	$: items = pageContent?.meta_tags?.page_tags || [];
-	$: metatags = {
+	const items = $derived(pageContent?.meta_tags?.page_tags || []);
+	const metatags = $derived({
 		url: items[0]?.url || '/',
 		img: SOCIAL_IMAGE_PATH,
 		description: items[0]?.description || '',
 		title: items[0]?.title || 'FDTI'
-	};
-	$: currentLocale = (pageContent?.locale as Lang) ?? 'fr';
-	$: canonicalUrl = buildLocalizedUrl(metatags.url || '/', currentLocale);
-	$: ogImage = absoluteImageUrl(metatags.img);
+	});
+	const currentLocale = $derived((pageContent?.locale as Lang) ?? 'fr');
+	const canonicalUrl = $derived(buildLocalizedUrl(metatags.url || '/', currentLocale));
+	const ogImage = $derived(absoluteImageUrl(metatags.img));
 </script>
 
 <PageSeo

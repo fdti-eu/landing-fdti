@@ -6,22 +6,22 @@
 	import { absoluteImageUrl, buildLocalizedUrl, SOCIAL_IMAGE_PATH } from '#lib/functions/seo.ts';
 	import type { Lang } from '#lib/data.ts';
 
-	export let data: PageData;
+	let { data }: { data: PageData } = $props();
 
-	$: ({ initialContent, initialLocale } = data);
-	$: currentLocale = initialLocale;
-	$: pageContent = initialContent;
+	const { initialContent, initialLocale } = $derived(data);
+	const currentLocale = $derived(initialLocale);
+	const pageContent = $derived(initialContent);
 
-	$: privacy = pageContent?.privacy;
-	$: metaSource = pageContent?.meta_tags?.page_tags?.[0];
-	$: metatags = {
+	const privacy = $derived(pageContent?.privacy);
+	const metaSource = $derived(pageContent?.meta_tags?.page_tags?.[0]);
+	const metatags = $derived({
 		url: metaSource?.url || '/confidentialite',
 		img: SOCIAL_IMAGE_PATH,
 		description: metaSource?.description || '',
 		title: metaSource?.title || privacy?.title || 'FDTI'
-	};
-	$: canonicalUrl = buildLocalizedUrl(metatags.url, currentLocale);
-	$: ogImage = absoluteImageUrl(metatags.img);
+	});
+	const canonicalUrl = $derived(buildLocalizedUrl(metatags.url, currentLocale));
+	const ogImage = $derived(absoluteImageUrl(metatags.img));
 	const contactCopy: Record<Lang, { title: string; paragraphs: string[] }> = {
 		fr: {
 			title: 'Demandes de contact',
@@ -143,9 +143,9 @@
 			]
 		}
 	};
-	$: newsletterPrivacy = newsletterCopy[currentLocale];
-	$: contact = contactCopy[currentLocale];
-	$: audience = audienceCopy[currentLocale];
+	const newsletterPrivacy = $derived(newsletterCopy[currentLocale]);
+	const contact = $derived(contactCopy[currentLocale]);
+	const audience = $derived(audienceCopy[currentLocale]);
 </script>
 
 <PageSeo
@@ -182,7 +182,7 @@
 			<p>{contact.paragraphs[1]}</p>
 			<p>{contact.paragraphs[2]}</p>
 			<h2>{newsletterPrivacy.title}</h2>
-			{#each newsletterPrivacy.paragraphs as paragraph}<p>{paragraph}</p>{/each}
+			{#each newsletterPrivacy.paragraphs as paragraph, paragraphIndex (paragraphIndex)}<p>{paragraph}</p>{/each}
 			<h2>{audience.title}</h2>
 			<p>{audience.paragraphs[0]}</p>
 			<p>{audience.paragraphs[1]}</p>

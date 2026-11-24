@@ -4,11 +4,15 @@
 	import { expertiseOffers, offerPaths, type OfferKey } from '#lib/expertise-offers.ts';
 	import { buildLocalizedPath, buildLocalizedUrl } from '#lib/functions/seo.ts';
 
-	export let locale: Lang;
-	export let offer: OfferKey;
-	$: content = expertiseOffers[locale][offer];
-	$: canonical = buildLocalizedUrl(offerPaths[offer], locale);
-	$: title = `${content.label} | FDTI`;
+	interface Props {
+		locale: Lang;
+		offer: OfferKey;
+	}
+
+	let { locale, offer }: Props = $props();
+	const content = $derived(expertiseOffers[locale][offer]);
+	const canonical = $derived(buildLocalizedUrl(offerPaths[offer], locale));
+	const title = $derived(`${content.label} | FDTI`);
 	const parentPath = '/filieres/economie-circulaire';
 </script>
 
@@ -33,7 +37,7 @@
 		<h2 id={`${offer}-use-cases`}>{content.useCasesTitle}</h2>
 		<p class="offer-audience">{content.audience}</p>
 		<div class="editorial-numbered-grid offer-cases">
-			{#each content.useCases as item, index}
+			{#each content.useCases as item, index (item)}
 				<article>
 					<span>0{index + 1}</span>
 					<h3>{item.title}</h3>
@@ -46,7 +50,7 @@
 		<div class="editorial-shell">
 			<h2 id={`${offer}-approach`}>{content.approachTitle}</h2>
 			<ol class="offer-steps">
-				{#each content.steps as step}
+				{#each content.steps as step, stepIndex (stepIndex)}
 					<li>
 						<h3>{step.title}</h3>
 						<p>{step.text}</p>

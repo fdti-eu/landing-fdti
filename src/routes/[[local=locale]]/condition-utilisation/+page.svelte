@@ -5,22 +5,22 @@
 	import { schema } from '#lib/components/json-ld/json-ld.ts';
 	import { absoluteImageUrl, buildLocalizedUrl, SOCIAL_IMAGE_PATH } from '#lib/functions/seo.ts';
 
-	export let data: PageData;
+	let { data }: { data: PageData } = $props();
 
-	$: ({ initialContent, initialLocale } = data);
-	$: currentLocale = initialLocale;
-	$: pageContent = initialContent;
+	const { initialContent, initialLocale } = $derived(data);
+	const currentLocale = $derived(initialLocale);
+	const pageContent = $derived(initialContent);
 
-	$: cgu = pageContent?.CGU;
-	$: metaSource = pageContent?.meta_tags?.page_tags?.[0];
-	$: metatags = {
+	const cgu = $derived(pageContent?.CGU);
+	const metaSource = $derived(pageContent?.meta_tags?.page_tags?.[0]);
+	const metatags = $derived({
 		url: metaSource?.url || '/condition-utilisation',
 		img: SOCIAL_IMAGE_PATH,
 		description: metaSource?.description || '',
 		title: metaSource?.title || cgu?.title || 'FDTI'
-	};
-	$: canonicalUrl = buildLocalizedUrl(metatags.url, currentLocale);
-	$: ogImage = absoluteImageUrl(metatags.img);
+	});
+	const canonicalUrl = $derived(buildLocalizedUrl(metatags.url, currentLocale));
+	const ogImage = $derived(absoluteImageUrl(metatags.img));
 </script>
 
 <PageSeo

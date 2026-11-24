@@ -8,16 +8,18 @@
 	import { buildLocalizedPath, buildLocalizedUrl } from '#lib/functions/seo.ts';
 	import type { PageData } from './$types';
 
-	export let data: PageData;
-	$: content = data.content;
-	$: page = content.pages[data.id];
-	$: labels = solutionLabels[data.locale];
-	$: navigation = navigationCopy[data.locale];
-	$: canonical = buildLocalizedUrl(solutionPagePath(data.id), data.locale);
-	$: proofs = page.proofs.flatMap((proof) => {
-		const project = data.projects.find((item) => item.id === proof.projectId);
-		return project ? [{ ...proof, project }] : [];
-	});
+	let { data }: { data: PageData } = $props();
+	const content = $derived(data.content);
+	const page = $derived(content.pages[data.id]);
+	const labels = $derived(solutionLabels[data.locale]);
+	const navigation = $derived(navigationCopy[data.locale]);
+	const canonical = $derived(buildLocalizedUrl(solutionPagePath(data.id), data.locale));
+	const proofs = $derived(
+		page.proofs.flatMap((proof) => {
+			const project = data.projects.find((item) => item.id === proof.projectId);
+			return project ? [{ ...proof, project }] : [];
+		})
+	);
 </script>
 
 <PageSeo title={page.metaTitle} description={page.metaDescription} {canonical} imageAlt="FDTI" />
@@ -37,7 +39,7 @@
 	<section class="editorial-section editorial-shell" aria-labelledby="solution-situations">
 		<h2 id="solution-situations">{content.situationsTitle}</h2>
 		<div class="editorial-numbered-grid">
-			{#each page.situations as situation, index}
+			{#each page.situations as situation, index (situation)}
 				<article>
 					<span aria-hidden="true">0{index + 1}</span>
 					<h3>{situation.title}</h3>
@@ -60,7 +62,7 @@
 			<h2 id="solution-examples">{page.examples.title}</h2>
 			<p class="section-intro">{page.examples.intro}</p>
 			<div class="editorial-numbered-grid">
-				{#each page.examples.items as item, index}
+				{#each page.examples.items as item, index (item)}
 					<article>
 						<span aria-hidden="true">0{index + 1}</span>
 						<h3>{item.title}</h3>
@@ -76,7 +78,7 @@
 			<div class="editorial-shell">
 				<h2 id="solution-method">{page.method.title}</h2>
 				<ol class="method-steps">
-					{#each page.method.steps as step}
+					{#each page.method.steps as step, stepIndex (stepIndex)}
 						<li>
 							<h3>{step.title}</h3>
 							<p>{step.text}</p>
@@ -92,13 +94,13 @@
 		<div>
 			<h2 id="solution-delivery">{content.deliverablesTitle}</h2>
 			<ul class="deliverables">
-				{#each page.deliverables as item}<li>{item}</li>{/each}
+				{#each page.deliverables as item, itemIndex (itemIndex)}<li>{item}</li>{/each}
 			</ul>
 		</div>
 		<div>
 			<h2 id="solution-proofs">{content.proofsTitle}</h2>
 			<ul class="proofs" aria-labelledby="solution-proofs">
-				{#each proofs as proof}
+				{#each proofs as proof (proof.projectId)}
 					<li>
 						<p>{proof.text}</p>
 						<a href={buildLocalizedPath(`/realisations/${proof.project.slug}`, data.locale)}

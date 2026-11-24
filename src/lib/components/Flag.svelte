@@ -1,14 +1,19 @@
 <script lang="ts">
 	import { FLAGS } from '#lib/const.ts';
 
-	export let local: string | null = null;
+	interface Props {
+		local?: string | null;
+		class?: string;
+	}
 
-	$: displayedFlag = FLAGS.find((flag) => flag.code === local);
+	let { local = null, class: className }: Props = $props();
+
+	const displayedFlag = $derived(FLAGS.find((flag) => flag.code === local));
 </script>
 
 {#key displayedFlag}
 	<svg
-		class={$$props.class}
+		class={className}
 		viewBox="0 85.333 512 341.334"
 		preserveAspectRatio="xMidYMid slice"
 		aria-hidden="true"
