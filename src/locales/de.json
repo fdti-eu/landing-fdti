@@ -1002,17 +1002,21 @@
 				"location": "Frankreich",
 				"challenge": "Registermitarbeitende gleichen Angaben mit Belegen ab. Bei der Vorbereitung eines Verfahrens muss das Gericht die Tatsachen, Anträge und Argumente der Parteien in den Unterlagen finden.",
 				"approach": "Eine in die Fachsoftware integrierte API bereitet die Prüfung auf den Servern des Softwareanbieters vor. Das Register erhält Dokumentenprüfungen, das Gericht Zusammenfassungen mit Quellenangaben. Die Beurteilung bleibt bei den zuständigen Personen.",
-				"impact": "Im Oktober 2026 verarbeitete die Plattform 36.000 Einreichungen von Jahresabschlüssen (DCA), 1.080 Handelsregistervorgänge (RCS) und 190 Gerichtsakten.",
+				"impact": "Innerhalb eines Monats bearbeiteten die Geschäftsstellen über die Plattform knapp 40.000 Vorgänge: Jahresabschlüsse, Handelsregistervorgänge und Gerichtsakten.",
 				"metrics": [
 					{
 						"label": "Ausgestattete Gerichte",
-						"value": "48",
+						"value": "Rund 50",
 						"note": "In die Fachsoftware der Geschäftsstellen integriert."
 					},
 					{
 						"label": "Bearbeitete Vorgänge",
-						"value": "37.270",
-						"note": "Oktober 2026: Jahresabschlüsse, Handelsregistervorgänge und Gerichtsakten."
+						"value": "Knapp 40.000",
+						"note": "In einem Monat: Jahresabschlüsse, Handelsregistervorgänge und Gerichtsakten."
+					},
+					{
+						"label": "Abgedeckte Arbeitsabläufe",
+						"value": "4"
 					}
 				],
 				"tags": [
@@ -1032,7 +1036,7 @@
 				"indexCard": {
 					"title": "KI bereitet Registerprüfungen vor und führt Richter zu den Belegstellen",
 					"description": "Die Geschäftsstelle sieht Abweichungen zwischen Anmeldung und Belegen in ihrer gewohnten Software. Für Gerichtsverfahren erhält der Richter eine Zusammenfassung der Anträge und Argumente mit Verweisen auf die Originalseiten.",
-					"proof": "48 ausgestattete Gerichte",
+					"proof": "Rund 50 ausgestattete Gerichte",
 					"note": "In die Fachsoftware der Geschäftsstellen integriert."
 				},
 				"slug": "automatisierung-handelsgerichte"
@@ -1066,6 +1070,14 @@
 						"label": "Belege, die beim Verwaltungsteam eingehen",
 						"value": "3.000",
 						"note": "Pro Monat."
+					},
+					{
+						"label": "Dokumenttypen im gezeigten Stapel",
+						"value": "3"
+					},
+					{
+						"label": "Bestätigung vor der Ablage",
+						"value": "1"
 					}
 				]
 			},
@@ -1079,18 +1091,16 @@
 				"metrics": [
 					{
 						"label": "Betroffene Personen",
-						"value": "20.000",
+						"value": "Rund 20.000",
 						"note": "Personen im Sammelverfahren."
 					},
 					{
-						"label": "Importierte Zeilen",
-						"value": "11.023",
-						"note": "Erste Arbeitsmappe, über alle Tabellenblätter hinweg."
+						"label": "Zusammengeführte Quellentypen",
+						"value": "3"
 					},
 					{
-						"label": "Offene Zuordnungen",
-						"value": "5 Fälle",
-						"note": "Bei der Prüfung am 11. Mai 2026 waren fünf Einträge zur Unzulässigkeit noch keiner Person eindeutig zugeordnet."
+						"label": "Gespeicherte Angaben je Korrektur",
+						"value": "3"
 					}
 				],
 				"tags": [
@@ -1110,7 +1120,7 @@
 				"indexCard": {
 					"title": "Entschädigungen vorbereiten und jeden Betrag nachvollziehbar machen",
 					"description": "Dieselben Personen erscheinen in Gerichtsentscheidungen, Anwaltsunterlagen und medizinischen Gutachten. Die Plattform gleicht die Quellen ab und bewahrt für jede Berechnung den Ausgangswert, den angesetzten Wert und die Korrekturen auf.",
-					"proof": "20.000 erfasste Personen",
+					"proof": "Rund 20.000 erfasste Personen",
 					"note": "Personen im Sammelverfahren."
 				},
 				"slug": "entschaedigungsakten"
@@ -1188,7 +1198,12 @@
 						"value": "18"
 					}
 				],
-				"tags": ["SvelteKit", "FastAPI", "PostgreSQL", "Keycloak"],
+				"tags": [
+					"SvelteKit",
+					"FastAPI",
+					"PostgreSQL",
+					"Keycloak"
+				],
 				"details": [
 					"Der Eigentümer meldet seine Batterie. Bietet ein Partner einen Kaufpreis an, bleibt das Angebot dieser Batterie zugeordnet. Der Empfänger kann es ablehnen und den Grund angeben.",
 					"Nach Freigabe des Vorgangs vermerkt der Dienstleister die Abholung beim Eigentümer. Scheitert die Abholung, kann er das Problem in der Akte festhalten.",
@@ -1210,7 +1225,12 @@
 				"challenge": "Für eine Abholung muss der Recycler wissen, um welche Batterien es geht, wer sie abholt und welcher Standort sie annimmt. Zwei abholbereite Partien können nicht immer gemeinsam transportiert werden.",
 				"approach": "Das Team prüft jede Meldung, bevor es sie einer Packliste zuordnet. Das System prüft, ob alle Batterien der Partie denselben Abholer und Zielstandort haben. Beim Wareneingang kann das Personal die zugehörigen Meldungen aufrufen.",
 				"impact": "Für jede Meldung kann der Recycler die Partie ermitteln, ausstehende Unterschriften prüfen und zwischen Eingang und abgeschlossener Behandlung unterscheiden.",
-				"tags": ["SvelteKit", "FastAPI", "PostgreSQL", "Trackdéchets"],
+				"tags": [
+					"SvelteKit",
+					"FastAPI",
+					"PostgreSQL",
+					"Trackdéchets"
+				],
 				"details": [
 					"Das Team bestimmt Typ und Zusammensetzung der gemeldeten Batterie, um die Übernahme vorzubereiten.",
 					"Wer die Abholung plant, stellt die Partie zusammen. Meldungen für einen anderen Abholer oder Zielstandort gehören auf eine eigene Liste.",
@@ -1222,7 +1242,21 @@
 					"proof": "Ein Zielstandort je Partie",
 					"note": "Abholer und Zielstandort werden vor dem Abtransport geprüft."
 				},
-				"slug": "betriebsplattform-batterierecycling"
+				"slug": "betriebsplattform-batterierecycling",
+				"metrics": [
+					{
+						"label": "Empfangsstandort pro Charge",
+						"value": "1"
+					},
+					{
+						"label": "Abholer pro Charge",
+						"value": "1"
+					},
+					{
+						"label": "Getrennte Schritte am Standort",
+						"value": "2"
+					}
+				]
 			},
 			{
 				"id": "4",
@@ -1238,9 +1272,22 @@
 						"label": "Versorgungsgebiete",
 						"value": "+40",
 						"note": "Gebiete, in denen die Warnmeldungen im Einsatz sind."
+					},
+					{
+						"label": "Verglichene Verbrauchszeiträume",
+						"value": "3"
+					},
+					{
+						"label": "Prüfung der Meldungen",
+						"value": "Jeden Morgen"
 					}
 				],
-				"tags": ["DuckDB", "SvelteKit", "PostgreSQL", "FastAPI"],
+				"tags": [
+					"DuckDB",
+					"SvelteKit",
+					"PostgreSQL",
+					"FastAPI"
+				],
 				"details": [
 					"Der Betreiber wählt einen Schaltschrank und ruft die Messwerte des zugehörigen Zählers auf.",
 					"Er vergleicht den Verbrauch vor, während und nach der vorgesehenen Leuchtdauer. So unterscheidet er eine durchgehende Last am Tag von einem verschobenen Einschaltzeitpunkt.",
@@ -1263,7 +1310,12 @@
 				"challenge": "Eine Umweltorganisation muss entscheiden, welche Botschaften sie in welchem Land und auf welcher Plattform in den Vordergrund stellt. Die Kennzahlen zeigen, welche Beiträge Reaktionen ausgelöst haben, aber nicht, worum es darin ging.",
 				"approach": "Für 60.000 Beiträge in acht Sprachen haben wir Thema, Ton und vertretene Standpunkte erfasst. Das Kommunikationsteam kann vergleichen, wie dasselbe Thema bei verschiedenen Zielgruppen und auf verschiedenen Plattformen ankommt.",
 				"impact": "Die Organisation hat das Analyseraster intern übernommen und nutzt es für die Budgetverteilung auf Länder und Plattformen.",
-				"tags": ["LLM", "OpenAI", "NLP", "TypeScript"],
+				"tags": [
+					"LLM",
+					"OpenAI",
+					"NLP",
+					"TypeScript"
+				],
 				"details": [
 					"Die Analyse bestimmt für jeden Facebook- oder Instagram-Beitrag das Thema und den Blickwinkel.",
 					"Das Kommunikationsteam vergleicht diese Merkmale mit der Resonanz bei den jeweiligen Zielgruppen.",
@@ -1275,7 +1327,21 @@
 					"proof": "60.000 analysierte Beiträge",
 					"note": "Facebook- und Instagram-Beiträge in acht Sprachen."
 				},
-				"slug": "ki-analyse-social-media-kampagnen"
+				"slug": "ki-analyse-social-media-kampagnen",
+				"metrics": [
+					{
+						"label": "Analysierte Beiträge",
+						"value": "60.000"
+					},
+					{
+						"label": "Sprachen im Korpus",
+						"value": "8"
+					},
+					{
+						"label": "Untersuchte soziale Netzwerke",
+						"value": "2"
+					}
+				]
 			},
 			{
 				"id": "6",
@@ -1286,7 +1352,14 @@
 				"challenge": "Ein Elektronikhersteller erhält Rückmeldungen über mehrere Kanäle. Um einen wiederkehrenden Fehler zu verstehen, müssen die Teams Kommentare zusammenführen, die ihn mit unterschiedlichen Worten beschreiben.",
 				"approach": "Wir haben Rückmeldungen aus mehr als 25 Quellen gesammelt und nach Themen gruppiert. Das Kundenforschungsteam kann von einem wiederkehrenden Problem ausgehend die Originalaussagen der Kunden finden.",
 				"impact": "Das Kundenforschungsteam nutzt die Analysen täglich und teilt sie mit den zuständigen Teams.",
-				"tags": ["GCP", "Airflow", "NLP", "LLM", "Tableau", "HuggingFace"],
+				"tags": [
+					"GCP",
+					"Airflow",
+					"NLP",
+					"LLM",
+					"Tableau",
+					"HuggingFace"
+				],
 				"details": [
 					"Ein Kommentar aus einer Umfrage, dem Kundendienst oder einem Bewertungsportal fließt mit den übrigen Rückmeldungen zusammen.",
 					"Das Kundenforschungsteam findet Kommentare zum selben Thema und liest sie im ursprünglichen Wortlaut.",
@@ -1298,7 +1371,21 @@
 					"proof": "Über 25 Quellen gebündelt",
 					"note": "Umfragen, Kundendienst und Bewertungsportale."
 				},
-				"slug": "datenhub-nlp"
+				"slug": "datenhub-nlp",
+				"metrics": [
+					{
+						"label": "Gebündelte Feedbackquellen",
+						"value": "Mehr als 25"
+					},
+					{
+						"label": "Nutzung durch das Analyseteam",
+						"value": "Täglich"
+					},
+					{
+						"label": "Genannte Nutzerteams",
+						"value": "3"
+					}
+				]
 			},
 			{
 				"id": "7",
@@ -1311,12 +1398,27 @@
 				"impact": "Auch nach dem Softwarewechsel konnten die Teams die Verkäufe im Minutentakt verfolgen.",
 				"metrics": [
 					{
+						"label": "Erfasste Filialen",
+						"value": "Über 500",
+						"note": "Das gesamte Filialnetz der Kette."
+					},
+					{
 						"label": "Aktualisierung der Verkaufsdaten",
 						"value": "Jede Minute",
 						"note": "Intervall, in dem das Berichtssystem neue Daten erhält."
+					},
+					{
+						"label": "Verkaufskennzahlen je Filiale",
+						"value": "2"
 					}
 				],
-				"tags": ["Snowflake", "Azure", "Kafka", "ADF", "Qlik"],
+				"tags": [
+					"Snowflake",
+					"Azure",
+					"Kafka",
+					"ADF",
+					"Qlik"
+				],
 				"details": [
 					"Eine Filiale erfasst einen Verkauf. Die neue Software übermittelt den Bon mit den einzelnen Artikeln.",
 					"Die Verkaufspositionen werden der Filiale zugeordnet. Aus den Bonbeträgen kann der Analyst Umsatz und durchschnittlichen Einkaufswert je Filiale ermitteln.",
@@ -1325,15 +1427,15 @@
 				"indexCard": {
 					"title": "Filialumsätze während eines Softwarewechsels verfolgen",
 					"description": "Auch wenn Kassenbons in einem neuen Format eintreffen, bleibt jeder Verkauf den richtigen Artikeln und der richtigen Filiale zugeordnet. Die Teams können Umsatz und durchschnittlichen Einkaufswert weiterhin verfolgen.",
-					"proof": "Aktualisierung im Minutentakt",
-					"note": "So oft erhält das Berichtssystem neue Verkaufsdaten."
+					"proof": "Über 500 Filialen",
+					"note": "Verkäufe jeder Filiale des Netzes, im neuen System verfolgt."
 				},
 				"slug": "data-warehouse-nahezu-echtzeit-einzelhandel"
 			}
 		],
 		"cta": {
 			"label": "Kritische Arbeit verdient mehr als generische Software.",
-			"button": "Ersten Projektumfang festlegen",
+			"button": "Ihr Projekt besprechen",
 			"link": "mailto:info@fdti.eu",
 			"description": "Beginnen Sie mit einem realen Fall, seinen Teilnehmern und seinen Daten, um den nächsten nützlichen Schritt zu identifizieren."
 		}

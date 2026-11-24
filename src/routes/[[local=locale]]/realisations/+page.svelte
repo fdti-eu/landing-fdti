@@ -141,6 +141,15 @@
 		]
 	};
 	$: copy = interfaceLabels[currentLocale];
+	const caseImages: Record<string, string> = {
+		'1': 'registry-color', '2': 'vehicle-reception', '3': 'battery-module',
+		'4': 'street-light', '5': 'campaign-posts', '6': 'customer-feedback',
+		'7': 'store-checkout', '8': 'battery-reception', '9': 'legal-evidence',
+		'10': 'vehicle-documents'
+	};
+	const featuredLabel: Record<Lang, string> = {
+		fr: 'À la une', en: 'Featured', es: 'Destacado', de: 'Im Fokus', it: 'In primo piano'
+	};
 	$: sectorGroups = [
 		{ label: sectorLabels[currentLocale][0], caseIds: ['2', '3', '8'] },
 		{ label: sectorLabels[currentLocale][1], caseIds: ['1', '4', '9'] },
@@ -286,12 +295,26 @@
 		<div class="panorama-wrap">
 			<div class="panorama-grid">
 				{#each filteredUseCases as item (item.id)}
+					{@const strip = (item.id !== '2' || selectedSector) && caseImages[item.id ?? '']}
 					<a
 						class="panorama-card"
+						class:illustrated={Boolean(strip)}
+						class:featured={item.id === '2' && !selectedSector}
 						data-case={item.id}
 						href={buildLocalizedPath(`/realisations/${item.slug}`, currentLocale)}
 						on:click={(event) => handleCardClick(event, item.slug)}
 					>
+						{#if strip}
+							<div class="case-strip">
+								<img src={`/images/cases/${strip}.webp`} alt="" loading="lazy" />
+							</div>
+						{/if}
+						{#if item.id === '2' && !selectedSector}
+							<div class="featured-photo">
+								<img src="/images/cases/vehicle-reception.webp" alt="" width="1200" height="800" fetchpriority="high" />
+								<strong>{featuredLabel[currentLocale]}</strong>
+							</div>
+						{/if}
 						<div class="eyebrow">
 							<svg aria-hidden="true" viewBox="0 0 40 38"><path d={icons[item.id ?? '']} /></svg
 							>{item.category}<span aria-hidden="true">→</span>
@@ -459,22 +482,16 @@
 	.proof small {
 		font-size: 14px;
 	}
-	.panorama-card:is([data-case='2'], [data-case='5']) {
+	.panorama-card.featured {
 		background: #252b2d;
 		color: #fff;
 		--accent: #fcd088;
 	}
-	.panorama-card:is([data-case='2'], [data-case='5']) p {
+	.panorama-card.featured p {
 		color: #e3e4df;
 	}
-	.panorama-card[data-case='2'] .proof strong {
+	.panorama-card.featured .proof strong {
 		color: #fcd088;
-	}
-	.panorama-card:is([data-case='1'], [data-case='8']) {
-		background: #f6eddc;
-	}
-	.panorama-card:is([data-case='4'], [data-case='9']) {
-		background: #eeefea;
 	}
 	.panorama-card:hover,
 	.panorama-card:focus-visible {
@@ -483,7 +500,39 @@
 	.hero-hidden {
 		visibility: hidden;
 	}
+	.panorama-card.featured {
+		position: relative;
+		grid-column: 1 / -1;
+		min-height: clamp(280px, 24vw, 350px);
+		padding: clamp(24px, 3vw, 44px) 3% clamp(24px, 3vw, 44px) 52%;
+		justify-content: center;
+	}
+	.featured-photo { position: absolute; inset: 0 51% 0 0; overflow: hidden; }
+	.featured-photo img { width: 100%; height: 100%; object-fit: cover; }
+	.featured-photo strong { position: absolute; top: 16px; left: 16px; padding: 5px 14px; background: #fbd243; color: #252b2d; font-size: 15px; }
+	.featured .proof { margin-top: 8px; }
+	.panorama-card.illustrated {
+		position: relative;
+		padding-left: clamp(95px, 9vw, 152px);
+	}
+	.case-strip {
+		position: absolute;
+		inset: 0 auto 0 0;
+		width: clamp(100px, 10vw, 160px);
+		pointer-events: none;
+		mask-image: linear-gradient(to right, #000 0%, #000e 20%, #0008 54%, transparent 100%);
+	}
+	.case-strip img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: center;
+	}
 	@media (max-width: 760px) {
+		.panorama-card.illustrated { padding-left: 64px; }
+		.case-strip { width: 68px; }
+		.panorama-card.featured { min-height: auto; padding: 0 18px 18px; }
+		.featured-photo { position: relative; inset: auto; margin: 0 -18px 16px; aspect-ratio: 2.1; }
 		.panorama-heading {
 			padding-top: 96px;
 		}

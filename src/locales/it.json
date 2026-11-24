@@ -1002,17 +1002,21 @@
 				"location": "Francia",
 				"challenge": "La cancelleria confronta i dati dichiarati con i documenti giustificativi. Per esaminare una causa, il giudice deve individuare i fatti, le domande delle parti e gli argomenti su cui si fondano.",
 				"approach": "Un’API integrata nel gestionale prepara la verifica sui server del fornitore del software. Restituisce alla cancelleria i controlli documentali e al giudice sintesi con riferimenti alle fonti. La valutazione resta a chi esamina la pratica.",
-				"impact": "Nell’ottobre 2026 la piattaforma ha trattato 36.000 depositi di bilanci annuali (DCA), 1.080 pratiche del registro delle imprese (RCS) e 190 fascicoli giudiziari.",
+				"impact": "In un mese le cancellerie hanno trattato quasi 40.000 fascicoli sulla piattaforma: depositi di bilanci annuali, pratiche del registro delle imprese e fascicoli giudiziari.",
 				"metrics": [
 					{
 						"label": "Tribunali attrezzati",
-						"value": "48",
+						"value": "Una cinquantina",
 						"note": "Piattaforma integrata nel gestionale delle cancellerie."
 					},
 					{
 						"label": "Fascicoli trattati",
-						"value": "37.270",
-						"note": "Ottobre 2026: depositi di bilanci annuali, pratiche del registro delle imprese e fascicoli giudiziari."
+						"value": "Quasi 40.000",
+						"note": "In un mese, tra depositi di bilanci annuali, pratiche del registro delle imprese e fascicoli giudiziari."
+					},
+					{
+						"label": "Flussi di lavoro coperti",
+						"value": "4"
 					}
 				],
 				"tags": [
@@ -1032,7 +1036,7 @@
 				"indexCard": {
 					"title": "L’IA prepara i controlli di cancelleria e rimanda il giudice alle pagine del fascicolo",
 					"description": "Il personale di cancelleria trova nel proprio gestionale le differenze tra quanto dichiarato e i documenti presentati. Per le cause giudiziarie il giudice riceve una sintesi delle richieste e delle argomentazioni con riferimenti alle pagine originali.",
-					"proof": "48 tribunali attrezzati",
+					"proof": "Una cinquantina di tribunali attrezzati",
 					"note": "Piattaforma integrata nel gestionale delle cancellerie."
 				},
 				"slug": "automazione-cancellerie-tribunali"
@@ -1066,6 +1070,14 @@
 						"label": "Documenti ricevuti dal personale amministrativo",
 						"value": "3.000",
 						"note": "Al mese."
+					},
+					{
+						"label": "Tipi di documenti nel lotto descritto",
+						"value": "3"
+					},
+					{
+						"label": "Conferma prima dell’archiviazione",
+						"value": "1"
 					}
 				]
 			},
@@ -1079,18 +1091,16 @@
 				"metrics": [
 					{
 						"label": "Persone coinvolte",
-						"value": "20.000",
+						"value": "Circa 20.000",
 						"note": "Persone coinvolte nel contenzioso collettivo."
 					},
 					{
-						"label": "Righe importate",
-						"value": "11.023",
-						"note": "Prima cartella di lavoro, su tutti i fogli."
+						"label": "Tipi di fonti riunite",
+						"value": "3"
 					},
 					{
-						"label": "Abbinamenti da verificare",
-						"value": "5 casi",
-						"note": "Al controllo dell’11 maggio 2026 restavano cinque registrazioni di inammissibilità da associare con certezza alla persona interessata."
+						"label": "Dati conservati per correzione",
+						"value": "3"
 					}
 				],
 				"tags": [
@@ -1110,7 +1120,7 @@
 				"indexCard": {
 					"title": "Preparare i risarcimenti e motivare ogni importo",
 					"description": "Le stesse persone compaiono nelle decisioni giudiziarie, nei file degli avvocati e nelle perizie mediche. La piattaforma confronta le fonti e conserva per ogni calcolo il valore originario, quello utilizzato e le correzioni.",
-					"proof": "20.000 persone seguite",
+					"proof": "Circa 20.000 persone seguite",
 					"note": "Persone coinvolte nel contenzioso collettivo."
 				},
 				"slug": "pratiche-risarcimento"
@@ -1188,7 +1198,12 @@
 						"value": "18"
 					}
 				],
-				"tags": ["SvelteKit", "FastAPI", "PostgreSQL", "Keycloak"],
+				"tags": [
+					"SvelteKit",
+					"FastAPI",
+					"PostgreSQL",
+					"Keycloak"
+				],
 				"details": [
 					"Il proprietario dichiara la batteria. Se un partner propone un prezzo di acquisto, l’offerta resta associata a quella batteria. Chi la riceve può rifiutarla e indicare il motivo.",
 					"Una volta convalidata la pratica, l’operatore registra il ritiro presso il proprietario. Se il ritiro non va a buon fine, può annotare il problema nella pratica.",
@@ -1210,7 +1225,12 @@
 				"challenge": "Per organizzare un ritiro, il riciclatore deve conoscere il tipo di batterie, chi le ritirerà e l’impianto che le riceverà. Due partite pronte a partire non possono necessariamente viaggiare insieme.",
 				"approach": "Il personale esamina ogni dichiarazione prima di inserirla in una distinta di carico. Lo strumento verifica che le batterie del lotto abbiano lo stesso incaricato del ritiro e la stessa destinazione. All’arrivo il personale ritrova le dichiarazioni associate al lotto.",
 				"impact": "Per ogni dichiarazione il riciclatore può risalire al lotto, verificare le firme mancanti e distinguere una batteria ricevuta da una già trattata.",
-				"tags": ["SvelteKit", "FastAPI", "PostgreSQL", "Trackdéchets"],
+				"tags": [
+					"SvelteKit",
+					"FastAPI",
+					"PostgreSQL",
+					"Trackdéchets"
+				],
 				"details": [
 					"Il personale identifica il tipo e la composizione della batteria dichiarata per prepararne la presa in carico.",
 					"Chi prepara il ritiro compone il lotto. Se una dichiarazione prevede un incaricato o una destinazione diversi, la inserisce in un’altra distinta.",
@@ -1222,7 +1242,21 @@
 					"proof": "Un unico impianto destinatario per lotto",
 					"note": "Prima della partenza si verificano l’incaricato del ritiro e la destinazione."
 				},
-				"slug": "piattaforma-riciclo-batterie"
+				"slug": "piattaforma-riciclo-batterie",
+				"metrics": [
+					{
+						"label": "Sito destinatario per lotto",
+						"value": "1"
+					},
+					{
+						"label": "Operatore di raccolta per lotto",
+						"value": "1"
+					},
+					{
+						"label": "Fasi distinte nel sito",
+						"value": "2"
+					}
+				]
 			},
 			{
 				"id": "4",
@@ -1238,9 +1272,22 @@
 						"label": "Territori serviti",
 						"value": "+40",
 						"note": "Territori in cui sono stati attivati gli avvisi."
+					},
+					{
+						"label": "Fasce di consumo confrontate",
+						"value": "3"
+					},
+					{
+						"label": "Consultazione degli avvisi",
+						"value": "Ogni mattina"
 					}
 				],
-				"tags": ["DuckDB", "SvelteKit", "PostgreSQL", "FastAPI"],
+				"tags": [
+					"DuckDB",
+					"SvelteKit",
+					"PostgreSQL",
+					"FastAPI"
+				],
 				"details": [
 					"Il gestore seleziona un quadro e consulta le misure del relativo contatore.",
 					"Confronta i consumi prima, durante e dopo la fascia di accensione. Può così distinguere un assorbimento presente tutto il giorno da uno scarto nell’orario di accensione.",
@@ -1263,7 +1310,12 @@
 				"challenge": "Una ONG deve decidere quali messaggi ambientali privilegiare per paese e social network. I dati sulle prestazioni indicano quali post hanno suscitato reazioni, ma non di cosa parlavano.",
 				"approach": "Su 60.000 post in otto lingue abbiamo identificato per ogni messaggio il tema, il tono e i punti di vista espressi. Il team comunicazione può confrontare come viene accolto lo stesso tema a seconda del pubblico e del canale.",
 				"impact": "La ONG ha adottato internamente la griglia di analisi per orientare la ripartizione del budget tra paesi e canali social.",
-				"tags": ["LLM", "OpenAI", "NLP", "TypeScript"],
+				"tags": [
+					"LLM",
+					"OpenAI",
+					"NLP",
+					"TypeScript"
+				],
 				"details": [
 					"Per ogni post su Facebook o Instagram, l’analisi individua il tema e il modo in cui viene affrontato.",
 					"Il team comunicazione confronta questi elementi con le reazioni osservate nei diversi segmenti di pubblico.",
@@ -1275,7 +1327,21 @@
 					"proof": "60.000 post analizzati",
 					"note": "Post di Facebook e Instagram in otto lingue."
 				},
-				"slug": "analisi-ia-campagne-social"
+				"slug": "analisi-ia-campagne-social",
+				"metrics": [
+					{
+						"label": "Pubblicazioni analizzate",
+						"value": "60.000"
+					},
+					{
+						"label": "Lingue del corpus",
+						"value": "8"
+					},
+					{
+						"label": "Social network analizzati",
+						"value": "2"
+					}
+				]
 			},
 			{
 				"id": "6",
@@ -1286,7 +1352,14 @@
 				"challenge": "Un produttore di elettronica riceve opinioni attraverso più canali. Per capire un difetto ricorrente i team devono poter accostare commenti che lo descrivono con parole diverse.",
 				"approach": "Abbiamo riunito le opinioni di oltre 25 fonti e raggruppato i commenti per tema. Chi studia le esperienze dei clienti può partire da un problema ricorrente e ritrovare le parole usate dai clienti stessi.",
 				"impact": "Il team di ricerca consulta le analisi ogni giorno e le condivide con i reparti interessati.",
-				"tags": ["GCP", "Airflow", "NLP", "LLM", "Tableau", "HuggingFace"],
+				"tags": [
+					"GCP",
+					"Airflow",
+					"NLP",
+					"LLM",
+					"Tableau",
+					"HuggingFace"
+				],
 				"details": [
 					"Un commento proveniente da un sondaggio, dall’assistenza clienti o da un sito di recensioni confluisce insieme agli altri riscontri.",
 					"Il team di ricerca ritrova i commenti sullo stesso tema e consulta le formulazioni originali.",
@@ -1298,7 +1371,21 @@
 					"proof": "Oltre 25 fonti riunite",
 					"note": "Sondaggi, assistenza clienti e siti di recensioni."
 				},
-				"slug": "hub-dati-nlp"
+				"slug": "hub-dati-nlp",
+				"metrics": [
+					{
+						"label": "Fonti di recensioni riunite",
+						"value": "Oltre 25"
+					},
+					{
+						"label": "Consultazione da parte del team di analisi",
+						"value": "Quotidiana"
+					},
+					{
+						"label": "Team utenti citati",
+						"value": "3"
+					}
+				]
 			},
 			{
 				"id": "7",
@@ -1311,12 +1398,27 @@
 				"impact": "Dopo il cambio di gestionale i team hanno continuato a seguire le vendite minuto per minuto.",
 				"metrics": [
 					{
+						"label": "Negozi seguiti",
+						"value": "Oltre 500",
+						"note": "L’intera rete dell’insegna."
+					},
+					{
 						"label": "Aggiornamento dei dati di vendita",
 						"value": "Ogni minuto",
 						"note": "Frequenza con cui il sistema di analisi riceve nuovi dati."
+					},
+					{
+						"label": "Indicatori di vendita per negozio",
+						"value": "2"
 					}
 				],
-				"tags": ["Snowflake", "Azure", "Kafka", "ADF", "Qlik"],
+				"tags": [
+					"Snowflake",
+					"Azure",
+					"Kafka",
+					"ADF",
+					"Qlik"
+				],
 				"details": [
 					"Un negozio registra una vendita. Il nuovo software trasmette lo scontrino con il dettaglio degli articoli.",
 					"Le righe di vendita sono associate al negozio. L’analista può usare gli importi degli scontrini per seguire il fatturato e il valore medio dello scontrino per punto vendita.",
@@ -1325,15 +1427,15 @@
 				"indexCard": {
 					"title": "Seguire le vendite dei negozi durante il cambio di gestionale",
 					"description": "Anche quando cambia il formato degli scontrini, ogni vendita resta collegata agli articoli e al negozio corretti. I team possono così seguire fatturato e valore medio dello scontrino per punto vendita.",
-					"proof": "Un aggiornamento al minuto",
-					"note": "Frequenza di aggiornamento dei dati di vendita."
+					"proof": "Oltre 500 negozi",
+					"note": "Vendite di ogni negozio della rete, seguite nel nuovo sistema."
 				},
 				"slug": "data-warehouse-retail-tempo-reale"
 			}
 		],
 		"cta": {
 			"label": "Un processo critico merita più di uno strumento generico.",
-			"button": "Definire un primo ambito",
+			"button": "Parliamo del vostro progetto",
 			"link": "mailto:info@fdti.eu",
 			"description": "Partiamo da un caso reale, dai soggetti coinvolti e dai dati disponibili per individuare il prossimo passo utile."
 		}
