@@ -1,6 +1,6 @@
 <script lang="ts">
 	import LinkedinIcon from '#lib/components/LinkedinIcon.svelte';
-	import { locale } from 'svelte-i18n';
+	import { locale } from '#lib/i18n/index.ts';
 	import { isSupportedLocale, type Lang } from '#lib/data.ts';
 	import { buildLocalizedPath } from '#lib/functions/seo.ts';
 
@@ -42,7 +42,7 @@
 
 <!-- footer -->
 <footer class="fdti-footer bg-darkGrey pt-10 pb-20 md:py-5">
-	<div class="max-w-screen-wrap mx-auto px-3 wrap:px-5">
+	<div class="mx-auto px-3">
 		<div class="flex flex-col gap-8 md:flex-row justify-between items-center">
 			<div class="flex items-center gap-10 h-full">
 				<p class="text-white text-center m-0 leading-none flex items-center">&copy; FDTI</p>

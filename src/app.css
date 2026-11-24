@@ -22,14 +22,6 @@
 @plugin '@tailwindcss/typography';
 
 @layer utilities {
-	.bg-gradient-1 {
-		background-image: linear-gradient(104.83deg, #000000 0.66%, #555555 100%);
-	}
-
-	.bg-gradient-2 {
-		background-image: linear-gradient(150deg, #1d2024 60%, #555555);
-	}
-
 	/* View Transitions personnalisées */
 	@view-transition {
 		navigation: auto;
@@ -81,10 +73,6 @@
 		100% {
 			box-shadow: 0 0 0 0 rgba(249, 208, 137, 0);
 		}
-	}
-
-	.animate-highlight {
-		animation: highlight-ring 2.5s ease-in-out 1 forwards;
 	}
 }
 

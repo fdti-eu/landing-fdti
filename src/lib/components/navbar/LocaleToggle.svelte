@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/state';
-	import { locale } from 'svelte-i18n';
+	import { locale } from '#lib/i18n/index.ts';
 	import Flag from '../Flag.svelte';
 	import { FLAGS } from '#lib/const.ts';
 	import { goto, invalidate } from '$app/navigation';

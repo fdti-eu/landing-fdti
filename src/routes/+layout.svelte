@@ -1,8 +1,7 @@
 <script lang="ts">
 	import '../app.css';
 	import '#lib/styles/design.css';
-	import '#lib/i18n/index.ts';
-	import { locale } from 'svelte-i18n';
+	import { locale } from '#lib/i18n/index.ts';
 	import Footer from './Footer.svelte';
 	import Navbar from '#lib/components/navbar/Navbar.svelte';
 	import { page } from '$app/state';
