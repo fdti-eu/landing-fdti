@@ -99,7 +99,7 @@
 		{#if currentPathWithoutLocale.startsWith('/newsletter/')}
 			<!-- Subscription actions do not need another contact form. -->
 		{:else if detectedLocale === 'fr'}
-			<ContactSignup />
+			<ContactSignup projectIntro={currentPathWithoutLocale === '/'} />
 		{:else}
 			<ContactPanel />
 		{/if}

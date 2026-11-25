@@ -3,6 +3,15 @@
 	import SectionHeading from '#lib/components/SectionHeading.svelte';
 	import CapabilityDiagram from './CapabilityDiagram.svelte';
 	import type { Lang } from '#lib/data.ts';
+	import { buildLocalizedPath } from '#lib/functions/seo.ts';
+	import { navigationCopy, solutionIds, solutionLabels, type SolutionId } from '#lib/navigation.ts';
+	import { solutionHref } from '#lib/solution-pages.ts';
+
+	const capabilitySolutions: SolutionId[] = [
+		'ia-documents',
+		'automatisation-agents',
+		'applications-web'
+	];
 
 	interface Props {
 		locale?: Lang;
@@ -159,7 +168,21 @@
 						</span>
 					{/each}
 				</div>
+				<a
+					class="capability-link"
+					href={buildLocalizedPath(solutionHref(capabilitySolutions[index], locale), locale)}
+				>
+					{solutionLabels[locale][capabilitySolutions[index]]}
+				</a>
 			</Card>
 		{/each}
 	</div>
+	<nav class="capability-solutions" aria-label={navigationCopy[locale].solutions}>
+		<a href={buildLocalizedPath('/solutions', locale)}>{navigationCopy[locale].allSolutions}</a>
+		{#each solutionIds as id (id)}
+			<a href={buildLocalizedPath(solutionHref(id, locale), locale)}>
+				{solutionLabels[locale][id]}
+			</a>
+		{/each}
+	</nav>
 </section>
