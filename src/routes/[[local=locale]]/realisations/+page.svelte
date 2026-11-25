@@ -5,6 +5,8 @@
 	import PageSeo from '#lib/components/PageSeo.svelte';
 	import { schema } from '#lib/components/json-ld/json-ld.ts';
 	import type { Lang } from '#lib/data.ts';
+	import { caseImage } from '#lib/case-studies.ts';
+	import CaseVisual from '#lib/components/CaseVisual.svelte';
 	import {
 		absoluteImageUrl,
 		buildLocalizedPath,
@@ -139,18 +141,6 @@
 		]
 	};
 	const copy = $derived(interfaceLabels[currentLocale]);
-	const caseImages: Record<string, string> = {
-		'1': 'registry-color',
-		'2': 'vehicle-reception',
-		'3': 'battery-module',
-		'4': 'street-light',
-		'5': 'campaign-posts',
-		'6': 'customer-feedback',
-		'7': 'store-checkout',
-		'8': 'battery-reception',
-		'9': 'legal-evidence',
-		'10': 'vehicle-documents'
-	};
 	const featuredLabel: Record<Lang, string> = {
 		fr: 'À la une',
 		en: 'Featured',
@@ -288,31 +278,33 @@
 		<div class="panorama-wrap">
 			<div class="panorama-grid">
 				{#each filteredUseCases as item (item.id)}
-					{@const strip = (item.id !== '2' || selectedSector) && caseImages[item.id ?? '']}
+					{@const image = caseImage(item.id)}
+					{@const featured = item.id === '2' && !selectedSector}
 					<a
 						class="panorama-card"
-						class:illustrated={Boolean(strip)}
-						class:featured={item.id === '2' && !selectedSector}
+						class:illustrated={Boolean(image) && !featured}
+						class:featured
 						data-case={item.id}
 						href={buildLocalizedPath(`/realisations/${item.slug}`, currentLocale)}
 						onclick={(event) => handleCardClick(event, item.slug)}
 					>
-						{#if strip}
-							<div class="case-strip">
-								<img src={`/images/cases/${strip}.webp`} alt="" loading="lazy" />
-							</div>
-						{/if}
-						{#if item.id === '2' && !selectedSector}
+						{#if image && featured}
 							<div class="featured-photo">
-								<img
-									src="/images/cases/vehicle-reception.webp"
-									alt=""
-									width="1200"
-									height="800"
+								<CaseVisual
+									{image}
+									class="featured-visual"
 									fetchpriority="high"
+									style={getViewTransitionStyle(item.slug, item.id, 'image')}
 								/>
 								<strong>{featuredLabel[currentLocale]}</strong>
 							</div>
+						{:else if image}
+							<CaseVisual
+								{image}
+								class="case-strip"
+								loading="lazy"
+								style={getViewTransitionStyle(item.slug, item.id, 'image')}
+							/>
 						{/if}
 						<div class="eyebrow">
 							<svg aria-hidden="true" viewBox="0 0 40 38">
@@ -512,10 +504,9 @@
 		inset: 0 51% 0 0;
 		overflow: hidden;
 	}
-	.featured-photo img {
+	.featured-photo :global(.featured-visual) {
 		width: 100%;
 		height: 100%;
-		object-fit: cover;
 	}
 	.featured-photo strong {
 		position: absolute;
@@ -533,7 +524,7 @@
 		position: relative;
 		padding-left: clamp(95px, 9vw, 152px);
 	}
-	.case-strip {
+	.panorama-card :global(.case-strip) {
 		position: absolute;
 		inset: 0 auto 0 0;
 		width: clamp(100px, 10vw, 160px);
@@ -541,22 +532,15 @@
 		mask-image: linear-gradient(
 			to right,
 			var(--color-black) 0%,
-			var(--color-black-overlay-strong) 20%,
-			var(--color-black-overlay) 54%,
+			var(--color-black) 62%,
 			transparent 100%
 		);
-	}
-	.case-strip img {
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-		object-position: center;
 	}
 	@media (max-width: 760px) {
 		.panorama-card.illustrated {
 			padding-left: 64px;
 		}
-		.case-strip {
+		.panorama-card :global(.case-strip) {
 			width: 68px;
 		}
 		.panorama-card.featured {
