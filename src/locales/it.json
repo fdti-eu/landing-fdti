@@ -1163,7 +1163,7 @@
 				"category": "Aftermarket e riciclo",
 				"title": "Un costruttore indirizza e segue ogni batteria del suo sistema EPR in Europa",
 				"date": "2024",
-				"location": "Europa",
+				"location": "Europa, Nord America",
 				"challenge": "Nella rete europea di uno dei principali costruttori automobilistici al mondo, concessionari, centri di demolizione e stabilimenti rimuovono batterie di trazione. Ognuna deve andare verso la filiera giusta (riciclo, seconda vita, rigenerazione o restituzione al fornitore), presso un fornitore di servizi dello stesso paese, con l’imballaggio e i documenti richiesti. La regola dipende dal detentore, dal tipo di batteria, dal suo stato e dalla sua garanzia. Per mettere in conformità il proprio sistema EPR (responsabilità estesa del produttore) per le batterie, il costruttore deve poter dire, batteria per batteria, che fine ha fatto.",
 				"approach": "Abbiamo progettato, sviluppato e gestiamo la piattaforma web che sostiene il sistema EPR per le batterie del costruttore. Riunisce i detentori di batterie, i fornitori di raccolta e trattamento e i team del costruttore. Ogni batteria ha un fascicolo unico: identificazione tramite numero di veicolo o di batteria, completata dai dati di riferimento del costruttore, stato, foto, imballaggio, prezzi, documenti e storico con data e ora. Un motore di regole sceglie la destinazione e il fornitore in base al paese, al detentore, al tipo di batteria, al suo stato e alla garanzia; i casi previsti dalle regole passano per una convalida del team del costruttore. I fornitori lavorano nella piattaforma o dal proprio software, tramite API e webhook. Un marketplace mette in vendita i lotti destinati alla seconda vita. L’interfaccia è disponibile in sette lingue.",
 				"details": [
@@ -1198,12 +1198,12 @@
 						"text": "Il team compone un lotto per sito, sceglie gli acquirenti ammessi e la finestra delle offerte, poi seleziona un’offerta a prezzo totale, al kWh o al kg."
 					}
 				],
-				"impact": "La piattaforma è in produzione in tutta la rete europea del costruttore ed è la base della conformità del suo sistema EPR per le batterie: per ogni batteria il team ritrova la filiera scelta, il fornitore, le date di ritiro, ricevimento e trattamento, e il certificato che li attesta. Quasi 500 concessionari, centri di demolizione, stabilimenti e fornitori vi dichiarano o trattano batterie, e oltre 5.000 batterie hanno già un trattamento confermato.",
+				"impact": "La piattaforma è in produzione in tutta la rete europea del costruttore ed è la base della conformità del suo sistema EPR per le batterie: per ogni batteria il team ritrova la filiera scelta, il fornitore, le date di ritiro, ricevimento e trattamento, e il certificato che li attesta. Quasi 500 concessionari, centri di demolizione, stabilimenti e fornitori vi dichiarano o trattano batterie, e oltre 5.000 batterie hanno già un trattamento confermato. Anche i suoi stabilimenti nordamericani vi dichiarano i moduli destinati alla seconda vita.",
 				"metrics": [
 					{
 						"label": "Batterie e moduli dichiarati",
-						"value": "Oltre 26.000",
-						"note": "Dichiarati dai siti della rete europea del costruttore."
+						"value": "Oltre 1 milione",
+						"note": "Dichiarati dai siti del costruttore in Europa e in Nord America."
 					},
 					{
 						"label": "Indirizzati alla seconda vita",
@@ -1212,16 +1212,16 @@
 					},
 					{
 						"label": "Paesi di raccolta",
-						"value": "19",
-						"note": "Paesi dei siti in cui sono state dichiarate batterie."
+						"value": "21",
+						"note": "Paesi dei siti in cui sono state dichiarate batterie, in Europa e in Nord America."
 					}
 				],
 				"tags": ["SvelteKit", "FastAPI", "PostgreSQL", "Hasura", "Keycloak"],
 				"indexCard": {
 					"title": "Un costruttore indirizza e segue ogni batteria del suo sistema EPR in Europa",
 					"description": "Nel sistema EPR, i detentori dichiarano le batterie, la piattaforma sceglie la filiera e il fornitore e il team del costruttore segue ogni fascicolo fino al certificato di trattamento o alla vendita del lotto.",
-					"proof": "Oltre 26.000 batterie e moduli dichiarati",
-					"note": "Dichiarati dai siti della rete europea del costruttore."
+					"proof": "Oltre 1 milione di batterie e moduli dichiarati",
+					"note": "In Europa e in Nord America."
 				},
 				"slug": "marketplace-batterie-seconda-vita"
 			},

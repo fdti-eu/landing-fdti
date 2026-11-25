@@ -1167,7 +1167,7 @@
 				"category": "Posventa y reciclaje",
 				"title": "Un fabricante orienta y sigue cada batería de su sistema RAP en Europa",
 				"date": "2024",
-				"location": "Europa",
+				"location": "Europa, Norteamérica",
 				"challenge": "En la red europea de uno de los principales fabricantes de automóviles del mundo, concesionarios, centros de desmontaje y plantas retiran baterías de tracción. Cada una debe ir al destino correcto (reciclaje, segunda vida, remanufactura o devolución al proveedor), a un proveedor del mismo país, con el embalaje y los documentos exigidos. La regla depende del poseedor, del tipo de batería, de su estado y de su garantía. Para poner en conformidad su sistema RAP (responsabilidad ampliada del productor) de baterías, el fabricante debe poder decir, batería por batería, qué ha sido de ella.",
 				"approach": "Hemos diseñado, desarrollado y operamos la plataforma web que sostiene el sistema RAP de baterías del fabricante. Reúne a los poseedores de baterías, a los proveedores de recogida y tratamiento y a los equipos del fabricante. Cada batería tiene un expediente único: identificación por número de vehículo o de batería, completada con los datos de referencia del fabricante, estado, fotos, embalaje, precios, documentos e historial con fecha y hora. Un motor de reglas elige el destino y el proveedor según el país, el poseedor, el tipo de batería, su estado y su garantía; los casos previstos por las reglas pasan por una validación del equipo del fabricante. Los proveedores trabajan en la plataforma o desde su propio software, mediante API y webhooks. Un marketplace pone a la venta los lotes destinados a la segunda vida. La interfaz está disponible en siete idiomas.",
 				"details": [
@@ -1202,12 +1202,12 @@
 						"text": "El equipo forma un lote por sitio, elige los compradores admitidos y el plazo de ofertas, y elige una oferta con precio total, por kWh o por kg."
 					}
 				],
-				"impact": "La plataforma está en producción en toda la red europea del fabricante y sirve de base a la conformidad de su sistema RAP de baterías: para cada batería, el equipo encuentra el destino elegido, el proveedor, las fechas de recogida, recepción y tratamiento, y el certificado que lo acredita. Cerca de 500 concesionarios, centros de desmontaje, plantas y proveedores declaran o tratan baterías en ella, y más de 5.000 baterías ya tienen un tratamiento confirmado.",
+				"impact": "La plataforma está en producción en toda la red europea del fabricante y sirve de base a la conformidad de su sistema RAP de baterías: para cada batería, el equipo encuentra el destino elegido, el proveedor, las fechas de recogida, recepción y tratamiento, y el certificado que lo acredita. Cerca de 500 concesionarios, centros de desmontaje, plantas y proveedores declaran o tratan baterías en ella, y más de 5.000 baterías ya tienen un tratamiento confirmado. Sus plantas norteamericanas también declaran en ella sus módulos destinados a la segunda vida.",
 				"metrics": [
 					{
 						"label": "Baterías y módulos declarados",
-						"value": "Más de 26.000",
-						"note": "Declarados por los sitios de la red europea del fabricante."
+						"value": "Más de 1 millón",
+						"note": "Declarados por los sitios del fabricante en Europa y Norteamérica."
 					},
 					{
 						"label": "Orientados a la segunda vida",
@@ -1216,16 +1216,16 @@
 					},
 					{
 						"label": "Países de recogida",
-						"value": "19",
-						"note": "Países de los sitios donde se han declarado baterías."
+						"value": "21",
+						"note": "Países de los sitios donde se han declarado baterías, en Europa y Norteamérica."
 					}
 				],
 				"tags": ["SvelteKit", "FastAPI", "PostgreSQL", "Hasura", "Keycloak"],
 				"indexCard": {
 					"title": "Un fabricante orienta y sigue cada batería de su sistema RAP en Europa",
 					"description": "En su sistema RAP, los poseedores declaran sus baterías, la plataforma elige el destino y el proveedor, y el equipo del fabricante sigue cada expediente hasta el certificado de tratamiento o la venta del lote.",
-					"proof": "Más de 26.000 baterías y módulos declarados",
-					"note": "Declarados por los sitios de la red europea del fabricante."
+					"proof": "Más de 1 millón de baterías y módulos declarados",
+					"note": "En Europa y Norteamérica."
 				},
 				"slug": "marketplace-baterias"
 			},

@@ -1163,7 +1163,7 @@
 				"category": "Aftermarket & recyclage",
 				"title": "Un constructeur oriente et suit chaque batterie de sa filière REP en Europe",
 				"date": "2024",
-				"location": "Europe",
+				"location": "Europe, Amérique du Nord",
 				"challenge": "Dans le réseau européen de l’un des premiers constructeurs automobiles mondiaux, des concessionnaires, des centres de démontage et des usines retirent des batteries de traction. Chacune doit partir vers la bonne filière (recyclage, seconde vie, reconditionnement ou retour au fournisseur), chez un prestataire du pays, avec l’emballage et les documents exigés. La règle dépend du détenteur, du type de batterie, de son état et de sa garantie. Dans le cadre de la mise en conformité de sa filière REP batteries, le constructeur doit pouvoir dire, batterie par batterie, ce qu’elle est devenue.",
 				"approach": "Nous avons conçu, développé et exploitons la plateforme web qui porte la filière REP batteries du constructeur. Elle réunit les détenteurs de batteries, les prestataires de collecte et de traitement et les équipes du constructeur. Chaque batterie y a un dossier unique : identification par numéro de véhicule ou de batterie, complétée depuis les référentiels du constructeur, état, photos, emballage, prix, documents et historique horodaté. Un moteur de règles choisit la destination et le prestataire selon le pays, le détenteur, le type de batterie, son état et sa garantie ; les cas prévus par les règles passent par une validation de l’équipe du constructeur. Les prestataires travaillent dans la plateforme ou depuis leur propre logiciel, par API et webhooks. Une marketplace met en vente les lots destinés à la seconde vie. L’interface est disponible en sept langues.",
 				"details": [
@@ -1198,12 +1198,12 @@
 						"text": "L’équipe constitue un lot par site, choisit les acheteurs admis et la fenêtre d’offres, puis retient une offre au prix total, au kWh ou au kg."
 					}
 				],
-				"impact": "La plateforme est en production dans tout le réseau européen du constructeur et sert de socle à la conformité de sa filière REP batteries : pour chaque batterie, l’équipe retrouve la filière choisie, le prestataire, les dates d’enlèvement, de réception et de traitement, et le certificat qui en atteste. Près de 500 concessionnaires, centres de démontage, usines et prestataires y déclarent ou traitent des batteries, et plus de 5 000 batteries ont déjà un traitement confirmé.",
+				"impact": "La plateforme est en production dans tout le réseau européen du constructeur et sert de socle à la conformité de sa filière REP batteries : pour chaque batterie, l’équipe retrouve la filière choisie, le prestataire, les dates d’enlèvement, de réception et de traitement, et le certificat qui en atteste. Près de 500 concessionnaires, centres de démontage, usines et prestataires y déclarent ou traitent des batteries, et plus de 5 000 batteries ont déjà un traitement confirmé. Ses usines nord-américaines y déclarent aussi leurs modules destinés à la seconde vie.",
 				"metrics": [
 					{
 						"label": "Batteries et modules déclarés",
-						"value": "Plus de 26 000",
-						"note": "Déclarés par les sites du réseau européen du constructeur."
+						"value": "Plus d’un million",
+						"note": "Déclarés par les sites du constructeur en Europe et en Amérique du Nord."
 					},
 					{
 						"label": "Orientés vers la seconde vie",
@@ -1212,16 +1212,16 @@
 					},
 					{
 						"label": "Pays de collecte",
-						"value": "19",
-						"note": "Pays des sites où des batteries ont été déclarées."
+						"value": "21",
+						"note": "Pays des sites où des batteries ont été déclarées, en Europe et en Amérique du Nord."
 					}
 				],
 				"tags": ["SvelteKit", "FastAPI", "PostgreSQL", "Hasura", "Keycloak"],
 				"indexCard": {
 					"title": "Un constructeur oriente et suit chaque batterie de sa filière REP en Europe",
 					"description": "Dans le cadre de sa filière REP, les détenteurs déclarent leurs batteries, la plateforme choisit la filière et le prestataire, et l’équipe du constructeur suit chaque dossier jusqu’au certificat de traitement ou à la vente du lot.",
-					"proof": "Plus de 26 000 batteries et modules déclarés",
-					"note": "Déclarés par les sites du réseau européen du constructeur."
+					"proof": "Plus d’un million de batteries et modules déclarés",
+					"note": "En Europe et en Amérique du Nord."
 				},
 				"slug": "marketplace-batteries"
 			},

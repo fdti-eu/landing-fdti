@@ -1163,7 +1163,7 @@
 				"category": "Aftermarket und Recycling",
 				"title": "Ein Autohersteller steuert und verfolgt jede Batterie seines EPR-Systems in Europa",
 				"date": "2024",
-				"location": "Europa",
+				"location": "Europa, Nordamerika",
 				"challenge": "Im europäischen Netz eines der weltweit führenden Autohersteller bauen Autohäuser, Demontagebetriebe und Werke Traktionsbatterien aus. Jede muss in den richtigen Verwertungsweg (Recycling, Second Life, Wiederaufbereitung oder Rückgabe an den Lieferanten), zu einem Dienstleister im selben Land, mit der vorgeschriebenen Verpackung und den nötigen Dokumenten. Die Regel hängt vom Besitzer, vom Batterietyp, vom Zustand und von der Garantie ab. Um sein EPR-System (erweiterte Herstellerverantwortung) für Batterien konform aufzustellen, muss der Hersteller für jede einzelne Batterie sagen können, was aus ihr geworden ist.",
 				"approach": "Wir haben die Webplattform konzipiert, entwickelt und betreiben sie, die das EPR-System des Herstellers für Batterien trägt. Sie verbindet Batteriebesitzer, Sammel- und Behandlungsdienstleister und die Teams des Herstellers. Jede Batterie hat dort eine einzige Akte: Identifikation über Fahrzeug- oder Batterienummer, ergänzt aus den Stammdaten des Herstellers, Zustand, Fotos, Verpackung, Preise, Dokumente und ein Verlauf mit Zeitstempeln. Eine Regel-Engine wählt Ziel und Dienstleister nach Land, Besitzer, Batterietyp, Zustand und Garantie; die in den Regeln vorgesehenen Fälle durchlaufen eine Freigabe durch das Team des Herstellers. Dienstleister arbeiten in der Plattform oder aus ihrer eigenen Software, über API und Webhooks. Ein Marktplatz verkauft die Lose für das Second Life. Die Oberfläche gibt es in sieben Sprachen.",
 				"details": [
@@ -1198,12 +1198,12 @@
 						"text": "Das Team stellt ein Los pro Standort zusammen, wählt die zugelassenen Käufer und die Angebotsfrist und nimmt ein Angebot als Gesamtpreis, pro kWh oder pro kg an."
 					}
 				],
-				"impact": "Die Plattform ist im gesamten europäischen Netz des Herstellers produktiv und bildet die Grundlage für die Konformität seines EPR-Systems für Batterien: Für jede Batterie findet das Team den gewählten Verwertungsweg, den Dienstleister, die Daten von Abholung, Eingang und Behandlung sowie das Zertifikat, das sie belegt. Fast 500 Autohäuser, Demontagebetriebe, Werke und Dienstleister melden oder behandeln dort Batterien, und mehr als 5.000 Batterien haben bereits eine bestätigte Behandlung.",
+				"impact": "Die Plattform ist im gesamten europäischen Netz des Herstellers produktiv und bildet die Grundlage für die Konformität seines EPR-Systems für Batterien: Für jede Batterie findet das Team den gewählten Verwertungsweg, den Dienstleister, die Daten von Abholung, Eingang und Behandlung sowie das Zertifikat, das sie belegt. Fast 500 Autohäuser, Demontagebetriebe, Werke und Dienstleister melden oder behandeln dort Batterien, und mehr als 5.000 Batterien haben bereits eine bestätigte Behandlung. Auch seine nordamerikanischen Werke melden dort ihre Module für ein Second Life.",
 				"metrics": [
 					{
 						"label": "Gemeldete Batterien und Module",
-						"value": "Mehr als 26.000",
-						"note": "Von Standorten im europäischen Netz des Herstellers gemeldet."
+						"value": "Mehr als 1 Million",
+						"note": "Von Standorten des Herstellers in Europa und Nordamerika gemeldet."
 					},
 					{
 						"label": "Für ein Second Life bestimmt",
@@ -1212,16 +1212,16 @@
 					},
 					{
 						"label": "Sammelländer",
-						"value": "19",
-						"note": "Länder der Standorte, an denen Batterien gemeldet wurden."
+						"value": "21",
+						"note": "Länder der Standorte, an denen Batterien gemeldet wurden, in Europa und Nordamerika."
 					}
 				],
 				"tags": ["SvelteKit", "FastAPI", "PostgreSQL", "Hasura", "Keycloak"],
 				"indexCard": {
 					"title": "Ein Autohersteller steuert und verfolgt jede Batterie seines EPR-Systems in Europa",
 					"description": "Im EPR-System melden die Besitzer ihre Batterien, die Plattform wählt Verwertungsweg und Dienstleister, und das Team des Herstellers verfolgt jede Akte bis zum Behandlungszertifikat oder zum Verkauf des Loses.",
-					"proof": "Mehr als 26.000 gemeldete Batterien und Module",
-					"note": "Von Standorten im europäischen Netz des Herstellers gemeldet."
+					"proof": "Mehr als 1 Million gemeldete Batterien und Module",
+					"note": "In Europa und Nordamerika."
 				},
 				"slug": "marktplatz-fuer-second-life-batterien"
 			},
