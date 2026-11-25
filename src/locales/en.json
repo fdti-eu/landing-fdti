@@ -1159,8 +1159,8 @@
 				"title": "A carmaker routes and tracks every end-of-life battery in its EPR scheme across Europe",
 				"date": "2024",
 				"location": "Europe, North America",
-				"challenge": "Across the European network of one of the world’s leading carmakers, dealerships, dismantling centers and plants remove traction batteries. Each one must go to the right outlet (recycling, second life, remanufacturing or return to the supplier), to a service provider in the same country, with the required packaging and documents. The rule depends on the holder, the battery type, its condition and its warranty. To bring its battery EPR (extended producer responsibility) scheme into compliance, the carmaker must be able to say, battery by battery, what became of it.",
-				"approach": "We designed, built and operate the web platform that runs the carmaker’s battery EPR scheme. It brings together battery holders, collection and treatment providers and the carmaker’s teams. Each battery has a single file: identification by vehicle or battery number, completed from the carmaker’s reference data, condition, photos, packaging, prices, documents and a time-stamped history. A rules engine selects the destination and the provider by country, holder, battery type, condition and warranty; the cases defined by the rules go through validation by the carmaker’s team. Providers work in the platform or from their own software, through an API and webhooks. A marketplace sells the lots intended for second life. The interface is available in seven languages.",
+				"challenge": "Across the European network of one of the world’s leading carmakers, dealerships, dismantling centers and plants remove traction batteries. Each one must go to the right outlet, to a service provider in the same country, with the required packaging and documents. The routing rules are specific to the carmaker and vary from one battery to the next. To bring its battery EPR (extended producer responsibility) scheme into compliance, the carmaker must be able to say, battery by battery, what became of it.",
+				"approach": "We designed, built and operate the web platform that runs the carmaker’s battery EPR scheme. It brings together battery holders, collection and treatment providers and the carmaker’s teams. Each battery has a single file: identification by vehicle or battery number, completed from the carmaker’s reference data, condition, photos, packaging, prices, documents and a time-stamped history. A rules engine applies the carmaker’s policy to select the destination and the provider; the cases defined by the rules go through validation by the carmaker’s team. Providers work in the platform or from their own software, through an API and webhooks. A marketplace sells the lots intended for second life. The interface is available in seven languages.",
 				"details": [
 					{
 						"actor": "Holder",
@@ -1170,7 +1170,7 @@
 					{
 						"actor": "Platform",
 						"title": "Route the battery",
-						"text": "The rules engine selects the outlet, the provider in the country and who bears the costs. The cases defined by the rules go through validation by the carmaker’s team."
+						"text": "The rules engine applies the carmaker’s policy to select the outlet and the provider. The cases defined by the rules go through validation by the carmaker’s team."
 					},
 					{
 						"actor": "Provider",

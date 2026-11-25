@@ -1164,8 +1164,8 @@
 				"title": "Un constructeur oriente et suit chaque batterie de sa filière REP en Europe",
 				"date": "2024",
 				"location": "Europe, Amérique du Nord",
-				"challenge": "Dans le réseau européen de l’un des premiers constructeurs automobiles mondiaux, des concessionnaires, des centres de démontage et des usines retirent des batteries de traction. Chacune doit partir vers la bonne filière (recyclage, seconde vie, reconditionnement ou retour au fournisseur), chez un prestataire du pays, avec l’emballage et les documents exigés. La règle dépend du détenteur, du type de batterie, de son état et de sa garantie. Dans le cadre de la mise en conformité de sa filière REP batteries, le constructeur doit pouvoir dire, batterie par batterie, ce qu’elle est devenue.",
-				"approach": "Nous avons conçu, développé et exploitons la plateforme web qui porte la filière REP batteries du constructeur. Elle réunit les détenteurs de batteries, les prestataires de collecte et de traitement et les équipes du constructeur. Chaque batterie y a un dossier unique : identification par numéro de véhicule ou de batterie, complétée depuis les référentiels du constructeur, état, photos, emballage, prix, documents et historique horodaté. Un moteur de règles choisit la destination et le prestataire selon le pays, le détenteur, le type de batterie, son état et sa garantie ; les cas prévus par les règles passent par une validation de l’équipe du constructeur. Les prestataires travaillent dans la plateforme ou depuis leur propre logiciel, par API et webhooks. Une marketplace met en vente les lots destinés à la seconde vie. L’interface est disponible en sept langues.",
+				"challenge": "Dans le réseau européen de l’un des premiers constructeurs automobiles mondiaux, des concessionnaires, des centres de démontage et des usines retirent des batteries de traction. Chacune doit partir vers la bonne filière, chez un prestataire du pays, avec l’emballage et les documents exigés. Les règles d’orientation sont propres au constructeur et varient d’une batterie à l’autre. Dans le cadre de la mise en conformité de sa filière REP batteries, le constructeur doit pouvoir dire, batterie par batterie, ce qu’elle est devenue.",
+				"approach": "Nous avons conçu, développé et exploitons la plateforme web qui porte la filière REP batteries du constructeur. Elle réunit les détenteurs de batteries, les prestataires de collecte et de traitement et les équipes du constructeur. Chaque batterie y a un dossier unique : identification par numéro de véhicule ou de batterie, complétée depuis les référentiels du constructeur, état, photos, emballage, prix, documents et historique horodaté. Un moteur de règles applique la politique du constructeur pour choisir la destination et le prestataire ; les cas prévus par les règles passent par une validation de l’équipe du constructeur. Les prestataires travaillent dans la plateforme ou depuis leur propre logiciel, par API et webhooks. Une marketplace met en vente les lots destinés à la seconde vie. L’interface est disponible en sept langues.",
 				"details": [
 					{
 						"actor": "Détenteur",
@@ -1175,7 +1175,7 @@
 					{
 						"actor": "Plateforme",
 						"title": "Orienter la batterie",
-						"text": "Le moteur de règles choisit la filière, le prestataire du pays et qui prend en charge les coûts. Les cas prévus par les règles passent par une validation du constructeur."
+						"text": "Le moteur de règles applique la politique du constructeur pour choisir la filière et le prestataire. Les cas prévus par les règles passent par une validation du constructeur."
 					},
 					{
 						"actor": "Prestataire",

@@ -1168,8 +1168,8 @@
 				"title": "Un fabricante orienta y sigue cada batería de su sistema RAP en Europa",
 				"date": "2024",
 				"location": "Europa, Norteamérica",
-				"challenge": "En la red europea de uno de los principales fabricantes de automóviles del mundo, concesionarios, centros de desmontaje y plantas retiran baterías de tracción. Cada una debe ir al destino correcto (reciclaje, segunda vida, remanufactura o devolución al proveedor), a un proveedor del mismo país, con el embalaje y los documentos exigidos. La regla depende del poseedor, del tipo de batería, de su estado y de su garantía. Para poner en conformidad su sistema RAP (responsabilidad ampliada del productor) de baterías, el fabricante debe poder decir, batería por batería, qué ha sido de ella.",
-				"approach": "Hemos diseñado, desarrollado y operamos la plataforma web que sostiene el sistema RAP de baterías del fabricante. Reúne a los poseedores de baterías, a los proveedores de recogida y tratamiento y a los equipos del fabricante. Cada batería tiene un expediente único: identificación por número de vehículo o de batería, completada con los datos de referencia del fabricante, estado, fotos, embalaje, precios, documentos e historial con fecha y hora. Un motor de reglas elige el destino y el proveedor según el país, el poseedor, el tipo de batería, su estado y su garantía; los casos previstos por las reglas pasan por una validación del equipo del fabricante. Los proveedores trabajan en la plataforma o desde su propio software, mediante API y webhooks. Un marketplace pone a la venta los lotes destinados a la segunda vida. La interfaz está disponible en siete idiomas.",
+				"challenge": "En la red europea de uno de los principales fabricantes de automóviles del mundo, concesionarios, centros de desmontaje y plantas retiran baterías de tracción. Cada una debe ir al destino correcto, a un proveedor del mismo país, con el embalaje y los documentos exigidos. Las reglas de orientación son propias del fabricante y varían de una batería a otra. Para poner en conformidad su sistema RAP (responsabilidad ampliada del productor) de baterías, el fabricante debe poder decir, batería por batería, qué ha sido de ella.",
+				"approach": "Hemos diseñado, desarrollado y operamos la plataforma web que sostiene el sistema RAP de baterías del fabricante. Reúne a los poseedores de baterías, a los proveedores de recogida y tratamiento y a los equipos del fabricante. Cada batería tiene un expediente único: identificación por número de vehículo o de batería, completada con los datos de referencia del fabricante, estado, fotos, embalaje, precios, documentos e historial con fecha y hora. Un motor de reglas aplica la política del fabricante para elegir el destino y el proveedor; los casos previstos por las reglas pasan por una validación del equipo del fabricante. Los proveedores trabajan en la plataforma o desde su propio software, mediante API y webhooks. Un marketplace pone a la venta los lotes destinados a la segunda vida. La interfaz está disponible en siete idiomas.",
 				"details": [
 					{
 						"actor": "Poseedor",
@@ -1179,7 +1179,7 @@
 					{
 						"actor": "Plataforma",
 						"title": "Orientar la batería",
-						"text": "El motor de reglas elige el destino, el proveedor del país y quién asume los costes. Los casos previstos por las reglas pasan por una validación del equipo del fabricante."
+						"text": "El motor de reglas aplica la política del fabricante para elegir el destino y el proveedor. Los casos previstos por las reglas pasan por una validación del equipo del fabricante."
 					},
 					{
 						"actor": "Proveedor",
