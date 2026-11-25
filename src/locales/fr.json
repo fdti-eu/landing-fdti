@@ -1290,38 +1290,62 @@
 			{
 				"id": "4",
 				"category": "Smart city & énergie",
-				"title": "Repérer les anomalies de l’éclairage public",
+				"title": "Les gestionnaires d’éclairage public suivent les incidents armoire par armoire",
 				"date": "2024",
 				"location": "France",
-				"challenge": "Le matin, le gestionnaire doit savoir quelles armoires d’éclairage examiner. Une consommation en journée mérite son attention, mais sa seule présence ne suffit pas à conclure que les lampes sont restées allumées.",
-				"approach": "Depuis la liste des anomalies, le gestionnaire ouvre la courbe de l’armoire concernée. Il rapproche la consommation mesurée des horaires d’éclairage pour décider quel écart faire vérifier.",
-				"impact": "Les gestionnaires consultent les alertes chaque matin pour cibler leurs vérifications sur le réseau.",
+				"challenge": "Une armoire consomme encore en pleine journée. Est-ce un décalage de l’horloge, une intervention sur place ou une consommation qui persiste après l’extinction ? Pour un gestionnaire d’éclairage public qui suit plusieurs communes, le total de la facture ne permet pas de trancher. Il lui faut retrouver l’armoire, savoir quand sa consommation a changé et vérifier si l’écart se reproduit avant de demander un contrôle sur place.",
+				"approach": "Nous avons développé une application web pour les gestionnaires de parcs d’éclairage public. Elle réunit les relevés des compteurs, les horaires d’allumage et les données de facturation. Le gestionnaire choisit un territoire ou un groupement et voit sur une carte les armoires qui présentent une anomalie. Pour chacune, il peut comparer plusieurs nuits, examiner la puissance appelée par demi-heure et retrouver son adresse. Il choisit aussi les alertes qu’il souhaite recevoir à la détection d’un défaut ou au retour à la normale. Pour préparer une revue des contrats, il retrouve par armoire la puissance souscrite, les consommations facturées et le prix moyen du kilowattheure.",
+				"impact": "L’application suit plus de 6 000 points de comptage, répartis sur une soixantaine de parcs, en majorité communaux. Le gestionnaire peut indiquer au prestataire quelle armoire vérifier, à quelle heure la consommation a changé et depuis combien de jours l’écart apparaît. Après une intervention, il retrouve les relevés du même compteur pour vérifier si le défaut reste visible. Les équipes chargées de l’énergie s’appuient sur les mêmes références pour examiner une facture ou revoir un abonnement.",
 				"metrics": [
 					{
-						"label": "Territoires équipés",
-						"value": "+40",
-						"note": "Territoires sur lesquels les alertes ont été déployées."
+						"label": "Points de comptage suivis",
+						"value": "Plus de 6 000",
+						"note": "Compteurs d’éclairage public dont l’application reçoit les relevés."
 					},
 					{
-						"label": "Plages de consommation comparées",
-						"value": "3"
+						"label": "Précision des courbes de puissance",
+						"value": "30 minutes",
+						"note": "Le gestionnaire voit la puissance d’une armoire demi-heure par demi-heure."
 					},
 					{
-						"label": "Consultation des alertes",
-						"value": "Chaque matin"
+						"label": "Parcs couverts par les alertes",
+						"value": "9 sur 10",
+						"note": "Parcs dont au moins un gestionnaire est abonné aux alertes de détection."
 					}
 				],
 				"tags": ["DuckDB", "SvelteKit", "PostgreSQL", "FastAPI"],
 				"details": [
-					"Le gestionnaire sélectionne une armoire et retrouve les mesures du compteur correspondant.",
-					"Il examine la consommation avant, pendant et après la plage d’allumage. Il peut ainsi distinguer une consommation présente toute la journée d’un décalage au moment de l’allumage.",
-					"Il peut indiquer au prestataire quelle armoire examiner, à quelle heure et pour quel écart."
+					{
+						"actor": "Application",
+						"title": "Rassembler les relevés",
+						"text": "À partir des relevés du distributeur, elle reconstitue la courbe de puissance de chaque compteur et la rattache à l’armoire correspondante."
+					},
+					{
+						"actor": "Gestionnaire",
+						"title": "Localiser le défaut",
+						"text": "Il choisit une commune ou un groupement et repère sur la carte les armoires qui demandent une vérification."
+					},
+					{
+						"actor": "Gestionnaire",
+						"title": "Examiner la nuit",
+						"text": "Sur son téléphone ou au bureau, il compare les nuits et les heures d’allumage pour situer le début de l’écart."
+					},
+					{
+						"actor": "Gestionnaire",
+						"title": "Préparer la vérification",
+						"text": "Il retrouve l’adresse du coffret et le créneau concerné pour préciser au prestataire où et quand vérifier l’installation."
+					},
+					{
+						"actor": "Gestionnaire",
+						"title": "Vérifier les relevés suivants",
+						"text": "Il consulte les relevés suivants ou choisit de recevoir un courriel lorsque l’alerte prend fin."
+					}
 				],
 				"indexCard": {
-					"title": "Repérer les anomalies de l’éclairage public",
-					"description": "Chaque matin, le gestionnaire compare les horaires prévus aux courbes de consommation. Il peut distinguer un décalage d’allumage d’une consommation présente toute la journée, puis indiquer au prestataire quelle armoire vérifier et à quel moment.",
-					"proof": "Plus de 40 territoires équipés",
-					"note": "Les gestionnaires y suivent les alertes du réseau."
+					"title": "Les gestionnaires d’éclairage public suivent les incidents armoire par armoire",
+					"description": "Le gestionnaire repère une armoire en anomalie, examine ce qui s’est passé pendant la nuit et suit le retour à la normale. Il retrouve aussi les relevés pour contrôler la facture d’énergie.",
+					"proof": "Plus de 6 000 points de comptage suivis",
+					"note": "Compteurs d’éclairage public dont l’application reçoit les relevés."
 				},
 				"slug": "supervision-eclairage-public"
 			},

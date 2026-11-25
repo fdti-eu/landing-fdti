@@ -61,10 +61,6 @@
 				description:
 					'Une plateforme sur mesure réunit décisions judiciaires et fichiers hétérogènes pour suivre les dossiers d’indemnisation et leurs corrections.'
 			},
-			'4': {
-				description:
-					'Une plateforme supervise plus de 100 millions de mesures d’éclairage public par jour, détecte les anomalies et équipe plus de 40 territoires.'
-			},
 			'5': {
 				description:
 					'Une analyse par LLM compare 60 000 publications Facebook et Instagram en 8 langues, puis croise les narratifs avec leurs performances par audience.'
@@ -84,10 +80,6 @@
 			'9': {
 				description:
 					'A tailored platform brings together court decisions and changing file formats to track compensation cases, corrections and human decisions.'
-			},
-			'4': {
-				description:
-					'A platform monitors over 100 million public-lighting measurements a day, detects anomalies and supports maintenance across more than 40 territories.'
 			},
 			'5': {
 				description:
@@ -114,10 +106,6 @@
 				description:
 					'Eine maßgeschneiderte Plattform verbindet Gerichtsentscheidungen und wechselnde Dateiformate, um Entschädigungsfälle und Korrekturen nachvollziehbar zu machen.'
 			},
-			'4': {
-				description:
-					'Eine Plattform überwacht täglich mehr als 100 Millionen Messwerte der Straßenbeleuchtung, erkennt Anomalien und unterstützt die Instandhaltung in über 40 Gebieten.'
-			},
 			'5': {
 				description:
 					'Eine LLM-gestützte Analyse vergleicht 60.000 Facebook- und Instagram-Beiträge in 8 Sprachen und verknüpft Narrative mit der Kampagnenleistung nach Zielgruppe.'
@@ -137,10 +125,6 @@
 			'9': {
 				description:
 					'Una piattaforma su misura riunisce decisioni giudiziarie e file di formati diversi per seguire pratiche di risarcimento e relative correzioni.'
-			},
-			'4': {
-				description:
-					'Una piattaforma monitora oltre 100 milioni di misurazioni dell’illuminazione pubblica al giorno, rileva le anomalie e supporta la manutenzione in più di 40 territori.'
 			},
 			'5': {
 				description:

@@ -1290,38 +1290,62 @@
 			{
 				"id": "4",
 				"category": "Smart city ed energia",
-				"title": "Individuare anomalie nell’illuminazione pubblica",
+				"title": "I gestori dell’illuminazione pubblica seguono le anomalie quadro per quadro",
 				"date": "2024",
 				"location": "Francia",
-				"challenge": "Ogni mattina il gestore deve decidere quali quadri di illuminazione controllare. Un consumo diurno merita attenzione, ma da solo non significa che le luci siano rimaste accese.",
-				"approach": "Dall’elenco delle anomalie il gestore apre la curva dei consumi del quadro interessato. La confronta con gli orari di accensione per decidere quale scostamento far verificare.",
-				"impact": "I gestori consultano gli avvisi ogni mattina per scegliere dove concentrare i controlli sulla rete.",
+				"challenge": "Un quadro consuma ancora in pieno giorno. È uno sfasamento dell’orologio, un intervento sul posto o un consumo che continua dopo lo spegnimento? Per un gestore dell’illuminazione pubblica che segue più comuni, il totale della bolletta non basta a decidere. Deve ritrovare il quadro, sapere quando è cambiato il consumo e verificare se lo scostamento si ripete prima di chiedere un controllo sul posto.",
+				"approach": "Abbiamo sviluppato un’applicazione web per i gestori di impianti di illuminazione pubblica. Riunisce le letture dei contatori, gli orari di accensione e i dati di fatturazione. Il gestore sceglie un territorio o un raggruppamento e vede su una mappa i quadri che presentano un’anomalia. Per ciascuno può confrontare più notti, esaminare la potenza assorbita ogni mezz’ora e ritrovarne l’indirizzo. Sceglie anche gli avvisi da ricevere al rilevamento di un guasto o al ritorno alla normalità. Per preparare una revisione dei contratti, ritrova per quadro la potenza impegnata, i consumi fatturati e il prezzo medio del chilowattora.",
+				"impact": "L’applicazione segue oltre 6.000 punti di misura, distribuiti su una sessantina di impianti, in maggioranza comunali. Il gestore può indicare al manutentore quale quadro verificare, a che ora è cambiato il consumo e da quanti giorni appare lo scostamento. Dopo un intervento ritrova le letture dello stesso contatore per verificare se il guasto è ancora visibile. I team energia si basano sugli stessi riferimenti per esaminare una bolletta o rivedere un contratto.",
 				"metrics": [
 					{
-						"label": "Territori serviti",
-						"value": "+40",
-						"note": "Territori in cui sono stati attivati gli avvisi."
+						"label": "Punti di misura seguiti",
+						"value": "Oltre 6.000",
+						"note": "Contatori dell’illuminazione pubblica di cui l’applicazione riceve le letture."
 					},
 					{
-						"label": "Fasce di consumo confrontate",
-						"value": "3"
+						"label": "Precisione delle curve di potenza",
+						"value": "30 minuti",
+						"note": "Il gestore vede la potenza di un quadro mezz’ora per mezz’ora."
 					},
 					{
-						"label": "Consultazione degli avvisi",
-						"value": "Ogni mattina"
+						"label": "Impianti coperti dagli avvisi",
+						"value": "9 su 10",
+						"note": "Impianti in cui almeno un gestore è iscritto agli avvisi di rilevamento."
 					}
 				],
 				"tags": ["DuckDB", "SvelteKit", "PostgreSQL", "FastAPI"],
 				"details": [
-					"Il gestore seleziona un quadro e consulta le misure del relativo contatore.",
-					"Confronta i consumi prima, durante e dopo la fascia di accensione. Può così distinguere un assorbimento presente tutto il giorno da uno scarto nell’orario di accensione.",
-					"Può indicare al manutentore quale quadro controllare, a che ora e per quale scostamento."
+					{
+						"actor": "Applicazione",
+						"title": "Raccogliere le letture",
+						"text": "A partire dalle letture del distributore, ricostruisce la curva di potenza di ogni contatore e la collega al quadro corrispondente."
+					},
+					{
+						"actor": "Gestore",
+						"title": "Localizzare il guasto",
+						"text": "Sceglie un comune o un raggruppamento e individua sulla mappa i quadri da verificare."
+					},
+					{
+						"actor": "Gestore",
+						"title": "Esaminare la notte",
+						"text": "Dal telefono o in ufficio confronta le notti e gli orari di accensione per individuare l’inizio dello scostamento."
+					},
+					{
+						"actor": "Gestore",
+						"title": "Preparare la verifica",
+						"text": "Ritrova l’indirizzo del quadro e la fascia oraria interessata per indicare al manutentore dove e quando verificare l’impianto."
+					},
+					{
+						"actor": "Gestore",
+						"title": "Controllare le letture successive",
+						"text": "Consulta le letture successive o sceglie di ricevere un’e-mail quando l’avviso termina."
+					}
 				],
 				"indexCard": {
-					"title": "Individuare anomalie nell’illuminazione pubblica",
-					"description": "Ogni mattina il gestore confronta gli orari previsti con le curve di consumo. Distingue un ritardo nell’accensione da un assorbimento continuo durante il giorno e indica al manutentore quale quadro controllare e a che ora.",
-					"proof": "Oltre 40 territori attrezzati",
-					"note": "I gestori consultano gli avvisi della rete in questi territori."
+					"title": "I gestori dell’illuminazione pubblica seguono le anomalie quadro per quadro",
+					"description": "Il gestore individua un quadro in anomalia, esamina che cosa è successo durante la notte e segue il ritorno alla normalità. Ritrova anche le letture per controllare la bolletta energetica.",
+					"proof": "Oltre 6.000 punti di misura seguiti",
+					"note": "Contatori dell’illuminazione pubblica di cui l’applicazione riceve le letture."
 				},
 				"slug": "supervisione-illuminazione-pubblica"
 			},
