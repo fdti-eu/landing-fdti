@@ -1164,8 +1164,8 @@
 				"title": "Un costruttore indirizza e segue ogni batteria del suo sistema EPR in Europa",
 				"date": "2024",
 				"location": "Europa, Nord America",
-				"challenge": "Nella rete europea di uno dei principali costruttori automobilistici al mondo, concessionari, centri di demolizione e stabilimenti rimuovono batterie di trazione. Ognuna deve andare verso la filiera giusta (riciclo, seconda vita, rigenerazione o restituzione al fornitore), presso un fornitore di servizi dello stesso paese, con l’imballaggio e i documenti richiesti. La regola dipende dal detentore, dal tipo di batteria, dal suo stato e dalla sua garanzia. Per mettere in conformità il proprio sistema EPR (responsabilità estesa del produttore) per le batterie, il costruttore deve poter dire, batteria per batteria, che fine ha fatto.",
-				"approach": "Abbiamo progettato, sviluppato e gestiamo la piattaforma web che sostiene il sistema EPR per le batterie del costruttore. Riunisce i detentori di batterie, i fornitori di raccolta e trattamento e i team del costruttore. Ogni batteria ha un fascicolo unico: identificazione tramite numero di veicolo o di batteria, completata dai dati di riferimento del costruttore, stato, foto, imballaggio, prezzi, documenti e storico con data e ora. Un motore di regole sceglie la destinazione e il fornitore in base al paese, al detentore, al tipo di batteria, al suo stato e alla garanzia; i casi previsti dalle regole passano per una convalida del team del costruttore. I fornitori lavorano nella piattaforma o dal proprio software, tramite API e webhook. Un marketplace mette in vendita i lotti destinati alla seconda vita. L’interfaccia è disponibile in sette lingue.",
+				"challenge": "Nella rete europea di uno dei principali costruttori automobilistici al mondo, concessionari, centri di demolizione e stabilimenti rimuovono batterie di trazione. Ognuna deve andare verso la filiera giusta, presso un fornitore di servizi dello stesso paese, con l’imballaggio e i documenti richiesti. Le regole di indirizzamento sono proprie del costruttore e variano da una batteria all’altra. Per mettere in conformità il proprio sistema EPR (responsabilità estesa del produttore) per le batterie, il costruttore deve poter dire, batteria per batteria, che fine ha fatto.",
+				"approach": "Abbiamo progettato, sviluppato e gestiamo la piattaforma web che sostiene il sistema EPR per le batterie del costruttore. Riunisce i detentori di batterie, i fornitori di raccolta e trattamento e i team del costruttore. Ogni batteria ha un fascicolo unico: identificazione tramite numero di veicolo o di batteria, completata dai dati di riferimento del costruttore, stato, foto, imballaggio, prezzi, documenti e storico con data e ora. Un motore di regole applica la politica del costruttore per scegliere la destinazione e il fornitore; i casi previsti dalle regole passano per una convalida del team del costruttore. I fornitori lavorano nella piattaforma o dal proprio software, tramite API e webhook. Un marketplace mette in vendita i lotti destinati alla seconda vita. L’interfaccia è disponibile in sette lingue.",
 				"details": [
 					{
 						"actor": "Detentore",
@@ -1175,7 +1175,7 @@
 					{
 						"actor": "Piattaforma",
 						"title": "Indirizzare la batteria",
-						"text": "Il motore di regole sceglie la filiera, il fornitore del paese e chi sostiene i costi. I casi previsti dalle regole passano per una convalida del team del costruttore."
+						"text": "Il motore di regole applica la politica del costruttore per scegliere la filiera e il fornitore. I casi previsti dalle regole passano per una convalida del team del costruttore."
 					},
 					{
 						"actor": "Fornitore",

@@ -1164,8 +1164,8 @@
 				"title": "Ein Autohersteller steuert und verfolgt jede Batterie seines EPR-Systems in Europa",
 				"date": "2024",
 				"location": "Europa, Nordamerika",
-				"challenge": "Im europäischen Netz eines der weltweit führenden Autohersteller bauen Autohäuser, Demontagebetriebe und Werke Traktionsbatterien aus. Jede muss in den richtigen Verwertungsweg (Recycling, Second Life, Wiederaufbereitung oder Rückgabe an den Lieferanten), zu einem Dienstleister im selben Land, mit der vorgeschriebenen Verpackung und den nötigen Dokumenten. Die Regel hängt vom Besitzer, vom Batterietyp, vom Zustand und von der Garantie ab. Um sein EPR-System (erweiterte Herstellerverantwortung) für Batterien konform aufzustellen, muss der Hersteller für jede einzelne Batterie sagen können, was aus ihr geworden ist.",
-				"approach": "Wir haben die Webplattform konzipiert, entwickelt und betreiben sie, die das EPR-System des Herstellers für Batterien trägt. Sie verbindet Batteriebesitzer, Sammel- und Behandlungsdienstleister und die Teams des Herstellers. Jede Batterie hat dort eine einzige Akte: Identifikation über Fahrzeug- oder Batterienummer, ergänzt aus den Stammdaten des Herstellers, Zustand, Fotos, Verpackung, Preise, Dokumente und ein Verlauf mit Zeitstempeln. Eine Regel-Engine wählt Ziel und Dienstleister nach Land, Besitzer, Batterietyp, Zustand und Garantie; die in den Regeln vorgesehenen Fälle durchlaufen eine Freigabe durch das Team des Herstellers. Dienstleister arbeiten in der Plattform oder aus ihrer eigenen Software, über API und Webhooks. Ein Marktplatz verkauft die Lose für das Second Life. Die Oberfläche gibt es in sieben Sprachen.",
+				"challenge": "Im europäischen Netz eines der weltweit führenden Autohersteller bauen Autohäuser, Demontagebetriebe und Werke Traktionsbatterien aus. Jede muss in den richtigen Verwertungsweg, zu einem Dienstleister im selben Land, mit der vorgeschriebenen Verpackung und den nötigen Dokumenten. Die Zuordnungsregeln sind herstellerspezifisch und unterscheiden sich von Batterie zu Batterie. Um sein EPR-System (erweiterte Herstellerverantwortung) für Batterien konform aufzustellen, muss der Hersteller für jede einzelne Batterie sagen können, was aus ihr geworden ist.",
+				"approach": "Wir haben die Webplattform konzipiert, entwickelt und betreiben sie, die das EPR-System des Herstellers für Batterien trägt. Sie verbindet Batteriebesitzer, Sammel- und Behandlungsdienstleister und die Teams des Herstellers. Jede Batterie hat dort eine einzige Akte: Identifikation über Fahrzeug- oder Batterienummer, ergänzt aus den Stammdaten des Herstellers, Zustand, Fotos, Verpackung, Preise, Dokumente und ein Verlauf mit Zeitstempeln. Eine Regel-Engine wendet die Vorgaben des Herstellers an, um Ziel und Dienstleister zu wählen; die in den Regeln vorgesehenen Fälle durchlaufen eine Freigabe durch das Team des Herstellers. Dienstleister arbeiten in der Plattform oder aus ihrer eigenen Software, über API und Webhooks. Ein Marktplatz verkauft die Lose für das Second Life. Die Oberfläche gibt es in sieben Sprachen.",
 				"details": [
 					{
 						"actor": "Besitzer",
@@ -1175,7 +1175,7 @@
 					{
 						"actor": "Plattform",
 						"title": "Batterie zuordnen",
-						"text": "Die Regel-Engine wählt Verwertungsweg, Dienstleister im Land und Kostenträger. Die in den Regeln vorgesehenen Fälle durchlaufen eine Freigabe durch das Team des Herstellers."
+						"text": "Die Regel-Engine wendet die Vorgaben des Herstellers an, um Verwertungsweg und Dienstleister zu wählen. Die in den Regeln vorgesehenen Fälle durchlaufen eine Freigabe durch das Team des Herstellers."
 					},
 					{
 						"actor": "Dienstleister",
