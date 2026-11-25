@@ -1164,32 +1164,56 @@
 				"title": "Un constructeur oriente et suit chaque batterie de sa filière REP en Europe",
 				"date": "2024",
 				"location": "Europe",
-				"challenge": "Dans le réseau européen d’un constructeur automobile, des concessionnaires, des centres de démontage et des usines retirent des batteries de traction. Chacune doit partir vers la bonne filière (recyclage, seconde vie, reconditionnement ou retour au fournisseur), chez un prestataire du pays, avec l’emballage et les documents exigés. La règle dépend du détenteur, du type de batterie, de son état et de sa garantie. Dans le cadre de la mise en conformité de sa filière REP batteries, le constructeur doit pouvoir dire, batterie par batterie, ce qu’elle est devenue.",
+				"challenge": "Dans le réseau européen de l’un des premiers constructeurs automobiles mondiaux, des concessionnaires, des centres de démontage et des usines retirent des batteries de traction. Chacune doit partir vers la bonne filière (recyclage, seconde vie, reconditionnement ou retour au fournisseur), chez un prestataire du pays, avec l’emballage et les documents exigés. La règle dépend du détenteur, du type de batterie, de son état et de sa garantie. Dans le cadre de la mise en conformité de sa filière REP batteries, le constructeur doit pouvoir dire, batterie par batterie, ce qu’elle est devenue.",
 				"approach": "Nous avons conçu, développé et exploitons la plateforme web qui porte la filière REP batteries du constructeur. Elle réunit les détenteurs de batteries, les prestataires de collecte et de traitement et les équipes du constructeur. Chaque batterie y a un dossier unique : identification par numéro de véhicule ou de batterie, complétée depuis les référentiels du constructeur, état, photos, emballage, prix, documents et historique horodaté. Un moteur de règles choisit la destination et le prestataire selon le pays, le détenteur, le type de batterie, son état et sa garantie ; les cas prévus par les règles passent par une validation de l’équipe du constructeur. Les prestataires travaillent dans la plateforme ou depuis leur propre logiciel, par API et webhooks. Une marketplace met en vente les lots destinés à la seconde vie. L’interface est disponible en sept langues.",
 				"details": [
-					"Le détenteur saisit le numéro du véhicule ou de la batterie : la plateforme retrouve le type et ses caractéristiques. Il indique l’état (vert, jaune ou rouge), la charge et la santé, ajoute les photos exigées et l’emballage. Pour un lot, il importe un fichier Excel ; les lignes refusées reviennent annotées.",
-					"Le moteur d’orientation applique les scénarios du constructeur : déchet ou produit, destination, prestataire du pays, prise en charge des coûts. Une batterie dont la référence est consignée part vers le reconditionnement. Quand le scénario l’exige, l’équipe du constructeur valide, demande une correction au détenteur ou réoriente la batterie.",
-					"Le prestataire désigné propose son prix de traitement et de transport ; l’autre partie l’accepte ou le refuse en indiquant sa raison. Les batteries d’un même site peuvent partir dans un seul enlèvement, au prix logistique commun. Le prestataire dépose le bon de commande et le document à coller sur l’emballage.",
-					"Le prestataire déclare l’enlèvement, la réception puis le traitement, ou signale un problème de collecte. Chaque changement de statut prévient le détenteur et l’équipe du constructeur, dans l’application et par e-mail selon leurs préférences. Le certificat de traitement est rattaché au dossier de la batterie.",
-					"Un prestataire qui utilise son propre logiciel ne ressaisit rien : la plateforme lui transmet la batterie, puis les statuts de son outil reviennent sur le dossier avec ses documents, dont le certificat de recyclage. Les autres reçoivent un webhook à chaque événement et mettent à jour leurs dossiers en masse.",
-					"Pour la seconde vie, l’équipe du constructeur constitue un lot par site, choisit les photos et documents visibles, la fenêtre d’offres et les acheteurs admis. Les acheteurs proposent un prix total, au kWh ou au kg. L’équipe demande une révision ou retient une offre, puis crée l’enlèvement chez l’acheteur."
+					{
+						"actor": "Détenteur",
+						"title": "Déclarer la batterie",
+						"text": "Il saisit le numéro du véhicule ou de la batterie : la plateforme retrouve ses caractéristiques. Il précise l’état, la charge et la santé, ajoute photos et emballage ou importe un lot Excel."
+					},
+					{
+						"actor": "Plateforme",
+						"title": "Orienter la batterie",
+						"text": "Le moteur de règles choisit la filière, le prestataire du pays et qui prend en charge les coûts. Les cas prévus par les règles passent par une validation du constructeur."
+					},
+					{
+						"actor": "Prestataire",
+						"title": "Chiffrer et enlever",
+						"text": "Le prestataire propose son prix de traitement et de transport, que l’autre partie accepte ou refuse. Les batteries d’un même site partent dans un seul enlèvement."
+					},
+					{
+						"actor": "Prestataire",
+						"title": "Tracer jusqu’au traitement",
+						"text": "Il déclare l’enlèvement, la réception puis le traitement. Chaque étape prévient le détenteur et le constructeur ; le certificat de traitement rejoint le dossier."
+					},
+					{
+						"actor": "Prestataire",
+						"title": "Travailler depuis son logiciel",
+						"text": "Un prestataire connecté ne ressaisit rien : la plateforme lui transmet la batterie et les statuts de son outil reviennent sur le dossier, certificat de recyclage compris."
+					},
+					{
+						"actor": "Constructeur",
+						"title": "Vendre les lots de seconde vie",
+						"text": "L’équipe constitue un lot par site, choisit les acheteurs admis et la fenêtre d’offres, puis retient une offre au prix total, au kWh ou au kg."
+					}
 				],
-				"impact": "La plateforme est en production dans tout le réseau européen du constructeur et sert de socle à la conformité de sa filière REP batteries : pour chaque batterie, l’équipe retrouve la filière choisie, le prestataire, les dates d’enlèvement, de réception et de traitement, et le certificat qui en atteste. Près de 500 concessionnaires, centres de démontage, usines et prestataires y déclarent ou traitent des batteries.",
+				"impact": "La plateforme est en production dans tout le réseau européen du constructeur et sert de socle à la conformité de sa filière REP batteries : pour chaque batterie, l’équipe retrouve la filière choisie, le prestataire, les dates d’enlèvement, de réception et de traitement, et le certificat qui en atteste. Près de 500 concessionnaires, centres de démontage, usines et prestataires y déclarent ou traitent des batteries, et plus de 5 000 batteries ont déjà un traitement confirmé.",
 				"metrics": [
 					{
 						"label": "Batteries et modules déclarés",
 						"value": "Plus de 26 000",
-						"note": "Déclarés sur la plateforme en Europe, hors annulations."
+						"note": "Déclarés par les sites du réseau européen du constructeur."
+					},
+					{
+						"label": "Orientés vers la seconde vie",
+						"value": "3 sur 4",
+						"note": "Part des batteries et modules orientés vers la seconde vie plutôt que vers le recyclage."
 					},
 					{
 						"label": "Pays de collecte",
 						"value": "19",
 						"note": "Pays des sites où des batteries ont été déclarées."
-					},
-					{
-						"label": "Traitement confirmé",
-						"value": "Plus de 5 000 batteries",
-						"note": "Batteries dont le prestataire a confirmé le traitement sur la plateforme."
 					}
 				],
 				"tags": ["SvelteKit", "FastAPI", "PostgreSQL", "Hasura", "Keycloak"],
@@ -1197,7 +1221,7 @@
 					"title": "Un constructeur oriente et suit chaque batterie de sa filière REP en Europe",
 					"description": "Dans le cadre de sa filière REP, les détenteurs déclarent leurs batteries, la plateforme choisit la filière et le prestataire, et l’équipe du constructeur suit chaque dossier jusqu’au certificat de traitement ou à la vente du lot.",
 					"proof": "Plus de 26 000 batteries et modules déclarés",
-					"note": "Déclarés sur la plateforme en Europe, hors annulations."
+					"note": "Déclarés par les sites du réseau européen du constructeur."
 				},
 				"slug": "marketplace-batteries"
 			},
@@ -1211,18 +1235,38 @@
 				"challenge": "Dans la filière REP des batteries, le recycleur doit pouvoir expliquer ce qui est arrivé sur ses sites et ce qui a effectivement été traité. Or le garage connaît l’état de la batterie, le collecteur sait où il l’a enlevée et l’usine mesure ce qu’elle accepte. La liste de colisage dit ce qui doit arriver ; elle ne suffit pas à justifier le poids reçu ni le traitement d’une batterie.",
 				"approach": "Nous avons développé pour le recycleur une application web qui relie les déclarations des détenteurs, les enlèvements et les réceptions en usine. Dans le cadre de la mise en conformité de la filière REP, elle conserve le lien entre la batterie, son bordereau de suivi des déchets et son certificat de recyclage. Elle reprend aussi les déclarations transmises par la plateforme batteries d’un constructeur. Le recycleur y vérifie le contrat et l’acceptation préalable ; le collecteur prépare ses livraisons et consulte ses enlèvements sur téléphone. La connexion à Trackdéchets permet de retrouver dans le dossier les décisions signées à destination.",
 				"details": [
-					"Le détenteur identifie la batterie, décrit son état et son conditionnement, puis indique le lieu d’enlèvement. Si la déclaration vient du constructeur, le recycleur retrouve les informations transmises et vérifie à quel détenteur et à quel site elles correspondent.",
-					"Avant de valider la prise en charge, le recycleur vérifie le contrat ou l’offre acceptée et le certificat d’acceptation préalable. Si une demande d’acceptation est nécessaire, le responsable du site peut la faire corriger avant de la signer.",
-					"Quand le recycleur organise le transport, il désigne le collecteur. Sur le lieu d’enlèvement, le chauffeur scanne l’étiquette depuis son téléphone ou saisit la référence, consulte la fiche de la batterie et confirme la collecte.",
-					"Pour livrer l’usine, le collecteur réunit les colis disponibles sur une liste de colisage. L’application écarte ceux destinés à un autre site, additionne le poids de la sélection et permet au collecteur de choisir parmi les créneaux proposés.",
-					"À l’arrivée, le site enregistre la date et les quantités acceptées ou refusées. La réception reste distincte du traitement : lorsque celui-ci est signé dans Trackdéchets, le dossier reprend l’information et l’application génère le certificat de recyclage correspondant."
+					{
+						"actor": "Détenteur",
+						"title": "Déclarer la batterie",
+						"text": "Il identifie la batterie, décrit son état et son conditionnement, et indique le lieu d’enlèvement. Les déclarations venues de la plateforme d’un constructeur arrivent déjà renseignées."
+					},
+					{
+						"actor": "Recycleur",
+						"title": "Accepter la prise en charge",
+						"text": "Le recycleur vérifie le contrat ou l’offre acceptée et le certificat d’acceptation préalable, qu’il peut faire corriger avant de le signer."
+					},
+					{
+						"actor": "Collecteur",
+						"title": "Enlever sur place",
+						"text": "Le chauffeur scanne l’étiquette depuis son téléphone ou saisit la référence, vérifie la fiche de la batterie et confirme la collecte."
+					},
+					{
+						"actor": "Collecteur",
+						"title": "Préparer la livraison",
+						"text": "Il réunit les colis disponibles sur une liste de colisage. L’application écarte ceux destinés à un autre site, additionne le poids et propose les créneaux de livraison."
+					},
+					{
+						"actor": "Site de traitement",
+						"title": "Réceptionner puis traiter",
+						"text": "Le site enregistre la date et les quantités acceptées ou refusées. Quand le traitement est signé dans Trackdéchets, l’application génère le certificat de recyclage."
+					}
 				],
 				"impact": "Plus de 200 garages, concessions et centres de dépollution déclarent leurs batteries sur la plateforme, depuis plus de 250 lieux de collecte. Pour sa déclaration mensuelle de filière REP, l’équipe du recycleur reprend les données de réception : établissement d’origine, date d’arrivée et poids pesé. Pour chaque batterie, elle distingue le bordereau de réception du certificat qui atteste le traitement.",
 				"metrics": [
 					{
 						"label": "Batteries déclarées",
 						"value": "Plus de 1 500",
-						"note": "Batteries déclarées par les garages, concessions et centres de dépollution, hors annulations."
+						"note": "Batteries déclarées par les garages, concessions et centres de dépollution."
 					},
 					{
 						"label": "Batteries pesées à réception",
@@ -1240,7 +1284,7 @@
 					"title": "Du garage au site de traitement, le recycleur suit chaque batterie de la filière REP",
 					"description": "Le garage déclare la batterie, le chauffeur scanne son étiquette sur téléphone et le site distingue ce qu’il reçoit de ce qu’il traite. Le recycleur retrouve les poids et les justificatifs pour sa déclaration de filière.",
 					"proof": "Plus de 1 500 batteries déclarées",
-					"note": "Par les garages, concessions et centres de dépollution, hors annulations."
+					"note": "Par les garages, concessions et centres de dépollution."
 				}
 			},
 			{

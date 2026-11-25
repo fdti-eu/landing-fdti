@@ -1159,32 +1159,56 @@
 				"title": "A carmaker routes and tracks every end-of-life battery in its EPR scheme across Europe",
 				"date": "2024",
 				"location": "Europe",
-				"challenge": "Across a carmaker’s European network, dealerships, dismantling centers and plants remove traction batteries. Each one must go to the right outlet (recycling, second life, remanufacturing or return to the supplier), to a service provider in the same country, with the required packaging and documents. The rule depends on the holder, the battery type, its condition and its warranty. To bring its battery EPR (extended producer responsibility) scheme into compliance, the carmaker must be able to say, battery by battery, what became of it.",
+				"challenge": "Across the European network of one of the world’s leading carmakers, dealerships, dismantling centers and plants remove traction batteries. Each one must go to the right outlet (recycling, second life, remanufacturing or return to the supplier), to a service provider in the same country, with the required packaging and documents. The rule depends on the holder, the battery type, its condition and its warranty. To bring its battery EPR (extended producer responsibility) scheme into compliance, the carmaker must be able to say, battery by battery, what became of it.",
 				"approach": "We designed, built and operate the web platform that runs the carmaker’s battery EPR scheme. It brings together battery holders, collection and treatment providers and the carmaker’s teams. Each battery has a single file: identification by vehicle or battery number, completed from the carmaker’s reference data, condition, photos, packaging, prices, documents and a time-stamped history. A rules engine selects the destination and the provider by country, holder, battery type, condition and warranty; the cases defined by the rules go through validation by the carmaker’s team. Providers work in the platform or from their own software, through an API and webhooks. A marketplace sells the lots intended for second life. The interface is available in seven languages.",
 				"details": [
-					"The holder enters the vehicle or battery number: the platform retrieves the type and its characteristics. They record the condition (green, amber or red), state of charge and state of health, and add the required photos and packaging. For a batch, they import an Excel file; rejected rows come back annotated.",
-					"The routing engine applies the carmaker’s scenarios: waste or product, destination, provider in the country, who bears the costs. A battery whose part number is under deposit goes to remanufacturing. When the scenario requires it, the carmaker’s team validates, asks the holder for a correction or redirects the battery.",
-					"The assigned provider proposes its treatment and transport price; the other party accepts or declines it, stating the reason. Batteries from the same site can leave in a single pickup at a shared logistics price. The provider uploads the purchase order and the label to stick on the packaging.",
-					"The provider records the pickup, the receipt and then the treatment, or reports a collection problem. Every status change notifies the holder and the carmaker’s team, in the application and by email according to their preferences. The treatment certificate is attached to the battery’s file.",
-					"A provider that uses its own software re-enters nothing: the platform sends it the battery, then the statuses from its tool come back to the file with its documents, including the recycling certificate. Other providers receive a webhook at each event and update their files in bulk.",
-					"For second life, the carmaker’s team builds a lot per site and chooses the visible photos and documents, the bidding window and the admitted buyers. Buyers bid a total price, per kWh or per kg. The team asks for a revision or selects an offer, then creates the pickup at the buyer."
+					{
+						"actor": "Holder",
+						"title": "Declare the battery",
+						"text": "They enter the vehicle or battery number: the platform retrieves its characteristics. They record condition, charge and health, then add photos and packaging, or import a batch from Excel."
+					},
+					{
+						"actor": "Platform",
+						"title": "Route the battery",
+						"text": "The rules engine selects the outlet, the provider in the country and who bears the costs. The cases defined by the rules go through validation by the carmaker’s team."
+					},
+					{
+						"actor": "Provider",
+						"title": "Price and pick up",
+						"text": "The provider proposes its treatment and transport price, which the other party accepts or declines. Batteries from the same site leave in a single pickup."
+					},
+					{
+						"actor": "Provider",
+						"title": "Track through treatment",
+						"text": "It records the pickup, the receipt and then the treatment. Each step notifies the holder and the carmaker; the treatment certificate joins the file."
+					},
+					{
+						"actor": "Provider",
+						"title": "Work from its own software",
+						"text": "A connected provider re-enters nothing: the platform sends it the battery and the statuses from its tool come back to the file, recycling certificate included."
+					},
+					{
+						"actor": "Carmaker",
+						"title": "Sell second-life lots",
+						"text": "The team builds a lot per site, chooses the admitted buyers and the bidding window, then selects an offer priced in total, per kWh or per kg."
+					}
 				],
-				"impact": "The platform is in production across the carmaker’s European network and underpins the compliance of its battery EPR scheme: for each battery, the team finds the chosen outlet, the provider, the pickup, receipt and treatment dates, and the certificate that attests to them. Nearly 500 dealerships, dismantling centers, plants and providers declare or treat batteries on it.",
+				"impact": "The platform is in production across the carmaker’s European network and underpins the compliance of its battery EPR scheme: for each battery, the team finds the chosen outlet, the provider, the pickup, receipt and treatment dates, and the certificate that attests to them. Nearly 500 dealerships, dismantling centers, plants and providers declare or treat batteries on it, and more than 5,000 batteries already have a confirmed treatment.",
 				"metrics": [
 					{
 						"label": "Batteries and modules declared",
 						"value": "More than 26,000",
-						"note": "Declared on the platform in Europe, excluding cancellations."
+						"note": "Declared by sites in the carmaker’s European network."
+					},
+					{
+						"label": "Routed to second life",
+						"value": "3 in 4",
+						"note": "Share of batteries and modules routed to second life rather than recycling."
 					},
 					{
 						"label": "Collection countries",
 						"value": "19",
 						"note": "Countries of the sites where batteries have been declared."
-					},
-					{
-						"label": "Confirmed treatment",
-						"value": "More than 5,000 batteries",
-						"note": "Batteries whose provider has confirmed treatment on the platform."
 					}
 				],
 				"tags": ["SvelteKit", "FastAPI", "PostgreSQL", "Hasura", "Keycloak"],
@@ -1192,7 +1216,7 @@
 					"title": "A carmaker routes and tracks every end-of-life battery in its EPR scheme across Europe",
 					"description": "In its EPR scheme, holders declare their batteries, the platform selects the outlet and the provider, and the carmaker’s team follows each file to the treatment certificate or the sale of the lot.",
 					"proof": "More than 26,000 batteries and modules declared",
-					"note": "Declared on the platform in Europe, excluding cancellations."
+					"note": "Declared by sites in the carmaker’s European network."
 				},
 				"slug": "marketplace-batteries"
 			},
@@ -1206,18 +1230,38 @@
 				"challenge": "In the battery EPR (extended producer responsibility) scheme, the recycler must be able to explain what arrived at its sites and what was actually treated. Yet the garage knows the battery’s condition, the collector knows where it picked it up and the plant measures what it accepts. The packing list states what should arrive; it is not enough to justify the weight received or the treatment of a battery.",
 				"approach": "We built for the recycler a web application that links holders’ declarations, pickups and receipts at the plant. To bring the EPR scheme into compliance, it keeps the link between the battery, its waste tracking form and its recycling certificate. It also takes in the declarations sent by a carmaker’s battery platform. The recycler checks the contract and the preliminary acceptance in it; the collector prepares deliveries and checks pickups on a phone. The connection to Trackdéchets, the French national waste tracking service, brings the decisions signed at destination back into the file.",
 				"details": [
-					"The holder identifies the battery, describes its condition and packaging, then gives the pickup location. When the declaration comes from the carmaker, the recycler finds the information sent and checks which holder and which site it corresponds to.",
-					"Before accepting the battery, the recycler checks the contract or the accepted offer and the preliminary acceptance certificate. When an acceptance request is needed, the site manager can have it corrected before signing it.",
-					"When the recycler organizes transport, it assigns the collector. At the pickup location, the driver scans the label from a phone or enters the reference, views the battery’s record and confirms the collection.",
-					"To deliver to the plant, the collector gathers the available packages on a packing list. The application leaves out those bound for another site, adds up the weight of the selection and lets the collector choose among the proposed delivery slots.",
-					"On arrival, the site records the date and the quantities accepted or refused. Receipt stays separate from treatment: when treatment is signed in Trackdéchets, the file picks up the information and the application generates the corresponding recycling certificate."
+					{
+						"actor": "Holder",
+						"title": "Declare the battery",
+						"text": "They identify the battery, describe its condition and packaging, and give the pickup location. Declarations from a carmaker’s platform arrive already filled in."
+					},
+					{
+						"actor": "Recycler",
+						"title": "Accept the battery",
+						"text": "The recycler checks the contract or the accepted offer and the preliminary acceptance certificate, which it can have corrected before signing it."
+					},
+					{
+						"actor": "Collector",
+						"title": "Pick up on site",
+						"text": "The driver scans the label from a phone or enters the reference, checks the battery’s record and confirms the collection."
+					},
+					{
+						"actor": "Collector",
+						"title": "Prepare the delivery",
+						"text": "They gather the available packages on a packing list. The application leaves out those bound for another site, adds up the weight and offers delivery slots."
+					},
+					{
+						"actor": "Treatment site",
+						"title": "Receive, then treat",
+						"text": "The site records the date and the quantities accepted or refused. When treatment is signed in Trackdéchets, the application generates the recycling certificate."
+					}
 				],
 				"impact": "More than 200 garages, dealerships and depollution centers declare their batteries on the platform, from more than 250 collection locations. For its monthly EPR scheme declaration, the recycler’s team reuses the receipt data: originating site, arrival date and weighed weight. For each battery, it distinguishes the receipt form from the certificate that attests to the treatment.",
 				"metrics": [
 					{
 						"label": "Batteries declared",
 						"value": "More than 1,500",
-						"note": "Batteries declared by garages, dealerships and depollution centers, excluding cancellations."
+						"note": "Batteries declared by garages, dealerships and depollution centers."
 					},
 					{
 						"label": "Batteries weighed on receipt",
@@ -1235,7 +1279,7 @@
 					"title": "From garage to treatment plant, a recycler tracks every battery in the EPR scheme",
 					"description": "The garage declares the battery, the driver scans its label on a phone and the site separates what it receives from what it treats. The recycler finds the weights and supporting documents for its EPR scheme declaration.",
 					"proof": "More than 1,500 batteries declared",
-					"note": "By garages, dealerships and depollution centers, excluding cancellations."
+					"note": "By garages, dealerships and depollution centers."
 				}
 			},
 			{

@@ -6,6 +6,9 @@ export const sortCaseCards = <T extends { id?: string | null }>(cases: T[]): T[]
 		(a, b) => CASE_CARD_ORDER.indexOf(a.id ?? '') - CASE_CARD_ORDER.indexOf(b.id ?? '')
 	);
 
+/** Workflow step of a case study: who acts, a short title and what happens. Plain strings remain for case studies not yet rewritten. */
+export type CaseStep = string | { actor: string; title: string; text: string };
+
 /** Focal point of a 3:2 case photograph, in percent of the image. */
 export type CaseFocus = { x: number; y: number; width: number; height: number };
 export type CaseImage = { src: string; focus: CaseFocus };
@@ -14,7 +17,7 @@ export type CaseImage = { src: string; focus: CaseFocus };
 const CASE_IMAGES: Record<string, { file: string; focus: CaseFocus }> = {
 	'1': { file: 'registry-files', focus: { x: 37, y: 43, width: 26, height: 20 } },
 	'2': { file: 'vehicle-pickup', focus: { x: 53.5, y: 34, width: 7, height: 11 } },
-	'3': { file: 'battery-shipment', focus: { x: 30, y: 40, width: 40, height: 40 } },
+	'3': { file: 'battery-strap', focus: { x: 46.5, y: 54.5, width: 7, height: 15 } },
 	'4': { file: 'street-lamp', focus: { x: 44.5, y: 5, width: 11, height: 16 } },
 	'5': { file: 'campaign-proofs', focus: { x: 45.5, y: 33, width: 16.5, height: 29.5 } },
 	'6': { file: 'product-returns', focus: { x: 46, y: 37, width: 9, height: 18 } },

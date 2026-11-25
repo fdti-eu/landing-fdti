@@ -5,7 +5,7 @@
 	import PageSeo from '#lib/components/PageSeo.svelte';
 	import { schema } from '#lib/components/json-ld/json-ld.ts';
 	import type { Lang } from '#lib/data.ts';
-	import { caseImage } from '#lib/case-studies.ts';
+	import { caseImage, type CaseStep } from '#lib/case-studies.ts';
 	import CaseVisual from '#lib/components/CaseVisual.svelte';
 	import {
 		absoluteImageUrl,
@@ -45,7 +45,7 @@
 							metrics?: { label?: string | null; value?: string | null; note?: string | null }[];
 							links?: { label?: string | null; url?: string | null }[];
 							tags?: string[];
-							details?: string[];
+							details?: CaseStep[];
 						}[];
 						cta?: {
 							label?: string | null;
