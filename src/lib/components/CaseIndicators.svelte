@@ -11,7 +11,9 @@
 	{#each metrics as metric (metric)}
 		<div>
 			<dt>{metric.label}</dt>
-			<dd><strong>{metric.value}</strong><small>{metric.note}</small></dd>
+			<dd>
+				<strong>{metric.value}</strong>{#if metric.note}<small>{metric.note}</small>{/if}
+			</dd>
 		</div>
 	{/each}
 </dl>
@@ -32,7 +34,7 @@
 		border-top: 1px solid var(--color-line-paper);
 	}
 	dt {
-		font-size: 0.95rem;
+		font-size: 14px;
 		font-weight: 600;
 	}
 	dd {
@@ -40,7 +42,7 @@
 	}
 	strong {
 		display: block;
-		font-size: clamp(1.7rem, 2.4vw, 2.15rem);
+		font-size: clamp(28px, 2.4vw, 34px);
 		line-height: 1.12;
 		letter-spacing: -0.04em;
 		font-variant-numeric: tabular-nums;
@@ -49,7 +51,7 @@
 		display: block;
 		margin-top: 0.7rem;
 		color: var(--color-text-indicator);
-		font-size: 0.9rem;
+		font-size: 14px;
 		line-height: 1.5;
 	}
 	.compact {

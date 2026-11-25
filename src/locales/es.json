@@ -1167,41 +1167,65 @@
 				"category": "Posventa y reciclaje",
 				"title": "Un fabricante orienta y sigue cada batería de su sistema RAP en Europa",
 				"date": "2024",
-				"location": "Europa",
-				"challenge": "En la red europea de un fabricante de automóviles, concesionarios, centros de desmontaje y plantas retiran baterías de tracción. Cada una debe ir al destino correcto (reciclaje, segunda vida, remanufactura o devolución al proveedor), a un proveedor del mismo país, con el embalaje y los documentos exigidos. La regla depende del poseedor, del tipo de batería, de su estado y de su garantía. Para poner en conformidad su sistema RAP (responsabilidad ampliada del productor) de baterías, el fabricante debe poder decir, batería por batería, qué ha sido de ella.",
+				"location": "Europa, Norteamérica",
+				"challenge": "En la red europea de uno de los principales fabricantes de automóviles del mundo, concesionarios, centros de desmontaje y plantas retiran baterías de tracción. Cada una debe ir al destino correcto (reciclaje, segunda vida, remanufactura o devolución al proveedor), a un proveedor del mismo país, con el embalaje y los documentos exigidos. La regla depende del poseedor, del tipo de batería, de su estado y de su garantía. Para poner en conformidad su sistema RAP (responsabilidad ampliada del productor) de baterías, el fabricante debe poder decir, batería por batería, qué ha sido de ella.",
 				"approach": "Hemos diseñado, desarrollado y operamos la plataforma web que sostiene el sistema RAP de baterías del fabricante. Reúne a los poseedores de baterías, a los proveedores de recogida y tratamiento y a los equipos del fabricante. Cada batería tiene un expediente único: identificación por número de vehículo o de batería, completada con los datos de referencia del fabricante, estado, fotos, embalaje, precios, documentos e historial con fecha y hora. Un motor de reglas elige el destino y el proveedor según el país, el poseedor, el tipo de batería, su estado y su garantía; los casos previstos por las reglas pasan por una validación del equipo del fabricante. Los proveedores trabajan en la plataforma o desde su propio software, mediante API y webhooks. Un marketplace pone a la venta los lotes destinados a la segunda vida. La interfaz está disponible en siete idiomas.",
 				"details": [
-					"El poseedor introduce el número del vehículo o de la batería: la plataforma recupera el tipo y sus características. Indica el estado (verde, amarillo o rojo), la carga y la salud, y añade las fotos exigidas y el embalaje. Para un lote, importa un archivo Excel; las filas rechazadas vuelven anotadas.",
-					"El motor de orientación aplica los escenarios del fabricante: residuo o producto, destino, proveedor del país, asunción de los costes. Una batería cuya referencia está sujeta a depósito va a remanufactura. Cuando el escenario lo exige, el equipo del fabricante valida, pide una corrección al poseedor o reorienta la batería.",
-					"El proveedor asignado propone su precio de tratamiento y de transporte; la otra parte lo acepta o lo rechaza indicando el motivo. Las baterías de un mismo sitio pueden salir en una sola recogida, con un precio logístico común. El proveedor sube la orden de compra y la etiqueta que se pega en el embalaje.",
-					"El proveedor registra la recogida, la recepción y después el tratamiento, o señala un problema de recogida. Cada cambio de estado avisa al poseedor y al equipo del fabricante, en la aplicación y por correo según sus preferencias. El certificado de tratamiento se adjunta al expediente de la batería.",
-					"Un proveedor que usa su propio software no vuelve a introducir nada: la plataforma le envía la batería y los estados de su herramienta vuelven al expediente con sus documentos, incluido el certificado de reciclaje. Los demás reciben un webhook en cada evento y actualizan sus expedientes de forma masiva.",
-					"Para la segunda vida, el equipo del fabricante forma un lote por sitio y elige las fotos y documentos visibles, el plazo de ofertas y los compradores admitidos. Los compradores ofertan un precio total, por kWh o por kg. El equipo pide una revisión o elige una oferta y crea la recogida en el comprador."
+					{
+						"actor": "Poseedor",
+						"title": "Declarar la batería",
+						"text": "Introduce el número del vehículo o de la batería: la plataforma recupera sus características. Indica el estado, la carga y la salud, y añade fotos y embalaje, o importa un lote desde Excel."
+					},
+					{
+						"actor": "Plataforma",
+						"title": "Orientar la batería",
+						"text": "El motor de reglas elige el destino, el proveedor del país y quién asume los costes. Los casos previstos por las reglas pasan por una validación del equipo del fabricante."
+					},
+					{
+						"actor": "Proveedor",
+						"title": "Presupuestar y recoger",
+						"text": "El proveedor propone su precio de tratamiento y de transporte, que la otra parte acepta o rechaza. Las baterías de un mismo sitio salen en una sola recogida."
+					},
+					{
+						"actor": "Proveedor",
+						"title": "Seguir hasta el tratamiento",
+						"text": "Registra la recogida, la recepción y después el tratamiento. Cada etapa avisa al poseedor y al fabricante; el certificado de tratamiento se suma al expediente."
+					},
+					{
+						"actor": "Proveedor",
+						"title": "Trabajar desde su software",
+						"text": "Un proveedor conectado no vuelve a introducir nada: la plataforma le envía la batería y los estados de su herramienta vuelven al expediente, incluido el certificado de reciclaje."
+					},
+					{
+						"actor": "Fabricante",
+						"title": "Vender lotes de segunda vida",
+						"text": "El equipo forma un lote por sitio, elige los compradores admitidos y el plazo de ofertas, y elige una oferta con precio total, por kWh o por kg."
+					}
 				],
-				"impact": "La plataforma está en producción en toda la red europea del fabricante y sirve de base a la conformidad de su sistema RAP de baterías: para cada batería, el equipo encuentra el destino elegido, el proveedor, las fechas de recogida, recepción y tratamiento, y el certificado que lo acredita. Cerca de 500 concesionarios, centros de desmontaje, plantas y proveedores declaran o tratan baterías en ella.",
+				"impact": "La plataforma está en producción en toda la red europea del fabricante y sirve de base a la conformidad de su sistema RAP de baterías: para cada batería, el equipo encuentra el destino elegido, el proveedor, las fechas de recogida, recepción y tratamiento, y el certificado que lo acredita. Cerca de 500 concesionarios, centros de desmontaje, plantas y proveedores declaran o tratan baterías en ella, y más de 5.000 baterías ya tienen un tratamiento confirmado. Sus plantas norteamericanas también declaran en ella sus módulos destinados a la segunda vida.",
 				"metrics": [
 					{
 						"label": "Baterías y módulos declarados",
-						"value": "Más de 26.000",
-						"note": "Declarados en la plataforma en Europa, sin contar las anulaciones."
+						"value": "Más de 1 millón",
+						"note": "Declarados por los sitios del fabricante en Europa y Norteamérica."
+					},
+					{
+						"label": "Orientados a la segunda vida",
+						"value": "3 de cada 4",
+						"note": "Proporción de baterías y módulos orientados a la segunda vida en lugar del reciclaje."
 					},
 					{
 						"label": "Países de recogida",
-						"value": "19",
-						"note": "Países de los sitios donde se han declarado baterías."
-					},
-					{
-						"label": "Tratamiento confirmado",
-						"value": "Más de 5.000 baterías",
-						"note": "Baterías cuyo proveedor ha confirmado el tratamiento en la plataforma."
+						"value": "21",
+						"note": "Países de los sitios donde se han declarado baterías, en Europa y Norteamérica."
 					}
 				],
 				"tags": ["SvelteKit", "FastAPI", "PostgreSQL", "Hasura", "Keycloak"],
 				"indexCard": {
 					"title": "Un fabricante orienta y sigue cada batería de su sistema RAP en Europa",
 					"description": "En su sistema RAP, los poseedores declaran sus baterías, la plataforma elige el destino y el proveedor, y el equipo del fabricante sigue cada expediente hasta el certificado de tratamiento o la venta del lote.",
-					"proof": "Más de 26.000 baterías y módulos declarados",
-					"note": "Declarados en la plataforma en Europa, sin contar las anulaciones."
+					"proof": "Más de 1 millón de baterías y módulos declarados",
+					"note": "En Europa y Norteamérica."
 				},
 				"slug": "marketplace-baterias"
 			},
@@ -1215,18 +1239,38 @@
 				"challenge": "En el sistema RAP (responsabilidad ampliada del productor) de las baterías, el reciclador debe poder explicar qué ha llegado a sus sitios y qué se ha tratado realmente. Pero el taller conoce el estado de la batería, el recogedor sabe dónde la ha recogido y la planta mide lo que acepta. La lista de bultos dice lo que debe llegar; no basta para justificar el peso recibido ni el tratamiento de una batería.",
 				"approach": "Hemos desarrollado para el reciclador una aplicación web que une las declaraciones de los poseedores, las recogidas y las recepciones en planta. Para poner en conformidad el sistema RAP, conserva el vínculo entre la batería, su documento de seguimiento de residuos y su certificado de reciclaje. También recibe las declaraciones enviadas por la plataforma de baterías de un fabricante. El reciclador comprueba en ella el contrato y la aceptación previa; el recogedor prepara sus entregas y consulta sus recogidas en el teléfono. La conexión con Trackdéchets, el servicio nacional francés de trazabilidad de residuos, devuelve al expediente las decisiones firmadas en destino.",
 				"details": [
-					"El poseedor identifica la batería, describe su estado y su embalaje e indica el lugar de recogida. Si la declaración procede del fabricante, el reciclador encuentra la información enviada y comprueba a qué poseedor y a qué sitio corresponde.",
-					"Antes de validar la recogida, el reciclador comprueba el contrato o la oferta aceptada y el certificado de aceptación previa. Si hace falta una solicitud de aceptación, el responsable del sitio puede pedir que se corrija antes de firmarla.",
-					"Cuando el reciclador organiza el transporte, designa al recogedor. En el lugar de recogida, el conductor escanea la etiqueta desde su teléfono o introduce la referencia, consulta la ficha de la batería y confirma la recogida.",
-					"Para entregar en la planta, el recogedor reúne los bultos disponibles en una lista de bultos. La aplicación descarta los destinados a otro sitio, suma el peso de la selección y permite al recogedor elegir entre las franjas propuestas.",
-					"A la llegada, el sitio registra la fecha y las cantidades aceptadas o rechazadas. La recepción sigue separada del tratamiento: cuando este se firma en Trackdéchets, el expediente recoge la información y la aplicación genera el certificado de reciclaje correspondiente."
+					{
+						"actor": "Poseedor",
+						"title": "Declarar la batería",
+						"text": "Identifica la batería, describe su estado y su embalaje e indica el lugar de recogida. Las declaraciones procedentes de la plataforma de un fabricante llegan ya completadas."
+					},
+					{
+						"actor": "Reciclador",
+						"title": "Aceptar la recogida",
+						"text": "El reciclador comprueba el contrato o la oferta aceptada y el certificado de aceptación previa, que puede hacer corregir antes de firmarlo."
+					},
+					{
+						"actor": "Recogedor",
+						"title": "Recoger en el lugar",
+						"text": "El conductor escanea la etiqueta desde su teléfono o introduce la referencia, comprueba la ficha de la batería y confirma la recogida."
+					},
+					{
+						"actor": "Recogedor",
+						"title": "Preparar la entrega",
+						"text": "Reúne los bultos disponibles en una lista de bultos. La aplicación descarta los destinados a otro sitio, suma el peso y propone franjas de entrega."
+					},
+					{
+						"actor": "Planta de tratamiento",
+						"title": "Recibir y tratar",
+						"text": "El sitio registra la fecha y las cantidades aceptadas o rechazadas. Cuando el tratamiento se firma en Trackdéchets, la aplicación genera el certificado de reciclaje."
+					}
 				],
 				"impact": "Más de 200 talleres, concesionarios y centros de descontaminación declaran sus baterías en la plataforma, desde más de 250 lugares de recogida. Para su declaración mensual del sistema RAP, el equipo del reciclador reutiliza los datos de recepción: establecimiento de origen, fecha de llegada y peso pesado. Para cada batería, distingue el documento de recepción del certificado que acredita el tratamiento.",
 				"metrics": [
 					{
 						"label": "Baterías declaradas",
 						"value": "Más de 1.500",
-						"note": "Baterías declaradas por talleres, concesionarios y centros de descontaminación, sin contar las anulaciones."
+						"note": "Baterías declaradas por talleres, concesionarios y centros de descontaminación."
 					},
 					{
 						"label": "Baterías pesadas a la recepción",
@@ -1244,7 +1288,7 @@
 					"title": "Del taller a la planta de tratamiento, el reciclador sigue cada batería del sistema RAP",
 					"description": "El taller declara la batería, el conductor escanea su etiqueta en el teléfono y el sitio distingue lo que recibe de lo que trata. El reciclador encuentra los pesos y los justificantes para su declaración del sistema RAP.",
 					"proof": "Más de 1.500 baterías declaradas",
-					"note": "Por talleres, concesionarios y centros de descontaminación, sin contar las anulaciones."
+					"note": "Por talleres, concesionarios y centros de descontaminación."
 				}
 			},
 			{

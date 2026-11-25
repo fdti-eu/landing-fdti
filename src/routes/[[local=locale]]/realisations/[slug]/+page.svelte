@@ -12,7 +12,7 @@
 		SOCIAL_IMAGE_PATH
 	} from '#lib/functions/seo.ts';
 	import { browser } from '$app/env';
-	import { caseImage } from '#lib/case-studies.ts';
+	import { caseImage, type CaseStep } from '#lib/case-studies.ts';
 	import CaseVisual from '#lib/components/CaseVisual.svelte';
 
 	interface Props {
@@ -44,7 +44,8 @@
 						metrics?: { label?: string | null; value?: string | null; note?: string | null }[];
 						links?: { label?: string | null; url?: string | null }[];
 						tags?: string[];
-						details?: string[];
+						details?: CaseStep[];
+						indexCard?: { description?: string | null } | null;
 					} | null;
 					locale?: Lang;
 					relatedGuides?: { href: string; label: string; summary: string }[];
@@ -56,15 +57,6 @@
 	type UseCaseSeo = { title?: string; description: string };
 	const useCaseSeo: Partial<Record<Lang, Record<string, UseCaseSeo>>> = {
 		fr: {
-			'3': {
-				description:
-					'Une marketplace web centralise collecte, recyclage et revente de batteries dans 18 pays, avec 500 batteries redirigées chaque mois.'
-			},
-			'8': {
-				title: 'Plateforme d’opérations de recyclage de batteries | FDTI',
-				description:
-					'Une application métier relie déclarations, collectes et BSD Trackdéchets pour suivre chaque dossier de batterie jusqu’à sa réception et son traitement.'
-			},
 			'9': {
 				description:
 					'Une plateforme sur mesure réunit décisions judiciaires et fichiers hétérogènes pour suivre les dossiers d’indemnisation et leurs corrections.'
@@ -89,14 +81,6 @@
 			}
 		},
 		en: {
-			'3': {
-				description:
-					'A marketplace coordinates battery collection, recycling and resale across 18 countries via a portal and API, redirecting 500 batteries each month.'
-			},
-			'8': {
-				description:
-					'A business application links declarations, collections and Trackdechets records, tracking each battery file through reception and treatment.'
-			},
 			'9': {
 				description:
 					'A tailored platform brings together court decisions and changing file formats to track compensation cases, corrections and human decisions.'
@@ -126,15 +110,6 @@
 			}
 		},
 		de: {
-			'3': {
-				description:
-					'Ein Marktplatz koordiniert Sammlung, Recycling und Wiederverkauf von Batterien in 18 Ländern über Portal und API und bearbeitet monatlich 500 Batterien.'
-			},
-			'8': {
-				title: 'Managementsystem für Batterierecycling | FDTI',
-				description:
-					'Eine Fachanwendung verbindet Meldungen, Abholungen und Trackdéchets-Begleitscheine und verfolgt jeden Batterievorgang bis zu Eingang und Behandlung.'
-			},
 			'9': {
 				description:
 					'Eine maßgeschneiderte Plattform verbindet Gerichtsentscheidungen und wechselnde Dateiformate, um Entschädigungsfälle und Korrekturen nachvollziehbar zu machen.'
@@ -159,15 +134,6 @@
 			}
 		},
 		it: {
-			'3': {
-				description:
-					'Un marketplace coordina raccolta, riciclo e rivendita delle batterie in 18 paesi tramite portale e API, indirizzando 500 batterie al mese.'
-			},
-			'8': {
-				title: 'Piattaforma operativa per il riciclo delle batterie | FDTI',
-				description:
-					'Un’applicazione aziendale collega dichiarazioni, raccolte e BSD tramite Trackdéchets per i flussi francesi, seguendo ogni pratica fino alla ricezione e al trattamento.'
-			},
 			'9': {
 				description:
 					'Una piattaforma su misura riunisce decisioni giudiziarie e file di formati diversi per seguire pratiche di risarcimento e relative correzioni.'
@@ -251,7 +217,12 @@
 
 	const metatags = $derived({
 		title: seo?.title ?? (useCase?.title ? `${useCase.title} | FDTI` : 'FDTI'),
-		description: seo?.description || useCase?.challenge || useCase?.impact || '',
+		description:
+			seo?.description ||
+			useCase?.indexCard?.description ||
+			useCase?.challenge ||
+			useCase?.impact ||
+			'',
 		url: useCase?.slug ? `/realisations/${useCase.slug}` : '/realisations',
 		img: SOCIAL_IMAGE_PATH
 	});
@@ -490,13 +461,11 @@
 					<div class="flex-1 min-w-0 space-y-8 w-full">
 						{#if useCase.challenge}
 							<div class="relative pl-4 border-l-4 border-yellow/50">
-								<h2
-									class="text-lg sm:text-xl font-bold text-dark-grey mb-2 sm:mb-3 uppercase tracking-wide"
-								>
+								<h2 class="font-bold text-dark-grey mb-2 sm:mb-3 uppercase tracking-wide">
 									{labels.context}
 								</h2>
 								<p
-									class="text-base sm:text-lg text-dark-grey leading-relaxed font-medium"
+									class="text-dark-grey font-medium"
 									style={enableViewTransition
 										? `view-transition-name: challenge-${useCase.id};`
 										: ''}
@@ -507,42 +476,47 @@
 						{/if}
 						{#if useCase.approach}
 							<div>
-								<h2
-									class="text-lg sm:text-xl font-bold text-dark-grey mb-3 flex items-center gap-2"
-								>
+								<h2 class="font-bold text-dark-grey mb-3 flex items-center gap-2">
 									<span class="w-2 h-2 rounded-full bg-yellow"></span>
 									{labels.approach}
 								</h2>
-								<p class="text-sm sm:text-base text-dark-grey/80 leading-relaxed">
+								<p class="text-dark-grey/80">
 									{useCase.approach}
 								</p>
 							</div>
 						{/if}
 						{#if useCase.details?.length}
-							<div
-								class="case-delivered bg-white rounded-2xl shadow-md p-4 sm:p-6 md:p-8 space-y-3"
-							>
-								<h2 class="text-lg sm:text-xl font-bold text-dark-grey mb-3 sm:mb-4">
+							<div class="case-delivered">
+								<h2 class="font-bold text-dark-grey">
 									{labels.delivered}
 								</h2>
-								<ul
-									class="list-disc pl-4 sm:pl-5 space-y-2 text-sm sm:text-base text-dark-grey leading-relaxed"
-								>
-									{#each useCase.details as detail, detailIndex (detailIndex)}
-										<li>{detail}</li>
+								<ol class="case-steps text-dark-grey">
+									{#each useCase.details as step, stepIndex (stepIndex)}
+										<li>
+											<span class="case-step-number" aria-hidden="true">{stepIndex + 1}</span>
+											<div>
+												{#if typeof step === 'string'}
+													<p>{step}</p>
+												{:else}
+													<p class="case-step-head">
+														<strong>{step.title}</strong>
+														<span class="case-step-actor">{step.actor}</span>
+													</p>
+													<p>{step.text}</p>
+												{/if}
+											</div>
+										</li>
 									{/each}
-								</ul>
+								</ol>
 							</div>
 						{/if}
 						{#if useCase.impact}
 							<div>
-								<h2
-									class="text-lg sm:text-xl font-bold text-dark-grey mb-3 flex items-center gap-2"
-								>
+								<h2 class="font-bold text-dark-grey mb-3 flex items-center gap-2">
 									<span class="w-2 h-2 rounded-full bg-green-500"></span>
 									{labels.impact}
 								</h2>
-								<p class="text-sm sm:text-base text-dark-grey/80 leading-relaxed">
+								<p class="text-dark-grey/80">
 									{useCase.impact}
 								</p>
 							</div>
@@ -551,35 +525,15 @@
 
 					<!-- Droite : Métriques et tags - Stack vertical sur mobile, sidebar sur desktop -->
 					<div class="case-sidebar flex flex-col gap-4 sm:gap-6 w-full lg:w-[280px] lg:shrink-0">
-						{#if useCase.metrics?.[0]?.note}
+						{#if useCase.metrics?.length}
 							<CaseIndicators metrics={useCase.metrics} />
-						{:else if useCase.metrics?.length}
-							<div class="space-y-3 sm:space-y-4">
-								{#each useCase.metrics as metric, index (metric)}
-									<div
-										class="bg-linear-to-br from-slate-50 to-slate-100 rounded-xl p-4 sm:p-5 border border-slate-200 hover:shadow-md transition-shadow"
-										style={enableViewTransition
-											? `view-transition-name: metric-${index}-${useCase.id};`
-											: ''}
-									>
-										<p
-											class="text-xs sm:text-sm font-medium text-dark-grey/70 uppercase tracking-wider"
-										>
-											{metric?.label}
-										</p>
-										<p class="text-xl sm:text-2xl font-bold text-dark-grey mt-1 sm:mt-2">
-											{metric?.value}
-										</p>
-									</div>
-								{/each}
-							</div>
 						{/if}
 
 						{#if useCase.tags?.length}
 							<div class="flex flex-wrap gap-2">
 								{#each useCase.tags as tag, index (index)}
 									<span
-										class="px-3 py-1.5 rounded-full bg-slate-100 text-xs sm:text-sm font-medium text-dark-grey border border-slate-200 transition-transform hover:scale-105"
+										class="px-3 py-1.5 rounded-full bg-slate-100 text-sm font-medium text-dark-grey border border-slate-200 transition-transform hover:scale-105"
 										style={enableViewTransition
 											? `view-transition-name: tag-${index}-${useCase.id};`
 											: ''}
@@ -615,7 +569,7 @@
 					aria-labelledby="related-guides-title"
 					class="bg-white rounded-2xl shadow-md p-4 sm:p-6 md:p-8 space-y-4"
 				>
-					<h2 id="related-guides-title" class="text-lg sm:text-xl font-bold text-dark-grey">
+					<h2 id="related-guides-title" class="text-[22px] sm:text-2xl font-bold text-dark-grey">
 						{data.relatedGuidesLabel}
 					</h2>
 					<div class="grid gap-4 sm:grid-cols-2">
@@ -624,7 +578,7 @@
 								href={resolve(guide.href.slice(1) as PathnameWithSearchOrHash)}
 								class="block rounded-xl border border-slate-200 px-4 py-3 text-dark-grey hover:border-yellow hover:shadow-md transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-dark-grey"
 							>
-								<span class="block font-semibold">{guide.label}</span>
+								<span class="block font-semibold text-[17px]">{guide.label}</span>
 								<span class="block mt-2 text-sm leading-relaxed">{guide.summary}</span>
 							</a>
 						{/each}
@@ -643,14 +597,10 @@
 						style="box-shadow: 0 0 65px 10px var(--color-accent-highlight);"
 					>
 						<div class="relative z-10">
-							<p
-								class="text-xs sm:text-sm uppercase tracking-wider sm:tracking-[0.2em] text-yellow/80"
-							>
+							<p class="text-xs uppercase tracking-wider sm:tracking-[0.2em] text-yellow/80">
 								{content.cta.label}
 							</p>
-							<p
-								class="text-xl sm:text-2xl md:text-3xl font-bold text-white mt-2 sm:mt-3 leading-snug"
-							>
+							<p class="font-bold text-white mt-2 sm:mt-3 leading-snug">
 								{content.cta.description}
 							</p>
 						</div>

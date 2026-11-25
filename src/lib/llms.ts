@@ -135,7 +135,7 @@ function buildLanguageSection(locale: Lang, data: LocaleData): string {
 					ucText += `Stack: ${uc.tags.join(', ')}\n`;
 				}
 				if (uc.details) {
-					ucText += `Details:\n${uc.details.map((d: string) => `- ${d}`).join('\n')}\n`;
+					ucText += `Details:\n${uc.details.map((d) => (typeof d === 'string' ? `- ${d}` : `- ${d.title} (${d.actor}): ${d.text}`)).join('\n')}\n`;
 				}
 				return ucText;
 			})

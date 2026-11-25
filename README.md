@@ -26,7 +26,8 @@ Les réalisations sont décrites dans `GetUseCasesContent.use_case_list` de chaq
 
 Chaque réalisation renseigne :
 
-- `challenge`, `approach`, `details` (liste non vide) et `impact` ;
+- `challenge`, `approach`, `details` et `impact` ;
+- `details` : liste non vide d’étapes `{ actor, title, text }` (acteur, intitulé court, une à deux phrases). Une chaîne simple reste affichée pour les réalisations pas encore reprises dans ce format ;
 - `metrics` : exactement trois indicateurs, chacun avec `label` et `value`, et une `note` facultative ;
 - `indexCard.proof` et `indexCard.note` : l’indicateur affiché sur la carte de l’index et son contexte.
 

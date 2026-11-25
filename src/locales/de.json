@@ -1163,41 +1163,65 @@
 				"category": "Aftermarket und Recycling",
 				"title": "Ein Autohersteller steuert und verfolgt jede Batterie seines EPR-Systems in Europa",
 				"date": "2024",
-				"location": "Europa",
-				"challenge": "Im europäischen Netz eines Autoherstellers bauen Autohäuser, Demontagebetriebe und Werke Traktionsbatterien aus. Jede muss in den richtigen Verwertungsweg (Recycling, Second Life, Wiederaufbereitung oder Rückgabe an den Lieferanten), zu einem Dienstleister im selben Land, mit der vorgeschriebenen Verpackung und den nötigen Dokumenten. Die Regel hängt vom Besitzer, vom Batterietyp, vom Zustand und von der Garantie ab. Um sein EPR-System (erweiterte Herstellerverantwortung) für Batterien konform aufzustellen, muss der Hersteller für jede einzelne Batterie sagen können, was aus ihr geworden ist.",
+				"location": "Europa, Nordamerika",
+				"challenge": "Im europäischen Netz eines der weltweit führenden Autohersteller bauen Autohäuser, Demontagebetriebe und Werke Traktionsbatterien aus. Jede muss in den richtigen Verwertungsweg (Recycling, Second Life, Wiederaufbereitung oder Rückgabe an den Lieferanten), zu einem Dienstleister im selben Land, mit der vorgeschriebenen Verpackung und den nötigen Dokumenten. Die Regel hängt vom Besitzer, vom Batterietyp, vom Zustand und von der Garantie ab. Um sein EPR-System (erweiterte Herstellerverantwortung) für Batterien konform aufzustellen, muss der Hersteller für jede einzelne Batterie sagen können, was aus ihr geworden ist.",
 				"approach": "Wir haben die Webplattform konzipiert, entwickelt und betreiben sie, die das EPR-System des Herstellers für Batterien trägt. Sie verbindet Batteriebesitzer, Sammel- und Behandlungsdienstleister und die Teams des Herstellers. Jede Batterie hat dort eine einzige Akte: Identifikation über Fahrzeug- oder Batterienummer, ergänzt aus den Stammdaten des Herstellers, Zustand, Fotos, Verpackung, Preise, Dokumente und ein Verlauf mit Zeitstempeln. Eine Regel-Engine wählt Ziel und Dienstleister nach Land, Besitzer, Batterietyp, Zustand und Garantie; die in den Regeln vorgesehenen Fälle durchlaufen eine Freigabe durch das Team des Herstellers. Dienstleister arbeiten in der Plattform oder aus ihrer eigenen Software, über API und Webhooks. Ein Marktplatz verkauft die Lose für das Second Life. Die Oberfläche gibt es in sieben Sprachen.",
 				"details": [
-					"Der Besitzer gibt die Fahrzeug- oder Batterienummer ein: Die Plattform findet den Typ und seine Merkmale. Er erfasst den Zustand (grün, gelb oder rot), Ladezustand und Gesundheitszustand und fügt die geforderten Fotos und die Verpackung hinzu. Für ein Los importiert er eine Excel-Datei; abgelehnte Zeilen kommen kommentiert zurück.",
-					"Die Steuerungs-Engine wendet die Szenarien des Herstellers an: Abfall oder Produkt, Ziel, Dienstleister im Land, Kostenübernahme. Eine Batterie, deren Teilenummer einem Pfand unterliegt, geht in die Wiederaufbereitung. Wenn das Szenario es verlangt, gibt das Team des Herstellers frei, fordert eine Korrektur beim Besitzer an oder leitet die Batterie um.",
-					"Der zugewiesene Dienstleister schlägt seinen Preis für Behandlung und Transport vor; die andere Seite nimmt ihn an oder lehnt ihn mit Begründung ab. Batterien desselben Standorts können in einer einzigen Abholung zu einem gemeinsamen Logistikpreis abgehen. Der Dienstleister lädt die Bestellung und das Etikett für die Verpackung hoch.",
-					"Der Dienstleister meldet Abholung, Eingang und dann die Behandlung oder ein Problem bei der Sammlung. Jede Statusänderung benachrichtigt den Besitzer und das Team des Herstellers, in der Anwendung und per E-Mail nach ihren Einstellungen. Das Behandlungszertifikat wird der Akte der Batterie beigefügt.",
-					"Ein Dienstleister mit eigener Software erfasst nichts doppelt: Die Plattform übermittelt ihm die Batterie, dann kommen die Status aus seinem Werkzeug mit den Dokumenten, darunter das Recyclingzertifikat, in die Akte zurück. Die anderen erhalten bei jedem Ereignis einen Webhook und aktualisieren ihre Akten gesammelt.",
-					"Für das Second Life stellt das Team des Herstellers ein Los pro Standort zusammen und wählt die sichtbaren Fotos und Dokumente, die Angebotsfrist und die zugelassenen Käufer. Käufer bieten einen Gesamtpreis, pro kWh oder pro kg. Das Team fordert eine Überarbeitung an oder wählt ein Angebot und legt dann die Abholung beim Käufer an."
+					{
+						"actor": "Besitzer",
+						"title": "Batterie melden",
+						"text": "Er gibt die Fahrzeug- oder Batterienummer ein: Die Plattform findet ihre Merkmale. Er erfasst Zustand, Ladung und Gesundheit und fügt Fotos und Verpackung hinzu oder importiert ein Los aus Excel."
+					},
+					{
+						"actor": "Plattform",
+						"title": "Batterie zuordnen",
+						"text": "Die Regel-Engine wählt Verwertungsweg, Dienstleister im Land und Kostenträger. Die in den Regeln vorgesehenen Fälle durchlaufen eine Freigabe durch das Team des Herstellers."
+					},
+					{
+						"actor": "Dienstleister",
+						"title": "Preis und Abholung",
+						"text": "Der Dienstleister schlägt seinen Preis für Behandlung und Transport vor, den die andere Seite annimmt oder ablehnt. Batterien desselben Standorts gehen in einer Abholung."
+					},
+					{
+						"actor": "Dienstleister",
+						"title": "Bis zur Behandlung verfolgen",
+						"text": "Er meldet Abholung, Eingang und dann die Behandlung. Jeder Schritt benachrichtigt Besitzer und Hersteller; das Behandlungszertifikat kommt zur Akte."
+					},
+					{
+						"actor": "Dienstleister",
+						"title": "Aus eigener Software arbeiten",
+						"text": "Ein angebundener Dienstleister erfasst nichts doppelt: Die Plattform übermittelt ihm die Batterie, und die Status aus seinem Werkzeug kommen samt Recyclingzertifikat in die Akte zurück."
+					},
+					{
+						"actor": "Hersteller",
+						"title": "Second-Life-Lose verkaufen",
+						"text": "Das Team stellt ein Los pro Standort zusammen, wählt die zugelassenen Käufer und die Angebotsfrist und nimmt ein Angebot als Gesamtpreis, pro kWh oder pro kg an."
+					}
 				],
-				"impact": "Die Plattform ist im gesamten europäischen Netz des Herstellers produktiv und bildet die Grundlage für die Konformität seines EPR-Systems für Batterien: Für jede Batterie findet das Team den gewählten Verwertungsweg, den Dienstleister, die Daten von Abholung, Eingang und Behandlung sowie das Zertifikat, das sie belegt. Fast 500 Autohäuser, Demontagebetriebe, Werke und Dienstleister melden oder behandeln dort Batterien.",
+				"impact": "Die Plattform ist im gesamten europäischen Netz des Herstellers produktiv und bildet die Grundlage für die Konformität seines EPR-Systems für Batterien: Für jede Batterie findet das Team den gewählten Verwertungsweg, den Dienstleister, die Daten von Abholung, Eingang und Behandlung sowie das Zertifikat, das sie belegt. Fast 500 Autohäuser, Demontagebetriebe, Werke und Dienstleister melden oder behandeln dort Batterien, und mehr als 5.000 Batterien haben bereits eine bestätigte Behandlung. Auch seine nordamerikanischen Werke melden dort ihre Module für ein Second Life.",
 				"metrics": [
 					{
 						"label": "Gemeldete Batterien und Module",
-						"value": "Mehr als 26.000",
-						"note": "Auf der Plattform in Europa gemeldet, ohne Stornierungen."
+						"value": "Mehr als 1 Million",
+						"note": "Von Standorten des Herstellers in Europa und Nordamerika gemeldet."
+					},
+					{
+						"label": "Für ein Second Life bestimmt",
+						"value": "3 von 4",
+						"note": "Anteil der Batterien und Module, die statt ins Recycling in ein Second Life gehen."
 					},
 					{
 						"label": "Sammelländer",
-						"value": "19",
-						"note": "Länder der Standorte, an denen Batterien gemeldet wurden."
-					},
-					{
-						"label": "Bestätigte Behandlung",
-						"value": "Mehr als 5.000 Batterien",
-						"note": "Batterien, deren Dienstleister die Behandlung auf der Plattform bestätigt hat."
+						"value": "21",
+						"note": "Länder der Standorte, an denen Batterien gemeldet wurden, in Europa und Nordamerika."
 					}
 				],
 				"tags": ["SvelteKit", "FastAPI", "PostgreSQL", "Hasura", "Keycloak"],
 				"indexCard": {
 					"title": "Ein Autohersteller steuert und verfolgt jede Batterie seines EPR-Systems in Europa",
 					"description": "Im EPR-System melden die Besitzer ihre Batterien, die Plattform wählt Verwertungsweg und Dienstleister, und das Team des Herstellers verfolgt jede Akte bis zum Behandlungszertifikat oder zum Verkauf des Loses.",
-					"proof": "Mehr als 26.000 gemeldete Batterien und Module",
-					"note": "Auf der Plattform in Europa gemeldet, ohne Stornierungen."
+					"proof": "Mehr als 1 Million gemeldete Batterien und Module",
+					"note": "In Europa und Nordamerika."
 				},
 				"slug": "marktplatz-fuer-second-life-batterien"
 			},
@@ -1211,18 +1235,38 @@
 				"challenge": "Im EPR-System (erweiterte Herstellerverantwortung) für Batterien muss der Recycler erklären können, was an seinen Standorten angekommen ist und was tatsächlich behandelt wurde. Doch die Werkstatt kennt den Zustand der Batterie, der Sammler weiß, wo er sie abgeholt hat, und das Werk misst, was es annimmt. Die Packliste sagt, was ankommen soll; sie reicht nicht aus, um das eingegangene Gewicht oder die Behandlung einer Batterie zu belegen.",
 				"approach": "Wir haben für den Recycler eine Webanwendung entwickelt, die die Meldungen der Besitzer, die Abholungen und die Eingänge im Werk verbindet. Für die Konformität des EPR-Systems hält sie die Verbindung zwischen Batterie, Abfallbegleitschein und Recyclingzertifikat fest. Sie übernimmt auch die Meldungen, die die Batterieplattform eines Autoherstellers übermittelt. Der Recycler prüft dort Vertrag und Vorabannahme; der Sammler bereitet seine Lieferungen vor und sieht seine Abholungen auf dem Telefon. Die Anbindung an Trackdéchets, den nationalen französischen Dienst zur Abfallverfolgung, holt die am Zielort unterzeichneten Entscheidungen in die Akte.",
 				"details": [
-					"Der Besitzer identifiziert die Batterie, beschreibt Zustand und Verpackung und gibt den Abholort an. Kommt die Meldung vom Hersteller, findet der Recycler die übermittelten Angaben und prüft, zu welchem Besitzer und welchem Standort sie gehören.",
-					"Bevor er die Übernahme freigibt, prüft der Recycler den Vertrag oder das angenommene Angebot und das Zertifikat der Vorabannahme. Ist ein Annahmeantrag nötig, kann der Standortverantwortliche ihn vor der Unterschrift korrigieren lassen.",
-					"Organisiert der Recycler den Transport, bestimmt er den Sammler. Am Abholort scannt der Fahrer das Etikett mit dem Telefon oder gibt die Referenz ein, sieht die Angaben zur Batterie und bestätigt die Abholung.",
-					"Für die Lieferung ins Werk stellt der Sammler die verfügbaren Packstücke auf einer Packliste zusammen. Die Anwendung schließt die für einen anderen Standort bestimmten aus, summiert das Gewicht der Auswahl und lässt den Sammler unter den angebotenen Zeitfenstern wählen.",
-					"Bei Ankunft erfasst der Standort Datum und angenommene oder abgelehnte Mengen. Der Eingang bleibt von der Behandlung getrennt: Wird diese in Trackdéchets unterzeichnet, übernimmt die Akte die Information und die Anwendung erzeugt das zugehörige Recyclingzertifikat."
+					{
+						"actor": "Besitzer",
+						"title": "Batterie melden",
+						"text": "Er identifiziert die Batterie, beschreibt Zustand und Verpackung und gibt den Abholort an. Meldungen aus der Plattform eines Herstellers kommen bereits ausgefüllt an."
+					},
+					{
+						"actor": "Recycler",
+						"title": "Übernahme freigeben",
+						"text": "Der Recycler prüft den Vertrag oder das angenommene Angebot und das Zertifikat der Vorabannahme, das er vor der Unterschrift korrigieren lassen kann."
+					},
+					{
+						"actor": "Sammler",
+						"title": "Vor Ort abholen",
+						"text": "Der Fahrer scannt das Etikett mit dem Telefon oder gibt die Referenz ein, prüft die Angaben zur Batterie und bestätigt die Abholung."
+					},
+					{
+						"actor": "Sammler",
+						"title": "Lieferung vorbereiten",
+						"text": "Er stellt die verfügbaren Packstücke auf einer Packliste zusammen. Die Anwendung schließt die für einen anderen Standort bestimmten aus, summiert das Gewicht und bietet Lieferfenster an."
+					},
+					{
+						"actor": "Behandlungsanlage",
+						"title": "Annehmen, dann behandeln",
+						"text": "Der Standort erfasst Datum und angenommene oder abgelehnte Mengen. Wird die Behandlung in Trackdéchets unterzeichnet, erzeugt die Anwendung das Recyclingzertifikat."
+					}
 				],
 				"impact": "Mehr als 200 Werkstätten, Autohäuser und Schadstoffentfrachtungsbetriebe melden ihre Batterien auf der Plattform, von mehr als 250 Abholorten aus. Für seine monatliche Meldung im EPR-System nutzt das Team des Recyclers die Eingangsdaten: Herkunftsbetrieb, Ankunftsdatum und gewogenes Gewicht. Für jede Batterie unterscheidet es den Eingangsschein vom Zertifikat, das die Behandlung belegt.",
 				"metrics": [
 					{
 						"label": "Gemeldete Batterien",
 						"value": "Mehr als 1.500",
-						"note": "Von Werkstätten, Autohäusern und Schadstoffentfrachtungsbetrieben gemeldet, ohne Stornierungen."
+						"note": "Von Werkstätten, Autohäusern und Schadstoffentfrachtungsbetrieben gemeldet."
 					},
 					{
 						"label": "Beim Eingang gewogene Batterien",
@@ -1240,7 +1284,7 @@
 					"title": "Von der Werkstatt bis zur Behandlungsanlage verfolgt der Recycler jede Batterie im EPR-System",
 					"description": "Die Werkstatt meldet die Batterie, der Fahrer scannt ihr Etikett mit dem Telefon und der Standort trennt, was er erhält, von dem, was er behandelt. Der Recycler findet Gewichte und Nachweise für seine Meldung im EPR-System.",
 					"proof": "Mehr als 1.500 gemeldete Batterien",
-					"note": "Von Werkstätten, Autohäusern und Schadstoffentfrachtungsbetrieben, ohne Stornierungen."
+					"note": "Von Werkstätten, Autohäusern und Schadstoffentfrachtungsbetrieben."
 				}
 			},
 			{
