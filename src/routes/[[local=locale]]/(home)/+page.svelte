@@ -2,11 +2,10 @@
 	import '#lib/styles/home.css';
 	import Hero from '#lib/components/sections/Hero.svelte';
 	import FdtiSection from '#lib/components/sections/FdtiSection.svelte';
+	import SectorsPreviewSection from '#lib/components/sections/SectorsPreviewSection.svelte';
 	import CapabilitiesSection from '#lib/components/sections/CapabilitiesSection.svelte';
-	import TechnologiesSection from '#lib/components/sections/TechnologiesSection.svelte';
 	import ConfianceSection from '#lib/components/sections/ConfianceSection.svelte';
 	import UseCasesPreviewSection from '#lib/components/sections/UseCasesPreviewSection.svelte';
-	import ExpertisePreviewSection from '#lib/components/sections/ExpertisePreviewSection.svelte';
 	import PageSeo from '#lib/components/PageSeo.svelte';
 	import { schema } from '#lib/components/json-ld/json-ld.ts';
 	import type { Lang } from '#lib/data.ts';
@@ -50,17 +49,16 @@
 
 	{#if pageContent}
 		<div class="home-sections">
-			<FdtiSection content={pageContent.fdti_section} />
+			<ConfianceSection content={pageContent.trust_content} />
 			<CapabilitiesSection locale={currentLocale} />
+			<FdtiSection content={pageContent.fdti_section} />
+			<SectorsPreviewSection locale={currentLocale} summaries={pageContent.sector_summaries} />
 			<UseCasesPreviewSection
 				title={pageContent.homepage_use_cases_title}
 				subtitle={pageContent.homepage_use_cases_subtitle}
 				useCases={pageContent.homepage_use_cases}
 				locale={currentLocale}
 			/>
-			<ExpertisePreviewSection locale={currentLocale} />
-			<TechnologiesSection content={pageContent.technology_content} locale={currentLocale} />
-			<ConfianceSection content={pageContent.trust_content} />
 		</div>
 	{/if}
 </div>
