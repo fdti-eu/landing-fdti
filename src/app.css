@@ -137,6 +137,17 @@
 		animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 	}
 
+	/* Case images keep their crop while moving between a card and the detail hero. */
+	::view-transition-group(*.case-image) {
+		animation-duration: 0.45s;
+	}
+	::view-transition-old(*.case-image),
+	::view-transition-new(*.case-image) {
+		height: 100%;
+		object-fit: cover;
+		overflow: clip;
+	}
+
 	/* Garder la navbar stable pendant les transitions */
 	/* nav {
 		view-transition-name: none;

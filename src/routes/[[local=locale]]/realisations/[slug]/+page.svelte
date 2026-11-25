@@ -12,6 +12,8 @@
 		SOCIAL_IMAGE_PATH
 	} from '#lib/functions/seo.ts';
 	import { browser } from '$app/env';
+	import { caseImage } from '#lib/case-studies.ts';
+	import CaseVisual from '#lib/components/CaseVisual.svelte';
 
 	interface Props {
 		data:
@@ -260,6 +262,7 @@
 	import { page } from '$app/state';
 
 	let enableViewTransition = $state(true);
+	const heroImage = $derived(caseImage(useCase?.id));
 
 	const cameFromHome = $derived(
 		browser && new URLSearchParams(window.location.search).get('from') === 'home'
@@ -368,6 +371,7 @@
 		class="case-detail-hero hero-section {getIndustryGradient(
 			useCase.id
 		)} text-white py-24 md:py-32 overflow-x-hidden relative"
+		class:has-image={Boolean(heroImage)}
 	>
 		<!-- Motif subtil en fond -->
 		<div
@@ -458,6 +462,15 @@
 				{/if}
 			</div>
 		</div>
+
+		{#if heroImage}
+			<CaseVisual
+				image={heroImage}
+				class="case-hero-image reveal"
+				fetchpriority="high"
+				style={enableViewTransition ? `view-transition-name: image-${useCase.id};` : ''}
+			/>
+		{/if}
 	</section>
 
 	<section
@@ -662,5 +675,39 @@
 <style>
 	.hero-section {
 		position: relative;
+	}
+	.case-detail-hero :global(.case-hero-image) {
+		margin-top: 32px;
+		aspect-ratio: 5 / 2;
+		max-height: 200px;
+		width: 100%;
+	}
+	@media (max-width: 1023px) {
+		.case-detail-hero.has-image {
+			padding-bottom: 0;
+		}
+	}
+	@media (min-width: 1024px) {
+		.case-detail-hero.has-image {
+			padding-top: 112px;
+			padding-bottom: 72px;
+		}
+		.case-detail-hero.has-image .space-y-6 > * {
+			max-width: 56%;
+		}
+		.case-detail-hero :global(.case-hero-image) {
+			position: absolute;
+			inset: 0 0 0 46%;
+			margin: 0;
+			aspect-ratio: auto;
+			max-height: none;
+			width: auto;
+			mask-image: linear-gradient(
+				to right,
+				transparent 0%,
+				var(--color-black-overlay) 28%,
+				var(--color-black) 62%
+			);
+		}
 	}
 </style>
