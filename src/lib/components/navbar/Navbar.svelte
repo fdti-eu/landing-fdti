@@ -1,5 +1,7 @@
 <script lang="ts">
 	import { page } from '$app/state';
+	import { resolve } from '$app/paths';
+	import type { PathnameWithSearchOrHash } from '$app/types';
 	import { locale } from '#lib/i18n/index.ts';
 	import { afterNavigate } from '$app/navigation';
 	import Hamburger from './Hamburger.svelte';
@@ -143,21 +145,30 @@
 			<div class="wordmark"><b>FDTI</b><small>From Data To Insight</small></div>
 		</a>
 		<ul id="fdti-navigation" class="nav-links" class:open={isNavbarOpen}>
-			{#each links as link}<li class:has-submenu={link.children?.length}>
+			{#each links as link (link.href)}<li class:has-submenu={link.children?.length}>
 					<a
-						href={link.href}
+						href={link.href.startsWith('#')
+							? `#${link.href.slice(1)}`
+							: resolve(link.href.slice(1) as PathnameWithSearchOrHash)}
 						class:active={link.active}
 						class:nav-contact={link.cta}
 						data-umami-event={link.cta ? 'contact_open' : undefined}
 						data-umami-event-placement={link.cta ? 'navigation' : undefined}
 						aria-current={link.active ? 'page' : undefined}
-						onclick={() => (isNavbarOpen = false)}>{link.label}</a
+						onclick={() => (isNavbarOpen = false)}
 					>
+						{link.label}
+					</a>
 					{#if link.children?.length}
 						<ul class="nav-submenu">
-							{#each link.children as child, childIndex}
+							{#each link.children as child, childIndex (child.href)}
 								<li class:nav-overview={childIndex === 0}>
-									<a href={child.href} onclick={() => (isNavbarOpen = false)}>{child.label}</a>
+									<a
+										href={resolve(child.href.slice(1) as PathnameWithSearchOrHash)}
+										onclick={() => (isNavbarOpen = false)}
+									>
+										{child.label}
+									</a>
 								</li>
 							{/each}
 						</ul>
@@ -171,8 +182,10 @@
 			onclick={() => (isNavbarOpen = !isNavbarOpen)}
 			aria-label={menuLabels[currentLocale]}
 			aria-expanded={isNavbarOpen}
-			aria-controls="fdti-navigation"><Hamburger isOpen={isNavbarOpen} /></button
+			aria-controls="fdti-navigation"
 		>
+			<Hamburger isOpen={isNavbarOpen} />
+		</button>
 	</div>
 </nav>
 
@@ -189,7 +202,7 @@
 	.wordmark {
 		display: grid;
 		gap: 3px;
-		color: #faf9f6;
+		color: var(--color-paper);
 	}
 	.wordmark b {
 		font-size: 25px;
@@ -200,6 +213,6 @@
 		font-size: 11px;
 		line-height: 1;
 		letter-spacing: 0.035em;
-		color: #dedbd2;
+		color: var(--color-text-on-dark-muted);
 	}
 </style>

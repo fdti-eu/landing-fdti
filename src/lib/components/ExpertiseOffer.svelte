@@ -1,35 +1,22 @@
 <script lang="ts">
-	import { MetaTags } from 'svelte-meta-tags';
+	import PageSeo from '#lib/components/PageSeo.svelte';
 	import type { Lang } from '#lib/data.ts';
 	import { expertiseOffers, offerPaths, type OfferKey } from '#lib/expertise-offers.ts';
-	import {
-		absoluteImageUrl,
-		buildLocalizedPath,
-		buildLocalizedUrl,
-		SOCIAL_IMAGE_PATH
-	} from '#lib/functions/seo.ts';
+	import { buildLocalizedPath, buildLocalizedUrl } from '#lib/functions/seo.ts';
 
-	export let locale: Lang;
-	export let offer: OfferKey;
-	$: content = expertiseOffers[locale][offer];
-	$: canonical = buildLocalizedUrl(offerPaths[offer], locale);
-	$: title = `${content.label} | FDTI`;
+	interface Props {
+		locale: Lang;
+		offer: OfferKey;
+	}
+
+	let { locale, offer }: Props = $props();
+	const content = $derived(expertiseOffers[locale][offer]);
+	const canonical = $derived(buildLocalizedUrl(offerPaths[offer], locale));
+	const title = $derived(`${content.label} | FDTI`);
 	const parentPath = '/filieres/economie-circulaire';
 </script>
 
-<MetaTags
-	{title}
-	description={content.description}
-	{canonical}
-	openGraph={{
-		type: 'website',
-		url: canonical,
-		title,
-		description: content.description,
-		siteName: 'FDTI',
-		images: [{ url: absoluteImageUrl(SOCIAL_IMAGE_PATH), alt: 'FDTI' }]
-	}}
-/>
+<PageSeo {title} description={content.description} {canonical} imageAlt="FDTI" />
 
 <div class="editorial-page offer-page">
 	<header class="editorial-hero">
@@ -42,15 +29,17 @@
 				class="offer-link"
 				href="#contact"
 				data-umami-event="contact_open"
-				data-umami-event-placement={`${offer}_hero`}>{content.cta} ↗</a
+				data-umami-event-placement={`${offer}_hero`}
 			>
+				{content.cta} ↗
+			</a>
 		</div>
 	</header>
 	<section class="editorial-section editorial-shell" aria-labelledby={`${offer}-use-cases`}>
 		<h2 id={`${offer}-use-cases`}>{content.useCasesTitle}</h2>
 		<p class="offer-audience">{content.audience}</p>
 		<div class="editorial-numbered-grid offer-cases">
-			{#each content.useCases as item, index}
+			{#each content.useCases as item, index (item)}
 				<article>
 					<span>0{index + 1}</span>
 					<h3>{item.title}</h3>
@@ -63,7 +52,7 @@
 		<div class="editorial-shell">
 			<h2 id={`${offer}-approach`}>{content.approachTitle}</h2>
 			<ol class="offer-steps">
-				{#each content.steps as step}
+				{#each content.steps as step, stepIndex (stepIndex)}
 					<li>
 						<h3>{step.title}</h3>
 						<p>{step.text}</p>
@@ -79,8 +68,10 @@
 			<a
 				href="#contact"
 				data-umami-event="contact_open"
-				data-umami-event-placement={`${offer}_contact`}>{content.cta} ↗</a
+				data-umami-event-placement={`${offer}_contact`}
 			>
+				{content.cta} ↗
+			</a>
 		</div>
 	</section>
 </div>
@@ -119,7 +110,7 @@
 	}
 	.offer-steps li {
 		padding: 1.5rem 0 1.5rem 1rem;
-		border-top: 1px solid #bbb8b2;
+		border-top: 1px solid var(--color-line-warm-strong);
 	}
 	.offer-steps h3 {
 		font-size: 1.25rem;

@@ -1,15 +1,19 @@
 <script lang="ts">
 	import Button from '#lib/components/Button.svelte';
 
-	export let content: {
-		status?: string | null;
-		title?: string | null;
-		subtitle?: string | null;
-		description?: string | null;
-		btn_brochure?: string | null;
-		btn_contact?: string | null;
-		brochure_link?: string | null;
-	} | null;
+	interface Props {
+		content: {
+			status?: string | null;
+			title?: string | null;
+			subtitle?: string | null;
+			description?: string | null;
+			btn_brochure?: string | null;
+			btn_contact?: string | null;
+			brochure_link?: string | null;
+		} | null;
+	}
+
+	let { content }: Props = $props();
 </script>
 
 <section class="fdti-hero">
@@ -27,8 +31,10 @@
 						color="yellow"
 						isLink
 						analyticsEvent="contact_open"
-						analyticsPlacement="hero">{content.btn_contact}</Button
+						analyticsPlacement="hero"
 					>
+						{content.btn_contact}
+					</Button>
 				</div>
 			</div>
 			<figure class="hero-figure">

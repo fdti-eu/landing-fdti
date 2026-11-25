@@ -1,0 +1,142 @@
+/* Job listing and detail screen layouts. Print styles are defined in app.css. */
+@media screen {
+	.jobs-hero,
+	.job-detail-hero {
+		padding: 156px var(--design-gutter) 68px;
+	}
+	.jobs-hero > div,
+	.job-detail-hero > div {
+		max-width: var(--design-width);
+		padding-inline: 0;
+	}
+	.jobs-hero h1,
+	.job-detail-hero h1 {
+		font-size: clamp(36px, 4.5vw, 65px);
+		line-height: 1.08;
+		letter-spacing: -0.035em;
+	}
+	.job-detail-hero a:focus-visible,
+	.job-detail-hero button:focus-visible {
+		outline-color: var(--color-yellow);
+	}
+	.jobs-hero .max-w-3xl {
+		max-width: 880px;
+	}
+	.jobs-hero > div > div:last-child > div {
+		border-radius: 3px;
+		background: transparent;
+		padding: 23px 0;
+		border: 0;
+		border-top: 1px solid var(--color-grey);
+	}
+	.jobs-body {
+		background: var(--color-white);
+		padding: 65px var(--design-gutter) 90px;
+	}
+	.jobs-body > div {
+		max-width: var(--design-width);
+		padding: 0;
+	}
+	.job-card {
+		border-radius: 4px;
+		box-shadow: none;
+		border-color: var(--color-light-grey);
+	}
+	.job-card:hover {
+		border-color: var(--color-grey);
+		box-shadow: 0 10px 30px color-mix(in srgb, var(--color-dark-grey) 7%, transparent);
+	}
+	.job-card > div {
+		padding: 35px;
+	}
+	.job-card h3 {
+		font-size: 31px;
+		line-height: 1.2;
+		letter-spacing: -0.025em;
+	}
+	.job-card span.rounded-full,
+	.job-card .rounded-2xl {
+		border-radius: 3px;
+	}
+	.job-card p {
+		line-height: 1.65;
+	}
+	.job-detail-body {
+		background: var(--color-white);
+		padding: 65px var(--design-gutter) 90px;
+	}
+	.job-detail-body > div {
+		max-width: 900px;
+		padding: 0;
+	}
+	.job-detail-body section {
+		border: 0;
+		border-bottom: 1px solid var(--color-light-grey);
+		border-radius: 0;
+		padding: 0 0 35px;
+		box-shadow: none;
+	}
+	.job-detail-body section h2 {
+		font-size: 30px;
+		letter-spacing: -0.025em;
+		margin-bottom: 25px;
+	}
+	.job-detail-body p,
+	.job-detail-body li {
+		font-size: 17px;
+		line-height: 1.75;
+	}
+	.job-detail-hero .max-w-4xl {
+		max-width: 930px;
+	}
+	.job-detail-hero a[href='#candidature'],
+	.job-detail-hero button {
+		border-radius: 3px;
+	}
+	@media (max-width: 900px) {
+		.jobs-hero,
+		.job-detail-hero {
+			padding-top: 130px;
+		}
+	}
+	@media (max-width: 600px) {
+		.jobs-hero,
+		.job-detail-hero {
+			padding: 119px var(--design-gutter) 44px;
+		}
+		.jobs-hero h1,
+		.job-detail-hero h1 {
+			font-size: 39px;
+			line-height: 1.1;
+		}
+		.jobs-body,
+		.job-detail-body {
+			padding: 30px var(--design-gutter) 55px;
+		}
+		.jobs-hero > div > div:last-child {
+			gap: 0;
+		}
+		.jobs-hero > div > div:last-child > div {
+			padding-block: 18px;
+		}
+		.job-card > div {
+			padding: 25px;
+		}
+		.job-card h3 {
+			font-size: 28px;
+		}
+		.job-detail-body section h2 {
+			font-size: 27px;
+		}
+		.job-detail-body p,
+		.job-detail-body li {
+			font-size: 16px;
+		}
+	}
+	@media (max-width: 360px) {
+		.jobs-hero h1,
+		.job-detail-hero h1 {
+			font-size: 35px;
+		}
+	}
+}

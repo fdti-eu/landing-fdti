@@ -1,4 +1,6 @@
 import { SUPPORTED_LOCALES, isSupportedLocale, type Lang } from '#lib/data.ts';
+import { resolve } from '$app/paths';
+import type { PathnameWithSearchOrHash } from '$app/types';
 
 export const BASE_URL = 'https://www.fdti.eu';
 export const DEFAULT_LOCALE: Lang = 'fr';
@@ -28,7 +30,7 @@ export const resolveLocaleFromPath = (path: string): Lang => {
 	return isSupportedLocale(firstSegment) ? firstSegment : DEFAULT_LOCALE;
 };
 
-export const buildLocalizedPath = (path: string, locale: Lang) => {
+const localizedPath = (path: string, locale: Lang) => {
 	const normalized = stripLocaleFromPath(path);
 	const suffix = normalized === '/' ? '' : normalized;
 	if (locale === DEFAULT_LOCALE) {
@@ -37,14 +39,16 @@ export const buildLocalizedPath = (path: string, locale: Lang) => {
 	return `/${locale}${suffix}`;
 };
 
+export const buildLocalizedPath = (path: string, locale: Lang) =>
+	resolve(localizedPath(path, locale).slice(1) as PathnameWithSearchOrHash);
+
 export const buildSeoAlternatePaths = (path: string): SeoAlternatePaths =>
 	Object.fromEntries(
 		SUPPORTED_LOCALES.map((locale) => [locale, stripLocaleFromPath(path)])
 	) as SeoAlternatePaths;
 
 export const buildLocalizedUrl = (path: string, locale: Lang) => {
-	const localizedPath = buildLocalizedPath(path, locale);
-	return `${BASE_URL}${localizedPath}`;
+	return `${BASE_URL}${localizedPath(path, locale)}`;
 };
 
 export const buildAbsoluteUrl = (path: string) => {

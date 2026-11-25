@@ -1,0 +1,31 @@
+/* Legal page layout and responsive typography. */
+@media screen {
+	.legal-page {
+		max-width: 1060px;
+		margin: auto;
+		padding: 155px var(--design-gutter) 90px;
+	}
+	.legal-page h1 {
+		font-size: clamp(38px, 4.6vw, 65px);
+		text-align: left;
+		letter-spacing: -0.035em;
+		line-height: 1.12;
+	}
+	.legal-page > .prose {
+		padding-inline: 0;
+		margin-top: 45px;
+	}
+	@media (max-width: 900px) {
+		.legal-page {
+			padding-top: 130px;
+		}
+	}
+	@media (max-width: 600px) {
+		.legal-page h1 {
+			font-size: 41px;
+		}
+		.legal-page {
+			padding: 119px var(--design-gutter) 60px;
+		}
+	}
+}

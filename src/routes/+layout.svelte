@@ -85,7 +85,7 @@
 
 <svelte:head>
 	{#if !currentPathWithoutLocale.startsWith('/newsletter/')}
-		{#each alternateLinks as alternate}
+		{#each alternateLinks as alternate (alternate.locale)}
 			<link rel="alternate" hreflang={alternate.locale} href={alternate.href} />
 		{/each}
 		<link rel="alternate" hreflang="x-default" href={xDefaultUrl} />

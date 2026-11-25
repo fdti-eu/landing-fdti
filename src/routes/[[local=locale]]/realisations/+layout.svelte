@@ -1,8 +1,11 @@
 <script lang="ts">
+	import '#lib/styles/realisations.css';
 	import { beforeNavigate, afterNavigate } from '$app/navigation';
 	import { browser } from '$app/env';
 	import { writable } from 'svelte/store';
 	import { setContext } from 'svelte';
+	import type { Snippet } from 'svelte';
+	let { children }: { children: Snippet } = $props();
 
 	let scrollPosition = 0;
 	let lastVisitedSlug = '';
@@ -60,4 +63,4 @@
 	});
 </script>
 
-<slot></slot>
+{@render children()}

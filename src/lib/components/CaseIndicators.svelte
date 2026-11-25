@@ -1,10 +1,14 @@
 <script lang="ts">
-	export let metrics: { label?: string | null; value?: string | null; note?: string | null }[];
-	export let compact = false;
+	interface Props {
+		metrics: { label?: string | null; value?: string | null; note?: string | null }[];
+		compact?: boolean;
+	}
+
+	let { metrics, compact = false }: Props = $props();
 </script>
 
 <dl class:compact>
-	{#each metrics as metric}
+	{#each metrics as metric (metric)}
 		<div>
 			<dt>{metric.label}</dt>
 			<dd><strong>{metric.value}</strong><small>{metric.note}</small></dd>
@@ -17,15 +21,15 @@
 		display: grid;
 		grid-template-columns: minmax(0, 1fr);
 		margin: 0;
-		background: #f6f5ef;
-		border-top: 3px solid #d6a52d;
-		color: #202427;
+		background: var(--color-cream);
+		border-top: 3px solid var(--color-accent-deep);
+		color: var(--color-surface-panel-dark);
 	}
 	dl > div {
 		padding: 1.15rem;
 	}
 	dl > div + div {
-		border-top: 1px solid #d9d8d0;
+		border-top: 1px solid var(--color-line-paper);
 	}
 	dt {
 		font-size: 0.95rem;
@@ -44,7 +48,7 @@
 	small {
 		display: block;
 		margin-top: 0.7rem;
-		color: #485055;
+		color: var(--color-text-indicator);
 		font-size: 0.9rem;
 		line-height: 1.5;
 	}
@@ -59,7 +63,10 @@
 		font-size: 1.65rem;
 	}
 	@media (min-width: 641px) {
-		.compact > div + div { border-top: 0; border-left: 1px solid #d9d8d0; }
+		.compact > div + div {
+			border-top: 0;
+			border-left: 1px solid var(--color-line-paper);
+		}
 	}
 	@media (max-width: 640px) {
 		dl,
@@ -68,7 +75,7 @@
 		}
 		dl > div + div {
 			border-left: none;
-			border-top: 1px solid #d9d8d0;
+			border-top: 1px solid var(--color-line-paper);
 		}
 	}
 </style>

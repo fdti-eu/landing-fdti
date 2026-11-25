@@ -11,6 +11,7 @@ const config = defineConfig({
 		sveltekit({
 			preprocess: vitePreprocess(),
 			serviceWorker: { register: false },
+			paths: { relative: false },
 			adapter: adapter({
 				pages: 'build',
 				assets: 'build',

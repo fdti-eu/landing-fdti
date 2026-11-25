@@ -1,8 +1,14 @@
 <script lang="ts">
+	import Card from '#lib/components/Card.svelte';
+	import SectionHeading from '#lib/components/SectionHeading.svelte';
 	import CapabilityDiagram from './CapabilityDiagram.svelte';
 	import type { Lang } from '#lib/data.ts';
 
-	export let locale: Lang = 'fr';
+	interface Props {
+		locale?: Lang;
+	}
+
+	let { locale = 'fr' }: Props = $props();
 
 	const content: Record<
 		Lang,
@@ -134,33 +140,26 @@
 			]
 		}
 	};
-	$: copy = content[locale];
+	const copy = $derived(content[locale]);
 </script>
 
 <section class="capabilities-section" id="capabilities">
-	<div class="section-heading">
-		<div class="group">
-			<h2 class="text-3xl font-bold text-center md:text-4xl">{copy.title}</h2>
-		</div>
-		<h3 class="text-xl font-bold text-center sm:text-2xl md:text-3xl lg:text-4xl max-w-4xl mx-auto">
-			{copy.subtitle}
-		</h3>
-	</div>
+	<SectionHeading title={copy.title} subtitle={copy.subtitle} constrained />
 
 	<div class="capabilities-grid">
-		{#each copy.items as item, index}
-			<article class="capability-card">
+		{#each copy.items as item, index (item.title)}
+			<Card class="capability-card">
 				<CapabilityDiagram {index} />
-				<h4 class="text-xl font-bold text-darkGrey">{item.title}</h4>
-				<p class="mt-3 text-sm leading-relaxed text-darkGrey/80">{item.description}</p>
+				<h4 class="text-xl font-bold text-dark-grey">{item.title}</h4>
+				<p class="mt-3 text-sm leading-relaxed text-dark-grey/80">{item.description}</p>
 				<div class="mt-5 flex flex-wrap gap-2">
-					{#each item.points as point}
-						<span class="rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-darkGrey"
-							>{point}</span
-						>
+					{#each item.points as point, pointIndex (pointIndex)}
+						<span class="rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-dark-grey">
+							{point}
+						</span>
 					{/each}
 				</div>
-			</article>
+			</Card>
 		{/each}
 	</div>
 </section>

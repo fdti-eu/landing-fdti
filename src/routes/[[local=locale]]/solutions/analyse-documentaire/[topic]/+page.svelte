@@ -1,27 +1,23 @@
 <script lang="ts">
-	import { MetaTags } from 'svelte-meta-tags';
+	import PageSeo from '#lib/components/PageSeo.svelte';
 	import CircularContact from '#lib/components/CircularContact.svelte';
-	import LdTag from '#lib/components/json-ld/LDTag.svelte';
 	import { schema } from '#lib/components/json-ld/json-ld.ts';
-	import {
-		absoluteImageUrl,
-		buildLocalizedPath,
-		buildLocalizedUrl,
-		SOCIAL_IMAGE_PATH
-	} from '#lib/functions/seo.ts';
+	import { buildLocalizedPath, buildLocalizedUrl } from '#lib/functions/seo.ts';
 	import type { Lang } from '#lib/data.ts';
 	import type { PageData } from './$types';
 	import { afterNavigate } from '$app/navigation';
 	import { onDestroy } from 'svelte';
 
-	export let data: PageData;
-	$: ({ content, guide } = data);
-	$: root = buildLocalizedPath('/solutions/analyse-documentaire', data.locale);
-	$: canonical = buildLocalizedUrl(`/solutions/analyse-documentaire/${guide.slug}`, data.locale);
-	$: title = guide.metaTitle;
-	$: description = guide.metaDescription;
-	$: guideIndex = content.guides.findIndex((item) => item.slug === guide.slug);
-	$: guideTransitionPrefix = `expertise-document_analysis-dossier-${guideIndex}`;
+	let { data }: { data: PageData } = $props();
+	const { content, guide } = $derived(data);
+	const root = $derived(buildLocalizedPath('/solutions/analyse-documentaire', data.locale));
+	const canonical = $derived(
+		buildLocalizedUrl(`/solutions/analyse-documentaire/${guide.slug}`, data.locale)
+	);
+	const title = $derived(guide.metaTitle);
+	const description = $derived(guide.metaDescription);
+	const guideIndex = $derived(content.guides.findIndex((item) => item.slug === guide.slug));
+	const guideTransitionPrefix = $derived(`expertise-document_analysis-dossier-${guideIndex}`);
 	const labels: Record<
 		Lang,
 		{
@@ -68,8 +64,8 @@
 			imageAlt: 'FDTI - IA, codice e dati'
 		}
 	};
-	$: copy = labels[data.locale];
-	let activeSection = '';
+	const copy = $derived(labels[data.locale]);
+	let activeSection = $state('');
 	let scrollFrame = 0;
 	function updateSection() {
 		cancelAnimationFrame(scrollFrame);
@@ -89,25 +85,15 @@
 	});
 </script>
 
-<svelte:window on:scroll={updateSection} on:resize={updateSection} />
+<svelte:window onscroll={updateSection} onresize={updateSection} />
 
-<MetaTags
+<PageSeo
 	{title}
 	{description}
 	{canonical}
-	openGraph={{
-		type: 'website',
-		url: canonical,
-		title,
-		description,
-		siteName: 'FDTI',
-		images: [{ url: absoluteImageUrl(SOCIAL_IMAGE_PATH), alt: copy.imageAlt }]
-	}}
-/>
-
-<svelte:head>
-	<LdTag
-		schema={schema('BreadcrumbList', {
+	imageAlt={copy.imageAlt}
+	structuredData={[
+		schema('BreadcrumbList', {
 			name: title,
 			description,
 			url: canonical,
@@ -131,9 +117,9 @@
 					item: canonical
 				}
 			]
-		})}
-	/>
-</svelte:head>
+		})
+	]}
+/>
 
 <header class="ce-hero ce-detail-hero">
 	<div class="ce-shell">
@@ -152,13 +138,14 @@
 			<nav aria-label={content.contents}>
 				<p class="ce-eyebrow">{content.contents}</p>
 				<ol>
-					{#each guide.sections as section, index}
+					{#each guide.sections as section, index (section.id)}
 						<li>
 							<a
 								href={`#${section.id}`}
 								aria-current={activeSection === section.id ? 'location' : undefined}
-								><span>0{index + 1}</span>{section.title}</a
 							>
+								<span>0{index + 1}</span>{section.title}
+							</a>
 						</li>
 					{/each}
 				</ol>
@@ -168,12 +155,13 @@
 				href="#contact"
 				data-umami-event="contact_open"
 				data-umami-event-placement="document_analysis_topic_toc"
-				>{content.contact}<span aria-hidden="true">↗</span></a
 			>
+				{content.contact}<span aria-hidden="true">↗</span>
+			</a>
 		</aside>
 		<div class="ce-detail-content">
 			<p class="ce-context">{content.evidenceNote}</p>
-			{#each guide.sections as section, index}
+			{#each guide.sections as section, index (section.id)}
 				<section class="ce-feature" id={section.id}>
 					<p class="ce-feature-index" aria-hidden="true">0{index + 1} · {section.status}</p>
 					<h2>{section.title}</h2>
@@ -192,9 +180,9 @@
 						<h3>{copy.limit}</h3>
 						<p>{section.limit}</p>
 					</div>
-					<a class="ce-return-to-contents" href="#sommaire"
-						>{content.backToContents}<span aria-hidden="true">↑</span></a
-					>
+					<a class="ce-return-to-contents" href="#sommaire">
+						{content.backToContents}<span aria-hidden="true">↑</span>
+					</a>
 				</section>
 			{/each}
 		</div>
@@ -205,13 +193,13 @@
 	<div class="ce-shell">
 		<h2>{content.relatedTitle}</h2>
 		<div class="ce-related-grid">
-			{#each content.guides.filter((item) => item.slug !== guide.slug) as item}
-				<a href={`${root}/${item.slug}`}
-					><span class="ce-eyebrow">{item.label}</span>
+			{#each content.guides.filter((item) => item.slug !== guide.slug) as item (item.slug)}
+				<a href={buildLocalizedPath(`/solutions/analyse-documentaire/${item.slug}`, data.locale)}>
+					<span class="ce-eyebrow">{item.label}</span>
 					<h3>{item.title}</h3>
 					<p>{item.summary}</p>
-					<span class="ce-link">{content.detailLink}<span aria-hidden="true">↗</span></span></a
-				>
+					<span class="ce-link">{content.detailLink}<span aria-hidden="true">↗</span></span>
+				</a>
 			{/each}
 		</div>
 	</div>

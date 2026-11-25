@@ -270,7 +270,10 @@ for (const [locale, data, documents] of [
 ]) {
 	for (const item of data?.GetUseCasesContent?.use_case_list ?? []) {
 		const at = `${locale} case ${item.id}`;
-		if (item.metrics?.length !== 3 || item.metrics.some((metric) => !metric?.label?.trim() || !metric?.value?.trim())) {
+		if (
+			item.metrics?.length !== 3 ||
+			item.metrics.some((metric) => !metric?.label?.trim() || !metric?.value?.trim())
+		) {
 			errors.push(`${at}: provide exactly three indicators with a label and a value`);
 		}
 		if (!item.indexCard?.proof?.trim() || !item.indexCard?.note?.trim()) {
@@ -285,7 +288,9 @@ for (const [locale, data, documents] of [
 			!item.details?.length ||
 			!item.impact?.trim() ||
 			item.expectedOutcome !== undefined ||
-			/\b(?:scénario|scenario|simulation|simulación|simulazione|Szenario)\b/iu.test(JSON.stringify([item.indexCard, item.metrics]))
+			/\b(?:scénario|scenario|simulation|simulación|simulazione|Szenario)\b/iu.test(
+				JSON.stringify([item.indexCard, item.metrics])
+			)
 		) {
 			errors.push(
 				`${at}: provide a situation, solution, workflow and actual outcome; exclude scenario-based indicators`

@@ -1,5 +1,9 @@
 <script lang="ts">
-	export let index: number;
+	interface Props {
+		index: number;
+	}
+
+	let { index }: Props = $props();
 </script>
 
 <svg class="capability-diagram" viewBox="0 0 320 148" fill="none" aria-hidden="true">

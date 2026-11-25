@@ -1,6 +1,5 @@
 <script lang="ts">
-	import { MetaTags } from 'svelte-meta-tags';
-	import LdTag from '#lib/components/json-ld/LDTag.svelte';
+	import PageSeo from '#lib/components/PageSeo.svelte';
 	import { schema } from '#lib/components/json-ld/json-ld.ts';
 	import type { Lang } from '#lib/data.ts';
 	import {
@@ -11,7 +10,7 @@
 	} from '#lib/functions/seo.ts';
 	import type { JobOffer } from '#lib/jobs.ts';
 
-	export let data: { jobs: JobOffer[]; locale: Lang };
+	let { data }: { data: { jobs: JobOffer[]; locale: Lang } } = $props();
 
 	const copies = {
 		fr: {
@@ -120,50 +119,34 @@
 			cta: 'Vedi l’offerta e candidati'
 		}
 	} satisfies Record<Lang, Record<string, string>>;
-	$: copy = copies[data.locale];
-	$: title = copy.title;
-	$: description = copy.description;
-	$: canonicalUrl = buildLocalizedUrl('/offres-emploi', data.locale);
+	const copy = $derived(copies[data.locale]);
+	const title = $derived(copy.title);
+	const description = $derived(copy.description);
+	const canonicalUrl = $derived(buildLocalizedUrl('/offres-emploi', data.locale));
 	const ogImage = absoluteImageUrl(SOCIAL_IMAGE_PATH);
 
 	const transitionName = (job: JobOffer, part: string) =>
 		`view-transition-name: job-${part}-${job.slug};`;
 </script>
 
-<MetaTags
+<PageSeo
 	{title}
 	{description}
 	canonical={canonicalUrl}
-	openGraph={{
-		type: 'website',
-		url: canonicalUrl,
-		title,
-		description,
-		images: [{ url: ogImage, alt: description }],
-		siteName: 'FDTI'
-	}}
-	twitter={{
-		cardType: 'summary_large_image',
-		title,
-		description,
-		image: ogImage,
-		imageAlt: description
-	}}
-/>
-
-<svelte:head>
-	<LdTag
-		schema={schema('CollectionPage', {
+	image={ogImage}
+	twitter
+	structuredData={[
+		schema('CollectionPage', {
 			name: title,
 			description,
 			url: canonicalUrl,
 			image: ogImage,
 			inLanguage: data.locale
-		})}
-	/>
-</svelte:head>
+		})
+	]}
+/>
 
-<section class="jobs-hero bg-darkGrey text-white pt-28 pb-20 md:pt-36 md:pb-28">
+<section class="jobs-hero bg-dark-grey text-white pt-28 pb-20 md:pt-36 md:pb-28">
 	<div class="max-w-6xl mx-auto px-4 space-y-8">
 		<div class="max-w-3xl space-y-5">
 			<p class="uppercase tracking-[0.25em] text-yellow text-xs sm:text-sm font-semibold">
@@ -199,7 +182,7 @@
 		<div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
 			<div>
 				<p class="text-sm uppercase tracking-[0.2em] text-grey font-semibold">{copy.openRoles}</p>
-				<h2 class="text-3xl md:text-4xl font-bold text-darkGrey mt-2">{copy.offersTitle}</h2>
+				<h2 class="text-3xl md:text-4xl font-bold text-dark-grey mt-2">{copy.offersTitle}</h2>
 			</div>
 			<p class="text-grey max-w-2xl">
 				{copy.offersIntro}
@@ -207,14 +190,16 @@
 		</div>
 
 		<div class="grid lg:grid-cols-2 gap-6">
-			{#each data.jobs as job}
+			{#each data.jobs as job (job.slug)}
 				<a
 					href={buildLocalizedPath(`/offres-emploi/${job.slug}`, data.locale)}
 					class="job-card group block rounded-3xl bg-white border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden focus:outline-none focus-visible:ring-4 focus-visible:ring-yellow/60"
 				>
 					<div class="p-6 md:p-8 space-y-6">
 						<div class="flex flex-wrap gap-2" style={transitionName(job, 'meta')}>
-							<span class="rounded-full bg-yellow/30 text-darkGrey px-3 py-1 text-sm font-semibold">
+							<span
+								class="rounded-full bg-yellow/30 text-dark-grey px-3 py-1 text-sm font-semibold"
+							>
 								{job.contractType}
 							</span>
 							<span class="rounded-full bg-slate-100 text-grey px-3 py-1 text-sm font-semibold">
@@ -227,7 +212,7 @@
 
 						<div class="space-y-3">
 							<h3
-								class="text-2xl md:text-3xl font-bold text-darkGrey group-hover:text-grey transition-colors"
+								class="text-2xl md:text-3xl font-bold text-dark-grey group-hover:text-grey transition-colors"
 								style={transitionName(job, 'title')}
 							>
 								{job.title}
@@ -239,17 +224,17 @@
 
 						<div class="grid sm:grid-cols-2 gap-3 text-sm">
 							<div class="rounded-2xl bg-slate-50 p-4">
-								<p class="font-semibold text-darkGrey">{copy.startLabel}</p>
+								<p class="font-semibold text-dark-grey">{copy.startLabel}</p>
 								<p class="text-grey">{job.startLabel}</p>
 							</div>
 							<div class="rounded-2xl bg-slate-50 p-4">
-								<p class="font-semibold text-darkGrey">{copy.statusLabel}</p>
+								<p class="font-semibold text-dark-grey">{copy.statusLabel}</p>
 								<p class="text-grey">{job.status}</p>
 							</div>
 						</div>
 
 						<span
-							class="inline-flex items-center justify-center rounded-full bg-darkGrey text-white px-6 py-3 font-semibold hover:bg-yellow hover:text-darkGrey transition-all"
+							class="inline-flex items-center justify-center rounded-full bg-dark-grey text-white px-6 py-3 font-semibold hover:bg-yellow hover:text-dark-grey transition-all"
 						>
 							{copy.cta}
 						</span>

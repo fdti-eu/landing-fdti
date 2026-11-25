@@ -4,10 +4,14 @@
 	import { solutionIds, solutionLabels, type SolutionId } from '#lib/navigation.ts';
 	import { solutionHref } from '#lib/solution-pages.ts';
 
-	export let title: string;
-	export let locale: Lang;
-	export let current: SolutionId;
-	$: others = solutionIds.filter((id) => id !== current);
+	interface Props {
+		title: string;
+		locale: Lang;
+		current: SolutionId;
+	}
+
+	let { title, locale, current }: Props = $props();
+	const others = $derived(solutionIds.filter((id) => id !== current));
 </script>
 
 <nav
@@ -16,11 +20,11 @@
 >
 	<h2 id="solution-others">{title}</h2>
 	<ul>
-		{#each others as id}
+		{#each others as id (id)}
 			<li>
-				<a href={buildLocalizedPath(solutionHref(id, locale), locale)}
-					>{solutionLabels[locale][id]} <span aria-hidden="true">→</span></a
-				>
+				<a href={buildLocalizedPath(solutionHref(id, locale), locale)}>
+					{solutionLabels[locale][id]} <span aria-hidden="true">→</span>
+				</a>
 			</li>
 		{/each}
 	</ul>
@@ -48,7 +52,7 @@
 		justify-content: space-between;
 		gap: 1rem;
 		padding: 1rem 0;
-		border-bottom: 1px solid #cccfcf;
+		border-bottom: 1px solid var(--color-line-cool);
 		font-weight: 600;
 		font-size: 0.95rem;
 	}
@@ -57,7 +61,7 @@
 		text-underline-offset: 4px;
 	}
 	a:focus-visible {
-		outline: 2px solid #9a6405;
+		outline: 2px solid var(--color-accent-text);
 		outline-offset: 5px;
 	}
 	@media (max-width: 1000px) {

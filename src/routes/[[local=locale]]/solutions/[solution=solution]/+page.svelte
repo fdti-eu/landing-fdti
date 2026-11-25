@@ -1,50 +1,35 @@
 <script lang="ts">
-	import { MetaTags } from 'svelte-meta-tags';
+	import PageSeo from '#lib/components/PageSeo.svelte';
 	import SolutionFamilyNav from '#lib/components/solutions/SolutionFamilyNav.svelte';
 	import SolutionOptions from '#lib/components/solutions/SolutionOptions.svelte';
 	import SolutionPractices from '#lib/components/solutions/SolutionPractices.svelte';
 	import { navigationCopy, solutionLabels } from '#lib/navigation.ts';
 	import { solutionPagePath } from '#lib/solution-pages.ts';
-	import {
-		absoluteImageUrl,
-		buildLocalizedPath,
-		buildLocalizedUrl,
-		SOCIAL_IMAGE_PATH
-	} from '#lib/functions/seo.ts';
+	import { buildLocalizedPath, buildLocalizedUrl } from '#lib/functions/seo.ts';
 	import type { PageData } from './$types';
 
-	export let data: PageData;
-	$: content = data.content;
-	$: page = content.pages[data.id];
-	$: labels = solutionLabels[data.locale];
-	$: navigation = navigationCopy[data.locale];
-	$: canonical = buildLocalizedUrl(solutionPagePath(data.id), data.locale);
-	$: proofs = page.proofs.flatMap((proof) => {
-		const project = data.projects.find((item) => item.id === proof.projectId);
-		return project ? [{ ...proof, project }] : [];
-	});
+	let { data }: { data: PageData } = $props();
+	const content = $derived(data.content);
+	const page = $derived(content.pages[data.id]);
+	const labels = $derived(solutionLabels[data.locale]);
+	const navigation = $derived(navigationCopy[data.locale]);
+	const canonical = $derived(buildLocalizedUrl(solutionPagePath(data.id), data.locale));
+	const proofs = $derived(
+		page.proofs.flatMap((proof) => {
+			const project = data.projects.find((item) => item.id === proof.projectId);
+			return project ? [{ ...proof, project }] : [];
+		})
+	);
 </script>
 
-<MetaTags
-	title={page.metaTitle}
-	description={page.metaDescription}
-	{canonical}
-	openGraph={{
-		type: 'website',
-		url: canonical,
-		title: page.metaTitle,
-		description: page.metaDescription,
-		siteName: 'FDTI',
-		images: [{ url: absoluteImageUrl(SOCIAL_IMAGE_PATH), alt: 'FDTI' }]
-	}}
-/>
+<PageSeo title={page.metaTitle} description={page.metaDescription} {canonical} imageAlt="FDTI" />
 
 <div class="editorial-page solution-page">
 	<header class="editorial-hero">
 		<div class="editorial-shell">
-			<a class="solution-back" href={buildLocalizedPath('/solutions', data.locale)}
-				>← {content.back}</a
-			>
+			<a class="solution-back" href={buildLocalizedPath('/solutions', data.locale)}>
+				← {content.back}
+			</a>
 			<p class="editorial-kicker">{labels[data.id]}</p>
 			<h1>{page.title}</h1>
 			<p>{page.lead}</p>
@@ -54,7 +39,7 @@
 	<section class="editorial-section editorial-shell" aria-labelledby="solution-situations">
 		<h2 id="solution-situations">{content.situationsTitle}</h2>
 		<div class="editorial-numbered-grid">
-			{#each page.situations as situation, index}
+			{#each page.situations as situation, index (situation)}
 				<article>
 					<span aria-hidden="true">0{index + 1}</span>
 					<h3>{situation.title}</h3>
@@ -77,7 +62,7 @@
 			<h2 id="solution-examples">{page.examples.title}</h2>
 			<p class="section-intro">{page.examples.intro}</p>
 			<div class="editorial-numbered-grid">
-				{#each page.examples.items as item, index}
+				{#each page.examples.items as item, index (item)}
 					<article>
 						<span aria-hidden="true">0{index + 1}</span>
 						<h3>{item.title}</h3>
@@ -93,7 +78,7 @@
 			<div class="editorial-shell">
 				<h2 id="solution-method">{page.method.title}</h2>
 				<ol class="method-steps">
-					{#each page.method.steps as step}
+					{#each page.method.steps as step, stepIndex (stepIndex)}
 						<li>
 							<h3>{step.title}</h3>
 							<p>{step.text}</p>
@@ -109,18 +94,18 @@
 		<div>
 			<h2 id="solution-delivery">{content.deliverablesTitle}</h2>
 			<ul class="deliverables">
-				{#each page.deliverables as item}<li>{item}</li>{/each}
+				{#each page.deliverables as item, itemIndex (itemIndex)}<li>{item}</li>{/each}
 			</ul>
 		</div>
 		<div>
 			<h2 id="solution-proofs">{content.proofsTitle}</h2>
 			<ul class="proofs" aria-labelledby="solution-proofs">
-				{#each proofs as proof}
+				{#each proofs as proof (proof.projectId)}
 					<li>
 						<p>{proof.text}</p>
-						<a href={buildLocalizedPath(`/realisations/${proof.project.slug}`, data.locale)}
-							>{proof.project.title} <span aria-hidden="true">↗</span></a
-						>
+						<a href={buildLocalizedPath(`/realisations/${proof.project.slug}`, data.locale)}>
+							{proof.project.title} <span aria-hidden="true">↗</span>
+						</a>
 					</li>
 				{/each}
 			</ul>
@@ -139,8 +124,9 @@
 				href="#contact"
 				data-umami-event="contact_open"
 				data-umami-event-placement={`solution_${data.id}`}
-				>{navigation.contact} <span aria-hidden="true">↗</span></a
 			>
+				{navigation.contact} <span aria-hidden="true">↗</span>
+			</a>
 		</div>
 	</section>
 </div>
@@ -163,16 +149,16 @@
 		font-size: 1.1rem;
 		line-height: 1.7;
 		margin: -0.5rem 0 2.5rem;
-		color: #3d444a;
+		color: var(--color-text-body);
 	}
 	.method-steps {
 		list-style: decimal-leading-zero;
 		padding-left: 2rem;
-		border-bottom: 1px solid #bbb8b2;
+		border-bottom: 1px solid var(--color-line-warm-strong);
 	}
 	.method-steps li {
 		padding: 1.5rem 0 1.5rem 1rem;
-		border-top: 1px solid #bbb8b2;
+		border-top: 1px solid var(--color-line-warm-strong);
 	}
 	.method-steps h3 {
 		font-size: 1.25rem;
@@ -182,14 +168,14 @@
 	.method-steps p {
 		max-width: 75ch;
 		line-height: 1.7;
-		color: #3d444a;
+		color: var(--color-text-body);
 	}
 	.method-note {
 		max-width: 85ch;
 		margin-top: 2rem;
 		font-size: 0.95rem;
 		line-height: 1.7;
-		color: #3d444a;
+		color: var(--color-text-body);
 	}
 	.delivery {
 		display: grid;
@@ -206,10 +192,10 @@
 	}
 	.proofs li {
 		padding: 1.3rem 0;
-		border-top: 1px solid #d8ddde;
+		border-top: 1px solid var(--color-line-cool-soft);
 	}
 	.proofs li:last-child {
-		border-bottom: 1px solid #d8ddde;
+		border-bottom: 1px solid var(--color-line-cool-soft);
 	}
 	.proofs p {
 		line-height: 1.65;
@@ -225,10 +211,10 @@
 		margin-top: 1.2rem;
 		font-size: 0.9rem;
 		line-height: 1.6;
-		color: #53616a;
+		color: var(--color-text-slate-muted);
 	}
 	a:focus-visible {
-		outline: 2px solid #9a6405;
+		outline: 2px solid var(--color-accent-text);
 		outline-offset: 5px;
 	}
 	.editorial-hero a:focus-visible {

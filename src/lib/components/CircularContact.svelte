@@ -1,7 +1,12 @@
 <script lang="ts">
+	import ContactLink from '#lib/components/ContactLink.svelte';
 	import type { LocaleData } from '#lib/data.ts';
-	export let content: Pick<LocaleData['CircularEconomy'], 'ctaText' | 'ctaButton'>;
-	export let eventPlacement = 'circular_contact';
+	interface Props {
+		content: Pick<LocaleData['CircularEconomy'], 'ctaText' | 'ctaButton'>;
+		eventPlacement?: string;
+	}
+
+	let { content, eventPlacement = 'circular_contact' }: Props = $props();
 </script>
 
 <section class="ce-section ce-contact">
@@ -10,13 +15,8 @@
 			<p class="ce-eyebrow">FDTI</p>
 			<p class="ce-contact-copy">{content.ctaText}</p>
 		</div>
-		<a
-			class="ce-button"
-			href="#contact"
-			data-umami-event="contact_open"
-			data-umami-event-placement={eventPlacement}
-		>
+		<ContactLink class="ce-button" placement={eventPlacement}>
 			{content.ctaButton}<span aria-hidden="true">↗</span>
-		</a>
+		</ContactLink>
 	</div>
 </section>

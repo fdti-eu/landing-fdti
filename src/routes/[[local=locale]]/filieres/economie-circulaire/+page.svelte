@@ -1,22 +1,16 @@
 <script lang="ts">
-	import { MetaTags } from 'svelte-meta-tags';
+	import PageSeo from '#lib/components/PageSeo.svelte';
 	import { expertiseOffers, offerPaths } from '#lib/expertise-offers.ts';
 	import { navigationCopy } from '#lib/navigation.ts';
 	import ExpertiseHub, { type ExpertiseHubContent } from '#lib/components/ExpertiseHub.svelte';
-	import LdTag from '#lib/components/json-ld/LDTag.svelte';
 	import { schema } from '#lib/components/json-ld/json-ld.ts';
-	import {
-		absoluteImageUrl,
-		buildLocalizedPath,
-		buildLocalizedUrl,
-		SOCIAL_IMAGE_PATH
-	} from '#lib/functions/seo.ts';
+	import { buildLocalizedPath, buildLocalizedUrl } from '#lib/functions/seo.ts';
 	import type { Lang } from '#lib/data.ts';
 	import type { PageData } from './$types';
 
-	export let data: PageData;
-	$: content = data.content;
-	$: canonical = buildLocalizedUrl('/filieres/economie-circulaire', data.locale);
+	let { data }: { data: PageData } = $props();
+	const content = $derived(data.content);
+	const canonical = $derived(buildLocalizedUrl('/filieres/economie-circulaire', data.locale));
 	const workSlugs: Record<'2' | '3' | '8', Record<Lang, string>> = {
 		'2': {
 			fr: 'plateforme-economie-circulaire',
@@ -86,8 +80,8 @@
 			marketplace: 'Marketplace di batterie'
 		}
 	};
-	$: common = commonCopy[data.locale];
-	$: pageCopy =
+	const common = $derived(commonCopy[data.locale]);
+	const pageCopy = $derived(
 		data.locale === 'fr'
 			? {
 					journeyLabel: 'Flux métiers couverts',
@@ -219,8 +213,9 @@
 								integrationText:
 									'Waste codes, diagnostics, tracking forms, signatures, price proposals and status changes remain attached to the business record. APIs and notifications let partners keep their own tools without creating another re-entry chain.',
 								faqLabel: 'Frequently asked questions'
-							};
-	$: workflowItems = [
+							}
+	);
+	const workflowItems = $derived([
 		...content.dossiers[0].sections.map((section) => ({
 			...section,
 			group: content.dossiers[0].label
@@ -246,16 +241,17 @@
 		...content.dossiers[2].sections
 			.filter((section) => ['bsd', 'connexions'].includes(section.id))
 			.map((section) => ({ ...section, group: content.dossiers[2].label }))
-	];
-	$: proofLink = {
-		fr: 'Découvrir le projet',
-		en: 'Explore the project',
-		es: 'Descubrir el proyecto',
-		de: 'Projekt entdecken',
-		it: 'Scoprite il progetto'
-	}[data.locale];
-	let hub: ExpertiseHubContent;
-	$: hub = {
+	]);
+	const proofLink = $derived(
+		{
+			fr: 'Découvrir le projet',
+			en: 'Explore the project',
+			es: 'Descubrir el proyecto',
+			de: 'Projekt entdecken',
+			it: 'Scoprite il progetto'
+		}[data.locale]
+	);
+	const hub: ExpertiseHubContent = $derived({
 		...content,
 		title: common.heroTitle,
 		journeyLabel: pageCopy.journeyLabel,
@@ -318,8 +314,8 @@
 			text: pageCopy.integrationText
 		},
 		faqLabel: pageCopy.faqLabel
-	};
-	$: imageAlt =
+	});
+	const imageAlt = $derived(
 		data.locale === 'fr'
 			? 'FDTI - IA, code et données'
 			: data.locale === 'es'
@@ -328,26 +324,17 @@
 					? 'FDTI - KI, Code und Daten'
 					: data.locale === 'it'
 						? 'FDTI - IA, codice e dati'
-						: 'FDTI - AI, code and data';
+						: 'FDTI - AI, code and data'
+	);
 </script>
 
-<MetaTags
+<PageSeo
 	title={content.metaTitle}
 	description={content.metaDescription}
 	{canonical}
-	openGraph={{
-		type: 'website',
-		url: canonical,
-		title: content.metaTitle,
-		description: content.metaDescription,
-		siteName: 'FDTI',
-		images: [{ url: absoluteImageUrl(SOCIAL_IMAGE_PATH), alt: imageAlt }]
-	}}
-/>
-
-<svelte:head>
-	<LdTag
-		schema={schema('BreadcrumbList', {
+	{imageAlt}
+	structuredData={[
+		schema('BreadcrumbList', {
 			name: content.metaTitle,
 			description: content.metaDescription,
 			url: canonical,
@@ -371,10 +358,8 @@
 					item: canonical
 				}
 			]
-		})}
-	/>
-	<LdTag
-		schema={schema('FAQPage', {
+		}),
+		schema('FAQPage', {
 			name: content.metaTitle,
 			description: content.metaDescription,
 			url: canonical,
@@ -386,8 +371,8 @@
 					text: faq.answer
 				}
 			}))
-		})}
-	/>
-</svelte:head>
+		})
+	]}
+/>
 
 <ExpertiseHub content={hub} eventPrefix="circular" hubTransitionName="expertise-hub-circular" />

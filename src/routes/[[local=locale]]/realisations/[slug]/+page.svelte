@@ -1,7 +1,8 @@
 <script lang="ts">
 	import CaseIndicators from '#lib/components/CaseIndicators.svelte';
-	import { MetaTags } from 'svelte-meta-tags';
-	import LdTag from '#lib/components/json-ld/LDTag.svelte';
+	import { resolve } from '$app/paths';
+	import type { PathnameWithSearchOrHash } from '$app/types';
+	import PageSeo from '#lib/components/PageSeo.svelte';
 	import { schema } from '#lib/components/json-ld/json-ld.ts';
 	import type { Lang } from '#lib/data.ts';
 	import {
@@ -12,41 +13,44 @@
 	} from '#lib/functions/seo.ts';
 	import { browser } from '$app/env';
 
-	export let data:
-		| {
-				content: {
-					status?: string | null;
-					title?: string | null;
-					subtitle?: string | null;
-					description?: string | null;
-					cta?: {
-						label?: string | null;
+	interface Props {
+		data:
+			| {
+					content: {
+						status?: string | null;
+						title?: string | null;
+						subtitle?: string | null;
 						description?: string | null;
-						button?: string | null;
-						link?: string | null;
+						cta?: {
+							label?: string | null;
+							description?: string | null;
+							button?: string | null;
+							link?: string | null;
+						} | null;
 					} | null;
-				} | null;
-				useCase: {
-					id?: string | null;
-					category?: string | null;
-					title?: string | null;
-					slug?: string | null;
-					date?: string | null;
-					location?: string | null;
-					challenge?: string | null;
-					approach?: string | null;
-					impact?: string | null;
+					useCase: {
+						id?: string | null;
+						category?: string | null;
+						title?: string | null;
+						slug?: string | null;
+						date?: string | null;
+						location?: string | null;
+						challenge?: string | null;
+						approach?: string | null;
+						impact?: string | null;
 
-					metrics?: { label?: string | null; value?: string | null; note?: string | null }[];
-					links?: { label?: string | null; url?: string | null }[];
-					tags?: string[];
-					details?: string[];
-				} | null;
-				locale?: Lang;
-				relatedGuides?: { href: string; label: string; summary: string }[];
-				relatedGuidesLabel?: string;
-		  }
-		| undefined;
+						metrics?: { label?: string | null; value?: string | null; note?: string | null }[];
+						links?: { label?: string | null; url?: string | null }[];
+						tags?: string[];
+						details?: string[];
+					} | null;
+					locale?: Lang;
+					relatedGuides?: { href: string; label: string; summary: string }[];
+					relatedGuidesLabel?: string;
+			  }
+			| undefined;
+	}
+	let { data }: Props = $props();
 	type UseCaseSeo = { title?: string; description: string };
 	const useCaseSeo: Partial<Record<Lang, Record<string, UseCaseSeo>>> = {
 		fr: {
@@ -187,11 +191,11 @@
 		}
 	};
 
-	$: content = data?.content || null;
-	$: useCase = data?.useCase || null;
-	$: currentLocale = data?.locale || 'fr';
-	$: seo = useCase?.id ? useCaseSeo[currentLocale]?.[useCase.id] : undefined;
-	$: labels =
+	const content = $derived(data?.content || null);
+	const useCase = $derived(data?.useCase || null);
+	const currentLocale = $derived(data?.locale || 'fr');
+	const seo = $derived(useCase?.id ? useCaseSeo[currentLocale]?.[useCase.id] : undefined);
+	const labels = $derived(
 		currentLocale === 'fr'
 			? {
 					context: 'Situation de départ',
@@ -240,27 +244,33 @@
 								delivered: 'Workflow',
 								back: 'Work',
 								home: 'Home'
-							};
+							}
+	);
 
-	$: metatags = {
+	const metatags = $derived({
 		title: seo?.title ?? (useCase?.title ? `${useCase.title} | FDTI` : 'FDTI'),
 		description: seo?.description || useCase?.challenge || useCase?.impact || '',
 		url: useCase?.slug ? `/realisations/${useCase.slug}` : '/realisations',
 		img: SOCIAL_IMAGE_PATH
-	};
-	$: canonicalUrl = buildLocalizedUrl(metatags.url || '/realisations', currentLocale);
-	$: ogImage = absoluteImageUrl(metatags.img);
-	$: twitterImage = absoluteImageUrl(SOCIAL_IMAGE_PATH);
+	});
+	const canonicalUrl = $derived(buildLocalizedUrl(metatags.url || '/realisations', currentLocale));
+	const ogImage = $derived(absoluteImageUrl(metatags.img));
 
 	import { beforeNavigate } from '$app/navigation';
 	import { page } from '$app/state';
 
-	let enableViewTransition = true;
+	let enableViewTransition = $state(true);
 
-	$: cameFromHome = browser && new URLSearchParams(window.location.search).get('from') === 'home';
-	$: backHref = cameFromHome
-		? `${buildLocalizedPath('/', currentLocale)}#use-cases-preview`
-		: buildLocalizedPath('/realisations', currentLocale);
+	const cameFromHome = $derived(
+		browser && new URLSearchParams(window.location.search).get('from') === 'home'
+	);
+	const backHref = $derived(
+		cameFromHome
+			? resolve(
+					`${currentLocale === 'fr' ? '' : currentLocale}#use-cases-preview` as PathnameWithSearchOrHash
+				)
+			: buildLocalizedPath('/realisations', currentLocale)
+	);
 
 	type CaseNavigationState = { caseOrigin?: 'home' | 'list' };
 
@@ -291,7 +301,7 @@
 
 	// Fonction pour générer un dégradé subtil basé sur l'ID du cas d'usage (pour avoir une couleur stable mais "aléatoire")
 	function getIndustryGradient(id: string | null | undefined) {
-		if (!id) return 'bg-gradient-to-br from-darkGrey to-slate-900';
+		if (!id) return 'bg-gradient-to-br from-dark-grey to-slate-900';
 
 		// Hash simple de l'ID
 		const hash = id.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
@@ -307,38 +317,15 @@
 	}
 </script>
 
-
-{#if metatags}
-	<MetaTags
-		title={metatags.title}
-		description={metatags.description}
-		canonical={canonicalUrl}
-		openGraph={{
-			type: 'article',
-			url: canonicalUrl,
-			title: metatags.title,
-			description: metatags.description,
-			images: [
-				{
-					url: ogImage,
-					alt: metatags.description
-				}
-			],
-			siteName: 'FDTI'
-		}}
-		twitter={{
-			cardType: 'summary_large_image',
-			title: metatags.title,
-			description: metatags.description,
-			image: twitterImage,
-			imageAlt: metatags.description
-		}}
-	/>
-{/if}
-
-<svelte:head>
-	<LdTag
-		schema={schema('Article', {
+<PageSeo
+	title={metatags.title}
+	description={metatags.description}
+	canonical={canonicalUrl}
+	type="article"
+	image={ogImage}
+	twitter
+	structuredData={[
+		schema('Article', {
 			name: metatags.title,
 			headline: useCase?.title || metatags.title,
 			description: metatags.description,
@@ -347,10 +334,8 @@
 			inLanguage: currentLocale,
 			articleSection: useCase?.category,
 			mainEntityOfPage: canonicalUrl
-		})}
-	/>
-	<LdTag
-		schema={schema('BreadcrumbList', {
+		}),
+		schema('BreadcrumbList', {
 			name: metatags.title,
 			description: metatags.description,
 			url: canonicalUrl,
@@ -374,9 +359,9 @@
 					item: canonicalUrl
 				}
 			]
-		})}
-	/>
-</svelte:head>
+		})
+	]}
+/>
 
 {#if useCase}
 	<section
@@ -387,15 +372,15 @@
 		<!-- Motif subtil en fond -->
 		<div
 			class="absolute inset-0 opacity-10"
-			style="background-image: radial-gradient(#ffffff 1px, transparent 1px); background-size: 30px 30px;"
+			style="background-image: radial-gradient(var(--color-white) 1px, transparent 1px); background-size: 30px 30px;"
 		></div>
 
 		<div class="max-w-5xl mx-auto px-4 space-y-6 w-full relative z-10">
 			<div>
 				<a
 					href={backHref}
-					class="inline-flex items-center gap-2 text-base font-semibold text-white bg-white/10 hover:bg-yellow hover:text-darkGrey px-6 py-3 rounded-full transition-all duration-300 border border-white/20 backdrop-blur-sm"
-					on:click={handleBackClick}
+					class="inline-flex items-center gap-2 text-base font-semibold text-white bg-white/10 hover:bg-yellow hover:text-dark-grey px-6 py-3 rounded-full transition-all duration-300 border border-white/20 backdrop-blur-sm"
+					onclick={handleBackClick}
 				>
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
@@ -493,12 +478,12 @@
 						{#if useCase.challenge}
 							<div class="relative pl-4 border-l-4 border-yellow/50">
 								<h2
-									class="text-lg sm:text-xl font-bold text-darkGrey mb-2 sm:mb-3 uppercase tracking-wide"
+									class="text-lg sm:text-xl font-bold text-dark-grey mb-2 sm:mb-3 uppercase tracking-wide"
 								>
 									{labels.context}
 								</h2>
 								<p
-									class="text-base sm:text-lg text-darkGrey leading-relaxed font-medium"
+									class="text-base sm:text-lg text-dark-grey leading-relaxed font-medium"
 									style={enableViewTransition
 										? `view-transition-name: challenge-${useCase.id};`
 										: ''}
@@ -509,11 +494,13 @@
 						{/if}
 						{#if useCase.approach}
 							<div>
-								<h2 class="text-lg sm:text-xl font-bold text-darkGrey mb-3 flex items-center gap-2">
+								<h2
+									class="text-lg sm:text-xl font-bold text-dark-grey mb-3 flex items-center gap-2"
+								>
 									<span class="w-2 h-2 rounded-full bg-yellow"></span>
 									{labels.approach}
 								</h2>
-								<p class="text-sm sm:text-base text-darkGrey/80 leading-relaxed">
+								<p class="text-sm sm:text-base text-dark-grey/80 leading-relaxed">
 									{useCase.approach}
 								</p>
 							</div>
@@ -522,13 +509,13 @@
 							<div
 								class="case-delivered bg-white rounded-2xl shadow-md p-4 sm:p-6 md:p-8 space-y-3"
 							>
-								<h2 class="text-lg sm:text-xl font-bold text-darkGrey mb-3 sm:mb-4">
+								<h2 class="text-lg sm:text-xl font-bold text-dark-grey mb-3 sm:mb-4">
 									{labels.delivered}
 								</h2>
 								<ul
-									class="list-disc pl-4 sm:pl-5 space-y-2 text-sm sm:text-base text-darkGrey leading-relaxed"
+									class="list-disc pl-4 sm:pl-5 space-y-2 text-sm sm:text-base text-dark-grey leading-relaxed"
 								>
-									{#each useCase.details as detail}
+									{#each useCase.details as detail, detailIndex (detailIndex)}
 										<li>{detail}</li>
 									{/each}
 								</ul>
@@ -536,11 +523,13 @@
 						{/if}
 						{#if useCase.impact}
 							<div>
-								<h2 class="text-lg sm:text-xl font-bold text-darkGrey mb-3 flex items-center gap-2">
+								<h2
+									class="text-lg sm:text-xl font-bold text-dark-grey mb-3 flex items-center gap-2"
+								>
 									<span class="w-2 h-2 rounded-full bg-green-500"></span>
 									{labels.impact}
 								</h2>
-								<p class="text-sm sm:text-base text-darkGrey/80 leading-relaxed">
+								<p class="text-sm sm:text-base text-dark-grey/80 leading-relaxed">
 									{useCase.impact}
 								</p>
 							</div>
@@ -553,7 +542,7 @@
 							<CaseIndicators metrics={useCase.metrics} />
 						{:else if useCase.metrics?.length}
 							<div class="space-y-3 sm:space-y-4">
-								{#each useCase.metrics as metric, index}
+								{#each useCase.metrics as metric, index (metric)}
 									<div
 										class="bg-linear-to-br from-slate-50 to-slate-100 rounded-xl p-4 sm:p-5 border border-slate-200 hover:shadow-md transition-shadow"
 										style={enableViewTransition
@@ -561,11 +550,11 @@
 											: ''}
 									>
 										<p
-											class="text-xs sm:text-sm font-medium text-darkGrey/70 uppercase tracking-wider"
+											class="text-xs sm:text-sm font-medium text-dark-grey/70 uppercase tracking-wider"
 										>
 											{metric?.label}
 										</p>
-										<p class="text-xl sm:text-2xl font-bold text-darkGrey mt-1 sm:mt-2">
+										<p class="text-xl sm:text-2xl font-bold text-dark-grey mt-1 sm:mt-2">
 											{metric?.value}
 										</p>
 									</div>
@@ -575,9 +564,9 @@
 
 						{#if useCase.tags?.length}
 							<div class="flex flex-wrap gap-2">
-								{#each useCase.tags as tag, index}
+								{#each useCase.tags as tag, index (index)}
 									<span
-										class="px-3 py-1.5 rounded-full bg-slate-100 text-xs sm:text-sm font-medium text-darkGrey border border-slate-200 transition-transform hover:scale-105"
+										class="px-3 py-1.5 rounded-full bg-slate-100 text-xs sm:text-sm font-medium text-dark-grey border border-slate-200 transition-transform hover:scale-105"
 										style={enableViewTransition
 											? `view-transition-name: tag-${index}-${useCase.id};`
 											: ''}
@@ -590,13 +579,13 @@
 
 						{#if useCase.links?.length}
 							<div class="space-y-2">
-								{#each useCase.links as link}
+								{#each useCase.links as link (link)}
 									{#if link?.url}
 										<a
 											href={link.url}
 											target="_blank"
-											rel="noreferrer"
-											class="block rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm font-semibold text-darkGrey hover:border-yellow hover:shadow-md transition"
+											rel="noreferrer external"
+											class="block rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm font-semibold text-dark-grey hover:border-yellow hover:shadow-md transition"
 										>
 											{link.label || link.url}
 										</a>
@@ -613,14 +602,14 @@
 					aria-labelledby="related-guides-title"
 					class="bg-white rounded-2xl shadow-md p-4 sm:p-6 md:p-8 space-y-4"
 				>
-					<h2 id="related-guides-title" class="text-lg sm:text-xl font-bold text-darkGrey">
+					<h2 id="related-guides-title" class="text-lg sm:text-xl font-bold text-dark-grey">
 						{data.relatedGuidesLabel}
 					</h2>
 					<div class="grid gap-4 sm:grid-cols-2">
-						{#each data.relatedGuides as guide}
+						{#each data.relatedGuides as guide (guide.href)}
 							<a
-								href={guide.href}
-								class="block rounded-xl border border-slate-200 px-4 py-3 text-darkGrey hover:border-yellow hover:shadow-md transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-darkGrey"
+								href={resolve(guide.href.slice(1) as PathnameWithSearchOrHash)}
+								class="block rounded-xl border border-slate-200 px-4 py-3 text-dark-grey hover:border-yellow hover:shadow-md transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-dark-grey"
 							>
 								<span class="block font-semibold">{guide.label}</span>
 								<span class="block mt-2 text-sm leading-relaxed">{guide.summary}</span>
@@ -637,8 +626,8 @@
 						aria-hidden="true"
 					></span>
 					<div
-						class="case-cta relative rounded-3xl border border-yellow/30 bg-darkGrey text-white shadow-2xl p-6 sm:p-8 md:p-10 lg:p-12 flex flex-col md:flex-row md:items-center md:justify-between gap-6 sm:gap-8"
-						style="box-shadow: 0 0 65px 10px rgba(251, 210, 67, 0.25);"
+						class="case-cta relative rounded-3xl border border-yellow/30 bg-dark-grey text-white shadow-2xl p-6 sm:p-8 md:p-10 lg:p-12 flex flex-col md:flex-row md:items-center md:justify-between gap-6 sm:gap-8"
+						style="box-shadow: 0 0 65px 10px var(--color-accent-highlight);"
 					>
 						<div class="relative z-10">
 							<p
@@ -658,7 +647,7 @@
 								data-umami-event="contact_open"
 								data-umami-event-placement="realisation_detail"
 								data-umami-event-realisation={useCase.slug}
-								class="relative z-10 inline-flex w-full md:w-auto items-center justify-center px-10 py-4 rounded-full bg-yellow text-darkGrey font-semibold text-center tracking-wide border border-yellow/50 hover:bg-yellow/80 transition-colors"
+								class="relative z-10 inline-flex w-full md:w-auto items-center justify-center px-10 py-4 rounded-full bg-yellow text-dark-grey font-semibold text-center tracking-wide border border-yellow/50 hover:bg-yellow/80 transition-colors"
 							>
 								{content.cta.button}
 							</a>

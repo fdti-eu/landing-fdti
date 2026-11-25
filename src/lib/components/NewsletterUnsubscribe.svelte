@@ -1,19 +1,21 @@
 <script lang="ts">
 	import { onMount, onDestroy } from 'svelte';
 	import { resolveNewsletterEndpoint } from '#lib/contact.ts';
+	import { resolve } from '$app/paths';
 	let token = '';
-	let state: 'loading' | 'ready' | 'pending' | 'success' | 'invalid' | 'error' = 'loading';
+	type SubmissionState = 'loading' | 'ready' | 'pending' | 'success' | 'invalid' | 'error';
+	let submissionState = $state<SubmissionState>('loading');
 	let controller: AbortController | undefined;
 	onMount(() => {
 		token = window.location.hash.slice(1);
 		window.history.replaceState(null, '', window.location.pathname);
-		state = /^[A-Za-z0-9_-]{43}$/.test(token) ? 'ready' : 'invalid';
+		submissionState = /^[A-Za-z0-9_-]{43}$/.test(token) ? 'ready' : 'invalid';
 	});
 	onDestroy(() => controller?.abort());
 
 	async function submit() {
-		if (state !== 'ready' && state !== 'error') return;
-		state = 'pending';
+		if (submissionState !== 'ready' && submissionState !== 'error') return;
+		submissionState = 'pending';
 		controller = new AbortController();
 		const timeout = setTimeout(() => controller?.abort(), 10000);
 		try {
@@ -27,14 +29,14 @@
 				}
 			);
 			if (response.status === 422) {
-				state = 'invalid';
+				submissionState = 'invalid';
 				return;
 			}
 			if (!response.ok) throw new Error('Unavailable');
-			state = 'success';
+			submissionState = 'success';
 			token = '';
 		} catch {
-			state = 'error';
+			submissionState = 'error';
 		} finally {
 			clearTimeout(timeout);
 		}
@@ -50,26 +52,26 @@
 <section class="newsletter-action" aria-labelledby="newsletter-action-title">
 	<p class="eyebrow">NEWSLETTER FDTI</p>
 	<h1 id="newsletter-action-title">
-		{state === 'success' ? 'Vous êtes désinscrit.' : 'Vous souhaitez vous désinscrire ?'}
+		{submissionState === 'success' ? 'Vous êtes désinscrit.' : 'Vous souhaitez vous désinscrire ?'}
 	</h1>
 	<div aria-live="polite">
-		{#if state === 'loading'}<p>Chargement…</p>
-		{:else if state === 'invalid'}<p>
+		{#if submissionState === 'loading'}<p>Chargement…</p>
+		{:else if submissionState === 'invalid'}<p>
 				Ce lien de désinscription est invalide. Utilisez le lien du dernier email reçu ou
 				contactez-nous à info@fdti.eu.
 			</p>
-		{:else if state === 'success'}<p>Vous ne recevrez plus la newsletter FDTI.</p>
+		{:else if submissionState === 'success'}<p>Vous ne recevrez plus la newsletter FDTI.</p>
 		{:else}
 			<p>Votre adresse sera retirée de la liste de diffusion.</p>
-			<button type="button" onclick={submit} disabled={state === 'pending'}
-				>{state === 'pending' ? 'Un instant…' : 'Me désinscrire'}</button
-			>
-			{#if state === 'error'}<p role="alert">
+			<button type="button" onclick={submit} disabled={submissionState === 'pending'}>
+				{submissionState === 'pending' ? 'Un instant…' : 'Me désinscrire'}
+			</button>
+			{#if submissionState === 'error'}<p role="alert">
 					Le service est indisponible. Vous pouvez réessayer.
 				</p>{/if}
 		{/if}
 	</div>
-	<a href="/#contact">Retour au site FDTI</a>
+	<a href={resolve('/[[local=locale]]/(home)#contact', {})}>Retour au site FDTI</a>
 </section>
 
 <style>
@@ -94,13 +96,13 @@
 		font-size: 16px;
 		line-height: 1.7;
 		margin-top: 20px;
-		color: #5c6264;
+		color: var(--color-text-muted);
 	}
 	button {
 		margin-top: 26px;
 		padding: 15px 22px;
-		background: #1d2024;
-		color: white;
+		background: var(--color-dark-grey);
+		color: var(--color-white);
 		border-radius: 3px;
 		font-size: 15px;
 	}
@@ -116,7 +118,7 @@
 	}
 	button:focus-visible,
 	a:focus-visible {
-		outline: 2px solid #1d2024;
+		outline: 2px solid var(--color-dark-grey);
 		outline-offset: 4px;
 	}
 </style>

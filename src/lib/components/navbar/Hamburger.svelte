@@ -1,5 +1,9 @@
 <script lang="ts">
-	export let isOpen = false;
+	interface Props {
+		isOpen?: boolean;
+	}
+
+	let { isOpen = false }: Props = $props();
 </script>
 
 <div class="w-6 aspect-square flex flex-col justify-around relative">

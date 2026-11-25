@@ -2,7 +2,7 @@
 	import ExpertiseOffer from '#lib/components/ExpertiseOffer.svelte';
 	import PackagingExpertise from '#lib/components/PackagingExpertise.svelte';
 	import type { PageData } from './$types';
-	export let data: PageData;
+	let { data }: { data: PageData } = $props();
 </script>
 
 {#if data.locale === 'fr'}

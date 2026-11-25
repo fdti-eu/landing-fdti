@@ -1,26 +1,20 @@
 <script lang="ts">
-	import { MetaTags } from 'svelte-meta-tags';
+	import PageSeo from '#lib/components/PageSeo.svelte';
 	import ExpertiseHub, { type ExpertiseHubContent } from '#lib/components/ExpertiseHub.svelte';
-	import LdTag from '#lib/components/json-ld/LDTag.svelte';
 	import SolutionFamilyNav from '#lib/components/solutions/SolutionFamilyNav.svelte';
 	import SolutionOptions from '#lib/components/solutions/SolutionOptions.svelte';
 	import SolutionPractices from '#lib/components/solutions/SolutionPractices.svelte';
 	import { solutionPages } from '#lib/solution-pages.ts';
 	import { schema } from '#lib/components/json-ld/json-ld.ts';
-	import {
-		absoluteImageUrl,
-		buildLocalizedPath,
-		buildLocalizedUrl,
-		SOCIAL_IMAGE_PATH
-	} from '#lib/functions/seo.ts';
+	import { buildLocalizedPath, buildLocalizedUrl } from '#lib/functions/seo.ts';
 	import type { Lang } from '#lib/data.ts';
 	import type { PageData } from './$types';
 
-	export let data: PageData;
-	$: content = data.content;
-	$: canonical = buildLocalizedUrl('/solutions/analyse-documentaire', data.locale);
+	let { data }: { data: PageData } = $props();
+	const content = $derived(data.content);
+	const canonical = $derived(buildLocalizedUrl('/solutions/analyse-documentaire', data.locale));
 	// This page also serves the "AI & document processing" solution family.
-	$: family = solutionPages[data.locale];
+	const family = $derived(solutionPages[data.locale]);
 	const labels: Record<
 		Lang,
 		{
@@ -79,8 +73,8 @@
 			imageAlt: 'FDTI - IA, codice e dati'
 		}
 	};
-	$: copy = labels[data.locale];
-	$: hub = {
+	const copy = $derived(labels[data.locale]);
+	const hub = $derived({
 		...content,
 		journeyLabel: copy.journey,
 		workflows: content.guides.flatMap((guide) =>
@@ -103,26 +97,16 @@
 		})),
 		proofNote: content.evidenceNote,
 		faqLabel: copy.faq
-	} satisfies ExpertiseHubContent;
+	} satisfies ExpertiseHubContent);
 </script>
 
-<MetaTags
+<PageSeo
 	title={content.metaTitle}
 	description={content.metaDescription}
 	{canonical}
-	openGraph={{
-		type: 'website',
-		url: canonical,
-		title: content.metaTitle,
-		description: content.metaDescription,
-		siteName: 'FDTI',
-		images: [{ url: absoluteImageUrl(SOCIAL_IMAGE_PATH), alt: copy.imageAlt }]
-	}}
-/>
-
-<svelte:head>
-	<LdTag
-		schema={schema('BreadcrumbList', {
+	imageAlt={copy.imageAlt}
+	structuredData={[
+		schema('BreadcrumbList', {
 			name: content.metaTitle,
 			description: content.metaDescription,
 			url: canonical,
@@ -146,10 +130,8 @@
 					item: canonical
 				}
 			]
-		})}
-	/>
-	<LdTag
-		schema={schema('FAQPage', {
+		}),
+		schema('FAQPage', {
 			name: content.metaTitle,
 			description: content.metaDescription,
 			url: canonical,
@@ -161,16 +143,16 @@
 					text: faq.answer
 				}
 			}))
-		})}
-	/>
-</svelte:head>
+		})
+	]}
+/>
 
 <ExpertiseHub
 	content={hub}
 	eventPrefix="document_analysis"
 	hubTransitionName="expertise-hub-document-analysis"
 >
-	<svelte:fragment slot="before-faq">
+	{#snippet beforeFaq()}
 		{#if family}
 			<SolutionOptions
 				title={family.optionsTitle}
@@ -180,8 +162,8 @@
 				options={family.documents.options}
 			/>
 		{/if}
-	</svelte:fragment>
-	<svelte:fragment slot="before-contact">
+	{/snippet}
+	{#snippet beforeContact()}
 		{#if family}
 			<SolutionPractices title={family.practicesTitle} practices={family.practices} />
 			<SolutionFamilyNav
@@ -190,5 +172,5 @@
 				current="ia-documents"
 			/>
 		{/if}
-	</svelte:fragment>
+	{/snippet}
 </ExpertiseHub>

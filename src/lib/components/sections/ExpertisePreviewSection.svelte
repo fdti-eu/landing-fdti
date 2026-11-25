@@ -1,10 +1,15 @@
 <script lang="ts">
+	import Card from '#lib/components/Card.svelte';
 	import type { Lang } from '#lib/data.ts';
 	import { buildLocalizedPath } from '#lib/functions/seo.ts';
 
-	export let locale: Lang = 'fr';
+	interface Props {
+		locale?: Lang;
+	}
 
-	$: content =
+	let { locale = 'fr' }: Props = $props();
+
+	const content = $derived(
 		locale === 'fr'
 			? {
 					label: 'Expérience métier',
@@ -118,7 +123,8 @@
 									}
 								],
 								all: 'Explore all our expertise'
-							};
+							}
+	);
 </script>
 
 <section class="expertise-preview-section">
@@ -126,20 +132,20 @@
 		<div><h2>{content.label}</h2></div>
 	</div>
 	<div class="expertise-preview-grid">
-		{#each content.items as item, index}
+		{#each content.items as item, index (item.title)}
 			{#if item.href && item.link}
-				<a href={item.href}>
+				<Card href={item.href}>
 					<span aria-hidden="true">0{index + 1}</span>
 					<h3>{item.title}</h3>
 					<p>{item.text}</p>
 					<strong>{item.link}<span aria-hidden="true"> ↗</span></strong>
-				</a>
+				</Card>
 			{:else}
-				<article>
+				<Card>
 					<span aria-hidden="true">0{index + 1}</span>
 					<h3>{item.title}</h3>
 					<p>{item.text}</p>
-				</article>
+				</Card>
 			{/if}
 		{/each}
 	</div>

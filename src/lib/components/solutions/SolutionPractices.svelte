@@ -1,13 +1,17 @@
 <script lang="ts">
-	export let title: string;
-	export let practices: { title: string; text: string }[];
+	interface Props {
+		title: string;
+		practices: { title: string; text: string }[];
+	}
+
+	let { title, practices }: Props = $props();
 </script>
 
 <section class="editorial-section solution-practices" aria-labelledby="solution-practices">
 	<div class="editorial-shell">
 		<h2 id="solution-practices">{title}</h2>
 		<div class="practice-grid">
-			{#each practices as practice}
+			{#each practices as practice (practice)}
 				<article>
 					<h3>{practice.title}</h3>
 					<p>{practice.text}</p>
@@ -19,8 +23,8 @@
 
 <style>
 	.solution-practices {
-		background: #242a2e;
-		color: white;
+		background: var(--color-surface-deep);
+		color: var(--color-white);
 	}
 	.solution-practices h2 {
 		font-size: clamp(1.6rem, 2.8vw, 2.4rem);
@@ -35,7 +39,7 @@
 		gap: 2.5rem;
 	}
 	.practice-grid article {
-		border-top: 1px solid #5b6268;
+		border-top: 1px solid var(--color-line-practice);
 		padding-top: 1.3rem;
 	}
 	.solution-practices .practice-grid h3 {
@@ -50,7 +54,7 @@
 	.practice-grid p {
 		font-size: 0.95rem;
 		line-height: 1.65;
-		color: #d2d6d9;
+		color: var(--color-text-on-dark);
 	}
 	@media (max-width: 1000px) {
 		.practice-grid {

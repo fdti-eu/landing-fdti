@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { resolve } from '$app/paths';
+	import type { PathnameWithSearchOrHash } from '$app/types';
 	import { locale } from '#lib/i18n/index.ts';
 	import { page } from '$app/state';
 	import { isSupportedLocale, type Lang } from '#lib/data.ts';
@@ -79,7 +81,11 @@
 		</p>
 		{#if !isNotFound}
 			<div class="pt-4 flex justify-center">
-				<a href={page.url.pathname + page.url.search} data-sveltekit-reload class="underline">
+				<a
+					href={resolve((page.url.pathname.slice(1) + page.url.search) as PathnameWithSearchOrHash)}
+					data-sveltekit-reload
+					class="underline"
+				>
 					{copy.reload}
 				</a>
 			</div>
@@ -89,7 +95,7 @@
 			<a
 				href={buildLocalizedPath('/', currentLocale)}
 				type="submit"
-				class="inline-flex items-center justify-center px-8 py-2 border border-transparent text-base font-bold rounded-full text-white bg-darkGrey hover:bg-white hover:text-darkGrey hover:border-darkGrey transition-all ease-in-out duration-300 gap-4"
+				class="inline-flex items-center justify-center px-8 py-2 border border-transparent text-base font-bold rounded-full text-white bg-dark-grey hover:bg-white hover:text-dark-grey hover:border-dark-grey transition-all ease-in-out duration-300 gap-4"
 			>
 				<span>{copy.back}</span><svg
 					class="w-4"

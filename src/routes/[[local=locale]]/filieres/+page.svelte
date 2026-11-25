@@ -2,18 +2,19 @@
 	import type { PageData } from './$types';
 	import { navigationCopy, sectorCopy } from '#lib/navigation.ts';
 	import { buildLocalizedPath, buildLocalizedUrl } from '#lib/functions/seo.ts';
-	import { MetaTags } from 'svelte-meta-tags';
-	export let data: PageData;
-	$: nav = navigationCopy[data.locale];
-	$: copy = sectorCopy[data.locale];
-	$: heading = nav.sectors;
-	$: description = nav.sectorIntro;
+	import PageSeo from '#lib/components/PageSeo.svelte';
+	let { data }: { data: PageData } = $props();
+	const nav = $derived(navigationCopy[data.locale]);
+	const copy = $derived(sectorCopy[data.locale]);
+	const heading = $derived(nav.sectors);
+	const description = $derived(nav.sectorIntro);
 </script>
 
-<MetaTags
+<PageSeo
 	title={`${heading} | FDTI`}
 	{description}
 	canonical={buildLocalizedUrl('/filieres', data.locale)}
+	openGraph={false}
 />
 <div class="editorial-page">
 	<header class="editorial-hero">
@@ -23,8 +24,7 @@
 		</div>
 	</header>
 	<section class="editorial-section editorial-shell">
-		{#each [[nav.circular, copy.circularIntro, 'economie-circulaire'], [copy.justice, copy.justiceIntro, 'justice']] as [name, intro, slug]}<article
-			>
+		{#each [[nav.circular, copy.circularIntro, 'economie-circulaire'], [copy.justice, copy.justiceIntro, 'justice']] as [name, intro, slug] (slug)}<article>
 				<h2><a href={buildLocalizedPath(`/filieres/${slug}`, data.locale)}>{name}</a></h2>
 				<p>{intro}</p>
 			</article>{/each}
@@ -33,7 +33,7 @@
 
 <style>
 	article {
-		border-top: 1px solid #ccc;
+		border-top: 1px solid var(--color-line-neutral);
 		padding: 1.5rem 0;
 	}
 	h2 {

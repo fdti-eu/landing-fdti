@@ -1,29 +1,28 @@
 <script lang="ts">
+	import '#lib/styles/legal.css';
 	import { fade } from 'svelte/transition';
 	import type { PageData } from './$types';
-	import { MetaTags } from 'svelte-meta-tags';
-	import LdTag from '#lib/components/json-ld/LDTag.svelte';
+	import PageSeo from '#lib/components/PageSeo.svelte';
 	import { schema } from '#lib/components/json-ld/json-ld.ts';
 	import { absoluteImageUrl, buildLocalizedUrl, SOCIAL_IMAGE_PATH } from '#lib/functions/seo.ts';
 	import type { Lang } from '#lib/data.ts';
 
-	export let data: PageData;
+	let { data }: { data: PageData } = $props();
 
-	$: ({ initialContent, initialLocale } = data);
-	$: currentLocale = initialLocale;
-	$: pageContent = initialContent;
+	const { initialContent, initialLocale } = $derived(data);
+	const currentLocale = $derived(initialLocale);
+	const pageContent = $derived(initialContent);
 
-	$: privacy = pageContent?.privacy;
-	$: metaSource = pageContent?.meta_tags?.page_tags?.[0];
-	$: metatags = {
+	const privacy = $derived(pageContent?.privacy);
+	const metaSource = $derived(pageContent?.meta_tags?.page_tags?.[0]);
+	const metatags = $derived({
 		url: metaSource?.url || '/confidentialite',
 		img: SOCIAL_IMAGE_PATH,
 		description: metaSource?.description || '',
 		title: metaSource?.title || privacy?.title || 'FDTI'
-	};
-	$: canonicalUrl = buildLocalizedUrl(metatags.url, currentLocale);
-	$: ogImage = absoluteImageUrl(metatags.img);
-	$: twitterImage = absoluteImageUrl(SOCIAL_IMAGE_PATH);
+	});
+	const canonicalUrl = $derived(buildLocalizedUrl(metatags.url, currentLocale));
+	const ogImage = $derived(absoluteImageUrl(metatags.img));
 	const contactCopy: Record<Lang, { title: string; paragraphs: string[] }> = {
 		fr: {
 			title: 'Demandes de contact',
@@ -145,50 +144,27 @@
 			]
 		}
 	};
-	$: newsletterPrivacy = newsletterCopy[currentLocale];
-	$: contact = contactCopy[currentLocale];
-	$: audience = audienceCopy[currentLocale];
+	const newsletterPrivacy = $derived(newsletterCopy[currentLocale]);
+	const contact = $derived(contactCopy[currentLocale]);
+	const audience = $derived(audienceCopy[currentLocale]);
 </script>
 
-{#if metatags}
-	<MetaTags
-		title={metatags.title}
-		description={metatags.description}
-		canonical={canonicalUrl}
-		openGraph={{
-			type: 'website',
-			url: canonicalUrl,
-			title: metatags.title,
-			description: metatags.description,
-			images: [
-				{
-					url: ogImage,
-					alt: metatags.description
-				}
-			],
-			siteName: 'FDTI'
-		}}
-		twitter={{
-			cardType: 'summary_large_image',
-			title: metatags.title,
-			description: metatags.description,
-			image: twitterImage,
-			imageAlt: metatags.description
-		}}
-	/>
-{/if}
-
-<svelte:head>
-	<LdTag
-		schema={schema('WebPage', {
+<PageSeo
+	title={metatags.title}
+	description={metatags.description}
+	canonical={canonicalUrl}
+	image={ogImage}
+	twitter
+	structuredData={[
+		schema('WebPage', {
 			name: metatags.title,
 			description: metatags.description,
 			image: ogImage,
 			url: canonicalUrl,
 			inLanguage: currentLocale
-		})}
-	/>
-</svelte:head>
+		})
+	]}
+/>
 
 <section
 	class="legal-page relative w-full max-w-[120rem] px-4 sm:px-8 lg:px-16 xl:px-24 mx-auto space-y-8 py-16 mt-20 md:py-24"
@@ -207,7 +183,9 @@
 			<p>{contact.paragraphs[1]}</p>
 			<p>{contact.paragraphs[2]}</p>
 			<h2>{newsletterPrivacy.title}</h2>
-			{#each newsletterPrivacy.paragraphs as paragraph}<p>{paragraph}</p>{/each}
+			{#each newsletterPrivacy.paragraphs as paragraph, paragraphIndex (paragraphIndex)}<p>
+					{paragraph}
+				</p>{/each}
 			<h2>{audience.title}</h2>
 			<p>{audience.paragraphs[0]}</p>
 			<p>{audience.paragraphs[1]}</p>

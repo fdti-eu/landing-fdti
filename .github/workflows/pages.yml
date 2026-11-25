@@ -2,7 +2,7 @@ name: Deploy GitHub Pages
 
 on:
   push:
-    branches: [master]
+  pull_request:
   workflow_dispatch:
 
 permissions:
@@ -14,7 +14,7 @@ env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 concurrency:
-  group: pages
+  group: pages-${{ github.ref }}
   cancel-in-progress: false
 
 jobs:
@@ -40,15 +40,20 @@ jobs:
         env:
           GITHUB_EVENT_BEFORE: ${{ github.event.before }}
 
+      - name: Lint
+        run: npm run lint
+
       - name: Build static site
         run: npm run build
 
       - name: Upload artifact
+        if: github.ref == 'refs/heads/master'
         uses: actions/upload-pages-artifact@v4
         with:
           path: build
 
   deploy:
+    if: github.ref == 'refs/heads/master' && github.event_name != 'pull_request'
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
