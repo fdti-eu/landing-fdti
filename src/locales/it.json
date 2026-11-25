@@ -1161,76 +1161,87 @@
 			{
 				"id": "3",
 				"category": "Aftermarket e riciclo",
-				"title": "Mercato delle batterie di seconda vita",
+				"title": "Un costruttore indirizza e segue ogni batteria del suo sistema EPR in Europa",
 				"date": "2024",
 				"location": "Europa",
-				"challenge": "Una casa automobilistica deve sapere cosa succede a ogni batteria a fine vita affidata alla sua rete. Un’offerta di acquisto, un ritiro e una ricezione corrispondono a momenti diversi.",
-				"approach": "Quando una batteria viene affidata a un operatore con un sistema collegato, la dichiarazione arriva direttamente nel suo gestionale. L’operatore non deve ricreare la pratica. Gli aggiornamenti trasmessi dal suo sistema compaiono nella scheda della batteria consultata dal costruttore.",
-				"impact": "Il costruttore segue la batteria dalla dichiarazione alla conferma dell’acquisto o del riciclo e usa lo storico per preparare i rendiconti previsti dalla normativa.",
+				"challenge": "Nella rete europea di un costruttore automobilistico, concessionari, centri di demolizione e stabilimenti rimuovono batterie di trazione. Ognuna deve andare verso la filiera giusta (riciclo, seconda vita, rigenerazione o restituzione al fornitore), presso un fornitore di servizi dello stesso paese, con l’imballaggio e i documenti richiesti. La regola dipende dal detentore, dal tipo di batteria, dal suo stato e dalla sua garanzia. Per mettere in conformità il proprio sistema EPR (responsabilità estesa del produttore) per le batterie, il costruttore deve poter dire, batteria per batteria, che fine ha fatto.",
+				"approach": "Abbiamo progettato, sviluppato e gestiamo la piattaforma web che sostiene il sistema EPR per le batterie del costruttore. Riunisce i detentori di batterie, i fornitori di raccolta e trattamento e i team del costruttore. Ogni batteria ha un fascicolo unico: identificazione tramite numero di veicolo o di batteria, completata dai dati di riferimento del costruttore, stato, foto, imballaggio, prezzi, documenti e storico con data e ora. Un motore di regole sceglie la destinazione e il fornitore in base al paese, al detentore, al tipo di batteria, al suo stato e alla garanzia; i casi previsti dalle regole passano per una convalida del team del costruttore. I fornitori lavorano nella piattaforma o dal proprio software, tramite API e webhook. Un marketplace mette in vendita i lotti destinati alla seconda vita. L’interfaccia è disponibile in sette lingue.",
+				"details": [
+					"Il detentore inserisce il numero del veicolo o della batteria: la piattaforma ritrova il tipo e le sue caratteristiche. Indica lo stato (verde, giallo o rosso), la carica e lo stato di salute, aggiunge le foto richieste e l’imballaggio. Per un lotto importa un file Excel; le righe respinte tornano annotate.",
+					"Il motore di indirizzamento applica gli scenari del costruttore: rifiuto o prodotto, destinazione, fornitore del paese, ripartizione dei costi. Una batteria il cui codice è soggetto a cauzione va alla rigenerazione. Quando lo scenario lo richiede, il team del costruttore convalida, chiede una correzione al detentore o reindirizza la batteria.",
+					"Il fornitore designato propone il prezzo di trattamento e di trasporto; l’altra parte lo accetta o lo rifiuta indicandone il motivo. Le batterie di uno stesso sito possono partire in un unico ritiro, a un prezzo logistico comune. Il fornitore carica l’ordine di acquisto e l’etichetta da applicare sull’imballaggio.",
+					"Il fornitore registra il ritiro, il ricevimento e poi il trattamento, oppure segnala un problema di raccolta. Ogni cambio di stato avvisa il detentore e il team del costruttore, nell’applicazione e per e-mail secondo le loro preferenze. Il certificato di trattamento viene allegato al fascicolo della batteria.",
+					"Un fornitore che usa il proprio software non reinserisce nulla: la piattaforma gli trasmette la batteria, poi gli stati del suo strumento tornano nel fascicolo con i documenti, compreso il certificato di riciclo. Gli altri ricevono un webhook a ogni evento e aggiornano i fascicoli in blocco.",
+					"Per la seconda vita, il team del costruttore compone un lotto per sito e sceglie le foto e i documenti visibili, la finestra delle offerte e gli acquirenti ammessi. Gli acquirenti offrono un prezzo totale, al kWh o al kg. Il team chiede una revisione o sceglie un’offerta, poi crea il ritiro presso l’acquirente."
+				],
+				"impact": "La piattaforma è in produzione in tutta la rete europea del costruttore ed è la base della conformità del suo sistema EPR per le batterie: per ogni batteria il team ritrova la filiera scelta, il fornitore, le date di ritiro, ricevimento e trattamento, e il certificato che li attesta. Quasi 500 concessionari, centri di demolizione, stabilimenti e fornitori vi dichiarano o trattano batterie.",
 				"metrics": [
 					{
-						"label": "Batterie registrate",
-						"value": "≈ 10.000",
-						"note": "Batterie registrate, esclusi gli annullamenti, a inizio settembre 2026."
+						"label": "Batterie e moduli dichiarati",
+						"value": "Oltre 26.000",
+						"note": "Dichiarati sulla piattaforma in Europa, escluse le cancellazioni."
 					},
 					{
-						"label": "Partner collegati",
-						"value": "+300"
+						"label": "Paesi di raccolta",
+						"value": "19",
+						"note": "Paesi dei siti in cui sono state dichiarate batterie."
 					},
 					{
-						"label": "Paesi coperti",
-						"value": "18"
+						"label": "Trattamento confermato",
+						"value": "Oltre 5.000 batterie",
+						"note": "Batterie di cui il fornitore ha confermato il trattamento sulla piattaforma."
 					}
 				],
-				"tags": ["SvelteKit", "FastAPI", "PostgreSQL", "Keycloak"],
-				"details": [
-					"Il proprietario dichiara la batteria. Se un partner propone un prezzo di acquisto, l’offerta resta associata a quella batteria. Chi la riceve può rifiutarla e indicare il motivo.",
-					"Una volta convalidata la pratica, l’operatore registra il ritiro presso il proprietario. Se il ritiro non va a buon fine, può annotare il problema nella pratica.",
-					"All’arrivo l’operatore conferma la ricezione. Il costruttore sa così se la batteria è ancora attesa o è già arrivata. Se è destinata a una seconda vita, l’operatore può poi confermare la transazione."
-				],
+				"tags": ["SvelteKit", "FastAPI", "PostgreSQL", "Hasura", "Keycloak"],
 				"indexCard": {
-					"title": "Un mercato per la seconda vita e il riciclo delle batterie in 18 paesi",
-					"description": "I proprietari dichiarano le batterie, i partner propongono un prezzo di acquisto e il costruttore ne segue la destinazione. Gli operatori collegati ricevono la dichiarazione nel proprio gestionale e vi confermano il ritiro e la ricezione.",
-					"proof": "≈ 10.000 batterie registrate",
-					"note": "Batterie registrate, esclusi gli annullamenti, a inizio settembre 2026."
+					"title": "Un costruttore indirizza e segue ogni batteria del suo sistema EPR in Europa",
+					"description": "Nel sistema EPR, i detentori dichiarano le batterie, la piattaforma sceglie la filiera e il fornitore e il team del costruttore segue ogni fascicolo fino al certificato di trattamento o alla vendita del lotto.",
+					"proof": "Oltre 26.000 batterie e moduli dichiarati",
+					"note": "Dichiarati sulla piattaforma in Europa, escluse le cancellazioni."
 				},
 				"slug": "marketplace-batterie-seconda-vita"
 			},
 			{
 				"id": "8",
-				"category": "Aftermarket e riciclo",
-				"title": "Gestire le operazioni di un riciclatore di batterie",
-				"location": "Francia",
-				"challenge": "Per organizzare un ritiro, il riciclatore deve conoscere il tipo di batterie, chi le ritirerà e l’impianto che le riceverà. Due partite pronte a partire non possono necessariamente viaggiare insieme.",
-				"approach": "Il personale esamina ogni dichiarazione prima di inserirla in una distinta di carico. Lo strumento verifica che le batterie del lotto abbiano lo stesso incaricato del ritiro e la stessa destinazione. All’arrivo il personale ritrova le dichiarazioni associate al lotto.",
-				"impact": "Per ogni dichiarazione il riciclatore può risalire al lotto, verificare le firme mancanti e distinguere una batteria ricevuta da una già trattata.",
-				"tags": ["SvelteKit", "FastAPI", "PostgreSQL", "Trackdéchets"],
-				"details": [
-					"Il personale identifica il tipo e la composizione della batteria dichiarata per prepararne la presa in carico.",
-					"Chi prepara il ritiro compone il lotto. Se una dichiarazione prevede un incaricato o una destinazione diversi, la inserisce in un’altra distinta.",
-					"Il personale verifica le firme attese sul documento di tracciabilità dei rifiuti. L’impianto destinatario registra nella pratica prima la ricezione e poi il trattamento."
-				],
-				"indexCard": {
-					"title": "Il riciclatore segue ogni batteria dalla dichiarazione al trattamento",
-					"description": "Prima del ritiro il team individua le batterie che possono viaggiare insieme in base al trasportatore e alla destinazione. All’arrivo l’impianto recupera le dichiarazioni del lotto, verifica i documenti e registra la ricezione e il trattamento.",
-					"proof": "Un unico impianto destinatario per lotto",
-					"note": "Prima della partenza si verificano l’incaricato del ritiro e la destinazione."
-				},
 				"slug": "piattaforma-riciclo-batterie",
+				"category": "Aftermarket e riciclo",
+				"title": "Dall’officina all’impianto di trattamento, il riciclatore segue ogni batteria del sistema EPR",
+				"date": "2026",
+				"location": "Francia",
+				"challenge": "Nel sistema EPR (responsabilità estesa del produttore) per le batterie, il riciclatore deve poter spiegare che cosa è arrivato nei suoi siti e che cosa è stato effettivamente trattato. Ma l’officina conosce lo stato della batteria, il raccoglitore sa dove l’ha ritirata e lo stabilimento misura ciò che accetta. La packing list dice che cosa deve arrivare; non basta a giustificare il peso ricevuto né il trattamento di una batteria.",
+				"approach": "Abbiamo sviluppato per il riciclatore un’applicazione web che collega le dichiarazioni dei detentori, i ritiri e i ricevimenti in stabilimento. Per la messa in conformità del sistema EPR, conserva il legame tra la batteria, il suo formulario di tracciamento dei rifiuti e il certificato di riciclo. Riceve anche le dichiarazioni trasmesse dalla piattaforma batterie di un costruttore. Il riciclatore vi verifica il contratto e l’accettazione preliminare; il raccoglitore prepara le consegne e consulta i ritiri dal telefono. Il collegamento con Trackdéchets, il servizio nazionale francese di tracciamento dei rifiuti, riporta nel fascicolo le decisioni firmate a destinazione.",
+				"details": [
+					"Il detentore identifica la batteria, ne descrive lo stato e l’imballaggio e indica il luogo di ritiro. Se la dichiarazione proviene dal costruttore, il riciclatore ritrova le informazioni trasmesse e verifica a quale detentore e a quale sito corrispondono.",
+					"Prima di convalidare la presa in carico, il riciclatore verifica il contratto o l’offerta accettata e il certificato di accettazione preliminare. Se serve una richiesta di accettazione, il responsabile del sito può farla correggere prima di firmarla.",
+					"Quando il riciclatore organizza il trasporto, designa il raccoglitore. Sul luogo di ritiro, l’autista scansiona l’etichetta dal telefono o inserisce il riferimento, consulta la scheda della batteria e conferma la raccolta.",
+					"Per consegnare allo stabilimento, il raccoglitore riunisce i colli disponibili in una packing list. L’applicazione esclude quelli destinati a un altro sito, somma il peso della selezione e lascia scegliere al raccoglitore tra le fasce orarie proposte.",
+					"All’arrivo, il sito registra la data e le quantità accettate o respinte. Il ricevimento resta distinto dal trattamento: quando questo viene firmato in Trackdéchets, il fascicolo riprende l’informazione e l’applicazione genera il certificato di riciclo corrispondente."
+				],
+				"impact": "Oltre 200 officine, concessionari e centri di bonifica dichiarano le proprie batterie sulla piattaforma, da oltre 250 luoghi di ritiro. Per la dichiarazione mensile del sistema EPR, il team del riciclatore riprende i dati di ricevimento: stabilimento di origine, data di arrivo e peso pesato. Per ogni batteria distingue il documento di ricevimento dal certificato che attesta il trattamento.",
 				"metrics": [
 					{
-						"label": "Sito destinatario per lotto",
-						"value": "1"
+						"label": "Batterie dichiarate",
+						"value": "Oltre 1.500",
+						"note": "Batterie dichiarate da officine, concessionari e centri di bonifica, escluse le cancellazioni."
 					},
 					{
-						"label": "Operatore di raccolta per lotto",
-						"value": "1"
+						"label": "Batterie pesate al ricevimento",
+						"value": "Oltre 40 t",
+						"note": "Peso registrato dal sito all’arrivo, ripreso nella dichiarazione del sistema EPR."
 					},
 					{
-						"label": "Fasi distinte nel sito",
-						"value": "2"
+						"label": "Tempo mediano di presa in carico",
+						"value": "7 giorni",
+						"note": "Dalla dichiarazione alla convalida della presa in carico da parte del riciclatore."
 					}
-				]
+				],
+				"tags": ["SvelteKit", "FastAPI", "PostgreSQL", "Trackdéchets"],
+				"indexCard": {
+					"title": "Dall’officina all’impianto di trattamento, il riciclatore segue ogni batteria del sistema EPR",
+					"description": "L’officina dichiara la batteria, l’autista ne scansiona l’etichetta dal telefono e il sito distingue ciò che riceve da ciò che tratta. Il riciclatore ritrova pesi e giustificativi per la dichiarazione del sistema EPR.",
+					"proof": "Oltre 1.500 batterie dichiarate",
+					"note": "Da officine, concessionari e centri di bonifica, escluse le cancellazioni."
+				}
 			},
 			{
 				"id": "4",
