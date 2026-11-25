@@ -1285,38 +1285,62 @@
 			{
 				"id": "4",
 				"category": "Smart city & energy",
-				"title": "Spotting anomalies in street lighting",
+				"title": "Public lighting managers track incidents cabinet by cabinet",
 				"date": "2024",
 				"location": "France",
-				"challenge": "Each morning the network operator needs to decide which lighting cabinets to inspect. Daytime power use warrants a look, but does not by itself mean the lights stayed on.",
-				"approach": "From the list of anomalies, the operator opens the consumption chart for the cabinet and checks it against the lighting schedule to decide which discrepancy to investigate.",
-				"impact": "Operators review the alerts each morning to target checks across the network.",
+				"challenge": "A cabinet is still drawing power in broad daylight. Is it a clock offset, on-site work or consumption that continues after switch-off? For a public lighting manager who looks after several municipalities, the invoice total cannot settle it. They need to find the cabinet, know when its consumption changed and check whether the gap recurs before requesting an on-site inspection.",
+				"approach": "We built a web application for public lighting managers. It brings together meter readings, switch-on schedules and billing data. The manager selects an area or a group of municipalities and sees on a map the cabinets showing an anomaly. For each one, they can compare several nights, examine the power drawn every half hour and find its address. They also choose the alerts they want when a fault is detected or when readings return to normal. To prepare a contract review, they find for each cabinet the subscribed power, the billed consumption and the average price per kilowatt-hour.",
+				"impact": "The application tracks more than 6,000 metering points across some sixty lighting networks, mostly municipal. The manager can tell the contractor which cabinet to check, at what time consumption changed and for how many days the gap has appeared. After an intervention, they find the same meter’s readings to see whether the fault is still visible. Energy teams rely on the same references to examine an invoice or review a subscription.",
 				"metrics": [
 					{
-						"label": "Areas served",
-						"value": "+40",
-						"note": "Areas where alerts have been deployed."
+						"label": "Metering points tracked",
+						"value": "More than 6,000",
+						"note": "Public lighting meters whose readings the application receives."
 					},
 					{
-						"label": "Consumption windows compared",
-						"value": "3"
+						"label": "Power curve resolution",
+						"value": "30 minutes",
+						"note": "The manager sees a cabinet’s power half hour by half hour."
 					},
 					{
-						"label": "Alert review",
-						"value": "Every morning"
+						"label": "Networks covered by alerts",
+						"value": "9 in 10",
+						"note": "Networks where at least one manager subscribes to detection alerts."
 					}
 				],
 				"tags": ["DuckDB", "SvelteKit", "PostgreSQL", "FastAPI"],
 				"details": [
-					"The operator selects a cabinet and retrieves the readings from its meter.",
-					"Comparing consumption before, during and after the scheduled lighting period helps distinguish a steady daytime load from a shift in switch-on time.",
-					"The operator can tell the contractor which cabinet to check, at what time and for which discrepancy."
+					{
+						"actor": "Application",
+						"title": "Gather the readings",
+						"text": "From the grid operator’s readings, it rebuilds the power curve of each meter and links it to the corresponding cabinet."
+					},
+					{
+						"actor": "Manager",
+						"title": "Locate the fault",
+						"text": "They select a municipality or a group and spot on the map the cabinets that need checking."
+					},
+					{
+						"actor": "Manager",
+						"title": "Examine the night",
+						"text": "On a phone or at the office, they compare nights and switch-on times to pinpoint when the gap started."
+					},
+					{
+						"actor": "Manager",
+						"title": "Prepare the inspection",
+						"text": "They find the cabinet’s address and the time slot concerned to tell the contractor where and when to check the installation."
+					},
+					{
+						"actor": "Manager",
+						"title": "Check the following readings",
+						"text": "They review the following readings or choose to receive an email when the alert ends."
+					}
 				],
 				"indexCard": {
-					"title": "Spotting anomalies in street lighting",
-					"description": "Each morning, operators compare lighting schedules with consumption curves. They can distinguish a shift in switch-on time from a steady daytime load and tell the contractor which cabinet to inspect and when.",
-					"proof": "Over 40 territories equipped",
-					"note": "Operators use network alerts across these areas."
+					"title": "Public lighting managers track incidents cabinet by cabinet",
+					"description": "The manager spots a cabinet with an anomaly, examines what happened during the night and follows the return to normal. They also find the readings to check the energy invoice.",
+					"proof": "More than 6,000 metering points tracked",
+					"note": "Public lighting meters whose readings the application receives."
 				},
 				"slug": "supervision-eclairage-public"
 			},

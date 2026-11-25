@@ -1290,38 +1290,62 @@
 			{
 				"id": "4",
 				"category": "Intelligente Stadt und Energie",
-				"title": "Auffälligkeiten in der Straßenbeleuchtung erkennen",
+				"title": "Verantwortliche für Straßenbeleuchtung verfolgen Störungen Schaltschrank für Schaltschrank",
 				"date": "2024",
 				"location": "Frankreich",
-				"challenge": "Morgens muss der Netzbetreiber entscheiden, welche Schaltschränke er prüfen lässt. Stromverbrauch am Tag verdient Aufmerksamkeit, bedeutet aber nicht zwangsläufig, dass die Leuchten eingeschaltet blieben.",
-				"approach": "Aus der Liste der Auffälligkeiten öffnet der Betreiber die Verbrauchskurve des Schaltschranks. Er vergleicht sie mit den vorgesehenen Schaltzeiten und entscheidet, welcher Abweichung er nachgeht.",
-				"impact": "Die Betreiber sichten die Meldungen jeden Morgen und richten ihre Prüfungen im Netz danach aus.",
+				"challenge": "Ein Schaltschrank verbraucht am helllichten Tag weiter Strom. Ist es eine verstellte Uhr, ein Einsatz vor Ort oder ein Verbrauch, der nach dem Ausschalten anhält? Für Verantwortliche der Straßenbeleuchtung mehrerer Gemeinden reicht die Rechnungssumme nicht, um das zu klären. Sie müssen den Schaltschrank finden, wissen, wann sich sein Verbrauch geändert hat, und prüfen, ob die Abweichung wiederkehrt, bevor sie eine Kontrolle vor Ort anfordern.",
+				"approach": "Wir haben eine Webanwendung für Verantwortliche von Straßenbeleuchtungsanlagen entwickelt. Sie vereint Zählerstände, Schaltzeiten und Abrechnungsdaten. Die verantwortliche Person wählt ein Gebiet oder einen Verbund und sieht auf einer Karte die Schaltschränke mit einer Anomalie. Für jeden kann sie mehrere Nächte vergleichen, die abgerufene Leistung im Halbstundentakt prüfen und die Adresse finden. Sie wählt auch, welche Warnungen sie bei Erkennung eines Fehlers oder bei Rückkehr zum Normalzustand erhält. Für eine Vertragsprüfung findet sie je Schaltschrank die bestellte Leistung, den abgerechneten Verbrauch und den durchschnittlichen Preis je Kilowattstunde.",
+				"impact": "Die Anwendung verfolgt mehr als 6.000 Messpunkte in rund sechzig Anlagen, überwiegend kommunalen. Die verantwortliche Person kann dem Dienstleister sagen, welchen Schaltschrank er prüfen soll, zu welcher Uhrzeit sich der Verbrauch geändert hat und seit wie vielen Tagen die Abweichung auftritt. Nach einem Einsatz findet sie die Messwerte desselben Zählers, um zu sehen, ob der Fehler noch sichtbar ist. Die Energieteams stützen sich auf dieselben Daten, um eine Rechnung zu prüfen oder einen Vertrag anzupassen.",
 				"metrics": [
 					{
-						"label": "Versorgungsgebiete",
-						"value": "+40",
-						"note": "Gebiete, in denen die Warnmeldungen im Einsatz sind."
+						"label": "Verfolgte Messpunkte",
+						"value": "Mehr als 6.000",
+						"note": "Zähler der Straßenbeleuchtung, deren Messwerte die Anwendung erhält."
 					},
 					{
-						"label": "Verglichene Verbrauchszeiträume",
-						"value": "3"
+						"label": "Auflösung der Leistungskurven",
+						"value": "30 Minuten",
+						"note": "Die Leistung eines Schaltschranks im Halbstundentakt."
 					},
 					{
-						"label": "Prüfung der Meldungen",
-						"value": "Jeden Morgen"
+						"label": "Anlagen mit Warnungen",
+						"value": "9 von 10",
+						"note": "Anlagen, bei denen mindestens eine verantwortliche Person Erkennungswarnungen abonniert hat."
 					}
 				],
 				"tags": ["DuckDB", "SvelteKit", "PostgreSQL", "FastAPI"],
 				"details": [
-					"Der Betreiber wählt einen Schaltschrank und ruft die Messwerte des zugehörigen Zählers auf.",
-					"Er vergleicht den Verbrauch vor, während und nach der vorgesehenen Leuchtdauer. So unterscheidet er eine durchgehende Last am Tag von einem verschobenen Einschaltzeitpunkt.",
-					"Dem Dienstleister kann er sagen, welchen Schaltschrank er prüfen soll, zu welcher Uhrzeit und wegen welcher Abweichung."
+					{
+						"actor": "Anwendung",
+						"title": "Zählerstände zusammenführen",
+						"text": "Aus den Messwerten des Netzbetreibers erstellt sie die Leistungskurve jedes Zählers und ordnet sie dem zugehörigen Schaltschrank zu."
+					},
+					{
+						"actor": "Verantwortliche",
+						"title": "Fehler lokalisieren",
+						"text": "Sie wählt eine Gemeinde oder einen Verbund und erkennt auf der Karte die Schaltschränke, die geprüft werden müssen."
+					},
+					{
+						"actor": "Verantwortliche",
+						"title": "Die Nacht prüfen",
+						"text": "Am Telefon oder im Büro vergleicht sie Nächte und Schaltzeiten, um den Beginn der Abweichung einzugrenzen."
+					},
+					{
+						"actor": "Verantwortliche",
+						"title": "Kontrolle vorbereiten",
+						"text": "Sie findet die Adresse des Schaltschranks und das betroffene Zeitfenster, um dem Dienstleister zu sagen, wo und wann er prüfen soll."
+					},
+					{
+						"actor": "Verantwortliche",
+						"title": "Folgende Messwerte prüfen",
+						"text": "Sie sieht die folgenden Messwerte ein oder lässt sich per E-Mail benachrichtigen, wenn die Warnung endet."
+					}
 				],
 				"indexCard": {
-					"title": "Auffälligkeiten in der Straßenbeleuchtung erkennen",
-					"description": "Morgens vergleicht der Betreiber Schaltzeiten und Verbrauchskurven. Er unterscheidet eine verschobene Einschaltzeit von dauerhaftem Tagesverbrauch und sagt dem Dienstleister, welchen Schaltschrank er wann prüfen soll.",
-					"proof": "Über 40 Versorgungsgebiete",
-					"note": "In diesen Gebieten nutzen Betreiber die Warnmeldungen."
+					"title": "Verantwortliche für Straßenbeleuchtung verfolgen Störungen Schaltschrank für Schaltschrank",
+					"description": "Die verantwortliche Person erkennt einen Schaltschrank mit Anomalie, prüft, was in der Nacht geschehen ist, und verfolgt die Rückkehr zum Normalzustand. Sie findet auch die Messwerte zur Kontrolle der Energierechnung.",
+					"proof": "Mehr als 6.000 verfolgte Messpunkte",
+					"note": "Zähler der Straßenbeleuchtung, deren Messwerte die Anwendung erhält."
 				},
 				"slug": "ueberwachung-strassenbeleuchtung"
 			},

@@ -1294,38 +1294,62 @@
 			{
 				"id": "4",
 				"category": "Smart city y energía",
-				"title": "Detectar anomalías en el alumbrado público",
+				"title": "Los gestores de alumbrado público siguen las incidencias cuadro por cuadro",
 				"date": "2024",
 				"location": "Francia",
-				"challenge": "Cada mañana, el gestor decide qué cuadros de alumbrado revisar. El consumo diurno merece atención, pero no basta para concluir que las luces se han quedado encendidas.",
-				"approach": "Desde la lista de anomalías, el gestor abre la curva de consumo del cuadro. La compara con el horario de alumbrado para decidir qué desviación conviene comprobar.",
-				"impact": "Los gestores consultan las alertas cada mañana para dirigir las comprobaciones en la red.",
+				"challenge": "Un cuadro sigue consumiendo en pleno día. ¿Es un desfase del reloj, una intervención in situ o un consumo que persiste tras el apagado? Para un gestor de alumbrado público que supervisa varios municipios, el total de la factura no permite decidir. Necesita encontrar el cuadro, saber cuándo cambió su consumo y comprobar si la desviación se repite antes de pedir una revisión in situ.",
+				"approach": "Hemos desarrollado una aplicación web para los gestores de redes de alumbrado público. Reúne las lecturas de los contadores, los horarios de encendido y los datos de facturación. El gestor elige un territorio o una agrupación y ve en un mapa los cuadros que presentan una anomalía. Para cada uno, puede comparar varias noches, examinar la potencia demandada cada media hora y encontrar su dirección. También elige las alertas que quiere recibir al detectarse un fallo o al volver a la normalidad. Para preparar una revisión de contratos, encuentra por cuadro la potencia contratada, los consumos facturados y el precio medio del kilovatio hora.",
+				"impact": "La aplicación sigue más de 6.000 puntos de medida, repartidos en una sesentena de redes, en su mayoría municipales. El gestor puede indicar al contratista qué cuadro revisar, a qué hora cambió el consumo y desde hace cuántos días aparece la desviación. Tras una intervención, encuentra las lecturas del mismo contador para comprobar si el fallo sigue visible. Los equipos de energía se apoyan en las mismas referencias para examinar una factura o revisar un contrato.",
 				"metrics": [
 					{
-						"label": "Territorios cubiertos",
-						"value": "+40",
-						"note": "Territorios en los que se han implantado las alertas."
+						"label": "Puntos de medida seguidos",
+						"value": "Más de 6.000",
+						"note": "Contadores de alumbrado público cuyas lecturas recibe la aplicación."
 					},
 					{
-						"label": "Franjas de consumo comparadas",
-						"value": "3"
+						"label": "Precisión de las curvas de potencia",
+						"value": "30 minutos",
+						"note": "El gestor ve la potencia de un cuadro media hora a media hora."
 					},
 					{
-						"label": "Consulta de alertas",
-						"value": "Cada mañana"
+						"label": "Redes cubiertas por las alertas",
+						"value": "9 de cada 10",
+						"note": "Redes en las que al menos un gestor está suscrito a las alertas de detección."
 					}
 				],
 				"tags": ["DuckDB", "SvelteKit", "PostgreSQL", "FastAPI"],
 				"details": [
-					"El gestor selecciona un cuadro y consulta las lecturas de su contador.",
-					"Compara el consumo antes, durante y después del horario previsto. Así distingue un consumo presente todo el día de un desfase en la hora de encendido.",
-					"Puede indicar al contratista qué cuadro revisar, a qué hora y por qué desviación."
+					{
+						"actor": "Aplicación",
+						"title": "Reunir las lecturas",
+						"text": "A partir de las lecturas del distribuidor, reconstruye la curva de potencia de cada contador y la vincula al cuadro correspondiente."
+					},
+					{
+						"actor": "Gestor",
+						"title": "Localizar el fallo",
+						"text": "Elige un municipio o una agrupación y localiza en el mapa los cuadros que requieren una comprobación."
+					},
+					{
+						"actor": "Gestor",
+						"title": "Examinar la noche",
+						"text": "Desde su teléfono o en la oficina, compara las noches y las horas de encendido para situar el inicio de la desviación."
+					},
+					{
+						"actor": "Gestor",
+						"title": "Preparar la revisión",
+						"text": "Encuentra la dirección del cuadro y la franja horaria afectada para indicar al contratista dónde y cuándo revisar la instalación."
+					},
+					{
+						"actor": "Gestor",
+						"title": "Comprobar las lecturas siguientes",
+						"text": "Consulta las lecturas siguientes o elige recibir un correo cuando termina la alerta."
+					}
 				],
 				"indexCard": {
-					"title": "Detectar anomalías en el alumbrado público",
-					"description": "Cada mañana el gestor compara los horarios previstos con las curvas de consumo. Distingue un desfase de encendido de un consumo continuo durante el día e indica al contratista qué cuadro revisar y a qué hora.",
-					"proof": "Más de 40 territorios equipados",
-					"note": "Los gestores consultan las alertas de la red en estos territorios."
+					"title": "Los gestores de alumbrado público siguen las incidencias cuadro por cuadro",
+					"description": "El gestor localiza un cuadro con una anomalía, examina lo ocurrido durante la noche y sigue la vuelta a la normalidad. También encuentra las lecturas para controlar la factura de energía.",
+					"proof": "Más de 6.000 puntos de medida seguidos",
+					"note": "Contadores de alumbrado público cuyas lecturas recibe la aplicación."
 				},
 				"slug": "supervision-alumbrado-publico"
 			},
