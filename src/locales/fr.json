@@ -1112,49 +1112,62 @@
 			{
 				"id": "2",
 				"category": "Aftermarket & recyclage",
-				"title": "Suivre un véhicule de la demande de reprise au certificat de destruction",
-				"date": "2020-2025",
-				"location": "Europe",
-				"challenge": "Un particulier veut faire reprendre sa voiture, ou un garage déclare un véhicule à enlever. Le transporteur doit savoir où le récupérer, le centre de traitement doit en confirmer la réception et le propriétaire doit pouvoir retrouver son certificat. Pour lancer le service puis le faire fonctionner à grande échelle, l’opérateur devait relier ces étapes entre des entreprises qui n’ont pas toutes besoin des mêmes informations.",
-				"approach": "Nous avons construit le service autour d’un dossier par véhicule. Le particulier ou le garage y fait sa demande. Le transporteur y retrouve les informations nécessaires à l’enlèvement. Le centre y enregistre ce qu’il a reçu. L’équipe qui pilote le réseau peut ainsi distinguer un véhicule encore à enlever d’un véhicule déjà arrivé dont le dossier reste à compléter.",
-				"impact": "Le propriétaire peut justifier la reprise de son véhicule. Le garage sait si l’enlèvement a eu lieu. Le centre repère les dossiers incomplets. Et l’opérateur peut suivre ces opérations à l’échelle du réseau, jusqu’au délai médian de 6 jours entre déclaration et réception en centre.",
+				"title": "De la reprise au certificat, l’opérateur suit chaque véhicule de la filière REP",
+				"date": "2024",
+				"location": "France, Belgique, Luxembourg",
+				"challenge": "Dans le cadre de la mise en conformité d’une filière REP des véhicules hors d’usage, le garage qui déclare une voiture, le transporteur qui l’enlève et le centre qui la reçoit doivent travailler sur le même dossier. Une voiture peut déjà être sur le parc alors que sa carte grise est encore chez le garage. Le logiciel des professionnels suivait les reprises du réseau, mais l’ouverture aux particuliers imposait d’y relier leurs demandes, d’équiper les chauffeurs et de remettre les certificats signés.",
+				"approach": "Nous avons développé un portail de reprise pour les particuliers et une application mobile pour les transporteurs, puis les avons reliés au logiciel .NET que les garages et les centres utilisaient déjà, tout en faisant évoluer ce socle. La difficulté consistait à conserver un dossier unique par véhicule tout en séparant les événements propres à chaque intervenant : déclaration, enlèvement, arrivée physique sur le parc et réception des pièces administratives. Dans le cadre de la filière REP en France, nous avons aussi connecté le dossier aux services d’immatriculation et à la signature électronique des documents de cession et de destruction.",
+				"impact": "Le service est en production pour les professionnels comme pour les particuliers et soutient la traçabilité de la filière REP des véhicules hors d’usage. Le garage sait si l’enlèvement a eu lieu, le centre repère les cartes grises manquantes et le propriétaire dispose du justificatif destiné à son assureur. Pour l’opérateur du réseau, réception physique, pièces administratives et certificat restent suivis séparément.",
 				"metrics": [
 					{
-						"label": "VHU par an",
-						"value": "≈ 20 000",
-						"note": "Véhicules enregistrés sur la plateforme."
+						"label": "Véhicules reçus en centre",
+						"value": "Plus de 14 000",
+						"note": "Arrivées enregistrées par les centres du réseau en dix mois."
 					},
 					{
-						"label": "Partenaires du réseau",
-						"value": "Plus de 5 000",
-						"note": "Garages et centres de traitement des véhicules hors d’usage."
+						"label": "Centres de traitement actifs",
+						"value": "Plus de 400",
+						"note": "Centres ayant enregistré la réception de véhicules sur la période."
 					},
 					{
-						"label": "Délai médian",
-						"value": "6 jours",
-						"note": "Entre la déclaration du véhicule et sa réception en centre."
+						"label": "Signatures propriétaire recueillies",
+						"value": "93 %",
+						"note": "Part des dossiers particuliers envoyés en signature électronique signés par le propriétaire."
 					}
 				],
-				"tags": [
-					"TypeScript",
-					"SvelteKit",
-					"Azure",
-					"Azure Functions",
-					"MSSQL",
-					".NET",
-					"Azure Service Bus"
-				],
+				"tags": ["SvelteKit", "Angular", "Python", ".NET", "Azure Functions", "SQL Server"],
 				"details": [
-					"Déclarer le véhicule. À partir de la plaque ou du numéro de série, les caractéristiques disponibles sont reprises dans la fiche. Le déclarant complète les informations manquantes et précise le lieu d’enlèvement.",
-					"Organiser la collecte. Le garage suit l’enlèvement prévu. Sur place, le transporteur vérifie le véhicule et peut signaler un problème si la collecte ne se déroule pas comme prévu.",
-					"Réceptionner le véhicule et ses papiers. Le centre enregistre l’arrivée du véhicule et, séparément, celle des documents. Une voiture peut être sur le parc alors que ses papiers ne sont pas encore arrivés. L’équipe sait alors ce qu’il reste à récupérer.",
-					"Remettre les justificatifs. Pour les reprises en France, les documents de cession et de destruction sont rattachés au dossier. Le propriétaire retrouve ses certificats signés dans son espace."
+					{
+						"actor": "Particulier ou garage",
+						"title": "Déclarer le véhicule",
+						"text": "À partir de la plaque ou du numéro de série, la fiche reprend les caractéristiques connues. Le déclarant complète l’état du véhicule et le lieu d’enlèvement."
+					},
+					{
+						"actor": "Transporteur",
+						"title": "Valider l’enlèvement",
+						"text": "Depuis son téléphone, le chauffeur consulte sa tournée, contrôle le véhicule sur place, recueille la signature ou signale un empêchement."
+					},
+					{
+						"actor": "Centre VHU",
+						"title": "Séparer voiture et papiers",
+						"text": "Le centre enregistre l’arrivée physique du véhicule sur son parc et, distinctement, la réception de la carte grise lorsqu’elle arrive plus tard."
+					},
+					{
+						"actor": "Équipe réseau",
+						"title": "Suivre les pièces manquantes",
+						"text": "L’opérateur distingue aussitôt un véhicule encore à collecter d’un véhicule déjà reçu dont le dossier administratif reste incomplet."
+					},
+					{
+						"actor": "Propriétaire",
+						"title": "Récupérer les certificats",
+						"text": "Pour les reprises en France, les documents de cession et de destruction signés électroniquement rejoignent le dossier et l’espace du propriétaire."
+					}
 				],
 				"indexCard": {
-					"title": "Organiser la reprise de véhicules hors d’usage avec plus de 5 000 partenaires",
-					"description": "Un particulier ou un garage demande l’enlèvement d’un véhicule. Du transporteur au centre de traitement, chacun renseigne son étape. L’opérateur suit chaque véhicule jusqu’aux justificatifs de destruction.",
-					"proof": "≈ 20 000 VHU par an",
-					"note": "Véhicules enregistrés sur la plateforme."
+					"title": "De la reprise au certificat, l’opérateur suit chaque véhicule de la filière REP",
+					"description": "Dans le cadre de la filière REP, un particulier ou un garage demande l’enlèvement, le chauffeur valide sur téléphone et le centre distingue l’arrivée du véhicule de celle de sa carte grise jusqu’au certificat.",
+					"proof": "Plus de 14 000 véhicules reçus en dix mois",
+					"note": "Arrivées enregistrées par plus de 400 centres de traitement du réseau."
 				},
 				"slug": "plateforme-economie-circulaire"
 			},

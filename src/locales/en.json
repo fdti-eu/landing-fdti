@@ -1107,49 +1107,62 @@
 			{
 				"id": "2",
 				"category": "Aftermarket & recycling",
-				"title": "Tracking a vehicle from take-back request to certificate of destruction",
-				"date": "2020-2025",
-				"location": "Europe",
-				"challenge": "An owner wants a car collected, or a garage reports a vehicle ready for collection. The carrier needs to know where to pick it up, the treatment centre must confirm its arrival, and the owner needs to find the certificate. To launch the service and then run it at scale, the operator had to connect these steps across businesses that each need different information.",
-				"approach": "We built the service around one record per vehicle. The owner or garage submits the request there. The carrier finds the collection details and the centre records what has arrived. The network team can tell a vehicle still awaiting collection from one already at the centre whose paperwork is incomplete.",
-				"impact": "The owner can show proof of take-back, the garage knows whether collection took place and the centre can identify incomplete records. The operator can track the whole network, including the median time of 6 days from registration to receipt at a centre.",
+				"title": "From take-back to certificate, an EPR operator tracks every end-of-life vehicle",
+				"date": "2024",
+				"location": "France, Belgium, Luxembourg",
+				"challenge": "To bring an end-of-life vehicle EPR (extended producer responsibility) scheme into compliance, the garage declaring a car, the carrier picking it up and the center receiving it must work from the same file. A car can already sit in the yard while its registration document is still at the garage. The professional back office tracked network take-backs, but opening the service to private owners meant linking their requests to that system, equipping drivers and delivering signed certificates.",
+				"approach": "We built a take-back portal for private owners and a mobile web application for carriers, connected them to the .NET back office already used by garages and treatment centers, and extended that core system. The key challenge was keeping a single file per vehicle while separating the events each party needs: declaration, pickup, physical arrival in the yard and receipt of administrative paperwork. For the French EPR scheme, we also connected the vehicle file to registration services and electronic signature of transfer and destruction documents.",
+				"impact": "The platform runs in production for both professionals and private owners and underpins end-of-life vehicle EPR traceability. Garages know when pickup has taken place, treatment centers see which registration documents are still missing, and owners get proof for their insurer. Across the network, physical arrival, administrative paperwork and destruction certificates stay tracked separately.",
 				"metrics": [
 					{
-						"label": "Vehicles per year",
-						"value": "≈ 20,000",
-						"note": "Vehicles registered on the platform."
+						"label": "Vehicles received at centers",
+						"value": "More than 14,000",
+						"note": "Arrivals recorded by network treatment centers over ten months."
 					},
 					{
-						"label": "Network partners",
-						"value": "Over 5,000",
-						"note": "Garages and end-of-life vehicle treatment centres."
+						"label": "Active treatment centers",
+						"value": "More than 400",
+						"note": "Centers that recorded vehicle receipts over the period."
 					},
 					{
-						"label": "Median lead time",
-						"value": "6 days",
-						"note": "From vehicle registration to receipt at a treatment centre."
+						"label": "Owner signatures completed",
+						"value": "93%",
+						"note": "Share of private-owner files sent for e-signature signed by the owner."
 					}
 				],
-				"tags": [
-					"TypeScript",
-					"SvelteKit",
-					"Azure",
-					"Azure Functions",
-					"MSSQL",
-					".NET",
-					"Azure Service Bus"
-				],
+				"tags": ["SvelteKit", "Angular", "Python", ".NET", "Azure Functions", "SQL Server"],
 				"details": [
-					"Register the vehicle. The registration number or VIN brings up the available vehicle details. The person making the request fills in any gaps and specifies the collection point.",
-					"Arrange collection. The garage can see the planned pickup. On site, the carrier checks the vehicle and can report a problem if collection does not go as planned.",
-					"Record the vehicle and its paperwork separately. A car may already be in the yard while its papers are still on their way. By recording the two arrivals separately, the centre knows what it still needs to obtain.",
-					"Provide the certificates. For take-backs in France, the transfer and destruction documents are attached to the vehicle record. The owner can retrieve the signed certificates from their account."
+					{
+						"actor": "Owner or garage",
+						"title": "Declare the vehicle",
+						"text": "From the license plate or VIN, known vehicle details prefill the record. The declarant completes the condition and pickup address."
+					},
+					{
+						"actor": "Carrier",
+						"title": "Confirm pickup on mobile",
+						"text": "On a phone, the driver opens the pickup list, checks the vehicle on site, captures a signature or reports an issue."
+					},
+					{
+						"actor": "Treatment center",
+						"title": "Separate car and paperwork",
+						"text": "The center logs the vehicle’s physical arrival in the yard separately from the registration document when paperwork arrives later."
+					},
+					{
+						"actor": "Network team",
+						"title": "Spot missing documents",
+						"text": "The operator immediately distinguishes a vehicle still awaiting pickup from one already on site with incomplete paperwork."
+					},
+					{
+						"actor": "Vehicle owner",
+						"title": "Retrieve signed certificates",
+						"text": "In France, electronically signed transfer and destruction documents attach to the file and appear in the owner’s portal."
+					}
 				],
 				"indexCard": {
-					"title": "Organising vehicle take-back with over 5,000 partners",
-					"description": "An owner or garage requests collection. From the carrier to the treatment centre, each partner records its part. The operator follows each vehicle through to its destruction documents.",
-					"proof": "≈ 20,000 vehicles a year",
-					"note": "Vehicles registered on the platform."
+					"title": "From take-back to certificate, an EPR operator tracks every end-of-life vehicle",
+					"description": "Within the EPR scheme, a private owner or garage requests pickup, the driver confirms it on a phone, and the center separates vehicle arrival from registration paperwork right through to the certificate.",
+					"proof": "More than 14,000 vehicles received in ten months",
+					"note": "Arrivals recorded across more than 400 treatment centers."
 				},
 				"slug": "end-of-life-vehicle-platform"
 			},

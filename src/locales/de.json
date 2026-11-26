@@ -1112,49 +1112,62 @@
 			{
 				"id": "2",
 				"category": "Aftermarket und Recycling",
-				"title": "Ein Fahrzeug von der Rücknahmeanfrage bis zum Verwertungsnachweis verfolgen",
-				"date": "2020-2025",
-				"location": "Europa",
-				"challenge": "Ein Halter möchte sein Auto abholen lassen oder eine Werkstatt meldet ein abholbereites Fahrzeug. Der Transporteur braucht den Abholort, der Verwertungsbetrieb muss den Eingang bestätigen und der Halter später seinen Nachweis finden. Um den Dienst zunächst aufzubauen und dann im gesamten Netzwerk zu betreiben, musste der Betreiber Unternehmen verbinden, die für ihre jeweilige Aufgabe unterschiedliche Informationen brauchen.",
-				"approach": "Für jedes Fahrzeug haben wir eine gemeinsame Akte vorgesehen. Halter oder Werkstatt stellen dort die Anfrage, der Transporteur findet die Abholdaten und der Verwertungsbetrieb erfasst den Eingang. Das Team kann dadurch unterscheiden, ob ein Fahrzeug noch auf die Abholung wartet oder schon eingetroffen ist und lediglich Unterlagen fehlen.",
-				"impact": "Der Halter kann die Rücknahme belegen, die Werkstatt sieht, ob das Fahrzeug abgeholt wurde, und der Verwertungsbetrieb erkennt unvollständige Akten. Der Betreiber hat den Überblick über das gesamte Netzwerk: Von der Anmeldung bis zum Eingang beim Verwertungsbetrieb vergehen im Median 6 Tage.",
+				"title": "Von der Rücknahme bis zum Nachweis verfolgt der Betreiber jedes Fahrzeug im EPR-System",
+				"date": "2024",
+				"location": "Frankreich, Belgien, Luxemburg",
+				"challenge": "Für die Konformität eines EPR-Systems (erweiterte Herstellerverantwortung) für Altfahrzeuge müssen meldende Werkstatt, abholender Transporteur und annehmender Verwertungsbetrieb an derselben Akte arbeiten. Ein Wagen kann bereits auf dem Hof stehen, während die Zulassungsbescheinigung noch in der Werkstatt liegt. Die bestehende Fachsoftware führte die Rücknahmen im Netz, doch die Öffnung für Privatpersonen erforderte ein angebundenes Kundenportal, mobile Abläufe für Fahrer und signierte Nachweise.",
+				"approach": "Wir haben ein Rücknahmeportal für Privatpersonen und eine mobile Webanwendung für Transporteure entwickelt, an die bestehende .NET-Plattform der Werkstätten und Verwertungsbetriebe angebunden und dieses Kernsystem weiterentwickelt. Die Herausforderung bestand darin, eine einzige Akte je Fahrzeug zu führen und zugleich Meldung, Abholung, physische Ankunft auf dem Hof und Eingang der Fahrzeugpapiere sauber zu trennen. Für das EPR-System in Frankreich haben wir die Akte zudem mit Zulassungsdiensten und der elektronischen Signatur von Übergabe- und Verwertungsdokumenten verbunden.",
+				"impact": "Der Dienst ist für Fachbetriebe und Privatpersonen produktiv und stützt die Rückverfolgbarkeit im EPR-System für Altfahrzeuge. Die Werkstatt sieht die erfolgte Abholung, der Verwertungsbetrieb erkennt fehlende Fahrzeugpapiere und der Halter erhält den Nachweis für seine Versicherung. Physischer Eingang, Dokumente und Verwertungsnachweis bleiben getrennt nachvollziehbar.",
 				"metrics": [
 					{
-						"label": "Fahrzeuge pro Jahr",
-						"value": "≈ 20.000",
-						"note": "Auf der Plattform registrierte Fahrzeuge."
+						"label": "In Betrieben eingegangene Fahrzeuge",
+						"value": "Mehr als 14.000",
+						"note": "Von Verwertungsbetrieben des Netzes in zehn Monaten erfasste Eingänge."
 					},
 					{
-						"label": "Partner im Netzwerk",
-						"value": "Über 5.000",
-						"note": "Werkstätten und Altfahrzeugverwertungsbetriebe."
+						"label": "Aktive Verwertungsbetriebe",
+						"value": "Mehr als 400",
+						"note": "Betriebe, die im Zeitraum Fahrzeugeingänge erfasst haben."
 					},
 					{
-						"label": "Mediane Durchlaufzeit",
-						"value": "6 Tage",
-						"note": "Von der Fahrzeuganmeldung bis zum Eingang beim Verwertungsbetrieb."
+						"label": "Abgeschlossene Haltersignaturen",
+						"value": "93 %",
+						"note": "Anteil der zur E-Signatur versandten Privatakten, die vom Halter unterzeichnet wurden."
 					}
 				],
-				"tags": [
-					"TypeScript",
-					"SvelteKit",
-					"Azure",
-					"Azure Functions",
-					"MSSQL",
-					".NET",
-					"Azure Service Bus"
-				],
+				"tags": ["SvelteKit", "Angular", "Python", ".NET", "Azure Functions", "SQL Server"],
 				"details": [
-					"Fahrzeug anmelden. Anhand des Kennzeichens oder der Fahrzeugidentifikationsnummer werden die verfügbaren Fahrzeugdaten übernommen. Die meldende Person ergänzt fehlende Angaben und nennt den Abholort.",
-					"Abholung organisieren. Die Werkstatt sieht die geplante Abholung. Vor Ort prüft der Transporteur das Fahrzeug und kann Probleme bei der Abholung melden.",
-					"Fahrzeug und Papiere getrennt erfassen. Das Auto kann schon auf dem Hof stehen, während die Unterlagen noch unterwegs sind. Der Verwertungsbetrieb erfasst beide Eingänge separat und sieht, was noch fehlt.",
-					"Nachweise bereitstellen. Bei Rücknahmen in Frankreich werden die Übergabe- und Verwertungsnachweise in der Fahrzeugakte hinterlegt. Der Halter findet die unterschriebenen Dokumente in seinem Konto."
+					{
+						"actor": "Privatperson oder Werkstatt",
+						"title": "Fahrzeug melden",
+						"text": "Über Kennzeichen oder Fahrgestellnummer werden bekannte Merkmale geladen. Die meldende Person ergänzt Zustand und Abholort."
+					},
+					{
+						"actor": "Transporteur",
+						"title": "Abholung mobil bestätigen",
+						"text": "Auf dem Telefon öffnet der Fahrer seine Tour, prüft das Fahrzeug vor Ort, erfasst die Unterschrift oder meldet ein Hindernis."
+					},
+					{
+						"actor": "Verwertungsbetrieb",
+						"title": "Fahrzeug und Papiere trennen",
+						"text": "Der Betrieb erfasst die Ankunft des Wagens auf dem Hof getrennt vom Eingang der Fahrzeugpapiere, wenn diese später eintreffen."
+					},
+					{
+						"actor": "Netzsteuerung",
+						"title": "Fehlende Belege erkennen",
+						"text": "Der Betreiber unterscheidet sofort ein noch abzuholendes Fahrzeug von einem bereits eingegangenen Wagen mit unvollständiger Akte."
+					},
+					{
+						"actor": "Halter",
+						"title": "Nachweise abrufen",
+						"text": "In Frankreich werden elektronisch signierte Übergabe- und Verwertungsdokumente der Akte beigefügt und im Halterbereich bereitgestellt."
+					}
 				],
 				"indexCard": {
-					"title": "Fahrzeugrücknahme mit über 5.000 Partnern organisieren",
-					"description": "Eine Privatperson oder eine Werkstatt meldet ein Fahrzeug zur Abholung an. Vom Transporteur bis zum Verwertungsbetrieb erfasst jeder Beteiligte seinen Schritt. Der Betreiber verfolgt das Fahrzeug bis zum Verwertungsnachweis.",
-					"proof": "≈ 20.000 Fahrzeuge pro Jahr",
-					"note": "Auf der Plattform registrierte Fahrzeuge."
+					"title": "Von der Rücknahme bis zum Nachweis verfolgt der Betreiber jedes Fahrzeug im EPR-System",
+					"description": "Im EPR-System meldet ein Halter oder eine Werkstatt die Abholung, der Fahrer bestätigt sie am Telefon und der Betrieb trennt Fahrzeugeingang und Papiere bis zum Verwertungsnachweis.",
+					"proof": "Mehr als 14.000 eingegangene Fahrzeuge in zehn Monaten",
+					"note": "Erfasste Eingänge in mehr als 400 Verwertungsbetrieben."
 				},
 				"slug": "plattform-fahrzeugruecknahme"
 			},
