@@ -996,23 +996,23 @@
 				"date": "2025",
 				"location": "France",
 				"challenge": "To review an annual-accounts filing, a commercial court clerk must identify the balance sheet, notes and confidentiality statement, then verify that the fiscal year and figures match across documents. For a trade-register filing, they cross-check declared data against articles of association and deeds. Judges face a different hurdle: finding each party’s claims and supporting arguments across multiple briefs and exhibits.",
-				"approach": "We built a document-analysis API integrated into the court registries’ line-of-business software alongside a web application, hosted on the software vendor’s servers. The core challenge was handling heterogeneous scanned bundles while keeping every legal assessment in human hands. For annual accounts, the engine classifies submitted documents and runs the applicable checks so clerks see what matches, what conflicts and what needs manual review. For court cases, it structures facts, claims and arguments by party, linking every item to its source document and page numbers.",
-				"impact": "Deployed across around fifty commercial courts, the platform processed nearly 40,000 filings in a single month. Inside their usual software, clerks go straight to the checks and discrepancies to settle before validating a filing. Preparing a hearing, judges cross-check the summary against the parties’ submissions with exact page references.",
+				"approach": "We built a document-analysis API integrated into the court registries’ line-of-business software alongside a web application, hosted on the software vendor’s servers. The core challenge was handling heterogeneous scanned bundles while keeping every legal assessment in human hands. For annual accounts, the engine classifies submitted documents and selects from more than 50 checks those applicable to the filing so clerks see what matches, what conflicts and what needs manual review. For court cases, it structures facts, claims and arguments by party with source page references.",
+				"impact": "Deployed across around fifty commercial courts, the platform processes nearly 40,000 filings per month. Inside their usual software, clerks go straight to the checks and discrepancies to settle before validating a filing, and this structured framework has helped registries harmonize their review practices. Preparing a hearing, judges cross-check the summary against the parties’ submissions with exact page references.",
 				"metrics": [
 					{
 						"label": "Courts equipped",
-						"value": "Around 50",
+						"value": "≈ 50",
 						"note": "Commercial courts whose registry software integrates the platform."
 					},
 					{
-						"label": "Filings processed in one month",
-						"value": "Nearly 40,000",
+						"label": "Filings processed per month",
+						"value": "≈ 40,000",
 						"note": "Annual-account filings, trade-register formalities and court case files."
 					},
 					{
-						"label": "Annual-account checks",
-						"value": "More than 50",
-						"note": "Distinct checks from which the engine selects those applicable to the filing."
+						"label": "Business workflows covered",
+						"value": "4",
+						"note": "Annual accounts, trade register, sole-trader registrations and court cases."
 					}
 				],
 				"tags": ["LLM", "OCR", "FastAPI", "SvelteKit", "PostgreSQL", "Keycloak"],
@@ -1046,7 +1046,7 @@
 				"indexCard": {
 					"title": "Court clerks check filings and judges trace every argument back to its source page",
 					"description": "Inside their usual software, court clerks review discrepancies between a declared filing and its supporting documents. Judges prepare hearings from a summary linked to source pages.",
-					"proof": "Around 50 courts equipped",
+					"proof": "≈ 50 courts equipped",
 					"note": "Integrated into the court registries’ line-of-business software."
 				},
 				"slug": "automatisation-greffes"
@@ -1554,12 +1554,12 @@
 			{
 				"id": "7",
 				"category": "Retail & consumer electronics",
-				"title": "A retailer brings sales, stock and logistics together in one data warehouse",
+				"title": "A retailer migrates its data warehouse and unifies sales, stock and logistics",
 				"date": "2022",
 				"location": "France",
-				"challenge": "A retailer with more than 500 stores is changing its management software. Its analysts must keep tracking each store’s sales, but also stock, orders and shipments. Yet the new software sends nested objects: a receipt holds several lines, an item several descriptions. To compare sales over time, they also need the item’s category and the store as they were on the day of purchase.",
-				"approach": "We built, for the retailer’s business intelligence team, the data warehouse that makes the new management software’s information usable for sales and logistics analysis. It handles more than 70 business objects: receipts and payments, items and promotions, stores and staff, stock and inventories, orders, receipts of goods and shipments, supplier invoices. Our generator reads the description of each object, builds the tables that keep its detail and links, then loads them as changes arrive. For sales, ready-to-query views match each line to the right item and each receipt to the store, as they were on the day of purchase.",
-				"impact": "The warehouse is in production and feeds the retailer’s sales and logistics analysis. Teams track each store’s sales without rebuilding receipts from their lines, and a change in catalog classification no longer distorts the reading of past sales. When a new object from the management software must be added, the generator produces its tables and their loading.",
+				"challenge": "While switching management software, a retailer with more than 500 stores needed to migrate its data warehouse and keep sales, stock, order and shipment reporting running without interruption. Yet the exchanged payloads are large nested JSON objects defined by complex XML schemas: a receipt holds multiple lines, an item multiple descriptions, and past sales must stay tied to the catalog and store as they stood on the purchase date.",
+				"approach": "We designed for the retailer’s BI team the migration to the new Snowflake data warehouse and the live mapping pipeline ensuring continuity across more than 70 business objects: receipts and payments, items and promotions, stores and staff, stock, orders, goods receipts, shipments and supplier invoices. The core challenge was flattening large nested JSON payloads into relational tables while reconstructing every join. Our generator parses each object’s structured XML specification to automatically produce more than 250 Snowflake tables alongside the unnesting and incremental loading scripts.",
+				"impact": "The migration ensured a seamless transition to the production data warehouse for sales and logistics teams. Analysts track every store without rebuilding receipts or joins from nested JSON payloads, and catalog reclassifications no longer distort historical comparisons. Whenever a new XML-described object is added, the generator builds its tables and conversion scripts.",
 				"metrics": [
 					{
 						"label": "Business objects handled",
@@ -1580,34 +1580,34 @@
 				"tags": ["Snowflake", "Python", "SQL", "Kafka", "Qlik"],
 				"details": [
 					{
-						"actor": "Management software",
-						"title": "Send the changes",
-						"text": "The new software sends each changed object: a receipt and its lines, an item record, a stock movement or a shipment."
+						"actor": "Generator",
+						"title": "Parse XML specifications",
+						"text": "From each business object’s structured XML description, it generates Snowflake table creation statements and transformation scripts."
 					},
 					{
-						"actor": "Data warehouse",
-						"title": "Keep the detail",
-						"text": "Each object is split into linked tables: lines stay attached to their receipt and successive versions of an item are kept."
+						"actor": "Transition pipeline",
+						"title": "Map flows live",
+						"text": "During the switchover, business objects from the legacy system are ingested continuously and written live in the new target format."
 					},
 					{
-						"actor": "Data warehouse",
-						"title": "Load what is new",
-						"text": "The loads take in existing data, then only the changes, without reloading the whole history."
+						"actor": "Snowflake warehouse",
+						"title": "Unnest JSON payloads",
+						"text": "Generated scripts split large nested JSON objects into linked tables, rebuild all joins and preserve version history."
 					},
 					{
 						"actor": "Sales analyst",
-						"title": "Compare sales",
-						"text": "They track revenue and quantities by store, and reread an old sale with the item’s category and the store at the time."
+						"title": "Compare store sales",
+						"text": "They track revenue and quantities by store, reading past sales against the item category and store as of the purchase date."
 					},
 					{
 						"actor": "Logistics analyst",
-						"title": "Follow the flows",
-						"text": "They find stock, goods receipts, order picking and shipments in the same warehouse as sales."
+						"title": "Follow supply flows",
+						"text": "They query stock, goods receipts, order picking and shipments in the same warehouse as retail sales."
 					}
 				],
 				"indexCard": {
-					"title": "A retailer brings sales, stock and logistics together in one data warehouse",
-					"description": "During a change of management software, the retailer brings receipts, items, stock and shipments together in one warehouse. Analysts reread each sale with the catalog and store of the time.",
+					"title": "A retailer migrates its data warehouse and unifies sales, stock and logistics",
+					"description": "During a data warehouse migration, a generator parses XML schemas to create Snowflake tables, unnest large JSON payloads and map sales, stock and logistics live.",
 					"proof": "More than 70 business objects handled",
 					"note": "From checkout to accounting, through stock and transport."
 				},

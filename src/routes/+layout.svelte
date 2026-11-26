@@ -57,6 +57,7 @@
 	afterNavigate(({ type, shallow }) => {
 		if (shallow && type === 'goto') return;
 
+		document.documentElement.classList.remove('disable-card-transitions');
 		document.documentElement.dataset.fdtiHydrated = 'true';
 		if (type !== 'popstate') return;
 

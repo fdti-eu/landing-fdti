@@ -1001,23 +1001,23 @@
 				"date": "2025",
 				"location": "Francia",
 				"challenge": "Per verificare un deposito di bilancio, la cancelleria deve individuare stato patrimoniale, nota integrativa e dichiarazione di riservatezza, controllando che esercizio e dati coincidano tra i documenti. Per una pratica del registro delle imprese, confronta quanto dichiarato con statuti e atti. Il giudice affronta un’altra difficoltà: ritrovare rapidamente le domande di ciascuna parte e gli argomenti distribuiti tra più memorie e allegati.",
-				"approach": "Abbiamo sviluppato un’API di analisi documentale integrata nel software gestionale delle cancellerie e un’applicazione web, ospitate sui server dell’editore. La difficoltà consisteva nel trattare fascicoli scansionati eterogenei lasciando sempre la valutazione finale alle persone. Nei depositi di bilancio il motore classifica i documenti ricevuti e applica i controlli pertinenti, distinguendo concordanze, scostamenti e punti da rileggere. Nei fascicoli giudiziari organizza fatti, domande e motivi per parte, collegando ogni elemento al documento e alle pagine di origine.",
-				"impact": "Attiva in una cinquantina di tribunali commerciali, la piattaforma ha trattato quasi 40.000 pratiche in un mese. Nel proprio software abituale la cancelleria ritrova subito i controlli e gli scostamenti da decidere prima della convalida. Per preparare l’udienza il giudice confronta la sintesi con gli atti delle parti pagina alla mano.",
+				"approach": "Abbiamo sviluppato un’API di analisi documentale integrata nel software gestionale delle cancellerie e un’applicazione web, ospitate sui server dell’editore. La difficoltà consisteva nel trattare fascicoli scansionati eterogenei lasciando sempre la valutazione finale alle persone. Nei depositi di bilancio il motore classifica i documenti ricevuti e seleziona tra oltre 50 controlli quelli pertinenti alla pratica, distinguendo concordanze, scostamenti e punti da rileggere. Nei fascicoli giudiziari organizza fatti, domande e motivi per parte con rinvio alle pagine fonte.",
+				"impact": "Attiva in una cinquantina di tribunali commerciali, la piattaforma tratta quasi 40.000 pratiche al mese. Nel proprio software abituale la cancelleria ritrova subito i controlli e gli scostamenti da decidere prima della convalida, e questo quadro preciso ha portato le cancellerie ad armonizzare le proprie prassi di verifica. Per preparare l’udienza il giudice confronta la sintesi con gli atti delle parti pagina alla mano.",
 				"metrics": [
 					{
 						"label": "Tribunali attrezzati",
-						"value": "Una cinquantina",
+						"value": "≈ 50",
 						"note": "Tribunali commerciali il cui gestionale integra la piattaforma."
 					},
 					{
-						"label": "Pratiche trattate in un mese",
-						"value": "Quasi 40.000",
+						"label": "Pratiche trattate al mese",
+						"value": "≈ 40.000",
 						"note": "Depositi di bilancio, pratiche del registro delle imprese e fascicoli giudiziari."
 					},
 					{
-						"label": "Controlli sui bilanci",
-						"value": "Oltre 50",
-						"note": "Verifiche distinte tra cui il motore seleziona quelle applicabili al deposito."
+						"label": "Percorsi operativi coperti",
+						"value": "4",
+						"note": "Bilanci d’esercizio, registro delle imprese, iscrizioni di persone fisiche e fascicoli giudiziari."
 					}
 				],
 				"tags": ["LLM", "OCR", "FastAPI", "SvelteKit", "PostgreSQL", "Keycloak"],
@@ -1051,7 +1051,7 @@
 				"indexCard": {
 					"title": "La cancelleria controlla le pratiche e il giudice ritrova la pagina di ogni argomento",
 					"description": "Nel proprio gestionale abituale i cancellieri esaminano gli scostamenti tra una pratica dichiarata e i suoi allegati. Il giudice prepara l’udienza con una sintesi collegata alle pagine fonte.",
-					"proof": "Una cinquantina di tribunali attrezzati",
+					"proof": "≈ 50 tribunali attrezzati",
 					"note": "Piattaforma integrata nel software gestionale delle cancellerie."
 				},
 				"slug": "automazione-cancellerie-tribunali"
@@ -1559,12 +1559,12 @@
 			{
 				"id": "7",
 				"category": "Retail ed elettronica",
-				"title": "Un’insegna riunisce vendite, scorte e logistica in un unico data warehouse",
+				"title": "Un’insegna migra il data warehouse e riunisce vendite, scorte e logistica",
 				"date": "2022",
 				"location": "Francia",
-				"challenge": "Un’insegna con oltre 500 negozi cambia software gestionale. I suoi analisti devono continuare a seguire le vendite di ogni negozio, ma anche scorte, ordini e spedizioni. Il nuovo software però trasmette oggetti annidati: uno scontrino contiene più righe, un articolo più denominazioni. Per confrontare le vendite nel tempo bisogna anche ritrovare la categoria dell’articolo e il negozio com’erano il giorno dell’acquisto.",
-				"approach": "Abbiamo sviluppato, per il team di business intelligence dell’insegna, il data warehouse che rende utilizzabili le informazioni del nuovo gestionale per le analisi commerciali e logistiche. Gestisce oltre 70 oggetti di business: scontrini e pagamenti, articoli e promozioni, negozi e personale, scorte e inventari, ordini, ricevimenti e spedizioni, fatture dei fornitori. Il nostro generatore legge la descrizione di ogni oggetto, costruisce le tabelle che ne conservano dettaglio e collegamenti, poi le alimenta man mano che arrivano le modifiche. Per le vendite, viste pronte all’uso collegano ogni riga all’articolo giusto e ogni scontrino al negozio, com’erano il giorno dell’acquisto.",
-				"impact": "Il data warehouse è in produzione e alimenta le analisi commerciali e logistiche dell’insegna. I team seguono le vendite di ogni negozio senza ricostruire gli scontrini dalle loro righe, e un cambio di classificazione nel catalogo non falsa più la lettura delle vendite passate. Quando occorre integrare un nuovo oggetto del gestionale, il generatore ne produce le tabelle e il caricamento.",
+				"challenge": "Durante il cambio di software gestionale, un’insegna con oltre 500 negozi deve migrare il proprio data warehouse e garantire la transizione senza interrompere il controllo di vendite, scorte, ordini e spedizioni. I flussi scambiati sono però grandi oggetti JSON annidati descritti da schemi XML complessi: uno scontrino contiene più righe, un articolo più denominazioni e ogni vendita passata deve restare legata al catalogo e al negozio del giorno d’acquisto.",
+				"approach": "Abbiamo progettato per il team BI dell’insegna la migrazione al nuovo data warehouse Snowflake e il mapping in tempo reale che ha garantito la transizione su oltre 70 oggetti di business: scontrini e pagamenti, articoli e promozioni, negozi e personale, scorte, ordini, ricevimenti, spedizioni e fatture fornitori. La difficoltà consisteva nel trasformare grandi documenti JSON annidati in tabelle relazionali ricostruendo tutte le join. Il nostro generatore legge le descrizioni XML strutturate di ogni oggetto per produrre automaticamente oltre 250 tabelle Snowflake e gli script di conversione e caricamento incrementale.",
+				"impact": "La migrazione ha assicurato la transizione in produzione verso il nuovo data warehouse per i team commerciali e logistici. Gli analisti seguono ogni negozio senza ricostruire scontrini o join dai JSON annidati, e una riclassificazione a catalogo non altera più la lettura delle vendite passate. Quando si aggiunge un nuovo oggetto descritto in XML, il generatore ne produce tabelle e script.",
 				"metrics": [
 					{
 						"label": "Oggetti di business gestiti",
@@ -1585,34 +1585,34 @@
 				"tags": ["Snowflake", "Python", "SQL", "Kafka", "Qlik"],
 				"details": [
 					{
-						"actor": "Gestionale",
-						"title": "Trasmettere le modifiche",
-						"text": "Il nuovo software invia ogni oggetto modificato: uno scontrino con le sue righe, una scheda articolo, un movimento di magazzino o una spedizione."
+						"actor": "Generatore",
+						"title": "Leggere gli schemi XML",
+						"text": "A partire dalle descrizioni XML strutturate di ciascun oggetto produce le istruzioni di creazione delle tabelle Snowflake e gli script di conversione."
 					},
 					{
-						"actor": "Data warehouse",
-						"title": "Conservare il dettaglio",
-						"text": "Ogni oggetto è suddiviso in tabelle collegate: le righe restano legate al loro scontrino e le versioni successive di un articolo sono conservate."
+						"actor": "Flusso di transizione",
+						"title": "Mappare in diretta",
+						"text": "Durante il passaggio gli oggetti provenienti dal vecchio sistema vengono acquisiti in continuo e riscritti in diretta nel nuovo formato."
 					},
 					{
-						"actor": "Data warehouse",
-						"title": "Integrare le novità",
-						"text": "I caricamenti riprendono l’esistente, poi integrano solo le modifiche, senza ricaricare tutto lo storico."
+						"actor": "Warehouse Snowflake",
+						"title": "Scomporre i flussi JSON",
+						"text": "Gli script suddividono i grandi oggetti JSON annidati in tabelle collegate, ricostruiscono le join e conservano lo storico delle versioni."
 					},
 					{
 						"actor": "Analista commerciale",
 						"title": "Confrontare le vendite",
-						"text": "Segue fatturato e quantità per negozio e rilegge una vendita passata con la categoria dell’articolo e il negozio dell’epoca."
+						"text": "Segue fatturato e quantità per negozio e rilegge una vendita passata con la categoria e il negozio del giorno d’acquisto."
 					},
 					{
 						"actor": "Analista logistico",
 						"title": "Seguire i flussi",
-						"text": "Ritrova scorte, ricevimenti, preparazione degli ordini e spedizioni nello stesso warehouse delle vendite."
+						"text": "Interroga scorte, ricevimenti, preparazione ordini e spedizioni nello stesso warehouse delle vendite."
 					}
 				],
 				"indexCard": {
-					"title": "Un’insegna riunisce vendite, scorte e logistica in un unico data warehouse",
-					"description": "Durante il cambio di gestionale, l’insegna riunisce scontrini, articoli, scorte e spedizioni in un unico warehouse. Gli analisti rileggono ogni vendita con il catalogo e il negozio dell’epoca.",
+					"title": "Un’insegna migra il data warehouse e riunisce vendite, scorte e logistica",
+					"description": "Durante la migrazione del data warehouse, un generatore legge gli schemi XML per creare le tabelle Snowflake, scomporre grandi flussi JSON annidati e mappare in diretta vendite, scorte e logistica.",
 					"proof": "Oltre 70 oggetti di business gestiti",
 					"note": "Dalla cassa alla contabilità, passando per scorte e trasporto."
 				},
