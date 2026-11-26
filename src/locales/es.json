@@ -1124,40 +1124,64 @@
 			{
 				"id": "9",
 				"category": "Justicia y sector público",
-				"title": "Plataforma de gestión de un litigio colectivo",
-				"challenge": "En un litigio colectivo, miles de personas aparecen en resoluciones judiciales y archivos enviados por distintas partes. El equipo necesita preparar antes las tablas de indemnización, asignar cada importe a la persona correcta y explicar su cálculo a las partes.",
-				"approach": "Una plataforma a medida alojada en el entorno del cliente sigue a las mismas personas desde la apelación hasta la sentencia, pese a las versiones intercambiadas por abogados, defensa, peritos y jueces. La IA extrae datos de resoluciones PDF; la importación identifica las columnas útiles de cada hoja y vincula a las personas entre fuentes. Las evaluaciones periciales alimentan cálculos de daños, gastos, provisiones y divisas. Los equipos revisan los casos dudosos y las correcciones; se conservan los datos originales y las decisiones registradas.",
-				"impact": "Para cada persona, los equipos encuentran las fuentes, evaluaciones médicas, observaciones, valores originales y retenidos, y el detalle de cálculos y correcciones. Pueden revisar expedientes y preparar las tablas para la sentencia sin confundir un cálculo preparatorio con una decisión judicial.",
+				"title": "Preparar los cuadros de indemnización y poder justificar cada importe",
+				"challenge": "En un litigio colectivo con miles de afectados, el equipo judicial debe preparar cuadros de indemnización donde cada fila corresponda a la persona correcta. Sin embargo, las resoluciones en PDF, las hojas de cálculo de los abogados y los informes periciales no presentan igual los nombres ni las cuantías. Ante homonimias o solicitudes corregidas, el equipo debe localizar la fuente y explicar el importe retenido.",
+				"approach": "Hemos desarrollado una aplicación web para el equipo judicial encargado de preparar los cuadros de indemnización, alojada en la infraestructura del cliente. La dificultad residía en conciliar resoluciones PDF y libros Excel de columnas cambiantes conservando la trazabilidad íntegra de cada decisión humana. La aplicación extrae los datos de las resoluciones, importa las hojas manteniendo las filas originales, propone cruces de personas, convierte divisas con tipos oficiales fechados y genera tablas Word editables para la sentencia.",
+				"impact": "En producción sobre un procedimiento colectivo, el equipo judicial completó la revisión individual de cerca de 250 casos complejos. En cada línea del cuadro preparatorio puede consultar el documento origen, la pericia, el importe inicial, la cuantía retenida y el motivo de cualquier ajuste al redactar la sentencia.",
 				"metrics": [
 					{
-						"label": "Personas afectadas",
-						"value": "Unas 20 000",
-						"note": "Personas incluidas en el litigio colectivo."
+						"label": "Personas en las resoluciones fuente",
+						"value": "≈ 20.000",
+						"note": "Personas recogidas en las resoluciones judiciales empleadas para el cruce."
 					},
 					{
-						"label": "Tipos de fuentes reunidas",
-						"value": "3"
+						"label": "Divisas admitidas",
+						"value": "Más de 30",
+						"note": "Tipos de cambio oficiales fechados para solicitudes en moneda extranjera."
 					},
 					{
-						"label": "Datos conservados por corrección",
-						"value": "3"
+						"label": "Casos complejos revisados uno a uno",
+						"value": "≈ 250",
+						"note": "Revisiones individuales completadas por el equipo en un expediente colectivo."
 					}
 				],
-				"tags": ["IA", "OCR", "Python", "FastAPI", "SQLite"],
+				"tags": ["Python", "FastAPI", "HTMX", "SQLite", "OCR"],
 				"details": [
-					"Estructuración de resoluciones PDF e importación de hojas de cálculo de abogados cuyas columnas, nombres y versiones varían entre envíos.",
-					"Vinculación de personas entre resoluciones y archivos de abogados, con revisión de homónimos, cambios de apellido y casos dudosos.",
-					"Distinción entre evaluaciones periciales, observaciones de las partes y valores aplicados a los cálculos.",
-					"Historial de correcciones y validaciones registradas en la herramienta, conservando los valores originales y los motivos anotados.",
-					"Preparación de los cálculos y datos necesarios para las tablas de los fallos en Word, bajo supervisión humana."
+					{
+						"actor": "Aplicación",
+						"title": "Extraer e importar",
+						"text": "Lee las resoluciones judiciales en PDF e importa los libros de los abogados conservando cada fila original en su contexto."
+					},
+					{
+						"actor": "Equipo judicial",
+						"title": "Resolver los cruces",
+						"text": "Revisa las correspondencias propuestas entre fuentes y trata aparte homónimos, cambios de nombre y casos dudosos."
+					},
+					{
+						"actor": "Magistrado",
+						"title": "Motivar cada corrección",
+						"text": "Contrasta la solicitud con la valoración pericial; al corregir una cuantía, el valor original y el motivo quedan guardados."
+					},
+					{
+						"actor": "Aplicación",
+						"title": "Convertir y calcular",
+						"text": "Aplica el cálculo por concepto indemnizatorio y obtiene tipos de cambio oficiales fechados para solicitudes en moneda extranjera."
+					},
+					{
+						"actor": "Equipo judicial",
+						"title": "Exportar a la sentencia",
+						"text": "Genera el detalle individual y los totales en tablas Word editables listas para integrarse en la sentencia."
+					}
 				],
 				"indexCard": {
-					"title": "Preparar las indemnizaciones y justificar cada importe",
-					"description": "Las mismas personas aparecen en resoluciones judiciales, archivos de abogados y evaluaciones médicas. La plataforma cruza estas fuentes y conserva para cada cálculo el valor original, el valor utilizado y las correcciones.",
-					"proof": "Unas 20 000 personas registradas",
-					"note": "Personas incluidas en el litigio colectivo."
+					"title": "Preparar los cuadros de indemnización y poder justificar cada importe",
+					"description": "Las mismas personas figuran en resoluciones judiciales, archivos de abogados y peritajes. La aplicación cruza estas fuentes, conserva las correcciones motivadas y genera los cuadros de la sentencia.",
+					"proof": "≈ 20.000 personas en resoluciones fuente",
+					"note": "Cruzadas con los archivos de las partes y las valoraciones periciales."
 				},
-				"slug": "expedientes-indemnizacion"
+				"slug": "expedientes-indemnizacion",
+				"date": "2026",
+				"location": "Francia"
 			},
 			{
 				"id": "2",

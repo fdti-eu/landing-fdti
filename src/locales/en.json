@@ -1115,40 +1115,64 @@
 			{
 				"id": "9",
 				"category": "Justice & public sector",
-				"title": "Case-management platform for collective litigation",
-				"challenge": "In collective litigation, thousands of people appear across court rulings and files submitted by different parties. The team needs to prepare compensation tables faster, assign each amount to the right person and explain its calculation to the parties.",
-				"approach": "A tailored platform deployed in the client’s environment follows the same people from appeal through judgment, despite versions exchanged by lawyers, the defence, experts and judges. AI extracts data from PDF rulings; imports identify relevant columns in each spreadsheet and match people across sources. Expert assessments feed calculations covering damages, expenses, provisional payments and currencies. Teams review uncertain cases and corrections; source data and recorded decisions remain available.",
-				"impact": "For each person, teams can find the sources, medical assessments, observations, original and retained figures, and the details of calculations and corrections. They can review case files and prepare tables for the judgment without mistaking a working calculation for a judicial decision.",
+				"title": "Prepare compensation schedules and justify every single amount",
+				"challenge": "In mass-tort proceedings involving thousands of claimants, the judicial team must prepare compensation schedules in which every row maps to the right person. Yet PDF court rulings, spreadsheets submitted by counsel and expert assessments format names and amounts differently. Whenever names overlap or a party amends its claim, the team must trace the source document and explain the figure retained.",
+				"approach": "We built a dedicated web application for the judicial team preparing compensation schedules, hosted on the client’s own infrastructure. The main challenge was reconciling PDF rulings with shifting lawyer spreadsheets while keeping an audit trail of every human decision. The application extracts data from rulings, imports workbooks while preserving original rows, proposes person-level matches, converts foreign-currency claims using dated official exchange rates, and exports editable Word schedules ready for the judgment.",
+				"impact": "Running in production on a collective case, the judicial team completed individual review of nearly 250 complex files. For every row in the preparatory schedules, the team can trace the source filing, the expert assessment, the initial claim, the retained figure and the reason for any adjustment when drafting the judgment.",
 				"metrics": [
 					{
-						"label": "People involved",
-						"value": "About 20,000",
-						"note": "People covered by the collective proceedings."
+						"label": "People in source rulings",
+						"value": "≈ 20,000",
+						"note": "Individuals listed across the court decisions used for cross-referencing."
 					},
 					{
-						"label": "Source types brought together",
-						"value": "3"
+						"label": "Currencies supported",
+						"value": "More than 30",
+						"note": "Dated official exchange rates retrieved for foreign-currency claims."
 					},
 					{
-						"label": "Details retained per correction",
-						"value": "3"
+						"label": "Complex cases reviewed individually",
+						"value": "≈ 250",
+						"note": "Individual file reviews completed by the team on a collective case."
 					}
 				],
-				"tags": ["AI", "OCR", "Python", "FastAPI", "SQLite"],
+				"tags": ["Python", "FastAPI", "HTMX", "SQLite", "OCR"],
 				"details": [
-					"Structure PDF rulings and import lawyers’ spreadsheets whose columns, labels and versions change from one submission to the next.",
-					"Match people across rulings and lawyers’ files, reviewing name changes, namesakes and uncertain cases.",
-					"Keep expert assessments, the parties’ observations and the values used for calculations distinct.",
-					"Retain a history of corrections and validations entered in the tool, together with original values and recorded reasons.",
-					"Prepare calculations and the data needed for tables in Word judgments, under human supervision."
+					{
+						"actor": "Application",
+						"title": "Extract and import",
+						"text": "It reads PDF court rulings and imports counsel spreadsheets while keeping every original row accessible in context."
+					},
+					{
+						"actor": "Judicial team",
+						"title": "Resolve person matches",
+						"text": "They review proposed cross-source links and handle namesakes, name changes and uncertain matches separately."
+					},
+					{
+						"actor": "Judge",
+						"title": "Record reasoned adjustments",
+						"text": "They weigh claims against expert assessments; whenever an amount is adjusted, both the initial value and the stated reason remain on record."
+					},
+					{
+						"actor": "Application",
+						"title": "Convert and compute",
+						"text": "It calculates each head of loss and retrieves dated official exchange rates for claims submitted in foreign currencies."
+					},
+					{
+						"actor": "Judicial team",
+						"title": "Export judgment schedules",
+						"text": "They export itemized rows and summary totals as editable Word tables ready to insert into the drafted judgment."
+					}
 				],
 				"indexCard": {
-					"title": "Preparing compensation and accounting for each amount",
-					"description": "The same individuals appear in court decisions, lawyers’ files and medical assessments. The platform matches these sources and keeps the original value, the value used and any corrections for each calculation.",
-					"proof": "About 20,000 people tracked",
-					"note": "Scope of the collective litigation."
+					"title": "Prepare compensation schedules and justify every single amount",
+					"description": "The same individuals appear across court rulings, counsel spreadsheets and expert assessments. The application reconciles those sources, preserves reasoned adjustments and generates the judgment schedules.",
+					"proof": "≈ 20,000 people in source rulings",
+					"note": "Cross-referenced with counsel spreadsheets and expert assessments."
 				},
-				"slug": "compensation-case-files"
+				"slug": "compensation-case-files",
+				"date": "2026",
+				"location": "France"
 			},
 			{
 				"id": "2",
