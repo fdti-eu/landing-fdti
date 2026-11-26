@@ -1163,14 +1163,14 @@
 				"category": "Aftermarket & recyclage",
 				"title": "Un constructeur oriente et suit chaque batterie de sa filière REP en Europe",
 				"date": "2024",
-				"location": "Europe, Amérique du Nord",
+				"location": "Europe, Amérique du Nord, Asie",
 				"challenge": "Dans le réseau européen de l’un des premiers constructeurs automobiles mondiaux, des concessionnaires, des centres de démontage et des usines retirent des batteries de traction. Chacune doit partir vers la bonne filière, chez un prestataire du pays, avec l’emballage et les documents exigés. Les règles d’orientation sont propres au constructeur et varient d’une batterie à l’autre. Dans le cadre de la mise en conformité de sa filière REP batteries, le constructeur doit pouvoir dire, batterie par batterie, ce qu’elle est devenue.",
-				"approach": "Nous avons conçu, développé et exploitons la plateforme web qui porte la filière REP batteries du constructeur. Elle réunit les détenteurs de batteries, les prestataires de collecte et de traitement et les équipes du constructeur. Chaque batterie y a un dossier unique : identification par numéro de véhicule ou de batterie, complétée depuis les référentiels du constructeur, état, photos, emballage, prix, documents et historique horodaté. Un moteur de règles applique la politique du constructeur pour choisir la destination et le prestataire ; les cas prévus par les règles passent par une validation de l’équipe du constructeur. Les prestataires travaillent dans la plateforme ou depuis leur propre logiciel, par API et webhooks. Une marketplace met en vente les lots destinés à la seconde vie. L’interface est disponible en sept langues.",
+				"approach": "Nous avons conçu, développé et exploitons la plateforme web qui porte la filière REP batteries du constructeur. Elle réunit les détenteurs de batteries, les prestataires de collecte et de traitement et les équipes du constructeur. Chaque batterie y a un dossier unique : identification par numéro de véhicule ou de batterie croisée entre plusieurs référentiels du constructeur, état, photos, emballage, prix, documents et historique horodaté. Un moteur de règles applique la politique du constructeur pour choisir la destination et le prestataire ; les cas prévus par les règles passent par une validation de l’équipe du constructeur. Les prestataires travaillent dans la plateforme ou depuis leur propre logiciel, par API et webhooks. Une marketplace met en vente les lots destinés à la seconde vie. L’interface est disponible en sept langues.",
 				"details": [
 					{
 						"actor": "Détenteur",
 						"title": "Déclarer la batterie",
-						"text": "Il saisit le numéro du véhicule ou de la batterie : la plateforme retrouve ses caractéristiques. Il précise l’état, la charge et la santé, ajoute photos et emballage ou importe un lot Excel."
+						"text": "Il saisit le numéro du véhicule ou de la batterie, indique l’état, la charge et la santé, puis ajoute photos et emballage ou importe un lot Excel."
 					},
 					{
 						"actor": "Plateforme",
@@ -1194,34 +1194,34 @@
 					},
 					{
 						"actor": "Constructeur",
-						"title": "Vendre les lots de seconde vie",
+						"title": "Vendre en seconde vie",
 						"text": "L’équipe constitue un lot par site, choisit les acheteurs admis et la fenêtre d’offres, puis retient une offre au prix total, au kWh ou au kg."
 					}
 				],
-				"impact": "La plateforme est en production dans tout le réseau européen du constructeur et sert de socle à la conformité de sa filière REP batteries : pour chaque batterie, l’équipe retrouve la filière choisie, le prestataire, les dates d’enlèvement, de réception et de traitement, et le certificat qui en atteste. Près de 500 concessionnaires, centres de démontage, usines et prestataires y déclarent ou traitent des batteries, et plus de 5 000 batteries ont déjà un traitement confirmé. Ses usines nord-américaines y déclarent aussi leurs modules destinés à la seconde vie.",
+				"impact": "La plateforme est en production dans 19 pays européens et sert de socle à la conformité de la filière REP batteries du constructeur : pour chaque batterie, l’équipe retrouve la filière choisie, le prestataire, les dates d’enlèvement, de réception et de traitement, et le certificat qui en atteste. Plus de 500 concessions, centres de démontage, usines, prestataires et acheteurs y opèrent, et plus de 5 500 batteries ont un traitement confirmé. Des usines nord-américaines y déclarent aussi des modules de seconde vie, et des acheteurs en Europe et en Asie enchérissent sur les lots.",
 				"metrics": [
 					{
 						"label": "Batteries et modules déclarés",
-						"value": "Plus d’un million",
-						"note": "Déclarés par les sites du constructeur en Europe et en Amérique du Nord."
+						"value": "Plus de 26 000",
+						"note": "Déclarés par les sites du réseau européen du constructeur."
+					},
+					{
+						"label": "Organisations actives",
+						"value": "Plus de 500",
+						"note": "Concessions, centres de démontage, usines, prestataires et acheteurs sur la plateforme."
 					},
 					{
 						"label": "Orientés vers la seconde vie",
 						"value": "3 sur 4",
-						"note": "Part des batteries et modules orientés vers la seconde vie plutôt que vers le recyclage."
-					},
-					{
-						"label": "Pays de collecte",
-						"value": "21",
-						"note": "Pays des sites où des batteries ont été déclarées, en Europe et en Amérique du Nord."
+						"note": "Part des batteries et modules du réseau européen orientés vers la seconde vie plutôt que vers le recyclage."
 					}
 				],
 				"tags": ["SvelteKit", "FastAPI", "PostgreSQL", "Hasura", "Keycloak"],
 				"indexCard": {
 					"title": "Un constructeur oriente et suit chaque batterie de sa filière REP en Europe",
 					"description": "Dans le cadre de sa filière REP, les détenteurs déclarent leurs batteries, la plateforme choisit la filière et le prestataire, et l’équipe du constructeur suit chaque dossier jusqu’au certificat de traitement ou à la vente du lot.",
-					"proof": "Plus d’un million de batteries et modules déclarés",
-					"note": "En Europe et en Amérique du Nord."
+					"proof": "Plus de 26 000 batteries et modules déclarés",
+					"note": "Sur le réseau européen du constructeur."
 				},
 				"slug": "marketplace-batteries"
 			},
@@ -1261,12 +1261,12 @@
 						"text": "Le site enregistre la date et les quantités acceptées ou refusées. Quand le traitement est signé dans Trackdéchets, l’application génère le certificat de recyclage."
 					}
 				],
-				"impact": "Plus de 200 garages, concessions et centres de dépollution déclarent leurs batteries sur la plateforme, depuis plus de 250 lieux de collecte. Pour sa déclaration mensuelle de filière REP, l’équipe du recycleur reprend les données de réception : établissement d’origine, date d’arrivée et poids pesé. Pour chaque batterie, elle distingue le bordereau de réception du certificat qui atteste le traitement.",
+				"impact": "Plus de 200 garages, concessions et centres de dépollution ont déjà déclaré plus de 1 500 batteries sur la plateforme, depuis plus de 250 lieux de collecte. Pour sa déclaration mensuelle de filière REP, l’équipe du recycleur reprend les données de réception : établissement d’origine, date d’arrivée et poids pesé. Pour chaque batterie, elle distingue le bordereau de réception du certificat qui atteste le traitement.",
 				"metrics": [
 					{
-						"label": "Batteries déclarées",
-						"value": "Plus de 1 500",
-						"note": "Batteries déclarées par les garages, concessions et centres de dépollution."
+						"label": "Établissements déclarants",
+						"value": "Plus de 200",
+						"note": "Garages, concessions et centres de dépollution actifs sur la plateforme."
 					},
 					{
 						"label": "Batteries pesées à réception",
@@ -1283,8 +1283,8 @@
 				"indexCard": {
 					"title": "Du garage au site de traitement, le recycleur suit chaque batterie de la filière REP",
 					"description": "Le garage déclare la batterie, le chauffeur scanne son étiquette sur téléphone et le site distingue ce qu’il reçoit de ce qu’il traite. Le recycleur retrouve les poids et les justificatifs pour sa déclaration de filière.",
-					"proof": "Plus de 1 500 batteries déclarées",
-					"note": "Par les garages, concessions et centres de dépollution."
+					"proof": "Plus de 200 établissements déclarants",
+					"note": "Garages, concessions et centres de dépollution sur plus de 250 lieux de collecte."
 				}
 			},
 			{
@@ -1308,9 +1308,9 @@
 						"note": "Le gestionnaire voit la puissance d’une armoire demi-heure par demi-heure."
 					},
 					{
-						"label": "Parcs couverts par les alertes",
-						"value": "9 sur 10",
-						"note": "Parcs dont au moins un gestionnaire est abonné aux alertes de détection."
+						"label": "Parcs d’éclairage suivis",
+						"value": "Plus de 60",
+						"note": "Communes et groupements dont les relevés alimentent l’application."
 					}
 				],
 				"tags": ["DuckDB", "SvelteKit", "PostgreSQL", "FastAPI"],
@@ -1439,14 +1439,14 @@
 						"note": "De la caisse à la comptabilité, en passant par les stocks et le transport."
 					},
 					{
-						"label": "Domaines couverts",
-						"value": "6",
-						"note": "Caisse, catalogue, stocks, logistique, achats et finance."
+						"label": "Tables générées et alimentées",
+						"value": "Plus de 250",
+						"note": "Tables reliées produites automatiquement par le générateur à partir des schémas."
 					},
 					{
-						"label": "Lecture des ventes passées",
-						"value": "À la date d’achat",
-						"note": "Chaque ligne reste reliée à l’article et au magasin tels qu’ils étaient ce jour-là."
+						"label": "Réseau de l’enseigne",
+						"value": "Plus de 500 magasins",
+						"note": "Magasins de l’enseigne concernée par le changement de logiciel de gestion."
 					}
 				],
 				"tags": ["Snowflake", "Python", "SQL", "Kafka", "Qlik"],

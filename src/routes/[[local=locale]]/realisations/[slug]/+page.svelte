@@ -132,8 +132,8 @@
 		currentLocale === 'fr'
 			? {
 					context: 'Situation de départ',
-					approach: 'Solution',
-					impact: 'Résultat observé',
+					approach: 'Ce que nous avons construit',
+					impact: 'Résultat',
 
 					delivered: 'Parcours métier',
 					back: 'Réalisations',
@@ -142,8 +142,8 @@
 			: currentLocale === 'es'
 				? {
 						context: 'Punto de partida',
-						approach: 'Solución',
-						impact: 'Resultado observado',
+						approach: 'Lo que hemos construido',
+						impact: 'Resultado',
 
 						delivered: 'Flujo de trabajo',
 						back: 'Proyectos',
@@ -152,8 +152,8 @@
 				: currentLocale === 'de'
 					? {
 							context: 'Ausgangslage',
-							approach: 'Lösungsansatz',
-							impact: 'Beobachtetes Ergebnis',
+							approach: 'Was wir gebaut haben',
+							impact: 'Ergebnis',
 
 							delivered: 'Ablauf in der Praxis',
 							back: 'Referenzen',
@@ -162,8 +162,8 @@
 					: currentLocale === 'it'
 						? {
 								context: 'Situazione iniziale',
-								approach: 'Soluzione',
-								impact: 'Risultato osservato',
+								approach: 'Cosa abbiamo costruito',
+								impact: 'Risultato',
 
 								delivered: 'Flusso operativo',
 								back: 'Progetti',
@@ -171,8 +171,8 @@
 							}
 						: {
 								context: 'Starting point',
-								approach: 'Solution',
-								impact: 'Observed outcome',
+								approach: 'What we built',
+								impact: 'Outcome',
 
 								delivered: 'Workflow',
 								back: 'Work',
@@ -478,7 +478,7 @@
 						{#if useCase.impact}
 							<div>
 								<h2 class="font-bold text-dark-grey mb-3 flex items-center gap-2">
-									<span class="w-2 h-2 rounded-full bg-green-500"></span>
+									<span class="w-2 h-2 rounded-full bg-yellow"></span>
 									{labels.impact}
 								</h2>
 								<p class="text-dark-grey/80">

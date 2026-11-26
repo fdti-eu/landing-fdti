@@ -1163,14 +1163,14 @@
 				"category": "Aftermarket und Recycling",
 				"title": "Ein Autohersteller steuert und verfolgt jede Batterie seines EPR-Systems in Europa",
 				"date": "2024",
-				"location": "Europa, Nordamerika",
+				"location": "Europa, Nordamerika, Asien",
 				"challenge": "Im europäischen Netz eines der weltweit führenden Autohersteller bauen Autohäuser, Demontagebetriebe und Werke Traktionsbatterien aus. Jede muss in den richtigen Verwertungsweg, zu einem Dienstleister im selben Land, mit der vorgeschriebenen Verpackung und den nötigen Dokumenten. Die Zuordnungsregeln sind herstellerspezifisch und unterscheiden sich von Batterie zu Batterie. Um sein EPR-System (erweiterte Herstellerverantwortung) für Batterien konform aufzustellen, muss der Hersteller für jede einzelne Batterie sagen können, was aus ihr geworden ist.",
-				"approach": "Wir haben die Webplattform konzipiert, entwickelt und betreiben sie, die das EPR-System des Herstellers für Batterien trägt. Sie verbindet Batteriebesitzer, Sammel- und Behandlungsdienstleister und die Teams des Herstellers. Jede Batterie hat dort eine einzige Akte: Identifikation über Fahrzeug- oder Batterienummer, ergänzt aus den Stammdaten des Herstellers, Zustand, Fotos, Verpackung, Preise, Dokumente und ein Verlauf mit Zeitstempeln. Eine Regel-Engine wendet die Vorgaben des Herstellers an, um Ziel und Dienstleister zu wählen; die in den Regeln vorgesehenen Fälle durchlaufen eine Freigabe durch das Team des Herstellers. Dienstleister arbeiten in der Plattform oder aus ihrer eigenen Software, über API und Webhooks. Ein Marktplatz verkauft die Lose für das Second Life. Die Oberfläche gibt es in sieben Sprachen.",
+				"approach": "Wir haben die Webplattform konzipiert, entwickelt und betreiben sie, die das EPR-System des Herstellers für Batterien trägt. Sie verbindet Batteriebesitzer, Sammel- und Behandlungsdienstleister und die Teams des Herstellers. Jede Batterie hat dort eine einzige Akte: Identifikation über Fahrzeug- oder Batterienummer, abgeglichen über mehrere Stammdatensysteme des Herstellers, Zustand, Fotos, Verpackung, Preise, Dokumente und ein Verlauf mit Zeitstempeln. Eine Regel-Engine wendet die Vorgaben des Herstellers an, um Ziel und Dienstleister zu wählen; die in den Regeln vorgesehenen Fälle durchlaufen eine Freigabe durch das Team des Herstellers. Dienstleister arbeiten in der Plattform oder aus ihrer eigenen Software, über API und Webhooks. Ein Marktplatz verkauft die Lose für das Second Life. Die Oberfläche gibt es in sieben Sprachen.",
 				"details": [
 					{
 						"actor": "Besitzer",
 						"title": "Batterie melden",
-						"text": "Er gibt die Fahrzeug- oder Batterienummer ein: Die Plattform findet ihre Merkmale. Er erfasst Zustand, Ladung und Gesundheit und fügt Fotos und Verpackung hinzu oder importiert ein Los aus Excel."
+						"text": "Er gibt die Fahrzeug- oder Batterienummer ein, erfasst Zustand, Ladung und Gesundheit und fügt Fotos und Verpackung hinzu oder importiert ein Los aus Excel."
 					},
 					{
 						"actor": "Plattform",
@@ -1198,30 +1198,30 @@
 						"text": "Das Team stellt ein Los pro Standort zusammen, wählt die zugelassenen Käufer und die Angebotsfrist und nimmt ein Angebot als Gesamtpreis, pro kWh oder pro kg an."
 					}
 				],
-				"impact": "Die Plattform ist im gesamten europäischen Netz des Herstellers produktiv und bildet die Grundlage für die Konformität seines EPR-Systems für Batterien: Für jede Batterie findet das Team den gewählten Verwertungsweg, den Dienstleister, die Daten von Abholung, Eingang und Behandlung sowie das Zertifikat, das sie belegt. Fast 500 Autohäuser, Demontagebetriebe, Werke und Dienstleister melden oder behandeln dort Batterien, und mehr als 5.000 Batterien haben bereits eine bestätigte Behandlung. Auch seine nordamerikanischen Werke melden dort ihre Module für ein Second Life.",
+				"impact": "Die Plattform ist in 19 europäischen Ländern produktiv und trägt die Konformität des Batterie-EPR-Systems des Herstellers: Für jede Batterie findet das Team Verwertungsweg, Dienstleister, Abhol-, Eingangs- und Behandlungsdaten sowie das zugehörige Zertifikat. Mehr als 500 Autohäuser, Demontagebetriebe, Werke, Dienstleister und Käufer arbeiten darauf, und mehr als 5.500 Batterien haben eine bestätigte Behandlung. Nordamerikanische Werke melden dort ebenfalls Second-Life-Module, und Käufer in Europa und Asien bieten auf die Lose.",
 				"metrics": [
 					{
 						"label": "Gemeldete Batterien und Module",
-						"value": "Mehr als 1 Million",
-						"note": "Von Standorten des Herstellers in Europa und Nordamerika gemeldet."
+						"value": "Mehr als 26.000",
+						"note": "Von Standorten im europäischen Netz des Herstellers gemeldet."
+					},
+					{
+						"label": "Aktive Organisationen",
+						"value": "Mehr als 500",
+						"note": "Autohäuser, Demontagebetriebe, Werke, Dienstleister und Käufer auf der Plattform."
 					},
 					{
 						"label": "Für ein Second Life bestimmt",
 						"value": "3 von 4",
-						"note": "Anteil der Batterien und Module, die statt ins Recycling in ein Second Life gehen."
-					},
-					{
-						"label": "Sammelländer",
-						"value": "21",
-						"note": "Länder der Standorte, an denen Batterien gemeldet wurden, in Europa und Nordamerika."
+						"note": "Anteil der Batterien und Module im europäischen Netz, die statt ins Recycling in ein Second Life gehen."
 					}
 				],
 				"tags": ["SvelteKit", "FastAPI", "PostgreSQL", "Hasura", "Keycloak"],
 				"indexCard": {
 					"title": "Ein Autohersteller steuert und verfolgt jede Batterie seines EPR-Systems in Europa",
 					"description": "Im EPR-System melden die Besitzer ihre Batterien, die Plattform wählt Verwertungsweg und Dienstleister, und das Team des Herstellers verfolgt jede Akte bis zum Behandlungszertifikat oder zum Verkauf des Loses.",
-					"proof": "Mehr als 1 Million gemeldete Batterien und Module",
-					"note": "In Europa und Nordamerika."
+					"proof": "Mehr als 26.000 gemeldete Batterien und Module",
+					"note": "Im europäischen Netz des Herstellers."
 				},
 				"slug": "marktplatz-fuer-second-life-batterien"
 			},
@@ -1229,7 +1229,7 @@
 				"id": "8",
 				"slug": "betriebsplattform-batterierecycling",
 				"category": "Aftermarket und Recycling",
-				"title": "Von der Werkstatt bis zur Behandlungsanlage verfolgt der Recycler jede Batterie im EPR-System",
+				"title": "Von der Werkstatt bis zur Anlage verfolgt der Recycler jede Batterie im EPR-System",
 				"date": "2026",
 				"location": "Frankreich",
 				"challenge": "Im EPR-System (erweiterte Herstellerverantwortung) für Batterien muss der Recycler erklären können, was an seinen Standorten angekommen ist und was tatsächlich behandelt wurde. Doch die Werkstatt kennt den Zustand der Batterie, der Sammler weiß, wo er sie abgeholt hat, und das Werk misst, was es annimmt. Die Packliste sagt, was ankommen soll; sie reicht nicht aus, um das eingegangene Gewicht oder die Behandlung einer Batterie zu belegen.",
@@ -1261,12 +1261,12 @@
 						"text": "Der Standort erfasst Datum und angenommene oder abgelehnte Mengen. Wird die Behandlung in Trackdéchets unterzeichnet, erzeugt die Anwendung das Recyclingzertifikat."
 					}
 				],
-				"impact": "Mehr als 200 Werkstätten, Autohäuser und Schadstoffentfrachtungsbetriebe melden ihre Batterien auf der Plattform, von mehr als 250 Abholorten aus. Für seine monatliche Meldung im EPR-System nutzt das Team des Recyclers die Eingangsdaten: Herkunftsbetrieb, Ankunftsdatum und gewogenes Gewicht. Für jede Batterie unterscheidet es den Eingangsschein vom Zertifikat, das die Behandlung belegt.",
+				"impact": "Mehr als 200 Werkstätten, Autohäuser und Schadstoffentfrachtungsbetriebe haben bereits mehr als 1.500 Batterien auf der Plattform gemeldet, von mehr als 250 Abholorten aus. Für seine monatliche Meldung im EPR-System nutzt das Team des Recyclers die Eingangsdaten: Herkunftsbetrieb, Ankunftsdatum und gewogenes Gewicht. Für jede Batterie unterscheidet es den Eingangsschein vom Zertifikat, das die Behandlung belegt.",
 				"metrics": [
 					{
-						"label": "Gemeldete Batterien",
-						"value": "Mehr als 1.500",
-						"note": "Von Werkstätten, Autohäusern und Schadstoffentfrachtungsbetrieben gemeldet."
+						"label": "Meldende Betriebe",
+						"value": "Mehr als 200",
+						"note": "Werkstätten, Autohäuser und Schadstoffentfrachtungsbetriebe auf der Plattform."
 					},
 					{
 						"label": "Beim Eingang gewogene Batterien",
@@ -1281,10 +1281,10 @@
 				],
 				"tags": ["SvelteKit", "FastAPI", "PostgreSQL", "Trackdéchets"],
 				"indexCard": {
-					"title": "Von der Werkstatt bis zur Behandlungsanlage verfolgt der Recycler jede Batterie im EPR-System",
+					"title": "Von der Werkstatt bis zur Anlage verfolgt der Recycler jede Batterie im EPR-System",
 					"description": "Die Werkstatt meldet die Batterie, der Fahrer scannt ihr Etikett mit dem Telefon und der Standort trennt, was er erhält, von dem, was er behandelt. Der Recycler findet Gewichte und Nachweise für seine Meldung im EPR-System.",
-					"proof": "Mehr als 1.500 gemeldete Batterien",
-					"note": "Von Werkstätten, Autohäusern und Schadstoffentfrachtungsbetrieben."
+					"proof": "Mehr als 200 meldende Betriebe",
+					"note": "Werkstätten, Autohäuser und Schadstoffentfrachtungsbetriebe an mehr als 250 Abholorten."
 				}
 			},
 			{
@@ -1294,8 +1294,8 @@
 				"date": "2024",
 				"location": "Frankreich",
 				"challenge": "Ein Schaltschrank verbraucht am helllichten Tag weiter Strom. Ist es eine verstellte Uhr, ein Einsatz vor Ort oder ein Verbrauch, der nach dem Ausschalten anhält? Für Verantwortliche der Straßenbeleuchtung mehrerer Gemeinden reicht die Rechnungssumme nicht, um das zu klären. Sie müssen den Schaltschrank finden, wissen, wann sich sein Verbrauch geändert hat, und prüfen, ob die Abweichung wiederkehrt, bevor sie eine Kontrolle vor Ort anfordern.",
-				"approach": "Wir haben eine Webanwendung für Verantwortliche von Straßenbeleuchtungsanlagen entwickelt. Sie vereint Zählerstände, Schaltzeiten und Abrechnungsdaten. Die verantwortliche Person wählt ein Gebiet oder einen Verbund und sieht auf einer Karte die Schaltschränke mit einer Anomalie. Für jeden kann sie mehrere Nächte vergleichen, die abgerufene Leistung im Halbstundentakt prüfen und die Adresse finden. Sie wählt auch, welche Warnungen sie bei Erkennung eines Fehlers oder bei Rückkehr zum Normalzustand erhält. Für eine Vertragsprüfung findet sie je Schaltschrank die bestellte Leistung, den abgerechneten Verbrauch und den durchschnittlichen Preis je Kilowattstunde.",
-				"impact": "Die Anwendung verfolgt mehr als 6.000 Messpunkte in rund sechzig Anlagen, überwiegend kommunalen. Die verantwortliche Person kann dem Dienstleister sagen, welchen Schaltschrank er prüfen soll, zu welcher Uhrzeit sich der Verbrauch geändert hat und seit wie vielen Tagen die Abweichung auftritt. Nach einem Einsatz findet sie die Messwerte desselben Zählers, um zu sehen, ob der Fehler noch sichtbar ist. Die Energieteams stützen sich auf dieselben Daten, um eine Rechnung zu prüfen oder einen Vertrag anzupassen.",
+				"approach": "Wir haben eine Webanwendung für Verantwortliche von Straßenbeleuchtungsanlagen entwickelt. Sie vereint Zählerstände, Schaltzeiten und Abrechnungsdaten. Verantwortliche wählen ein Gebiet oder einen Verbund und sehen auf einer Karte die Schaltschränke mit einer Anomalie. Für jeden können sie mehrere Nächte vergleichen, die abgerufene Leistung im Halbstundentakt prüfen und die Adresse finden. Sie wählen auch, welche Warnungen sie bei Erkennung eines Fehlers oder bei Rückkehr zum Normalzustand erhalten. Für eine Vertragsprüfung finden sie je Schaltschrank die bestellte Leistung, den abgerechneten Verbrauch und den durchschnittlichen Preis je Kilowattstunde.",
+				"impact": "Die Anwendung verfolgt mehr als 6.000 Messpunkte in rund sechzig Anlagen, überwiegend kommunalen. Verantwortliche können dem Dienstleister genau sagen, welchen Schaltschrank er prüfen soll, zu welcher Uhrzeit sich der Verbrauch geändert hat und seit wie vielen Tagen die Abweichung auftritt. Nach einem Einsatz finden sie die Messwerte desselben Zählers, um zu prüfen, ob der Fehler noch sichtbar ist. Die Energieteams stützen sich auf dieselben Daten, um eine Rechnung zu prüfen oder einen Vertrag anzupassen.",
 				"metrics": [
 					{
 						"label": "Verfolgte Messpunkte",
@@ -1308,9 +1308,9 @@
 						"note": "Die Leistung eines Schaltschranks im Halbstundentakt."
 					},
 					{
-						"label": "Anlagen mit Warnungen",
-						"value": "9 von 10",
-						"note": "Anlagen, bei denen mindestens eine verantwortliche Person Erkennungswarnungen abonniert hat."
+						"label": "Verfolgte Beleuchtungsnetze",
+						"value": "Mehr als 60",
+						"note": "Gemeinden und Verbünde, deren Messwerte in die Anwendung einfließen."
 					}
 				],
 				"tags": ["DuckDB", "SvelteKit", "PostgreSQL", "FastAPI"],
@@ -1323,27 +1323,27 @@
 					{
 						"actor": "Verantwortliche",
 						"title": "Fehler lokalisieren",
-						"text": "Sie wählt eine Gemeinde oder einen Verbund und erkennt auf der Karte die Schaltschränke, die geprüft werden müssen."
+						"text": "Sie wählen eine Gemeinde oder einen Verbund und erkennen auf der Karte die Schaltschränke, die geprüft werden müssen."
 					},
 					{
 						"actor": "Verantwortliche",
 						"title": "Die Nacht prüfen",
-						"text": "Am Telefon oder im Büro vergleicht sie Nächte und Schaltzeiten, um den Beginn der Abweichung einzugrenzen."
+						"text": "Am Telefon oder im Büro vergleichen sie Nächte und Schaltzeiten, um den Beginn der Abweichung einzugrenzen."
 					},
 					{
 						"actor": "Verantwortliche",
 						"title": "Kontrolle vorbereiten",
-						"text": "Sie findet die Adresse des Schaltschranks und das betroffene Zeitfenster, um dem Dienstleister zu sagen, wo und wann er prüfen soll."
+						"text": "Sie finden die Adresse des Schaltschranks und das betroffene Zeitfenster, um dem Dienstleister Ort und Zeitraum der Prüfung mitzuteilen."
 					},
 					{
 						"actor": "Verantwortliche",
 						"title": "Folgende Messwerte prüfen",
-						"text": "Sie sieht die folgenden Messwerte ein oder lässt sich per E-Mail benachrichtigen, wenn die Warnung endet."
+						"text": "Sie sehen die folgenden Messwerte ein oder lassen sich per E-Mail benachrichtigen, wenn die Warnung endet."
 					}
 				],
 				"indexCard": {
 					"title": "Verantwortliche für Straßenbeleuchtung verfolgen Störungen Schaltschrank für Schaltschrank",
-					"description": "Die verantwortliche Person erkennt einen Schaltschrank mit Anomalie, prüft, was in der Nacht geschehen ist, und verfolgt die Rückkehr zum Normalzustand. Sie findet auch die Messwerte zur Kontrolle der Energierechnung.",
+					"description": "Verantwortliche erkennen einen Schaltschrank mit Anomalie, prüfen den Nachtverlauf und verfolgen die Rückkehr zum Normalzustand. Sie finden auch die Messwerte zur Kontrolle der Energierechnung.",
 					"proof": "Mehr als 6.000 verfolgte Messpunkte",
 					"note": "Zähler der Straßenbeleuchtung, deren Messwerte die Anwendung erhält."
 				},
@@ -1439,14 +1439,14 @@
 						"note": "Von der Kasse bis zur Buchhaltung, über Bestände und Transport."
 					},
 					{
-						"label": "Abgedeckte Bereiche",
-						"value": "6",
-						"note": "Kasse, Katalog, Bestände, Logistik, Einkauf und Finanzen."
+						"label": "Erzeugte und befüllte Tabellen",
+						"value": "Mehr als 250",
+						"note": "Verknüpfte Tabellen, die der Generator automatisch aus den Objektschemata aufbaut."
 					},
 					{
-						"label": "Lesart vergangener Verkäufe",
-						"value": "Zum Kaufdatum",
-						"note": "Jede Position bleibt mit Artikel und Filiale verknüpft, wie sie an diesem Tag waren."
+						"label": "Filialnetz des Händlers",
+						"value": "Mehr als 500 Filialen",
+						"note": "Filialen des Händlers beim Wechsel der Warenwirtschaft."
 					}
 				],
 				"tags": ["Snowflake", "Python", "SQL", "Kafka", "Qlik"],
