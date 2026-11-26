@@ -1001,40 +1001,62 @@
 			{
 				"id": "1",
 				"category": "Justicia y sector público",
-				"title": "Verificar trámites registrales y preparar la lectura de expedientes judiciales",
+				"title": "El secretario controla los trámites y el juez localiza la página de cada argumento",
 				"date": "2025",
 				"location": "Francia",
-				"challenge": "El personal del registro contrasta los datos declarados con los justificantes. Para examinar un asunto, el juez necesita localizar los hechos, las pretensiones de cada parte y sus argumentos.",
-				"approach": "Una API integrada en el programa de gestión prepara la revisión en los servidores del editor. Devuelve controles documentales al registro y síntesis con referencias al juez. La valoración del expediente sigue en manos de las personas responsables.",
-				"impact": "En un mes, los registros tramitaron casi 40 000 expedientes en la plataforma: depósitos de cuentas anuales, trámites del registro mercantil y expedientes judiciales.",
+				"challenge": "Para revisar un depósito de cuentas anuales, la secretaría del tribunal debe identificar balance, memoria y declaración de confidencialidad, y comprobar que el ejercicio y los importes coinciden entre documentos. En un trámite del registro mercantil, contrasta los datos declarados con estatutos y escrituras. El juez afronta otra dificultad: localizar con rapidez las pretensiones de cada parte y los argumentos repartidos en varios escritos y anexos.",
+				"approach": "Hemos desarrollado una API de análisis documental integrada en el software de gestión de las secretarías judiciales y una aplicación web, alojadas en los servidores del editor. El reto consistía en tratar expedientes escaneados heterogéneos dejando siempre la valoración jurídica en manos humanas. En cuentas anuales, el motor clasifica los documentos recibidos y selecciona los controles aplicables para mostrar qué coincide, qué difiere y qué requiere lectura manual. En asuntos judiciales, estructura hechos, pretensiones y fundamentos por parte, vinculando cada punto al documento y a las páginas originales.",
+				"impact": "Instalada en unos cincuenta tribunales mercantiles, la plataforma ha procesado cerca de 40.000 expedientes en un mes. En su herramienta habitual, la secretaría accede directamente a los controles y discrepancias que debe resolver antes de validar un depósito. Para preparar la vista, el juez contrasta la síntesis con los escritos originales página por página.",
 				"metrics": [
 					{
 						"label": "Tribunales equipados",
 						"value": "Unos 50",
-						"note": "Plataforma integrada en el programa de gestión de los registros judiciales."
+						"note": "Tribunales mercantiles cuyo software de gestión integra la plataforma."
 					},
 					{
-						"label": "Expedientes tramitados",
-						"value": "Casi 40 000",
-						"note": "En un mes, entre depósitos de cuentas anuales, trámites del registro mercantil y expedientes judiciales."
+						"label": "Expedientes tratados en un mes",
+						"value": "Cerca de 40.000",
+						"note": "Depósitos de cuentas anuales, trámites mercantiles y expedientes judiciales."
 					},
 					{
-						"label": "Procesos cubiertos",
-						"value": "4"
+						"label": "Controles en cuentas anuales",
+						"value": "Más de 50",
+						"note": "Comprobaciones distintas entre las que el motor aplica las pertinentes al depósito."
 					}
 				],
-				"tags": ["LLM", "FastAPI", "Keycloak", "TypeScript", "SvelteKit", "PostgreSQL"],
+				"tags": ["LLM", "OCR", "FastAPI", "SvelteKit", "PostgreSQL", "Keycloak"],
 				"details": [
-					"Cuentas anuales (DCA): comprobar las piezas exigidas y la coherencia entre las cuentas y la declaración de confidencialidad.",
-					"Registro mercantil (RCS): contrastar lo declarado al INPI con estatutos, actos y justificantes para identificar discrepancias.",
-					"Expedientes judiciales: resumir partes, hechos, pretensiones y argumentos con referencias a los documentos y páginas originales.",
-					"Inscripción de personas físicas (IPP): clasificar justificantes y agrupar controles de identidad, domicilio y declaración de ausencia de condenas. Los volúmenes de octubre excluyen este flujo."
+					{
+						"actor": "Software judicial",
+						"title": "Transmitir el trámite",
+						"text": "La aplicación de gestión envía los datos declarados y los documentos aportados. La API identifica el tipo de cada pieza del expediente."
+					},
+					{
+						"actor": "Secretario",
+						"title": "Controlar las cuentas anuales",
+						"text": "Examina las discrepancias señaladas entre balance, ejercicio declarado y solicitud de confidencialidad, y revisa el documento cuando persiste una duda."
+					},
+					{
+						"actor": "Secretario",
+						"title": "Verificar actos mercantiles",
+						"text": "Compara los datos declarados con estatutos, actas y justificantes para centrarse en las discordancias."
+					},
+					{
+						"actor": "Plataforma",
+						"title": "Agrupar justificantes personales",
+						"text": "En el alta de personas físicas, distingue documentos de identidad, domicilio y ausencia de condena y reúne sus controles."
+					},
+					{
+						"actor": "Juez",
+						"title": "Volver a la página fuente",
+						"text": "Desde la síntesis de pretensiones y argumentos de cada parte, la referencia indica en qué escrito o anexo y en qué página leer el pasaje."
+					}
 				],
 				"indexCard": {
-					"title": "La IA prepara los controles registrales y remite al juez a las páginas del expediente",
-					"description": "El personal del registro ve en su programa habitual las diferencias entre lo declarado y los justificantes. En los asuntos judiciales, el juez recibe una síntesis de las peticiones y los argumentos con referencias a las páginas originales.",
+					"title": "El secretario controla los trámites y el juez localiza la página de cada argumento",
+					"description": "En su herramienta habitual, las secretarías revisan las discrepancias entre un trámite declarado y sus justificantes. El juez prepara el asunto con una síntesis enlazada a las páginas fuente.",
 					"proof": "Unos 50 tribunales equipados",
-					"note": "Plataforma integrada en el programa de gestión de los registros judiciales."
+					"note": "Plataforma integrada en el software de gestión de las secretarías."
 				},
 				"slug": "automatizacion-secretarias-judiciales"
 			},

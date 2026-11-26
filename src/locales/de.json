@@ -997,40 +997,62 @@
 			{
 				"id": "1",
 				"category": "Justiz und öffentlicher Sektor",
-				"title": "Registeranmeldungen prüfen und Gerichtsakten zur Durchsicht vorbereiten",
+				"title": "Urkundsbeamte prüfen Registerakten, Richter finden die Belegseite jedes Arguments",
 				"date": "2025",
 				"location": "Frankreich",
-				"challenge": "Registermitarbeitende gleichen Angaben mit Belegen ab. Bei der Vorbereitung eines Verfahrens muss das Gericht die Tatsachen, Anträge und Argumente der Parteien in den Unterlagen finden.",
-				"approach": "Eine in die Fachsoftware integrierte API bereitet die Prüfung auf den Servern des Softwareanbieters vor. Das Register erhält Dokumentenprüfungen, das Gericht Zusammenfassungen mit Quellenangaben. Die Beurteilung bleibt bei den zuständigen Personen.",
-				"impact": "Innerhalb eines Monats bearbeiteten die Geschäftsstellen über die Plattform knapp 40.000 Vorgänge: Jahresabschlüsse, Handelsregistervorgänge und Gerichtsakten.",
+				"challenge": "Bei der Prüfung eingereichter Jahresabschlüsse muss die Geschäftsstelle Bilanz, Anhang und Vertraulichkeitserklärung zuordnen und abgleichen, ob Geschäftsjahr und Angaben über alle Unterlagen hinweg übereinstimmen. Bei Handelsregistermeldungen vergleicht sie die angemeldeten Daten mit Satzungen und Urkunden. Richter stehen vor einer anderen Aufgabe: Anträge und Argumente beider Parteien über mehrere Schriftsätze und Anlagen hinweg rasch wiederzufinden.",
+				"approach": "Wir haben eine Dokumentenanalyse-API mit Anbindung an die Fachanwendung der Gerichte sowie eine Webanwendung entwickelt, betrieben auf den Servern des Softwareherstellers. Die Herausforderung lag darin, uneinheitlich gescannte Einreichungen zuverlässig auszuwerten, ohne der richterlichen oder formalen Prüfung vorzugreifen. Bei Jahresabschlüssen erkennt die Engine die eingereichten Belege und wählt die passenden Prüfungen aus: Übereinstimmungen, Abweichungen und manuell zu klärende Punkte werden getrennt ausgewiesen. In Streitverfahren gliedert sie Sachverhalt, Anträge und Vorbringen je Partei samt Dokument- und Seitenverweis.",
+				"impact": "In rund fünfzig Handelsgerichten eingesetzt, hat die Plattform in einem Monat fast 40.000 Vorgänge verarbeitet. In ihrer gewohnten Software sieht die Geschäftsstelle sofort die Prüfpunkte und Abweichungen vor der Freigabe. Zur Sitzungsvorbereitung gleicht das Gericht die Übersicht seitenweise mit den Originalschriftsätzen ab.",
 				"metrics": [
 					{
 						"label": "Ausgestattete Gerichte",
 						"value": "Rund 50",
-						"note": "In die Fachsoftware der Geschäftsstellen integriert."
+						"note": "Handelsgerichte, deren Fachanwendung die Plattform einbindet."
 					},
 					{
-						"label": "Bearbeitete Vorgänge",
-						"value": "Knapp 40.000",
-						"note": "In einem Monat: Jahresabschlüsse, Handelsregistervorgänge und Gerichtsakten."
+						"label": "Verarbeitete Vorgänge pro Monat",
+						"value": "Fast 40.000",
+						"note": "Jahresabschlüsse, Handelsregistermeldungen und Gerichtsakten in einem Monat."
 					},
 					{
-						"label": "Abgedeckte Arbeitsabläufe",
-						"value": "4"
+						"label": "Prüfungen für Jahresabschlüsse",
+						"value": "Mehr als 50",
+						"note": "Einzelprüfungen, aus denen die Engine die zum Vorgang passenden auswählt."
 					}
 				],
-				"tags": ["LLM", "FastAPI", "Keycloak", "TypeScript", "SvelteKit", "PostgreSQL"],
+				"tags": ["LLM", "OCR", "FastAPI", "SvelteKit", "PostgreSQL", "Keycloak"],
 				"details": [
-					"Jahresabschlüsse (DCA): erforderliche Unterlagen und Übereinstimmung zwischen Abschluss und Vertraulichkeitserklärung prüfen.",
-					"Handelsregister (RCS): INPI-Angaben mit Satzungen, Urkunden und Belegen vergleichen und Abweichungen aufzeigen.",
-					"Gerichtsverfahren: Parteien, Tatsachen, Anträge und Argumente zusammenfassen und auf Quelldokumente und Seiten verweisen.",
-					"Eintragung natürlicher Personen (IPP): Belege zuordnen und Prüfungen zu Identität, Anschrift und Straffreiheitserklärung bündeln. Die Oktoberzahlen enthalten diesen Ablauf nicht."
+					{
+						"actor": "Fachanwendung",
+						"title": "Vorgang übermitteln",
+						"text": "Die Gerichtssoftware übergibt Meldedaten und eingereichte Dateien. Die API erkennt die Dokumentart jeder Unterlage."
+					},
+					{
+						"actor": "Geschäftsstelle",
+						"title": "Jahresabschlüsse prüfen",
+						"text": "Sie sichtet gemeldete Abweichungen zwischen Bilanz, angegebenem Geschäftsjahr und Vertraulichkeitsantrag und öffnet bei Unsicherheit das Original."
+					},
+					{
+						"actor": "Geschäftsstelle",
+						"title": "Registerurkunden abgleichen",
+						"text": "Sie vergleicht die angemeldeten Registerangaben mit Satzung, Urkunden und Nachweisen, um Abweichungen gezielt zu klären."
+					},
+					{
+						"actor": "Plattform",
+						"title": "Nachweise bündeln",
+						"text": "Bei Einzelunternehmer-Eintragungen trennt sie Ausweis-, Wohnsitz- und Unbescholtenheitsnachweise und fasst die zugehörigen Prüfungen zusammen."
+					},
+					{
+						"actor": "Richter",
+						"title": "Belegstelle aufschlagen",
+						"text": "Aus der Übersicht der Anträge und Argumente verweist jede Angabe auf den genauen Schriftsatz oder die Anlage samt Seitenzahl."
+					}
 				],
 				"indexCard": {
-					"title": "KI bereitet Registerprüfungen vor und führt Richter zu den Belegstellen",
-					"description": "Die Geschäftsstelle sieht Abweichungen zwischen Anmeldung und Belegen in ihrer gewohnten Software. Für Gerichtsverfahren erhält der Richter eine Zusammenfassung der Anträge und Argumente mit Verweisen auf die Originalseiten.",
+					"title": "Urkundsbeamte prüfen Registerakten, Richter finden die Belegseite jedes Arguments",
+					"description": "In ihrer gewohnten Software prüfen Geschäftsstellen Abweichungen zwischen Anmeldung und Belegen. Richter bereiten Verfahren mit einer Übersicht samt Seitenverweisen vor.",
 					"proof": "Rund 50 ausgestattete Gerichte",
-					"note": "In die Fachsoftware der Geschäftsstellen integriert."
+					"note": "In die Fachanwendung der Handelsgerichte integriert."
 				},
 				"slug": "automatisierung-handelsgerichte"
 			},

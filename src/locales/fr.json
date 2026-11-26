@@ -997,38 +997,60 @@
 			{
 				"id": "1",
 				"category": "Justice & secteur public",
-				"title": "Contrôler les formalités du greffe et préparer la lecture des dossiers judiciaires",
+				"title": "Le greffier contrôle les formalités, le juge retrouve la page qui étaye un argument",
 				"date": "2025",
 				"location": "France",
-				"challenge": "Pour vérifier un dépôt, le greffe doit rapprocher les informations déclarées des pièces reçues. Pour préparer l’examen d’une affaire, le juge doit retrouver les faits, les demandes de chaque partie et les arguments qui les soutiennent.",
-				"approach": "Une API intégrée au logiciel métier prépare ces lectures sur les serveurs de l’éditeur. Elle restitue les contrôles documentaires au greffe et les synthèses sourcées pour le juge. L’appréciation du dossier reste humaine.",
-				"impact": "En un mois, les greffes ont traité près de 40 000 dossiers sur la plateforme : dépôts de comptes annuels, formalités du registre du commerce et dossiers judiciaires.",
+				"challenge": "Pour contrôler un dépôt de comptes annuels, le greffier doit identifier le bilan, les annexes et la déclaration de confidentialité, puis vérifier que l’exercice et les montants concordent d’une pièce à l’autre. Pour une formalité au registre du commerce, il confronte les données déclarées aux statuts et aux actes. Le juge fait face à une autre difficulté : retrouver rapidement les demandes de chaque partie et les arguments répartis dans plusieurs conclusions et pièces.",
+				"approach": "Nous avons développé une API d’analyse documentaire reliée au logiciel métier des greffes ainsi qu’une application web, hébergées sur les serveurs de l’éditeur. La difficulté consistait à traiter des liasses numérisées hétérogènes sans jamais substituer l’outil à l’appréciation humaine. Pour un dépôt de comptes, le moteur classe les pièces reçues et sélectionne les contrôles applicables : le greffier voit ce qui concorde, l’écart signalé et ce qui appelle une relecture. Pour une affaire judiciaire, l’outil structure faits, demandes et moyens par partie, en rattachant chaque point au document et aux pages sources.",
+				"impact": "Équipant une cinquantaine de tribunaux de commerce, la plateforme a traité près de 40 000 dossiers en un mois. Dans son logiciel habituel, le greffier accède directement aux points de contrôle et aux écarts à trancher avant de valider un dépôt. Pour préparer une audience, le juge confronte la synthèse aux écrits des parties avec le numéro de page correspondant.",
 				"metrics": [
 					{
 						"label": "Tribunaux équipés",
 						"value": "Une cinquantaine",
-						"note": "Plateforme intégrée au logiciel métier des greffes."
+						"note": "Tribunaux de commerce dont le logiciel métier intègre la plateforme."
 					},
 					{
-						"label": "Dossiers traités",
+						"label": "Dossiers traités en un mois",
 						"value": "Près de 40 000",
-						"note": "En un mois, sur les trois parcours : comptes annuels, formalités RCS et dossiers judiciaires."
+						"note": "Dépôts de comptes annuels, formalités du registre du commerce et dossiers judiciaires."
 					},
 					{
-						"label": "Parcours métier couverts",
-						"value": "4"
+						"label": "Contrôles sur les comptes annuels",
+						"value": "Plus de 50",
+						"note": "Vérifications distinctes parmi lesquelles le moteur sélectionne celles applicables au dépôt."
 					}
 				],
-				"tags": ["LLM", "FastAPI", "Keycloak", "TypeScript", "SvelteKit", "PostgreSQL"],
+				"tags": ["LLM", "OCR", "FastAPI", "SvelteKit", "PostgreSQL", "Keycloak"],
 				"details": [
-					"Comptes annuels (DCA) : contrôler les pièces attendues et leur cohérence, notamment entre les comptes déposés et la déclaration de confidentialité.",
-					"Registre du commerce (RCS) : comparer les informations déclarées à l’INPI avec les statuts, actes et justificatifs pour faire ressortir les écarts à examiner.",
-					"Judiciaire : réunir les parties, les faits, les demandes et les moyens dans une synthèse qui renvoie aux pièces et aux pages sources.",
-					"Immatriculation de personnes physiques (IPP) : classer les justificatifs et regrouper les contrôles d’identité, d’adresse et de non-condamnation. Ce parcours n’entre pas dans les volumes d’octobre."
+					{
+						"actor": "Logiciel du greffe",
+						"title": "Transmettre la formalité",
+						"text": "Le logiciel métier envoie les données déclarées et les pièces déposées. L’API identifie la nature de chaque document du dossier."
+					},
+					{
+						"actor": "Greffier",
+						"title": "Contrôler les comptes annuels",
+						"text": "Il examine les écarts relevés entre le bilan, l’exercice déclaré et la déclaration de confidentialité, et reprend la pièce en cas d’incertitude."
+					},
+					{
+						"actor": "Greffier",
+						"title": "Vérifier une formalité RCS",
+						"text": "Il compare les informations transmises à l’INPI avec les statuts, les actes et les justificatifs pour cibler les points à contrôler."
+					},
+					{
+						"actor": "Plateforme",
+						"title": "Regrouper les pièces d’identité",
+						"text": "Pour l’immatriculation d’une personne physique, elle distingue justificatifs d’identité, de domicile et de non-condamnation et réunit les contrôles associés."
+					},
+					{
+						"actor": "Juge",
+						"title": "Revenir aux pages sources",
+						"text": "Depuis la synthèse des demandes et des arguments de chaque partie, la référence indique dans quelles conclusions ou quelle pièce relire le passage, page à l’appui."
+					}
 				],
 				"indexCard": {
-					"title": "L’IA prépare les contrôles du greffe et renvoie le juge aux pièces du dossier",
-					"description": "Dans leur logiciel habituel, les greffiers retrouvent les écarts entre une formalité déclarée et ses justificatifs. Pour les affaires judiciaires, le juge dispose d’une synthèse des demandes et des arguments, avec un renvoi aux pages sources.",
+					"title": "Le greffier contrôle les formalités, le juge retrouve la page qui étaye un argument",
+					"description": "Dans leur logiciel habituel, les greffiers examinent les écarts entre une formalité déclarée et ses justificatifs. Pour préparer une affaire, le juge dispose d’une synthèse renvoyant aux pages sources.",
 					"proof": "Une cinquantaine de tribunaux équipés",
 					"note": "Plateforme intégrée au logiciel métier des greffes."
 				},
