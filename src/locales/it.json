@@ -1497,37 +1497,62 @@
 			{
 				"id": "6",
 				"category": "Retail ed elettronica",
-				"title": "Ritrovare i problemi ricorrenti nelle opinioni dei clienti",
-				"date": "2021-2023",
-				"location": "Globale",
-				"challenge": "Un produttore di elettronica riceve opinioni attraverso più canali. Per capire un difetto ricorrente i team devono poter accostare commenti che lo descrivono con parole diverse.",
-				"approach": "Abbiamo riunito le opinioni di oltre 25 fonti e raggruppato i commenti per tema. Chi studia le esperienze dei clienti può partire da un problema ricorrente e ritrovare le parole usate dai clienti stessi.",
-				"impact": "Il team di ricerca consulta le analisi ogni giorno e le condivide con i reparti interessati.",
-				"tags": ["GCP", "Airflow", "NLP", "LLM", "Tableau", "HuggingFace"],
+				"title": "Capire che cosa spiega un voto basso dopo un acquisto online",
+				"date": "2021",
+				"location": "Francia",
+				"challenge": "Dopo un acquisto online o la configurazione di un dispositivo, il cliente assegna un voto di soddisfazione e lascia un commento libero. Per il team ricerche di un produttore di elettronica di consumo, il voto da solo non indica che cosa correggere: un acquirente può apprezzare il prodotto ma penalizzare un pagamento rifiutato o una consegna in ritardo. Leggere e classificare a mano decine di indagini non è sostenibile.",
+				"approach": "Abbiamo sviluppato per il team ricerche una pipeline di raccolta e un data warehouse su Google Cloud che riuniscono le risposte alle indagini post-acquisto e le recensioni prodotto, affiancati da un modulo di analisi semantica dei commenti. La difficoltà consisteva nell’appiattire questionari annidati inviati in momenti diversi del percorso cliente, eliminare le recensioni duplicate e distinguere il sentiment del testo dal voto numerico. Lo strumento raggruppa formulazioni diverse per tema e porta la lettura in Tableau fino al commento originale.",
+				"impact": "Il team ricerche dispone di una base unificata con oltre 85.000 risposte post-acquisto e risale dietro una variazione di punteggio ai commenti puntuali da trasmettere ai team e-commerce, logistica, prodotto o assistenza clienti.",
+				"tags": ["Google Cloud", "Airflow", "BigQuery", "NLP", "Hugging Face", "Tableau"],
 				"details": [
-					"Un commento proveniente da un sondaggio, dall’assistenza clienti o da un sito di recensioni confluisce insieme agli altri riscontri.",
-					"Il team di ricerca ritrova i commenti sullo stesso tema e consulta le formulazioni originali.",
-					"L’assistenza segue le richieste ricorrenti. Il team di prodotto può esaminare le segnalazioni di un difetto separatamente dai problemi di consegna."
+					{
+						"actor": "Pipeline di raccolta",
+						"title": "Riunire indagini e recensioni",
+						"text": "Due volte a settimana Airflow recupera le risposte ai questionari post-acquisto e le recensioni online mantenendo voto, data e riferimento."
+					},
+					{
+						"actor": "Data warehouse",
+						"title": "Normalizzare e deduplicare",
+						"text": "Le risposte annidate vengono strutturate in BigQuery e collegate al catalogo prodotti scartando le recensioni duplicate."
+					},
+					{
+						"actor": "Modulo NLP",
+						"title": "Raggruppare per significato",
+						"text": "Il modello avvicina espressioni diverse dello stesso problema — come carta rifiutata ed errore di pagamento — e stima il sentiment del testo."
+					},
+					{
+						"actor": "Analista ricerche",
+						"title": "Esplorare per motivo",
+						"text": "Nella dashboard filtra periodo o tema — pagamento, consegna, prodotto o assistenza — e rilegge le testimonianze associate."
+					},
+					{
+						"actor": "Team ricerche",
+						"title": "Affinare le categorie",
+						"text": "Partendo dai casi ambigui emersi in lettura, precisa i temi monitorati per distinguere ritardo di consegna e mancato recapito."
+					}
 				],
 				"indexCard": {
-					"title": "Confrontare le opinioni dei clienti per capire i problemi ricorrenti",
-					"description": "Lo stesso difetto può essere descritto con parole diverse in un sondaggio, una recensione o una richiesta di assistenza. Il team di ricerca riunisce i commenti e trasmette al team di prodotto le testimonianze che spiegano il problema.",
-					"proof": "Oltre 25 fonti riunite",
-					"note": "Sondaggi, assistenza clienti e siti di recensioni."
+					"title": "Capire che cosa spiega un voto basso dopo un acquisto online",
+					"description": "Un pagamento rifiutato e un pacco in ritardo possono generare lo stesso voto negativo. Il team ricerche riunisce le indagini post-acquisto e ritrova i commenti che descrivono lo stesso problema.",
+					"proof": "Oltre 85.000 risposte di indagine riunite",
+					"note": "Su oltre 80 questionari post-acquisto e più di 10.000 commenti analizzati."
 				},
 				"slug": "hub-dati-nlp",
 				"metrics": [
 					{
-						"label": "Fonti di recensioni riunite",
-						"value": "Oltre 25"
+						"label": "Risposte di indagine riunite",
+						"value": "Oltre 85.000",
+						"note": "Risposte post-acquisto consolidate con punteggio e commento libero."
 					},
 					{
-						"label": "Consultazione da parte del team di analisi",
-						"value": "Quotidiana"
+						"label": "Indagini post-acquisto integrate",
+						"value": "Oltre 80",
+						"note": "Questionari inviati nelle diverse fasi successive all’acquisto."
 					},
 					{
-						"label": "Team utenti citati",
-						"value": "3"
+						"label": "Commenti classificati per motivo",
+						"value": "Oltre 10.000",
+						"note": "Commenti dello store online raggruppati per tema e sentiment."
 					}
 				]
 			},

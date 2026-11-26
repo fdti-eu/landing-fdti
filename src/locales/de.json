@@ -1497,37 +1497,62 @@
 			{
 				"id": "6",
 				"category": "Einzelhandel und Unterhaltungselektronik",
-				"title": "Wiederkehrende Probleme in Kundenrückmeldungen finden",
-				"date": "2021-2023",
-				"location": "Global",
-				"challenge": "Ein Elektronikhersteller erhält Rückmeldungen über mehrere Kanäle. Um einen wiederkehrenden Fehler zu verstehen, müssen die Teams Kommentare zusammenführen, die ihn mit unterschiedlichen Worten beschreiben.",
-				"approach": "Wir haben Rückmeldungen aus mehr als 25 Quellen gesammelt und nach Themen gruppiert. Das Kundenforschungsteam kann von einem wiederkehrenden Problem ausgehend die Originalaussagen der Kunden finden.",
-				"impact": "Das Kundenforschungsteam nutzt die Analysen täglich und teilt sie mit den zuständigen Teams.",
-				"tags": ["GCP", "Airflow", "NLP", "LLM", "Tableau", "HuggingFace"],
+				"title": "Nachvollziehen, was eine schlechte Bewertung nach dem Onlinekauf erklärt",
+				"date": "2021",
+				"location": "Frankreich",
+				"challenge": "Nach einem Onlinekauf oder der Einrichtung eines Geräts vergeben Kunden eine Zufriedenheitsnote und schreiben einen Freitextkommentar. Für die Marktforschung eines Herstellers von Unterhaltungselektronik zeigt die Note allein nicht, wo angesetzt werden muss: Ein Käufer kann das Gerät schätzen und dennoch eine abgelehnte Zahlung oder verspätete Lieferung abstrafen. Antworten aus Dutzenden Umfragen manuell zu sichten skaliert nicht.",
+				"approach": "Wir haben für das Forschungsteam eine Datenstrecke und ein Data Warehouse auf Google Cloud aufgebaut, das Nachkaufbefragungen und Produktbewertungen zusammenführt, ergänzt um eine semantische Textanalyse. Die Herausforderung bestand darin, verschachtelte Fragebögen verschiedener Zeitpunkte nach dem Kauf zu glätten, doppelte Produktbewertungen zu bereinigen und die Textstimmung getrennt von der Zahlennote zu erfassen. Das Modul bündelt unterschiedliche Formulierungen nach Fachthemen und macht sie in Tableau bis zum Originalzitat abrufbar.",
+				"impact": "Das Forschungsteam arbeitet auf einer gemeinsamen Basis von mehr als 85.000 Nachkaufantworten und belegt Notenschwankungen direkt mit konkreten Kundenstimmen für E-Commerce, Logistik, Produktmanagement und Kundenservice.",
+				"tags": ["Google Cloud", "Airflow", "BigQuery", "NLP", "Hugging Face", "Tableau"],
 				"details": [
-					"Ein Kommentar aus einer Umfrage, dem Kundendienst oder einem Bewertungsportal fließt mit den übrigen Rückmeldungen zusammen.",
-					"Das Kundenforschungsteam findet Kommentare zum selben Thema und liest sie im ursprünglichen Wortlaut.",
-					"Der Kundendienst verfolgt wiederkehrende Anfragen. Das Produktteam kann Meldungen zu einem Produktfehler getrennt von Lieferproblemen untersuchen."
+					{
+						"actor": "Datenstrecke",
+						"title": "Umfragen und Rezensionen laden",
+						"text": "Zweimal wöchentlich ruft Airflow Antworten aus Nachkaufumfragen und Onlinebewertungen samt Note, Datum und Produktbezug ab."
+					},
+					{
+						"actor": "Data Warehouse",
+						"title": "Glätten und bereinigen",
+						"text": "Verschachtelte Antworten werden in BigQuery strukturiert, mit dem Produktstamm verknüpft und um Dubletten bereinigt."
+					},
+					{
+						"actor": "NLP-Modul",
+						"title": "Sinngemäß gruppieren",
+						"text": "Das Modell fasst abweichende Formulierungen desselben Problems — etwa Kartenablehnung und Zahlungsabbruch — zusammen und bewertet die Textstimmung."
+					},
+					{
+						"actor": "Marktforschung",
+						"title": "Nach Themen filtern",
+						"text": "Im Tableau-Dashboard wählt sie Zeitraum oder Thema — Zahlung, Lieferung, Produkt oder Service — und liest die zugehörigen Kommentare."
+					},
+					{
+						"actor": "Forschungsteam",
+						"title": "Themenraster schärfen",
+						"text": "Anhand mehrdeutiger Treffer präzisiert das Team die Kategorien, etwa zwischen Lieferverzug und nicht zugestelltem Paket."
+					}
 				],
 				"indexCard": {
-					"title": "Kundenrückmeldungen zusammenführen und wiederkehrende Probleme verstehen",
-					"description": "In einer Umfrage, einer Rezension oder einer Anfrage beim Kundendienst kann derselbe Fehler unterschiedlich beschrieben sein. Das Kundenforschungsteam bündelt die Kommentare und gibt die aussagekräftigen Originalberichte an das Produktteam weiter.",
-					"proof": "Über 25 Quellen gebündelt",
-					"note": "Umfragen, Kundendienst und Bewertungsportale."
+					"title": "Nachvollziehen, was eine schlechte Bewertung nach dem Onlinekauf erklärt",
+					"description": "Eine abgelehnte Zahlung und ein verspätetes Paket können dieselbe schlechte Note auslösen. Das Forschungsteam bündelt seine Nachkaufumfragen und findet alle Kommentare zum selben Problem.",
+					"proof": "Mehr als 85.000 gebündelte Umfrageantworten",
+					"note": "Aus mehr als 80 Nachkaufumfragen und über 10.000 analysierten Kommentaren."
 				},
 				"slug": "datenhub-nlp",
 				"metrics": [
 					{
-						"label": "Gebündelte Feedbackquellen",
-						"value": "Mehr als 25"
+						"label": "Gebündelte Umfrageantworten",
+						"value": "Mehr als 85.000",
+						"note": "Zusammengeführte Nachkaufantworten mit Bewertung und Freitextkommentar."
 					},
 					{
-						"label": "Nutzung durch das Analyseteam",
-						"value": "Täglich"
+						"label": "Integrierte Nachkaufumfragen",
+						"value": "Mehr als 80",
+						"note": "Fragebögen zu verschiedenen Zeitpunkten nach dem Gerätekauf."
 					},
 					{
-						"label": "Genannte Nutzerteams",
-						"value": "3"
+						"label": "Nach Anlass geordnete Kommentare",
+						"value": "Mehr als 10.000",
+						"note": "Nach Thema und Stimmung gruppierte Kommentare aus dem Onlineshop."
 					}
 				]
 			},

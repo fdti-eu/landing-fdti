@@ -54,42 +54,10 @@
 			| undefined;
 	}
 	let { data }: Props = $props();
-	type UseCaseSeo = { title?: string; description: string };
-	const useCaseSeo: Partial<Record<Lang, Record<string, UseCaseSeo>>> = {
-		fr: {
-			'6': {
-				title: 'Data hub d’avis clients & NLP | FDTI',
-				description:
-					'Un data hub centralise plus de 25 sources d’avis clients et les analyse par NLP pour aider les équipes service client, produit et juridique.'
-			}
-		},
-		en: {
-			'6': {
-				title: 'Customer review data hub & NLP | FDTI',
-				description:
-					'A data hub consolidates over 25 customer-review sources and applies NLP to support customer service, product and legal teams with classified insights.'
-			}
-		},
-		de: {
-			'6': {
-				title: 'Data Hub für Kundenbewertungen und NLP | FDTI',
-				description:
-					'Ein Data Hub bündelt mehr als 25 Quellen für Kundenbewertungen und analysiert sie mit NLP, um Kundenservice, Produktentwicklung und Rechtsabteilung mit klassifizierten Erkenntnissen zu unterstützen.'
-			}
-		},
-		it: {
-			'6': {
-				title: 'Data hub delle recensioni clienti e NLP | FDTI',
-				description:
-					'Un data hub centralizza oltre 25 fonti di recensioni e le analizza con NLP per supportare i team di assistenza clienti, prodotto e legale.'
-			}
-		}
-	};
 
 	const content = $derived(data?.content || null);
 	const useCase = $derived(data?.useCase || null);
 	const currentLocale = $derived(data?.locale || 'fr');
-	const seo = $derived(useCase?.id ? useCaseSeo[currentLocale]?.[useCase.id] : undefined);
 	const labels = $derived(
 		currentLocale === 'fr'
 			? {
@@ -143,13 +111,8 @@
 	);
 
 	const metatags = $derived({
-		title: seo?.title ?? (useCase?.title ? `${useCase.title} | FDTI` : 'FDTI'),
-		description:
-			seo?.description ||
-			useCase?.indexCard?.description ||
-			useCase?.challenge ||
-			useCase?.impact ||
-			'',
+		title: useCase?.title ? `${useCase.title} | FDTI` : 'FDTI',
+		description: useCase?.indexCard?.description || useCase?.challenge || useCase?.impact || '',
 		url: useCase?.slug ? `/realisations/${useCase.slug}` : '/realisations',
 		img: SOCIAL_IMAGE_PATH
 	});
