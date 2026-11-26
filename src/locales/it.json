@@ -1120,40 +1120,64 @@
 			{
 				"id": "9",
 				"category": "Giustizia e settore pubblico",
-				"title": "Piattaforma per un contenzioso collettivo",
-				"challenge": "In un contenzioso collettivo, migliaia di persone compaiono in decisioni giudiziarie e file inviati da parti diverse. Il team deve preparare più rapidamente le tabelle di indennizzo, associare ogni importo alla persona corretta e spiegarne il calcolo alle parti.",
-				"approach": "Una piattaforma su misura ospitata nell’ambiente del cliente segue le stesse persone dall’appello alla sentenza, nonostante le diverse versioni scambiate da avvocati, difesa, periti e giudici. L’IA estrae i dati dalle decisioni PDF; l’importazione individua le colonne utili in ogni foglio e collega le persone tra le fonti. Le valutazioni peritali alimentano i calcoli di danni, spese, acconti e valute. I team verificano i casi incerti e le correzioni; dati originali e decisioni registrate restano consultabili.",
-				"impact": "Per ogni persona, i team ritrovano fonti, valutazioni mediche, osservazioni, valori originali e adottati, oltre ai dettagli dei calcoli e delle correzioni. Possono verificare le pratiche e preparare le tabelle per la sentenza senza confondere un calcolo preparatorio con una decisione giudiziaria.",
+				"title": "Preparare le tabelle di risarcimento e poter giustificare ogni importo",
+				"challenge": "In un contenzioso collettivo che coinvolge migliaia di persone, il team giudiziario deve preparare tabelle di risarcimento in cui ogni riga corrisponda alla persona giusta. Tuttavia decisioni giudiziarie in PDF, fogli di calcolo degli avvocati e perizie non riportano nomi e importi nello stesso modo. In caso di omonimia o di richiesta rettificata, il team deve risalire alla fonte e motivare il valore ritenuto.",
+				"approach": "Abbiamo sviluppato un’applicazione web dedicata al team giudiziario incaricato di preparare le tabelle di risarcimento, ospitata presso il cliente. La difficoltà consisteva nel riconciliare decisioni PDF e file Excel dalle colonne variabili conservando la tracciabilità completa di ogni valutazione umana. L’applicazione estrae i dati dalle decisioni, importa i fogli preservando le righe originali, propone gli abbinamenti anagrafici, converte le valute ai cambi ufficiali datati ed esporta tabelle Word modificabili per la sentenza.",
+				"impact": "In produzione su un procedimento collettivo, il team giudiziario ha portato a termine la verifica individuale di circa 250 casi complessi. Per ogni riga delle tabelle preparatorie ritrova il documento d’origine, la valutazione peritale, il valore iniziale, l’importo ritenuto e il motivo di ogni rettifica al momento di redigere la sentenza.",
 				"metrics": [
 					{
-						"label": "Persone coinvolte",
-						"value": "Circa 20.000",
-						"note": "Persone coinvolte nel contenzioso collettivo."
+						"label": "Persone nelle decisioni fonte",
+						"value": "≈ 20.000",
+						"note": "Persone censite nelle decisioni giudiziarie utilizzate per il raccordo."
 					},
 					{
-						"label": "Tipi di fonti riunite",
-						"value": "3"
+						"label": "Valute gestite",
+						"value": "Oltre 30",
+						"note": "Raccolta di tassi ufficiali datati per le richieste in valuta estera."
 					},
 					{
-						"label": "Dati conservati per correzione",
-						"value": "3"
+						"label": "Casi complessi verificati uno a uno",
+						"value": "≈ 250",
+						"note": "Verifiche individuali completate dal team su un fascicolo collettivo."
 					}
 				],
-				"tags": ["IA", "OCR", "Python", "FastAPI", "SQLite"],
+				"tags": ["Python", "FastAPI", "HTMX", "SQLite", "OCR"],
 				"details": [
-					"Strutturare decisioni PDF e importare fogli di calcolo degli avvocati le cui colonne, intestazioni e versioni cambiano tra gli invii.",
-					"Collegare le persone tra decisioni e file degli avvocati, verificando omonimie, cambi di cognome e casi incerti.",
-					"Distinguere valutazioni peritali, osservazioni delle parti e valori utilizzati nei calcoli.",
-					"Storicizzare correzioni e convalide registrate nell’applicazione, conservando valori originali e motivi documentati.",
-					"Preparare calcoli e dati per le tabelle da inserire nelle sentenze Word, sotto controllo umano."
+					{
+						"actor": "Applicazione",
+						"title": "Estrarre e importare",
+						"text": "Legge le decisioni in PDF e importa i file degli avvocati mantenendo consultabile ogni riga originale nel suo contesto."
+					},
+					{
+						"actor": "Team giudiziario",
+						"title": "Risolvere gli abbinamenti",
+						"text": "Verifica le corrispondenze proposte tra le fonti e gestisce a parte omonimie, cambi di nome e casi incerti."
+					},
+					{
+						"actor": "Magistrato",
+						"title": "Motivare ogni rettifica",
+						"text": "Confronta la richiesta con la perizia; quando modifica un importo, valore iniziale e motivazione restano registrati."
+					},
+					{
+						"actor": "Applicazione",
+						"title": "Convertire e calcolare",
+						"text": "Applica i calcoli per voce di danno e recupera i tassi ufficiali datati per le domande espresse in valuta estera."
+					},
+					{
+						"actor": "Team giudiziario",
+						"title": "Esportare per la sentenza",
+						"text": "Genera dettaglio individuale e riepiloghi in tabelle Word modificabili da inserire nella sentenza."
+					}
 				],
 				"indexCard": {
-					"title": "Preparare i risarcimenti e motivare ogni importo",
-					"description": "Le stesse persone compaiono nelle decisioni giudiziarie, nei file degli avvocati e nelle perizie mediche. La piattaforma confronta le fonti e conserva per ogni calcolo il valore originario, quello utilizzato e le correzioni.",
-					"proof": "Circa 20.000 persone seguite",
-					"note": "Persone coinvolte nel contenzioso collettivo."
+					"title": "Preparare le tabelle di risarcimento e poter giustificare ogni importo",
+					"description": "Le stesse persone compaiono in decisioni giudiziarie, file degli avvocati e perizie. L’applicazione raccorda le fonti, conserva le rettifiche motivate e genera le tabelle per la sentenza.",
+					"proof": "≈ 20.000 persone nelle decisioni fonte",
+					"note": "Raccordate con i prospetti delle parti e le valutazioni peritali."
 				},
-				"slug": "pratiche-risarcimento"
+				"slug": "pratiche-risarcimento",
+				"date": "2026",
+				"location": "Francia"
 			},
 			{
 				"id": "2",

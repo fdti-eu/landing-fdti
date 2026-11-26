@@ -1120,40 +1120,64 @@
 			{
 				"id": "9",
 				"category": "Justice & secteur public",
-				"title": "Plateforme de gestion d’un contentieux collectif",
-				"challenge": "Dans un contentieux collectif, des milliers de personnes apparaissent dans des décisions judiciaires et des fichiers transmis par différentes parties. L’équipe doit préparer les tableaux d’indemnisation plus rapidement, attribuer chaque montant à la bonne personne et pouvoir expliquer aux parties comment il a été calculé.",
-				"approach": "Une plateforme sur mesure, hébergée chez le client, suit les mêmes personnes de l’appel au jugement malgré les versions échangées par avocats, défense, experts et juges. L’IA extrait les données des décisions PDF ; l’import repère les colonnes utiles dans chaque classeur et rapproche les personnes entre les sources. Les évaluations d’expertise alimentent les calculs de préjudices, frais, provisions et devises. Les cas incertains et les corrections sont revus par les équipes ; données d’origine et arbitrages saisis restent consultables.",
-				"impact": "Les équipes retrouvent, pour chaque personne, les sources, les évaluations médicales, les observations, les valeurs initiales et retenues ainsi que le détail des calculs et des corrections. Elles peuvent contrôler les dossiers et préparer les tableaux destinés au jugement, sans confondre calcul préparatoire et décision judiciaire.",
+				"title": "Préparer les tableaux d’indemnisation et pouvoir justifier chaque montant",
+				"challenge": "Dans un contentieux collectif portant sur des milliers de personnes, l’équipe judiciaire doit préparer des tableaux d’indemnisation où chaque ligne correspond à la bonne partie. Or les décisions de justice PDF, les classeurs transmis par les avocats et les évaluations d’experts n’écrivent ni les noms ni les montants de la même façon. En cas d’homonymie ou de demande rectifiée, l’équipe doit retrouver la source et expliquer le montant retenu.",
+				"approach": "Nous avons développé une application web dédiée à l’équipe judiciaire chargée de préparer les tableaux d’indemnisation, hébergée directement chez le client. La difficulté consistait à réconcilier des décisions PDF et des classeurs Excel aux colonnes mouvantes tout en conservant la traçabilité complète de chaque arbitrage humain. L’application extrait les données des décisions, importe les classeurs sans perdre les lignes d’origine, propose les rapprochements de personnes, gère les conversions de devises aux taux officiels datés et génère les tableaux Word éditables destinés au jugement.",
+				"impact": "En production sur un dossier collectif, l’équipe judiciaire a mené à terme la revue individuelle de près de 250 cas complexes. Pour chaque ligne des tableaux préparatoires, elle retrouve la pièce source, l’évaluation d’expertise, la valeur initiale, le montant retenu et le motif de toute correction au moment de rédiger le jugement.",
 				"metrics": [
 					{
-						"label": "Personnes concernées",
-						"value": "Environ 20 000",
-						"note": "Personnes suivies dans le contentieux collectif."
+						"label": "Personnes dans les décisions sources",
+						"value": "≈ 20 000",
+						"note": "Personnes recensées dans les décisions de justice servant au rapprochement."
 					},
 					{
-						"label": "Types de sources réunies",
-						"value": "3"
+						"label": "Devises prises en charge",
+						"value": "Plus de 30",
+						"note": "Collecte de taux officiels datés pour convertir les demandes en monnaie étrangère."
 					},
 					{
-						"label": "Éléments conservés par correction",
-						"value": "3"
+						"label": "Cas complexes revus un par un",
+						"value": "≈ 250",
+						"note": "Vérifications individuelles menées à terme par l’équipe sur un dossier collectif."
 					}
 				],
-				"tags": ["IA", "OCR", "Python", "FastAPI", "SQLite"],
+				"tags": ["Python", "FastAPI", "HTMX", "SQLite", "OCR"],
 				"details": [
-					"Lecture structurée des décisions PDF et import de classeurs d’avocats dont les colonnes, intitulés et versions évoluent d’un envoi à l’autre.",
-					"Rapprochement des personnes entre décisions et fichiers d’avocats, avec vérification des homonymes, changements de nom et cas incertains.",
-					"Distinction entre données d’expertise, observations des parties et valeurs retenues pour les calculs.",
-					"Historique des corrections et validations saisies dans l’outil, avec conservation des valeurs d’origine et des motifs renseignés.",
-					"Préparation des calculs et des données nécessaires aux tableaux à intégrer dans les jugements Word, sous contrôle humain."
+					{
+						"actor": "Application",
+						"title": "Extraire et importer",
+						"text": "Elle lit les décisions de justice PDF et importe les classeurs des avocats en conservant chaque ligne d’origine dans son contexte."
+					},
+					{
+						"actor": "Équipe judiciaire",
+						"title": "Trancher les rapprochements",
+						"text": "Elle vérifie les correspondances proposées entre sources et traite à part les homonymes, changements de nom ou cas incertains."
+					},
+					{
+						"actor": "Magistrat",
+						"title": "Motiver chaque correction",
+						"text": "Il confronte la demande aux évaluations d’expertise ; lorsqu’il rectifie un montant, la valeur initiale et le motif saisi restent attachés au dossier."
+					},
+					{
+						"actor": "Application",
+						"title": "Convertir et calculer",
+						"text": "Elle applique les règles de calcul par poste de préjudice et recherche les taux officiels datés pour les demandes exprimées en devise étrangère."
+					},
+					{
+						"actor": "Équipe judiciaire",
+						"title": "Exporter vers le jugement",
+						"text": "Elle génère le détail individuel et les récapitulatifs dans des tableaux Word éditables qu’elle intègre au jugement rédigé."
+					}
 				],
 				"indexCard": {
-					"title": "Préparer les indemnisations et pouvoir justifier chaque montant",
-					"description": "Les mêmes personnes apparaissent dans des décisions de justice, des fichiers d’avocats et des évaluations médicales. La plateforme rapproche ces sources et conserve, pour chaque calcul, la valeur d’origine, la valeur retenue et les corrections apportées.",
-					"proof": "Environ 20 000 personnes suivies",
-					"note": "Périmètre du contentieux collectif."
+					"title": "Préparer les tableaux d’indemnisation et pouvoir justifier chaque montant",
+					"description": "Les mêmes personnes apparaissent dans des décisions de justice, des classeurs d’avocats et des expertises. L’application rapproche ces sources, conserve les corrections motivées et génère les tableaux du jugement.",
+					"proof": "≈ 20 000 personnes dans les décisions sources",
+					"note": "Rapprochées avec les classeurs des parties et les évaluations d’experts."
 				},
-				"slug": "dossiers-indemnisation"
+				"slug": "dossiers-indemnisation",
+				"date": "2026",
+				"location": "France"
 			},
 			{
 				"id": "2",

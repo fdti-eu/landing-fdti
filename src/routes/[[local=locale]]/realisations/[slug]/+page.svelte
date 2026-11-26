@@ -57,10 +57,6 @@
 	type UseCaseSeo = { title?: string; description: string };
 	const useCaseSeo: Partial<Record<Lang, Record<string, UseCaseSeo>>> = {
 		fr: {
-			'9': {
-				description:
-					'Une plateforme sur mesure réunit décisions judiciaires et fichiers hétérogènes pour suivre les dossiers d’indemnisation et leurs corrections.'
-			},
 			'5': {
 				description:
 					'Une analyse par LLM compare 60 000 publications Facebook et Instagram en 8 langues, puis croise les narratifs avec leurs performances par audience.'
@@ -72,10 +68,6 @@
 			}
 		},
 		en: {
-			'9': {
-				description:
-					'A tailored platform brings together court decisions and changing file formats to track compensation cases, corrections and human decisions.'
-			},
 			'5': {
 				description:
 					'An LLM-based analysis compares 60,000 Facebook and Instagram posts in 8 languages, linking narratives to campaign performance by audience to guide spending.'
@@ -86,17 +78,7 @@
 					'A data hub consolidates over 25 customer-review sources and applies NLP to support customer service, product and legal teams with classified insights.'
 			}
 		},
-		es: {
-			'9': {
-				description:
-					'Una plataforma a medida reúne resoluciones judiciales y archivos de formatos cambiantes para seguir expedientes de indemnización y sus correcciones.'
-			}
-		},
 		de: {
-			'9': {
-				description:
-					'Eine maßgeschneiderte Plattform verbindet Gerichtsentscheidungen und wechselnde Dateiformate, um Entschädigungsfälle und Korrekturen nachvollziehbar zu machen.'
-			},
 			'5': {
 				description:
 					'Eine LLM-gestützte Analyse vergleicht 60.000 Facebook- und Instagram-Beiträge in 8 Sprachen und verknüpft Narrative mit der Kampagnenleistung nach Zielgruppe.'
@@ -108,10 +90,6 @@
 			}
 		},
 		it: {
-			'9': {
-				description:
-					'Una piattaforma su misura riunisce decisioni giudiziarie e file di formati diversi per seguire pratiche di risarcimento e relative correzioni.'
-			},
 			'5': {
 				description:
 					'Un’analisi basata su LLM confronta 60.000 post Facebook e Instagram in otto lingue e collega le narrative alle prestazioni delle campagne per pubblico.'

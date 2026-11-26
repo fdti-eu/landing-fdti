@@ -1120,40 +1120,64 @@
 			{
 				"id": "9",
 				"category": "Justiz und öffentlicher Sektor",
-				"title": "Plattform für einen komplexen Rechtsstreit",
-				"challenge": "In einem kollektiven Rechtsstreit tauchen Tausende Menschen in Gerichtsentscheidungen und Dateien verschiedener Parteien auf. Das Team muss Entschädigungstabellen schneller vorbereiten, jeden Betrag der richtigen Person zuordnen und den Parteien seine Berechnung erklären können.",
-				"approach": "Eine maßgeschneiderte Plattform in der Umgebung des Kunden begleitet dieselben Personen von der Berufung bis zum Urteil, trotz wechselnder Dateiversionen von Anwälten, Beklagtenseite, Sachverständigen und Richtern. KI extrahiert Daten aus PDF-Entscheidungen; beim Import werden relevante Spalten je Tabelle erkannt und Personen quellenübergreifend zugeordnet. Gutachterbewertungen fließen in Berechnungen zu Schäden, Kosten, Vorauszahlungen und Währungen ein. Teams prüfen unsichere Fälle und Korrekturen; Originaldaten und erfasste Entscheidungen bleiben einsehbar.",
-				"impact": "Für jede Person finden Teams Quellen, medizinische Bewertungen, Stellungnahmen, ursprüngliche und berücksichtigte Werte sowie Berechnungs- und Korrekturdetails. Sie können Akten prüfen und Tabellen für das Urteil vorbereiten, ohne eine vorbereitende Berechnung mit einer richterlichen Entscheidung zu verwechseln.",
+				"title": "Entschädigungstabellen vorbereiten und jeden Betrag belegen können",
+				"challenge": "In einem Massenverfahren mit Tausenden Beteiligten muss das Gerichtsteam Entschädigungstabellen erstellen, in denen jede Zeile der richtigen Person zugeordnet ist. PDF-Gerichtsentscheidungen, wechselnde Anwaltstabellen und Gutachten führen Namen und Beträge jedoch unterschiedlich. Bei Namensgleichheit oder korrigierten Forderungen muss das Team die Ursprungsquelle finden und den angesetzten Betrag begründen.",
+				"approach": "Wir haben eine Webanwendung für das Gerichtsteam entwickelt, das die Entschädigungstabellen vorbereitet, betrieben beim Auftraggeber vor Ort. Die Herausforderung bestand darin, PDF-Entscheidungen und sich ändernde Excel-Mappen zusammenzuführen und zugleich jede fachliche Korrektur nachvollziehbar festzuhalten. Die Anwendung liest Entscheidungen aus, importiert Tabellen unter Erhalt der Originalzeilen, schlägt Personenabgleiche vor, rechnet Fremdwährungen mit datierten amtlichen Kursen um und erzeugt editierbare Word-Tabellen für das Urteil.",
+				"impact": "Im produktiven Einsatz bei einem Sammelverfahren hat das Gerichtsteam rund 250 prüfungsintensive Einzelfälle vollständig abgearbeitet. Für jede Tabellenzeile bleiben Ursprungsdokument, Gutachtenwert, Ausgangsforderung, angesetzter Betrag und Korrekturgrund beim Abfassen des Urteils abrufbar.",
 				"metrics": [
 					{
-						"label": "Betroffene Personen",
-						"value": "Rund 20.000",
-						"note": "Personen im Sammelverfahren."
+						"label": "Personen in Quellentscheidungen",
+						"value": "≈ 20.000",
+						"note": "In den herangezogenen Gerichtsentscheidungen erfasste Personen."
 					},
 					{
-						"label": "Zusammengeführte Quellentypen",
-						"value": "3"
+						"label": "Abgedeckte Währungen",
+						"value": "Mehr als 30",
+						"note": "Abruf datierter amtlicher Wechselkurse für Fremdwährungsforderungen."
 					},
 					{
-						"label": "Gespeicherte Angaben je Korrektur",
-						"value": "3"
+						"label": "Einzeln geprüfte Sonderfälle",
+						"value": "≈ 250",
+						"note": "Vom Gerichtsteam in einem Sammelverfahren abgeschlossene Einzelprüfungen."
 					}
 				],
-				"tags": ["KI", "OCR", "Python", "FastAPI", "SQLite"],
+				"tags": ["Python", "FastAPI", "HTMX", "SQLite", "OCR"],
 				"details": [
-					"PDF-Entscheidungen strukturiert erfassen und Anwaltstabellen importieren, deren Spalten, Bezeichnungen und Versionen sich zwischen Einreichungen ändern.",
-					"Personen zwischen Entscheidungen und Anwaltsdateien zuordnen; Namensänderungen, Namensgleichheiten und unsichere Fälle gesondert prüfen.",
-					"Gutachterliche Bewertungen, Beobachtungen der Parteien und für Berechnungen berücksichtigte Werte getrennt halten.",
-					"In der Anwendung erfasste Korrekturen und Bestätigungen historisieren und Ausgangswerte sowie dokumentierte Gründe erhalten.",
-					"Berechnungen und Daten für Tabellen in Word-Urteilen unter menschlicher Aufsicht vorbereiten."
+					{
+						"actor": "Anwendung",
+						"title": "Auslesen und importieren",
+						"text": "Sie liest PDF-Entscheidungen aus und importiert Anwaltstabellen, wobei jede Originalzeile im Kontext einsehbar bleibt."
+					},
+					{
+						"actor": "Gerichtsteam",
+						"title": "Zuordnungen klären",
+						"text": "Es prüft vorgeschlagene Verknüpfungen zwischen den Quellen und bearbeitet Namensgleichheiten oder unklare Fälle gesondert."
+					},
+					{
+						"actor": "Richter",
+						"title": "Korrekturen begründen",
+						"text": "Er gleicht die Forderung mit dem Gutachten ab; bei einer Anpassung bleiben Ausgangswert und Begründung gespeichert."
+					},
+					{
+						"actor": "Anwendung",
+						"title": "Umrechnen und berechnen",
+						"text": "Sie berechnet die einzelnen Schadensposten und ruft datierte amtliche Wechselkurse für Fremdwährungsforderungen ab."
+					},
+					{
+						"actor": "Gerichtsteam",
+						"title": "Für das Urteil exportieren",
+						"text": "Es exportiert Einzelposten und Summen als editierbare Word-Tabellen zur Übernahme in den Urteilsentwurf."
+					}
 				],
 				"indexCard": {
-					"title": "Entschädigungen vorbereiten und jeden Betrag nachvollziehbar machen",
-					"description": "Dieselben Personen erscheinen in Gerichtsentscheidungen, Anwaltsunterlagen und medizinischen Gutachten. Die Plattform gleicht die Quellen ab und bewahrt für jede Berechnung den Ausgangswert, den angesetzten Wert und die Korrekturen auf.",
-					"proof": "Rund 20.000 erfasste Personen",
-					"note": "Personen im Sammelverfahren."
+					"title": "Entschädigungstabellen vorbereiten und jeden Betrag belegen können",
+					"description": "Dieselben Personen tauchen in Gerichtsentscheidungen, Anwaltstabellen und Gutachten auf. Die Anwendung gleicht die Quellen ab, bewahrt begründete Korrekturen und erzeugt die Urteilstabellen.",
+					"proof": "≈ 20.000 Personen in Quellentscheidungen",
+					"note": "Abgeglichen mit Parteientabellen und Sachverständigengutachten."
 				},
-				"slug": "entschaedigungsakten"
+				"slug": "entschaedigungsakten",
+				"date": "2026",
+				"location": "Frankreich"
 			},
 			{
 				"id": "2",
