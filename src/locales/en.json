@@ -992,40 +992,62 @@
 			{
 				"id": "1",
 				"category": "Justice & public sector",
-				"title": "Checking registry filings and preparing judicial case files for review",
+				"title": "Court clerks check filings and judges trace every argument back to its source page",
 				"date": "2025",
 				"location": "France",
-				"challenge": "Registry staff compare declared information with supporting documents. Judges preparing to hear a case need to locate the facts, each party’s claims and the arguments supporting them.",
-				"approach": "An API integrated into the existing software prepares these reviews on the publisher’s servers. It returns document checks for registry staff and source-linked summaries for judges. People remain responsible for assessing each case.",
-				"impact": "In one month, court registries processed nearly 40,000 cases on the platform across annual accounts filings, company register formalities and court cases.",
+				"challenge": "To review an annual-accounts filing, a commercial court clerk must identify the balance sheet, notes and confidentiality statement, then verify that the fiscal year and figures match across documents. For a trade-register filing, they cross-check declared data against articles of association and deeds. Judges face a different hurdle: finding each party’s claims and supporting arguments across multiple briefs and exhibits.",
+				"approach": "We built a document-analysis API integrated into the court registries’ line-of-business software alongside a web application, hosted on the software vendor’s servers. The core challenge was handling heterogeneous scanned bundles while keeping every legal assessment in human hands. For annual accounts, the engine classifies submitted documents and runs the applicable checks so clerks see what matches, what conflicts and what needs manual review. For court cases, it structures facts, claims and arguments by party, linking every item to its source document and page numbers.",
+				"impact": "Deployed across around fifty commercial courts, the platform processed nearly 40,000 filings in a single month. Inside their usual software, clerks go straight to the checks and discrepancies to settle before validating a filing. Preparing a hearing, judges cross-check the summary against the parties’ submissions with exact page references.",
 				"metrics": [
 					{
 						"label": "Courts equipped",
 						"value": "Around 50",
-						"note": "Platform integrated into court registry software."
+						"note": "Commercial courts whose registry software integrates the platform."
 					},
 					{
-						"label": "Cases processed",
+						"label": "Filings processed in one month",
 						"value": "Nearly 40,000",
-						"note": "In one month across annual accounts filings, company register formalities and court cases."
+						"note": "Annual-account filings, trade-register formalities and court case files."
 					},
 					{
-						"label": "Workflows covered",
-						"value": "4"
+						"label": "Annual-account checks",
+						"value": "More than 50",
+						"note": "Distinct checks from which the engine selects those applicable to the filing."
 					}
 				],
-				"tags": ["LLM", "FastAPI", "Keycloak", "TypeScript", "SvelteKit", "PostgreSQL"],
+				"tags": ["LLM", "OCR", "FastAPI", "SvelteKit", "PostgreSQL", "Keycloak"],
 				"details": [
-					"Annual accounts (DCA): check required documents and consistency between the accounts and confidentiality declaration.",
-					"Company register (RCS): compare INPI declarations with articles of association, deeds and supporting documents to flag discrepancies.",
-					"Judicial cases: summarize the parties, facts, claims and arguments with references to source documents and pages.",
-					"Individual registrations (IPP): classify supporting documents and group checks on identity, address and declarations of no convictions. October volumes exclude this workflow."
+					{
+						"actor": "Registry software",
+						"title": "Send the filing",
+						"text": "The line-of-business tool sends declared data and uploaded files. The API identifies the role of each document in the bundle."
+					},
+					{
+						"actor": "Court clerk",
+						"title": "Check annual accounts",
+						"text": "They review mismatches flagged between the balance sheet, the declared fiscal year and the confidentiality request, reopening the file whenever uncertain."
+					},
+					{
+						"actor": "Court clerk",
+						"title": "Verify trade-register deeds",
+						"text": "They compare declared corporate particulars against articles, deeds and supporting records to focus on discrepancies."
+					},
+					{
+						"actor": "Platform",
+						"title": "Group personal filing records",
+						"text": "For sole-trader registrations, it separates identity, address and non-conviction records and groups the corresponding checks."
+					},
+					{
+						"actor": "Judge",
+						"title": "Trace the cited passage",
+						"text": "From the summary of each party’s claims and arguments, the citation points to the exact brief or exhibit and page numbers to read."
+					}
 				],
 				"indexCard": {
-					"title": "AI prepares registry checks and points judges to the source documents",
-					"description": "Registry staff see discrepancies between a filing and its supporting documents in their usual software. For court cases, judges receive a summary of claims and arguments with references to the original pages.",
+					"title": "Court clerks check filings and judges trace every argument back to its source page",
+					"description": "Inside their usual software, court clerks review discrepancies between a declared filing and its supporting documents. Judges prepare hearings from a summary linked to source pages.",
 					"proof": "Around 50 courts equipped",
-					"note": "Platform integrated into court registry software."
+					"note": "Integrated into the court registries’ line-of-business software."
 				},
 				"slug": "automatisation-greffes"
 			},

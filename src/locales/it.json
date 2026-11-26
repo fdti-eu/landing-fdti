@@ -997,40 +997,62 @@
 			{
 				"id": "1",
 				"category": "Giustizia e settore pubblico",
-				"title": "Verificare le pratiche di registro e preparare la lettura dei fascicoli giudiziari",
+				"title": "La cancelleria controlla le pratiche e il giudice ritrova la pagina di ogni argomento",
 				"date": "2025",
 				"location": "Francia",
-				"challenge": "La cancelleria confronta i dati dichiarati con i documenti giustificativi. Per esaminare una causa, il giudice deve individuare i fatti, le domande delle parti e gli argomenti su cui si fondano.",
-				"approach": "Un’API integrata nel gestionale prepara la verifica sui server del fornitore del software. Restituisce alla cancelleria i controlli documentali e al giudice sintesi con riferimenti alle fonti. La valutazione resta a chi esamina la pratica.",
-				"impact": "In un mese le cancellerie hanno trattato quasi 40.000 fascicoli sulla piattaforma: depositi di bilanci annuali, pratiche del registro delle imprese e fascicoli giudiziari.",
+				"challenge": "Per verificare un deposito di bilancio, la cancelleria deve individuare stato patrimoniale, nota integrativa e dichiarazione di riservatezza, controllando che esercizio e dati coincidano tra i documenti. Per una pratica del registro delle imprese, confronta quanto dichiarato con statuti e atti. Il giudice affronta un’altra difficoltà: ritrovare rapidamente le domande di ciascuna parte e gli argomenti distribuiti tra più memorie e allegati.",
+				"approach": "Abbiamo sviluppato un’API di analisi documentale integrata nel software gestionale delle cancellerie e un’applicazione web, ospitate sui server dell’editore. La difficoltà consisteva nel trattare fascicoli scansionati eterogenei lasciando sempre la valutazione finale alle persone. Nei depositi di bilancio il motore classifica i documenti ricevuti e applica i controlli pertinenti, distinguendo concordanze, scostamenti e punti da rileggere. Nei fascicoli giudiziari organizza fatti, domande e motivi per parte, collegando ogni elemento al documento e alle pagine di origine.",
+				"impact": "Attiva in una cinquantina di tribunali commerciali, la piattaforma ha trattato quasi 40.000 pratiche in un mese. Nel proprio software abituale la cancelleria ritrova subito i controlli e gli scostamenti da decidere prima della convalida. Per preparare l’udienza il giudice confronta la sintesi con gli atti delle parti pagina alla mano.",
 				"metrics": [
 					{
 						"label": "Tribunali attrezzati",
 						"value": "Una cinquantina",
-						"note": "Piattaforma integrata nel gestionale delle cancellerie."
+						"note": "Tribunali commerciali il cui gestionale integra la piattaforma."
 					},
 					{
-						"label": "Fascicoli trattati",
+						"label": "Pratiche trattate in un mese",
 						"value": "Quasi 40.000",
-						"note": "In un mese, tra depositi di bilanci annuali, pratiche del registro delle imprese e fascicoli giudiziari."
+						"note": "Depositi di bilancio, pratiche del registro delle imprese e fascicoli giudiziari."
 					},
 					{
-						"label": "Flussi di lavoro coperti",
-						"value": "4"
+						"label": "Controlli sui bilanci",
+						"value": "Oltre 50",
+						"note": "Verifiche distinte tra cui il motore seleziona quelle applicabili al deposito."
 					}
 				],
-				"tags": ["LLM", "FastAPI", "Keycloak", "TypeScript", "SvelteKit", "PostgreSQL"],
+				"tags": ["LLM", "OCR", "FastAPI", "SvelteKit", "PostgreSQL", "Keycloak"],
 				"details": [
-					"Bilanci annuali (DCA): verificare i documenti richiesti e la coerenza tra i conti depositati e la dichiarazione di riservatezza.",
-					"Registro delle imprese (RCS): confrontare le dichiarazioni INPI con statuti, atti e giustificativi per evidenziare le discrepanze.",
-					"Fascicoli giudiziari: riunire parti, fatti, domande e argomenti in una sintesi con riferimenti ai documenti e alle pagine di origine.",
-					"Iscrizioni di persone fisiche (IPP): classificare i documenti e raggruppare le verifiche di identità, indirizzo e dichiarazione di assenza di condanne. I volumi di ottobre escludono questo flusso."
+					{
+						"actor": "Gestionale di cancelleria",
+						"title": "Trasmettere la pratica",
+						"text": "Il software invia i dati dichiarati e gli allegati depositati. L’API riconosce la natura di ciascun documento del fascicolo."
+					},
+					{
+						"actor": "Cancelliere",
+						"title": "Controllare i bilanci",
+						"text": "Esamina gli scostamenti segnalati tra bilancio, esercizio dichiarato e richiesta di riservatezza, riaprendo il documento in caso di dubbio."
+					},
+					{
+						"actor": "Cancelliere",
+						"title": "Verificare gli atti societari",
+						"text": "Confronta i dati dichiarati al registro con statuti, atti e giustificativi per concentrarsi sulle discordanze."
+					},
+					{
+						"actor": "Piattaforma",
+						"title": "Raggruppare i giustificativi",
+						"text": "Per l’iscrizione di una persona fisica distingue documenti di identità, domicilio e assenza di condanne e riunisce i relativi controlli."
+					},
+					{
+						"actor": "Giudice",
+						"title": "Ritrovare la pagina citata",
+						"text": "Dalla sintesi delle domande e degli argomenti di ciascuna parte, il riferimento indica in quale memoria o allegato e a quale pagina leggere il passaggio."
+					}
 				],
 				"indexCard": {
-					"title": "L’IA prepara i controlli di cancelleria e rimanda il giudice alle pagine del fascicolo",
-					"description": "Il personale di cancelleria trova nel proprio gestionale le differenze tra quanto dichiarato e i documenti presentati. Per le cause giudiziarie il giudice riceve una sintesi delle richieste e delle argomentazioni con riferimenti alle pagine originali.",
+					"title": "La cancelleria controlla le pratiche e il giudice ritrova la pagina di ogni argomento",
+					"description": "Nel proprio gestionale abituale i cancellieri esaminano gli scostamenti tra una pratica dichiarata e i suoi allegati. Il giudice prepara l’udienza con una sintesi collegata alle pagine fonte.",
 					"proof": "Una cinquantina di tribunali attrezzati",
-					"note": "Piattaforma integrata nel gestionale delle cancellerie."
+					"note": "Piattaforma integrata nel software gestionale delle cancellerie."
 				},
 				"slug": "automazione-cancellerie-tribunali"
 			},
