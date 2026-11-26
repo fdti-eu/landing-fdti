@@ -1059,39 +1059,63 @@
 			{
 				"id": "10",
 				"indexCard": {
-					"title": "Unterlagen für mehrere Fahrzeuge mit einem Upload zuordnen",
-					"description": "Die Sachbearbeiterin lädt die Dokumente gesammelt hoch, ohne sie nach Fahrzeug zu sortieren. Die Software liest die Fahrzeugidentifikationsnummer, findet die passende Akte und schlägt die Zuordnung zur Bestätigung vor.",
-					"proof": "3.000 eingehende Belege pro Monat",
-					"note": "Belege, die beim Verwaltungsteam eingehen."
+					"title": "Belege mehrerer Fahrzeuge über einen einzigen Sammelupload zuordnen",
+					"description": "Im EPR-System für Altfahrzeuge lädt die Sachbearbeiterin einen Stapel Scans unsortiert hoch: Die Software liest die VIN, findet die Fahrzeugakte und legt den Vorschlag zur Freigabe vor.",
+					"proof": "Bis zu 50 Dateien pro Sammelupload",
+					"note": "Ausgelegt auf 3.000 eingehende Belege pro Monat ohne Einzelöffnung jeder Akte."
 				},
 				"slug": "ocr-fahrzeugakten",
-				"title": "Gemischte Dokumentenstapel den richtigen Fahrzeugakten zuordnen",
+				"title": "Belege mehrerer Fahrzeuge über einen einzigen Sammelupload zuordnen",
 				"category": "Aftermarket und Recycling",
-				"challenge": "Eine Sachbearbeiterin nimmt Unterlagen zu Altfahrzeugen entgegen und scannt sie. Für jedes Dokument öffnet sie die Fahrzeugakte, startet den Upload, wählt die lokale Datei und den Dokumenttyp aus und bestätigt die Ablage. Dann beginnt sie von vorn. Bei Hunderten von Belegen täglich und Tausenden im Monat kostet nicht nur das Scannen Zeit: Auch bereits digitalisierte Unterlagen muss sie einzeln zuordnen und ablegen.",
-				"approach": "Die Software liest die Fahrzeugidentifikationsnummer auf jedem Beleg, sucht die Fahrzeugakte und schlägt eine Kategorie vor. Die Sachbearbeiterin prüft den Beleg und bestätigt die Zuordnung.",
-				"tags": ["OCR", "VIN"],
+				"challenge": "Im EPR-System (erweiterte Herstellerverantwortung) für Altfahrzeuge erhält und scannt das Verwaltungsteam jeden Monat Tausende Papierbelege. Die Scans landen gesammelt auf dem Arbeitsplatz, obwohl sie verschiedene Fahrzeuge betreffen. Um eine Zulassungsbescheinigung oder eine Ankaufbestätigung abzulegen, muss die Sachbearbeiterin jede Datei öffnen, die Fahrgestellnummer ablesen, das Fahrzeug suchen, die Akte öffnen und den Dokumenttyp einzeln wählen.",
+				"approach": "Wir haben ein Modul für Sammelupload und Belegzuordnung direkt in der Fachanwendung für Altfahrzeug-EPR-Akten entwickelt. Die Herausforderung lag darin, Werkstattscans sehr unterschiedlicher Qualität auszuwerten und zugleich auszuschließen, dass Belege falsch zugeordnet oder überschrieben werden. Für jede Datei im Stapel liest die OCR-Komponente den Text, erkennt die Fahrgestellnummer (VIN) und schlägt Dokumentart sowie passende Fahrzeugakte in einer Nebeneinander-Prüfansicht vor.",
+				"tags": ["Angular", ".NET", "Mistral OCR", "VIN"],
 				"details": [
-					"Stapel hochladen. Eine französische Zulassungsbescheinigung, eine CERFA-Kaufmeldung und ein SIV-Registrierungsbeleg können gemeinsam eingereicht werden, selbst wenn sie unterschiedliche Fahrzeuge betreffen.",
-					"Ähnliche Belege unterscheiden. Die Kaufmeldung und die Bestätigung ihrer Registrierung gehören zum selben Vorgang, werden aber unter unterschiedlichen Dokumenttypen abgelegt. Die Software schlägt für jeden Beleg den passenden Typ vor.",
-					"Fahrzeug finden, ohne die FIN abzutippen. Die OCR liest die Nummer aus dem Dokument. Die Software sucht unter den zugänglichen Akten nach einer exakten Übereinstimmung und zeigt Beleg, vorgeschlagenen Typ, gelesene FIN und Fahrzeugakte an.",
-					"Vor der Freigabe prüfen. Auch bei nur einem Treffer bestätigt die Sachbearbeiterin die Zuordnung. Unleserliche Nummern, mehrere Treffer oder mögliche Dubletten prüft sie manuell. Bestehende Dokumente werden nicht überschrieben."
+					{
+						"actor": "Sachbearbeiterin",
+						"title": "Scanstapel hochladen",
+						"text": "Sie lädt die gescannten Dateien gemeinsam hoch, auch wenn Fahrzeugscheine und Nachweise verschiedener Fahrzeuge gemischt sind."
+					},
+					{
+						"actor": "OCR-Modul",
+						"title": "Belegart und VIN lesen",
+						"text": "Je Datei extrahiert das Modul den Text, erkennt die Fahrgestellnummer und schlägt die erkannte Dokumentkategorie vor."
+					},
+					{
+						"actor": "Anwendung",
+						"title": "Fahrzeugakte abgleichen",
+						"text": "Sie sucht den exakten VIN-Treffer im berechtigten Bestand und markiert fehlende, mehrdeutige oder unleserliche Nummern."
+					},
+					{
+						"actor": "Sachbearbeiterin",
+						"title": "Nebeneinander prüfen",
+						"text": "Neben der Originalvorschau prüft sie Fahrzeug und Dokumenttyp oder wählt bei Bedarf eine andere Akte aus."
+					},
+					{
+						"actor": "Sachbearbeiterin",
+						"title": "Ohne Überschreiben ablegen",
+						"text": "Sie bestätigt die Zuordnung; liegt bereits ein gleichartiger Beleg in der Akte, erscheint vorab ein Hinweis."
+					}
 				],
-				"impact": "Die Werkstatt oder der zugelassene Verwertungsbetrieb findet den geprüften Beleg in der Fahrzeugakte. Die Sachbearbeiterin klärt unleserliche Nummern, mehrdeutige Treffer und Duplikate.",
+				"impact": "Statt nach dem Scannen jede Fahrzeugakte einzeln herauszusuchen, arbeitet die Sachbearbeiterin den Stapel in einer Prüfansicht ab und konzentriert sich auf unleserliche Nummern oder mögliche Dubletten. Für die Nachweisführung im EPR-System erhält jede Akte den geprüften Beleg ohne unbeabsichtigtes Überschreiben.",
 				"metrics": [
 					{
-						"label": "Belege, die beim Verwaltungsteam eingehen",
-						"value": "3.000",
-						"note": "Pro Monat."
+						"label": "Belegeingang im Team",
+						"value": "3.000 pro Monat",
+						"note": "Monatliches Aufkommen an Verwaltungsbelegen für die Fahrzeugakten."
 					},
 					{
-						"label": "Dokumenttypen im gezeigten Stapel",
-						"value": "3"
+						"label": "Kapazität je Sammelupload",
+						"value": "Bis zu 50 Dateien",
+						"note": "Gemeinsam hochgeladene Dokumente über mehrere Fahrzeuge hinweg."
 					},
 					{
-						"label": "Bestätigung vor der Ablage",
-						"value": "1"
+						"label": "Quellen im Untersuchungskorpus",
+						"value": "Rund 100 Werkstätten",
+						"note": "Unterschiedliche Betriebe, deren reale Scans in die Auslegung eingeflossen sind."
 					}
-				]
+				],
+				"location": "Frankreich"
 			},
 			{
 				"id": "9",

@@ -1059,39 +1059,63 @@
 			{
 				"id": "10",
 				"indexCard": {
-					"title": "Archiviare i documenti di più veicoli con un solo caricamento",
-					"description": "L’addetta carica un lotto di documenti senza suddividerli per veicolo. Per ogni documento il software legge il numero di telaio, trova la pratica corrispondente e propone l’abbinamento da convalidare.",
-					"proof": "3.000 documenti ricevuti al mese",
-					"note": "Documenti ricevuti dal personale amministrativo."
+					"title": "Classificare i giustificativi di più veicoli a partire da un unico caricamento",
+					"description": "Nel sistema EPR dei veicoli fuori uso, l’addetta carica un lotto di scansioni senza ordinarle prima: il software legge il VIN, trova il fascicolo veicolo e sottopone la classificazione a convalida.",
+					"proof": "Fino a 50 file per caricamento a lotti",
+					"note": "Per gestire 3.000 giustificativi ricevuti al mese senza aprire ogni scheda a mano."
 				},
 				"slug": "ocr-fascicoli-veicoli",
-				"title": "Archiviare un lotto di documenti nei fascicoli dei veicoli corretti",
+				"title": "Classificare i giustificativi di più veicoli a partire da un unico caricamento",
 				"category": "Aftermarket e riciclo",
-				"challenge": "Un’addetta amministrativa riceve e scansiona i documenti dei veicoli fuori uso. Per ciascun documento apre la scheda del veicolo, avvia il caricamento, seleziona il file sul computer, sceglie il tipo di documento e conferma. Poi ricomincia. Con centinaia di documenti al giorno e migliaia al mese, non è solo la scansione a richiedere tempo: anche quando i file sono già digitalizzati, occorre cercare il fascicolo e classificare ogni documento.",
-				"approach": "Il software legge il numero di telaio su ogni documento del lotto, cerca il fascicolo del veicolo e propone una categoria. L’addetta verifica il documento e conferma l’abbinamento.",
-				"tags": ["OCR", "VIN"],
+				"challenge": "Nel sistema EPR (responsabilità estesa del produttore) dei veicoli fuori uso, il team amministrativo riceve e scansiona ogni mese migliaia di documenti cartacei. I file arrivano insieme sulla postazione anche quando riguardano veicoli diversi. Per archiviare un libretto o una ricevuta di dichiarazione d’acquisto, l’addetta deve aprire il file, leggere il numero di telaio, cercare il veicolo, aprirne la scheda e scegliere la categoria documento per documento.",
+				"approach": "Abbiamo sviluppato un modulo di caricamento e classificazione a lotti integrato nell’applicazione gestionale che tiene i fascicoli del sistema EPR dei veicoli fuori uso. La difficoltà consisteva nel trattare scansioni di qualità disomogenea provenienti dalle officine garantendo che nessun documento venga associato per errore o sovrascritto. Per ogni file del lotto il modulo OCR estrae il testo, individua il numero di telaio (VIN) e propone sia la categoria documentale sia il fascicolo veicolo in una coda di revisione affiancata.",
+				"tags": ["Angular", ".NET", "Mistral OCR", "VIN"],
 				"details": [
-					"Caricare il lotto. Una carta di circolazione francese, un modulo CERFA di dichiarazione d’acquisto e una ricevuta SIV possono essere caricati insieme, anche se riguardano veicoli diversi.",
-					"Distinguere documenti simili. La dichiarazione d’acquisto e la ricevuta che ne attesta la registrazione riguardano la stessa pratica, ma si archiviano sotto tipi diversi. Il software propone la categoria appropriata per ciascun documento.",
-					"Trovare il veicolo senza ricopiare il VIN. L’OCR legge il numero sul documento. Il software cerca una corrispondenza esatta tra i fascicoli accessibili e mostra il documento, il tipo proposto, il VIN letto e il fascicolo suggerito.",
-					"Verificare prima di rendere visibile il documento. L’addetta conferma l’associazione anche quando la corrispondenza è unica. Numeri illeggibili, corrispondenze multiple e possibili duplicati passano alla revisione manuale. Nessun documento esistente viene sovrascritto."
+					{
+						"actor": "Addetta",
+						"title": "Caricare il lotto",
+						"text": "Seleziona insieme i file già scansionati, anche quando mescolano libretti e ricevute appartenenti a veicoli diversi."
+					},
+					{
+						"actor": "Modulo OCR",
+						"title": "Leggere tipo e telaio",
+						"text": "Per ciascun file il modulo estrae il testo, individua il VIN e propone la categoria documentale riconosciuta."
+					},
+					{
+						"actor": "Applicazione",
+						"title": "Trovare il fascicolo veicolo",
+						"text": "Cerca una corrispondenza esatta del VIN nel perimetro autorizzato e segnala i numeri mancanti, ambigui o illeggibili."
+					},
+					{
+						"actor": "Addetta",
+						"title": "Verificare a fianco",
+						"text": "Accanto all’anteprima dell’originale controlla veicolo e tipologia proposti oppure seleziona un altro fascicolo."
+					},
+					{
+						"actor": "Addetta",
+						"title": "Confermare senza sovrascrivere",
+						"text": "Conferma l’abbinamento; se nel fascicolo è già presente un documento dello stesso tipo, riceve prima un avviso."
+					}
 				],
-				"impact": "L’officina o il centro autorizzato ritrova il documento convalidato nel fascicolo del veicolo. L’addetta verifica i numeri illeggibili, le corrispondenze multiple e i duplicati.",
+				"impact": "Invece di ripetere la ricerca scheda per scheda dopo la scansione, l’addetta esamina il lotto in un’unica schermata e concentra l’attenzione sui numeri illeggibili o sui possibili duplicati. Per la tenuta dei fascicoli del sistema EPR, ogni veicolo riceve il giustificativo convalidato senza sovrascritture involontarie.",
 				"metrics": [
 					{
-						"label": "Documenti ricevuti dal personale amministrativo",
-						"value": "3.000",
-						"note": "Al mese."
+						"label": "Documenti ricevuti dal team",
+						"value": "3.000 al mese",
+						"note": "Volume mensile di giustificativi amministrativi da archiviare nei fascicoli veicoli."
 					},
 					{
-						"label": "Tipi di documenti nel lotto descritto",
-						"value": "3"
+						"label": "Capacità per caricamento",
+						"value": "Fino a 50 file",
+						"note": "Documenti caricati in un’unica operazione tra più veicoli."
 					},
 					{
-						"label": "Conferma prima dell’archiviazione",
-						"value": "1"
+						"label": "Provenienze nel corpus di studio",
+						"value": "Quasi 100 officine",
+						"note": "Officine distinte le cui scansioni reali hanno guidato la qualificazione del modulo."
 					}
-				]
+				],
+				"location": "Francia"
 			},
 			{
 				"id": "9",

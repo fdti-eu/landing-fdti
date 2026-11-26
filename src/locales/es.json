@@ -1063,39 +1063,63 @@
 			{
 				"id": "10",
 				"indexCard": {
-					"title": "Clasificar documentos de varios vehículos en una sola entrega",
-					"description": "La gestora carga un lote de documentos sin separarlos por vehículo. El programa lee el número de bastidor de cada documento, localiza el expediente y le propone la vinculación para que la valide.",
-					"proof": "3 000 documentos recibidos al mes",
-					"note": "Documentos recibidos por el equipo administrativo."
+					"title": "Clasificar los justificantes de varios vehículos a partir de una sola carga",
+					"description": "En el sistema RAP de vehículos fuera de uso, la gestora sube un lote de escaneos sin clasificarlos antes: el software lee el VIN, localiza cada expediente y propone el archivo para su validación.",
+					"proof": "Hasta 50 archivos por carga en lote",
+					"note": "Para absorber 3.000 justificantes al mes sin abrir cada ficha manualmente."
 				},
 				"slug": "ocr-expedientes-vehiculos",
-				"title": "Clasificar un lote de documentos en los expedientes de vehículo correctos",
+				"title": "Clasificar los justificantes de varios vehículos a partir de una sola carga",
 				"category": "Posventa y reciclaje",
-				"challenge": "Una gestora administrativa recibe y escanea documentos de vehículos al final de su vida útil. Para cada documento, abre la ficha del vehículo, inicia la carga, selecciona el archivo en su equipo, elige el tipo de documento y confirma. Después repite la operación. Con cientos de documentos al día y miles al mes, el escaneo es solo una parte del trabajo: incluso con los archivos ya digitalizados, hay que buscar el expediente y clasificar cada pieza.",
-				"approach": "El programa lee el número de bastidor de cada documento del lote, busca el expediente del vehículo y propone una categoría. La gestora revisa el documento y confirma la vinculación.",
-				"tags": ["OCR", "VIN"],
+				"challenge": "En el sistema RAP (responsabilidad ampliada del productor) de vehículos fuera de uso, el equipo administrativo recibe y escanea cada mes miles de justificantes en papel. Los archivos llegan juntos al puesto de trabajo aunque correspondan a vehículos distintos. Para archivar un permiso de circulación o un resguardo de declaración de compra, la gestora debe abrir el archivo, leer el bastidor, buscar el vehículo, abrir su ficha y elegir la categoría uno por uno.",
+				"approach": "Hemos desarrollado un módulo de carga y clasificación por lotes integrado en la aplicación de gestión de los expedientes del sistema RAP de vehículos fuera de uso. El reto consistía en tratar escaneos de calidad desigual procedentes de los talleres garantizando que ningún documento se asocie por error ni sobrescriba otro existente. Para cada archivo del lote, el lector OCR extrae el texto, detecta el número de bastidor (VIN) y propone tanto la categoría documental como el expediente correspondiente en una cola de revisión en paralelo.",
+				"tags": ["Angular", ".NET", "Mistral OCR", "VIN"],
 				"details": [
-					"Cargar el lote. Un permiso de circulación francés, un formulario CERFA de declaración de compra y un justificante SIV pueden cargarse juntos, aunque correspondan a vehículos distintos.",
-					"Distinguir documentos similares. La declaración de compra y el justificante de su registro corresponden al mismo trámite, pero se archivan bajo tipos diferentes. El programa propone la categoría de cada documento.",
-					"Encontrar el vehículo sin copiar el VIN. El OCR lee el número en el documento. El sistema busca una coincidencia exacta entre los expedientes autorizados y muestra el documento, el tipo propuesto, el VIN leído y el expediente candidato.",
-					"Verificar antes de dar acceso. La gestora confirma la asociación incluso si solo hay una coincidencia. Si el número es ilegible, hay varias coincidencias o parece haber un duplicado, revisa el caso manualmente. No se sobrescribe ningún documento."
+					{
+						"actor": "Gestora",
+						"title": "Subir el lote escaneado",
+						"text": "Selecciona a la vez los archivos ya digitalizados, aunque mezclen permisos de circulación y resguardos de distintos vehículos."
+					},
+					{
+						"actor": "Módulo OCR",
+						"title": "Leer documento y VIN",
+						"text": "En cada archivo, el módulo extrae el texto, localiza el número de bastidor y propone la categoría documental reconocida."
+					},
+					{
+						"actor": "Aplicación",
+						"title": "Localizar el expediente",
+						"text": "Busca una coincidencia exacta del VIN en el ámbito autorizado y señala los números ausentes, ambiguos o ilegibles."
+					},
+					{
+						"actor": "Gestora",
+						"title": "Revisar en paralelo",
+						"text": "Junto a la vista previa del documento original, comprueba el vehículo y el tipo propuestos o elige otro expediente."
+					},
+					{
+						"actor": "Gestora",
+						"title": "Confirmar sin sobrescribir",
+						"text": "Valida la asignación; si ya consta un justificante del mismo tipo en el expediente, recibe un aviso previo."
+					}
 				],
-				"impact": "El taller o el centro autorizado encuentra el justificante validado en el expediente del vehículo. La gestora revisa los números ilegibles, las coincidencias múltiples y los duplicados.",
+				"impact": "En lugar de repetir la búsqueda ficha por ficha tras el escaneo, la gestora revisa el lote en una sola pantalla y concentra su atención en los bastidores ilegibles o posibles duplicados. Para la trazabilidad del sistema RAP, cada vehículo conserva el justificante validado sin sobrescrituras accidentales.",
 				"metrics": [
 					{
-						"label": "Documentos recibidos por el equipo administrativo",
-						"value": "3 000",
-						"note": "Al mes."
+						"label": "Documentos recibidos al mes",
+						"value": "3.000 al mes",
+						"note": "Volumen mensual de justificantes administrativos por archivar en los expedientes."
 					},
 					{
-						"label": "Tipos de documentos en el lote descrito",
-						"value": "3"
+						"label": "Capacidad por carga",
+						"value": "Hasta 50 archivos",
+						"note": "Documentos depositados en una sola operación entre distintos vehículos."
 					},
 					{
-						"label": "Validación antes de archivar",
-						"value": "1"
+						"label": "Orígenes del corpus de estudio",
+						"value": "Cerca de 100 talleres",
+						"note": "Talleres distintos cuyos escaneos sirvieron para calibrar el reconocimiento."
 					}
-				]
+				],
+				"location": "Francia"
 			},
 			{
 				"id": "9",
