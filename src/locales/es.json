@@ -1167,14 +1167,14 @@
 				"category": "Posventa y reciclaje",
 				"title": "Un fabricante orienta y sigue cada batería de su sistema RAP en Europa",
 				"date": "2024",
-				"location": "Europa, Norteamérica",
+				"location": "Europa, Norteamérica, Asia",
 				"challenge": "En la red europea de uno de los principales fabricantes de automóviles del mundo, concesionarios, centros de desmontaje y plantas retiran baterías de tracción. Cada una debe ir al destino correcto, a un proveedor del mismo país, con el embalaje y los documentos exigidos. Las reglas de orientación son propias del fabricante y varían de una batería a otra. Para poner en conformidad su sistema RAP (responsabilidad ampliada del productor) de baterías, el fabricante debe poder decir, batería por batería, qué ha sido de ella.",
-				"approach": "Hemos diseñado, desarrollado y operamos la plataforma web que sostiene el sistema RAP de baterías del fabricante. Reúne a los poseedores de baterías, a los proveedores de recogida y tratamiento y a los equipos del fabricante. Cada batería tiene un expediente único: identificación por número de vehículo o de batería, completada con los datos de referencia del fabricante, estado, fotos, embalaje, precios, documentos e historial con fecha y hora. Un motor de reglas aplica la política del fabricante para elegir el destino y el proveedor; los casos previstos por las reglas pasan por una validación del equipo del fabricante. Los proveedores trabajan en la plataforma o desde su propio software, mediante API y webhooks. Un marketplace pone a la venta los lotes destinados a la segunda vida. La interfaz está disponible en siete idiomas.",
+				"approach": "Hemos diseñado, desarrollado y operamos la plataforma web que sostiene el sistema RAP de baterías del fabricante. Reúne a los poseedores de baterías, a los proveedores de recogida y tratamiento y a los equipos del fabricante. Cada batería tiene un expediente único: identificación por número de vehículo o de batería cruzada entre varios sistemas de referencia del fabricante, estado, fotos, embalaje, precios, documentos e historial con fecha y hora. Un motor de reglas aplica la política del fabricante para elegir el destino y el proveedor; los casos previstos por las reglas pasan por una validación del equipo del fabricante. Los proveedores trabajan en la plataforma o desde su propio software, mediante API y webhooks. Un marketplace pone a la venta los lotes destinados a la segunda vida. La interfaz está disponible en siete idiomas.",
 				"details": [
 					{
 						"actor": "Poseedor",
 						"title": "Declarar la batería",
-						"text": "Introduce el número del vehículo o de la batería: la plataforma recupera sus características. Indica el estado, la carga y la salud, y añade fotos y embalaje, o importa un lote desde Excel."
+						"text": "Introduce el número del vehículo o de la batería, indica el estado, la carga y la salud, y añade fotos y embalaje o importa un lote Excel."
 					},
 					{
 						"actor": "Plataforma",
@@ -1198,34 +1198,34 @@
 					},
 					{
 						"actor": "Fabricante",
-						"title": "Vender lotes de segunda vida",
+						"title": "Vender en segunda vida",
 						"text": "El equipo forma un lote por sitio, elige los compradores admitidos y el plazo de ofertas, y elige una oferta con precio total, por kWh o por kg."
 					}
 				],
-				"impact": "La plataforma está en producción en toda la red europea del fabricante y sirve de base a la conformidad de su sistema RAP de baterías: para cada batería, el equipo encuentra el destino elegido, el proveedor, las fechas de recogida, recepción y tratamiento, y el certificado que lo acredita. Cerca de 500 concesionarios, centros de desmontaje, plantas y proveedores declaran o tratan baterías en ella, y más de 5.000 baterías ya tienen un tratamiento confirmado. Sus plantas norteamericanas también declaran en ella sus módulos destinados a la segunda vida.",
+				"impact": "La plataforma está en producción en 19 países europeos y sirve de base a la conformidad del sistema RAP de baterías del fabricante: para cada batería, el equipo encuentra el destino elegido, el proveedor, las fechas de recogida, recepción y tratamiento, y el certificado que lo acredita. Más de 500 concesionarios, centros de desmontaje, plantas, proveedores y compradores operan en ella, y más de 5.500 baterías tienen un tratamiento confirmado. Plantas norteamericanas también declaran en ella módulos de segunda vida, y compradores en Europa y Asia pujan por los lotes.",
 				"metrics": [
 					{
 						"label": "Baterías y módulos declarados",
-						"value": "Más de 1 millón",
-						"note": "Declarados por los sitios del fabricante en Europa y Norteamérica."
+						"value": "Más de 26.000",
+						"note": "Declarados por los sitios de la red europea del fabricante."
+					},
+					{
+						"label": "Organizaciones activas",
+						"value": "Más de 500",
+						"note": "Concesionarios, centros de desmontaje, plantas, proveedores y compradores en la plataforma."
 					},
 					{
 						"label": "Orientados a la segunda vida",
 						"value": "3 de cada 4",
-						"note": "Proporción de baterías y módulos orientados a la segunda vida en lugar del reciclaje."
-					},
-					{
-						"label": "Países de recogida",
-						"value": "21",
-						"note": "Países de los sitios donde se han declarado baterías, en Europa y Norteamérica."
+						"note": "Proporción de baterías y módulos de la red europea orientados a la segunda vida en lugar del reciclaje."
 					}
 				],
 				"tags": ["SvelteKit", "FastAPI", "PostgreSQL", "Hasura", "Keycloak"],
 				"indexCard": {
 					"title": "Un fabricante orienta y sigue cada batería de su sistema RAP en Europa",
 					"description": "En su sistema RAP, los poseedores declaran sus baterías, la plataforma elige el destino y el proveedor, y el equipo del fabricante sigue cada expediente hasta el certificado de tratamiento o la venta del lote.",
-					"proof": "Más de 1 millón de baterías y módulos declarados",
-					"note": "En Europa y Norteamérica."
+					"proof": "Más de 26.000 baterías y módulos declarados",
+					"note": "En la red europea del fabricante."
 				},
 				"slug": "marketplace-baterias"
 			},
@@ -1265,12 +1265,12 @@
 						"text": "El sitio registra la fecha y las cantidades aceptadas o rechazadas. Cuando el tratamiento se firma en Trackdéchets, la aplicación genera el certificado de reciclaje."
 					}
 				],
-				"impact": "Más de 200 talleres, concesionarios y centros de descontaminación declaran sus baterías en la plataforma, desde más de 250 lugares de recogida. Para su declaración mensual del sistema RAP, el equipo del reciclador reutiliza los datos de recepción: establecimiento de origen, fecha de llegada y peso pesado. Para cada batería, distingue el documento de recepción del certificado que acredita el tratamiento.",
+				"impact": "Más de 200 talleres, concesionarios y centros de descontaminación ya han declarado más de 1.500 baterías en la plataforma, desde más de 250 lugares de recogida. Para su declaración mensual del sistema RAP, el equipo del reciclador reutiliza los datos de recepción: establecimiento de origen, fecha de llegada y peso pesado. Para cada batería, distingue el documento de recepción del certificado que acredita el tratamiento.",
 				"metrics": [
 					{
-						"label": "Baterías declaradas",
-						"value": "Más de 1.500",
-						"note": "Baterías declaradas por talleres, concesionarios y centros de descontaminación."
+						"label": "Establecimientos declarantes",
+						"value": "Más de 200",
+						"note": "Talleres, concesionarios y centros de descontaminación activos en la plataforma."
 					},
 					{
 						"label": "Baterías pesadas a la recepción",
@@ -1278,17 +1278,17 @@
 						"note": "Peso registrado por el sitio a la llegada, utilizado en la declaración del sistema RAP."
 					},
 					{
-						"label": "Plazo medio de aceptación",
+						"label": "Plazo mediano de aceptación",
 						"value": "7 días",
-						"note": "Mediana entre la declaración y la validación de la recogida por el reciclador."
+						"note": "De la declaración a la validación de la recogida por el reciclador."
 					}
 				],
 				"tags": ["SvelteKit", "FastAPI", "PostgreSQL", "Trackdéchets"],
 				"indexCard": {
 					"title": "Del taller a la planta de tratamiento, el reciclador sigue cada batería del sistema RAP",
 					"description": "El taller declara la batería, el conductor escanea su etiqueta en el teléfono y el sitio distingue lo que recibe de lo que trata. El reciclador encuentra los pesos y los justificantes para su declaración del sistema RAP.",
-					"proof": "Más de 1.500 baterías declaradas",
-					"note": "Por talleres, concesionarios y centros de descontaminación."
+					"proof": "Más de 200 establecimientos declarantes",
+					"note": "Talleres, concesionarios y centros de descontaminación en más de 250 puntos de recogida."
 				}
 			},
 			{
@@ -1312,9 +1312,9 @@
 						"note": "El gestor ve la potencia de un cuadro media hora a media hora."
 					},
 					{
-						"label": "Redes cubiertas por las alertas",
-						"value": "9 de cada 10",
-						"note": "Redes en las que al menos un gestor está suscrito a las alertas de detección."
+						"label": "Redes de alumbrado seguidas",
+						"value": "Más de 60",
+						"note": "Municipios y agrupaciones cuyas lecturas alimentan la aplicación."
 					}
 				],
 				"tags": ["DuckDB", "SvelteKit", "PostgreSQL", "FastAPI"],
@@ -1443,14 +1443,14 @@
 						"note": "De la caja a la contabilidad, pasando por los stocks y el transporte."
 					},
 					{
-						"label": "Ámbitos cubiertos",
-						"value": "6",
-						"note": "Caja, catálogo, stocks, logística, compras y finanzas."
+						"label": "Tablas generadas y alimentadas",
+						"value": "Más de 250",
+						"note": "Tablas vinculadas producidas automáticamente por el generador a partir de los esquemas."
 					},
 					{
-						"label": "Lectura de las ventas pasadas",
-						"value": "A la fecha de compra",
-						"note": "Cada línea sigue vinculada al artículo y a la tienda tal como eran ese día."
+						"label": "Red de la cadena",
+						"value": "Más de 500 tiendas",
+						"note": "Tiendas de la cadena inmersa en el cambio de software de gestión."
 					}
 				],
 				"tags": ["Snowflake", "Python", "SQL", "Kafka", "Qlik"],

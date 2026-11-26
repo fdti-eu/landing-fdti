@@ -1163,14 +1163,14 @@
 				"category": "Aftermarket e riciclo",
 				"title": "Un costruttore indirizza e segue ogni batteria del suo sistema EPR in Europa",
 				"date": "2024",
-				"location": "Europa, Nord America",
+				"location": "Europa, Nord America, Asia",
 				"challenge": "Nella rete europea di uno dei principali costruttori automobilistici al mondo, concessionari, centri di demolizione e stabilimenti rimuovono batterie di trazione. Ognuna deve andare verso la filiera giusta, presso un fornitore di servizi dello stesso paese, con l’imballaggio e i documenti richiesti. Le regole di indirizzamento sono proprie del costruttore e variano da una batteria all’altra. Per mettere in conformità il proprio sistema EPR (responsabilità estesa del produttore) per le batterie, il costruttore deve poter dire, batteria per batteria, che fine ha fatto.",
-				"approach": "Abbiamo progettato, sviluppato e gestiamo la piattaforma web che sostiene il sistema EPR per le batterie del costruttore. Riunisce i detentori di batterie, i fornitori di raccolta e trattamento e i team del costruttore. Ogni batteria ha un fascicolo unico: identificazione tramite numero di veicolo o di batteria, completata dai dati di riferimento del costruttore, stato, foto, imballaggio, prezzi, documenti e storico con data e ora. Un motore di regole applica la politica del costruttore per scegliere la destinazione e il fornitore; i casi previsti dalle regole passano per una convalida del team del costruttore. I fornitori lavorano nella piattaforma o dal proprio software, tramite API e webhook. Un marketplace mette in vendita i lotti destinati alla seconda vita. L’interfaccia è disponibile in sette lingue.",
+				"approach": "Abbiamo progettato, sviluppato e gestiamo la piattaforma web che sostiene il sistema EPR per le batterie del costruttore. Riunisce i detentori di batterie, i fornitori di raccolta e trattamento e i team del costruttore. Ogni batteria ha un fascicolo unico: identificazione tramite numero di veicolo o di batteria incrociata tra più sistemi di riferimento del costruttore, stato, foto, imballaggio, prezzi, documenti e storico con data e ora. Un motore di regole applica la politica del costruttore per scegliere la destinazione e il fornitore; i casi previsti dalle regole passano per una convalida del team del costruttore. I fornitori lavorano nella piattaforma o dal proprio software, tramite API e webhook. Un marketplace mette in vendita i lotti destinati alla seconda vita. L’interfaccia è disponibile in sette lingue.",
 				"details": [
 					{
 						"actor": "Detentore",
 						"title": "Dichiarare la batteria",
-						"text": "Inserisce il numero del veicolo o della batteria: la piattaforma ne ritrova le caratteristiche. Indica stato, carica e salute, aggiunge foto e imballaggio, oppure importa un lotto da Excel."
+						"text": "Inserisce il numero del veicolo o della batteria, indica stato, carica e salute, poi aggiunge foto e imballaggio oppure importa un lotto Excel."
 					},
 					{
 						"actor": "Piattaforma",
@@ -1194,34 +1194,34 @@
 					},
 					{
 						"actor": "Costruttore",
-						"title": "Vendere i lotti di seconda vita",
+						"title": "Vendere in seconda vita",
 						"text": "Il team compone un lotto per sito, sceglie gli acquirenti ammessi e la finestra delle offerte, poi seleziona un’offerta a prezzo totale, al kWh o al kg."
 					}
 				],
-				"impact": "La piattaforma è in produzione in tutta la rete europea del costruttore ed è la base della conformità del suo sistema EPR per le batterie: per ogni batteria il team ritrova la filiera scelta, il fornitore, le date di ritiro, ricevimento e trattamento, e il certificato che li attesta. Quasi 500 concessionari, centri di demolizione, stabilimenti e fornitori vi dichiarano o trattano batterie, e oltre 5.000 batterie hanno già un trattamento confermato. Anche i suoi stabilimenti nordamericani vi dichiarano i moduli destinati alla seconda vita.",
+				"impact": "La piattaforma è in produzione in 19 paesi europei ed è la base della conformità del sistema EPR batterie del costruttore: per ogni batteria il team ritrova la filiera scelta, il fornitore, le date di ritiro, ricevimento e trattamento, e il certificato che li attesta. Oltre 500 concessionari, centri di demolizione, stabilimenti, fornitori e acquirenti vi operano, e oltre 5.500 batterie hanno un trattamento confermato. Stabilimenti nordamericani vi dichiarano anche moduli di seconda vita, e acquirenti in Europa e in Asia fanno offerte sui lotti.",
 				"metrics": [
 					{
 						"label": "Batterie e moduli dichiarati",
-						"value": "Oltre 1 milione",
-						"note": "Dichiarati dai siti del costruttore in Europa e in Nord America."
+						"value": "Oltre 26.000",
+						"note": "Dichiarati dai siti della rete europea del costruttore."
+					},
+					{
+						"label": "Organizzazioni attive",
+						"value": "Oltre 500",
+						"note": "Concessionari, centri di demolizione, stabilimenti, fornitori e acquirenti sulla piattaforma."
 					},
 					{
 						"label": "Indirizzati alla seconda vita",
 						"value": "3 su 4",
-						"note": "Quota di batterie e moduli indirizzati alla seconda vita anziché al riciclo."
-					},
-					{
-						"label": "Paesi di raccolta",
-						"value": "21",
-						"note": "Paesi dei siti in cui sono state dichiarate batterie, in Europa e in Nord America."
+						"note": "Quota di batterie e moduli della rete europea indirizzati alla seconda vita anziché al riciclo."
 					}
 				],
 				"tags": ["SvelteKit", "FastAPI", "PostgreSQL", "Hasura", "Keycloak"],
 				"indexCard": {
 					"title": "Un costruttore indirizza e segue ogni batteria del suo sistema EPR in Europa",
 					"description": "Nel sistema EPR, i detentori dichiarano le batterie, la piattaforma sceglie la filiera e il fornitore e il team del costruttore segue ogni fascicolo fino al certificato di trattamento o alla vendita del lotto.",
-					"proof": "Oltre 1 milione di batterie e moduli dichiarati",
-					"note": "In Europa e in Nord America."
+					"proof": "Oltre 26.000 batterie e moduli dichiarati",
+					"note": "Nella rete europea del costruttore."
 				},
 				"slug": "marketplace-batterie-seconda-vita"
 			},
@@ -1229,7 +1229,7 @@
 				"id": "8",
 				"slug": "piattaforma-riciclo-batterie",
 				"category": "Aftermarket e riciclo",
-				"title": "Dall’officina all’impianto di trattamento, il riciclatore segue ogni batteria del sistema EPR",
+				"title": "Dall’officina all’impianto, il riciclatore segue ogni batteria del sistema EPR",
 				"date": "2026",
 				"location": "Francia",
 				"challenge": "Nel sistema EPR (responsabilità estesa del produttore) per le batterie, il riciclatore deve poter spiegare che cosa è arrivato nei suoi siti e che cosa è stato effettivamente trattato. Ma l’officina conosce lo stato della batteria, il raccoglitore sa dove l’ha ritirata e lo stabilimento misura ciò che accetta. La packing list dice che cosa deve arrivare; non basta a giustificare il peso ricevuto né il trattamento di una batteria.",
@@ -1261,12 +1261,12 @@
 						"text": "Il sito registra la data e le quantità accettate o respinte. Quando il trattamento viene firmato in Trackdéchets, l’applicazione genera il certificato di riciclo."
 					}
 				],
-				"impact": "Oltre 200 officine, concessionari e centri di bonifica dichiarano le proprie batterie sulla piattaforma, da oltre 250 luoghi di ritiro. Per la dichiarazione mensile del sistema EPR, il team del riciclatore riprende i dati di ricevimento: stabilimento di origine, data di arrivo e peso pesato. Per ogni batteria distingue il documento di ricevimento dal certificato che attesta il trattamento.",
+				"impact": "Oltre 200 officine, concessionari e centri di bonifica hanno già dichiarato oltre 1.500 batterie sulla piattaforma, da oltre 250 luoghi di ritiro. Per la dichiarazione mensile del sistema EPR, il team del riciclatore riprende i dati di ricevimento: stabilimento di origine, data di arrivo e peso pesato. Per ogni batteria distingue il documento di ricevimento dal certificato che attesta il trattamento.",
 				"metrics": [
 					{
-						"label": "Batterie dichiarate",
-						"value": "Oltre 1.500",
-						"note": "Batterie dichiarate da officine, concessionari e centri di bonifica."
+						"label": "Sedi dichiaranti",
+						"value": "Oltre 200",
+						"note": "Officine, concessionari e centri di bonifica attivi sulla piattaforma."
 					},
 					{
 						"label": "Batterie pesate al ricevimento",
@@ -1281,10 +1281,10 @@
 				],
 				"tags": ["SvelteKit", "FastAPI", "PostgreSQL", "Trackdéchets"],
 				"indexCard": {
-					"title": "Dall’officina all’impianto di trattamento, il riciclatore segue ogni batteria del sistema EPR",
+					"title": "Dall’officina all’impianto, il riciclatore segue ogni batteria del sistema EPR",
 					"description": "L’officina dichiara la batteria, l’autista ne scansiona l’etichetta dal telefono e il sito distingue ciò che riceve da ciò che tratta. Il riciclatore ritrova pesi e giustificativi per la dichiarazione del sistema EPR.",
-					"proof": "Oltre 1.500 batterie dichiarate",
-					"note": "Da officine, concessionari e centri di bonifica."
+					"proof": "Oltre 200 sedi dichiaranti",
+					"note": "Officine, concessionari e centri di bonifica in oltre 250 luoghi di ritiro."
 				}
 			},
 			{
@@ -1308,9 +1308,9 @@
 						"note": "Il gestore vede la potenza di un quadro mezz’ora per mezz’ora."
 					},
 					{
-						"label": "Impianti coperti dagli avvisi",
-						"value": "9 su 10",
-						"note": "Impianti in cui almeno un gestore è iscritto agli avvisi di rilevamento."
+						"label": "Reti di illuminazione seguite",
+						"value": "Oltre 60",
+						"note": "Comuni e raggruppamenti le cui letture alimentano l’applicazione."
 					}
 				],
 				"tags": ["DuckDB", "SvelteKit", "PostgreSQL", "FastAPI"],
@@ -1439,14 +1439,14 @@
 						"note": "Dalla cassa alla contabilità, passando per scorte e trasporto."
 					},
 					{
-						"label": "Ambiti coperti",
-						"value": "6",
-						"note": "Cassa, catalogo, scorte, logistica, acquisti e finanza."
+						"label": "Tabelle generate e alimentate",
+						"value": "Oltre 250",
+						"note": "Tabelle collegate prodotte automaticamente dal generatore a partire dagli schemi."
 					},
 					{
-						"label": "Lettura delle vendite passate",
-						"value": "Alla data d’acquisto",
-						"note": "Ogni riga resta collegata all’articolo e al negozio com’erano quel giorno."
+						"label": "Rete dell’insegna",
+						"value": "Oltre 500 negozi",
+						"note": "Negozi dell’insegna interessata dal cambio di software gestionale."
 					}
 				],
 				"tags": ["Snowflake", "Python", "SQL", "Kafka", "Qlik"],

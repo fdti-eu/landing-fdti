@@ -1158,14 +1158,14 @@
 				"category": "Aftermarket & recycling",
 				"title": "A carmaker routes and tracks every end-of-life battery in its EPR scheme across Europe",
 				"date": "2024",
-				"location": "Europe, North America",
+				"location": "Europe, North America, Asia",
 				"challenge": "Across the European network of one of the world’s leading carmakers, dealerships, dismantling centers and plants remove traction batteries. Each one must go to the right outlet, to a service provider in the same country, with the required packaging and documents. The routing rules are specific to the carmaker and vary from one battery to the next. To bring its battery EPR (extended producer responsibility) scheme into compliance, the carmaker must be able to say, battery by battery, what became of it.",
-				"approach": "We designed, built and operate the web platform that runs the carmaker’s battery EPR scheme. It brings together battery holders, collection and treatment providers and the carmaker’s teams. Each battery has a single file: identification by vehicle or battery number, completed from the carmaker’s reference data, condition, photos, packaging, prices, documents and a time-stamped history. A rules engine applies the carmaker’s policy to select the destination and the provider; the cases defined by the rules go through validation by the carmaker’s team. Providers work in the platform or from their own software, through an API and webhooks. A marketplace sells the lots intended for second life. The interface is available in seven languages.",
+				"approach": "We designed, built and operate the web platform that runs the carmaker’s battery EPR scheme. It brings together battery holders, collection and treatment providers and the carmaker’s teams. Each battery has a single file: identification by vehicle or battery number cross-checked across several carmaker reference systems, condition, photos, packaging, prices, documents and a time-stamped history. A rules engine applies the carmaker’s policy to select the destination and the provider; the cases defined by the rules go through validation by the carmaker’s team. Providers work in the platform or from their own software, through an API and webhooks. A marketplace sells the lots intended for second life. The interface is available in seven languages.",
 				"details": [
 					{
 						"actor": "Holder",
 						"title": "Declare the battery",
-						"text": "They enter the vehicle or battery number: the platform retrieves its characteristics. They record condition, charge and health, then add photos and packaging, or import a batch from Excel."
+						"text": "They enter the vehicle or battery number, record condition, charge and health, then add photos and packaging or import a batch from Excel."
 					},
 					{
 						"actor": "Platform",
@@ -1193,30 +1193,30 @@
 						"text": "The team builds a lot per site, chooses the admitted buyers and the bidding window, then selects an offer priced in total, per kWh or per kg."
 					}
 				],
-				"impact": "The platform is in production across the carmaker’s European network and underpins the compliance of its battery EPR scheme: for each battery, the team finds the chosen outlet, the provider, the pickup, receipt and treatment dates, and the certificate that attests to them. Nearly 500 dealerships, dismantling centers, plants and providers declare or treat batteries on it, and more than 5,000 batteries already have a confirmed treatment. Its North American plants also declare their modules intended for second life on it.",
+				"impact": "The platform is in production across 19 European countries and underpins the compliance of the carmaker’s battery EPR scheme: for each battery, the team finds the chosen outlet, the provider, the pickup, receipt and treatment dates, and the certificate that attests to them. More than 500 dealerships, dismantling centers, plants, providers and buyers operate on it, and more than 5,500 batteries have a confirmed treatment. North American plants also declare second-life modules on it, and buyers in Europe and Asia bid on the lots.",
 				"metrics": [
 					{
 						"label": "Batteries and modules declared",
-						"value": "More than 1 million",
-						"note": "Declared by the carmaker’s sites in Europe and North America."
+						"value": "More than 26,000",
+						"note": "Declared by sites in the carmaker’s European network."
+					},
+					{
+						"label": "Active organizations",
+						"value": "More than 500",
+						"note": "Dealerships, dismantling centers, plants, providers and buyers on the platform."
 					},
 					{
 						"label": "Routed to second life",
 						"value": "3 in 4",
-						"note": "Share of batteries and modules routed to second life rather than recycling."
-					},
-					{
-						"label": "Collection countries",
-						"value": "21",
-						"note": "Countries of the sites where batteries have been declared, in Europe and North America."
+						"note": "Share of batteries and modules in the European network routed to second life rather than recycling."
 					}
 				],
 				"tags": ["SvelteKit", "FastAPI", "PostgreSQL", "Hasura", "Keycloak"],
 				"indexCard": {
 					"title": "A carmaker routes and tracks every end-of-life battery in its EPR scheme across Europe",
 					"description": "In its EPR scheme, holders declare their batteries, the platform selects the outlet and the provider, and the carmaker’s team follows each file to the treatment certificate or the sale of the lot.",
-					"proof": "More than 1 million batteries and modules declared",
-					"note": "In Europe and North America."
+					"proof": "More than 26,000 batteries and modules declared",
+					"note": "Across the carmaker’s European network."
 				},
 				"slug": "marketplace-batteries"
 			},
@@ -1256,12 +1256,12 @@
 						"text": "The site records the date and the quantities accepted or refused. When treatment is signed in Trackdéchets, the application generates the recycling certificate."
 					}
 				],
-				"impact": "More than 200 garages, dealerships and depollution centers declare their batteries on the platform, from more than 250 collection locations. For its monthly EPR scheme declaration, the recycler’s team reuses the receipt data: originating site, arrival date and weighed weight. For each battery, it distinguishes the receipt form from the certificate that attests to the treatment.",
+				"impact": "More than 200 garages, dealerships and depollution centers have already declared more than 1,500 batteries on the platform, from more than 250 collection locations. For its monthly EPR scheme declaration, the recycler’s team reuses the receipt data: originating site, arrival date and weighed weight. For each battery, it distinguishes the receipt form from the certificate that attests to the treatment.",
 				"metrics": [
 					{
-						"label": "Batteries declared",
-						"value": "More than 1,500",
-						"note": "Batteries declared by garages, dealerships and depollution centers."
+						"label": "Declaring sites and dealers",
+						"value": "More than 200",
+						"note": "Garages, dealerships and depollution centers active on the platform."
 					},
 					{
 						"label": "Batteries weighed on receipt",
@@ -1278,8 +1278,8 @@
 				"indexCard": {
 					"title": "From garage to treatment plant, a recycler tracks every battery in the EPR scheme",
 					"description": "The garage declares the battery, the driver scans its label on a phone and the site separates what it receives from what it treats. The recycler finds the weights and supporting documents for its EPR scheme declaration.",
-					"proof": "More than 1,500 batteries declared",
-					"note": "By garages, dealerships and depollution centers."
+					"proof": "More than 200 declaring sites and dealers",
+					"note": "Garages, dealerships and depollution centers across more than 250 collection locations."
 				}
 			},
 			{
@@ -1303,9 +1303,9 @@
 						"note": "The manager sees a cabinet’s power half hour by half hour."
 					},
 					{
-						"label": "Networks covered by alerts",
-						"value": "9 in 10",
-						"note": "Networks where at least one manager subscribes to detection alerts."
+						"label": "Lighting networks tracked",
+						"value": "More than 60",
+						"note": "Municipalities and groups whose meter readings feed the application."
 					}
 				],
 				"tags": ["DuckDB", "SvelteKit", "PostgreSQL", "FastAPI"],
@@ -1434,14 +1434,14 @@
 						"note": "From checkout to accounting, through stock and transport."
 					},
 					{
-						"label": "Domains covered",
-						"value": "6",
-						"note": "Checkout, catalog, stock, logistics, purchasing and finance."
+						"label": "Generated, populated tables",
+						"value": "More than 250",
+						"note": "Linked tables built automatically by the generator from the object schemas."
 					},
 					{
-						"label": "Reading past sales",
-						"value": "As of the purchase date",
-						"note": "Each line stays linked to the item and the store as they were that day."
+						"label": "Retailer network",
+						"value": "More than 500 stores",
+						"note": "Stores of the retailer undergoing the management software switchover."
 					}
 				],
 				"tags": ["Snowflake", "Python", "SQL", "Kafka", "Qlik"],
