@@ -1497,37 +1497,62 @@
 			{
 				"id": "6",
 				"category": "Retail & électronique",
-				"title": "Retrouver les problèmes signalés dans les avis clients",
-				"date": "2021-2023",
-				"location": "Global",
-				"challenge": "Un fabricant d’électronique reçoit des avis par plusieurs canaux. Pour comprendre un problème récurrent, les équipes doivent pouvoir rapprocher des commentaires qui décrivent le même défaut avec des mots différents.",
-				"approach": "Nous avons réuni les avis de plus de 25 sources et regroupé les commentaires par thème. L’équipe chargée des études clients peut partir d’un sujet récurrent et retrouver les mots employés par les clients.",
-				"impact": "L’équipe études clients consulte ces analyses au quotidien et les partage avec les équipes concernées.",
-				"tags": ["GCP", "Airflow", "NLP", "LLM", "Tableau", "HuggingFace"],
+				"title": "Comprendre ce qui explique une mauvaise note après un achat en ligne",
+				"date": "2021",
+				"location": "France",
+				"challenge": "Après un achat en ligne ou la mise en route d’un appareil, le client attribue une note de satisfaction et laisse un commentaire libre. Pour l’équipe études d’un fabricant d’électronique grand public, la note seule ne dit pas quoi corriger : un acheteur peut apprécier le produit tout en sanctionnant un paiement refusé ou un retard de livraison. Lire et classer à la main les réponses de dizaines d’enquêtes ne suffit plus.",
+				"approach": "Nous avons développé pour l’équipe études une chaîne de collecte et un entrepôt sur Google Cloud réunissant les réponses aux enquêtes après achat et les avis produits, complétés par un module d’analyse sémantique des commentaires. La difficulté consistait à aplatir des questionnaires imbriqués envoyés à différents moments du parcours, à dédoublonner les avis produits et à distinguer le ton du commentaire de la note donnée. L’outil rapproche les formulations voisines autour des thèmes suivis par le métier et restitue les résultats dans Tableau jusqu’au commentaire d’origine.",
+				"impact": "L’équipe études dispose d’une base unifiée de plus de 85 000 réponses après achat et retrouve derrière une variation de note les verbatims précis à transmettre aux équipes boutique en ligne, logistique, produit ou service client, sans relire manuellement chaque questionnaire.",
+				"tags": ["Google Cloud", "Airflow", "BigQuery", "NLP", "Hugging Face", "Tableau"],
 				"details": [
-					"Un commentaire issu d’une enquête, du service client ou d’un site d’avis rejoint les autres retours.",
-					"L’équipe études clients retrouve les commentaires qui portent sur un même sujet et consulte les formulations d’origine.",
-					"Le service client suit les demandes récurrentes. L’équipe produit peut examiner les retours sur un défaut de produit séparément de ceux qui décrivent un problème de livraison."
+					{
+						"actor": "Chaîne de collecte",
+						"title": "Réunir enquêtes et avis",
+						"text": "Deux fois par semaine, Airflow récupère les réponses aux questionnaires après achat et les avis en ligne en conservant note, date et référence."
+					},
+					{
+						"actor": "Entrepôt de données",
+						"title": "Normaliser et dédoublonner",
+						"text": "Les réponses imbriquées sont structurées dans BigQuery et rattachées à la nomenclature produit en écartant les avis dupliqués."
+					},
+					{
+						"actor": "Outil d’analyse",
+						"title": "Rapprocher par le sens",
+						"text": "Le modèle regroupe des formulations différentes d’un même incident, comme un refus de carte et un échec de paiement, et estime le sentiment du texte."
+					},
+					{
+						"actor": "Chargé d’études",
+						"title": "Explorer par thème",
+						"text": "Dans le tableau de bord, il filtre une période ou un motif — paiement, livraison, produit, service client — et relit les témoignages associés."
+					},
+					{
+						"actor": "Équipe études",
+						"title": "Affiner le référentiel",
+						"text": "À partir des cas ambigus repérés à la lecture, elle précise les thèmes suivis pour séparer par exemple retard de colis et non-livraison."
+					}
 				],
 				"indexCard": {
-					"title": "Croiser les avis clients pour comprendre les problèmes récurrents",
-					"description": "Un même défaut peut être décrit avec des mots différents dans une enquête, un avis en ligne ou un échange avec le service client. L’équipe études retrouve ces commentaires ensemble et transmet aux équipes produit les témoignages qui expliquent le problème.",
-					"proof": "Plus de 25 sources réunies",
-					"note": "Enquêtes, service client et sites d’avis."
+					"title": "Comprendre ce qui explique une mauvaise note après un achat en ligne",
+					"description": "Un paiement refusé et un colis en retard peuvent produire la même mauvaise note. L’équipe études réunit ses enquêtes après achat et retrouve les commentaires qui décrivent un même problème.",
+					"proof": "Plus de 85 000 réponses d’enquêtes réunies",
+					"note": "À travers plus de 80 questionnaires après achat et plus de 10 000 commentaires analysés."
 				},
 				"slug": "data-hub-nlp",
 				"metrics": [
 					{
-						"label": "Sources d’avis réunies",
-						"value": "Plus de 25"
+						"label": "Réponses d’enquêtes réunies",
+						"value": "Plus de 85 000",
+						"note": "Réponses après achat consolidées avec leur note et leur commentaire libre."
 					},
 					{
-						"label": "Consultation par l’équipe études",
-						"value": "Quotidienne"
+						"label": "Enquêtes après achat intégrées",
+						"value": "Plus de 80",
+						"note": "Questionnaires envoyés aux différentes étapes suivant l’achat d’un appareil."
 					},
 					{
-						"label": "Équipes utilisatrices citées",
-						"value": "3"
+						"label": "Commentaires classés par motif",
+						"value": "Plus de 10 000",
+						"note": "Verbatims de la boutique en ligne regroupés par thème et sentiment."
 					}
 				]
 			},

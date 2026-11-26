@@ -1492,37 +1492,62 @@
 			{
 				"id": "6",
 				"category": "Retail & consumer electronics",
-				"title": "Finding recurring problems in customer feedback",
-				"date": "2021-2023",
-				"location": "Global",
-				"challenge": "An electronics manufacturer receives feedback through several channels. To understand a recurring fault, teams need to bring together comments that describe it in different words.",
-				"approach": "We gathered feedback from more than 25 sources and grouped comments by theme. The customer insights team can start with a recurring issue and find the words customers actually used.",
-				"impact": "The customer insights team consults the analysis daily and shares it with the relevant teams.",
-				"tags": ["GCP", "Airflow", "NLP", "LLM", "Tableau", "HuggingFace"],
+				"title": "Pinpoint what drives a low satisfaction score after an online purchase",
+				"date": "2021",
+				"location": "France",
+				"challenge": "After buying online or setting up a device, customers leave a satisfaction score and a free-text comment. For the customer insights team of a consumer electronics manufacturer, the score alone never tells what needs fixing: a buyer may like the product while penalizing a declined card or a late parcel. Reading and tagging responses by hand across dozens of separate surveys cannot keep up.",
+				"approach": "We built an ingestion pipeline and a Google Cloud data warehouse for the insights team, bringing together post-purchase survey responses and product reviews alongside a semantic text-analysis module. The key challenge was flattening nested questionnaires sent at different stages after purchase, deduplicating product reviews across catalog variants, and separating text sentiment from the numerical score. The module groups varied phrasings under business topics and surfaces them in Tableau right down to the original verbatim.",
+				"impact": "The customer insights team works from a unified base of more than 85,000 post-purchase responses and traces score shifts directly to concrete customer verbatims for e-commerce, logistics, product and support teams without reading each survey manually.",
+				"tags": ["Google Cloud", "Airflow", "BigQuery", "NLP", "Hugging Face", "Tableau"],
 				"details": [
-					"A comment from a survey, customer service or a review site joins the other feedback.",
-					"The insights team finds comments on the same subject and reads their original wording.",
-					"Customer service tracks recurring enquiries. The product team can examine reports of a product fault separately from delivery complaints."
+					{
+						"actor": "Ingestion pipeline",
+						"title": "Gather surveys and reviews",
+						"text": "Twice a week, Airflow pulls post-purchase survey responses and online product reviews while preserving score, date and product reference."
+					},
+					{
+						"actor": "Data warehouse",
+						"title": "Normalize and deduplicate",
+						"text": "Nested survey payloads are structured in BigQuery and matched to the product catalog while filtering out duplicate reviews."
+					},
+					{
+						"actor": "NLP module",
+						"title": "Group by meaning",
+						"text": "The model clusters different phrasings of the same issue—such as card failure and checkout rejection—and scores text sentiment separately."
+					},
+					{
+						"actor": "Insights analyst",
+						"title": "Drill into a topic",
+						"text": "In Tableau, they filter a period or theme—payment, delivery, product quality or support—and read the underlying customer comments."
+					},
+					{
+						"actor": "Insights team",
+						"title": "Refine the taxonomy",
+						"text": "Using ambiguous cases spotted during review, the team sharpens its topic definitions, separating late parcels from lost deliveries."
+					}
 				],
 				"indexCard": {
-					"title": "Bringing customer feedback together to understand recurring problems",
-					"description": "Surveys, reviews and customer service enquiries can describe the same fault in different words. The insights team brings those comments together and shares the accounts that explain the issue with product teams.",
-					"proof": "Over 25 sources combined",
-					"note": "Surveys, customer service and review sites."
+					"title": "Pinpoint what drives a low satisfaction score after an online purchase",
+					"description": "A declined payment and a late parcel can produce the exact same low rating. The insights team unifies post-purchase surveys and groups customer comments describing the same issue.",
+					"proof": "More than 85,000 survey responses consolidated",
+					"note": "Across more than 80 post-purchase questionnaires and 10,000 analyzed comments."
 				},
 				"slug": "data-hub-nlp",
 				"metrics": [
 					{
-						"label": "Feedback sources combined",
-						"value": "More than 25"
+						"label": "Survey responses consolidated",
+						"value": "More than 85,000",
+						"note": "Post-purchase responses stored with their rating and free-text comment."
 					},
 					{
-						"label": "Review by the insights team",
-						"value": "Daily"
+						"label": "Post-purchase surveys integrated",
+						"value": "More than 80",
+						"note": "Questionnaires sent at distinct milestones after buying a device."
 					},
 					{
-						"label": "User teams identified",
-						"value": "3"
+						"label": "Comments classified by reason",
+						"value": "More than 10,000",
+						"note": "Online-store verbatims grouped by business theme and text sentiment."
 					}
 				]
 			},

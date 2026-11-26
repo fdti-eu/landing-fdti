@@ -1501,37 +1501,62 @@
 			{
 				"id": "6",
 				"category": "Comercio minorista y electrónica",
-				"title": "Identificar problemas recurrentes en las opiniones de los clientes",
-				"date": "2021-2023",
-				"location": "Global",
-				"challenge": "Un fabricante de electrónica recibe opiniones por varios canales. Para entender un fallo recurrente, sus equipos necesitan reunir comentarios que lo describen con palabras distintas.",
-				"approach": "Reunimos opiniones de más de 25 fuentes y agrupamos los comentarios por tema. El equipo de estudios de clientes puede partir de un problema recurrente y recuperar las palabras de los propios clientes.",
-				"impact": "El equipo de estudios consulta estos análisis a diario y los comparte con los equipos correspondientes.",
-				"tags": ["GCP", "Airflow", "NLP", "LLM", "Tableau", "HuggingFace"],
+				"title": "Identificar qué explica una mala nota tras una compra en línea",
+				"date": "2021",
+				"location": "Francia",
+				"challenge": "Tras comprar en línea o estrenar un dispositivo, el cliente deja una puntuación de satisfacción y un comentario abierto. Para el equipo de estudios de un fabricante de electrónica de consumo, la nota por sí sola no indica qué corregir: un comprador puede valorar el producto y penalizar un pago rechazado o un envío tardío. Leer y clasificar a mano decenas de encuestas resulta inviable.",
+				"approach": "Hemos desarrollado para el equipo de estudios una cadena de ingesta y un almacén en Google Cloud que reúnen las respuestas de las encuestas poscompra y las reseñas de producto, junto con un módulo de análisis semántico de comentarios. El reto consistía en aplanar cuestionarios anidados enviados en distintas fases tras la compra, eliminar reseñas duplicadas y separar el sentimiento del texto de la nota numérica. La herramienta agrupa expresiones equivalentes bajo temas de negocio y lleva el análisis en Tableau hasta el comentario original.",
+				"impact": "El equipo de estudios dispone de una base unificada de más de 85.000 respuestas poscompra y localiza tras una caída de nota los comentarios concretos que debe trasladar a comercio electrónico, logística, producto o atención al cliente.",
+				"tags": ["Google Cloud", "Airflow", "BigQuery", "NLP", "Hugging Face", "Tableau"],
 				"details": [
-					"Un comentario de una encuesta, del servicio de atención al cliente o de una web de reseñas se incorpora al resto de las opiniones.",
-					"El equipo de estudios reúne los comentarios sobre un mismo tema y consulta el texto original.",
-					"Atención al cliente sigue las consultas recurrentes. El equipo de producto puede examinar por separado los comentarios sobre un defecto y los que describen problemas de entrega."
+					{
+						"actor": "Cadena de ingesta",
+						"title": "Reunir encuestas y reseñas",
+						"text": "Dos veces por semana, Airflow recoge las respuestas poscompra y las reseñas en línea conservando nota, fecha y referencia."
+					},
+					{
+						"actor": "Almacén de datos",
+						"title": "Normalizar y desduplicar",
+						"text": "Las respuestas anidadas se estructuran en BigQuery y se cruzan con el catálogo de productos descartando reseñas repetidas."
+					},
+					{
+						"actor": "Módulo NLP",
+						"title": "Agrupar por significado",
+						"text": "El modelo reúne formulaciones distintas de un mismo fallo —como tarjeta rechazada o error de pago— y estima el sentimiento del texto."
+					},
+					{
+						"actor": "Analista de estudios",
+						"title": "Explorar por motivo",
+						"text": "En el cuadro de mando filtra un periodo o tema —pago, entrega, producto o posventa— y lee los testimonios asociados."
+					},
+					{
+						"actor": "Equipo de estudios",
+						"title": "Afinar las categorías",
+						"text": "A partir de los casos ambiguos detectados, precisa los temas seguidos para distinguir, por ejemplo, retraso y paquete no entregado."
+					}
 				],
 				"indexCard": {
-					"title": "Cruzar las opiniones de los clientes para entender los problemas recurrentes",
-					"description": "Una encuesta, una reseña y una consulta a atención al cliente pueden describir el mismo defecto con palabras distintas. El equipo de estudios reúne esos comentarios y comparte con el equipo de producto los testimonios que explican el problema.",
-					"proof": "Más de 25 fuentes reunidas",
-					"note": "Encuestas, atención al cliente y sitios de reseñas."
+					"title": "Identificar qué explica una mala nota tras una compra en línea",
+					"description": "Un pago rechazado y un paquete con retraso pueden recibir la misma mala nota. El equipo de estudios reúne sus encuestas poscompra y localiza los comentarios que describen un mismo problema.",
+					"proof": "Más de 85.000 respuestas de encuestas reunidas",
+					"note": "En más de 80 cuestionarios poscompra y más de 10.000 comentarios analizados."
 				},
 				"slug": "hub-datos-nlp",
 				"metrics": [
 					{
-						"label": "Fuentes de opiniones reunidas",
-						"value": "Más de 25"
+						"label": "Respuestas de encuestas reunidas",
+						"value": "Más de 85.000",
+						"note": "Respuestas poscompra consolidadas con su puntuación y su comentario libre."
 					},
 					{
-						"label": "Consulta por el equipo de estudios",
-						"value": "Diaria"
+						"label": "Encuestas poscompra integradas",
+						"value": "Más de 80",
+						"note": "Cuestionarios enviados en distintos momentos tras la compra de un dispositivo."
 					},
 					{
-						"label": "Equipos usuarios mencionados",
-						"value": "3"
+						"label": "Comentarios clasificados por motivo",
+						"value": "Más de 10.000",
+						"note": "Comentarios de la tienda en línea agrupados por tema y sentimiento."
 					}
 				]
 			},
