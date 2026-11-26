@@ -1435,37 +1435,62 @@
 			{
 				"id": "5",
 				"category": "ONG e coinvolgimento",
-				"title": "Scegliere i temi delle prossime campagne",
+				"title": "Confrontare temi e toni delle campagne di una ONG in nove mercati",
 				"date": "2023",
 				"location": "Internazionale",
-				"challenge": "Una ONG deve decidere quali messaggi ambientali privilegiare per paese e social network. I dati sulle prestazioni indicano quali post hanno suscitato reazioni, ma non di cosa parlavano.",
-				"approach": "Su 60.000 post in otto lingue abbiamo identificato per ogni messaggio il tema, il tono e i punti di vista espressi. Il team comunicazione può confrontare come viene accolto lo stesso tema a seconda del pubblico e del canale.",
-				"impact": "La ONG ha adottato internamente la griglia di analisi per orientare la ripartizione del budget tra paesi e canali social.",
-				"tags": ["LLM", "OpenAI", "NLP", "TypeScript"],
+				"challenge": "Una ONG ambientalista internazionale conduce campagne di sensibilizzazione in più paesi. I suoi team vedono quante persone hanno visualizzato, commentato o condiviso un post su Facebook e Instagram, ma le statistiche non dicono se il messaggio illustra un problema, invita ad agire o dà parola a uno scienziato. Per impostare le campagne successive occorre confrontare messaggi analoghi da un mercato all’altro.",
+				"approach": "Abbiamo sviluppato una pipeline di qualificazione basata su modelli linguistici che legge le esportazioni di Facebook e Instagram, classifica ogni post e produce file Excel arricchiti pronti per il team comunicazione. La difficoltà consisteva nell’uniformare esportazioni con colonne diverse e verificare l’affidabilità della classificazione prima dell’elaborazione massiva. A partire da esempi annotati e da un’interfaccia di verifica, il modello rileva tema, tono, protagonista e messaggio chiave accanto alle metriche di coinvolgimento.",
+				"impact": "Su due anni di campagne, il team internazionale e gli uffici locali condividono la stessa griglia per leggere oltre 18.000 post in nove mercati. Su temi come la tutela degli oceani o il clima distinguono gli argomenti più pubblicati da quelli che generano più reazioni e scelgono i tagli da sperimentare.",
+				"tags": ["Python", "OpenAI", "pandas", "Excel"],
 				"details": [
-					"Per ogni post su Facebook o Instagram, l’analisi individua il tema e il modo in cui viene affrontato.",
-					"Il team comunicazione confronta questi elementi con le reazioni osservate nei diversi segmenti di pubblico.",
-					"I team locali usano gli stessi criteri per scegliere quali temi riprendere nella campagna successiva."
+					{
+						"actor": "Pipeline di import",
+						"title": "Uniformare le esportazioni",
+						"text": "Riunisce testi e indicatori di diffusione provenienti dalle esportazioni Facebook e Instagram nonostante i formati differenti."
+					},
+					{
+						"actor": "Team di progetto",
+						"title": "Verificare sul campione",
+						"text": "Prima dell’elaborazione completa, le risposte del modello vengono confrontate attributo per attributo con post già annotati."
+					},
+					{
+						"actor": "Strumento di analisi",
+						"title": "Qualificare ogni contenuto",
+						"text": "Individua tema ambientale, tono, portavoce e messaggio chiave, aggiungendo queste colonne al foglio di lavoro."
+					},
+					{
+						"actor": "Team comunicazione",
+						"title": "Incrociare tagli e reazioni",
+						"text": "A parità di tema, confronta copertura, reazioni e condivisioni in base al tono usato, al canale e al mercato."
+					},
+					{
+						"actor": "Team comunicazione",
+						"title": "Tornare ai post originali",
+						"text": "Dalle sintesi comparative riapre i testi e i video specifici che spiegano una differenza di risposta."
+					}
 				],
 				"indexCard": {
-					"title": "Confrontare i messaggi per orientare i budget delle campagne",
-					"description": "Quali messaggi suscitano reazioni, in quale paese e tra quali pubblici? Collegando il tema e il tono di ogni post ai risultati, l’ONG usa criteri comuni per distribuire il budget tra paesi e social network.",
-					"proof": "60.000 post analizzati",
-					"note": "Post di Facebook e Instagram in otto lingue."
+					"title": "Confrontare temi e toni delle campagne di una ONG in nove mercati",
+					"description": "Una ONG internazionale collega tema, tono e portavoce di ogni post Facebook e Instagram ai risultati ottenuti per confrontare la ricezione dei messaggi in nove mercati.",
+					"proof": "Oltre 18.000 post analizzati",
+					"note": "Su due anni di campagne Facebook e Instagram in nove mercati."
 				},
 				"slug": "analisi-ia-campagne-social",
 				"metrics": [
 					{
-						"label": "Pubblicazioni analizzate",
-						"value": "60.000"
+						"label": "Post analizzati",
+						"value": "Oltre 18.000",
+						"note": "Post Facebook e Instagram qualificati e confrontati su due anni di campagne."
 					},
 					{
-						"label": "Lingue del corpus",
-						"value": "8"
+						"label": "Mercati confrontati",
+						"value": "9",
+						"note": "Paesi e regioni letti attraverso la stessa griglia editoriale."
 					},
 					{
-						"label": "Social network analizzati",
-						"value": "2"
+						"label": "Temi di campagna seguiti",
+						"value": "8",
+						"note": "Cause confrontate, dalla tutela degli oceani fino a energia e clima."
 					}
 				]
 			},

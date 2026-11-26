@@ -1435,37 +1435,62 @@
 			{
 				"id": "5",
 				"category": "NGO & Engagement",
-				"title": "Themen für die nächsten Kampagnen auswählen",
+				"title": "Kampagnenthemen und Tonalitäten einer NGO über neun Märkte vergleichen",
 				"date": "2023",
 				"location": "International",
-				"challenge": "Eine Umweltorganisation muss entscheiden, welche Botschaften sie in welchem Land und auf welcher Plattform in den Vordergrund stellt. Die Kennzahlen zeigen, welche Beiträge Reaktionen ausgelöst haben, aber nicht, worum es darin ging.",
-				"approach": "Für 60.000 Beiträge in acht Sprachen haben wir Thema, Ton und vertretene Standpunkte erfasst. Das Kommunikationsteam kann vergleichen, wie dasselbe Thema bei verschiedenen Zielgruppen und auf verschiedenen Plattformen ankommt.",
-				"impact": "Die Organisation hat das Analyseraster intern übernommen und nutzt es für die Budgetverteilung auf Länder und Plattformen.",
-				"tags": ["LLM", "OpenAI", "NLP", "TypeScript"],
+				"challenge": "Eine internationale Umwelt-NGO führt Aufklärungskampagnen in mehreren Ländern durch. Ihre Teams sehen zwar Reichweite, Kommentare und Shares auf Facebook und Instagram, doch die Plattformzahlen verraten nicht, ob ein Beitrag ein Problem erklärt, zum Handeln aufruft oder Fachleute zitiert. Für die Planung weiterer Kampagnen müssen gleichartige Botschaften über Ländergrenzen hinweg verglichen werden.",
+				"approach": "Wir haben eine sprachmodellgestützte Klassifizierungspipeline entwickelt, die Facebook- und Instagram-Exporte einliest, jeden Beitrag einordnet und angereicherte Excel-Arbeitsmappen für das Kommunikationsteam erzeugt. Die Herausforderung bestand darin, abweichende Exportformate zu vereinheitlichen und die Treffgenauigkeit vor dem Mengenlauf abzusichern. Anhand annotierter Beispiele und einer Prüfoberfläche erfasst das Modell Thema, Tonfall, Sprecherrolle und Kernbotschaft direkt neben den Interaktionskennzahlen.",
+				"impact": "Über zwei Kampagnenjahre nutzen internationales Team und Landesbüros dasselbe Raster für mehr als 18.000 Beiträge in neun Märkten. Bei Themen wie Meeresschutz oder Klima trennen sie häufig gesendete Inhalte von Botschaften mit starker Resonanz und wählen passende Ansätze für kommende Kampagnen.",
+				"tags": ["Python", "OpenAI", "pandas", "Excel"],
 				"details": [
-					"Die Analyse bestimmt für jeden Facebook- oder Instagram-Beitrag das Thema und den Blickwinkel.",
-					"Das Kommunikationsteam vergleicht diese Merkmale mit der Resonanz bei den jeweiligen Zielgruppen.",
-					"Die Teams vor Ort nutzen dieselben Kriterien, um Themen für die nächste Kampagne auszuwählen."
+					{
+						"actor": "Importstrecke",
+						"title": "Plattformexporte zusammenführen",
+						"text": "Sie führt Beitragstexte und Verbreitungskennzahlen aus unterschiedlich aufgebauten Facebook- und Instagram-Exporten zusammen."
+					},
+					{
+						"actor": "Projektteam",
+						"title": "An Referenzstichprobe prüfen",
+						"text": "Vor dem Gesamtdurchlauf werden die Modellantworten Merkmal für Merkmal gegen manuell codierte Beiträge geprüft."
+					},
+					{
+						"actor": "Analysewerkzeug",
+						"title": "Jeden Beitrag einordnen",
+						"text": "Es bestimmt Umweltthema, Tonalität, hervorgehobenen Akteur und Kernaussage und ergänzt diese Spalten in der Tabelle."
+					},
+					{
+						"actor": "Kommunikationsteam",
+						"title": "Ansätze und Resonanz kreuzen",
+						"text": "Innerhalb eines Themas vergleicht das Team Reichweite, Reaktionen und Shares nach Tonfall, Netzwerk und Markt."
+					},
+					{
+						"actor": "Kommunikationsteam",
+						"title": "Originalbeiträge aufrufen",
+						"text": "Aus den Auswertungen öffnet es gezielt jene Texte und Videos, die Abweichungen in der Resonanz erklären."
+					}
 				],
 				"indexCard": {
-					"title": "Botschaften vergleichen und Kampagnenbudgets gezielt verteilen",
-					"description": "Welche Botschaften lösen in welchem Land bei welcher Zielgruppe eine Reaktion aus? Die Organisation verbindet Thema und Ton jedes Beitrags mit seiner Resonanz und verteilt ihr Budget nach gemeinsamen Kriterien auf Länder und Plattformen.",
-					"proof": "60.000 analysierte Beiträge",
-					"note": "Facebook- und Instagram-Beiträge in acht Sprachen."
+					"title": "Kampagnenthemen und Tonalitäten einer NGO über neun Märkte vergleichen",
+					"description": "Eine internationale NGO verknüpft Thema, Tonfall und Sprecherrolle jedes Facebook- und Instagram-Beitrags mit den Interaktionsdaten, um die Wirkung über neun Märkte zu vergleichen.",
+					"proof": "Mehr als 18.000 untersuchte Beiträge",
+					"note": "Aus zwei Jahren Facebook- und Instagram-Kampagnen in neun Märkten."
 				},
 				"slug": "ki-analyse-social-media-kampagnen",
 				"metrics": [
 					{
-						"label": "Analysierte Beiträge",
-						"value": "60.000"
+						"label": "Untersuchte Beiträge",
+						"value": "Mehr als 18.000",
+						"note": "Über zwei Kampagnenjahre eingeordnete Facebook- und Instagram-Beiträge."
 					},
 					{
-						"label": "Sprachen im Korpus",
-						"value": "8"
+						"label": "Verglichene Märkte",
+						"value": "9",
+						"note": "Länder und Regionen im selben redaktionellen Auswertungsraster."
 					},
 					{
-						"label": "Untersuchte soziale Netzwerke",
-						"value": "2"
+						"label": "Analysierte Kampagnenthemen",
+						"value": "8",
+						"note": "Verglichene Themenfelder von Meeresschutz bis Energie und Klima."
 					}
 				]
 			},
