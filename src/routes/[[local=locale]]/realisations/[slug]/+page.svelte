@@ -69,11 +69,6 @@
 				title: 'Data hub d’avis clients & NLP | FDTI',
 				description:
 					'Un data hub centralise plus de 25 sources d’avis clients et les analyse par NLP pour aider les équipes service client, produit et juridique.'
-			},
-			'7': {
-				title: 'Data warehouse retail en quasi-temps réel | FDTI',
-				description:
-					'Un data warehouse migre 98 objets JSON d’Azure vers Snowflake et alimente plus de 150 tables et vues en moins d’une minute pour les équipes BI.'
 			}
 		},
 		en: {
@@ -89,10 +84,6 @@
 				title: 'Customer review data hub & NLP | FDTI',
 				description:
 					'A data hub consolidates over 25 customer-review sources and applies NLP to support customer service, product and legal teams with classified insights.'
-			},
-			'7': {
-				description:
-					'A data warehouse moves 98 complex JSON objects from Azure to Snowflake and feeds over 150 tables and views with latency below one minute for BI teams.'
 			}
 		},
 		es: {
@@ -114,11 +105,6 @@
 				title: 'Data Hub für Kundenbewertungen und NLP | FDTI',
 				description:
 					'Ein Data Hub bündelt mehr als 25 Quellen für Kundenbewertungen und analysiert sie mit NLP, um Kundenservice, Produktentwicklung und Rechtsabteilung mit klassifizierten Erkenntnissen zu unterstützen.'
-			},
-			'7': {
-				title: 'Retail Data Warehouse in nahezu Echtzeit | FDTI',
-				description:
-					'Ein Data Warehouse migriert 98 komplexe JSON-Geschäftsobjekte von Azure zu Snowflake und versorgt BI-Teams in weniger als einer Minute mit über 150 Tabellen und Views.'
 			}
 		},
 		it: {
@@ -134,11 +120,6 @@
 				title: 'Data hub delle recensioni clienti e NLP | FDTI',
 				description:
 					'Un data hub centralizza oltre 25 fonti di recensioni e le analizza con NLP per supportare i team di assistenza clienti, prodotto e legale.'
-			},
-			'7': {
-				title: 'Data warehouse retail quasi in tempo reale | FDTI',
-				description:
-					'Un data warehouse migra 98 oggetti JSON complessi da Azure a Snowflake e alimenta oltre 150 tabelle e viste in meno di un minuto per i team BI.'
 			}
 		}
 	};

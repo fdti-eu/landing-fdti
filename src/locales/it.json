@@ -1426,39 +1426,62 @@
 			{
 				"id": "7",
 				"category": "Retail ed elettronica",
-				"title": "Seguire le vendite dei negozi durante il cambio di gestionale",
-				"date": "2020-2021",
-				"location": "Europa",
-				"challenge": "Una catena di negozi cambia gestionale. Gli analisti devono continuare a seguire le vendite di ogni punto vendita anche se gli scontrini arrivano in un nuovo formato.",
-				"approach": "Abbiamo collegato gli scontrini del nuovo sistema ai negozi e agli articoli corrispondenti. Gli analisti ritrovano le vendite nel loro strumento di analisi senza dover ricostruire ogni scontrino a partire dalle singole righe.",
-				"impact": "Dopo il cambio di gestionale i team hanno continuato a seguire le vendite minuto per minuto.",
+				"title": "Un’insegna riunisce vendite, scorte e logistica in un unico data warehouse",
+				"date": "2022",
+				"location": "Francia",
+				"challenge": "Un’insegna con oltre 500 negozi cambia software gestionale. I suoi analisti devono continuare a seguire le vendite di ogni negozio, ma anche scorte, ordini e spedizioni. Il nuovo software però trasmette oggetti annidati: uno scontrino contiene più righe, un articolo più denominazioni. Per confrontare le vendite nel tempo bisogna anche ritrovare la categoria dell’articolo e il negozio com’erano il giorno dell’acquisto.",
+				"approach": "Abbiamo sviluppato, per il team di business intelligence dell’insegna, il data warehouse che rende utilizzabili le informazioni del nuovo gestionale per le analisi commerciali e logistiche. Gestisce oltre 70 oggetti di business: scontrini e pagamenti, articoli e promozioni, negozi e personale, scorte e inventari, ordini, ricevimenti e spedizioni, fatture dei fornitori. Il nostro generatore legge la descrizione di ogni oggetto, costruisce le tabelle che ne conservano dettaglio e collegamenti, poi le alimenta man mano che arrivano le modifiche. Per le vendite, viste pronte all’uso collegano ogni riga all’articolo giusto e ogni scontrino al negozio, com’erano il giorno dell’acquisto.",
+				"impact": "Il data warehouse è in produzione e alimenta le analisi commerciali e logistiche dell’insegna. I team seguono le vendite di ogni negozio senza ricostruire gli scontrini dalle loro righe, e un cambio di classificazione nel catalogo non falsa più la lettura delle vendite passate. Quando occorre integrare un nuovo oggetto del gestionale, il generatore ne produce le tabelle e il caricamento.",
 				"metrics": [
 					{
-						"label": "Negozi seguiti",
-						"value": "Oltre 500",
-						"note": "L’intera rete dell’insegna."
+						"label": "Oggetti di business gestiti",
+						"value": "Oltre 70",
+						"note": "Dalla cassa alla contabilità, passando per scorte e trasporto."
 					},
 					{
-						"label": "Aggiornamento dei dati di vendita",
-						"value": "Ogni minuto",
-						"note": "Frequenza con cui il sistema di analisi riceve nuovi dati."
+						"label": "Ambiti coperti",
+						"value": "6",
+						"note": "Cassa, catalogo, scorte, logistica, acquisti e finanza."
 					},
 					{
-						"label": "Indicatori di vendita per negozio",
-						"value": "2"
+						"label": "Lettura delle vendite passate",
+						"value": "Alla data d’acquisto",
+						"note": "Ogni riga resta collegata all’articolo e al negozio com’erano quel giorno."
 					}
 				],
-				"tags": ["Snowflake", "Azure", "Kafka", "ADF", "Qlik"],
+				"tags": ["Snowflake", "Python", "SQL", "Kafka", "Qlik"],
 				"details": [
-					"Un negozio registra una vendita. Il nuovo software trasmette lo scontrino con il dettaglio degli articoli.",
-					"Le righe di vendita sono associate al negozio. L’analista può usare gli importi degli scontrini per seguire il fatturato e il valore medio dello scontrino per punto vendita.",
-					"I nuovi dati alimentano le analisi minuto per minuto. I team sono passati al nuovo sistema di analisi e hanno dismesso il precedente."
+					{
+						"actor": "Gestionale",
+						"title": "Trasmettere le modifiche",
+						"text": "Il nuovo software invia ogni oggetto modificato: uno scontrino con le sue righe, una scheda articolo, un movimento di magazzino o una spedizione."
+					},
+					{
+						"actor": "Data warehouse",
+						"title": "Conservare il dettaglio",
+						"text": "Ogni oggetto è suddiviso in tabelle collegate: le righe restano legate al loro scontrino e le versioni successive di un articolo sono conservate."
+					},
+					{
+						"actor": "Data warehouse",
+						"title": "Integrare le novità",
+						"text": "I caricamenti riprendono l’esistente, poi integrano solo le modifiche, senza ricaricare tutto lo storico."
+					},
+					{
+						"actor": "Analista commerciale",
+						"title": "Confrontare le vendite",
+						"text": "Segue fatturato e quantità per negozio e rilegge una vendita passata con la categoria dell’articolo e il negozio dell’epoca."
+					},
+					{
+						"actor": "Analista logistico",
+						"title": "Seguire i flussi",
+						"text": "Ritrova scorte, ricevimenti, preparazione degli ordini e spedizioni nello stesso warehouse delle vendite."
+					}
 				],
 				"indexCard": {
-					"title": "Seguire le vendite dei negozi durante il cambio di gestionale",
-					"description": "Anche quando cambia il formato degli scontrini, ogni vendita resta collegata agli articoli e al negozio corretti. I team possono così seguire fatturato e valore medio dello scontrino per punto vendita.",
-					"proof": "Oltre 500 negozi",
-					"note": "Vendite di ogni negozio della rete, seguite nel nuovo sistema."
+					"title": "Un’insegna riunisce vendite, scorte e logistica in un unico data warehouse",
+					"description": "Durante il cambio di gestionale, l’insegna riunisce scontrini, articoli, scorte e spedizioni in un unico warehouse. Gli analisti rileggono ogni vendita con il catalogo e il negozio dell’epoca.",
+					"proof": "Oltre 70 oggetti di business gestiti",
+					"note": "Dalla cassa alla contabilità, passando per scorte e trasporto."
 				},
 				"slug": "data-warehouse-retail-tempo-reale"
 			}
