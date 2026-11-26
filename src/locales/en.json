@@ -1054,39 +1054,63 @@
 			{
 				"id": "10",
 				"indexCard": {
-					"title": "Filing documents for several vehicles in one upload",
-					"description": "The administrator uploads a batch without sorting it by vehicle. For each document, the software reads the vehicle identification number, finds the matching record and asks her to confirm the link.",
-					"proof": "3,000 documents received per month",
-					"note": "Documents received by the administrative team."
+					"title": "File supporting documents for multiple vehicles from a single batch upload",
+					"description": "In the end-of-life vehicle EPR scheme, the administrator uploads a batch of scans without pre-sorting them: the software reads each VIN, finds the matching vehicle file and presents the filing for confirmation.",
+					"proof": "Up to 50 files per batch upload",
+					"note": "Built to handle 3,000 incoming records a month without opening each file manually."
 				},
 				"slug": "ocr-vehicle-records",
-				"title": "Filing a mixed batch of documents against the right vehicle records",
+				"title": "File supporting documents for multiple vehicles from a single batch upload",
 				"category": "Aftermarket & recycling",
-				"challenge": "An administrator receives and scans paperwork for end-of-life vehicles. For each document, she opens the vehicle record, starts an upload, selects the file on her computer, chooses the document type and confirms. Then she starts again. With hundreds of documents a day and thousands a month, scanning is only part of the work. Even when everything is already scanned, every file still needs to be matched and filed.",
-				"approach": "The software reads the VIN on each document in the batch, finds the vehicle record and suggests a category. The administrator reviews the document and confirms the match.",
-				"tags": ["OCR", "VIN"],
+				"challenge": "Within the end-of-life vehicle EPR (extended producer responsibility) scheme, the administrative team receives and scans thousands of paper records every month. Scanned files land together on a workstation even when they belong to different vehicles. To file a registration certificate or a purchase-declaration receipt, the administrator has to open the scan, read the VIN, look up the vehicle, open its record and pick the document type, one file after another.",
+				"approach": "We built a batch upload and filing module inside the line-of-business application used to manage end-of-life vehicle EPR files. The main challenge was handling uneven garage scan quality while ensuring no document is ever attached to the wrong vehicle or overwritten silently. For each file in the batch, the OCR engine extracts the text, detects the vehicle identification number (VIN) and proposes both the document category and the matching vehicle record in a side-by-side review queue.",
+				"tags": ["Angular", ".NET", "Mistral OCR", "VIN"],
 				"details": [
-					"Upload a mixed batch. A French registration certificate, a CERFA purchase declaration and an SIV filing receipt can be uploaded together, even when they concern different vehicles.",
-					"Tell similar documents apart. The purchase declaration and the receipt confirming its registration relate to the same transaction but belong in different categories. The software suggests the appropriate type for each.",
-					"Find the vehicle without retyping the VIN. OCR reads the number from the document. The software looks for an exact match among the records the administrator can access, then shows the document, its suggested type, the VIN it read and the proposed record.",
-					"Review before sharing. Even a unique match requires confirmation. An unreadable number, multiple matches or a possible duplicate goes to manual review. No existing document is overwritten."
+					{
+						"actor": "Administrator",
+						"title": "Upload the scan batch",
+						"text": "She drops scanned files together in one batch, even when registration certificates and receipts belong to different vehicles."
+					},
+					{
+						"actor": "OCR module",
+						"title": "Read type and VIN",
+						"text": "For each file, the module extracts the text, locates the VIN and proposes the recognized document category."
+					},
+					{
+						"actor": "Application",
+						"title": "Match the vehicle file",
+						"text": "It looks up an exact VIN match within the authorized scope and flags missing, ambiguous or unreadable numbers."
+					},
+					{
+						"actor": "Administrator",
+						"title": "Review side by side",
+						"text": "Next to the original document preview, she checks the proposed vehicle and category or selects another record if needed."
+					},
+					{
+						"actor": "Administrator",
+						"title": "Confirm without overwriting",
+						"text": "She confirms the attachment; if a document of the same type already exists on the file, a warning appears first."
+					}
 				],
-				"impact": "The garage or authorised centre finds the validated document in the vehicle record. The administrator handles unreadable numbers, multiple matches and duplicates.",
+				"impact": "Instead of repeating vehicle lookups file by file after scanning, the administrator works through a single batch review queue and focuses on unreadable VINs or potential duplicates. Across end-of-life vehicle EPR records, each file receives the validated supporting document without silent overwrites.",
 				"metrics": [
 					{
-						"label": "Documents received by the administrative team",
-						"value": "3,000",
-						"note": "Per month."
+						"label": "Documents received by the team",
+						"value": "3,000 per month",
+						"note": "Monthly inflow of administrative records to file across vehicle folders."
 					},
 					{
-						"label": "Document types in the example batch",
-						"value": "3"
+						"label": "Single-batch capacity",
+						"value": "Up to 50 files",
+						"note": "Scanned documents uploaded in one operation across multiple vehicles."
 					},
 					{
-						"label": "Confirmation before filing",
-						"value": "1"
+						"label": "Sources in the study corpus",
+						"value": "Nearly 100 garages",
+						"note": "Distinct garages whose real-world scans informed document recognition."
 					}
-				]
+				],
+				"location": "France"
 			},
 			{
 				"id": "9",

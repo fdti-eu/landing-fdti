@@ -1059,39 +1059,63 @@
 			{
 				"id": "10",
 				"indexCard": {
-					"title": "Classer les pièces de plusieurs véhicules à partir d’un seul dépôt",
-					"description": "La gestionnaire dépose un lot de documents sans les trier par véhicule. Pour chaque pièce, le logiciel lit le numéro de série, retrouve le dossier correspondant et lui propose le rattachement à valider.",
-					"proof": "3 000 pièces reçues par mois",
-					"note": "Pièces reçues par l’équipe administrative."
+					"title": "Classer les justificatifs de plusieurs véhicules à partir d’un seul dépôt",
+					"description": "Dans la filière REP des véhicules hors d’usage, la gestionnaire dépose un lot de scans sans les trier d’avance : le logiciel lit le VIN, retrouve chaque dossier véhicule et soumet le classement à validation.",
+					"proof": "Jusqu’à 50 fichiers par dépôt groupé",
+					"note": "Pour absorber 3 000 justificatifs reçus par mois sans ouvrir chaque fiche à la main."
 				},
 				"slug": "ocr-dossiers-vhu",
-				"title": "Classer un lot de documents dans les bons dossiers véhicules",
+				"title": "Classer les justificatifs de plusieurs véhicules à partir d’un seul dépôt",
 				"category": "Aftermarket & recyclage",
-				"challenge": "Une gestionnaire administrative reçoit et scanne les pièces de véhicules hors d’usage. Pour chaque document, elle ouvre la fiche du véhicule, lance l’ajout d’une pièce, sélectionne le fichier sur son poste, choisit le type de document et valide. Puis elle recommence pour la pièce suivante. À raison de centaines de pièces par jour et de milliers par mois, ce n’est pas le scan seul qui prend du temps : c’est toute la séquence de recherche et de classement qui se répète, même quand toutes les pièces sont déjà numérisées.",
-				"approach": "Le logiciel lit le numéro de série sur chaque document du lot, recherche le dossier véhicule et propose une catégorie. La gestionnaire vérifie la pièce et confirme le rattachement.",
-				"tags": ["OCR", "VIN"],
+				"challenge": "Dans le cadre de la filière REP des véhicules hors d’usage, l’équipe administrative reçoit et numérise chaque mois des milliers de justificatifs papier. Les scans arrivent en vrac sur le poste de travail alors qu’ils concernent des véhicules différents. Pour classer une carte grise ou un récépissé de déclaration d’achat, la gestionnaire doit ouvrir le fichier, lire le numéro de série, chercher le véhicule, ouvrir sa fiche et choisir le type de pièce, document après document.",
+				"approach": "Nous avons développé un module de dépôt et de classement en lot intégré à l’application métier qui gère les dossiers de la filière REP des véhicules hors d’usage. La difficulté consistait à reconnaître des scans de qualité très variable provenant des garages tout en garantissant qu’aucun document ne soit rattaché par erreur ni écrasé. Pour chaque fichier du lot, le lecteur OCR extrait le texte, identifie le numéro de série (VIN) et propose le type de justificatif ainsi que le dossier véhicule correspondant dans une file de revue côte à côte.",
+				"tags": ["Angular", ".NET", "Mistral OCR", "VIN"],
 				"details": [
-					"Déposer le lot. Une carte grise, un formulaire CERFA de déclaration d’achat et un récépissé SIV peuvent arriver dans le même dépôt, y compris s’ils concernent des véhicules différents.",
-					"Distinguer les pièces. Le formulaire de déclaration d’achat et le récépissé qui en atteste l’enregistrement concernent la même démarche, mais ne se classent pas sous le même type. Le logiciel propose la catégorie propre à chaque pièce.",
-					"Retrouver le véhicule sans recopier le VIN. L’OCR lit le numéro sur le document. Le logiciel cherche une correspondance exacte parmi les dossiers auxquels la gestionnaire a accès et lui présente la pièce, le type reconnu, le VIN lu et le dossier proposé.",
-					"Vérifier avant de rendre la pièce visible. La gestionnaire confirme le rattachement, même si un seul véhicule correspond. Si le numéro est illisible, si plusieurs dossiers correspondent ou si la pièce semble déjà présente, elle reprend le cas manuellement. Aucun document existant n’est écrasé."
+					{
+						"actor": "Gestionnaire",
+						"title": "Déposer le lot de scans",
+						"text": "Elle glisse ensemble les fichiers déjà numérisés, même lorsqu’ils mêlent cartes grises et récépissés de véhicules différents."
+					},
+					{
+						"actor": "Module OCR",
+						"title": "Lire pièce et numéro VIN",
+						"text": "Pour chaque fichier, le module extrait le texte, repère le numéro de série du véhicule et propose la catégorie documentaire reconnue."
+					},
+					{
+						"actor": "Application",
+						"title": "Chercher le dossier véhicule",
+						"text": "Elle recherche une correspondance exacte du VIN dans le périmètre autorisé et signale les numéros absents, ambigus ou illisibles."
+					},
+					{
+						"actor": "Gestionnaire",
+						"title": "Contrôler côte à côte",
+						"text": "Devant l’aperçu du document original, elle vérifie le véhicule et le type proposés, ou sélectionne un autre dossier si nécessaire."
+					},
+					{
+						"actor": "Gestionnaire",
+						"title": "Valider sans écraser",
+						"text": "Elle confirme le rattachement ; si une pièce de même nature figure déjà au dossier, elle en est avertie avant l’ajout."
+					}
 				],
-				"impact": "Le garage ou le centre habilité retrouve le justificatif validé dans le dossier du véhicule. La gestionnaire reprend les numéros illisibles, les correspondances multiples et les doublons.",
+				"impact": "Au lieu de répéter la recherche fiche par fiche après le passage au scanner, la gestionnaire traite sa pile de scans dans un seul écran de revue et concentre son attention sur les numéros illisibles ou les doublons éventuels. Pour la tenue des dossiers de la filière REP, chaque véhicule reçoit le bon justificatif sans risque d’écrasement silencieux.",
 				"metrics": [
 					{
-						"label": "Pièces reçues par l’équipe administrative",
-						"value": "3 000",
-						"note": "Par mois."
+						"label": "Pièces reçues par l’équipe",
+						"value": "3 000 par mois",
+						"note": "Volume mensuel de justificatifs administratifs à classer dans les dossiers véhicules."
 					},
 					{
-						"label": "Types de pièces dans le lot présenté",
-						"value": "3"
+						"label": "Capacité d’un dépôt groupé",
+						"value": "Jusqu’à 50 fichiers",
+						"note": "Documents déposés en une seule opération, tous véhicules confondus."
 					},
 					{
-						"label": "Validation avant classement",
-						"value": "1"
+						"label": "Provenances au corpus d’étude",
+						"value": "Près de 100 garages",
+						"note": "Établissements distincts dont les scans ont servi à qualifier la reconnaissance."
 					}
-				]
+				],
+				"location": "France"
 			},
 			{
 				"id": "9",
