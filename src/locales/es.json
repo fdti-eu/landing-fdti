@@ -1116,49 +1116,62 @@
 			{
 				"id": "2",
 				"category": "Posventa y reciclaje",
-				"title": "Seguir un vehículo desde la solicitud de retirada hasta el certificado de destrucción",
-				"date": "2020-2025",
-				"location": "Europa",
-				"challenge": "Un particular quiere entregar su coche o un taller comunica que hay un vehículo pendiente de recogida. El transportista necesita saber dónde recogerlo, el centro de tratamiento debe confirmar su llegada y el propietario tiene que poder recuperar su certificado. Para lanzar el servicio y después gestionar toda la red, el operador debía conectar a empresas que necesitan información distinta en cada etapa.",
-				"approach": "Organizamos el servicio en torno a un expediente por vehículo. El particular o el taller presenta la solicitud, el transportista consulta los datos de recogida y el centro registra lo que recibe. Así, el equipo que coordina la red distingue un vehículo pendiente de recogida de otro que ya ha llegado pero al que todavía le falta documentación.",
-				"impact": "El propietario puede acreditar la entrega, el taller sabe si se ha efectuado la recogida y el centro identifica los expedientes incompletos. El operador puede seguir la actividad de toda la red, incluido el plazo mediano de 6 días entre la declaración y la recepción en el centro.",
+				"title": "De la recogida al certificado, el operador sigue cada vehículo del sistema RAP",
+				"date": "2024",
+				"location": "Francia, Bélgica, Luxemburgo",
+				"challenge": "Para poner en conformidad un sistema RAP (responsabilidad ampliada del productor) de vehículos al final de su vida útil, el taller que declara un coche, el transportista que lo recoge y el centro que lo recibe deben trabajar sobre el mismo expediente. Un coche puede estar ya en la campa mientras su permiso de circulación sigue en el taller. El software profesional seguía las recogidas de la red, pero abrir el servicio a particulares exigía enlazar sus solicitudes, equipar a los conductores y entregar los certificados firmados.",
+				"approach": "Hemos desarrollado un portal de recogida para particulares y una aplicación móvil para transportistas, conectados al sistema .NET que talleres y centros ya utilizaban, haciendo evolucionar también esa base. La dificultad consistía en mantener un expediente único por vehículo separando los hitos propios de cada actor: declaración, recogida, llegada física a la campa y recepción de la documentación. Para el sistema RAP en Francia, también conectamos el expediente con los servicios de matriculación y la firma electrónica de los documentos de cesión y destrucción.",
+				"impact": "El servicio está en producción para profesionales y particulares y sostiene la trazabilidad del sistema RAP de vehículos fuera de uso. El taller sabe si la recogida se ha realizado, el centro identifica la documentación pendiente y el propietario obtiene el justificante para su aseguradora. Para el operador, llegada física, documentos y certificado quedan registrados por separado.",
 				"metrics": [
 					{
-						"label": "Vehículos al año",
-						"value": "≈ 20.000",
-						"note": "Vehículos registrados en la plataforma."
+						"label": "Vehículos recibidos en centro",
+						"value": "Más de 14.000",
+						"note": "Llegadas registradas por los centros de la red en diez meses."
 					},
 					{
-						"label": "Socios de la red",
-						"value": "Más de 5.000",
-						"note": "Talleres y centros de tratamiento de vehículos fuera de uso."
+						"label": "Centros de tratamiento activos",
+						"value": "Más de 400",
+						"note": "Centros que registraron recepciones de vehículos en el periodo."
 					},
 					{
-						"label": "Plazo mediano",
-						"value": "6 días",
-						"note": "Desde el registro del vehículo hasta su recepción en el centro."
+						"label": "Firmas del propietario completadas",
+						"value": "93 %",
+						"note": "Proporción de expedientes de particulares enviados a firma electrónica firmados por el propietario."
 					}
 				],
-				"tags": [
-					"TypeScript",
-					"SvelteKit",
-					"Azure",
-					"Azure Functions",
-					"MSSQL",
-					".NET",
-					"Azure Service Bus"
-				],
+				"tags": ["SvelteKit", "Angular", "Python", ".NET", "Azure Functions", "SQL Server"],
 				"details": [
-					"Declarar el vehículo. La matrícula o el número de bastidor permite recuperar los datos disponibles. Quien presenta la solicitud completa la información que falta e indica el lugar de recogida.",
-					"Organizar la recogida. El taller puede consultar la recogida prevista. Al llegar, el transportista comprueba el vehículo y puede comunicar cualquier incidencia.",
-					"Registrar el vehículo y su documentación por separado. El coche puede estar ya en las instalaciones sin que hayan llegado los papeles. Al registrar ambas recepciones por separado, el centro sabe qué queda por obtener.",
-					"Entregar los justificantes. En las retiradas en Francia, los documentos de cesión y destrucción se incorporan al expediente. El propietario puede consultar los certificados firmados en su espacio personal."
+					{
+						"actor": "Particular o taller",
+						"title": "Declarar el vehículo",
+						"text": "A partir de la matrícula o del bastidor se recuperan los datos conocidos. El declarante completa el estado y el lugar de recogida."
+					},
+					{
+						"actor": "Transportista",
+						"title": "Validar la recogida",
+						"text": "Desde su teléfono, el conductor consulta su ruta, revisa el vehículo in situ, recoge la firma o señala una incidencia."
+					},
+					{
+						"actor": "Centro autorizado",
+						"title": "Separar coche y papeles",
+						"text": "El centro registra la llegada física del vehículo a la campa y, por separado, la recepción de la documentación cuando llega después."
+					},
+					{
+						"actor": "Equipo de red",
+						"title": "Detectar documentos pendientes",
+						"text": "El operador distingue enseguida un vehículo pendiente de recogida de otro ya recibido cuyo expediente sigue incompleto."
+					},
+					{
+						"actor": "Propietario",
+						"title": "Recuperar los certificados",
+						"text": "En Francia, los documentos de cesión y destrucción firmados electrónicamente se adjuntan al expediente y al espacio del propietario."
+					}
 				],
 				"indexCard": {
-					"title": "Organizar la recogida de vehículos al final de su vida útil con más de 5 000 socios",
-					"description": "Un particular o un taller solicita la recogida. Desde el transportista hasta el centro de tratamiento, cada participante registra su etapa. El operador sigue cada vehículo hasta obtener los justificantes de destrucción.",
-					"proof": "≈ 20 000 vehículos al año",
-					"note": "Vehículos registrados en la plataforma."
+					"title": "De la recogida al certificado, el operador sigue cada vehículo del sistema RAP",
+					"description": "En el sistema RAP, un particular o un taller solicita la recogida, el conductor la valida en el teléfono y el centro separa la llegada del vehículo de su documentación hasta el certificado.",
+					"proof": "Más de 14.000 vehículos recibidos en diez meses",
+					"note": "Llegadas registradas en más de 400 centros de tratamiento."
 				},
 				"slug": "plataforma-economia-circular"
 			},
