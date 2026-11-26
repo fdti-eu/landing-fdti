@@ -1426,39 +1426,62 @@
 			{
 				"id": "7",
 				"category": "Einzelhandel und Unterhaltungselektronik",
-				"title": "Filialumsätze während eines Softwarewechsels verfolgen",
-				"date": "2020-2021",
-				"location": "Europa",
-				"challenge": "Eine Handelskette wechselt ihr Warenwirtschaftssystem. Die Analysten müssen die Verkäufe jeder Filiale weiter verfolgen können, obwohl die Kassenbons in einem neuen Format eintreffen.",
-				"approach": "Wir haben die Bons aus dem neuen System den jeweiligen Filialen und Artikeln zugeordnet. Die Analysten sehen die Verkäufe in ihrem Auswertungssystem, ohne jeden Bon aus Einzelpositionen zusammensetzen zu müssen.",
-				"impact": "Auch nach dem Softwarewechsel konnten die Teams die Verkäufe im Minutentakt verfolgen.",
+				"title": "Ein Händler bündelt Verkäufe, Bestände und Logistik in einem Data Warehouse",
+				"date": "2022",
+				"location": "Frankreich",
+				"challenge": "Ein Händler mit mehr als 500 Filialen wechselt seine Warenwirtschaft. Seine Analysten müssen weiterhin die Verkäufe jeder Filiale verfolgen, aber auch Bestände, Bestellungen und Versand. Die neue Software liefert jedoch verschachtelte Objekte: Ein Kassenbon enthält mehrere Positionen, ein Artikel mehrere Bezeichnungen. Um Verkäufe über die Zeit zu vergleichen, braucht es zudem die Artikelkategorie und die Filiale so, wie sie am Kauftag waren.",
+				"approach": "Wir haben für das BI-Team des Händlers das Data Warehouse entwickelt, das die Daten der neuen Warenwirtschaft für Vertriebs- und Logistikanalysen nutzbar macht. Es verarbeitet mehr als 70 Geschäftsobjekte: Kassenbons und Zahlungen, Artikel und Aktionen, Filialen und Personal, Bestände und Inventuren, Bestellungen, Wareneingänge und Versand, Lieferantenrechnungen. Unser Generator liest die Beschreibung jedes Objekts, baut die Tabellen, die seine Details und Verknüpfungen erhalten, und befüllt sie fortlaufend mit den Änderungen. Für die Verkäufe ordnen abfragebereite Views jede Position dem richtigen Artikel und jeden Bon der Filiale zu, so wie sie am Kauftag waren.",
+				"impact": "Das Warehouse ist produktiv und speist die Vertriebs- und Logistikanalysen des Händlers. Die Teams verfolgen die Verkäufe jeder Filiale, ohne Bons aus ihren Positionen zusammenzusetzen, und eine geänderte Katalogklassifizierung verfälscht die Lesart vergangener Verkäufe nicht mehr. Muss ein neues Objekt der Warenwirtschaft aufgenommen werden, erzeugt der Generator seine Tabellen und deren Befüllung.",
 				"metrics": [
 					{
-						"label": "Erfasste Filialen",
-						"value": "Über 500",
-						"note": "Das gesamte Filialnetz der Kette."
+						"label": "Verarbeitete Geschäftsobjekte",
+						"value": "Mehr als 70",
+						"note": "Von der Kasse bis zur Buchhaltung, über Bestände und Transport."
 					},
 					{
-						"label": "Aktualisierung der Verkaufsdaten",
-						"value": "Jede Minute",
-						"note": "Intervall, in dem das Berichtssystem neue Daten erhält."
+						"label": "Abgedeckte Bereiche",
+						"value": "6",
+						"note": "Kasse, Katalog, Bestände, Logistik, Einkauf und Finanzen."
 					},
 					{
-						"label": "Verkaufskennzahlen je Filiale",
-						"value": "2"
+						"label": "Lesart vergangener Verkäufe",
+						"value": "Zum Kaufdatum",
+						"note": "Jede Position bleibt mit Artikel und Filiale verknüpft, wie sie an diesem Tag waren."
 					}
 				],
-				"tags": ["Snowflake", "Azure", "Kafka", "ADF", "Qlik"],
+				"tags": ["Snowflake", "Python", "SQL", "Kafka", "Qlik"],
 				"details": [
-					"Eine Filiale erfasst einen Verkauf. Die neue Software übermittelt den Bon mit den einzelnen Artikeln.",
-					"Die Verkaufspositionen werden der Filiale zugeordnet. Aus den Bonbeträgen kann der Analyst Umsatz und durchschnittlichen Einkaufswert je Filiale ermitteln.",
-					"Die Auswertungen erhalten jede Minute neue Daten. Die Teams konnten auf das neue Berichtssystem umsteigen und das alte ablösen."
+					{
+						"actor": "Warenwirtschaft",
+						"title": "Änderungen übermitteln",
+						"text": "Die neue Software sendet jedes geänderte Objekt: einen Bon mit Positionen, einen Artikelstamm, eine Bestandsbewegung oder einen Versand."
+					},
+					{
+						"actor": "Data Warehouse",
+						"title": "Details bewahren",
+						"text": "Jedes Objekt wird in verknüpfte Tabellen zerlegt: Positionen bleiben ihrem Bon zugeordnet, frühere Artikelversionen bleiben erhalten."
+					},
+					{
+						"actor": "Data Warehouse",
+						"title": "Neues einspielen",
+						"text": "Die Ladeprozesse übernehmen den Bestand und danach nur die Änderungen, ohne die gesamte Historie neu zu laden."
+					},
+					{
+						"actor": "Vertriebsanalyst",
+						"title": "Verkäufe vergleichen",
+						"text": "Er verfolgt Umsatz und Mengen je Filiale und liest einen alten Verkauf mit der damaligen Artikelkategorie und Filiale."
+					},
+					{
+						"actor": "Logistikanalyst",
+						"title": "Warenflüsse verfolgen",
+						"text": "Er findet Bestände, Wareneingänge, Kommissionierung und Versand im selben Warehouse wie die Verkäufe."
+					}
 				],
 				"indexCard": {
-					"title": "Filialumsätze während eines Softwarewechsels verfolgen",
-					"description": "Auch wenn Kassenbons in einem neuen Format eintreffen, bleibt jeder Verkauf den richtigen Artikeln und der richtigen Filiale zugeordnet. Die Teams können Umsatz und durchschnittlichen Einkaufswert weiterhin verfolgen.",
-					"proof": "Über 500 Filialen",
-					"note": "Verkäufe jeder Filiale des Netzes, im neuen System verfolgt."
+					"title": "Ein Händler bündelt Verkäufe, Bestände und Logistik in einem Data Warehouse",
+					"description": "Beim Wechsel der Warenwirtschaft bündelt der Händler Bons, Artikel, Bestände und Versand in einem Warehouse. Analysten lesen jeden Verkauf mit dem damaligen Katalog und der damaligen Filiale.",
+					"proof": "Mehr als 70 verarbeitete Geschäftsobjekte",
+					"note": "Von der Kasse bis zur Buchhaltung, über Bestände und Transport."
 				},
 				"slug": "data-warehouse-nahezu-echtzeit-einzelhandel"
 			}

@@ -1430,39 +1430,62 @@
 			{
 				"id": "7",
 				"category": "Comercio minorista y electrónica",
-				"title": "Seguir las ventas de las tiendas durante un cambio de software",
-				"date": "2020-2021",
-				"location": "Europa",
-				"challenge": "Una cadena cambia de software de gestión. Los analistas necesitan seguir las ventas de cada tienda aunque los tickets de caja lleguen en otro formato.",
-				"approach": "Vinculamos los tickets del nuevo sistema con la tienda y los artículos correspondientes. Los analistas consultan las ventas en su herramienta habitual sin reconstruir cada ticket línea por línea.",
-				"impact": "Los equipos mantuvieron el seguimiento de las ventas minuto a minuto tras el cambio de software.",
+				"title": "Una cadena reúne ventas, stocks y logística en un mismo almacén de datos",
+				"date": "2022",
+				"location": "Francia",
+				"challenge": "Una cadena de más de 500 tiendas cambia de software de gestión. Sus analistas deben seguir las ventas de cada tienda, pero también los stocks, los pedidos y los envíos. Sin embargo, el nuevo software transmite objetos anidados: un ticket contiene varias líneas, un artículo varias denominaciones. Para comparar las ventas en el tiempo, también hay que recuperar la categoría del artículo y la tienda tal como eran el día de la compra.",
+				"approach": "Hemos desarrollado, para el equipo de inteligencia de negocio de la cadena, el almacén de datos que hace utilizable la información del nuevo software de gestión para los análisis comerciales y logísticos. Gestiona más de 70 objetos de negocio: tickets de caja y pagos, artículos y promociones, tiendas y personal, stocks e inventarios, pedidos, recepciones y envíos, facturas de proveedores. Nuestro generador lee la descripción de cada objeto, construye las tablas que conservan su detalle y sus vínculos, y las alimenta a medida que llegan los cambios. Para las ventas, vistas listas para consultar asocian cada línea al artículo correcto y cada ticket a la tienda, tal como eran el día de la compra.",
+				"impact": "El almacén está en producción y alimenta los análisis comerciales y logísticos de la cadena. Los equipos siguen las ventas de cada tienda sin reconstruir los tickets a partir de sus líneas, y un cambio de clasificación en el catálogo ya no distorsiona la lectura de las ventas pasadas. Cuando hay que integrar un nuevo objeto del software de gestión, el generador produce sus tablas y su carga.",
 				"metrics": [
 					{
-						"label": "Tiendas seguidas",
-						"value": "Más de 500",
-						"note": "Toda la red de la cadena."
+						"label": "Objetos de negocio gestionados",
+						"value": "Más de 70",
+						"note": "De la caja a la contabilidad, pasando por los stocks y el transporte."
 					},
 					{
-						"label": "Actualización de los datos de ventas",
-						"value": "Cada minuto",
-						"note": "Frecuencia con la que el sistema de análisis recibe datos nuevos."
+						"label": "Ámbitos cubiertos",
+						"value": "6",
+						"note": "Caja, catálogo, stocks, logística, compras y finanzas."
 					},
 					{
-						"label": "Indicadores de ventas por tienda",
-						"value": "2"
+						"label": "Lectura de las ventas pasadas",
+						"value": "A la fecha de compra",
+						"note": "Cada línea sigue vinculada al artículo y a la tienda tal como eran ese día."
 					}
 				],
-				"tags": ["Snowflake", "Azure", "Kafka", "ADF", "Qlik"],
+				"tags": ["Snowflake", "Python", "SQL", "Kafka", "Qlik"],
 				"details": [
-					"Una tienda registra una venta. El nuevo software transmite el ticket y el detalle de los artículos.",
-					"Las líneas de venta quedan asociadas a la tienda. El analista utiliza los importes de los tickets para seguir la facturación y el importe medio por compra en cada tienda.",
-					"Los datos nuevos alimentan los análisis minuto a minuto. Los equipos pudieron pasar al nuevo sistema de análisis y retirar el anterior."
+					{
+						"actor": "Software de gestión",
+						"title": "Transmitir los cambios",
+						"text": "El nuevo software envía cada objeto modificado: un ticket y sus líneas, una ficha de artículo, un movimiento de stock o un envío."
+					},
+					{
+						"actor": "Almacén de datos",
+						"title": "Conservar el detalle",
+						"text": "Cada objeto se divide en tablas vinculadas: las líneas siguen unidas a su ticket y se conservan las versiones sucesivas de un artículo."
+					},
+					{
+						"actor": "Almacén de datos",
+						"title": "Integrar las novedades",
+						"text": "Los procesos cargan lo existente y después solo los cambios, sin recargar todo el historial."
+					},
+					{
+						"actor": "Analista comercial",
+						"title": "Comparar las ventas",
+						"text": "Sigue la facturación y las cantidades por tienda, y relee una venta antigua con la categoría del artículo y la tienda de la época."
+					},
+					{
+						"actor": "Analista logístico",
+						"title": "Seguir los flujos",
+						"text": "Encuentra stocks, recepciones, preparación de pedidos y envíos en el mismo almacén que las ventas."
+					}
 				],
 				"indexCard": {
-					"title": "Seguir las ventas de las tiendas durante un cambio de software",
-					"description": "Aunque cambie el formato de los tickets, cada venta sigue vinculada a los artículos y a la tienda correspondientes. Los equipos pueden seguir la facturación y el importe medio por compra.",
-					"proof": "Más de 500 tiendas",
-					"note": "Ventas de cada tienda de la red, seguidas en el nuevo sistema."
+					"title": "Una cadena reúne ventas, stocks y logística en un mismo almacén de datos",
+					"description": "Durante un cambio de software de gestión, la cadena reúne tickets, artículos, stocks y envíos en un mismo almacén. Los analistas releen cada venta con el catálogo y la tienda de la época.",
+					"proof": "Más de 70 objetos de negocio gestionados",
+					"note": "De la caja a la contabilidad, pasando por los stocks y el transporte."
 				},
 				"slug": "almacen-datos-retail"
 			}

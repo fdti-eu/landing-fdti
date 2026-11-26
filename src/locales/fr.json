@@ -1426,39 +1426,62 @@
 			{
 				"id": "7",
 				"category": "Retail & électronique",
-				"title": "Suivre les ventes des magasins pendant une migration de logiciel",
-				"date": "2020-2021",
-				"location": "Europe",
-				"challenge": "Une enseigne change de logiciel de gestion. Les analystes doivent continuer à suivre les ventes de chaque magasin alors que les tickets de caisse leur arrivent dans un nouveau format.",
-				"approach": "Nous avons relié les tickets du nouveau système aux magasins et aux articles correspondants. Les analystes retrouvent ainsi les ventes dans leur outil de suivi, sans avoir à reconstituer chaque ticket à partir de ses lignes.",
-				"impact": "Les équipes ont conservé un suivi des ventes minute par minute après le changement de logiciel.",
+				"title": "Une enseigne réunit ventes, stocks et logistique dans un même entrepôt de données",
+				"date": "2022",
+				"location": "France",
+				"challenge": "Une enseigne de plus de 500 magasins change de logiciel de gestion. Ses analystes doivent continuer à suivre les ventes de chaque magasin, mais aussi les stocks, les commandes et les expéditions. Or le nouveau logiciel transmet des objets imbriqués : un ticket contient plusieurs lignes, un article plusieurs désignations. Pour comparer les ventes dans le temps, il faut aussi retrouver la catégorie de l’article et le magasin tels qu’ils étaient le jour de l’achat.",
+				"approach": "Nous avons développé, pour l’équipe décisionnelle de l’enseigne, l’entrepôt de données qui rend les informations du nouveau logiciel de gestion exploitables pour les analyses commerciales et logistiques. Il prend en charge plus de 70 objets métier : tickets de caisse et paiements, articles et promotions, magasins et personnel, stocks et inventaires, commandes, réceptions et expéditions, factures fournisseurs. Notre générateur lit la description de chaque objet, construit les tables qui en conservent le détail et les liens, puis les alimente au fil des changements. Pour les ventes, des vues prêtes à interroger rapprochent chaque ligne du bon article et chaque ticket du magasin, tels qu’ils étaient le jour de l’achat.",
+				"impact": "L’entrepôt est en production et alimente les analyses commerciales et logistiques de l’enseigne. Les équipes suivent les ventes de chaque magasin sans reconstituer les tickets à partir de leurs lignes, et un changement de classement dans le catalogue ne fausse plus la lecture des ventes passées. Lorsqu’un nouvel objet du logiciel de gestion doit être intégré, le générateur produit ses tables et leur alimentation.",
 				"metrics": [
 					{
-						"label": "Magasins suivis",
-						"value": "Plus de 500",
-						"note": "Tout le réseau de l’enseigne."
+						"label": "Objets métier pris en charge",
+						"value": "Plus de 70",
+						"note": "De la caisse à la comptabilité, en passant par les stocks et le transport."
 					},
 					{
-						"label": "Mise à jour des données de vente",
-						"value": "Chaque minute",
-						"note": "Cadence d’alimentation du système d’analyse."
+						"label": "Domaines couverts",
+						"value": "6",
+						"note": "Caisse, catalogue, stocks, logistique, achats et finance."
 					},
 					{
-						"label": "Indicateurs de vente suivis par magasin",
-						"value": "2"
+						"label": "Lecture des ventes passées",
+						"value": "À la date d’achat",
+						"note": "Chaque ligne reste reliée à l’article et au magasin tels qu’ils étaient ce jour-là."
 					}
 				],
-				"tags": ["Snowflake", "Azure", "Kafka", "ADF", "Qlik"],
+				"tags": ["Snowflake", "Python", "SQL", "Kafka", "Qlik"],
 				"details": [
-					"Un magasin enregistre une vente. Le nouveau logiciel transmet le ticket et le détail des articles.",
-					"Les lignes de vente sont rapprochées du magasin concerné. L’analyste peut utiliser les montants des tickets pour suivre le chiffre d’affaires et le panier moyen par magasin.",
-					"Les nouvelles données alimentent les analyses minute par minute. Les équipes ont pu basculer sur le nouveau suivi puis retirer l’ancien système d’analyse."
+					{
+						"actor": "Logiciel de gestion",
+						"title": "Transmettre les changements",
+						"text": "Le nouveau logiciel envoie chaque objet modifié : un ticket et ses lignes, une fiche article, un mouvement de stock ou une expédition."
+					},
+					{
+						"actor": "Entrepôt de données",
+						"title": "Conserver le détail",
+						"text": "Chaque objet est découpé en tables reliées : les lignes restent rattachées à leur ticket et les versions successives d’un article sont conservées."
+					},
+					{
+						"actor": "Entrepôt de données",
+						"title": "Intégrer les nouveautés",
+						"text": "Les traitements reprennent l’existant, puis n’intègrent que les changements, sans recharger tout l’historique."
+					},
+					{
+						"actor": "Analyste commerce",
+						"title": "Comparer les ventes",
+						"text": "Il suit le chiffre d’affaires et les quantités par magasin, et relit une vente ancienne avec la catégorie de l’article et le magasin de l’époque."
+					},
+					{
+						"actor": "Analyste logistique",
+						"title": "Suivre les flux",
+						"text": "Il retrouve stocks, réceptions, préparations de commandes et expéditions dans le même entrepôt que les ventes."
+					}
 				],
 				"indexCard": {
-					"title": "Suivre les ventes des magasins pendant un changement de logiciel",
-					"description": "Quand le format des tickets de caisse change, les équipes conservent leurs repères : chaque vente reste rattachée aux bons articles et au bon magasin pour suivre le chiffre d’affaires et le panier moyen.",
-					"proof": "Plus de 500 magasins",
-					"note": "Ventes de chaque magasin du réseau, suivies dans le nouveau système."
+					"title": "Une enseigne réunit ventes, stocks et logistique dans un même entrepôt de données",
+					"description": "Lors d’un changement de logiciel de gestion, l’enseigne réunit tickets, articles, stocks et expéditions dans un même entrepôt. Les analystes relisent chaque vente avec le catalogue et le magasin de l’époque.",
+					"proof": "Plus de 70 objets métier pris en charge",
+					"note": "De la caisse à la comptabilité, en passant par les stocks et le transport."
 				},
 				"slug": "data-warehouse-retail"
 			}
