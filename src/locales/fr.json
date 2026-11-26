@@ -1001,23 +1001,23 @@
 				"date": "2025",
 				"location": "France",
 				"challenge": "Pour contrôler un dépôt de comptes annuels, le greffier doit identifier le bilan, les annexes et la déclaration de confidentialité, puis vérifier que l’exercice et les montants concordent d’une pièce à l’autre. Pour une formalité au registre du commerce, il confronte les données déclarées aux statuts et aux actes. Le juge fait face à une autre difficulté : retrouver rapidement les demandes de chaque partie et les arguments répartis dans plusieurs conclusions et pièces.",
-				"approach": "Nous avons développé une API d’analyse documentaire reliée au logiciel métier des greffes ainsi qu’une application web, hébergées sur les serveurs de l’éditeur. La difficulté consistait à traiter des liasses numérisées hétérogènes sans jamais substituer l’outil à l’appréciation humaine. Pour un dépôt de comptes, le moteur classe les pièces reçues et sélectionne les contrôles applicables : le greffier voit ce qui concorde, l’écart signalé et ce qui appelle une relecture. Pour une affaire judiciaire, l’outil structure faits, demandes et moyens par partie, en rattachant chaque point au document et aux pages sources.",
-				"impact": "Équipant une cinquantaine de tribunaux de commerce, la plateforme a traité près de 40 000 dossiers en un mois. Dans son logiciel habituel, le greffier accède directement aux points de contrôle et aux écarts à trancher avant de valider un dépôt. Pour préparer une audience, le juge confronte la synthèse aux écrits des parties avec le numéro de page correspondant.",
+				"approach": "Nous avons développé une API d’analyse documentaire reliée au logiciel métier des greffes ainsi qu’une application web, hébergées sur les serveurs de l’éditeur. La difficulté consistait à traiter des liasses numérisées hétérogènes sans jamais substituer l’outil à l’appréciation humaine. Pour un dépôt de comptes, le moteur classe les pièces reçues et sélectionne parmi plus de 50 vérifications celles qui s’appliquent au dossier : le greffier voit ce qui concorde, l’écart signalé et ce qui appelle une relecture. Pour une affaire judiciaire, l’outil structure faits, demandes et moyens par partie avec renvoi aux pages sources.",
+				"impact": "Déployée dans une cinquantaine de tribunaux de commerce, la plateforme traite près de 40 000 dossiers par mois. Dans son logiciel habituel, le greffier accède directement aux points de contrôle et aux écarts à trancher avant de valider un dépôt, et la précision de ce cadre a conduit les greffes à harmoniser leurs pratiques de vérification. Pour préparer une audience, le juge confronte la synthèse aux écrits des parties avec le numéro de page correspondant.",
 				"metrics": [
 					{
 						"label": "Tribunaux équipés",
-						"value": "Une cinquantaine",
+						"value": "≈ 50",
 						"note": "Tribunaux de commerce dont le logiciel métier intègre la plateforme."
 					},
 					{
-						"label": "Dossiers traités en un mois",
-						"value": "Près de 40 000",
+						"label": "Dossiers traités par mois",
+						"value": "≈ 40 000",
 						"note": "Dépôts de comptes annuels, formalités du registre du commerce et dossiers judiciaires."
 					},
 					{
-						"label": "Contrôles sur les comptes annuels",
-						"value": "Plus de 50",
-						"note": "Vérifications distinctes parmi lesquelles le moteur sélectionne celles applicables au dépôt."
+						"label": "Parcours métier couverts",
+						"value": "4",
+						"note": "Comptes annuels, registre du commerce, immatriculations de personnes physiques et affaires judiciaires."
 					}
 				],
 				"tags": ["LLM", "OCR", "FastAPI", "SvelteKit", "PostgreSQL", "Keycloak"],
@@ -1051,7 +1051,7 @@
 				"indexCard": {
 					"title": "Le greffier contrôle les formalités, le juge retrouve la page qui étaye un argument",
 					"description": "Dans leur logiciel habituel, les greffiers examinent les écarts entre une formalité déclarée et ses justificatifs. Pour préparer une affaire, le juge dispose d’une synthèse renvoyant aux pages sources.",
-					"proof": "Une cinquantaine de tribunaux équipés",
+					"proof": "≈ 50 tribunaux équipés",
 					"note": "Plateforme intégrée au logiciel métier des greffes."
 				},
 				"slug": "automatisation-greffes"
@@ -1559,12 +1559,12 @@
 			{
 				"id": "7",
 				"category": "Retail & électronique",
-				"title": "Une enseigne réunit ventes, stocks et logistique dans un même entrepôt de données",
+				"title": "Une enseigne migre son entrepôt de données et réunit ventes, stocks et logistique",
 				"date": "2022",
 				"location": "France",
-				"challenge": "Une enseigne de plus de 500 magasins change de logiciel de gestion. Ses analystes doivent continuer à suivre les ventes de chaque magasin, mais aussi les stocks, les commandes et les expéditions. Or le nouveau logiciel transmet des objets imbriqués : un ticket contient plusieurs lignes, un article plusieurs désignations. Pour comparer les ventes dans le temps, il faut aussi retrouver la catégorie de l’article et le magasin tels qu’ils étaient le jour de l’achat.",
-				"approach": "Nous avons développé, pour l’équipe décisionnelle de l’enseigne, l’entrepôt de données qui rend les informations du nouveau logiciel de gestion exploitables pour les analyses commerciales et logistiques. Il prend en charge plus de 70 objets métier : tickets de caisse et paiements, articles et promotions, magasins et personnel, stocks et inventaires, commandes, réceptions et expéditions, factures fournisseurs. Notre générateur lit la description de chaque objet, construit les tables qui en conservent le détail et les liens, puis les alimente au fil des changements. Pour les ventes, des vues prêtes à interroger rapprochent chaque ligne du bon article et chaque ticket du magasin, tels qu’ils étaient le jour de l’achat.",
-				"impact": "L’entrepôt est en production et alimente les analyses commerciales et logistiques de l’enseigne. Les équipes suivent les ventes de chaque magasin sans reconstituer les tickets à partir de leurs lignes, et un changement de classement dans le catalogue ne fausse plus la lecture des ventes passées. Lorsqu’un nouvel objet du logiciel de gestion doit être intégré, le générateur produit ses tables et leur alimentation.",
+				"challenge": "Lors d’un changement de logiciel de gestion, une enseigne de plus de 500 magasins doit migrer son entrepôt de données et assurer la transition sans interrompre le pilotage des ventes, des stocks, des commandes et des expéditions. Or les flux échangés sont d’immenses objets JSON imbriqués décrits par des schémas XML complexes : un ticket contient plusieurs lignes, un article plusieurs désignations, et chaque vente passée doit rester reliée au catalogue et au magasin tels qu’ils étaient le jour de l’achat.",
+				"approach": "Nous avons conçu, pour l’équipe décisionnelle de l’enseigne, la migration vers le nouvel entrepôt Snowflake et le mapping en direct assurant la transition sur plus de 70 objets métier : tickets et paiements, articles et promotions, magasins et personnel, stocks, commandes, réceptions, expéditions et factures fournisseurs. La difficulté consistait à transformer de grands documents JSON imbriqués en tables relationnelles tout en reconstruisant leurs jointures. Notre générateur analyse les descriptions XML structurées de chaque objet pour produire automatiquement plus de 250 tables Snowflake ainsi que les scripts de conversion et d’alimentation incrémentale.",
+				"impact": "La migration a permis d’assurer la transition vers le nouvel entrepôt en production pour les équipes commerciales et logistiques. Les analystes suivent chaque magasin sans reconstituer les tickets ni perdre les jointures issues des flux JSON, et un changement de classement catalogue ne fausse pas la lecture des ventes passées. Lorsqu’un nouvel objet décrit en XML est ajouté, le générateur produit ses tables et ses scripts.",
 				"metrics": [
 					{
 						"label": "Objets métier pris en charge",
@@ -1585,34 +1585,34 @@
 				"tags": ["Snowflake", "Python", "SQL", "Kafka", "Qlik"],
 				"details": [
 					{
-						"actor": "Logiciel de gestion",
-						"title": "Transmettre les changements",
-						"text": "Le nouveau logiciel envoie chaque objet modifié : un ticket et ses lignes, une fiche article, un mouvement de stock ou une expédition."
+						"actor": "Générateur",
+						"title": "Lire les schémas XML",
+						"text": "À partir des descriptions XML structurées de chaque objet métier, il génère les requêtes de création des tables Snowflake et les scripts de transformation."
 					},
 					{
-						"actor": "Entrepôt de données",
-						"title": "Conserver le détail",
-						"text": "Chaque objet est découpé en tables reliées : les lignes restent rattachées à leur ticket et les versions successives d’un article sont conservées."
+						"actor": "Flux de transition",
+						"title": "Mapper en direct",
+						"text": "Pendant la bascule, les objets métier issus de l’ancien système sont ingérés en continu et réécrits en direct au nouveau format."
 					},
 					{
-						"actor": "Entrepôt de données",
-						"title": "Intégrer les nouveautés",
-						"text": "Les traitements reprennent l’existant, puis n’intègrent que les changements, sans recharger tout l’historique."
+						"actor": "Entrepôt Snowflake",
+						"title": "Décomposer les flux JSON",
+						"text": "Les scripts découpent les grands objets JSON imbriqués en tables reliées, reconstruisent leurs jointures et conservent l’historique des versions."
 					},
 					{
 						"actor": "Analyste commerce",
 						"title": "Comparer les ventes",
-						"text": "Il suit le chiffre d’affaires et les quantités par magasin, et relit une vente ancienne avec la catégorie de l’article et le magasin de l’époque."
+						"text": "Il suit chiffre d’affaires et quantités par magasin, et relit une vente ancienne avec la catégorie d’article et le magasin du jour d’achat."
 					},
 					{
 						"actor": "Analyste logistique",
 						"title": "Suivre les flux",
-						"text": "Il retrouve stocks, réceptions, préparations de commandes et expéditions dans le même entrepôt que les ventes."
+						"text": "Il interroge stocks, réceptions, préparations de commandes et expéditions dans le même entrepôt que les ventes."
 					}
 				],
 				"indexCard": {
-					"title": "Une enseigne réunit ventes, stocks et logistique dans un même entrepôt de données",
-					"description": "Lors d’un changement de logiciel de gestion, l’enseigne réunit tickets, articles, stocks et expéditions dans un même entrepôt. Les analystes relisent chaque vente avec le catalogue et le magasin de l’époque.",
+					"title": "Une enseigne migre son entrepôt de données et réunit ventes, stocks et logistique",
+					"description": "Lors d’une migration d’entrepôt, un générateur lit les descriptions XML pour créer les tables Snowflake, décomposer les grands flux JSON imbriqués et mapper en direct ventes, stocks et logistique.",
 					"proof": "Plus de 70 objets métier pris en charge",
 					"note": "De la caisse à la comptabilité, en passant par les stocks et le transport."
 				},

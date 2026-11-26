@@ -1005,23 +1005,23 @@
 				"date": "2025",
 				"location": "Francia",
 				"challenge": "Para revisar un depósito de cuentas anuales, la secretaría del tribunal debe identificar balance, memoria y declaración de confidencialidad, y comprobar que el ejercicio y los importes coinciden entre documentos. En un trámite del registro mercantil, contrasta los datos declarados con estatutos y escrituras. El juez afronta otra dificultad: localizar con rapidez las pretensiones de cada parte y los argumentos repartidos en varios escritos y anexos.",
-				"approach": "Hemos desarrollado una API de análisis documental integrada en el software de gestión de las secretarías judiciales y una aplicación web, alojadas en los servidores del editor. El reto consistía en tratar expedientes escaneados heterogéneos dejando siempre la valoración jurídica en manos humanas. En cuentas anuales, el motor clasifica los documentos recibidos y selecciona los controles aplicables para mostrar qué coincide, qué difiere y qué requiere lectura manual. En asuntos judiciales, estructura hechos, pretensiones y fundamentos por parte, vinculando cada punto al documento y a las páginas originales.",
-				"impact": "Instalada en unos cincuenta tribunales mercantiles, la plataforma ha procesado cerca de 40.000 expedientes en un mes. En su herramienta habitual, la secretaría accede directamente a los controles y discrepancias que debe resolver antes de validar un depósito. Para preparar la vista, el juez contrasta la síntesis con los escritos originales página por página.",
+				"approach": "Hemos desarrollado una API de análisis documental integrada en el software de gestión de las secretarías judiciales y una aplicación web, alojadas en los servidores del editor. El reto consistía en tratar expedientes escaneados heterogéneos dejando siempre la valoración jurídica en manos humanas. En cuentas anuales, el motor clasifica los documentos recibidos y selecciona entre más de 50 controles los aplicables al depósito para mostrar qué coincide, qué difiere y qué requiere lectura manual. En asuntos judiciales, estructura hechos, pretensiones y fundamentos por parte con referencia a las páginas originales.",
+				"impact": "Instalada en unos cincuenta tribunales mercantiles, la plataforma procesa cerca de 40.000 expedientes al mes. En su herramienta habitual, la secretaría accede directamente a los controles y discrepancias que debe resolver antes de validar un depósito, y este marco preciso ha permitido a las secretarías armonizar sus prácticas de revisión. Para preparar la vista, el juez contrasta la síntesis con los escritos originales página por página.",
 				"metrics": [
 					{
 						"label": "Tribunales equipados",
-						"value": "Unos 50",
+						"value": "≈ 50",
 						"note": "Tribunales mercantiles cuyo software de gestión integra la plataforma."
 					},
 					{
-						"label": "Expedientes tratados en un mes",
-						"value": "Cerca de 40.000",
+						"label": "Expedientes tratados al mes",
+						"value": "≈ 40.000",
 						"note": "Depósitos de cuentas anuales, trámites mercantiles y expedientes judiciales."
 					},
 					{
-						"label": "Controles en cuentas anuales",
-						"value": "Más de 50",
-						"note": "Comprobaciones distintas entre las que el motor aplica las pertinentes al depósito."
+						"label": "Recorridos de negocio cubiertos",
+						"value": "4",
+						"note": "Cuentas anuales, registro mercantil, altas de personas físicas y asuntos judiciales."
 					}
 				],
 				"tags": ["LLM", "OCR", "FastAPI", "SvelteKit", "PostgreSQL", "Keycloak"],
@@ -1055,7 +1055,7 @@
 				"indexCard": {
 					"title": "El secretario controla los trámites y el juez localiza la página de cada argumento",
 					"description": "En su herramienta habitual, las secretarías revisan las discrepancias entre un trámite declarado y sus justificantes. El juez prepara el asunto con una síntesis enlazada a las páginas fuente.",
-					"proof": "Unos 50 tribunales equipados",
+					"proof": "≈ 50 tribunales equipados",
 					"note": "Plataforma integrada en el software de gestión de las secretarías."
 				},
 				"slug": "automatizacion-secretarias-judiciales"
@@ -1563,12 +1563,12 @@
 			{
 				"id": "7",
 				"category": "Comercio minorista y electrónica",
-				"title": "Una cadena reúne ventas, stocks y logística en un mismo almacén de datos",
+				"title": "Una cadena migra su almacén de datos y reúne ventas, stocks y logística",
 				"date": "2022",
 				"location": "Francia",
-				"challenge": "Una cadena de más de 500 tiendas cambia de software de gestión. Sus analistas deben seguir las ventas de cada tienda, pero también los stocks, los pedidos y los envíos. Sin embargo, el nuevo software transmite objetos anidados: un ticket contiene varias líneas, un artículo varias denominaciones. Para comparar las ventas en el tiempo, también hay que recuperar la categoría del artículo y la tienda tal como eran el día de la compra.",
-				"approach": "Hemos desarrollado, para el equipo de inteligencia de negocio de la cadena, el almacén de datos que hace utilizable la información del nuevo software de gestión para los análisis comerciales y logísticos. Gestiona más de 70 objetos de negocio: tickets de caja y pagos, artículos y promociones, tiendas y personal, stocks e inventarios, pedidos, recepciones y envíos, facturas de proveedores. Nuestro generador lee la descripción de cada objeto, construye las tablas que conservan su detalle y sus vínculos, y las alimenta a medida que llegan los cambios. Para las ventas, vistas listas para consultar asocian cada línea al artículo correcto y cada ticket a la tienda, tal como eran el día de la compra.",
-				"impact": "El almacén está en producción y alimenta los análisis comerciales y logísticos de la cadena. Los equipos siguen las ventas de cada tienda sin reconstruir los tickets a partir de sus líneas, y un cambio de clasificación en el catálogo ya no distorsiona la lectura de las ventas pasadas. Cuando hay que integrar un nuevo objeto del software de gestión, el generador produce sus tablas y su carga.",
+				"challenge": "Durante un cambio de software de gestión, una cadena de más de 500 tiendas debe migrar su almacén de datos y asegurar la transición sin interrumpir el seguimiento de ventas, stocks, pedidos y envíos. Pero los flujos intercambiados son grandes objetos JSON anidados descritos por esquemas XML complejos: un ticket incluye varias líneas, un artículo varias denominaciones y cada venta pasada debe conservar el catálogo y la tienda del día de compra.",
+				"approach": "Hemos diseñado para el equipo de inteligencia de negocio la migración al nuevo almacén Snowflake y el mapeo en directo que aseguró la transición en más de 70 objetos de negocio: tickets y pagos, artículos y promociones, tiendas y personal, stocks, pedidos, recepciones, envíos y facturas de proveedores. La dificultad consistía en convertir grandes documentos JSON anidados en tablas relacionales reconstruyendo todas sus uniones. Nuestro generador lee las descripciones XML estructuradas de cada objeto para generar automáticamente más de 250 tablas Snowflake y los scripts de conversión y carga incremental.",
+				"impact": "La migración aseguró la transición al nuevo almacén en producción para los equipos comerciales y logísticos. Los analistas siguen cada tienda sin reconstruir tickets ni uniones a partir de los JSON, y un cambio en el catálogo ya no distorsiona las ventas pasadas. Cuando se incorpora un nuevo objeto descrito en XML, el generador produce sus tablas y procesos.",
 				"metrics": [
 					{
 						"label": "Objetos de negocio gestionados",
@@ -1589,34 +1589,34 @@
 				"tags": ["Snowflake", "Python", "SQL", "Kafka", "Qlik"],
 				"details": [
 					{
-						"actor": "Software de gestión",
-						"title": "Transmitir los cambios",
-						"text": "El nuevo software envía cada objeto modificado: un ticket y sus líneas, una ficha de artículo, un movimiento de stock o un envío."
+						"actor": "Generador",
+						"title": "Leer esquemas XML",
+						"text": "A partir de las descripciones XML estructuradas de cada objeto, genera las sentencias de creación de tablas Snowflake y los scripts de conversión."
 					},
 					{
-						"actor": "Almacén de datos",
-						"title": "Conservar el detalle",
-						"text": "Cada objeto se divide en tablas vinculadas: las líneas siguen unidas a su ticket y se conservan las versiones sucesivas de un artículo."
+						"actor": "Flujo de transición",
+						"title": "Mapear en directo",
+						"text": "Durante el cambio, los objetos procedentes del sistema anterior se ingieren de forma continua y se escriben en directo en el nuevo formato."
 					},
 					{
-						"actor": "Almacén de datos",
-						"title": "Integrar las novedades",
-						"text": "Los procesos cargan lo existente y después solo los cambios, sin recargar todo el historial."
+						"actor": "Almacén Snowflake",
+						"title": "Desanidar flujos JSON",
+						"text": "Los scripts dividen los grandes objetos JSON anidados en tablas vinculadas, reconstruyen sus uniones y conservan el historial de versiones."
 					},
 					{
 						"actor": "Analista comercial",
 						"title": "Comparar las ventas",
-						"text": "Sigue la facturación y las cantidades por tienda, y relee una venta antigua con la categoría del artículo y la tienda de la época."
+						"text": "Sigue facturación y cantidades por tienda y relee una venta antigua con la categoría y la tienda vigentes el día de compra."
 					},
 					{
 						"actor": "Analista logístico",
 						"title": "Seguir los flujos",
-						"text": "Encuentra stocks, recepciones, preparación de pedidos y envíos en el mismo almacén que las ventas."
+						"text": "Consulta stocks, recepciones, preparación de pedidos y envíos en el mismo almacén que las ventas."
 					}
 				],
 				"indexCard": {
-					"title": "Una cadena reúne ventas, stocks y logística en un mismo almacén de datos",
-					"description": "Durante un cambio de software de gestión, la cadena reúne tickets, artículos, stocks y envíos en un mismo almacén. Los analistas releen cada venta con el catálogo y la tienda de la época.",
+					"title": "Una cadena migra su almacén de datos y reúne ventas, stocks y logística",
+					"description": "En la migración del almacén de datos, un generador lee esquemas XML para crear las tablas Snowflake, desanidar grandes flujos JSON y mapear en directo ventas, stocks y logística.",
 					"proof": "Más de 70 objetos de negocio gestionados",
 					"note": "De la caja a la contabilidad, pasando por los stocks y el transporte."
 				},

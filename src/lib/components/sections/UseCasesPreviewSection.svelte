@@ -2,7 +2,7 @@
 	import Card from '#lib/components/Card.svelte';
 	import SectionHeading from '#lib/components/SectionHeading.svelte';
 	import { tick } from 'svelte';
-	import { goto } from '$app/navigation';
+	import { beforeNavigate, goto } from '$app/navigation';
 	import { resolve } from '$app/paths';
 	import type { PathnameWithSearchOrHash } from '$app/types';
 	import type { Lang } from '#lib/data.ts';
@@ -38,6 +38,14 @@
 	};
 
 	let activeSlug = $state<string | null>(null);
+
+	beforeNavigate(({ to, shallow, type }) => {
+		if (shallow && type === 'goto') return;
+
+		if (!to?.route.id?.includes('/realisations/')) {
+			document.documentElement.classList.add('disable-card-transitions');
+		}
+	});
 
 	const shouldSkipViewTransition = (event: MouseEvent) =>
 		event.defaultPrevented ||
