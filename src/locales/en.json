@@ -1430,37 +1430,62 @@
 			{
 				"id": "5",
 				"category": "NGO & engagement",
-				"title": "Choosing themes for upcoming campaigns",
+				"title": "Compare campaign themes and tones for an NGO across nine markets",
 				"date": "2023",
 				"location": "International",
-				"challenge": "An NGO needs to decide which environmental messages to prioritise by country and social network. Performance figures show which posts drew a response but not what they said.",
-				"approach": "Across 60,000 posts in eight languages, we linked each message to its subject, tone and viewpoints. The communications team can compare how different audiences respond to the same theme across networks.",
-				"impact": "The NGO adopted the framework internally to guide budget allocation across countries and social networks.",
-				"tags": ["LLM", "OpenAI", "NLP", "TypeScript"],
+				"challenge": "An international environmental NGO runs awareness campaigns across multiple countries. Its teams can see how many people viewed, commented on or shared a Facebook or Instagram post, yet platform metrics never tell whether a message states a problem, calls for action or quotes a scientist. Preparing upcoming campaigns requires comparing like-for-like messages from one market to the next.",
+				"approach": "We built a language-model classification pipeline that ingests Facebook and Instagram exports, qualifies every post and outputs enriched spreadsheets directly usable by the communications team. The core challenge was reconciling mismatched export schemas and validating classification accuracy before batch processing. Guided by annotated examples and a review interface, the model records the campaign theme, tone, featured voice and key message right alongside reach and engagement metrics.",
+				"impact": "Across two years of campaigns, international and local teams share a common framework covering more than 18,000 posts in nine markets. On topics such as ocean protection or climate, they separate heavily posted themes from those driving genuine engagement and pick the angles to test next.",
+				"tags": ["Python", "OpenAI", "pandas", "Excel"],
 				"details": [
-					"For each Facebook or Instagram post, the analysis identifies the theme and how the author approaches it.",
-					"The communications team compares these findings with the response to each post among different audiences.",
-					"Local teams use the same framework to choose themes for their next campaign."
+					{
+						"actor": "Ingestion pipeline",
+						"title": "Unify social exports",
+						"text": "It consolidates post copy and delivery metrics from Facebook and Instagram exports despite differing column layouts."
+					},
+					{
+						"actor": "Project team",
+						"title": "Benchmark against human labels",
+						"text": "Before full-scale runs, model predictions are checked attribute by attribute against a reference sample of annotated posts."
+					},
+					{
+						"actor": "Analysis tool",
+						"title": "Qualify every post",
+						"text": "It identifies the environmental topic, tone, featured actor and core message, writing those columns into the workbook."
+					},
+					{
+						"actor": "Communications team",
+						"title": "Cross-check angles and response",
+						"text": "Within a given topic, the team compares reach, reactions and shares by tone, social network and market."
+					},
+					{
+						"actor": "Communications team",
+						"title": "Inspect source posts",
+						"text": "From summary comparisons, teams reopen the exact posts and videos behind an engagement gap."
+					}
 				],
 				"indexCard": {
-					"title": "Comparing messages to guide campaign budgets",
-					"description": "Which messages draw a response, in which country and from whom? By comparing each post’s topic and tone with its performance, the NGO uses shared criteria to allocate funding across countries and social networks.",
-					"proof": "60,000 posts analysed",
-					"note": "Facebook and Instagram posts in eight languages."
+					"title": "Compare campaign themes and tones for an NGO across nine markets",
+					"description": "An international NGO links the topic, tone and featured voice of every Facebook and Instagram post to engagement metrics so teams can compare message reception across nine markets.",
+					"proof": "More than 18,000 posts analyzed",
+					"note": "Across two years of Facebook and Instagram campaigns in nine markets."
 				},
 				"slug": "analyse-generative-campagnes",
 				"metrics": [
 					{
 						"label": "Posts analyzed",
-						"value": "60,000"
+						"value": "More than 18,000",
+						"note": "Facebook and Instagram posts qualified and compared across two campaign years."
 					},
 					{
-						"label": "Languages in the corpus",
-						"value": "8"
+						"label": "Markets compared",
+						"value": "9",
+						"note": "Countries and regions read through the same editorial framework."
 					},
 					{
-						"label": "Social networks studied",
-						"value": "2"
+						"label": "Campaign themes tracked",
+						"value": "8",
+						"note": "Environmental causes compared, from ocean protection to energy and climate."
 					}
 				]
 			},

@@ -57,10 +57,6 @@
 	type UseCaseSeo = { title?: string; description: string };
 	const useCaseSeo: Partial<Record<Lang, Record<string, UseCaseSeo>>> = {
 		fr: {
-			'5': {
-				description:
-					'Une analyse par LLM compare 60 000 publications Facebook et Instagram en 8 langues, puis croise les narratifs avec leurs performances par audience.'
-			},
 			'6': {
 				title: 'Data hub d’avis clients & NLP | FDTI',
 				description:
@@ -68,10 +64,6 @@
 			}
 		},
 		en: {
-			'5': {
-				description:
-					'An LLM-based analysis compares 60,000 Facebook and Instagram posts in 8 languages, linking narratives to campaign performance by audience to guide spending.'
-			},
 			'6': {
 				title: 'Customer review data hub & NLP | FDTI',
 				description:
@@ -79,10 +71,6 @@
 			}
 		},
 		de: {
-			'5': {
-				description:
-					'Eine LLM-gestützte Analyse vergleicht 60.000 Facebook- und Instagram-Beiträge in 8 Sprachen und verknüpft Narrative mit der Kampagnenleistung nach Zielgruppe.'
-			},
 			'6': {
 				title: 'Data Hub für Kundenbewertungen und NLP | FDTI',
 				description:
@@ -90,10 +78,6 @@
 			}
 		},
 		it: {
-			'5': {
-				description:
-					'Un’analisi basata su LLM confronta 60.000 post Facebook e Instagram in otto lingue e collega le narrative alle prestazioni delle campagne per pubblico.'
-			},
 			'6': {
 				title: 'Data hub delle recensioni clienti e NLP | FDTI',
 				description:

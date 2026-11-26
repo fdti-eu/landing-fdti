@@ -1439,37 +1439,62 @@
 			{
 				"id": "5",
 				"category": "ONG y participación",
-				"title": "Elegir los temas de las próximas campañas",
+				"title": "Comparar temas y tonos de campaña de una ONG en nueve mercados",
 				"date": "2023",
 				"location": "Internacional",
-				"challenge": "Una ONG necesita decidir qué mensajes ambientales priorizar en cada país y red social. Las cifras de rendimiento muestran qué publicaciones suscitaron una reacción, pero no de qué hablaban.",
-				"approach": "En un conjunto de 60 000 publicaciones en ocho idiomas, relacionamos cada mensaje con su tema, su tono y los puntos de vista expresados. El equipo de comunicación puede comparar la acogida de un mismo tema según el público y la red.",
-				"impact": "La ONG adoptó estos criterios para orientar el reparto de su presupuesto entre países y redes sociales.",
-				"tags": ["LLM", "OpenAI", "NLP", "TypeScript"],
+				"challenge": "Una ONG medioambiental internacional despliega campañas de sensibilización en varios países. Sus equipos ven cuántas personas han visto, comentado o compartido una publicación en Facebook e Instagram, pero esas métricas no indican si el mensaje expone un problema, llama a actuar o da voz a un científico. Para orientar las siguientes campañas hace falta comparar mensajes equivalentes entre mercados.",
+				"approach": "Hemos desarrollado una cadena de clasificación con modelos de lenguaje que lee las exportaciones de Facebook e Instagram, califica cada publicación y entrega libros Excel enriquecidos listos para el equipo de comunicación. El reto consistía en armonizar exportaciones con estructuras distintas y contrastar la precisión antes del tratamiento masivo. A partir de ejemplos anotados y una interfaz de control, el modelo registra tema, tono, portavoz y mensaje clave junto a las métricas de alcance e interacción.",
+				"impact": "Sobre dos años de campañas, el equipo internacional y las oficinas locales comparten la misma parrilla para analizar más de 18.000 publicaciones en nueve mercados. En causas como océanos o clima, distinguen los asuntos más publicados de los que generan mayor respuesta y eligen qué ángulos probar.",
+				"tags": ["Python", "OpenAI", "pandas", "Excel"],
 				"details": [
-					"Para cada publicación en Facebook o Instagram, el análisis identifica el tema y cómo se aborda.",
-					"El equipo de comunicación contrasta esos elementos con los resultados observados entre los distintos públicos.",
-					"Los equipos locales utilizan los mismos criterios para elegir los temas de la próxima campaña."
+					{
+						"actor": "Cadena de carga",
+						"title": "Unificar las exportaciones",
+						"text": "Reúne textos e indicadores de difusión de Facebook e Instagram pese a sus diferentes estructuras de columnas."
+					},
+					{
+						"actor": "Equipo de proyecto",
+						"title": "Validar con muestra anotada",
+						"text": "Antes del procesado completo, las respuestas del modelo se contrastan atributo por atributo con publicaciones ya etiquetadas."
+					},
+					{
+						"actor": "Herramienta de análisis",
+						"title": "Calificar cada mensaje",
+						"text": "Identifica el tema ambiental, el tono, el actor destacado y el mensaje principal, añadiendo esas columnas al archivo."
+					},
+					{
+						"actor": "Comunicación",
+						"title": "Cruzar enfoques y reacciones",
+						"text": "Para un mismo asunto, compara alcance, reacciones y compartidos según el tono empleado, la red y el mercado."
+					},
+					{
+						"actor": "Comunicación",
+						"title": "Volver a las publicaciones",
+						"text": "Desde las comparativas, el equipo abre los textos y vídeos concretos que explican una diferencia de recepción."
+					}
 				],
 				"indexCard": {
-					"title": "Comparar mensajes para orientar los presupuestos de campaña",
-					"description": "¿Qué mensajes generan una reacción, en qué país y entre qué públicos? Al relacionar el tema y el tono de cada publicación con sus resultados, la ONG utiliza criterios comunes para repartir su presupuesto entre países y redes sociales.",
-					"proof": "60 000 publicaciones analizadas",
-					"note": "Publicaciones de Facebook e Instagram en ocho idiomas."
+					"title": "Comparar temas y tonos de campaña de una ONG en nueve mercados",
+					"description": "Una ONG internacional vincula el tema, el tono y el portavoz de cada publicación en Facebook e Instagram con sus resultados para comparar su recepción en nueve mercados.",
+					"proof": "Más de 18.000 publicaciones estudiadas",
+					"note": "En dos años de campañas en Facebook e Instagram en nueve mercados."
 				},
 				"slug": "analisis-generativo-campanas",
 				"metrics": [
 					{
-						"label": "Publicaciones analizadas",
-						"value": "60 000"
+						"label": "Publicaciones estudiadas",
+						"value": "Más de 18.000",
+						"note": "Publicaciones de Facebook e Instagram calificadas y comparadas en dos años."
 					},
 					{
-						"label": "Idiomas del corpus",
-						"value": "8"
+						"label": "Mercados comparados",
+						"value": "9",
+						"note": "Países y regiones analizados con la misma parrilla editorial."
 					},
 					{
-						"label": "Redes sociales estudiadas",
-						"value": "2"
+						"label": "Temas de campaña seguidos",
+						"value": "8",
+						"note": "Causas comparadas, desde la protección de los océanos hasta energía y clima."
 					}
 				]
 			},
